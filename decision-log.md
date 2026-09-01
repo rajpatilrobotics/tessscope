@@ -97,6 +97,32 @@
   stage-correction, naive-superposition, derivative-free, and uncertainty gates remain
   unproven. Test data remains sealed.
 
+## 2026-09-01 — Expanded B7 hard validation isolates one remaining gate
+
+- The frozen patch collector can supply one registered, supervised patch from 45 of the
+  48 validation wells. Wells `l09` and `o20` have no field passing the frozen
+  registration gate; `o13` has one registered field but no valid supervised patch
+  instance. All exclusions are explicit; no test or substitute wells were used.
+- The expanded matrix evaluates 45 distinct wells, seven depths, six frozen designs,
+  official hard InstanSeg labels, candidate correction frames, and 2,000-replicate paired
+  bootstraps grouped by well. The hard-density subset contains 27 wells.
+- Projected balance `0.5` reaches hard dense off-focus PQ `0.49606`, a `+0.03995` gain
+  over clear with 95% interval `[+0.01604, +0.06310]`, and only `0.00642` below matched
+  B7 segmentation-only. Direction is `98.89%`, MAE is `1.21073 µm`, and correction
+  improves hard PQ from `0.49606` to `0.55206`.
+- Projected balance `1.0` reaches hard PQ `0.49440`, clear gain `+0.03829` with interval
+  `[+0.01492, +0.06117]`, segmentation drop `0.00809`, direction `98.89%`, MAE
+  `1.16210 µm`, and corrected hard PQ `0.55059`.
+- Both candidates pass every preliminary unchanged gate except Pareto dominance over
+  matched B7 naive superposition, whose hard PQ/MAE is `0.45401/0.90485 µm`. They have
+  much higher PQ but do not beat its focus MAE. No candidate is promoted and test access
+  remains blocked.
+- Decision: the near-miss is now localized to basis expressivity rather than loss
+  alignment, hard-PQ preservation, focus sign, stage action, photon positivity, or
+  small-sample instability. Activate the plan's compact B11 fourth-order extension
+  (Noll 5–15) under the same 2.5-radian RMS ball. A matched B11 derivative-free baseline
+  is required only if a B11 candidate clears the naive-superposition gate.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No
