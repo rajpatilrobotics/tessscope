@@ -26,6 +26,23 @@
   support, photon, well-grouping, and test-hygiene rule remains unchanged. If v2.2 fails,
   preserve it and proceed to the separately approved v2.3 closed-loop feedback experiment.
 
+## 2026-09-01 — V2.2 soft screen freezes 38 hard-frontier points
+
+- The 101 predeclared family aliases collapse to 87 unique physical coefficient vectors.
+  Fourteen require radial projection; all interior amplitudes remain unchanged. The
+  original naive sum reproduces validation segmentation/focus values
+  `1.12248264/1.45912194`, and the segmentation endpoint reproduces
+  `1.09027031/4.59834081` through the unchanged served chain.
+- The predeclared soft rule retains 38 points: every nondominated point, the fixed guard
+  band, family anchors, the original sum, and operating-point brackets. No hard instance
+  label or v2.2 hard metric was used for this selection.
+- Every retained point remains inside the 2.5-radian RMS ball and exceeds the unchanged
+  `0.995` minimum PSF support-energy fraction across all seven depths. Quantization
+  diagnostics are recorded for each retained point.
+- Decision: freeze these 38 identifiers for the expanded hard run. Do not narrow them
+  after seeing hard outcomes; the deliberately generous baseline budget is part of the
+  credibility of the frontier comparison.
+
 
 ## 2026-09-01 — V2.1 validation-only continuation authorized
 

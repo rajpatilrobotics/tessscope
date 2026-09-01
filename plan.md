@@ -77,10 +77,10 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   immutable and separately named.
 - [x] V2.2-0B: pre-register the frozen B7 joint candidate, source hashes, mixture family,
   physical projection, screening rule, matched effects, uncertainty, and test policy.
-- [ ] V2.2-1A: implement deterministic mixture generation, deduplication, RMS projection,
+- [x] V2.2-1A: implemented deterministic mixture generation, deduplication, RMS projection,
   support/manufacturability checks, and unit tests.
-- [ ] V2.2-1B: run the unchanged served soft endpoint for the full predeclared family and
-  freeze all potentially relevant hard-frontier points without using hard labels.
+- [x] V2.2-1B: ran the unchanged served soft endpoint for all 87 unique points and froze
+  38 potentially relevant hard-frontier points without using hard labels.
 - [ ] V2.2-2A: evaluate the selected piecewise frontier on all 45 valid validation wells,
   including RQ/SQ/Dice/count, focus, photons, and one-step correction metrics.
 - [ ] V2.2-2B: calculate paired well uncertainty and the predeclared matched-segmentation,

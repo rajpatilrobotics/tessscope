@@ -1,0 +1,4384 @@
+{
+  "status": "complete_soft_screen_validation_only",
+  "test_accessed": false,
+  "protocol_sha256": "9ddc648323bea226982aa2db64bd63a609c9f2f82ade796a4a117a0d9a6e8279",
+  "frozen_joint_sha256": "dc527f1e80d84f14c600064cd921a3b03edd3332f05bbb18869afa7d2a99c0b3",
+  "source_separate_sha256": "9de75d0491fc67aca3d9cc54b9485e15c2bd81971f6aefeb0bcd1b556c73bf31",
+  "raw_alias_count": 101,
+  "unique_point_count": 87,
+  "selected_for_hard_validation": [
+    "v2_2-piecewise-000",
+    "v2_2-piecewise-001",
+    "v2_2-piecewise-002",
+    "v2_2-piecewise-003",
+    "v2_2-piecewise-005",
+    "v2_2-piecewise-006",
+    "v2_2-piecewise-013",
+    "v2_2-piecewise-014",
+    "v2_2-piecewise-021",
+    "v2_2-piecewise-022",
+    "v2_2-piecewise-023",
+    "v2_2-piecewise-024",
+    "v2_2-piecewise-025",
+    "v2_2-piecewise-026",
+    "v2_2-piecewise-027",
+    "v2_2-piecewise-028",
+    "v2_2-piecewise-029",
+    "v2_2-piecewise-030",
+    "v2_2-piecewise-031",
+    "v2_2-piecewise-032",
+    "v2_2-piecewise-033",
+    "v2_2-piecewise-034",
+    "v2_2-piecewise-035",
+    "v2_2-piecewise-036",
+    "v2_2-piecewise-037",
+    "v2_2-piecewise-038",
+    "v2_2-piecewise-039",
+    "v2_2-piecewise-040",
+    "v2_2-piecewise-050",
+    "v2_2-piecewise-055",
+    "v2_2-piecewise-064",
+    "v2_2-piecewise-068",
+    "v2_2-piecewise-069",
+    "v2_2-piecewise-070",
+    "v2_2-piecewise-078",
+    "v2_2-piecewise-079",
+    "v2_2-piecewise-081",
+    "v2_2-piecewise-086"
+  ],
+  "selected_point_count": 38,
+  "selection_reasons": {
+    "v2_2-piecewise-000": [
+      "family_anchor",
+      "original_naive_sum",
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-001": [
+      "family_anchor",
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-002": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-003": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-005": [
+      "joint_segmentation_loss_bracket"
+    ],
+    "v2_2-piecewise-006": [
+      "joint_segmentation_loss_bracket"
+    ],
+    "v2_2-piecewise-013": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-014": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-021": [
+      "family_anchor"
+    ],
+    "v2_2-piecewise-022": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-023": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-024": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-025": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-026": [
+      "joint_focus_mse_bracket",
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-027": [
+      "joint_focus_mse_bracket",
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-028": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-029": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-030": [
+      "joint_segmentation_loss_bracket",
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-031": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-032": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-033": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-034": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-035": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-036": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-037": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-038": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-039": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-040": [
+      "soft_envelope_guard_band"
+    ],
+    "v2_2-piecewise-050": [
+      "family_anchor"
+    ],
+    "v2_2-piecewise-055": [
+      "family_anchor"
+    ],
+    "v2_2-piecewise-064": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-068": [
+      "joint_segmentation_loss_bracket"
+    ],
+    "v2_2-piecewise-069": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-070": [
+      "soft_envelope_guard_band",
+      "soft_nondominated"
+    ],
+    "v2_2-piecewise-078": [
+      "joint_focus_mse_bracket"
+    ],
+    "v2_2-piecewise-079": [
+      "family_anchor"
+    ],
+    "v2_2-piecewise-081": [
+      "family_anchor"
+    ],
+    "v2_2-piecewise-086": [
+      "joint_focus_mse_bracket"
+    ]
+  },
+  "all_selected_pass_physical_gates": true,
+  "physical_diagnostics": [
+    {
+      "name": "v2_2-piecewise-000",
+      "phase_rms_radians": 2.1969533700881994,
+      "minimum_support_energy_fraction": 0.997222363948822,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.997222363948822,
+        "-4.0": 0.9972469806671143,
+        "-2.0": 0.9972667694091797,
+        "0.0": 0.9972817301750183,
+        "2.0": 0.9972922801971436,
+        "4.0": 0.9972983002662659,
+        "6.0": 0.9973001480102539
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22386503641518551,
+        "16_levels": 0.11367321643731812
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-001",
+      "phase_rms_radians": 1.3242679254580403,
+      "minimum_support_energy_fraction": 0.9972445964813232,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972445964813232,
+        "-4.0": 0.9972651600837708,
+        "-2.0": 0.9972810745239258,
+        "0.0": 0.9972921013832092,
+        "2.0": 0.9972989559173584,
+        "4.0": 0.9973011612892151,
+        "6.0": 0.9972992539405823
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22709859257280507,
+        "16_levels": 0.11390273292892455
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-002",
+      "phase_rms_radians": 1.2594804292251223,
+      "minimum_support_energy_fraction": 0.9972481727600098,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972481727600098,
+        "-4.0": 0.9972680807113647,
+        "-2.0": 0.9972834587097168,
+        "0.0": 0.9972944855690002,
+        "2.0": 0.9973011016845703,
+        "4.0": 0.9973030090332031,
+        "6.0": 0.9973011016845703
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22571533402085592,
+        "16_levels": 0.11421214945684344
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-003",
+      "phase_rms_radians": 1.201640062335024,
+      "minimum_support_energy_fraction": 0.9972512722015381,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972512722015381,
+        "-4.0": 0.9972710609436035,
+        "-2.0": 0.9972860813140869,
+        "0.0": 0.9972966313362122,
+        "2.0": 0.997302770614624,
+        "4.0": 0.9973046779632568,
+        "6.0": 0.9973021745681763
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22183901249036797,
+        "16_levels": 0.11290351107461605
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-005",
+      "phase_rms_radians": 1.1110184691683407,
+      "minimum_support_energy_fraction": 0.9972572922706604,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972572922706604,
+        "-4.0": 0.9972764253616333,
+        "-2.0": 0.9972906112670898,
+        "0.0": 0.9973008632659912,
+        "2.0": 0.9973063468933105,
+        "4.0": 0.9973075985908508,
+        "6.0": 0.9973047971725464
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22499234792612102,
+        "16_levels": 0.113838498311886
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-006",
+      "phase_rms_radians": 1.0803413120168937,
+      "minimum_support_energy_fraction": 0.9972600936889648,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972600936889648,
+        "-4.0": 0.9972789287567139,
+        "-2.0": 0.9972929954528809,
+        "0.0": 0.9973026514053345,
+        "2.0": 0.9973080158233643,
+        "4.0": 0.9973090887069702,
+        "6.0": 0.9973058700561523
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22134216657562752,
+        "16_levels": 0.11456112133325955
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-013",
+      "phase_rms_radians": 1.182266391581175,
+      "minimum_support_energy_fraction": 0.9972768425941467,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972768425941467,
+        "-4.0": 0.9972933530807495,
+        "-2.0": 0.997305154800415,
+        "0.0": 0.9973130226135254,
+        "2.0": 0.9973163604736328,
+        "4.0": 0.9973157644271851,
+        "6.0": 0.9973107576370239
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22667495106052843,
+        "16_levels": 0.11269740800371576
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-014",
+      "phase_rms_radians": 1.2372828816021504,
+      "minimum_support_energy_fraction": 0.9972787499427795,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972787499427795,
+        "-4.0": 0.9972947835922241,
+        "-2.0": 0.9973065853118896,
+        "0.0": 0.997313916683197,
+        "2.0": 0.9973171949386597,
+        "4.0": 0.9973160624504089,
+        "6.0": 0.997310996055603
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22701434693287909,
+        "16_levels": 0.11342821290120385
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-021",
+      "phase_rms_radians": 1.778725379900058,
+      "minimum_support_energy_fraction": 0.9972869157791138,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972869157791138,
+        "-4.0": 0.9973011016845703,
+        "-2.0": 0.997310996055603,
+        "0.0": 0.9973165988922119,
+        "2.0": 0.997317910194397,
+        "4.0": 0.9973152875900269,
+        "6.0": 0.9973081350326538
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2324163898704622,
+        "16_levels": 0.11233397094210956
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-022",
+      "phase_rms_radians": 1.325536845237397,
+      "minimum_support_energy_fraction": 0.9972437620162964,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972437620162964,
+        "-4.0": 0.9972643852233887,
+        "-2.0": 0.9972802400588989,
+        "0.0": 0.997291624546051,
+        "2.0": 0.9972985982894897,
+        "4.0": 0.9973012208938599,
+        "6.0": 0.9972995519638062
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22767650982756785,
+        "16_levels": 0.11376613472020936
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-023",
+      "phase_rms_radians": 1.3327526543407757,
+      "minimum_support_energy_fraction": 0.9972426891326904,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972426891326904,
+        "-4.0": 0.9972635507583618,
+        "-2.0": 0.997279703617096,
+        "0.0": 0.9972912073135376,
+        "2.0": 0.9972983598709106,
+        "4.0": 0.9973011016845703,
+        "6.0": 0.9972996711730957
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22685242468709396,
+        "16_levels": 0.11340252445754656
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-024",
+      "phase_rms_radians": 1.3458197008174453,
+      "minimum_support_energy_fraction": 0.997241735458374,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.997241735458374,
+        "-4.0": 0.9972626566886902,
+        "-2.0": 0.9972789287567139,
+        "0.0": 0.9972907304763794,
+        "2.0": 0.9972982406616211,
+        "4.0": 0.9973011612892151,
+        "6.0": 0.9972997903823853
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22407899936503078,
+        "16_levels": 0.11291409512393359
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-025",
+      "phase_rms_radians": 1.3645699016356163,
+      "minimum_support_energy_fraction": 0.9972406029701233,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972406029701233,
+        "-4.0": 0.9972618222236633,
+        "-2.0": 0.9972783923149109,
+        "0.0": 0.9972902536392212,
+        "2.0": 0.9972977638244629,
+        "4.0": 0.997300922870636,
+        "6.0": 0.9972999691963196
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2240079317999668,
+        "16_levels": 0.11253350374099494
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-026",
+      "phase_rms_radians": 1.3887730864604257,
+      "minimum_support_energy_fraction": 0.9972394108772278,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972394108772278,
+        "-4.0": 0.9972609877586365,
+        "-2.0": 0.9972777366638184,
+        "0.0": 0.9972898364067078,
+        "2.0": 0.9972975254058838,
+        "4.0": 0.9973008632659912,
+        "6.0": 0.99729984998703
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22644528335776296,
+        "16_levels": 0.11385767789253919
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-027",
+      "phase_rms_radians": 1.418150088950144,
+      "minimum_support_energy_fraction": 0.9972386360168457,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972386360168457,
+        "-4.0": 0.9972600936889648,
+        "-2.0": 0.9972769618034363,
+        "0.0": 0.9972894191741943,
+        "2.0": 0.9972972869873047,
+        "4.0": 0.9973007440567017,
+        "6.0": 0.9972997903823853
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2271440790976803,
+        "16_levels": 0.11274139592118755
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-028",
+      "phase_rms_radians": 1.452386995186644,
+      "minimum_support_energy_fraction": 0.9972373247146606,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972373247146606,
+        "-4.0": 0.997259259223938,
+        "-2.0": 0.9972764253616333,
+        "0.0": 0.9972889423370361,
+        "2.0": 0.9972971081733704,
+        "4.0": 0.9973006248474121,
+        "6.0": 0.9973000288009644
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22365480830001616,
+        "16_levels": 0.11278707081165458
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-029",
+      "phase_rms_radians": 1.4911490913623555,
+      "minimum_support_energy_fraction": 0.997236430644989,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.997236430644989,
+        "-4.0": 0.9972585439682007,
+        "-2.0": 0.997275710105896,
+        "0.0": 0.9972884654998779,
+        "2.0": 0.9972968101501465,
+        "4.0": 0.9973006844520569,
+        "6.0": 0.9973002672195435
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22273530746793893,
+        "16_levels": 0.11257359409873485
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-030",
+      "phase_rms_radians": 1.5340934004941718,
+      "minimum_support_energy_fraction": 0.9972352981567383,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972352981567383,
+        "-4.0": 0.9972575902938843,
+        "-2.0": 0.9972749948501587,
+        "0.0": 0.9972881078720093,
+        "2.0": 0.9972965717315674,
+        "4.0": 0.9973006248474121,
+        "6.0": 0.997300386428833
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.224422748308614,
+        "16_levels": 0.11255292693778546
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-031",
+      "phase_rms_radians": 1.5808791320320057,
+      "minimum_support_energy_fraction": 0.9972344040870667,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972344040870667,
+        "-4.0": 0.9972567558288574,
+        "-2.0": 0.9972745776176453,
+        "0.0": 0.9972877502441406,
+        "2.0": 0.9972962141036987,
+        "4.0": 0.9973006248474121,
+        "6.0": 0.9973003268241882
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2235579120346982,
+        "16_levels": 0.11383714525521248
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-032",
+      "phase_rms_radians": 1.6311757779694582,
+      "minimum_support_energy_fraction": 0.9972333908081055,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972333908081055,
+        "-4.0": 0.9972561001777649,
+        "-2.0": 0.9972741007804871,
+        "0.0": 0.9972872734069824,
+        "2.0": 0.9972960948944092,
+        "4.0": 0.997300386428833,
+        "6.0": 0.9973006844520569
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22302945442206618,
+        "16_levels": 0.11350870618025403
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-033",
+      "phase_rms_radians": 1.6846689072514422,
+      "minimum_support_energy_fraction": 0.9972322583198547,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972322583198547,
+        "-4.0": 0.9972550868988037,
+        "-2.0": 0.997273325920105,
+        "0.0": 0.9972867965698242,
+        "2.0": 0.9972957372665405,
+        "4.0": 0.9973004460334778,
+        "6.0": 0.9973006844520569
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22592396702706363,
+        "16_levels": 0.11353375263256539
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-034",
+      "phase_rms_radians": 1.7410639147862363,
+      "minimum_support_energy_fraction": 0.9972312450408936,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972312450408936,
+        "-4.0": 0.9972544312477112,
+        "-2.0": 0.997272789478302,
+        "0.0": 0.997286319732666,
+        "2.0": 0.997295618057251,
+        "4.0": 0.9973005056381226,
+        "6.0": 0.9973008036613464
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22928852027546445,
+        "16_levels": 0.11234660252794428
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-035",
+      "phase_rms_radians": 1.8000880821691152,
+      "minimum_support_energy_fraction": 0.9972302913665771,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972302913665771,
+        "-4.0": 0.9972535967826843,
+        "-2.0": 0.9972720742225647,
+        "0.0": 0.9972859025001526,
+        "2.0": 0.9972952604293823,
+        "4.0": 0.9973002672195435,
+        "6.0": 0.9973009824752808
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22751730710479143,
+        "16_levels": 0.11300215752556471
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-036",
+      "phase_rms_radians": 1.861491329995736,
+      "minimum_support_energy_fraction": 0.9972289800643921,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972289800643921,
+        "-4.0": 0.9972525835037231,
+        "-2.0": 0.9972712993621826,
+        "0.0": 0.9972853660583496,
+        "2.0": 0.9972949028015137,
+        "4.0": 0.9973000288009644,
+        "6.0": 0.9973009824752808
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2259162389736738,
+        "16_levels": 0.11299779134017583
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-037",
+      "phase_rms_radians": 1.925046014934918,
+      "minimum_support_energy_fraction": 0.9972277283668518,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972277283668518,
+        "-4.0": 0.9972516298294067,
+        "-2.0": 0.9972705841064453,
+        "0.0": 0.9972847700119019,
+        "2.0": 0.997294545173645,
+        "4.0": 0.9972997903823853,
+        "6.0": 0.9973008632659912
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22676998087407105,
+        "16_levels": 0.11383466535071976
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-038",
+      "phase_rms_radians": 1.990546072682023,
+      "minimum_support_energy_fraction": 0.9972265958786011,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972265958786011,
+        "-4.0": 0.9972503781318665,
+        "-2.0": 0.9972695112228394,
+        "0.0": 0.9972840547561646,
+        "2.0": 0.9972938299179077,
+        "4.0": 0.9972995519638062,
+        "6.0": 0.9973008632659912
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22805537962731237,
+        "16_levels": 0.11281310266839144
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-039",
+      "phase_rms_radians": 2.0578057476857103,
+      "minimum_support_energy_fraction": 0.997225284576416,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.997225284576416,
+        "-4.0": 0.99724942445755,
+        "-2.0": 0.997268795967102,
+        "0.0": 0.9972832202911377,
+        "2.0": 0.9972935318946838,
+        "4.0": 0.9972992539405823,
+        "6.0": 0.9973005056381226
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2259566831387002,
+        "16_levels": 0.11357702443703968
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-040",
+      "phase_rms_radians": 2.1266580926026566,
+      "minimum_support_energy_fraction": 0.9972237944602966,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972237944602966,
+        "-4.0": 0.9972481727600098,
+        "-2.0": 0.9972677230834961,
+        "0.0": 0.9972826242446899,
+        "2.0": 0.9972927570343018,
+        "4.0": 0.9972987174987793,
+        "6.0": 0.997300386428833
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22374378660390734,
+        "16_levels": 0.1146126990449579
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-050",
+      "phase_rms_radians": 2.4974999999999996,
+      "minimum_support_energy_fraction": 0.9972303509712219,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972303509712219,
+        "-4.0": 0.9972543120384216,
+        "-2.0": 0.9972735643386841,
+        "0.0": 0.997287929058075,
+        "2.0": 0.9972977042198181,
+        "4.0": 0.9973035454750061,
+        "6.0": 0.9973047971725464
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22476671867993137,
+        "16_levels": 0.11342421760985542
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-055",
+      "phase_rms_radians": 2.4975000000000005,
+      "minimum_support_energy_fraction": 0.9972800016403198,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972800016403198,
+        "-4.0": 0.997295618057251,
+        "-2.0": 0.9973068833351135,
+        "0.0": 0.997313916683197,
+        "2.0": 0.997316837310791,
+        "4.0": 0.9973152279853821,
+        "6.0": 0.9973099231719971
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2279340187696282,
+        "16_levels": 0.11379437789804563
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-064",
+      "phase_rms_radians": 1.4778329894764688,
+      "minimum_support_energy_fraction": 0.9972686767578125,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972686767578125,
+        "-4.0": 0.9972867965698242,
+        "-2.0": 0.9973002672195435,
+        "0.0": 0.9973093271255493,
+        "2.0": 0.9973143339157104,
+        "4.0": 0.9973148703575134,
+        "6.0": 0.9973113536834717
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22350440351508397,
+        "16_levels": 0.11284463939598713
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-068",
+      "phase_rms_radians": 0.9932009440935302,
+      "minimum_support_energy_fraction": 0.9972644448280334,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972644448280334,
+        "-4.0": 0.9972822666168213,
+        "-2.0": 0.9972954988479614,
+        "0.0": 0.9973040819168091,
+        "2.0": 0.997308611869812,
+        "4.0": 0.9973087906837463,
+        "6.0": 0.9973047971725464
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22046534116812647,
+        "16_levels": 0.11289531152064354
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-069",
+      "phase_rms_radians": 1.320344493944691,
+      "minimum_support_energy_fraction": 0.9972559809684753,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972559809684753,
+        "-4.0": 0.997275710105896,
+        "-2.0": 0.9972904920578003,
+        "0.0": 0.9973013401031494,
+        "2.0": 0.997307538986206,
+        "4.0": 0.9973096251487732,
+        "6.0": 0.997307300567627
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22859313497589548,
+        "16_levels": 0.11406093178872814
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-070",
+      "phase_rms_radians": 1.6477150275661494,
+      "minimum_support_energy_fraction": 0.9972511529922485,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972511529922485,
+        "-4.0": 0.9972719550132751,
+        "-2.0": 0.9972878098487854,
+        "0.0": 0.9972994923591614,
+        "2.0": 0.9973066449165344,
+        "4.0": 0.9973095655441284,
+        "6.0": 0.9973081350326538
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22545087863756758,
+        "16_levels": 0.11465528341161356
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-078",
+      "phase_rms_radians": 2.4063075186686476,
+      "minimum_support_energy_fraction": 0.9971942901611328,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9971942901611328,
+        "-4.0": 0.9972221851348877,
+        "-2.0": 0.9972448348999023,
+        "0.0": 0.9972628355026245,
+        "2.0": 0.9972759485244751,
+        "4.0": 0.9972846508026123,
+        "6.0": 0.997288703918457
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22631726325524373,
+        "16_levels": 0.11326853508858953
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-079",
+      "phase_rms_radians": 2.4975,
+      "minimum_support_energy_fraction": 0.9972032308578491,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972032308578491,
+        "-4.0": 0.9972301721572876,
+        "-2.0": 0.9972519874572754,
+        "0.0": 0.9972691535949707,
+        "2.0": 0.9972816705703735,
+        "4.0": 0.997289776802063,
+        "6.0": 0.9972933530807495
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22858117826606847,
+        "16_levels": 0.11367643438880012
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-081",
+      "phase_rms_radians": 1.9864018881870604,
+      "minimum_support_energy_fraction": 0.9971911907196045,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9971911907196045,
+        "-4.0": 0.9972178936004639,
+        "-2.0": 0.9972395896911621,
+        "0.0": 0.9972564578056335,
+        "2.0": 0.997268557548523,
+        "4.0": 0.9972758293151855,
+        "6.0": 0.9972784519195557
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2257906230412871,
+        "16_levels": 0.11324070357664454
+      },
+      "passed": true
+    },
+    {
+      "name": "v2_2-piecewise-086",
+      "phase_rms_radians": 2.4975000000000005,
+      "minimum_support_energy_fraction": 0.9971902370452881,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9971902370452881,
+        "-4.0": 0.9972187280654907,
+        "-2.0": 0.997241735458374,
+        "0.0": 0.9972599744796753,
+        "2.0": 0.9972735047340393,
+        "4.0": 0.9972826242446899,
+        "6.0": 0.9972872734069824
+      },
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22451723352857664,
+        "16_levels": 0.11222837111964239
+      },
+      "passed": true
+    }
+  ],
+  "points": [
+    {
+      "phase_coefficients": [
+        -1.6526159718632698,
+        0.5757581293582916,
+        -0.14440353959798813,
+        -1.1686612563207746,
+        0.019792713224887848,
+        0.15224777907133102,
+        0.594789445400238
+      ],
+      "phase_rms_radians": 2.1969533700881994,
+      "was_projected": false,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": true,
+      "aliases": [
+        {
+          "family": "original_naive_sum",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 1.0
+          },
+          "anchor": true,
+          "original_naive_sum": true
+        },
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.0
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-000",
+      "parameters": [
+        -1.385189175605774,
+        0.4825887978076935,
+        -0.1210361197590828,
+        -0.9795481562614441,
+        0.016589850187301636,
+        0.12761099636554718,
+        0.498540461063385
+      ],
+      "segmentation_loss": 1.122482642531395,
+      "focus_mse": 1.4591219425201416,
+      "photon_mean": 197.91756057739258
+    },
+    {
+      "phase_coefficients": [
+        0.10410290211439133,
+        0.3739585876464844,
+        -0.18416573107242584,
+        -1.1596492528915405,
+        0.08400072157382965,
+        0.1952987164258957,
+        0.4232044219970703
+      ],
+      "phase_rms_radians": 1.3242679254580403,
+      "was_projected": false,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.0
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        },
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.0
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 0.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-001",
+      "parameters": [
+        0.04909468814730644,
+        0.17635799944400787,
+        -0.08685213327407837,
+        -0.5468878746032715,
+        0.03961454704403877,
+        0.09210242331027985,
+        0.19958221912384033
+      ],
+      "segmentation_loss": 1.090270310640335,
+      "focus_mse": 4.598340809345245,
+      "photon_mean": 198.3368682861328
+    },
+    {
+      "phase_coefficients": [
+        0.011061813309788698,
+        0.3653506353497505,
+        -0.17296933494508265,
+        -1.1021173904184252,
+        0.07659028507769107,
+        0.18338123373687268,
+        0.41062345206737516
+      ],
+      "phase_rms_radians": 1.2594804292251223,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.05
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-002",
+      "parameters": [
+        0.005122248083353043,
+        0.1691780984401703,
+        -0.08009462803602219,
+        -0.5103429555892944,
+        0.035465653985738754,
+        0.08491592854261398,
+        0.19014199078083038
+      ],
+      "segmentation_loss": 1.0909053832292557,
+      "focus_mse": 4.6485565304756165,
+      "photon_mean": 198.39422607421875
+    },
+    {
+      "phase_coefficients": [
+        -0.08197927549481393,
+        0.3567426830530167,
+        -0.1617729388177395,
+        -1.04458552794531,
+        0.0691798485815525,
+        0.17146375104784967,
+        0.39804248213768006
+      ],
+      "phase_rms_radians": 1.201640062335024,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.1
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-003",
+      "parameters": [
+        -0.03739464655518532,
+        0.16272729635238647,
+        -0.07379233092069626,
+        -0.47648513317108154,
+        0.03155621886253357,
+        0.07821276783943176,
+        0.18156610429286957
+      ],
+      "segmentation_loss": 1.0927114933729172,
+      "focus_mse": 4.635366201400757,
+      "photon_mean": 198.44827270507812
+    },
+    {
+      "phase_coefficients": [
+        -0.17502036429941653,
+        0.34813473075628276,
+        -0.1505765426903963,
+        -0.9870536654721945,
+        0.06176941208541393,
+        0.15954626835882663,
+        0.3854615122079849
+      ],
+      "phase_rms_radians": 1.1517939059654763,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.15
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-004",
+      "parameters": [
+        -0.0788782611489296,
+        0.15689751505851746,
+        -0.06786190718412399,
+        -0.4448457956314087,
+        0.027838267385959625,
+        0.07190438359975815,
+        0.17371997237205505
+      ],
+      "segmentation_loss": 1.0947862416505814,
+      "focus_mse": 4.614653944969177,
+      "photon_mean": 198.4987907409668
+    },
+    {
+      "phase_coefficients": [
+        -0.2680614531040192,
+        0.339526778459549,
+        -0.13938014656305314,
+        -0.9295218029990793,
+        0.05435897558927537,
+        0.1476287856698036,
+        0.3728805422782898
+      ],
+      "phase_rms_radians": 1.1110184691683407,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.2
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-005",
+      "parameters": [
+        -0.11969369649887085,
+        0.15160410106182098,
+        -0.06223544850945473,
+        -0.41504624485969543,
+        0.024272145703434944,
+        0.06591859459877014,
+        0.16649708151817322
+      ],
+      "segmentation_loss": 1.0953981429338455,
+      "focus_mse": 4.5606619119644165,
+      "photon_mean": 198.54547882080078
+    },
+    {
+      "phase_coefficients": [
+        -0.3611025419086218,
+        0.3309188261628151,
+        -0.12818375043570995,
+        -0.8719899405259639,
+        0.04694853909313679,
+        0.1357113029807806,
+        0.36029957234859467
+      ],
+      "phase_rms_radians": 1.0803413120168937,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-006",
+      "parameters": [
+        -0.16016823053359985,
+        0.1467801332473755,
+        -0.05685632675886154,
+        -0.3867740035057068,
+        0.02082417905330658,
+        0.0601951964199543,
+        0.1598120629787445
+      ],
+      "segmentation_loss": 1.0965242087841034,
+      "focus_mse": 4.3941996693611145,
+      "photon_mean": 198.58810424804688
+    },
+    {
+      "phase_coefficients": [
+        -0.4541436307132244,
+        0.3223108738660812,
+        -0.11698735430836676,
+        -0.8144580780528485,
+        0.039538102596998206,
+        0.12379382029175759,
+        0.3477186024188995
+      ],
+      "phase_rms_radians": 1.0606390227928015,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.3
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-007",
+      "parameters": [
+        -0.20060621201992035,
+        0.1423725038766861,
+        -0.05167614296078682,
+        -0.35976582765579224,
+        0.017464935779571533,
+        0.05468272417783737,
+        0.1535957157611847
+      ],
+      "segmentation_loss": 1.100253865122795,
+      "focus_mse": 4.062090814113617,
+      "photon_mean": 198.62639999389648
+    },
+    {
+      "phase_coefficients": [
+        -0.547184719517827,
+        0.31370292156934737,
+        -0.1057909581810236,
+        -0.7569262155797333,
+        0.032127666100859646,
+        0.11187633760273456,
+        0.33513763248920436
+      ],
+      "phase_rms_radians": 1.0525280981972032,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.35
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-008",
+      "parameters": [
+        -0.24130156636238098,
+        0.13833902776241302,
+        -0.046652477234601974,
+        -0.3337949216365814,
+        0.014167895540595055,
+        0.04933605343103409,
+        0.14779147505760193
+      ],
+      "segmentation_loss": 1.1058034598827362,
+      "focus_mse": 3.5151588916778564,
+      "photon_mean": 198.6600685119629
+    },
+    {
+      "phase_coefficients": [
+        -0.6402258083224297,
+        0.30509496927261354,
+        -0.09459456205368041,
+        -0.6993943531066179,
+        0.024717229604721065,
+        0.09995885491371155,
+        0.3225566625595093
+      ],
+      "phase_rms_radians": 1.0562755951557528,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.4
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-009",
+      "parameters": [
+        -0.2825486958026886,
+        0.13464653491973877,
+        -0.04174710065126419,
+        -0.3086613714694977,
+        0.010908371768891811,
+        0.044114504009485245,
+        0.1423528492450714
+      ],
+      "segmentation_loss": 1.1108426451683044,
+      "focus_mse": 2.8944949209690094,
+      "photon_mean": 198.68882751464844
+    },
+    {
+      "phase_coefficients": [
+        -0.7332668971270323,
+        0.2964870169758797,
+        -0.08339816592633725,
+        -0.6418624906335026,
+        0.0173067931085825,
+        0.08804137222468854,
+        0.30997569262981417
+      ],
+      "phase_rms_radians": 1.0717571287152345,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.45
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-010",
+      "parameters": [
+        -0.3246535062789917,
+        0.1312694549560547,
+        -0.036924488842487335,
+        -0.2841842472553253,
+        0.007662572897970676,
+        0.03898026794195175,
+        0.13724155724048615
+      ],
+      "segmentation_loss": 1.1141636371612549,
+      "focus_mse": 2.3343553245067596,
+      "photon_mean": 198.7122802734375
+    },
+    {
+      "phase_coefficients": [
+        -0.8263079859316349,
+        0.2878790646791458,
+        -0.07220176979899406,
+        -0.5843306281603873,
+        0.009896356612443924,
+        0.07612388953566551,
+        0.297394722700119
+      ],
+      "phase_rms_radians": 1.0984766850440997,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-011",
+      "parameters": [
+        -0.367944598197937,
+        0.12818893790245056,
+        -0.032150544226169586,
+        -0.2601951062679291,
+        0.0044067236594855785,
+        0.03389701619744301,
+        0.13242614269256592
+      ],
+      "segmentation_loss": 1.1170701384544373,
+      "focus_mse": 1.9365972429513931,
+      "photon_mean": 198.73008346557617
+    },
+    {
+      "phase_coefficients": [
+        -0.9193490747362376,
+        0.279271112382412,
+        -0.061005373671650875,
+        -0.5267987656872719,
+        0.002485920116305343,
+        0.06420640684664247,
+        0.28481375277042387
+      ],
+      "phase_rms_radians": 1.1356413108117767,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.55
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-012",
+      "parameters": [
+        -0.41278666257858276,
+        0.12539240717887878,
+        -0.02739134058356285,
+        -0.2365320324897766,
+        0.0011161752045154572,
+        0.02882860042154789,
+        0.1278810352087021
+      ],
+      "segmentation_loss": 1.1195441484451294,
+      "focus_mse": 1.700568050146103,
+      "photon_mean": 198.7419319152832
+    },
+    {
+      "phase_coefficients": [
+        -1.01239016354084,
+        0.2706631600856781,
+        -0.049808977544307714,
+        -0.46926690321415665,
+        -0.004924516379833217,
+        0.052288924157619474,
+        0.27223278284072877
+      ],
+      "phase_rms_radians": 1.182266391581175,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.6
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-013",
+      "parameters": [
+        -0.45959627628326416,
+        0.12287335842847824,
+        -0.02261185646057129,
+        -0.2130337953567505,
+        -0.0022355900146067142,
+        0.023737682029604912,
+        0.12358592450618744
+      ],
+      "segmentation_loss": 1.1219878792762756,
+      "focus_mse": 1.5921819061040878,
+      "photon_mean": 198.74761581420898
+    },
+    {
+      "phase_coefficients": [
+        -1.1054312523454428,
+        0.26205520778894426,
+        -0.038612581416964525,
+        -0.4117350407410413,
+        -0.012334952875971798,
+        0.04037144146859646,
+        0.2596518129110336
+      ],
+      "phase_rms_radians": 1.2372828816021504,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.65
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-014",
+      "parameters": [
+        -0.5088627934455872,
+        0.12063179165124893,
+        -0.017774516716599464,
+        -0.18953385949134827,
+        -0.005678144749253988,
+        0.018584173172712326,
+        0.11952544003725052
+      ],
+      "segmentation_loss": 1.124888837337494,
+      "focus_mse": 1.5804363042116165,
+      "photon_mean": 198.74708938598633
+    },
+    {
+      "phase_coefficients": [
+        -1.1984723411500453,
+        0.25344725549221037,
+        -0.02741618528962136,
+        -0.354203178267926,
+        -0.019745389372110362,
+        0.02845395877957345,
+        0.2470708429813385
+      ],
+      "phase_rms_radians": 1.2996255276626165,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.7
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-015",
+      "parameters": [
+        -0.5611761808395386,
+        0.1186748817563057,
+        -0.012837435118854046,
+        -0.1658531278371811,
+        -0.009245638735592365,
+        0.013323364779353142,
+        0.11568917334079742
+      ],
+      "segmentation_loss": 1.1282045543193817,
+      "focus_mse": 1.651289165019989,
+      "photon_mean": 198.74048614501953
+    },
+    {
+      "phase_coefficients": [
+        -1.291513429954648,
+        0.24483930319547653,
+        -0.016219789162278175,
+        -0.29667131579481065,
+        -0.02715582586824894,
+        0.016536476090550423,
+        0.23448987305164337
+      ],
+      "phase_rms_radians": 1.3682933054729949,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-016",
+      "parameters": [
+        -0.6172658801078796,
+        0.11701849102973938,
+        -0.007752085570245981,
+        -0.14179107546806335,
+        -0.012978854589164257,
+        0.007903442718088627,
+        0.11207208782434464
+      ],
+      "segmentation_loss": 1.1318218111991882,
+      "focus_mse": 1.7660749852657318,
+      "photon_mean": 198.72809600830078
+    },
+    {
+      "phase_coefficients": [
+        -1.3845545187592507,
+        0.23623135089874267,
+        -0.005023393034934993,
+        -0.23913945332169528,
+        -0.03456626236438752,
+        0.0046189934015273965,
+        0.22190890312194822
+      ],
+      "phase_rms_radians": 1.4423831328933936,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.8
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-017",
+      "parameters": [
+        -0.6780574321746826,
+        0.11568950116634369,
+        -0.0024601046461611986,
+        -0.11711367964744568,
+        -0.01692812331020832,
+        0.0022620579693466425,
+        0.10867536813020706
+      ],
+      "segmentation_loss": 1.1355087757110596,
+      "focus_mse": 1.8829966336488724,
+      "photon_mean": 198.71025466918945
+    },
+    {
+      "phase_coefficients": [
+        -1.4775956075638532,
+        0.2276233986020088,
+        0.006173003092408175,
+        -0.18160759084858002,
+        -0.04197669886052608,
+        -0.0072984892874956055,
+        0.20932793319225312
+      ],
+      "phase_rms_radians": 1.5211029251539072,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.85
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-018",
+      "parameters": [
+        -0.744756817817688,
+        0.11472968012094498,
+        0.0031113966833800077,
+        -0.09153620153665543,
+        -0.021157637238502502,
+        -0.0036786787677556276,
+        0.10550816357135773
+      ],
+      "segmentation_loss": 1.1386165022850037,
+      "focus_mse": 1.9907570034265518,
+      "photon_mean": 198.68739700317383
+    },
+    {
+      "phase_coefficients": [
+        -1.570636696368456,
+        0.21901544630527497,
+        0.017369399219751364,
+        -0.12407572837546466,
+        -0.04938713535666466,
+        -0.01921597197651864,
+        0.19674696326255797
+      ],
+      "phase_rms_radians": 1.6037710529784017,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.9
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-019",
+      "parameters": [
+        -0.8189826607704163,
+        0.11420200020074844,
+        0.00905698724091053,
+        -0.06469724327325821,
+        -0.025752108544111252,
+        -0.010019851848483086,
+        0.10259046405553818
+      ],
+      "segmentation_loss": 1.1417382657527924,
+      "focus_mse": 2.088523119688034,
+      "photon_mean": 198.65984725952148
+    },
+    {
+      "phase_coefficients": [
+        -1.6636777851730584,
+        0.2104074940085411,
+        0.028565795347094528,
+        -0.0665438659023494,
+        -0.05679757185280322,
+        -0.03113345466554164,
+        0.18416599333286288
+      ],
+      "phase_rms_radians": 1.6898081389419317,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 0.95
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-020",
+      "parameters": [
+        -0.9029801487922668,
+        0.11420107632875443,
+        0.015504412353038788,
+        -0.036117445677518845,
+        -0.030827531591057777,
+        -0.01689803972840309,
+        0.09995820373296738
+      ],
+      "segmentation_loss": 1.1449157893657684,
+      "focus_mse": 2.165773645043373,
+      "photon_mean": 198.62792587280273
+    },
+    {
+      "phase_coefficients": [
+        -1.7567188739776611,
+        0.20179954171180725,
+        0.039762191474437714,
+        -0.009012003429234028,
+        -0.0642080083489418,
+        -0.04305093735456467,
+        0.17158502340316772
+      ],
+      "phase_rms_radians": 1.778725379900058,
+      "was_projected": false,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "convex_interpolation",
+          "values": {
+            "t": 1.0
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-021",
+      "parameters": [
+        -0.9999879002571106,
+        0.11487159132957458,
+        0.022634075954556465,
+        -0.005129958037286997,
+        -0.03654951974749565,
+        -0.02450614981353283,
+        0.09767239540815353
+      ],
+      "segmentation_loss": 1.1482598781585693,
+      "focus_mse": 2.2495783120393753,
+      "photon_mean": 198.5918083190918
+    },
+    {
+      "phase_coefficients": [
+        0.016266958415508265,
+        0.3840485647320747,
+        -0.18217762149870395,
+        -1.1600998530630022,
+        0.08079032115638256,
+        0.19314616955816746,
+        0.4317836731672287
+      ],
+      "phase_rms_radians": 1.325536845237397,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.05
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-022",
+      "parameters": [
+        0.007674329914152622,
+        0.18118417263031006,
+        -0.08594668656587601,
+        -0.5473051071166992,
+        0.03811478242278099,
+        0.0911213606595993,
+        0.2037043571472168
+      ],
+      "segmentation_loss": 1.0903858542442322,
+      "focus_mse": 4.289132654666901,
+      "photon_mean": 198.33464431762695
+    },
+    {
+      "phase_coefficients": [
+        -0.0715689852833748,
+        0.3941385418176651,
+        -0.18018951192498206,
+        -1.160550453234464,
+        0.07757992073893547,
+        0.19099362269043924,
+        0.4403629243373871
+      ],
+      "phase_rms_radians": 1.3327526543407757,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.1
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-023",
+      "parameters": [
+        -0.03383670002222061,
+        0.18634256720542908,
+        -0.0851907953619957,
+        -0.5486901998519897,
+        0.036678578704595566,
+        0.09029880911111832,
+        0.2081967294216156
+      ],
+      "segmentation_loss": 1.0906207412481308,
+      "focus_mse": 3.837787926197052,
+      "photon_mean": 198.33092498779297
+    },
+    {
+      "phase_coefficients": [
+        -0.15940492898225783,
+        0.40422851890325545,
+        -0.1782014023512602,
+        -1.1610010534059256,
+        0.07436952032148839,
+        0.18884107582271098,
+        0.44894217550754545
+      ],
+      "phase_rms_radians": 1.3458197008174453,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.15
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-024",
+      "parameters": [
+        -0.07566072046756744,
+        0.1918649524450302,
+        -0.0845823660492897,
+        -0.5510631203651428,
+        0.03529910370707512,
+        0.08963242918252945,
+        0.21308806538581848
+      ],
+      "segmentation_loss": 1.0910315811634064,
+      "focus_mse": 3.338631272315979,
+      "photon_mean": 198.32563018798828
+    },
+    {
+      "phase_coefficients": [
+        -0.24724087268114092,
+        0.41431849598884585,
+        -0.1762132927775383,
+        -1.1614516535773873,
+        0.07115911990404129,
+        0.18668852895498275,
+        0.45752142667770385
+      ],
+      "phase_rms_radians": 1.3645699016356163,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.2
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-025",
+      "parameters": [
+        -0.11802920699119568,
+        0.19778963923454285,
+        -0.08412166684865952,
+        -0.5544601678848267,
+        0.03397032991051674,
+        0.08912239223718643,
+        0.2184140980243683
+      ],
+      "segmentation_loss": 1.0916130393743515,
+      "focus_mse": 2.9007208943367004,
+      "photon_mean": 198.3186798095703
+    },
+    {
+      "phase_coefficients": [
+        -0.33507681638002396,
+        0.4244084730744362,
+        -0.17422518320381641,
+        -1.161902253748849,
+        0.0679487194865942,
+        0.18453598208725452,
+        0.46610067784786224
+      ],
+      "phase_rms_radians": 1.3887730864604257,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-026",
+      "parameters": [
+        -0.1611894816160202,
+        0.20416268706321716,
+        -0.0838114321231842,
+        -0.5589357614517212,
+        0.03268688917160034,
+        0.08877146244049072,
+        0.22421881556510925
+      ],
+      "segmentation_loss": 1.0923560112714767,
+      "focus_mse": 2.5920826196670532,
+      "photon_mean": 198.30988311767578
+    },
+    {
+      "phase_coefficients": [
+        -0.422912760078907,
+        0.43449845016002653,
+        -0.17223707363009452,
+        -1.1623528539203107,
+        0.06473831906914711,
+        0.1823834352195263,
+        0.47467992901802064
+      ],
+      "phase_rms_radians": 1.418150088950144,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.3
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-027",
+      "parameters": [
+        -0.20541244745254517,
+        0.2110397219657898,
+        -0.08365706354379654,
+        -0.5645650029182434,
+        0.03144397214055061,
+        0.08858523517847061,
+        0.2305562049150467
+      ],
+      "segmentation_loss": 1.0932710766792297,
+      "focus_mse": 2.416768342256546,
+      "photon_mean": 198.29912185668945
+    },
+    {
+      "phase_coefficients": [
+        -0.51074870377779,
+        0.4445884272456169,
+        -0.17024896405637263,
+        -1.1628034540917724,
+        0.06152791865170002,
+        0.18023088835179807,
+        0.48325918018817904
+      ],
+      "phase_rms_radians": 1.452386995186644,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.35
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-028",
+      "parameters": [
+        -0.2510019540786743,
+        0.2184882014989853,
+        -0.08366701751947403,
+        -0.5714472532272339,
+        0.030237233266234398,
+        0.08857253193855286,
+        0.23749251663684845
+      ],
+      "segmentation_loss": 1.0942561775445938,
+      "focus_mse": 2.3331356942653656,
+      "photon_mean": 198.28625869750977
+    },
+    {
+      "phase_coefficients": [
+        -0.5985846474766732,
+        0.45467840433120726,
+        -0.16826085448265077,
+        -1.1632540542632341,
+        0.05831751823425293,
+        0.1780783414840698,
+        0.4918384313583374
+      ],
+      "phase_rms_radians": 1.4911490913623555,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.4
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-029",
+      "parameters": [
+        -0.29830676317214966,
+        0.2265905886888504,
+        -0.08385338634252548,
+        -0.5797117352485657,
+        0.02906274050474167,
+        0.08874596655368805,
+        0.2451094090938568
+      ],
+      "segmentation_loss": 1.0952253192663193,
+      "focus_mse": 2.3178765177726746,
+      "photon_mean": 198.27115631103516
+    },
+    {
+      "phase_coefficients": [
+        -0.6864205911755562,
+        0.46476838141679766,
+        -0.16627274490892888,
+        -1.1637046544346958,
+        0.05510711781680584,
+        0.17592579461634159,
+        0.5004176825284958
+      ],
+      "phase_rms_radians": 1.5340934004941718,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.45
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-030",
+      "parameters": [
+        -0.34773609042167664,
+        0.23544855415821075,
+        -0.08423265814781189,
+        -0.5895249843597412,
+        0.02791689708828926,
+        0.08912283182144165,
+        0.2535082697868347
+      ],
+      "segmentation_loss": 1.0962361991405487,
+      "focus_mse": 2.340477555990219,
+      "photon_mean": 198.25369262695312
+    },
+    {
+      "phase_coefficients": [
+        -0.7742565348744392,
+        0.474858358502388,
+        -0.16428463533520699,
+        -1.1641552546061575,
+        0.05189671739935875,
+        0.17377324774861336,
+        0.5089969336986542
+      ],
+      "phase_rms_radians": 1.5808791320320057,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-031",
+      "parameters": [
+        -0.3997805714607239,
+        0.24518895149230957,
+        -0.08482693135738373,
+        -0.6011013984680176,
+        0.026796415448188782,
+        0.08972629904747009,
+        0.26281610131263733
+      ],
+      "segmentation_loss": 1.0972359776496887,
+      "focus_mse": 2.3443512618541718,
+      "photon_mean": 198.23383331298828
+    },
+    {
+      "phase_coefficients": [
+        -0.8620924785733224,
+        0.48494833558797834,
+        -0.1622965257614851,
+        -1.1646058547776192,
+        0.048686316981911656,
+        0.17162070088088513,
+        0.5175761848688125
+      ],
+      "phase_rms_radians": 1.6311757779694582,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.55
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-032",
+      "parameters": [
+        -0.4550415575504303,
+        0.25597211718559265,
+        -0.08566559106111526,
+        -0.6147183179855347,
+        0.025698283687233925,
+        0.09058720618486404,
+        0.27319419384002686
+      ],
+      "segmentation_loss": 1.0983786284923553,
+      "focus_mse": 2.3167698681354523,
+      "photon_mean": 198.2115020751953
+    },
+    {
+      "phase_coefficients": [
+        -0.9499284222722053,
+        0.49503831267356874,
+        -0.1603084161877632,
+        -1.165056454949081,
+        0.04547591656446457,
+        0.1694681540131569,
+        0.526155436038971
+      ],
+      "phase_rms_radians": 1.6846689072514422,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.6
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-033",
+      "parameters": [
+        -0.5142725110054016,
+        0.26800400018692017,
+        -0.08678781986236572,
+        -0.6307386159896851,
+        0.02461976557970047,
+        0.09174671769142151,
+        0.28485018014907837
+      ],
+      "segmentation_loss": 1.0997564494609833,
+      "focus_mse": 2.266015946865082,
+      "photon_mean": 198.18678283691406
+    },
+    {
+      "phase_coefficients": [
+        -1.0377643659710885,
+        0.5051282897591591,
+        -0.15832030661404134,
+        -1.1655070551205426,
+        0.04226551614701748,
+        0.16731560714542865,
+        0.5347346872091293
+      ],
+      "phase_rms_radians": 1.7410639147862363,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.65
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-034",
+      "parameters": [
+        -0.5784405469894409,
+        0.2815539836883545,
+        -0.08824632316827774,
+        -0.6496431827545166,
+        0.023558421060442924,
+        0.09326022118330002,
+        0.29805633425712585
+      ],
+      "segmentation_loss": 1.101336196064949,
+      "focus_mse": 2.1913329362869263,
+      "photon_mean": 198.15970611572266
+    },
+    {
+      "phase_coefficients": [
+        -1.1256003096699714,
+        0.5152182668447495,
+        -0.15633219704031945,
+        -1.1659576552920043,
+        0.03905511572957039,
+        0.16516306027770042,
+        0.5433139383792878
+      ],
+      "phase_rms_radians": 1.8000880821691152,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.7
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-035",
+      "parameters": [
+        -0.6488193869590759,
+        0.2969825267791748,
+        -0.09011312574148178,
+        -0.672082245349884,
+        0.022512180730700493,
+        0.09520342200994492,
+        0.3131774365901947
+      ],
+      "segmentation_loss": 1.1032501310110092,
+      "focus_mse": 2.0992871820926666,
+      "photon_mean": 198.13043212890625
+    },
+    {
+      "phase_coefficients": [
+        -1.2134362533688545,
+        0.5253082439303398,
+        -0.15434408746659756,
+        -1.166408255463466,
+        0.0358447153121233,
+        0.1630105134099722,
+        0.5518931895494461
+      ],
+      "phase_rms_radians": 1.861491329995736,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-036",
+      "parameters": [
+        -0.7271366715431213,
+        0.3147844672203064,
+        -0.09248878806829453,
+        -0.698955774307251,
+        0.021479502320289612,
+        0.09768203645944595,
+        0.3307151794433594
+      ],
+      "segmentation_loss": 1.1056039780378342,
+      "focus_mse": 2.001074403524399,
+      "photon_mean": 198.09908294677734
+    },
+    {
+      "phase_coefficients": [
+        -1.3012721970677377,
+        0.5353982210159302,
+        -0.15235597789287567,
+        -1.1668588556349277,
+        0.032634314894676206,
+        0.16085796654224396,
+        0.5604724407196044
+      ],
+      "phase_rms_radians": 1.925046014934918,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.8
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-037",
+      "parameters": [
+        -0.8158169388771057,
+        0.33566147089004517,
+        -0.09551774710416794,
+        -0.7315480709075928,
+        0.020459691062569618,
+        0.10084796696901321,
+        0.35138145089149475
+      ],
+      "segmentation_loss": 1.1084994077682495,
+      "focus_mse": 1.8957268595695496,
+      "photon_mean": 198.0658416748047
+    },
+    {
+      "phase_coefficients": [
+        -1.3891081407666206,
+        0.5454881981015205,
+        -0.15036786831915377,
+        -1.1673094558063895,
+        0.02942391447722912,
+        0.15870541967451574,
+        0.5690516918897629
+      ],
+      "phase_rms_radians": 1.990546072682023,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.85
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-038",
+      "parameters": [
+        -0.9184045195579529,
+        0.3606478273868561,
+        -0.09941525012254715,
+        -0.771763026714325,
+        0.01945352926850319,
+        0.10492759943008423,
+        0.3762267529964447
+      ],
+      "segmentation_loss": 1.111812487244606,
+      "focus_mse": 1.7765020430088043,
+      "photon_mean": 198.03090286254883
+    },
+    {
+      "phase_coefficients": [
+        -1.4769440844655037,
+        0.555578175187111,
+        -0.1483797587454319,
+        -1.1677600559778512,
+        0.026213514059782027,
+        0.15655287280678748,
+        0.5776309430599212
+      ],
+      "phase_rms_radians": 2.0578057476857103,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.9
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-039",
+      "parameters": [
+        -1.040350317955017,
+        0.3913458287715912,
+        -0.10451778769493103,
+        -0.8225629925727844,
+        0.01846463792026043,
+        0.11027488112449646,
+        0.4068796634674072
+      ],
+      "segmentation_loss": 1.1152694672346115,
+      "focus_mse": 1.6479424238204956,
+      "photon_mean": 197.99443817138672
+    },
+    {
+      "phase_coefficients": [
+        -1.5647800281643867,
+        0.5656681522727013,
+        -0.14639164917171002,
+        -1.1682106561493129,
+        0.02300311364233494,
+        0.15440032593905925,
+        0.5862101942300797
+      ],
+      "phase_rms_radians": 2.1266580926026566,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 0.95
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-040",
+      "parameters": [
+        -1.1906009912490845,
+        0.43040236830711365,
+        -0.11138564348220825,
+        -0.8888614773750305,
+        0.017502479255199432,
+        0.11747924238443375,
+        0.4460322856903076
+      ],
+      "segmentation_loss": 1.1187779903411865,
+      "focus_mse": 1.5337131917476654,
+      "photon_mean": 197.95660400390625
+    },
+    {
+      "phase_coefficients": [
+        -1.740451915562153,
+        0.585848106443882,
+        -0.14241543002426624,
+        -1.1691118564922363,
+        0.016582312807440755,
+        0.1500952322036028,
+        0.6033686965703964
+      ],
+      "phase_rms_radians": 2.2685574486305007,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.05
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-041",
+      "parameters": [
+        -1.6567115783691406,
+        0.5576605200767517,
+        -0.13556323945522308,
+        -1.1128610372543335,
+        0.01578447036445141,
+        0.14287352561950684,
+        0.5743381381034851
+      ],
+      "segmentation_loss": 1.1266885697841644,
+      "focus_mse": 1.4260240942239761,
+      "photon_mean": 197.87744903564453
+    },
+    {
+      "phase_coefficients": [
+        -1.828287859261036,
+        0.5959380835294723,
+        -0.14042732045054435,
+        -1.169562456663698,
+        0.013371912389993662,
+        0.14794268533587457,
+        0.6119479477405548
+      ],
+      "phase_rms_radians": 2.3413502525289673,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.1
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-042",
+      "parameters": [
+        -2.0861313343048096,
+        0.6799831986427307,
+        -0.1602317839860916,
+        -1.3345057964324951,
+        0.015257752500474453,
+        0.1688070446252823,
+        0.698250949382782
+      ],
+      "segmentation_loss": 1.1309883892536163,
+      "focus_mse": 1.4247114807367325,
+      "photon_mean": 197.83635711669922
+    },
+    {
+      "phase_coefficients": [
+        -1.9161238029599188,
+        0.6060280606150628,
+        -0.13843921087682248,
+        -1.1700130568351597,
+        0.010161511972546583,
+        0.1457901384681463,
+        0.6205271989107132
+      ],
+      "phase_rms_radians": 2.4152243026649707,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.15
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-043",
+      "parameters": [
+        -2.968357563018799,
+        0.9388265609741211,
+        -0.21446269750595093,
+        -1.812522292137146,
+        0.015741676092147827,
+        0.22585035860538483,
+        0.9612878561019897
+      ],
+      "segmentation_loss": 1.1349297016859055,
+      "focus_mse": 1.4466855600476265,
+      "photon_mean": 197.7943229675293
+    },
+    {
+      "phase_coefficients": [
+        -2.003959746658802,
+        0.6161180377006531,
+        -0.1364511013031006,
+        -1.1704636570066214,
+        0.00695111155509949,
+        0.14363759160041809,
+        0.6291064500808716
+      ],
+      "phase_rms_radians": 2.490083367928679,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.2
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-044",
+      "parameters": [
+        -9.00851058959961,
+        2.7696692943573,
+        -0.613396167755127,
+        -5.2616496086120605,
+        0.031247714534401894,
+        0.6457019448280334,
+        2.828056812286377
+      ],
+      "segmentation_loss": 1.1383988857269287,
+      "focus_mse": 1.478949747979641,
+      "photon_mean": 197.7514305114746
+    },
+    {
+      "phase_coefficients": [
+        -2.0360806679059955,
+        0.6095289510688505,
+        -0.13088156710093293,
+        -1.1397269311746887,
+        0.003641077217389395,
+        0.13771658757399277,
+        0.620700929111908
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-045",
+      "parameters": [
+        -18.2158145904541,
+        5.453155994415283,
+        -1.1709331274032593,
+        -10.196577072143555,
+        0.03257492929697037,
+        1.2320826053619385,
+        5.553106307983398
+      ],
+      "segmentation_loss": 1.1396886855363846,
+      "focus_mse": 1.5020284727215767,
+      "photon_mean": 197.7645263671875
+    },
+    {
+      "phase_coefficients": [
+        -2.0600921760291118,
+        0.6014009405059773,
+        -0.12520944547924664,
+        -1.1071226624703252,
+        0.0005012264221574227,
+        0.1316909629284408,
+        0.610821274256732
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.3
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-046",
+      "parameters": [
+        -18.430633544921875,
+        5.380438804626465,
+        -1.1201874017715454,
+        -9.904882431030273,
+        0.004484226461499929,
+        1.178174376487732,
+        5.464717864990234
+      ],
+      "segmentation_loss": 1.140762284398079,
+      "focus_mse": 1.522266834974289,
+      "photon_mean": 197.78268814086914
+    },
+    {
+      "phase_coefficients": [
+        -2.0821751847295977,
+        0.5935665858575156,
+        -0.11982368456818661,
+        -1.0760573119850574,
+        -0.002461078744936377,
+        0.12596991137205465,
+        0.6013317958581959
+      ],
+      "phase_rms_radians": 2.4975,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.35
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-047",
+      "parameters": [
+        -18.628198623657227,
+        5.3103485107421875,
+        -1.0720036029815674,
+        -9.62695598602295,
+        -0.022018061950802803,
+        1.1269909143447876,
+        5.379820346832275
+      ],
+      "segmentation_loss": 1.1418468207120895,
+      "focus_mse": 1.5388489812612534,
+      "photon_mean": 197.79977798461914
+    },
+    {
+      "phase_coefficients": [
+        -2.102518660767573,
+        0.5860209180537105,
+        -0.11470743978322964,
+        -1.0464516522953102,
+        -0.005258288485703515,
+        0.12053547846860524,
+        0.5922209944158997
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.4
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-048",
+      "parameters": [
+        -18.81020164489746,
+        5.2428412437438965,
+        -1.0262311697006226,
+        -9.362089157104492,
+        -0.0470433235168457,
+        1.0783717632293701,
+        5.298310279846191
+      ],
+      "segmentation_loss": 1.142970785498619,
+      "focus_mse": 1.551548533141613,
+      "photon_mean": 197.8158721923828
+    },
+    {
+      "phase_coefficients": [
+        -2.1212909086694105,
+        0.5787571669612747,
+        -0.1098446039119145,
+        -1.0182280709938596,
+        -0.007901978835827455,
+        0.11537050206115688,
+        0.5834759951391816
+      ],
+      "phase_rms_radians": 2.4974999999999996,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.45
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-049",
+      "parameters": [
+        -18.978147506713867,
+        5.177855968475342,
+        -0.9827257394790649,
+        -9.109586715698242,
+        -0.07069512456655502,
+        1.0321632623672485,
+        5.220073223114014
+      ],
+      "segmentation_loss": 1.1441700011491776,
+      "focus_mse": 1.5605386421084404,
+      "photon_mean": 197.83102416992188
+    },
+    {
+      "phase_coefficients": [
+        -2.138641892764693,
+        0.5717672828455497,
+        -0.10521987455850577,
+        -0.9913113483754871,
+        -0.010402883602387352,
+        0.11045868258929371,
+        0.5750830607942877
+      ],
+      "phase_rms_radians": 2.4974999999999996,
+      "was_projected": true,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "focus_injection",
+          "values": {
+            "lambda": 1.5
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.0,
+            "focus_weight": 1.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-050",
+      "parameters": [
+        -19.133378982543945,
+        5.115321159362793,
+        -0.941350519657135,
+        -8.868775367736816,
+        -0.09306948632001877,
+        0.9882195591926575,
+        5.144985675811768
+      ],
+      "segmentation_loss": 1.1454323381185532,
+      "focus_mse": 1.5661406442523003,
+      "photon_mean": 197.84531784057617
+    },
+    {
+      "phase_coefficients": [
+        -0.4391797184944153,
+        0.05044988542795181,
+        0.009940547868609428,
+        -0.002253000857308507,
+        -0.01605200208723545,
+        -0.010762734338641167,
+        0.04289625585079193
+      ],
+      "phase_rms_radians": 0.4446813449750145,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-051",
+      "parameters": [
+        -0.1785186231136322,
+        0.0205069687217474,
+        0.0040406533516943455,
+        -0.0009158041793853045,
+        -0.006524849217385054,
+        -0.004374857060611248,
+        0.0174365546554327
+      ],
+      "segmentation_loss": 1.1334359645843506,
+      "focus_mse": 2.0039965212345123,
+      "photon_mean": 199.06589126586914
+    },
+    {
+      "phase_coefficients": [
+        -0.8783594369888306,
+        0.10089977085590363,
+        0.019881095737218857,
+        -0.004506001714617014,
+        -0.0321040041744709,
+        -0.021525468677282333,
+        0.08579251170158386
+      ],
+      "phase_rms_radians": 0.889362689950029,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-052",
+      "parameters": [
+        -0.3759363889694214,
+        0.04318493604660034,
+        0.008509076200425625,
+        -0.0019285613670945168,
+        -0.013740461319684982,
+        -0.009212865494191647,
+        0.036719053983688354
+      ],
+      "segmentation_loss": 1.1365063786506653,
+      "focus_mse": 2.0452028959989548,
+      "photon_mean": 198.97735595703125
+    },
+    {
+      "phase_coefficients": [
+        -1.3175391554832458,
+        0.15134965628385544,
+        0.029821643605828285,
+        -0.006759002571925521,
+        -0.04815600626170635,
+        -0.0322882030159235,
+        0.1286887675523758
+      ],
+      "phase_rms_radians": 1.3340440349250433,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-053",
+      "parameters": [
+        -0.6231518983840942,
+        0.07158331573009491,
+        0.014104638248682022,
+        -0.0031967817340046167,
+        -0.022776177152991295,
+        -0.015271238051354885,
+        0.06086547672748566
+      ],
+      "segmentation_loss": 1.141979068517685,
+      "focus_mse": 2.247526466846466,
+      "photon_mean": 198.80798721313477
+    },
+    {
+      "phase_coefficients": [
+        -2.1958985924720764,
+        0.25224942713975906,
+        0.04970273934304714,
+        -0.011265004286542535,
+        -0.08026001043617725,
+        -0.05381367169320583,
+        0.21448127925395966
+      ],
+      "phase_rms_radians": 2.223406724875072,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-054",
+      "parameters": [
+        -1.92116117477417,
+        0.22068952023983002,
+        0.04348423704504967,
+        -0.009855595417320728,
+        -0.07021836936473846,
+        -0.047080833464860916,
+        0.18764668703079224
+      ],
+      "segmentation_loss": 1.166356474161148,
+      "focus_mse": 2.345398783683777,
+      "photon_mean": 198.3542938232422
+    },
+    {
+      "phase_coefficients": [
+        -2.466600767795716,
+        0.28334579419649186,
+        0.05582990737613917,
+        -0.012653711932629323,
+        -0.09015416469769626,
+        -0.06044762010933162,
+        0.2409217301287339
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.0,
+            "focus_weight": 1.5
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-055",
+      "parameters": [
+        -22.06746482849121,
+        2.5349557399749756,
+        0.49948275089263916,
+        -0.11320654302835464,
+        -0.8065650463104248,
+        -0.5407951474189758,
+        2.1554083824157715
+      ],
+      "segmentation_loss": 1.1783352494239807,
+      "focus_mse": 2.244432345032692,
+      "photon_mean": 198.19639587402344
+    },
+    {
+      "phase_coefficients": [
+        0.02602572552859783,
+        0.0934896469116211,
+        -0.04604143276810646,
+        -0.28991231322288513,
+        0.021000180393457413,
+        0.04882467910647392,
+        0.10580110549926758
+      ],
+      "phase_rms_radians": 0.33106698136451007,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 0.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-056",
+      "parameters": [
+        0.010502790100872517,
+        0.03772813826799393,
+        -0.01858021318912506,
+        -0.11699532717466354,
+        0.008474710397422314,
+        0.019703403115272522,
+        0.042696479707956314
+      ],
+      "segmentation_loss": 1.1262012124061584,
+      "focus_mse": 5.9798224568367,
+      "photon_mean": 199.00968170166016
+    },
+    {
+      "phase_coefficients": [
+        -0.41315399296581745,
+        0.1439395323395729,
+        -0.03610088489949703,
+        -0.29216531408019364,
+        0.004948178306221962,
+        0.038061944767832756,
+        0.1486973613500595
+      ],
+      "phase_rms_radians": 0.5492383425220498,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-057",
+      "parameters": [
+        -0.16940028965473175,
+        0.05901770293712616,
+        -0.014801988378167152,
+        -0.11979284137487411,
+        0.0020288387313485146,
+        0.015606056898832321,
+        0.06096849590539932
+      ],
+      "segmentation_loss": 1.1269197463989258,
+      "focus_mse": 3.025105208158493,
+      "photon_mean": 198.9800262451172
+    },
+    {
+      "phase_coefficients": [
+        -0.8523337114602327,
+        0.19438941776752472,
+        -0.026160337030887604,
+        -0.29441831493750215,
+        -0.011103823781013489,
+        0.02729921042919159,
+        0.19159361720085144
+      ],
+      "phase_rms_radians": 0.9429756968132869,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-058",
+      "parameters": [
+        -0.36812472343444824,
+        0.08395720273256302,
+        -0.011298704892396927,
+        -0.12715989351272583,
+        -0.004795765038579702,
+        0.01179058663547039,
+        0.08274968713521957
+      ],
+      "segmentation_loss": 1.1278440058231354,
+      "focus_mse": 1.7009906619787216,
+      "photon_mean": 198.89202117919922
+    },
+    {
+      "phase_coefficients": [
+        -1.7306931484490633,
+        0.29528918862342834,
+        -0.006279241293668747,
+        -0.29892431665211916,
+        -0.04320782795548439,
+        0.005773741751909256,
+        0.2773861289024353
+      ],
+      "phase_rms_radians": 1.802978916116742,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-059",
+      "parameters": [
+        -0.9993382692337036,
+        0.17050611972808838,
+        -0.003625764511525631,
+        -0.17260512709617615,
+        -0.024949099868535995,
+        0.003333878703415394,
+        0.16016852855682373
+      ],
+      "segmentation_loss": 1.1387939453125,
+      "focus_mse": 2.0384723097085953,
+      "photon_mean": 198.5167465209961
+    },
+    {
+      "phase_coefficients": [
+        -2.1698728669434786,
+        0.34573907405138016,
+        0.0036613065749406815,
+        -0.30117731750942767,
+        -0.05925983004271984,
+        -0.004988992586731911,
+        0.32028238475322723
+      ],
+      "phase_rms_radians": 2.2415892512363556,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-060",
+      "parameters": [
+        -1.9602751731872559,
+        0.3123425841331482,
+        0.0033076447434723377,
+        -0.2720852494239807,
+        -0.05353565886616707,
+        -0.00450708344578743,
+        0.2893448770046234
+      ],
+      "segmentation_loss": 1.1575118005275726,
+      "focus_mse": 2.2720977514982224,
+      "photon_mean": 198.28176498413086
+    },
+    {
+      "phase_coefficients": [
+        -2.4293899674231714,
+        0.3689068931515508,
+        0.012665213766845141,
+        -0.28253572786017533,
+        -0.07012576535480744,
+        -0.01466704334580063,
+        0.33816970604205254
+      ],
+      "phase_rms_radians": 2.4974999999999996,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.25,
+            "focus_weight": 1.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-061",
+      "parameters": [
+        -21.73455810546875,
+        3.300428867340088,
+        0.11330944299697876,
+        -2.5277082920074463,
+        -0.6273807883262634,
+        -0.1312188357114792,
+        3.0254383087158203
+      ],
+      "segmentation_loss": 1.171398550271988,
+      "focus_mse": 2.283950686454773,
+      "photon_mean": 198.13986587524414
+    },
+    {
+      "phase_coefficients": [
+        0.05205145105719566,
+        0.1869792938232422,
+        -0.09208286553621292,
+        -0.5798246264457703,
+        0.042000360786914825,
+        0.09764935821294785,
+        0.21160221099853516
+      ],
+      "phase_rms_radians": 0.6621339627290201,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 0.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-062",
+      "parameters": [
+        0.02159164845943451,
+        0.07756154239177704,
+        -0.038197219371795654,
+        -0.24051912128925323,
+        0.01742231845855713,
+        0.0405062772333622,
+        0.08777546882629395
+      ],
+      "segmentation_loss": 1.113139420747757,
+      "focus_mse": 8.782255411148071,
+      "photon_mean": 198.84707260131836
+    },
+    {
+      "phase_coefficients": [
+        -0.3871282674372196,
+        0.237429179251194,
+        -0.08214231766760349,
+        -0.5820776273030788,
+        0.025948358699679375,
+        0.08688662387430668,
+        0.2544984668493271
+      ],
+      "phase_rms_radians": 0.7904395660160028,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-063",
+      "parameters": [
+        -0.16322463750839233,
+        0.1001071035861969,
+        -0.034633610397577286,
+        -0.24542099237442017,
+        0.010940589010715485,
+        0.03663394972681999,
+        0.10730401426553726
+      ],
+      "segmentation_loss": 1.1140374839305878,
+      "focus_mse": 4.87354588508606,
+      "photon_mean": 198.81604766845703
+    },
+    {
+      "phase_coefficients": [
+        -1.2654877044260502,
+        0.3383289501070976,
+        -0.062261221930384636,
+        -0.5865836290176958,
+        -0.006155645474791527,
+        0.06536115519702435,
+        0.34029097855091095
+      ],
+      "phase_rms_radians": 1.4778329894764688,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-064",
+      "parameters": [
+        -0.6275867223739624,
+        0.16778570413589478,
+        -0.03087688237428665,
+        -0.2909013628959656,
+        -0.003052737098187208,
+        0.03241421654820442,
+        0.16875872015953064
+      ],
+      "segmentation_loss": 1.1224737763404846,
+      "focus_mse": 1.4226082265377045,
+      "photon_mean": 198.5753631591797
+    },
+    {
+      "phase_coefficients": [
+        -1.7046674229204655,
+        0.38877883553504944,
+        -0.05232067406177521,
+        -0.5888366298750043,
+        -0.022207647562026978,
+        0.05459842085838318,
+        0.3831872344017029
+      ],
+      "phase_rms_radians": 1.8859513936265737,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-065",
+      "parameters": [
+        -1.0387388467788696,
+        0.23690232634544373,
+        -0.03188159689307213,
+        -0.3588075339794159,
+        -0.013532226905226707,
+        0.03326953947544098,
+        0.2334950864315033
+      ],
+      "segmentation_loss": 1.1332380324602127,
+      "focus_mse": 1.553194783627987,
+      "photon_mean": 198.37188339233398
+    },
+    {
+      "phase_coefficients": [
+        -2.1438471414148808,
+        0.43922872096300125,
+        -0.04238012619316578,
+        -0.5910896307323128,
+        -0.03825964964926243,
+        0.04383568651974201,
+        0.4260834902524948
+      ],
+      "phase_rms_radians": 2.3076217130623142,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-066",
+      "parameters": [
+        -2.22920823097229,
+        0.4567174017429352,
+        -0.044067565351724625,
+        -0.6146249175071716,
+        -0.03978302702307701,
+        0.04558108374476433,
+        0.44304877519607544
+      ],
+      "segmentation_loss": 1.151740550994873,
+      "focus_mse": 1.5633402690291405,
+      "photon_mean": 198.1424560546875
+    },
+    {
+      "phase_coefficients": [
+        -2.3573562615631714,
+        0.44689699005676464,
+        -0.029605438593289415,
+        -0.5415042288330212,
+        -0.04956662057372777,
+        0.030183476650039627,
+        0.4280065214117484
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.5,
+            "focus_weight": 1.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-067",
+      "parameters": [
+        -21.09010887145996,
+        3.9981677532196045,
+        -0.26486530900001526,
+        -4.8445725440979,
+        -0.4434482157230377,
+        0.2700367271900177,
+        3.8291640281677246
+      ],
+      "segmentation_loss": 1.1620386689901352,
+      "focus_mse": 1.5118186548352242,
+      "photon_mean": 198.0535430908203
+    },
+    {
+      "phase_coefficients": [
+        0.0780771765857935,
+        0.2804689407348633,
+        -0.13812429830431938,
+        -0.8697369396686554,
+        0.06300054118037224,
+        0.14647403731942177,
+        0.31740331649780273
+      ],
+      "phase_rms_radians": 0.9932009440935302,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 0.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-068",
+      "parameters": [
+        0.03403177857398987,
+        0.12224899977445602,
+        -0.06020473316311836,
+        -0.3790953457355499,
+        0.02746027149260044,
+        0.06384416669607162,
+        0.13834771513938904
+      ],
+      "segmentation_loss": 1.096096694469452,
+      "focus_mse": 8.520598411560059,
+      "photon_mean": 198.61783599853516
+    },
+    {
+      "phase_coefficients": [
+        -0.8002822604030371,
+        0.3813687115907669,
+        -0.11824320256710052,
+        -0.8742429413832724,
+        0.030896537005901337,
+        0.12494856864213943,
+        0.4031958281993866
+      ],
+      "phase_rms_radians": 1.320344493944691,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-069",
+      "parameters": [
+        -0.37697654962539673,
+        0.17964543402194977,
+        -0.05569899082183838,
+        -0.4118160605430603,
+        0.014553952030837536,
+        0.05885758250951767,
+        0.18992720544338226
+      ],
+      "segmentation_loss": 1.101609244942665,
+      "focus_mse": 2.011329412460327,
+      "photon_mean": 198.50626373291016
+    },
+    {
+      "phase_coefficients": [
+        -1.2394619788974524,
+        0.4318185970187187,
+        -0.1083026546984911,
+        -0.8764959422405809,
+        0.014844534918665886,
+        0.11418583430349827,
+        0.44609208405017853
+      ],
+      "phase_rms_radians": 1.6477150275661494,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-070",
+      "parameters": [
+        -0.659229040145874,
+        0.22967010736465454,
+        -0.057602617889642715,
+        -0.46617937088012695,
+        0.00789531972259283,
+        0.060731690376996994,
+        0.23726169764995575
+      ],
+      "segmentation_loss": 1.111985057592392,
+      "focus_mse": 1.440837323665619,
+      "photon_mean": 198.36183547973633
+    },
+    {
+      "phase_coefficients": [
+        -1.6786416973918676,
+        0.48226848244667053,
+        -0.09836210682988167,
+        -0.8787489430978894,
+        -0.0012074671685695648,
+        0.1034230999648571,
+        0.48898833990097046
+      ],
+      "phase_rms_radians": 2.0204215002276498,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-071",
+      "parameters": [
+        -1.1400887966156006,
+        0.3275439441204071,
+        -0.0668049305677414,
+        -0.5968229174613953,
+        -0.0008200795855373144,
+        0.07024221867322922,
+        0.33210787177085876
+      ],
+      "segmentation_loss": 1.1274342834949493,
+      "focus_mse": 1.517431303858757,
+      "photon_mean": 198.16856384277344
+    },
+    {
+      "phase_coefficients": [
+        -2.117821415886283,
+        0.5327183678746223,
+        -0.08842155896127224,
+        -0.8810019439551979,
+        -0.017259469255805016,
+        0.09266036562621593,
+        0.5318845957517624
+      ],
+      "phase_rms_radians": 2.4175864539318037,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-072",
+      "parameters": [
+        -3.3267030715942383,
+        0.8368013501167297,
+        -0.13889379799365997,
+        -1.3838900327682495,
+        -0.027111411094665527,
+        0.14555217325687408,
+        0.8354916572570801
+      ],
+      "segmentation_loss": 1.148118495941162,
+      "focus_mse": 1.596524715423584,
+      "photon_mean": 197.94759368896484
+    },
+    {
+      "phase_coefficients": [
+        -2.2574319270005785,
+        0.514846323733539,
+        -0.06928645346368718,
+        -0.7797759200383784,
+        -0.0294088172015447,
+        0.07230279452303412,
+        0.5074415603458257
+      ],
+      "phase_rms_radians": 2.4975,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 0.75,
+            "focus_weight": 1.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-073",
+      "parameters": [
+        -20.196134567260742,
+        4.606077194213867,
+        -0.6198718547821045,
+        -6.976272106170654,
+        -0.26310625672340393,
+        0.6468575596809387,
+        4.539830207824707
+      ],
+      "segmentation_loss": 1.1546980440616608,
+      "focus_mse": 1.519271157681942,
+      "photon_mean": 197.9510154724121
+    },
+    {
+      "phase_coefficients": [
+        0.13012862764298916,
+        0.46744823455810547,
+        -0.2302071638405323,
+        -1.4495615661144257,
+        0.10500090196728706,
+        0.2441233955323696,
+        0.5290055274963379
+      ],
+      "phase_rms_radians": 1.6553349068225505,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 0.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-074",
+      "parameters": [
+        0.06945884227752686,
+        0.24951015412807465,
+        -0.12287783622741699,
+        -0.7737334370613098,
+        0.05604640394449234,
+        0.1303059160709381,
+        0.28236764669418335
+      ],
+      "segmentation_loss": 1.1002891808748245,
+      "focus_mse": 4.191778898239136,
+      "photon_mean": 198.01830673217773
+    },
+    {
+      "phase_coefficients": [
+        -0.3090510908514261,
+        0.5178981199860573,
+        -0.22026661597192287,
+        -1.4518145669717342,
+        0.08894889988005161,
+        0.23336066119372845,
+        0.5719017833471298
+      ],
+      "phase_rms_radians": 1.7057123770445206,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-075",
+      "parameters": [
+        -0.16909143328666687,
+        0.2833581268787384,
+        -0.12051469087600708,
+        -0.79433274269104,
+        0.04866670072078705,
+        0.12767885625362396,
+        0.3129051923751831
+      ],
+      "segmentation_loss": 1.1004802137613297,
+      "focus_mse": 3.657817453145981,
+      "photon_mean": 197.99312591552734
+    },
+    {
+      "phase_coefficients": [
+        -0.7482308093458414,
+        0.5683480054140091,
+        -0.21032606810331345,
+        -1.4540675678290427,
+        0.07289689779281616,
+        0.22259792685508728,
+        0.6147980391979218
+      ],
+      "phase_rms_radians": 1.8639363642029443,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-076",
+      "parameters": [
+        -0.44910314679145813,
+        0.34113389253616333,
+        -0.12624192237854004,
+        -0.872760534286499,
+        0.04375418275594711,
+        0.13360774517059326,
+        0.36901411414146423
+      ],
+      "segmentation_loss": 1.104576125741005,
+      "focus_mse": 3.8881731033325195,
+      "photon_mean": 197.92285537719727
+    },
+    {
+      "phase_coefficients": [
+        -1.1874105278402567,
+        0.6187978908419609,
+        -0.20038552023470402,
+        -1.4563205686863512,
+        0.05684489570558071,
+        0.2118351925164461,
+        0.6576942950487137
+      ],
+      "phase_rms_radians": 2.105836134064303,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-077",
+      "parameters": [
+        -0.8812685012817383,
+        0.45925742387771606,
+        -0.14872147142887115,
+        -1.0808472633361816,
+        0.04218896105885506,
+        0.15721915662288666,
+        0.48812541365623474
+      ],
+      "segmentation_loss": 1.1145632714033127,
+      "focus_mse": 4.4973039627075195,
+      "photon_mean": 197.79698181152344
+    },
+    {
+      "phase_coefficients": [
+        -1.626590246334672,
+        0.6692477762699127,
+        -0.1904449723660946,
+        -1.4585735695436597,
+        0.04079289361834526,
+        0.20107245817780495,
+        0.7005905508995056
+      ],
+      "phase_rms_radians": 2.4063075186686476,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-078",
+      "parameters": [
+        -2.3991003036499023,
+        0.9870910048484802,
+        -0.2808922529220581,
+        -2.1512882709503174,
+        0.06016650050878525,
+        0.29656699299812317,
+        1.0333192348480225
+      ],
+      "segmentation_loss": 1.1304989010095596,
+      "focus_mse": 2.8691766560077667,
+      "photon_mean": 197.6275634765625
+    },
+    {
+      "phase_coefficients": [
+        -1.8786964010814744,
+        0.6545227348246381,
+        -0.1641581678774988,
+        -1.3285359295286083,
+        0.022500387105245153,
+        0.17307551148224148,
+        0.6761575644309
+      ],
+      "phase_rms_radians": 2.4975,
+      "was_projected": true,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        },
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 1.5
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-079",
+      "parameters": [
+        -16.80777359008789,
+        5.855693340301514,
+        -1.4686424732208252,
+        -11.885758399963379,
+        0.20129990577697754,
+        1.5484216213226318,
+        6.049249649047852
+      ],
+      "segmentation_loss": 1.1354467868804932,
+      "focus_mse": 1.5088186115026474,
+      "photon_mean": 197.65501022338867
+    },
+    {
+      "phase_coefficients": [
+        -2.0099284753841657,
+        0.6179531251748251,
+        -0.13685751645655525,
+        -1.1739498448221288,
+        0.0069718152140833085,
+        0.14406541148076094,
+        0.6309802231175655
+      ],
+      "phase_rms_radians": 2.4974999999999996,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.25,
+            "focus_weight": 1.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-080",
+      "parameters": [
+        -17.981842041015625,
+        5.528522968292236,
+        -1.2243969440460205,
+        -10.502752304077148,
+        0.06237340718507767,
+        1.2888824939727783,
+        5.6450700759887695
+      ],
+      "segmentation_loss": 1.1386233270168304,
+      "focus_mse": 1.4798473790287971,
+      "photon_mean": 197.74521255493164
+    },
+    {
+      "phase_coefficients": [
+        0.156154353171587,
+        0.5609378814697266,
+        -0.27624859660863876,
+        -1.7394738793373108,
+        0.12600108236074448,
+        0.29294807463884354,
+        0.6348066329956055
+      ],
+      "phase_rms_radians": 1.9864018881870604,
+      "was_projected": false,
+      "is_family_anchor": true,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 0.0
+          },
+          "anchor": true,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-081",
+      "parameters": [
+        0.10287108272314072,
+        0.36953362822532654,
+        -0.18198654055595398,
+        -1.1459274291992188,
+        0.08300676196813583,
+        0.19298779964447021,
+        0.41819676756858826
+      ],
+      "segmentation_loss": 1.116917461156845,
+      "focus_mse": 4.275779604911804,
+      "photon_mean": 197.67293167114258
+    },
+    {
+      "phase_coefficients": [
+        -0.2830253653228283,
+        0.6113877668976784,
+        -0.26630804874002934,
+        -1.7417268801946193,
+        0.10994908027350903,
+        0.28218534030020237,
+        0.6777028888463974
+      ],
+      "phase_rms_radians": 2.027172768421216,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 0.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-082",
+      "parameters": [
+        -0.19344636797904968,
+        0.4178803563117981,
+        -0.1820201724767685,
+        -1.190461277961731,
+        0.07514962553977966,
+        0.19287221133708954,
+        0.46320641040802
+      ],
+      "segmentation_loss": 1.117421105504036,
+      "focus_mse": 4.215800166130066,
+      "photon_mean": 197.64722061157227
+    },
+    {
+      "phase_coefficients": [
+        -0.7222050838172436,
+        0.6618376523256302,
+        -0.2563675008714199,
+        -1.7439798810519278,
+        0.09389707818627357,
+        0.2714226059615612,
+        0.7205991446971893
+      ],
+      "phase_rms_radians": 2.1606826240337873,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 0.5
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-083",
+      "parameters": [
+        -0.5742919445037842,
+        0.5262882113456726,
+        -0.20386147499084473,
+        -1.3867994546890259,
+        0.07466623932123184,
+        0.2158331722021103,
+        0.5730149149894714
+      ],
+      "segmentation_loss": 1.1213387697935104,
+      "focus_mse": 4.466829538345337,
+      "photon_mean": 197.58115768432617
+    },
+    {
+      "phase_coefficients": [
+        -1.1613848023116589,
+        0.712287537753582,
+        -0.24642695300281048,
+        -1.7462328819092363,
+        0.07784507609903812,
+        0.26065987162292004,
+        0.7634954005479813
+      ],
+      "phase_rms_radians": 2.3713186980480088,
+      "was_projected": false,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 0.75
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-084",
+      "parameters": [
+        -1.4668818712234497,
+        0.8996515870094299,
+        -0.31124845147132874,
+        -2.2055716514587402,
+        0.09832187741994858,
+        0.3292252719402313,
+        0.9643294215202332
+      ],
+      "segmentation_loss": 1.1306760758161545,
+      "focus_mse": 6.104168593883514,
+      "photon_mean": 197.46370315551758
+    },
+    {
+      "phase_coefficients": [
+        -1.5137753476634037,
+        0.7213786716770595,
+        -0.223663142282702,
+        -1.653675806668821,
+        0.058442400090374436,
+        0.2363466895305699,
+        0.7626657933184448
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 1.0
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-085",
+      "parameters": [
+        -13.543004035949707,
+        6.453820705413818,
+        -2.001004219055176,
+        -14.794625282287598,
+        0.5228554606437683,
+        2.1144776344299316,
+        6.8231964111328125
+      ],
+      "segmentation_loss": 1.1356061398983002,
+      "focus_mse": 5.455448687076569,
+      "photon_mean": 197.4511833190918
+    },
+    {
+      "phase_coefficients": [
+        -1.725252529432397,
+        0.687808517386458,
+        -0.1916165790540144,
+        -1.4808065781735182,
+        0.03868862503265209,
+        0.20226419842605042,
+        0.7183430601708234
+      ],
+      "phase_rms_radians": 2.4975000000000005,
+      "was_projected": true,
+      "is_family_anchor": false,
+      "includes_original_naive_sum": false,
+      "aliases": [
+        {
+          "family": "nonnegative_two_weight",
+          "values": {
+            "segmentation_weight": 1.5,
+            "focus_weight": 1.25
+          },
+          "anchor": false,
+          "original_naive_sum": false
+        }
+      ],
+      "name": "v2_2-piecewise-086",
+      "parameters": [
+        -15.43498706817627,
+        6.15348482131958,
+        -1.7142994403839111,
+        -13.248048782348633,
+        0.3461281359195709,
+        1.809558391571045,
+        6.426662445068359
+      ],
+      "segmentation_loss": 1.1350891888141632,
+      "focus_mse": 2.4842503368854523,
+      "photon_mean": 197.5616683959961
+    }
+  ]
+}
