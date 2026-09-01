@@ -27,6 +27,8 @@
     0.5276002287864685
   ],
   "frozen_v2_1_metrics": {
+    "soft_validation_segmentation_loss": 1.0961064249277115,
+    "soft_validation_focus_mse": 2.5283197164535522,
     "hard_dense_off_focus_pq": 0.4960643722436449,
     "hard_pq_gain_over_clear": 0.03995159921900765,
     "clear_gain_ci_95": [0.016039559784807433, 0.06309733971723723],
