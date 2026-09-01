@@ -17,6 +17,19 @@
 - Decision: freeze the three exact checkpoints before running matched stopped-stage
   optimizations and expanded hard validation. Do not alter their steps or parameters.
 
+## 2026-09-02 — V2.4 matched stopped-stage controls frozen
+
+- Three stopped-stage runs used the identical segmentation-only start, objective profile,
+  training batches, Adam schedule, and selected budgets of 14, 12, and 9 steps. Only the
+  gradient through the autofocus stage action and its downstream terms was stopped.
+- Exact and stopped modes have identical forward validation metrics with maximum absolute
+  difference `0.0` at all three stopped endpoints.
+- The stopped endpoints retain first-frame losses `1.090614`, `1.090522`, and `1.090406`,
+  but residual MAEs are `2.083919`, `2.028220`, and `1.887137 µm`. Their paired exact
+  candidates reach `1.174831`, `1.175803`, and `1.367156 µm`, respectively.
+- Decision: the exact feedback gradient materially improves the soft correction outcome.
+  Freeze these six pupils before applying the expanded hard protocol.
+
 ## 2026-09-02 — V2.4 frozen-checkpoint audit authorized
 
 - V1 through v2.3 remain immutable; v2.3 is frozen at commit `93da502` as a correct
