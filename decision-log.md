@@ -48,6 +48,22 @@
   unchanged; the corrected forward-identical ablation evidence supersedes only the
   earlier partial-stop diagnostic in Git history.
 
+## 2026-09-02 — V2.3 completes the exact matrix with no soft promotion
+
+- All nine pre-registered combinations of three objective profiles and three frozen
+  starts completed 30 exact-gradient Adam steps each, for 270 total steps. The fixed
+  training and 12-well validation schedules were unchanged, and test access is false.
+- Every endpoint reduced validation residual-defocus MAE relative to its start. The
+  lowest residual was `0.934414 µm`, down from `1.325543 µm`, for the action-heavy
+  projected-joint run; its first-frame segmentation loss was `1.116030`.
+- The closest promotion result was first-heavy piecewise-028. It reduced residual MAE
+  from `1.191849` to `0.999509 µm` and reached final-frame segmentation loss `1.061714`,
+  but first-frame loss `1.100370` exceeded the frozen `1.098270` ceiling by `0.002099`.
+- Decision: do not relax the ceiling or select an intermediate checkpoint. With zero
+  soft-eligible exact endpoints, the contract does not authorize stopped-stage
+  optimization, expanded hard labels, the matched derivative-free control, or the
+  locked test. Freeze v2.3 as a complete negative validation experiment.
+
 
 ## 2026-09-01 — V2.2 matched piecewise-frontier protocol pre-registered
 

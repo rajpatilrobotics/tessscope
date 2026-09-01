@@ -290,7 +290,40 @@ def main() -> None:
         ),
     )[:3]
     if not selected:
-        raise SystemExit("No exact v2.3 endpoint passed the frozen soft gate")
+        report = {
+            "status": "complete_training_validation_negative",
+            "test_accessed": False,
+            "budget": {
+                "profiles": list(OBJECTIVE_PROFILES),
+                "starts": list(starts),
+                "steps_per_run": STEPS,
+                "training_batches": len(training_batches),
+                "validation_batches": len(validation_batches),
+            },
+            "first_segmentation_maximum": FIRST_SEGMENTATION_MAXIMUM,
+            "exact_runs": exact_runs,
+            "soft_eligible_exact_names": [],
+            "soft_nondominated_exact_names": [],
+            "selected_for_hard_validation": [],
+            "stopped_stage_ablation": None,
+            "stop_reason": "no_exact_endpoint_passed_frozen_soft_gate",
+            "next_gate": "freeze_negative_v2_3_without_hard_or_test_access",
+        }
+        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+        print(
+            json.dumps(
+                {
+                    "output": str(OUTPUT),
+                    "status": report["status"],
+                    "selected_for_hard_validation": [],
+                    "stopped_stage_ablation": None,
+                    "test_accessed": False,
+                },
+                indent=2,
+            )
+        )
+        return
     best = by_name[selected[0]]
     stopped_name = f"v2_3-stopped-{best['profile']}-{best['start_name']}"
     stopped = optimize(

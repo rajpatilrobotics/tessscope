@@ -1,20 +1,20 @@
-# TessScope v2.2 matched-frontier improvement plan
+# TessScope v2.2/v2.3 validation completion plan
 
 ## 1. Goal
 
-Continue the frozen BBBC006 three-Tesseract prototype with a separately named v2.2
-validation-only experiment. Test the frozen v2.1 B7 joint pupil against a complete,
-matched piecewise-superposition Pareto frontier rather than one focus-heavy sum.
+Complete the frozen BBBC006 three-Tesseract prototype through the approved v2.2
+matched-frontier experiment and, after its negative result, the separately named v2.3
+closed-loop differentiable microscope fallback.
 
 The full v2 handoff is approved. Work proceeds autonomously unless a consequential
 scientific choice cannot be resolved on training/validation data, or a destructive,
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 and v2 are preserved at `503ee9a`; v2.1 is frozen at `4a88bdd` as
-a correct negative pre-test result. V2.2 is explicitly approved. The BBBC006 locked test
-remains sealed until a predeclared candidate passes all v2.2 validation gates and a
-verified local pre-test commit exists.
+Current checkpoint: v1 and v2 are preserved at `503ee9a`; v2.1 is frozen at `4a88bdd`;
+v2.2 is frozen at `cda7d34`; and the full approved v2.3 optimization matrix is complete
+as a negative soft-gate result. The BBBC006 locked test remains sealed because no v2.2
+or v2.3 candidate passed all predeclared validation gates.
 
 ## 2. Problem
 
@@ -71,7 +71,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 5. Step by step tasks
 
-### V2.2 active matched-frontier work
+### V2.2 completed matched-frontier work
 
 - [x] V2.2-0A: preserve v2.1 at local commit `4a88bdd` and keep every prior result
   immutable and separately named.
@@ -90,7 +90,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.2-3B: froze the negative v2.2 result and activated the approved v2.3
   feedback-loop experiment. No matched gradient-free or locked-test run was warranted.
 
-### V2.3 active closed-loop work
+### V2.3 completed closed-loop work
 
 - [x] V2.3-0A: pre-registered the closed-loop objective, bounded stage action, first/final
   segmentation terms, transparent penalties, comparison baselines, and promotion gates.
@@ -98,10 +98,13 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   exposures and propagate gradients through predicted stage action and residual depth.
 - [x] V2.3-1B: added a forward-identical stopped-stage-gradient ablation and passed the full
   feedback-loop directional derivative gate.
-- [ ] V2.3-2A: run bounded training/validation optimization and matched comparisons without
-  using the locked test.
-- [ ] V2.3-2B: promote only frozen candidates that pass the expanded 45-well hard protocol,
-  matched piecewise frontier, and matched derivative-free control.
+- [x] V2.3-2A: completed all nine pre-registered exact profile/start runs (270 Adam steps).
+  Every endpoint reduced residual MAE, but all nine exceeded the protected first-frame
+  segmentation-loss ceiling; the nearest miss was `+0.002099`.
+- [x] V2.3-2B: applied the frozen promotion order. With zero soft-eligible endpoints,
+  stopped-stage optimization, expanded hard validation, matched derivative-free control,
+  and locked-test access were correctly skipped. The negative result and evidence hashes
+  are frozen in `configs/v2_3/pretest-block.json`.
 
 ### V2.1 completed negative pre-test checkpoint
 
@@ -227,8 +230,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-V2.2 has no unresolved protocol choice: the grids and nontrivial effects are frozen in
-`configs/v2_2/contract.yaml`. The remaining open question is empirical—whether the fixed
-B7 joint pupil clears the matched piecewise envelope. A negative answer automatically
-activates the separately named, already approved v2.3 closed-loop implementation without
-accessing the locked test.
+There is no unresolved question inside the approved v2.2/v2.3 scope. Both experiments
+are complete negative validation results, and the locked test remains sealed. Any v2.4
+intervention would be a new scientific scope requiring a separate plan and approval; it
+must not be inferred from the completed fallback authorization.

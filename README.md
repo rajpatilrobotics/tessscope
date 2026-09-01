@@ -1,5 +1,18 @@
 # TessScope
 
+## V2.3 final status
+
+The approved v2.3 closed-loop fallback is complete as a **negative validation-only
+experiment**. The same B7 pupil now forms a first frame, drives a bounded frozen
+autofocus action, and forms a corrected second frame; exact gradients pass through the
+stage action with `0.004802` median relative error and `0.999967` cosine agreement.
+
+All nine pre-registered profile/start runs completed (270 Adam steps). Every endpoint
+reduced residual-defocus MAE, but every endpoint exceeded the frozen first-frame
+segmentation-loss ceiling. The nearest endpoint missed by `0.002099`, so conditional
+hard validation and the locked BBBC006 test were not run. See
+[the v2.3 status](outputs/v2_3/STATUS.md).
+
 ## V2.1 final status
 
 V2.1 completed the approved validation-only B7→B11 basis ladder with a **negative
@@ -55,6 +68,10 @@ did not improve, and the two Poisson endpoints were not positive.
 - V2 matched multi-objective baselines and preserved negative pre-test gate evidence.
 - V2.1 B7/B11 exact-gradient optimization, expanded 45-well hard validation, and frozen
   negative pre-test evidence without test leakage.
+- V2.2 complete piecewise B7 frontier evaluation across 38 frozen candidates and 45
+  validation wells, with a frozen negative matched-frontier decision.
+- V2.3 two-exposure differentiable feedback, exact/stopped derivative evidence, and the
+  complete nine-run soft optimization matrix with a sealed-test negative decision.
 
 ![TessScope architecture](outputs/architecture.png)
 

@@ -1,4 +1,4 @@
-# TessScope v2.1 project brief
+# TessScope project brief
 
 ## V2.2 matched-frontier experiment
 
@@ -27,6 +27,13 @@ move changes residual depth, the same pupil forms a second exposure, and InstanS
 the corrected biological frame. Exact gradients must cross the predicted action into the
 second Chromatix call. A forward-identical stopped-stage-gradient run tests whether that
 feedback path matters rather than merely decorating the architecture.
+
+Final v2.3 status: the closed loop and its exact served derivative are implemented and
+validated, and the full 3-profile × 3-start matrix completed 270 Adam steps. All nine
+endpoints reduced residual-defocus MAE, but all exceeded the frozen first-frame
+segmentation-loss ceiling. The closest endpoint missed by `0.002099`, so no endpoint
+advanced to hard validation or the locked test. V2.3 is preserved as a complete negative
+validation experiment, not described as a positive learned-pupil result.
 
 ## V2.1 continuation
 

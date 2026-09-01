@@ -1,0 +1,54 @@
+{
+  "status": "failed_soft_promotion_test_sealed",
+  "test_accessed": false,
+  "locked_test_run_authorized": false,
+  "reason": "All nine exact closed-loop endpoints reduced residual defocus, but every endpoint exceeded the frozen first-frame segmentation-loss ceiling.",
+  "optimization": {
+    "profiles": 3,
+    "starts_per_profile": 3,
+    "exact_runs": 9,
+    "steps_per_run": 30,
+    "completed_exact_steps": 270,
+    "training_batches": 12,
+    "validation_batches": 4,
+    "residual_improvement_count": 9,
+    "soft_eligible_count": 0
+  },
+  "soft_gate": {
+    "maximum_first_segmentation_loss": 1.098270310640335,
+    "closest_endpoint": {
+      "name": "v2_3-exact-first_heavy-piecewise_028",
+      "first_segmentation_loss": 1.100369542837143,
+      "excess_over_maximum": 0.0020992321968078558,
+      "start_residual_mae_um": 1.1918486654758453,
+      "final_residual_mae_um": 0.9995094835758209,
+      "residual_mae_improvement_um": 0.19233918190002441,
+      "passed": false
+    },
+    "lowest_residual_endpoint": {
+      "name": "v2_3-exact-action_heavy-projected_joint",
+      "first_segmentation_loss": 1.116029679775238,
+      "start_residual_mae_um": 1.3255425840616226,
+      "final_residual_mae_um": 0.9344141036272049
+    }
+  },
+  "derivative_gate": {
+    "overall_median_relative_error": 0.004802090464113455,
+    "overall_cosine_agreement": 0.9999673901184897,
+    "forward_parity_absolute": 0.0,
+    "stage_path_gradient_fraction": 0.8236162662506104,
+    "passed": true
+  },
+  "conditional_work_not_run": {
+    "stopped_stage_optimization": "No exact endpoint passed the prerequisite soft gate.",
+    "expanded_hard_validation": "No endpoint was eligible for promotion.",
+    "matched_derivative_free_control": "The earlier soft prerequisite failed.",
+    "locked_test": "No v2.3 candidate passed all validation prerequisites."
+  },
+  "evidence_sha256": {
+    "contract": "f24a59f10c1badc481b643550106a4c4c14342ad824a2460f54018faccd2f9e7",
+    "v2_2_pretest_block": "558729cba168a9e1110f0264974bb02ea42326dd5b13dd55e9accb7099d6e0e3",
+    "closed_loop_derivative": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034",
+    "closed_loop_matrix": "27ca34997f2ff574093c00fee2f06b6987ee902ce98801b1d3ae2a08cecebcaf"
+  }
+}
