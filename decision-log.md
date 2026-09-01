@@ -25,6 +25,22 @@
   corrected PQ over a forward-identical stopped-stage optimization with a positive lower
   bound. A matched derivative-free run is conditional on clearing those earlier gates.
 
+## 2026-09-02 — Exact v2.3 feedback derivative passes and is load-bearing
+
+- A separate v2.3 B7 optics Tesseract marks depth as differentiable. The first optics
+  call and SciPy autofocus remain unchanged; the predicted clipped stage action now sets
+  residual depths for a second optics call with the same pupil and an independent noise
+  realization before the final frozen InstanSeg task loss.
+- The complete served feedback objective passes five-direction central differences with
+  overall median relative error `0.004802` and cosine `0.999967` across stable `1e-3` and
+  `1e-4` epsilon windows. Test access is false.
+- Exact and stopped-stage modes have identical forward value to machine precision. Their
+  gradient difference is `68.0%` of the exact gradient norm at the predeclared
+  piecewise-028 probe, far above the 1% load-bearing threshold.
+- Decision: the feedback connection is both numerically valid and materially active.
+  Proceed to the matched profile/start optimization matrix; do not promote from this
+  derivative result alone.
+
 
 ## 2026-09-01 — V2.2 matched piecewise-frontier protocol pre-registered
 

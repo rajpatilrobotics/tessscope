@@ -94,9 +94,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 - [x] V2.3-0A: pre-registered the closed-loop objective, bounded stage action, first/final
   segmentation terms, transparent penalties, comparison baselines, and promotion gates.
-- [ ] V2.3-1A: implement one differentiable loop using the same pupil for first and second
+- [x] V2.3-1A: implemented one differentiable loop using the same pupil for first and second
   exposures and propagate gradients through predicted stage action and residual depth.
-- [ ] V2.3-1B: add a forward-identical stopped-stage-gradient ablation and pass the full
+- [x] V2.3-1B: added a forward-identical stopped-stage-gradient ablation and passed the full
   feedback-loop directional derivative gate.
 - [ ] V2.3-2A: run bounded training/validation optimization and matched comparisons without
   using the locked test.
