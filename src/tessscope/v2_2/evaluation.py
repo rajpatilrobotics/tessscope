@@ -54,14 +54,10 @@ def paired_focus_mae_bootstrap(
     replicates: int = 2000,
     seed: int = 20260901,
 ) -> dict:
-    """Bootstrap reference-minus-candidate focus MAE after pairing by well."""
+    """Bootstrap frozen all-depth reference-minus-candidate MAE by well."""
 
     def per_well(design: str) -> dict[str, float]:
-        design_rows = [
-            row
-            for row in rows
-            if row["design"] == design and row["depth_um"] != 0.0
-        ]
+        design_rows = [row for row in rows if row["design"] == design]
         wells = sorted({row["well"] for row in design_rows})
         return {
             well: float(

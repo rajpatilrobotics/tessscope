@@ -43,6 +43,27 @@
   after seeing hard outcomes; the deliberately generous baseline budget is part of the
   credibility of the frontier comparison.
 
+## 2026-09-01 — V2.2 fails the fair frontier and activates v2.3
+
+- All 38 frozen mixtures were evaluated on 45 valid wells and seven depths. The artifact
+  contains 11,970 primary rows and 6,156 hard-density correction rows; all three inherited
+  well exclusions and the 27-well hard subset are unchanged. Test access is false.
+- `v2_2-piecewise-028`, a focus-injection mixture, reaches hard PQ `0.50254290`, direction
+  `100%`, and focus MAE `1.20717865 µm`. It slightly improves both primary coordinates
+  over the frozen joint pupil's `0.49606437` PQ and `1.21073477 µm` MAE.
+- At the matched segmentation operating point, piecewise-minus-joint focus advantage is
+  `-0.00356 µm` with paired 95% interval `[-0.07681, +0.06873]`; the joint neither reaches
+  the `0.10 µm` effect nor a positive lower bound. At matched focus, joint-minus-piecewise
+  PQ is `-0.00648` with interval `[-0.01277, -0.00068]`, statistically favoring the
+  piecewise point rather than the joint.
+- The normalized piecewise hypervolume is `0.90708`; adding the frozen joint contributes
+  exactly zero. A separate two-weight point also improves both PQ and MAE over the
+  original naive sum, confirming that the earlier single-point baseline was incomplete.
+- Decision: v2.2 is a negative validation result. Do not run a conditional matched B7
+  derivative-free search or the locked test because the earlier frontier prerequisite
+  already failed. Freeze hashes, preserve every row, and proceed to the separately named,
+  approved v2.3 closed-loop differentiable microscope.
+
 
 ## 2026-09-01 — V2.1 validation-only continuation authorized
 

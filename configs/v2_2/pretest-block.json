@@ -1,0 +1,54 @@
+{
+  "status": "failed_matched_frontier_test_sealed",
+  "test_accessed": false,
+  "locked_test_run_authorized": false,
+  "reason": "The frozen B7 joint candidate does not lie beyond the pre-registered matched piecewise frontier.",
+  "frontier": {
+    "raw_aliases": 101,
+    "unique_soft_points": 87,
+    "hard_evaluated_points": 38,
+    "validation_wells": 45,
+    "hard_density_wells": 27,
+    "paired_bootstrap_replicates": 2000
+  },
+  "best_matched_piecewise": {
+    "name": "v2_2-piecewise-028",
+    "hard_dense_off_focus_pq": 0.5025428982431692,
+    "focus_mae_um": 1.2071786475663462,
+    "signed_direction_accuracy": 1.0,
+    "corrected_hard_pq": 0.5510098239372349
+  },
+  "frozen_joint": {
+    "name": "b7-projected-0.50-step-30",
+    "hard_dense_off_focus_pq": 0.4960643722436449,
+    "focus_mae_um": 1.2107347688246382,
+    "corrected_hard_pq": 0.5520584934539984
+  },
+  "matched_segmentation": {
+    "piecewise_minus_joint_focus_mae_um": -0.003556121258291873,
+    "ci_95": [-0.07680632728000467, 0.06873166935422673],
+    "required_effect_um": 0.1,
+    "passed": false
+  },
+  "matched_focus": {
+    "joint_minus_piecewise_hard_pq": -0.006478525999524421,
+    "ci_95": [-0.012771980516006573, -0.0006784128138347825],
+    "required_effect": 0.005,
+    "passed": false
+  },
+  "hypervolume": {
+    "piecewise_frontier": 0.9070786520341142,
+    "joint_increment": 0.0
+  },
+  "conditional_work_not_run": {
+    "matched_b7_gradient_free": "The joint failed the prerequisite matched-frontier gate.",
+    "locked_test": "No v2.2 candidate passed all validation prerequisites."
+  },
+  "next_experiment": "v2_3_closed_loop_validation_only",
+  "evidence_sha256": {
+    "contract": "9ddc648323bea226982aa2db64bd63a609c9f2f82ade796a4a117a0d9a6e8279",
+    "frozen_joint_candidate": "dc527f1e80d84f14c600064cd921a3b03edd3332f05bbb18869afa7d2a99c0b3",
+    "piecewise_soft_frontier": "8ba6988ba8961be1cadfd3034c1269cb29614c993f97ac518951e4ba7f0510d0",
+    "piecewise_hard_frontier": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+  }
+}

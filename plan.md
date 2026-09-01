@@ -81,13 +81,27 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   support/manufacturability checks, and unit tests.
 - [x] V2.2-1B: ran the unchanged served soft endpoint for all 87 unique points and froze
   38 potentially relevant hard-frontier points without using hard labels.
-- [ ] V2.2-2A: evaluate the selected piecewise frontier on all 45 valid validation wells,
+- [x] V2.2-2A: evaluated all 38 frozen piecewise points on all 45 valid validation wells,
   including RQ/SQ/Dice/count, focus, photons, and one-step correction metrics.
-- [ ] V2.2-2B: calculate paired well uncertainty and the predeclared matched-segmentation,
+- [x] V2.2-2B: calculated paired well uncertainty and the predeclared matched-segmentation,
   matched-focus, and normalized hypervolume comparisons.
-- [ ] V2.2-3A: apply every promotion gate without weakening v1, v2, or v2.1 history.
-- [ ] V2.2-3B: if eligible, freeze and locally commit before one locked test; otherwise
-  preserve v2.2 and continue into the approved v2.3 feedback-loop experiment.
+- [x] V2.2-3A: applied every promotion gate. Piecewise-028 slightly dominates the frozen
+  joint candidate, so v2.2 fails the matched-frontier gate without test access.
+- [x] V2.2-3B: froze the negative v2.2 result and activated the approved v2.3
+  feedback-loop experiment. No matched gradient-free or locked-test run was warranted.
+
+### V2.3 active closed-loop work
+
+- [ ] V2.3-0A: pre-register the closed-loop objective, bounded stage action, first/final
+  segmentation terms, transparent penalties, comparison baselines, and promotion gates.
+- [ ] V2.3-1A: implement one differentiable loop using the same pupil for first and second
+  exposures and propagate gradients through predicted stage action and residual depth.
+- [ ] V2.3-1B: add a forward-identical stopped-stage-gradient ablation and pass the full
+  feedback-loop directional derivative gate.
+- [ ] V2.3-2A: run bounded training/validation optimization and matched comparisons without
+  using the locked test.
+- [ ] V2.3-2B: promote only frozen candidates that pass the expanded 45-well hard protocol,
+  matched piecewise frontier, and matched derivative-free control.
 
 ### V2.1 completed negative pre-test checkpoint
 

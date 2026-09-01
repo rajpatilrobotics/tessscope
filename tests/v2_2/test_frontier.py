@@ -105,7 +105,7 @@ def test_focus_bootstrap_pairs_depths_within_wells() -> None:
     rows = []
     for design, error in (("joint", 0.5), ("piecewise", 0.8)):
         for well in ("a01", "b01"):
-            for depth in (-2.0, 2.0):
+            for depth in (-2.0, 0.0, 2.0):
                 rows.append(
                     {
                         "design": design,

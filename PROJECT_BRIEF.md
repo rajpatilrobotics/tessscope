@@ -14,6 +14,11 @@ any piecewise combination of separately optimized optics? The BBBC006 locked tes
 sealed unless this validation comparison and all inherited gates pass before a local
 pre-test commit.
 
+Final v2.2 status: no. Piecewise-028 reaches hard PQ `0.502543` and focus MAE
+`1.20718 µm`, slightly improving both over the frozen joint's `0.496064` and
+`1.21073 µm`. The joint adds zero normalized hypervolume, so v2.2 is preserved as a
+negative validation result and the approved v2.3 closed-loop experiment is active.
+
 ## V2.1 continuation
 
 V2.1 is a separately named, validation-only continuation motivated by the frozen v2
