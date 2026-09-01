@@ -36,6 +36,9 @@
   mean must also stay positive after leaving out each individual well. Because the frozen
   protocol uses one deterministic field per well, this explicitly rejects single-field
   dependence. This rule is recorded before any v2.4 hard metric is computed.
+- The frozen selection manifest's contract hash was refreshed after adding this pre-hard
+  stability clause. Its three checkpoint names, steps, parameters, hashes, soft metrics,
+  and source evidence remain unchanged.
 
 ## 2026-09-02 — V2.4 frozen-checkpoint audit authorized
 

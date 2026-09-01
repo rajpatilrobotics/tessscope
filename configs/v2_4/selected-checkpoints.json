@@ -102,7 +102,7 @@
     }
   ],
   "evidence_sha256": {
-    "contract": "410c38147af0278c375e308bab78a1737681ae5bdbe37c2485e70f66b35c9d98",
+    "contract": "45745fa5c3c4af19f76c897f2c137437b3d0b6dabaed0128988ef5b7f2f96ab1",
     "checkpoint_pool": "82570b8061afb3ae2ecd16345e144bdd569f80b10bcc401311eb9c2e9add79fd",
     "checkpoint_audit": "e6c888fa9a3d38f43d824f41e16c9e5358e5bbb9f242ac597c1530f74549276d"
   },
