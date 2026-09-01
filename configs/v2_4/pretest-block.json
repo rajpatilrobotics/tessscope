@@ -1,0 +1,81 @@
+{
+  "status": "failed_expanded_hard_promotion_test_sealed",
+  "test_accessed": false,
+  "locked_test_run_authorized": false,
+  "reason": "Early stopping found three soft-eligible exact checkpoints, but none passed every frozen expanded hard and matched-comparison gate.",
+  "checkpoint_audit": {
+    "source_records": 270,
+    "unique_parameter_hashes": 269,
+    "soft_eligible": 90,
+    "soft_nondominated": 57,
+    "selected": 3,
+    "training_rerun": false,
+    "hard_labels_used_for_selection": false
+  },
+  "hard_protocol": {
+    "validation_wells": 45,
+    "hard_density_wells": 27,
+    "paired_bootstrap_replicates": 2000,
+    "evaluated_exact_pupils": 3,
+    "evaluated_matched_stopped_pupils": 3,
+    "hard_passed_count": 0
+  },
+  "best_corrected_exact": {
+    "name": "v2_3-exact-balanced-segmentation_only-step-14",
+    "first_hard_pq": 0.4921920085941332,
+    "focus_mae_um": 1.2679233049220748,
+    "signed_direction_accuracy": 0.9888888888888889,
+    "corrected_hard_pq": 0.552294837627718,
+    "first_hard_pq_drop_from_segmentation_only": 0.010295308420323397,
+    "corrected_gain_over_piecewise_028": 0.0012850136904830492,
+    "piecewise_gain_ci_95": [-0.001719244321047897, 0.004800378815350437],
+    "piecewise_positive_well_fraction": 0.5555555555555556,
+    "corrected_gain_over_matched_stopped": 0.006258840610359453,
+    "stopped_gain_ci_95": [0.0006703181908061804, 0.011547458540670894],
+    "passed": false
+  },
+  "other_exact_candidates": [
+    {
+      "name": "v2_3-exact-action_heavy-segmentation_only-step-12",
+      "first_hard_pq": 0.49323804112679664,
+      "focus_mae_um": 1.2519489003913544,
+      "corrected_hard_pq": 0.5511417396409435,
+      "corrected_gain_over_piecewise_028": 0.00013191570370851122,
+      "corrected_gain_over_matched_stopped": 0.0046778736970824455,
+      "passed": false
+    },
+    {
+      "name": "v2_3-exact-first_heavy-segmentation_only-step-09",
+      "first_hard_pq": 0.5001028278797454,
+      "focus_mae_um": 1.294712310159876,
+      "corrected_hard_pq": 0.551681286839643,
+      "corrected_gain_over_piecewise_028": 0.0006714629024079558,
+      "corrected_gain_over_matched_stopped": 0.0006651294195020862,
+      "passed": false
+    }
+  ],
+  "positive_findings": {
+    "all_exact_gain_over_clear_at_least_0_01": true,
+    "all_clear_gain_bootstrap_lower_bounds_positive": true,
+    "all_signed_direction_at_least_0_90": true,
+    "all_focus_mae_at_most_2_um": true,
+    "all_stage_actions_reduce_absolute_defocus": true,
+    "all_corrected_hard_pq_exceeds_first": true,
+    "full_loop_derivative_gate_passed": true
+  },
+  "conditional_work_not_run": {
+    "matched_derivative_free": "No exact checkpoint passed every prerequisite hard gate.",
+    "locked_test": "No v2.4 candidate passed all validation and matched-comparison prerequisites.",
+    "poisson_and_robustness": "These are conditional on a positive locked-test result.",
+    "v2_5": "The authorized v2.5 trigger was no soft-eligible v2.4 checkpoint; v2.4 found 90, so v2.5 was not activated."
+  },
+  "evidence_sha256": {
+    "contract": "45745fa5c3c4af19f76c897f2c137437b3d0b6dabaed0128988ef5b7f2f96ab1",
+    "checkpoint_pool": "82570b8061afb3ae2ecd16345e144bdd569f80b10bcc401311eb9c2e9add79fd",
+    "checkpoint_audit": "e6c888fa9a3d38f43d824f41e16c9e5358e5bbb9f242ac597c1530f74549276d",
+    "selected_checkpoints": "d1519c04e553c69fd448a985975a96e04264c458d9f8ade2e94a85440a61db81",
+    "stopped_stage": "ec2d765f7dd02853601f13737969ee212985d7d19468efaa4ff03532fc3e4117",
+    "expanded_hard_validation": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+    "closed_loop_derivative": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+  }
+}

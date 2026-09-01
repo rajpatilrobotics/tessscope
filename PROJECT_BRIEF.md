@@ -13,6 +13,15 @@ residual defocus, v2.4 freezes a negative result and automatically activates sep
 named v2.5 constrained closed-loop optimization. The locked BBBC006 test remains sealed
 until every applicable validation and matched-comparison gate passes.
 
+Final v2.4 status: early stopping found 90 soft-eligible checkpoints and froze three
+exact candidates. All three improved first-frame hard PQ over clear with positive paired
+confidence, achieved at least `98.89%` direction accuracy and below `1.30 µm` MAE, and
+improved the corrected frame. The best corrected PQ was `0.552295`, but its gain over
+v2.2 piecewise-028 was only `+0.001285` with interval
+`[-0.001719, +0.004800]`, below the required `+0.005` and positive lower bound. V2.4 is
+therefore a complete negative validation result; derivative-free and locked-test work
+were not authorized.
+
 ## V2.2 matched-frontier experiment
 
 V2.2 is an approved, separately named validation-only experiment. It freezes v2.1's

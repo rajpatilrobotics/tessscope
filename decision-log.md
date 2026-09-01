@@ -1,5 +1,27 @@
 # TessScope decision log
 
+## 2026-09-02 — V2.4 completes expanded hard validation without promotion
+
+- All three frozen exact checkpoints and their three matched stopped-stage pupils were
+  evaluated on the unchanged 45 valid wells, 27 hard-density wells, official InstanSeg
+  endpoint, one predicted correction, and 2,000 paired-well bootstrap replicates.
+- Exact first-frame PQ values are `0.492192`, `0.493238`, and `0.500103`, each more than
+  `+0.01` above clear with a positive paired lower bound. Direction accuracy is
+  `98.89–99.26%`, focus MAE is `1.252–1.295 µm`, and every correction reduces residual
+  defocus and increases hard PQ.
+- Balanced step 14 has the best corrected PQ, `0.552295`. It causally beats its matched
+  stopped pupil by `+0.006259`, interval `[+0.000670, +0.011547]`, but beats v2.2
+  piecewise-028 by only `+0.001285`, interval `[-0.001719, +0.004800]`. Only `55.6%` of
+  hard wells favor it, below the frozen 60% stability gate, and its first PQ drop from
+  segmentation-only is `0.010295`, just outside the `0.01` limit.
+- The action-heavy and first-heavy checkpoints also miss the `+0.005` corrected piecewise
+  effect and positive paired lower bound. Neither produces a qualifying causal gain over
+  its stopped control.
+- Decision: no v2.4 checkpoint passes all hard gates. Do not run the conditional matched
+  derivative-free control or locked test. V2.5 is not activated because its approved
+  trigger was zero soft-eligible v2.4 checkpoints, while the audit found 90. Freeze v2.4
+  honestly as a negative validation result.
+
 ## 2026-09-02 — V2.4 finds and freezes three early-stopped candidates
 
 - The audit reconstructed all 270 source records without retraining and served 269 unique

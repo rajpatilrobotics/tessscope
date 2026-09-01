@@ -11,11 +11,11 @@ scientific choice cannot be resolved on training/validation data, or a destructi
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 through v2.3 are preserved, and v2.3 is frozen at `93da502` as a
-correct negative endpoint-only experiment. V2.4 is explicitly approved. Before any
-intermediate validation value is computed, v2.4 freezes the source hash, all 270 saved
-checkpoints, the unchanged `1.098270310640335` ceiling, selection/diversity rules, hard
-gates, and conditional v2.5 continuation. The BBBC006 locked test remains sealed.
+Current checkpoint: v1 through v2.3 are preserved, and the approved v2.4 checkpoint audit
+is complete as a negative expanded-hard result. Ninety frozen checkpoints passed the
+unchanged soft ceiling, three were frozen, and all six exact/stopped pupils received the
+45-well hard protocol. None passed every matched gate, so the BBBC006 locked test remains
+sealed. The conditional v2.5 trigger did not occur.
 
 ## 2. Problem
 
@@ -103,7 +103,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 5. Step by step tasks
 
-### V2.4 active frozen-checkpoint audit
+### V2.4 completed frozen-checkpoint audit
 
 - [x] V2.4-0A: froze the v2.3 matrix hash, exact 270-checkpoint pool, unchanged ceiling,
   eligibility, nondominance, diversity, hard gates, downstream order, and test policy.
@@ -115,17 +115,19 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.4-1B: generated nine trajectory and two tradeoff figures. Ninety checkpoints
   were eligible and 57 were nondominated; the frozen one-per-run rule selected balanced
   step 14, action-heavy step 12, and first-heavy step 9 from segmentation-only starts.
-- [ ] V2.4-2A: if selected, run matched stopped-stage comparisons and the unchanged
-  expanded hard protocol; otherwise freeze a negative audit and activate v2.5.
-- [ ] V2.4-2B: only after every earlier hard gate, run matched derivative-free control,
-  freeze a verified local pre-test commit, and access the locked test exactly once.
+- [x] V2.4-2A: ran three matched stopped-stage controls with exact forward parity and
+  evaluated all six frozen pupils on 45 wells/27 hard-density wells. No exact checkpoint
+  passed the required corrected gain, paired confidence, and stability over piecewise-028.
+- [x] V2.4-2B: applied the frozen ordering. The matched derivative-free control and
+  locked test were correctly skipped because no checkpoint cleared the earlier hard gate;
+  the negative pre-test evidence and hashes are frozen.
 
 ### Conditional V2.5 constrained continuation
 
-- [ ] V2.5-0A: activate only if v2.4 has no eligible checkpoint; pre-register a transparent
-  exact-gradient constrained optimizer with validation checkpointing from the outset.
-- [ ] V2.5-1A: verify objective and constraint gradients, run the bounded frozen-start
-  matrix, and apply the same stopped-stage, hard, derivative-free, and locked-test order.
+- [x] V2.5-0A: evaluated the activation condition. V2.4 found 90 soft-eligible
+  checkpoints, so the authorized zero-eligible trigger was false and v2.5 was not started.
+- [x] V2.5-1A: not applicable under the approved conditional scope because v2.5 was not
+  activated; no constrained run or additional test access was inferred.
 
 ### V2.2 completed matched-frontier work
 
@@ -286,7 +288,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-There is no unresolved question inside the approved v2.2/v2.3 scope. Both experiments
-are complete negative validation results, and the locked test remains sealed. Any v2.4
-intervention would be a new scientific scope requiring a separate plan and approval; it
-must not be inferred from the completed fallback authorization.
+There is no unresolved question inside the approved v2.4 scope. Early checkpoint
+selection succeeded, but the candidates did not beat the strong corrected piecewise
+reference by the frozen hard effect, confidence, and stability requirements. V2.5 was
+conditional on finding zero soft-eligible checkpoints, so it was not activated. Any
+different constrained continuation would require a new scope; the locked test remains
+sealed.

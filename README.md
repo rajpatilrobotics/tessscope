@@ -1,5 +1,20 @@
 # TessScope
 
+## V2.4 final status
+
+The approved v2.4 frozen-checkpoint audit is complete as a **negative expanded-hard
+validation experiment**. It reconstructed all 270 saved v2.3 checkpoints without
+retraining, found 90 that pass the unchanged soft ceiling, and froze three exact pupils
+before inspecting hard labels. Three matched stopped-stage controls had exact forward
+parity, and all six pupils received the same 45-well/27-dense-well hard protocol.
+
+Every exact candidate gained more than `+0.01` first-frame hard PQ over clear, reached at
+least `98.89%` direction accuracy and below `1.30 µm` focus MAE, and improved hard PQ
+after correction. The best corrected PQ was `0.552295`, but its `+0.001285` gain over
+piecewise-028 missed the required `+0.005`; its paired interval included zero. No
+candidate advanced to derivative-free or locked-test evaluation. See
+[the v2.4 status](outputs/v2_4/STATUS.md).
+
 ## V2.3 final status
 
 The approved v2.3 closed-loop fallback is complete as a **negative validation-only
@@ -72,6 +87,8 @@ did not improve, and the two Poisson endpoints were not positive.
   validation wells, with a frozen negative matched-frontier decision.
 - V2.3 two-exposure differentiable feedback, exact/stopped derivative evidence, and the
   complete nine-run soft optimization matrix with a sealed-test negative decision.
+- V2.4 complete 270-checkpoint audit, three frozen early-stopped pupils, matched
+  stopped-stage controls, expanded hard evaluation, and a sealed-test negative decision.
 
 ![TessScope architecture](outputs/architecture.png)
 
