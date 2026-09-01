@@ -10,6 +10,7 @@ from tessscope.v2_3.closed_loop import (
     ClosedLoopWeights,
     loss_from_terms,
     materialize_closed_loop_batch,
+    nondominated_closed_loop_names,
 )
 
 
@@ -52,3 +53,27 @@ def test_profiles_match_preregistered_single_weight_changes() -> None:
     )
     with pytest.raises(ValueError, match="nonnegative"):
         ClosedLoopWeights(first_segmentation=-0.1)
+
+
+def test_soft_nondominance_uses_all_three_closed_loop_outputs() -> None:
+    rows = [
+        {
+            "name": "first",
+            "first_segmentation_loss": 1.0,
+            "final_segmentation_loss": 1.2,
+            "residual_mae_um": 1.0,
+        },
+        {
+            "name": "final",
+            "first_segmentation_loss": 1.1,
+            "final_segmentation_loss": 1.0,
+            "residual_mae_um": 0.8,
+        },
+        {
+            "name": "dominated",
+            "first_segmentation_loss": 1.2,
+            "final_segmentation_loss": 1.3,
+            "residual_mae_um": 1.1,
+        },
+    ]
+    assert nondominated_closed_loop_names(rows) == {"first", "final"}

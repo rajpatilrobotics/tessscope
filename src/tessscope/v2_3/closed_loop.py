@@ -83,6 +83,26 @@ def materialize_closed_loop_batch(
     )
 
 
+def nondominated_closed_loop_names(rows: list[dict]) -> set[str]:
+    """Return endpoints not dominated on first loss, final loss, and residual MAE."""
+    names = set()
+    metrics = (
+        "first_segmentation_loss",
+        "final_segmentation_loss",
+        "residual_mae_um",
+    )
+    for candidate in rows:
+        dominated = any(
+            other["name"] != candidate["name"]
+            and all(other[metric] <= candidate[metric] for metric in metrics)
+            and any(other[metric] < candidate[metric] for metric in metrics)
+            for other in rows
+        )
+        if not dominated:
+            names.add(candidate["name"])
+    return names
+
+
 def loss_from_terms(
     first_segmentation_loss: jax.Array,
     final_segmentation_loss: jax.Array,
@@ -189,7 +209,7 @@ def _graph(
     value, loss_terms = loss_from_terms(
         first_observation["task_loss"],
         final_observation["task_loss"],
-        stage_action,
+        residual_action,
         jnp.asarray(DEPTHS),
         weights,
     )

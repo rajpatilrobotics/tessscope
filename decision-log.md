@@ -34,12 +34,19 @@
 - The complete served feedback objective passes five-direction central differences with
   overall median relative error `0.004802` and cosine `0.999967` across stable `1e-3` and
   `1e-4` epsilon windows. Test access is false.
-- Exact and stopped-stage modes have identical forward value to machine precision. Their
-  gradient difference is `68.0%` of the exact gradient norm at the predeclared
-  piecewise-028 probe, far above the 1% load-bearing threshold.
+- Exact and fully stopped-stage modes have identical forward value to machine precision.
+  Their corrected gradient difference is `82.36%` of the exact gradient norm at the
+  predeclared piecewise-028 probe, far above the 1% load-bearing threshold.
 - Decision: the feedback connection is both numerically valid and materially active.
   Proceed to the matched profile/start optimization matrix; do not promote from this
   derivative result alone.
+
+- Pre-optimization audit clarification: an initial partial-stop diagnostic reported
+  `68.0%`. Stopped-stage mode now stops the action for both
+  the second optics call and the residual/action penalties. This makes the ablation a
+  complete stop of every downstream action path. Exact-mode values and derivatives are
+  unchanged; the corrected forward-identical ablation evidence supersedes only the
+  earlier partial-stop diagnostic in Git history.
 
 
 ## 2026-09-01 — V2.2 matched piecewise-frontier protocol pre-registered

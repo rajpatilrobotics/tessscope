@@ -62,6 +62,7 @@ optimization:
   initial_learning_rate: 0.01
   final_third_learning_rate_multiplier: 0.3
   maximum_soft_nondominated_promotions: 3
+  promotion_tie_break: lowest_final_loss_then_residual_mae_then_first_loss_then_name
   stopped_stage_ablation_budget: matched_to_best_exact_profile_start
 derivative_gates:
   maximum_relative_error: 0.01
