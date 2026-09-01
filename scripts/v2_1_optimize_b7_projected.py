@@ -1,4 +1,4 @@
-"""Optimize B7 pupils with segmentation-primary projected exact gradients."""
+"""Optimize B7/B11 pupils with segmentation-primary projected gradients."""
 
 from __future__ import annotations
 
@@ -22,10 +22,11 @@ from tessscope.v2_1.optimization.projected import segmentation_primary_gradient
 from tessscope.v2_1.optimization.served import (
     averaged_forward,
     b7_coefficient_list,
+    b11_coefficient_list,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SEPARATE = (
+DEFAULT_SEPARATE = (
     PROJECT_ROOT
     / "artifacts"
     / "runs"
@@ -33,7 +34,7 @@ SEPARATE = (
     / "optimization"
     / "b7-separate-baselines.json"
 )
-OUTPUT = (
+DEFAULT_OUTPUT = (
     PROJECT_ROOT
     / "artifacts"
     / "runs"
@@ -41,7 +42,7 @@ OUTPUT = (
     / "optimization"
     / "b7-projected-gradient-candidates.json"
 )
-BALANCES = (0.25, 0.5, 1.0)
+DEFAULT_BALANCES = (0.25, 0.5, 1.0)
 CHECKPOINT_INTERVAL = 5
 SEGMENTATION_MARGIN = 0.008
 SLACK_TOLERANCE = 1e-4
@@ -54,13 +55,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--observer-url", default="http://127.0.0.1:8402")
     parser.add_argument("--steps", type=int, default=30)
     parser.add_argument("--learning-rate", type=float, default=0.01)
+    parser.add_argument("--basis-size", type=int, choices=(7, 11), default=7)
+    parser.add_argument("--separate", type=Path, default=DEFAULT_SEPARATE)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--balances", type=float, nargs="+")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    if OUTPUT.exists():
-        raise SystemExit(f"B7 projected-gradient artifact already exists: {OUTPUT}")
+    if args.output.exists():
+        raise SystemExit(
+            f"B{args.basis_size} projected-gradient artifact already exists: "
+            f"{args.output}"
+        )
     if args.steps <= 0 or args.learning_rate <= 0:
         raise SystemExit("Step count and learning rate must be positive")
     services = (
@@ -71,7 +79,16 @@ def main() -> None:
     for service in services:
         service.health()
     calibration = V2SystemCalibration.load()
-    separate = json.loads(SEPARATE.read_text())
+    separate = json.loads(args.separate.read_text())
+    balances = tuple(args.balances or DEFAULT_BALANCES)
+    if any(balance < 0 for balance in balances):
+        raise SystemExit("Projection balances must be nonnegative")
+    basis_label = f"b{args.basis_size}"
+    coefficient_list = (
+        b7_coefficient_list
+        if args.basis_size == 7
+        else b11_coefficient_list
+    )
     start_parameters = np.asarray(
         separate["segmentation_only"]["final_parameters"], dtype=np.float32
     )
@@ -102,7 +119,7 @@ def main() -> None:
         validation_anchor["segmentation_loss"] + SEGMENTATION_MARGIN
     )
     candidates = []
-    for balance in BALANCES:
+    for balance in balances:
         parameters = start_parameters.copy()
         first_moment = np.zeros_like(parameters)
         second_moment = np.zeros_like(parameters)
@@ -153,7 +170,7 @@ def main() -> None:
                     ],
                     "batch_focus_mse": focus["focus_mse"],
                     "parameters": parameters.tolist(),
-                    "phase_coefficients": b7_coefficient_list(parameters),
+                    "phase_coefficients": coefficient_list(parameters),
                 }
             )
             if step % CHECKPOINT_INTERVAL == 0 or step == args.steps:
@@ -164,11 +181,13 @@ def main() -> None:
                     calibration,
                 )
                 checkpoint = {
-                    "name": f"b7-projected-{balance:.2f}-step-{step}",
+                    "name": (
+                        f"{basis_label}-projected-{balance:.2f}-step-{step}"
+                    ),
                     "balance": balance,
                     "step": step,
                     "parameters": parameters.tolist(),
-                    "phase_coefficients": b7_coefficient_list(parameters),
+                    "phase_coefficients": coefficient_list(parameters),
                     "validation": validation,
                     "validation_segmentation_eligible": bool(
                         validation["segmentation_loss"]
@@ -234,7 +253,7 @@ def main() -> None:
         )
         candidates.append(
             {
-                "name": f"b7-projected-balance-{balance:.2f}",
+                "name": f"{basis_label}-projected-balance-{balance:.2f}",
                 "balance": balance,
                 "steps": args.steps,
                 "elapsed_seconds": time.perf_counter() - started,
@@ -262,14 +281,17 @@ def main() -> None:
         )
     )
     report = {
-        "status": "complete_training_validation_only_projected_gradient",
+        "status": (
+            f"complete_training_validation_only_{basis_label}_projected_gradient"
+        ),
         "test_accessed": False,
         "method": (
             "remove only the exact normalized-focus gradient component opposing the "
             "exact segmentation gradient, then norm-balance and update with matched Adam"
         ),
         "budget": {
-            "balances": list(BALANCES),
+            "basis_size": args.basis_size,
+            "balances": list(balances),
             "steps_per_balance": args.steps,
             "initial_learning_rate": args.learning_rate,
             "training_wells": len(training_patches),
@@ -293,11 +315,12 @@ def main() -> None:
             row["name"] for row in selected_rows[:2]
         ],
     }
-    OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
-                "output": str(OUTPUT),
+                "output": str(args.output),
                 "selected_for_expanded_hard_validation": report[
                     "selected_for_expanded_hard_validation"
                 ],
@@ -308,7 +331,8 @@ def main() -> None:
     )
     if not selected_rows:
         raise SystemExit(
-            "No projected B7 checkpoint passed training and validation constraints"
+            f"No projected B{args.basis_size} checkpoint passed training and "
+            "validation constraints"
         )
 
 
