@@ -8,6 +8,10 @@ and labels sealed, and asks whether a slightly richer manufacturable pupil plus 
 exact-gradient constrained optimizer can enter the already frozen joint-performance
 region. The success thresholds below are unchanged.
 
+Final status: the approved B7→B11 ladder is complete as a negative pre-test result. Both
+bases produced useful Pareto candidates, but no single pupil passed every frozen gate.
+The locked test was therefore not accessed, and no learned-pupil headline is claimed.
+
 ## One-line idea
 
 TessScope v2 co-designs one bounded phase-only fluorescence-microscope pupil so a

@@ -1,5 +1,5 @@
 experiment: tessscope_v2_1_validation_continuation
-status: approved_validation_only_test_sealed
+status: complete_negative_pretest_test_sealed
 parent_checkpoint:
   version: v2
   commit: 503ee9a

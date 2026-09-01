@@ -1,7 +1,8 @@
-"""Run the maximum valid well-grouped hard screen for frozen B7 candidates."""
+"""Run the maximum valid well-grouped hard screen for frozen B7/B11 candidates."""
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -30,7 +31,9 @@ from tessscope.v2.optimization.served import (
 from tessscope.v2_1.evaluation import paired_hard_pq_bootstrap
 from tessscope.v2_1.optics.model import (
     simulate_noisy_sensor_b7,
+    simulate_noisy_sensor_b11,
     unconstrained_from_coefficients_b7,
+    unconstrained_from_coefficients_b11,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -40,9 +43,9 @@ V2_SUMMARY = (
 OPTIMIZATION_ROOT = (
     PROJECT_ROOT / "artifacts" / "runs" / "v2_1" / "optimization"
 )
-SEPARATE = OPTIMIZATION_ROOT / "b7-separate-baselines.json"
-PROJECTED = OPTIMIZATION_ROOT / "b7-projected-gradient-candidates.json"
-OUTPUT = (
+DEFAULT_SEPARATE = OPTIMIZATION_ROOT / "b7-separate-baselines.json"
+DEFAULT_PROJECTED = OPTIMIZATION_ROOT / "b7-projected-gradient-candidates.json"
+DEFAULT_OUTPUT = (
     PROJECT_ROOT
     / "artifacts"
     / "runs"
@@ -52,6 +55,15 @@ OUTPUT = (
 )
 TARGET_VALIDATION_WELLS = 48
 EVALUATED_VALIDATION_WELLS = 45
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--basis-size", type=int, choices=(7, 11), default=7)
+    parser.add_argument("--separate", type=Path, default=DEFAULT_SEPARATE)
+    parser.add_argument("--projected", type=Path, default=DEFAULT_PROJECTED)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    return parser.parse_args()
 
 
 def load_json(path: Path) -> dict:
@@ -71,41 +83,56 @@ def selected_projected_rows(projected: dict) -> list[dict]:
     return sorted(rows, key=lambda row: row["name"])
 
 
-def design_registry() -> dict[str, dict]:
-    separate = load_json(SEPARATE)
-    projected = load_json(PROJECTED)
+def design_registry(args: argparse.Namespace) -> dict[str, dict]:
+    separate = load_json(args.separate)
+    projected = load_json(args.projected)
     v2_designs = load_json(V2_SUMMARY)["designs"]
+    basis_label = f"b{args.basis_size}"
     derivative_free_coefficients = np.asarray(
-        [*v2_designs["derivative_free"]["final_phase_coefficients"], 0.0],
+        [
+            *v2_designs["derivative_free"]["final_phase_coefficients"],
+            *([0.0] * (args.basis_size - 6)),
+        ],
         dtype=np.float64,
+    )
+    inverse_map = (
+        unconstrained_from_coefficients_b7
+        if args.basis_size == 7
+        else unconstrained_from_coefficients_b11
     )
     registry = {
         "clear": {
-            "parameters": np.zeros(7, dtype=np.float32).tolist(),
-            "role": "clear B7 zero pupil",
-        },
-        "b7_segmentation_only": {
-            "parameters": separate["segmentation_only"]["final_parameters"],
-            "role": "matched 90-step B7 segmentation-only baseline",
-        },
-        "b7_naive_superposition": {
-            "parameters": separate["naive_superposition"]["final_parameters"],
-            "role": "matched B7 separate-pupil naive superposition",
-        },
-        "legacy_derivative_free_extended_b7": {
-            "parameters": unconstrained_from_coefficients_b7(
-                derivative_free_coefficients
+            "parameters": np.zeros(
+                args.basis_size, dtype=np.float32
             ).tolist(),
+            "role": f"clear B{args.basis_size} zero pupil",
+        },
+        f"{basis_label}_segmentation_only": {
+            "parameters": separate["segmentation_only"]["final_parameters"],
             "role": (
-                "v2 matched derivative-free B6 control extended with zero Noll 11; "
-                "not a matched B7 derivative-free search"
+                f"matched 90-step B{args.basis_size} segmentation-only baseline"
+            ),
+        },
+        f"{basis_label}_naive_superposition": {
+            "parameters": separate["naive_superposition"]["final_parameters"],
+            "role": (
+                f"matched B{args.basis_size} separate-pupil naive superposition"
+            ),
+        },
+        f"legacy_derivative_free_extended_{basis_label}": {
+            "parameters": inverse_map(derivative_free_coefficients).tolist(),
+            "role": (
+                "v2 matched derivative-free B6 control extended with zero added "
+                f"coefficients; not a matched B{args.basis_size} derivative-free search"
             ),
         },
     }
     for row in selected_projected_rows(projected):
         registry[row["name"]] = {
             "parameters": row["parameters"],
-            "role": "frozen projected exact-gradient B7 candidate",
+            "role": (
+                f"frozen projected exact-gradient B{args.basis_size} candidate"
+            ),
         }
     return registry
 
@@ -115,11 +142,17 @@ def simulate(
     objects: np.ndarray,
     depths: np.ndarray,
     calibration: V2SystemCalibration,
+    basis_size: int,
 ) -> np.ndarray:
     noise = np.zeros((len(objects), len(depths), 256, 256), dtype=np.float32)
+    simulator = (
+        simulate_noisy_sensor_b7
+        if basis_size == 7
+        else simulate_noisy_sensor_b11
+    )
     return np.maximum(
         np.asarray(
-            simulate_noisy_sensor_b7(
+            simulator(
                 jnp.asarray(parameters, dtype=jnp.float32),
                 jnp.asarray(objects, dtype=jnp.float32),
                 jnp.asarray(depths, dtype=jnp.float32),
@@ -172,8 +205,11 @@ def coverage_exclusions(patches) -> list[dict]:
 
 
 def main() -> None:
-    if OUTPUT.exists():
-        raise SystemExit(f"Expanded hard-validation artifact already exists: {OUTPUT}")
+    args = parse_args()
+    if args.output.exists():
+        raise SystemExit(
+            f"Expanded hard-validation artifact already exists: {args.output}"
+        )
     calibration = V2SystemCalibration.load()
     patches = collect_patches(
         "validation", EVALUATED_VALIDATION_WELLS, seed=53
@@ -197,11 +233,13 @@ def main() -> None:
     transform = ObserverTransform(
         mode="affine", offset=0.0, scale=calibration.exposure_gain
     )
-    designs = design_registry()
+    designs = design_registry(args)
+    basis_label = f"b{args.basis_size}"
     candidate_names = [
         name
         for name, design in designs.items()
-        if design["role"] == "frozen projected exact-gradient B7 candidate"
+        if design["role"]
+        == f"frozen projected exact-gradient B{args.basis_size} candidate"
     ]
     summaries = {}
     all_rows = []
@@ -220,7 +258,9 @@ def main() -> None:
             objects = np.stack(
                 [support[0].object_image, support[1].object_image, query.object_image]
             ).astype(np.float32)
-            sensor = simulate(parameters, objects, DEPTHS, calibration)
+            sensor = simulate(
+                parameters, objects, DEPTHS, calibration, args.basis_size
+            )
             photon_means.append(float(np.mean(sensor) * calibration.expected_photons))
             features, _ = spectral_features(sensor.reshape(-1, 256, 256))
             ridge = ridge_predict(
@@ -273,6 +313,7 @@ def main() -> None:
                     query.object_image[None].astype(np.float32),
                     residual_depths.astype(np.float32),
                     calibration,
+                    args.basis_size,
                 )[0]
                 corrected_predictions = segment_sensor_batch(
                     model,
@@ -347,9 +388,9 @@ def main() -> None:
             )
             for reference_name in (
                 "clear",
-                "b7_segmentation_only",
-                "b7_naive_superposition",
-                "legacy_derivative_free_extended_b7",
+                f"{basis_label}_segmentation_only",
+                f"{basis_label}_naive_superposition",
+                f"legacy_derivative_free_extended_{basis_label}",
             )
         }
         for candidate_name in candidate_names
@@ -383,9 +424,11 @@ def main() -> None:
         }
         candidate = summaries[candidate_name]
         clear = summaries["clear"]
-        segmentation = summaries["b7_segmentation_only"]
-        superposed = summaries["b7_naive_superposition"]
-        derivative_free = summaries["legacy_derivative_free_extended_b7"]
+        segmentation = summaries[f"{basis_label}_segmentation_only"]
+        superposed = summaries[f"{basis_label}_naive_superposition"]
+        derivative_free = summaries[
+            f"legacy_derivative_free_extended_{basis_label}"
+        ]
         stage = stages[candidate_name]
         clear_bootstrap = bootstraps[candidate_name]["clear"]
         candidate_gates = {
@@ -426,7 +469,9 @@ def main() -> None:
                 candidate["mean_photon_count"] > 0.0
             ),
         }
-        candidate_gates["passed_preliminary_without_matched_b7_derivative_free"] = bool(
+        candidate_gates[
+            "passed_preliminary_without_matched_basis_derivative_free"
+        ] = bool(
             candidate_gates["hard_pq_gain_over_clear"] >= 0.01
             and candidate_gates["clear_gain_bootstrap_ci_lower_positive"]
             and candidate_gates["hard_pq_drop_from_segmentation_only"] <= 0.01
@@ -444,7 +489,9 @@ def main() -> None:
     eligible = [
         name
         for name, candidate_gates in gates.items()
-        if candidate_gates["passed_preliminary_without_matched_b7_derivative_free"]
+        if candidate_gates[
+            "passed_preliminary_without_matched_basis_derivative_free"
+        ]
     ]
     selected = (
         max(
@@ -458,8 +505,11 @@ def main() -> None:
         else None
     )
     report = {
-        "status": "complete_expanded_45_of_48_well_validation_only",
+        "status": (
+            f"complete_expanded_45_of_48_well_{basis_label}_validation_only"
+        ),
         "test_accessed": False,
+        "basis_size": args.basis_size,
         "coverage": {
             "target_validation_wells": TARGET_VALIDATION_WELLS,
             "evaluated_validation_wells": len(patches),
@@ -481,19 +531,19 @@ def main() -> None:
         "paired_well_bootstraps": bootstraps,
         "stage_correction": stages,
         "gates": gates,
-        "eligible_for_matched_b7_derivative_free": eligible,
-        "selected_for_matched_b7_derivative_free": selected,
+        "eligible_for_matched_basis_derivative_free": eligible,
+        "selected_for_matched_basis_derivative_free": selected,
         "passed_preliminary": selected is not None,
         "rows": all_rows,
         "corrected_rows": corrected_rows,
     }
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
-                "output": str(OUTPUT),
-                "selected_for_matched_b7_derivative_free": selected,
+                "output": str(args.output),
+                "selected_for_matched_basis_derivative_free": selected,
                 "passed_preliminary": report["passed_preliminary"],
                 "test_accessed": False,
             },
@@ -502,7 +552,8 @@ def main() -> None:
     )
     if selected is None:
         raise SystemExit(
-            "No projected B7 candidate passed expanded hard validation; "
+            f"No projected B{args.basis_size} candidate passed expanded hard "
+            "validation; "
             "test access remains blocked"
         )
 

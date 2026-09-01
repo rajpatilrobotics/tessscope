@@ -1,4 +1,4 @@
-"""Tests for expanded B7 hard-validation pairing."""
+"""Tests for expanded B7/B11 hard-validation pairing."""
 
 import pytest
 

@@ -137,6 +137,34 @@
 - Decision: B11 is eligible for validation-only optimization. These numerical gates do
   not promote a pupil or unlock test data.
 
+## 2026-09-01 — B11 completes the basis ladder with a negative pre-test result
+
+- Matched 90-step B11 baselines used the same 36 training and 12 validation wells.
+  Segmentation-only reached validation task loss/focus MSE `1.09020/4.31924`;
+  focus-only reached `1.16014/2.81038`; constrained naive superposition reached
+  `1.15152/1.38904`.
+- Segmentation-primary projected runs at balances `1`, `2`, and `3` used matched 40-step
+  schedules. Preselected balance `2` step 15 and balance `3` step 15 satisfied the
+  unchanged training and soft-validation segmentation allowances before expanded hard
+  labels were evaluated.
+- Expanded validation used the same maximum 45/48 valid wells, 27-well hard-density
+  subset, seven depths, deterministic fields, correction frames, and 2,000 paired
+  well-bootstrap replicates as B7. No validation exclusions or definitions changed.
+- Balance `2` reaches hard PQ `0.49157`, a `+0.03545` gain over clear with 95% interval
+  `[+0.00996, +0.05966]`, direction `100%`, and focus MAE `1.06676 µm`. Its `0.01206`
+  drop from B11 segmentation-only exceeds the allowed `0.01`, and it does not beat B11
+  naive superposition's `0.80987 µm` focus MAE.
+- Balance `3` reaches hard PQ `0.49044`, a `+0.03433` gain over clear with 95% interval
+  `[+0.00967, +0.05699]`, direction `100%`, and focus MAE `1.05502 µm`. Its `0.01318`
+  segmentation drop and superposition comparison fail the same gates.
+- The matched B11 derivative-free search was explicitly conditional on first clearing
+  the segmentation and naive-superposition gates. Neither candidate did, so that run
+  could not affect eligibility and was not performed.
+- Decision: stop v2.1 at a complete negative pre-test checkpoint. Freeze the result and
+  hashes in `configs/v2_1/pretest-block.json`; do not access the BBBC006 locked test,
+  generate promotion-only claims, or reinterpret thresholds. A future attempt requires
+  a separately approved hypothesis rather than more tuning of this basis ladder.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No

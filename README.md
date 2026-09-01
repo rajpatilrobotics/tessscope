@@ -1,13 +1,14 @@
 # TessScope
 
-## V2.1 continuation
+## V2.1 final status
 
-V2.1 is active as a separately named validation-only continuation. Its causal audit
-found that the frozen differentiable InstanSeg loss tracks hard PQ strongly, while exact
-segmentation and focus gradients conflict across 9/11 sampled B6 path points. The chosen
-intervention is a seven-mode B7 pupil adding Noll 11 primary spherical plus exact
-constrained continuation. B7 has passed basis/support and full served derivative gates;
-the locked test remains sealed. See [the v2.1 audit](outputs/v2_1/AUDIT.md).
+V2.1 completed the approved validation-only B7→B11 basis ladder with a **negative
+pre-test result**. Basis/support and full served derivative gates passed, and the best
+projected pupils improved hard off-focus PQ over clear with positive well-bootstrap
+confidence bounds. No candidate simultaneously stayed within `0.01` of matched
+segmentation-only and beat matched naive superposition on focus MAE. The locked BBBC006
+test remained sealed. See [the v2.1 status](outputs/v2_1/STATUS.md) and
+[causal audit](outputs/v2_1/AUDIT.md).
 
 ## V2 current status
 
@@ -52,6 +53,8 @@ did not improve, and the two Poisson endpoints were not positive.
 - V2 BBBC006 z13–z19 data pipeline, well splits, registration, and reference-mask audit.
 - V2 JAX optics, analytic NumPy/SciPy autofocus, and PyTorch InstanSeg Tesseracts.
 - V2 matched multi-objective baselines and preserved negative pre-test gate evidence.
+- V2.1 B7/B11 exact-gradient optimization, expanded 45-well hard validation, and frozen
+  negative pre-test evidence without test leakage.
 
 ![TessScope architecture](outputs/architecture.png)
 

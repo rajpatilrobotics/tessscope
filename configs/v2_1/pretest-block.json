@@ -1,0 +1,59 @@
+{
+  "status": "complete_negative_pretest_test_sealed",
+  "test_accessed": false,
+  "locked_test_run_authorized": false,
+  "reason": "No B7 or B11 candidate satisfied every unchanged hard validation gate.",
+  "validation_coverage": {
+    "target_wells": 48,
+    "evaluated_wells": 45,
+    "excluded_wells": ["l09", "o13", "o20"],
+    "hard_density_wells": 27,
+    "paired_well_bootstrap_replicates": 2000
+  },
+  "closest_candidates": {
+    "b7-projected-0.50": {
+      "hard_pq_gain_over_clear": 0.03995159921900765,
+      "hard_pq_drop_from_segmentation_only": 0.006422944770811678,
+      "signed_direction_accuracy": 0.9888888888888889,
+      "focus_mae_um": 1.2107347688246382,
+      "failed_gates": ["pareto_dominates_naive_superposition"]
+    },
+    "b11-projected-2.00-step-15": {
+      "hard_pq_gain_over_clear": 0.035453566548837745,
+      "hard_pq_drop_from_segmentation_only": 0.01205626413298394,
+      "signed_direction_accuracy": 1.0,
+      "focus_mae_um": 1.0667618173871203,
+      "failed_gates": [
+        "maximum_hard_pq_drop_from_segmentation_only",
+        "pareto_dominates_naive_superposition"
+      ]
+    },
+    "b11-projected-3.00-step-15": {
+      "hard_pq_gain_over_clear": 0.03432908147003971,
+      "hard_pq_drop_from_segmentation_only": 0.013180749211781972,
+      "signed_direction_accuracy": 1.0,
+      "focus_mae_um": 1.055023849281201,
+      "failed_gates": [
+        "maximum_hard_pq_drop_from_segmentation_only",
+        "pareto_dominates_naive_superposition"
+      ]
+    }
+  },
+  "conditional_work_not_run": {
+    "matched_b11_derivative_free": "No B11 candidate passed the prerequisite preliminary gates.",
+    "locked_test": "No candidate passed all validation prerequisites.",
+    "promotion_only_robustness_and_submission_evidence": "No pupil was promoted."
+  },
+  "evidence_sha256": {
+    "b7_basis_diagnostics": "b5fe483575b1639303c844e6ffae64c2b768ec8f57dad77e1662f3849bb833e3",
+    "b7_three_tesseract_derivative": "24c418f0e18d0e62a93dc426d78695bccab8c4270c8bc3972c12988f2f70f35b",
+    "b7_separate_baselines": "9de75d0491fc67aca3d9cc54b9485e15c2bd81971f6aefeb0bcd1b556c73bf31",
+    "b7_projected_candidates": "3f9fa5cfbd67bdc2755acdb6831369adaa93a2fea4b06a0f19792a7d92341317",
+    "b7_expanded_hard_validation": "f21d15e31c0846f3875e29af4e66e22d43c0411e87ea140187b40202c4b77a42",
+    "b11_basis_diagnostics": "ba5f262c73b2b7ba4d38b4cbc8c864c15e3c36c11494fccf72a8810cc21be1c0",
+    "b11_three_tesseract_derivative": "2c1f0c1c12606c52cc9b8cdefe23f1cbba70162366ea9beb4146e3f4af9af8be",
+    "b11_separate_baselines": "24791bee3e98ae73c6ba5f6a018ae16d5ad749cab0f83718e285352ea89fdb3d",
+    "b11_projected_candidates": "c76550ccdbd6dc763a13ee8beb6bd2bfd03b8c079c2b410312721fc3f40f5682",
+    "b11_expanded_hard_validation": "54f16871ca319384029759364e8bebb19687464180ac7d56e4e9a79f462caf18"
+  }
+}

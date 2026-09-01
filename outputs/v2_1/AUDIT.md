@@ -1,4 +1,4 @@
-# TessScope v2.1 causal audit and B7 gate
+# TessScope v2.1 causal audit
 
 V2.1 is a validation-only continuation. No BBBC006 test image, label, normalization
 value, or metric was accessed.
@@ -45,5 +45,6 @@ the missing optical expressivity.
 - `outputs/v2_1/near-miss-breakdown.png`
 - `outputs/v2_1/gradient-geometry.png`
 
-The next milestone is an exact-gradient constrained B7 continuation followed by a
-larger, well-grouped validation protocol. Test access remains unauthorized.
+The audit selected exact-gradient constrained B7 continuation followed by expanded,
+well-grouped validation. That continuation is now complete; the final negative result is
+recorded in [STATUS.md](STATUS.md). Test access remains unauthorized.

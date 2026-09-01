@@ -12,9 +12,9 @@ scientific choice cannot be resolved on training/validation data, or a destructi
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 and the v2 negative pre-test result are committed at `503ee9a`.
-V2.1 starts with a causal near-miss audit. Test images, labels, normalization values, and
-metrics remain sealed until one newly frozen candidate passes every validation gate.
+Current checkpoint: v1 and v2 are preserved at `503ee9a`; the approved v2.1 basis ladder
+has completed with a negative pre-test result. Test images, labels, normalization values,
+and metrics remained sealed because no B7 or B11 candidate passed every validation gate.
 
 ## 2. Problem
 
@@ -65,7 +65,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 5. Step by step tasks
 
-### V2.1 active work
+### V2.1 completed negative pre-test checkpoint
 
 - [x] V2.1-0A: preserve the verified v1/v2 state in local commit `503ee9a` after ignore,
   secret, size, Ruff, and 78-test checks.
@@ -81,19 +81,24 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   support-energy, quantization, and full served derivative gates under the same RMS ball.
 - [x] V2.1-3A: implemented exact-gradient SLSQP epsilon-constraint continuation with
   shared exact-evaluation caching, deterministic starts, and explicit feasibility checks.
-- [ ] V2.1-3B: measure runtime, screen cheaply, and compare multiple converged starts with
-  weighted sums, PCGrad, naive superposition, and matched gradient-free search.
+- [x] V2.1-3B: measured runtime, screened multiple exact SLSQP starts, and compared
+  weighted-sum history, segmentation-primary projected gradients, separate optima, and
+  naive superposition. The matched B11 derivative-free run was conditionally skipped
+  because no B11 candidate cleared the earlier segmentation and superposition gates.
 - [x] V2.1-4A: measured raw-head loss-component correlation with hard PQ/RQ/Dice/count.
 - [x] V2.1-4B: retained the frozen differentiable loss because its validation correlation
   with hard PQ is already strong; no loss amendment or new ablation is warranted.
-- [x] V2.1-5A: expanded B7 hard validation to the maximum 45/48 valid deterministic wells,
-  recorded all three frozen-quality exclusions, and calculated paired well bootstraps.
-- [ ] V2.1-5B: promote only a candidate that passes every unchanged gate without dependence
-  on one field or start.
-- [ ] V2.1-6A: if eligible, freeze and commit the v2.1 pre-test manifest before any test data.
-- [ ] V2.1-6B: if eligible, run the locked test exactly once and preserve its result.
-- [ ] V2.1-7A: produce robustness, figures, animation, reproduction, and submission evidence
-  only after promotion.
+- [x] V2.1-5A: expanded B7 and B11 hard validation to the maximum 45/48 valid deterministic
+  wells, recorded all three frozen-quality exclusions, and calculated paired well
+  bootstraps.
+- [x] V2.1-5B: applied every unchanged promotion gate. No B7 or B11 candidate passed them
+  all, so no pupil was promoted.
+- [x] V2.1-6A: froze the negative pre-test block and evidence hashes; no candidate freeze
+  was created because none was eligible.
+- [x] V2.1-6B: preserved the locked test without access because the prerequisite promotion
+  failed.
+- [x] V2.1-7A: preserved the audit, status, and reproduction evidence. Promotion-only
+  robustness, animation, and submission claims were intentionally not produced.
 
 ### Frozen v2 history
 
@@ -178,20 +183,6 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-These are bounded training/validation decisions, not reasons to pause implementation:
-
-- Exact official BBBC006 archive granularity and whether required w1 planes can be
-  streamed individually or must be filtered from per-plane archives.
-- The most stable registration/OTF-ratio mask and calibration parameter subset supported
-  by training data without overfitting.
-- Whether the operational focus Tesseract refits ridge weights on simulated support
-  images during every pupil evaluation or freezes training-derived weights after each
-  promoted design. Implement and validate the stronger implicit-refit path first.
-- Whether the near-miss is dominated by basis expressivity, optimization geometry,
-  soft-to-hard loss mismatch, or the small promoted hard screen.
-- Whether B7 supplies sufficient spherical EDOF freedom or a compact B11 extension is
-  justified by validation evidence.
-- Which exact constrained method is most stable under measured M2 runtime: an
-  epsilon-constraint continuation, augmented Lagrangian, or SLSQP with exact gradients.
-- How much expanded hard validation is feasible while retaining a sealed validation-final
-  subset against repeated tuning.
+There is no unresolved execution question inside the approved v2.1 plan. A future attempt
+would be a new experiment with a new hypothesis and approval; it must not tune against the
+still-sealed BBBC006 test split or reinterpret this negative checkpoint.
