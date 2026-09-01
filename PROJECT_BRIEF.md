@@ -1,5 +1,19 @@
 # TessScope v2.1 project brief
 
+## V2.2 matched-frontier experiment
+
+V2.2 is an approved, separately named validation-only experiment. It freezes v2.1's
+strongest B7 joint pupil and tests it against a complete physically projected family of
+piecewise combinations of the matched segmentation-only and focus-only B7 pupils. It
+changes no v2.1 result or threshold; it replaces only v2.2's scientifically inadequate
+comparison to one extreme sum with a predeclared matched Pareto-envelope test.
+
+The strongest demo question is now precise: at the same first-frame segmentation
+quality, does differentiating the joint task produce a more useful stage decision than
+any piecewise combination of separately optimized optics? The BBBC006 locked test remains
+sealed unless this validation comparison and all inherited gates pass before a local
+pre-test commit.
+
 ## V2.1 continuation
 
 V2.1 is a separately named, validation-only continuation motivated by the frozen v2

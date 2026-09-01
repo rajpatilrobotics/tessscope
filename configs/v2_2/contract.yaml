@@ -1,0 +1,96 @@
+experiment: tessscope_v2_2_matched_piecewise_frontier
+status: preregistered_validation_only_test_sealed
+parent:
+  version: v2_1
+  commit: 4a88bdd6f436e3b50760e69299cca3476fdbfc18
+  result: negative_pretest_single_superposition_gate
+frozen_joint_candidate:
+  name: b7-projected-0.50-step-30
+  manifest: configs/v2_2/frozen-joint-candidate.json
+  tuning_in_v2_2: forbidden
+data:
+  dataset: BBBC006v1
+  allowed_splits: [training, validation]
+  forbidden_before_promotion: [test_images, test_labels, test_normalization, test_metrics]
+  prior_validation_use_disclosure: all_45_wells_used_in_v2_1
+  soft_screen_wells: 12
+  expanded_validation_wells_target: 48
+  expanded_validation_wells_valid: 45
+  frozen_hard_density_wells: 27
+  deterministic_patch_seed: 53
+optics:
+  basis: B7_Noll_5_through_11
+  phase_rms_bound_radians: 2.5
+  projected_radius_radians: 2.4975
+  exclude_modes: [piston, tilt_x, tilt_y, defocus]
+piecewise_family:
+  sources: [b7_segmentation_only, b7_focus_only]
+  projection: radial_only_if_norm_exceeds_2_4975
+  deduplication_coefficient_decimals: 10
+  include_original_naive_sum_exactly: true
+  convex_interpolation:
+    equation: (1-t)*segmentation + t*focus
+    t_start: 0.0
+    t_stop: 1.0
+    t_step: 0.05
+  focus_injection:
+    equation: segmentation + lambda*focus
+    lambda_start: 0.0
+    lambda_stop: 1.5
+    lambda_step: 0.05
+  nonnegative_two_weight:
+    equation: a*segmentation + b*focus
+    a_values: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5]
+    b_values: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5]
+    exclude_zero_zero: true
+soft_screen:
+  endpoint: unchanged_served_segmentation_loss_and_focus_mse
+  retain:
+    - every_nondominated_unique_point
+    - family_endpoints_and_original_naive_sum
+    - operating_point_brackets_around_frozen_joint
+    - points_within_segmentation_loss_0_004_and_focus_mse_0_25_of_soft_envelope
+  hard_labels_used_during_screen: false
+hard_validation:
+  independent_unit: well
+  paired_bootstrap_replicates: 2000
+  metrics: [PQ, RQ, SQ, Dice, count_error, direction, focus_MAE, residual_defocus, initial_PQ, corrected_PQ, photon_mean]
+  unchanged_observer_and_autofocus_refit: true
+frontier_comparison:
+  matched_segmentation:
+    piecewise_requirement: hard_PQ_at_least_joint_hard_PQ
+    joint_focus_mae_advantage_um_minimum: 0.10
+    paired_bootstrap_lower_bound_must_be_positive: true
+  matched_focus:
+    piecewise_requirement: focus_MAE_at_most_joint_focus_MAE
+    joint_hard_pq_advantage_minimum: 0.005
+    paired_bootstrap_lower_bound_must_be_positive: true
+  pass_rule: matched_segmentation_or_matched_focus
+  effect_rationale:
+    focus: 0.10_um_is_5_percent_of_2_um_plane_spacing
+    segmentation: 0.005_PQ_is_half_the_frozen_0.01_tolerance
+  hypervolume:
+    role: secondary_only
+    reference: [0.0, 0.0]
+    pq_normalization: clear_to_b7_segmentation_only
+    focus_normalization: b7_segmentation_only_to_original_naive_sum
+promotion_gates:
+  minimum_hard_pq_gain_over_clear: 0.01
+  require_positive_clear_gain_bootstrap_lower_bound: true
+  maximum_hard_pq_drop_from_b7_segmentation_only: 0.01
+  minimum_signed_direction_accuracy: 0.90
+  maximum_focus_mae_um: 2.0
+  require_material_focus_improvement_over_segmentation_only: true
+  require_beneficial_stage_correction: true
+  full_chain_maximum_relative_error: 0.01
+  full_chain_minimum_cosine: 0.99
+  require_frontier_comparison_pass: true
+  require_pareto_over_matched_gradient_free: true
+  require_support_energy_and_manufacturability: true
+  require_multi_well_stability: true
+test_policy:
+  access_runs: 1
+  prerequisites: [all_v2_2_validation_gates_pass, exact_candidate_freeze, verified_hashes, local_pretest_commit]
+  tuning_after_access: forbidden
+fallback:
+  on_v2_2_failure: start_separately_named_v2_3_closed_loop_validation_only

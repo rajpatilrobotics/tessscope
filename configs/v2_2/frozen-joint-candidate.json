@@ -1,0 +1,50 @@
+{
+  "status": "frozen_before_v2_2_frontier_results",
+  "test_accessed": false,
+  "name": "b7-projected-0.50-step-30",
+  "source_commit": "4a88bdd6f436e3b50760e69299cca3476fdbfc18",
+  "basis": {
+    "name": "B7",
+    "noll_indices": [5, 6, 7, 8, 9, 10, 11],
+    "phase_rms_bound_radians": 2.5
+  },
+  "parameters": [
+    -0.028371945023536682,
+    0.01676623895764351,
+    -0.05939070135354996,
+    -0.5431876182556152,
+    -0.009019676595926285,
+    -0.023175667971372604,
+    0.24619397521018982
+  ],
+  "phase_coefficients": [
+    -0.060801830142736435,
+    0.03593049198389053,
+    -0.12727583944797516,
+    -1.1640654802322388,
+    -0.019329406321048737,
+    -0.04966606944799423,
+    0.5276002287864685
+  ],
+  "frozen_v2_1_metrics": {
+    "hard_dense_off_focus_pq": 0.4960643722436449,
+    "hard_pq_gain_over_clear": 0.03995159921900765,
+    "clear_gain_ci_95": [0.016039559784807433, 0.06309733971723723],
+    "hard_pq_drop_from_segmentation_only": 0.006422944770811678,
+    "signed_direction_accuracy": 0.9888888888888889,
+    "focus_mae_um": 1.2107347688246382,
+    "corrected_hard_pq": 0.5520584934539984
+  },
+  "source_sha256": {
+    "b7_projected_candidates": "3f9fa5cfbd67bdc2755acdb6831369adaa93a2fea4b06a0f19792a7d92341317",
+    "b7_separate_baselines": "9de75d0491fc67aca3d9cc54b9485e15c2bd81971f6aefeb0bcd1b556c73bf31",
+    "b7_expanded_hard_validation": "f21d15e31c0846f3875e29af4e66e22d43c0411e87ea140187b40202c4b77a42",
+    "b7_basis_diagnostics": "b5fe483575b1639303c844e6ffae64c2b768ec8f57dad77e1662f3849bb833e3",
+    "b7_three_tesseract_derivative": "24c418f0e18d0e62a93dc426d78695bccab8c4270c8bc3972c12988f2f70f35b",
+    "clear_calibration": "e01b79be1cb3156d7f6a228c92d32b92f536aa29d610ee10ba2f15d30abf802d",
+    "training_normalization": "4b636195b104ab9872341983817b910c20762558e98b45a2902fe87a21511442",
+    "well_splits": "80eacd305783ec6b2144c9845cf848e60eda31f40056a0ac12e23da7f1bae6ea",
+    "registrations": "28c1a12f7154445f89e41fdb90e614062e1c11a324e588a6f623fbe69340217e"
+  },
+  "v2_2_tuning_allowed": false
+}

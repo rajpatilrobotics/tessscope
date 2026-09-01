@@ -1,49 +1,50 @@
-# TessScope v2.1 continuation plan
+# TessScope v2.2 matched-frontier improvement plan
 
 ## 1. Goal
 
-Continue the frozen BBBC006 three-Tesseract prototype with a separately named v2.1
-experiment. Find the smallest manufacturable pupil and exact-gradient constrained
-optimization method that preserves segmentation within the frozen tolerance while
-beating naive superposition on signed focus.
+Continue the frozen BBBC006 three-Tesseract prototype with a separately named v2.2
+validation-only experiment. Test the frozen v2.1 B7 joint pupil against a complete,
+matched piecewise-superposition Pareto frontier rather than one focus-heavy sum.
 
 The full v2 handoff is approved. Work proceeds autonomously unless a consequential
 scientific choice cannot be resolved on training/validation data, or a destructive,
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 and v2 are preserved at `503ee9a`; the approved v2.1 basis ladder
-has completed with a negative pre-test result. Test images, labels, normalization values,
-and metrics remained sealed because no B7 or B11 candidate passed every validation gate.
+Current checkpoint: v1 and v2 are preserved at `503ee9a`; v2.1 is frozen at `4a88bdd` as
+a correct negative pre-test result. V2.2 is explicitly approved. The BBBC006 locked test
+remains sealed until a predeclared candidate passes all v2.2 validation gates and a
+verified local pre-test commit exists.
 
 ## 2. Problem
 
-The v2 candidate with focus weight `0.03` came within the segmentation tolerance and
-passed focus direction/MAE, but did not beat naive superposition on focus MAE. Candidates
-with stronger focus did beat superposition but exceeded the segmentation drop. The
-failure may arise from the six-mode basis, scalar-weight optimization, a soft-loss versus
-hard-PQ mismatch, or a noisy small hard-validation screen.
+V2.1's frozen `b7-projected-0.50-step-30` candidate gains `+0.03995` hard PQ over clear,
+stays only `0.00642` below B7 segmentation-only, reaches `98.89%` direction and
+`1.21073 µm` MAE, and improves hard PQ after one stage action. Its only failed v2.1 gate
+is strict dominance over a single focus-heavy naive sum with much lower PQ. Two
+non-dominating points do not define a fair multi-objective frontier.
 
-V2.1 must distinguish those causes using training/validation evidence before changing
-the model, then evaluate only targeted interventions without weakening any gate.
+V2.2 must determine whether the frozen joint candidate lies beyond a generously sampled,
+physically matched family made only from the frozen B7 segmentation and focus pupils.
+The joint pupil cannot be tuned during this comparison.
 
 ## 3. Proposed solution
 
-1. Audit every existing v2 candidate by well, depth, density, hard metric component,
-   focus error, soft objective, and local exact-gradient geometry.
-2. Test a basis ladder: B6 control, B7 with Noll 11 primary spherical, then a compact
-   fourth-order extension only if B7 evidence warrants it. Preserve the 2.5-radian RMS
-   ball and exclude piston, tilt, and free defocus.
-3. Implement an exact-gradient epsilon-constraint or augmented-Lagrangian continuation
-   anchored at the matched segmentation-only pupil, with multiple deterministic starts.
-4. Quantify InstanSeg raw-head component alignment with hard PQ and introduce only the
-   smallest frozen v2.1 reweighting supported by validation evidence.
-5. Promote candidates to a substantially larger well-grouped validation screen with
-   paired well bootstrap intervals and deterministic site/crop selection.
-6. Freeze one candidate, code commit, hashes, and protocol only if every gate passes;
-   then run the locked test exactly once and never tune from it.
-7. Produce photon, quantization, mismatch, robustness, decision-loop, and judge-facing
-   evidence only after an eligible promotion.
+1. Freeze the exact B7 joint candidate and pre-register the mixture equations, grids,
+   projection, soft-screen rule, matched-frontier effects, uncertainty, and hypervolume
+   reference before computing any v2.2 frontier result.
+2. Generate convex interpolation, focus injection, nonnegative two-weight mixtures, and
+   the original naive sum from the matched B7 separate pupils. Project only vectors that
+   exceed the open 2.5-radian RMS ball; retain interior amplitude points.
+3. Use the unchanged 12-well served soft endpoint only to remove clearly dominated
+   mixtures, then evaluate every potentially relevant point on the frozen 45-well hard
+   protocol with 27 hard-density wells and paired well bootstrap uncertainty.
+4. Compare the frozen joint pupil with the piecewise envelope at matched segmentation
+   and matched focus, including one predicted stage correction and application-facing
+   usable-frame evidence.
+5. If every unchanged gate plus the predeclared frontier gap passes, freeze and commit
+   the candidate before exactly one locked test. If it fails, preserve v2.2 and continue
+   as separately named v2.3 closed-loop differentiable microscope work.
 
 ## 4. Files to change
 
@@ -61,9 +62,32 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - `outputs/v2/`: final user-facing results, figures, demo material, and reproduction guide.
 - `configs/v2_1/`, `artifacts/runs/v2_1/`, `outputs/v2_1/`, and `v2_1`-prefixed code:
   separately named continuation contract, audit, optimization, and evidence.
+- `configs/v2_2/`, `artifacts/runs/v2_2/`, `outputs/v2_2/`, and `v2_2`-prefixed code:
+  frozen joint-candidate manifest, piecewise frontier contract, screening, hard metrics,
+  uncertainty, and decision evidence.
+- If required by a negative v2.2 decision, equivalent `v2_3` namespaces hold the
+  separately approved closed-loop feedback experiment.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
 
 ## 5. Step by step tasks
+
+### V2.2 active matched-frontier work
+
+- [x] V2.2-0A: preserve v2.1 at local commit `4a88bdd` and keep every prior result
+  immutable and separately named.
+- [x] V2.2-0B: pre-register the frozen B7 joint candidate, source hashes, mixture family,
+  physical projection, screening rule, matched effects, uncertainty, and test policy.
+- [ ] V2.2-1A: implement deterministic mixture generation, deduplication, RMS projection,
+  support/manufacturability checks, and unit tests.
+- [ ] V2.2-1B: run the unchanged served soft endpoint for the full predeclared family and
+  freeze all potentially relevant hard-frontier points without using hard labels.
+- [ ] V2.2-2A: evaluate the selected piecewise frontier on all 45 valid validation wells,
+  including RQ/SQ/Dice/count, focus, photons, and one-step correction metrics.
+- [ ] V2.2-2B: calculate paired well uncertainty and the predeclared matched-segmentation,
+  matched-focus, and normalized hypervolume comparisons.
+- [ ] V2.2-3A: apply every promotion gate without weakening v1, v2, or v2.1 history.
+- [ ] V2.2-3B: if eligible, freeze and locally commit before one locked test; otherwise
+  preserve v2.2 and continue into the approved v2.3 feedback-loop experiment.
 
 ### V2.1 completed negative pre-test checkpoint
 
@@ -160,6 +184,10 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - Joint off-focus hard-instance PQ is at least clear `+0.01` with well-grouped confidence,
   and no more than `0.01` below segmentation-only.
 - Joint Pareto-dominates naive superposition and matched derivative-free search.
+- For v2.2, replace the v2.1 single-superposition comparison only in the new contract:
+  the frozen joint pupil must improve focus MAE by at least `0.10 µm` at equal-or-better
+  hard PQ, or improve hard PQ by at least `0.005` at equal-or-better focus MAE, with a
+  positive paired well-bootstrap lower bound for the matched gap.
 - One predicted correction reduces residual defocus and improves hard PQ.
 - Photon means are positive at both frozen levels for a positive robustness claim.
 - All baselines share exposure, throughput, phase family/bounds, crop, normalization,
@@ -176,6 +204,8 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - Phase RMS, coefficient bounds, PSF support, quantization, exposure, and noise tests.
 - Joint-objective branch weighting and cotangent-sum tests.
 - Focus direction/MAE, stage correction, hard instance metrics, DOF, and well-bootstrap tests.
+- Mixture-grid completeness, exact naive-sum inclusion, interior-point retention, open-ball
+  projection, coefficient deduplication, soft Pareto retention, and matched-frontier tests.
 - Tiny end-to-end smoke optimization before every larger run.
 - Runtime/memory projection before locked evaluation.
 - Final `uv run ruff check .`, `uv run pytest`, freeze verification, row-count audit, and
@@ -183,6 +213,8 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-There is no unresolved execution question inside the approved v2.1 plan. A future attempt
-would be a new experiment with a new hypothesis and approval; it must not tune against the
-still-sealed BBBC006 test split or reinterpret this negative checkpoint.
+V2.2 has no unresolved protocol choice: the grids and nontrivial effects are frozen in
+`configs/v2_2/contract.yaml`. The remaining open question is empirical—whether the fixed
+B7 joint pupil clears the matched piecewise envelope. A negative answer automatically
+activates the separately named, already approved v2.3 closed-loop implementation without
+accessing the locked test.

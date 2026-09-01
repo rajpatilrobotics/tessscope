@@ -1,5 +1,32 @@
 # TessScope decision log
 
+## 2026-09-01 — V2.2 matched piecewise-frontier protocol pre-registered
+
+- V2.1 remains frozen at commit `4a88bdd` as a negative pre-test result. V2.2 does not
+  tune or relabel `b7-projected-0.50-step-30`; its coefficients and source hashes are
+  frozen in `configs/v2_2/frozen-joint-candidate.json` before new frontier results.
+- The baseline family uses only the matched B7 segmentation and focus pupils: convex
+  interpolation at `0.05` spacing, focus injection through `1.50` at `0.05` spacing,
+  and nonnegative two-weight mixtures from `0` through `1.50` at `0.25` spacing. The
+  original naive sum is included exactly. Only mixtures outside the physical ball are
+  radially projected to `2.4975` radians; interior amplitudes remain interior.
+- All unique mixtures receive the unchanged 12-well served soft evaluation. Hard labels
+  remain unused until soft screening freezes the non-dominated envelope, near-envelope
+  guard band, family anchors, and operating-point brackets. Every retained point then
+  receives the same 45-well/27-dense-well hard endpoint and paired-well uncertainty.
+- A v2.2 frontier effect is nontrivial if the joint pupil gains at least `0.10 µm` focus
+  MAE at equal-or-better hard PQ, or at least `0.005` hard PQ at equal-or-better MAE.
+  `0.10 µm` is 5% of the 2-µm acquisition-plane spacing; `0.005` is half the frozen
+  segmentation-tolerance width. The relevant paired 95% bootstrap lower bound must also
+  be positive, so rounding-scale differences cannot promote a candidate.
+- Hypervolume is secondary and uses a frozen reference `(0, 0)` after normalizing PQ
+  between clear and B7 segmentation-only and focus benefit between B7 segmentation-only
+  and the original naive sum. It cannot override a failed matched operating-point gate.
+- Every prior clear-gain, segmentation-retention, focus, stage, derivative, gradient-free,
+  support, photon, well-grouping, and test-hygiene rule remains unchanged. If v2.2 fails,
+  preserve it and proceed to the separately approved v2.3 closed-loop feedback experiment.
+
+
 ## 2026-09-01 — V2.1 validation-only continuation authorized
 
 - The verified v1/v2 state was preserved in local root commit `503ee9a`; downloaded
