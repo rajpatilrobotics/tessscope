@@ -77,8 +77,8 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.1-2A: implemented and numerically validated B6/B7 basis conventions and RMS mapping.
 - [x] V2.1-2B: passed support-energy, smoothness, quantization, and served derivative gates
   for every promoted basis.
-- [ ] V2.1-2C: extend B7 to compact B11 Noll modes 5–15 because expanded B7 validation
-  isolated naive-superposition focus MAE as the sole remaining failed gate.
+- [x] V2.1-2C: extended B7 to compact B11 Noll modes 5–15, then passed basis,
+  support-energy, quantization, and full served derivative gates under the same RMS ball.
 - [x] V2.1-3A: implemented exact-gradient SLSQP epsilon-constraint continuation with
   shared exact-evaluation caching, deterministic starts, and explicit feasibility checks.
 - [ ] V2.1-3B: measure runtime, screen cheaply, and compare multiple converged starts with

@@ -123,6 +123,20 @@
   (Noll 5–15) under the same 2.5-radian RMS ball. A matched B11 derivative-free baseline
   is required only if a B11 candidate clears the naive-superposition gate.
 
+## 2026-09-01 — Compact B11 basis and full derivative gates pass
+
+- B11 retains Noll 5–11 and adds the four remaining radial-order-four modes, Noll 12–15,
+  under the unchanged open 2.5-radian RMS coefficient ball. Piston, tilt, and free
+  defocus remain excluded.
+- On a 401×401 sampled unit disk, maximum basis diagonal error is `0.002893` and maximum
+  off-diagonal magnitude is `0.001764`, both below `0.012`. Mixed and pure fourth-order
+  probes retain at least `0.997224` PSF energy, above the unchanged `0.995` gate.
+- Separate 11-parameter optics and observer services preserve the three-framework chain.
+  The full JAX/Chromatix → NumPy/SciPy → PyTorch/InstanSeg derivative passes with median
+  relative error `0.002532` and cosine `0.999446`.
+- Decision: B11 is eligible for validation-only optimization. These numerical gates do
+  not promote a pupil or unlock test data.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No

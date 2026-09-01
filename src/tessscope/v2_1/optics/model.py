@@ -18,6 +18,7 @@ from jax.scipy.signal import fftconvolve
 from tessscope.optics.model import DEFAULT_OPTICS_CONFIG, OpticsConfig
 
 B7_NOLL_INDICES = (5, 6, 7, 8, 9, 10, 11)
+B11_NOLL_INDICES = tuple(range(5, 16))
 
 
 def phase_coefficients_b7(v: jax.Array, bound: float = 2.5) -> jax.Array:
@@ -178,3 +179,152 @@ def simulate_noisy_sensor_b7(
         )
     noisy_counts = expected_counts + jnp.sqrt(jnp.maximum(expected_counts, 0.0) + 1e-6) * noise
     return jnp.maximum(noisy_counts, 0.0) / jnp.asarray(expected_photons, dtype=jnp.float32)
+
+
+def phase_coefficients_b11(v: jax.Array, bound: float = 2.5) -> jax.Array:
+    """Map 11 unconstrained parameters into the unchanged open RMS ball."""
+    value = jnp.asarray(v, dtype=jnp.float32)
+    if value.shape != (11,):
+        raise ValueError(f"Expected 11 B11 phase parameters, got {value.shape}")
+    return bound * value / jnp.sqrt(1.0 + jnp.sum(value * value))
+
+
+def unconstrained_from_coefficients_b11(
+    coefficients: np.ndarray,
+    bound: float = 2.5,
+) -> np.ndarray:
+    """Invert the B11 open-ball map for an interior coefficient vector."""
+    value = np.asarray(coefficients, dtype=np.float64)
+    if value.shape != (11,):
+        raise ValueError(f"Expected 11 B11 phase coefficients, got {value.shape}")
+    norm = float(np.linalg.norm(value))
+    if not 0 <= norm < bound:
+        raise ValueError(f"Coefficient norm must be inside the {bound}-radian RMS ball")
+    return (value / np.sqrt(bound * bound - norm * norm)).astype(np.float32)
+
+
+def zernike_basis_b11(grid_yx: jax.Array, pupil_radius: float) -> jax.Array:
+    """Return continuous unit-disk RMS-one Noll modes 5–15."""
+    y = grid_yx[..., 0] / pupil_radius
+    x = grid_yx[..., 1] / pupil_radius
+    radius_squared = x * x + y * y
+    inside = radius_squared <= 1.0
+    sqrt10 = jnp.sqrt(jnp.asarray(10.0, dtype=jnp.float32))
+    radial_42 = 4.0 * radius_squared - 3.0
+    fourth_order = jnp.stack(
+        [
+            sqrt10 * radial_42 * (2.0 * x * y),
+            sqrt10 * radial_42 * (x * x - y * y),
+            sqrt10 * (4.0 * x * y * (x * x - y * y)),
+            sqrt10 * (x**4 - 6.0 * x * x * y * y + y**4),
+        ],
+        axis=0,
+    )
+    fourth_order = jnp.where(inside[None], fourth_order, 0.0)
+    return jnp.concatenate(
+        [zernike_basis_b7(grid_yx, pupil_radius), fourth_order], axis=0
+    )
+
+
+def psf_oversampled_b11(
+    v: jax.Array,
+    depth_um: jax.Array,
+    config: OpticsConfig = DEFAULT_OPTICS_CONFIG,
+    simulation_size: int | None = None,
+) -> jax.Array:
+    """Generate a unit-energy oversampled B11 PSF using Chromatix."""
+    if simulation_size is None:
+        simulation_size = config.support_px * config.oversampling
+    field = cx.objective_point_source(
+        shape=(simulation_size, simulation_size),
+        dx=_pupil_spacing(config, simulation_size),
+        spectrum=config.wavelength_um,
+        z=depth_um,
+        f=config.objective_focal_length_um,
+        n=config.refractive_index,
+        NA=config.numerical_aperture,
+        power=1.0,
+    )
+    radius = config.objective_focal_length_um * config.numerical_aperture / config.refractive_index
+    coefficients = phase_coefficients_b11(v, config.phase_bound_radians)
+    phase = jnp.einsum("m,mhw->hw", coefficients, zernike_basis_b11(field.grid, radius))
+    field = cx.phase_change(field, phase, spectrally_modulate=False)
+    image_field = cx.ff_lens(
+        field,
+        f=config.tube_focal_length_um,
+        n=config.refractive_index,
+    )
+    intensity = jnp.asarray(image_field.intensity, dtype=jnp.float32)
+    return intensity / jnp.sum(intensity)
+
+
+def psf_sensor_b11(
+    v: jax.Array,
+    depth_um: jax.Array,
+    config: OpticsConfig = DEFAULT_OPTICS_CONFIG,
+) -> jax.Array:
+    """Integrate the B11 oversampled PSF over square sensor pixels."""
+    intensity = psf_oversampled_b11(v, depth_um, config)
+    support = config.support_px
+    factor = config.oversampling
+    integrated = intensity.reshape(support, factor, support, factor).sum(axis=(1, 3))
+    return integrated / jnp.sum(integrated)
+
+
+def psf_support_energy_fraction_b11(
+    v: jax.Array,
+    depth_um: jax.Array,
+    config: OpticsConfig = DEFAULT_OPTICS_CONFIG,
+    reference_factor: int = 2,
+) -> jax.Array:
+    """Measure B11 support energy against a larger same-sampling reference field."""
+    base_size = config.support_px * config.oversampling
+    reference_size = base_size * reference_factor
+    reference = psf_oversampled_b11(
+        v,
+        depth_um,
+        config,
+        simulation_size=reference_size,
+    )
+    start = (reference_size - base_size) // 2
+    return reference[start : start + base_size, start : start + base_size].sum()
+
+
+@partial(jax.jit, static_argnames=("config",))
+def simulate_noisy_sensor_b11(
+    phase_parameters: jax.Array,
+    object_batch: jax.Array,
+    depths_um: jax.Array,
+    noise_standard_normal: jax.Array,
+    *,
+    expected_photons: float,
+    exposure_gain: float,
+    depth_scale: float,
+    axial_offset_um: float = 0.0,
+    config: OpticsConfig = DEFAULT_OPTICS_CONFIG,
+) -> jax.Array:
+    """Simulate globally scaled B11 rates with fixed reparameterized noise."""
+    objects = jnp.maximum(jnp.asarray(object_batch, dtype=jnp.float32), 0.0)
+    depths = jnp.asarray(depths_um, dtype=jnp.float32) * jnp.asarray(
+        depth_scale, dtype=jnp.float32
+    ) + jnp.asarray(axial_offset_um, dtype=jnp.float32)
+    psfs = jax.vmap(lambda depth: psf_sensor_b11(phase_parameters, depth, config))(depths)
+
+    def image_at_depth(psf: jax.Array) -> jax.Array:
+        return jax.vmap(lambda image: _same_zero_convolution(image, psf))(objects)
+
+    rate = jax.vmap(image_at_depth)(psfs).transpose(1, 0, 2, 3) * jnp.asarray(
+        exposure_gain, dtype=jnp.float32
+    )
+    expected_counts = jnp.asarray(expected_photons, dtype=jnp.float32) * rate
+    noise = jnp.asarray(noise_standard_normal, dtype=jnp.float32)
+    if noise.shape != expected_counts.shape:
+        raise ValueError(
+            f"Noise shape {noise.shape} differs from sensor shape {expected_counts.shape}"
+        )
+    noisy_counts = expected_counts + jnp.sqrt(
+        jnp.maximum(expected_counts, 0.0) + 1e-6
+    ) * noise
+    return jnp.maximum(noisy_counts, 0.0) / jnp.asarray(
+        expected_photons, dtype=jnp.float32
+    )

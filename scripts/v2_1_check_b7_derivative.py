@@ -34,6 +34,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--autofocus-url", default="http://127.0.0.1:8403")
     parser.add_argument("--observer-url", default="http://127.0.0.1:8402")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--basis-size", type=int, choices=(7, 11), default=7)
     return parser.parse_args()
 
 
@@ -122,10 +123,7 @@ def main() -> None:
         segmentation_loss, focus_mse = branches(parameters)
         return weights.combine(segmentation_loss, focus_mse)
 
-    point = np.asarray(
-        [-0.02, -0.01, 0.0, 0.01, 0.02, 0.03, 0.04],
-        dtype=np.float32,
-    )
+    point = np.linspace(-0.02, 0.04, args.basis_size, dtype=np.float32)
     value, gradient = jax.value_and_grad(objective)(jnp.asarray(point))
     branch_values = branches(jnp.asarray(point))
     segmentation_gradient = jax.grad(lambda candidate: branches(candidate)[0])(jnp.asarray(point))
@@ -139,10 +137,13 @@ def main() -> None:
     )
     report.update(
         {
-            "component": "v2_1_b7_full_served_jax_scipy_pytorch_chain",
+            "component": (
+                f"v2_1_b{args.basis_size}_full_served_"
+                "jax_scipy_pytorch_chain"
+            ),
             "objective_value": float(value),
             "point": point.tolist(),
-            "basis_noll_indices": [5, 6, 7, 8, 9, 10, 11],
+            "basis_noll_indices": list(range(5, 5 + args.basis_size)),
             "patch_ids": [
                 f"{patch.field_id}:{patch.origin_yx[0]}:{patch.origin_yx[1]}" for patch in patches
             ],
@@ -173,7 +174,9 @@ def main() -> None:
         )
     )
     if not report["passed"]:
-        raise SystemExit("B7 full three-Tesseract derivative gate failed")
+        raise SystemExit(
+            f"B{args.basis_size} full three-Tesseract derivative gate failed"
+        )
 
 
 if __name__ == "__main__":
