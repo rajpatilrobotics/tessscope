@@ -3,6 +3,11 @@
 import numpy as np
 import pytest
 
+from tessscope.v2_2.evaluation import (
+    hard_pareto_names,
+    hypervolume_2d,
+    paired_focus_mae_bootstrap,
+)
 from tessscope.v2_2.frontier import (
     PROJECTED_RADIUS_RADIANS,
     generate_piecewise_family,
@@ -83,3 +88,32 @@ def test_nondominated_and_guard_band_selection() -> None:
     assert {"a", "b", "c"}.issubset(selected)
     assert "soft_envelope_guard_band" in reasons["c"]
     assert "original_naive_sum" in reasons["c"]
+
+
+def test_hard_pareto_and_hypervolume() -> None:
+    summaries = {
+        "seg": {"hard_dense_off_focus_pq": 0.5, "mae_um": 1.8},
+        "middle": {"hard_dense_off_focus_pq": 0.48, "mae_um": 1.2},
+        "dominated": {"hard_dense_off_focus_pq": 0.47, "mae_um": 1.3},
+        "focus": {"hard_dense_off_focus_pq": 0.4, "mae_um": 0.8},
+    }
+    assert hard_pareto_names(summaries) == {"seg", "middle", "focus"}
+    assert hypervolume_2d([(1.0, 0.5), (0.5, 1.0)]) == pytest.approx(0.75)
+
+
+def test_focus_bootstrap_pairs_depths_within_wells() -> None:
+    rows = []
+    for design, error in (("joint", 0.5), ("piecewise", 0.8)):
+        for well in ("a01", "b01"):
+            for depth in (-2.0, 2.0):
+                rows.append(
+                    {
+                        "design": design,
+                        "well": well,
+                        "depth_um": depth,
+                        "predicted_depth_um": depth + error,
+                    }
+                )
+    result = paired_focus_mae_bootstrap(rows, "joint", "piecewise")
+    assert result["source_count"] == 2
+    assert result["mean_difference"] == pytest.approx(0.3)
