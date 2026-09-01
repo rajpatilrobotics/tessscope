@@ -1,0 +1,1284 @@
+{
+  "status": "complete_validation_only_b7_spherical_screen",
+  "test_accessed": false,
+  "spherical_grid_radians": [
+    -1.0,
+    -0.5,
+    -0.25,
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "validation_patch_ids": [
+    "b08_s1",
+    "a23_s2",
+    "k12_s1",
+    "f01_s1",
+    "h06_s2",
+    "j23_s1",
+    "c15_s1",
+    "a18_s1",
+    "m01_s2",
+    "m19_s2",
+    "g18_s1",
+    "p21_s1"
+  ],
+  "candidates": [
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -1.0,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        -1.0
+      ],
+      "phase_rms_radians": 1.5198961851980763,
+      "parameters": [
+        0.1621936410665512,
+        0.1293743997812271,
+        -0.27251288294792175,
+        -0.44501280784606934,
+        0.11459055542945862,
+        -0.06356628984212875,
+        -0.5037981271743774
+      ],
+      "validation": {
+        "segmentation_loss": 1.1564098000526428,
+        "focus_mse": 5.801910623908043,
+        "photon_mean": 198.26854705810547
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -0.5,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        -0.5
+      ],
+      "phase_rms_radians": 1.2490333917792853,
+      "parameters": [
+        0.14866021275520325,
+        0.11857941001653671,
+        -0.24977444112300873,
+        -0.4078809916973114,
+        0.10502912849187851,
+        -0.05826232582330704,
+        -0.23088063299655914
+      ],
+      "validation": {
+        "segmentation_loss": 1.1269263476133347,
+        "focus_mse": 6.6873705089092255,
+        "photon_mean": 198.6045265197754
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -0.25,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        -0.25
+      ],
+      "phase_rms_radians": 1.1715734777553073,
+      "parameters": [
+        0.14577478170394897,
+        0.11627782881259918,
+        -0.24492642283439636,
+        -0.39996418356895447,
+        0.10299055278301239,
+        -0.05713147670030594,
+        -0.11319965869188309
+      ],
+      "validation": {
+        "segmentation_loss": 1.1066697090864182,
+        "focus_mse": 10.457911252975464,
+        "photon_mean": 198.65707778930664
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 0.0,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        0.0
+      ],
+      "phase_rms_radians": 1.1445891899627856,
+      "parameters": [
+        0.14484967291355133,
+        0.11553990840911865,
+        -0.2433720827102661,
+        -0.39742594957351685,
+        0.10233695805072784,
+        -0.05676891282200813,
+        0.0
+      ],
+      "validation": {
+        "segmentation_loss": 1.0949953198432922,
+        "focus_mse": 10.863166570663452,
+        "photon_mean": 198.63033294677734
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 0.25,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        0.25
+      ],
+      "phase_rms_radians": 1.1715734777553073,
+      "parameters": [
+        0.14577478170394897,
+        0.11627782881259918,
+        -0.24492642283439636,
+        -0.39996418356895447,
+        0.10299055278301239,
+        -0.05713147670030594,
+        0.11319965869188309
+      ],
+      "validation": {
+        "segmentation_loss": 1.0935065895318985,
+        "focus_mse": 6.60722553730011,
+        "photon_mean": 198.52680206298828
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 0.5,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        0.5
+      ],
+      "phase_rms_radians": 1.2490333917792853,
+      "parameters": [
+        0.14866021275520325,
+        0.11857941001653671,
+        -0.24977444112300873,
+        -0.4078809916973114,
+        0.10502912849187851,
+        -0.05826232582330704,
+        0.23088063299655914
+      ],
+      "validation": {
+        "segmentation_loss": 1.0906347632408142,
+        "focus_mse": 4.75990492105484,
+        "photon_mean": 198.35194396972656
+      }
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 1.0,
+      "phase_coefficients": [
+        0.3219417333602905,
+        0.2567980885505676,
+        -0.5409168601036072,
+        -0.8833157420158386,
+        0.2274533212184906,
+        -0.12617413699626923,
+        1.0
+      ],
+      "phase_rms_radians": 1.5198961851980763,
+      "parameters": [
+        0.1621936410665512,
+        0.1293743997812271,
+        -0.27251288294792175,
+        -0.44501280784606934,
+        0.11459055542945862,
+        -0.06356628984212875,
+        0.5037981271743774
+      ],
+      "validation": {
+        "segmentation_loss": 1.09391450881958,
+        "focus_mse": 3.700440287590027,
+        "photon_mean": 197.8206443786621
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -1.0,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        -1.0
+      ],
+      "phase_rms_radians": 1.4281117498001832,
+      "parameters": [
+        -0.1592874377965927,
+        -0.05470509082078934,
+        0.02460162527859211,
+        -0.4499334692955017,
+        -0.00888934638351202,
+        0.12407337129116058,
+        -0.48734143376350403
+      ],
+      "validation": {
+        "segmentation_loss": 1.1570863127708435,
+        "focus_mse": 4.455090403556824,
+        "photon_mean": 198.32870864868164
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -0.5,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        -0.5
+      ],
+      "phase_rms_radians": 1.1355629308485466,
+      "parameters": [
+        -0.14675253629684448,
+        -0.05040014907717705,
+        0.022665634751319885,
+        -0.4145265817642212,
+        -0.008189812302589417,
+        0.11430959403514862,
+        -0.22449538111686707
+      ],
+      "validation": {
+        "segmentation_loss": 1.1324543058872223,
+        "focus_mse": 5.7345545291900635,
+        "photon_mean": 198.68557357788086
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -0.25,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        -0.25
+      ],
+      "phase_rms_radians": 1.0497633875866224,
+      "parameters": [
+        -0.14405524730682373,
+        -0.049473803490400314,
+        0.022249042987823486,
+        -0.4069076478481293,
+        -0.008039284497499466,
+        0.11220859736204147,
+        -0.11018459498882294
+      ],
+      "validation": {
+        "segmentation_loss": 1.1202161610126495,
+        "focus_mse": 5.77240988612175,
+        "photon_mean": 198.7502212524414
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 0.0,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        0.0
+      ],
+      "phase_rms_radians": 1.0195602826303802,
+      "parameters": [
+        -0.14318867027759552,
+        -0.049176186323165894,
+        0.022115202620625496,
+        -0.4044598340988159,
+        -0.007990922778844833,
+        0.11153359711170197,
+        0.0
+      ],
+      "validation": {
+        "segmentation_loss": 1.1065880060195923,
+        "focus_mse": 4.942717909812927,
+        "photon_mean": 198.73474502563477
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 0.25,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        0.25
+      ],
+      "phase_rms_radians": 1.0497633875866224,
+      "parameters": [
+        -0.14405524730682373,
+        -0.049473803490400314,
+        0.022249042987823486,
+        -0.4069076478481293,
+        -0.008039284497499466,
+        0.11220859736204147,
+        0.11018459498882294
+      ],
+      "validation": {
+        "segmentation_loss": 1.0984340161085129,
+        "focus_mse": 3.6028203070163727,
+        "photon_mean": 198.64006805419922
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 0.5,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        0.5
+      ],
+      "phase_rms_radians": 1.1355629308485466,
+      "parameters": [
+        -0.14675253629684448,
+        -0.05040014907717705,
+        0.022665634751319885,
+        -0.4145265817642212,
+        -0.008189812302589417,
+        0.11430959403514862,
+        0.22449538111686707
+      ],
+      "validation": {
+        "segmentation_loss": 1.0979571491479874,
+        "focus_mse": 3.9789231717586517,
+        "photon_mean": 198.47046279907227
+      }
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 1.0,
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        1.0
+      ],
+      "phase_rms_radians": 1.4281117498001832,
+      "parameters": [
+        -0.1592874377965927,
+        -0.05470509082078934,
+        0.02460162527859211,
+        -0.4499334692955017,
+        -0.00888934638351202,
+        0.12407337129116058,
+        0.48734143376350403
+      ],
+      "validation": {
+        "segmentation_loss": 1.0996728092432022,
+        "focus_mse": 4.0283894538879395,
+        "photon_mean": 197.93718338012695
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -1.0,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        -1.0
+      ],
+      "phase_rms_radians": 1.4048300634558382,
+      "parameters": [
+        -0.13430224359035492,
+        -0.23004035651683807,
+        0.04330606013536453,
+        -0.39268559217453003,
+        0.02485448122024536,
+        0.0015102806501090527,
+        -0.4835686981678009
+      ],
+      "validation": {
+        "segmentation_loss": 1.1492095291614532,
+        "focus_mse": 4.00418809056282,
+        "photon_mean": 198.36803436279297
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -0.5,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        -0.5
+      ],
+      "phase_rms_radians": 1.1061408170704732,
+      "parameters": [
+        -0.12387803941965103,
+        -0.21218518912792206,
+        0.03994474932551384,
+        -0.36220628023147583,
+        0.02292533777654171,
+        0.0013930563582107425,
+        -0.2230176329612732
+      ],
+      "validation": {
+        "segmentation_loss": 1.1301687061786652,
+        "focus_mse": 5.106279283761978,
+        "photon_mean": 198.73322677612305
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -0.25,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        -0.25
+      ],
+      "phase_rms_radians": 1.0178641889708735,
+      "parameters": [
+        -0.1216302439570427,
+        -0.2083350419998169,
+        0.039219941943883896,
+        -0.3556339740753174,
+        0.02250935137271881,
+        0.0013677789829671383,
+        -0.10948546975851059
+      ],
+      "validation": {
+        "segmentation_loss": 1.1227226257324219,
+        "focus_mse": 4.345142841339111,
+        "photon_mean": 198.79941177368164
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 0.0,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        0.0
+      ],
+      "phase_rms_radians": 0.9866851104528407,
+      "parameters": [
+        -0.1209077388048172,
+        -0.20709748566150665,
+        0.038986969739198685,
+        -0.3535214364528656,
+        0.022375641390681267,
+        0.0013596541248261929,
+        0.0
+      ],
+      "validation": {
+        "segmentation_loss": 1.1168798804283142,
+        "focus_mse": 2.6158285439014435,
+        "photon_mean": 198.78327178955078
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 0.25,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        0.25
+      ],
+      "phase_rms_radians": 1.0178641889708735,
+      "parameters": [
+        -0.1216302439570427,
+        -0.2083350419998169,
+        0.039219941943883896,
+        -0.3556339740753174,
+        0.02250935137271881,
+        0.0013677789829671383,
+        0.10948546975851059
+      ],
+      "validation": {
+        "segmentation_loss": 1.1101869940757751,
+        "focus_mse": 1.7408563494682312,
+        "photon_mean": 198.6857566833496
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 0.5,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        0.5
+      ],
+      "phase_rms_radians": 1.1061408170704732,
+      "parameters": [
+        -0.12387803941965103,
+        -0.21218518912792206,
+        0.03994474932551384,
+        -0.36220628023147583,
+        0.02292533777654171,
+        0.0013930563582107425,
+        0.2230176329612732
+      ],
+      "validation": {
+        "segmentation_loss": 1.107047513127327,
+        "focus_mse": 2.6274795830249786,
+        "photon_mean": 198.5115203857422
+      }
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 1.0,
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604,
+        1.0
+      ],
+      "phase_rms_radians": 1.4048300634558382,
+      "parameters": [
+        -0.13430224359035492,
+        -0.23004035651683807,
+        0.04330606013536453,
+        -0.39268559217453003,
+        0.02485448122024536,
+        0.0015102806501090527,
+        0.4835686981678009
+      ],
+      "validation": {
+        "segmentation_loss": 1.1034676879644394,
+        "focus_mse": 3.195246994495392,
+        "photon_mean": 197.96626663208008
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -1.0,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        -1.0
+      ],
+      "phase_rms_radians": 1.6796837589475384,
+      "parameters": [
+        -0.4344633221626282,
+        0.06137467920780182,
+        -0.3033527731895447,
+        -0.47519659996032715,
+        0.12804444134235382,
+        -0.0667383000254631,
+        -0.5400545597076416
+      ],
+      "validation": {
+        "segmentation_loss": 1.1641480028629303,
+        "focus_mse": 4.338494896888733,
+        "photon_mean": 198.2364959716797
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -0.5,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        -0.5
+      ],
+      "phase_rms_radians": 1.439214205763733,
+      "parameters": [
+        -0.3935472071170807,
+        0.05559464171528816,
+        -0.2747841775417328,
+        -0.4304443895816803,
+        0.1159856989979744,
+        -0.0604531429708004,
+        -0.24459713697433472
+      ],
+      "validation": {
+        "segmentation_loss": 1.1428351998329163,
+        "focus_mse": 5.086606442928314,
+        "photon_mean": 198.5707778930664
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -0.25,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        -0.25
+      ],
+      "phase_rms_radians": 1.3725296099072446,
+      "parameters": [
+        -0.3850042521953583,
+        0.05438781902194023,
+        -0.26881927251815796,
+        -0.4211004972457886,
+        0.11346793174743652,
+        -0.059140853583812714,
+        -0.11964376270771027
+      ],
+      "validation": {
+        "segmentation_loss": 1.13113933801651,
+        "focus_mse": 4.805693119764328,
+        "photon_mean": 198.62370681762695
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 0.0,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        0.0
+      ],
+      "phase_rms_radians": 1.3495693869053687,
+      "parameters": [
+        -0.3822779059410095,
+        0.054002679884433746,
+        -0.2669156789779663,
+        -0.41811853647232056,
+        0.11266442388296127,
+        -0.05872205272316933,
+        0.0
+      ],
+      "validation": {
+        "segmentation_loss": 1.1180033832788467,
+        "focus_mse": 4.094045102596283,
+        "photon_mean": 198.59827041625977
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 0.25,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        0.25
+      ],
+      "phase_rms_radians": 1.3725296099072446,
+      "parameters": [
+        -0.3850042521953583,
+        0.05438781902194023,
+        -0.26881927251815796,
+        -0.4211004972457886,
+        0.11346793174743652,
+        -0.059140853583812714,
+        0.11964376270771027
+      ],
+      "validation": {
+        "segmentation_loss": 1.103656992316246,
+        "focus_mse": 2.030329614877701,
+        "photon_mean": 198.49679565429688
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 0.5,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        0.5
+      ],
+      "phase_rms_radians": 1.439214205763733,
+      "parameters": [
+        -0.3935472071170807,
+        0.05559464171528816,
+        -0.2747841775417328,
+        -0.4304443895816803,
+        0.1159856989979744,
+        -0.0604531429708004,
+        0.24459713697433472
+      ],
+      "validation": {
+        "segmentation_loss": 1.0995439141988754,
+        "focus_mse": 1.487182766199112,
+        "photon_mean": 198.32443237304688
+      }
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 1.0,
+      "phase_coefficients": [
+        -0.8044804334640503,
+        0.11364533007144928,
+        -0.5617076680064201,
+        -0.8799048324581236,
+        0.23709537368267775,
+        -0.12357696588151157,
+        1.0
+      ],
+      "phase_rms_radians": 1.6796837589475384,
+      "parameters": [
+        -0.4344633221626282,
+        0.06137467920780182,
+        -0.3033527731895447,
+        -0.47519659996032715,
+        0.12804444134235382,
+        -0.0667383000254631,
+        0.5400545597076416
+      ],
+      "validation": {
+        "segmentation_loss": 1.1029880940914154,
+        "focus_mse": 3.324955254793167,
+        "photon_mean": 197.7977180480957
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -1.0,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        -1.0
+      ],
+      "phase_rms_radians": 1.5132293998743904,
+      "parameters": [
+        -0.5660386681556702,
+        -0.0719357281923294,
+        -0.010447593405842781,
+        0.0017140168929472566,
+        0.004845229908823967,
+        0.0013051050482317805,
+        -0.5025102496147156
+      ],
+      "validation": {
+        "segmentation_loss": 1.145192801952362,
+        "focus_mse": 6.215657442808151,
+        "photon_mean": 198.47610473632812
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -0.5,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        -0.5
+      ],
+      "phase_rms_radians": 1.2409122517906768,
+      "parameters": [
+        -0.5190203785896301,
+        -0.0659603551030159,
+        -0.00957975909113884,
+        0.0015716413035988808,
+        0.004442758858203888,
+        0.0011966959573328495,
+        -0.23038449883460999
+      ],
+      "validation": {
+        "segmentation_loss": 1.1303664445877075,
+        "focus_mse": 5.0519823133945465,
+        "photon_mean": 198.86547088623047
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -0.25,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        -0.25
+      ],
+      "phase_rms_radians": 1.16291152571647,
+      "parameters": [
+        -0.5089884400367737,
+        -0.06468542665243149,
+        -0.00939459539949894,
+        0.001541263540275395,
+        0.004356886260211468,
+        0.0011735653970390558,
+        -0.11296573281288147
+      ],
+      "validation": {
+        "segmentation_loss": 1.1329220831394196,
+        "focus_mse": 3.2296940088272095,
+        "photon_mean": 198.93843460083008
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 0.0,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        0.0
+      ],
+      "phase_rms_radians": 1.1357214520489642,
+      "parameters": [
+        -0.5057715177536011,
+        -0.06427659839391708,
+        -0.009335219860076904,
+        0.0015315224882215261,
+        0.004329349845647812,
+        0.0011661482276394963,
+        0.0
+      ],
+      "validation": {
+        "segmentation_loss": 1.1382142305374146,
+        "focus_mse": 2.3620135337114334,
+        "photon_mean": 198.92378616333008
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 0.25,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        0.25
+      ],
+      "phase_rms_radians": 1.16291152571647,
+      "parameters": [
+        -0.5089884400367737,
+        -0.06468542665243149,
+        -0.00939459539949894,
+        0.001541263540275395,
+        0.004356886260211468,
+        0.0011735653970390558,
+        0.11296573281288147
+      ],
+      "validation": {
+        "segmentation_loss": 1.1396850645542145,
+        "focus_mse": 1.4261260852217674,
+        "photon_mean": 198.82173919677734
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 0.5,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        0.5
+      ],
+      "phase_rms_radians": 1.2409122517906768,
+      "parameters": [
+        -0.5190203785896301,
+        -0.0659603551030159,
+        -0.00957975909113884,
+        0.0015716413035988808,
+        0.004442758858203888,
+        0.0011966959573328495,
+        0.23038449883460999
+      ],
+      "validation": {
+        "segmentation_loss": 1.1302428543567657,
+        "focus_mse": 2.571497678756714,
+        "photon_mean": 198.63698959350586
+      }
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 1.0,
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657,
+        1.0
+      ],
+      "phase_rms_radians": 1.5132293998743904,
+      "parameters": [
+        -0.5660386681556702,
+        -0.0719357281923294,
+        -0.010447593405842781,
+        0.0017140168929472566,
+        0.004845229908823967,
+        0.0013051050482317805,
+        0.5025102496147156
+      ],
+      "validation": {
+        "segmentation_loss": 1.1132706999778748,
+        "focus_mse": 1.370119109749794,
+        "photon_mean": 198.05802536010742
+      }
+    }
+  ],
+  "center_gradients": [
+    {
+      "seed": "segmentation_only",
+      "batch_patch_ids": [
+        "b08_s1:0:220",
+        "a23_s2:264:220",
+        "k12_s1:0:220"
+      ],
+      "segmentation_loss": 1.17410147190094,
+      "focus_mse": 8.235806465148926,
+      "segmentation_parameter_gradient_spherical": -0.08281159400939941,
+      "normalized_focus_parameter_gradient_spherical": -0.6004163026809692
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "batch_patch_ids": [
+        "b08_s1:0:220",
+        "a23_s2:264:220",
+        "k12_s1:0:220"
+      ],
+      "segmentation_loss": 1.1823450326919556,
+      "focus_mse": 3.362724781036377,
+      "segmentation_parameter_gradient_spherical": -0.10448482632637024,
+      "normalized_focus_parameter_gradient_spherical": -0.21651959419250488
+    },
+    {
+      "seed": "exact_joint",
+      "batch_patch_ids": [
+        "b08_s1:0:220",
+        "a23_s2:264:220",
+        "k12_s1:0:220"
+      ],
+      "segmentation_loss": 1.2023413181304932,
+      "focus_mse": 1.7291345596313477,
+      "segmentation_parameter_gradient_spherical": -0.08451025933027267,
+      "normalized_focus_parameter_gradient_spherical": -0.2447662502527237
+    },
+    {
+      "seed": "naive_superposition",
+      "batch_patch_ids": [
+        "b08_s1:0:220",
+        "a23_s2:264:220",
+        "k12_s1:0:220"
+      ],
+      "segmentation_loss": 1.1980786323547363,
+      "focus_mse": 1.7677733898162842,
+      "segmentation_parameter_gradient_spherical": -0.14739462733268738,
+      "normalized_focus_parameter_gradient_spherical": -0.17321038246154785
+    },
+    {
+      "seed": "focus_only",
+      "batch_patch_ids": [
+        "b08_s1:0:220",
+        "a23_s2:264:220",
+        "k12_s1:0:220"
+      ],
+      "segmentation_loss": 1.2158129215240479,
+      "focus_mse": 0.7103345990180969,
+      "segmentation_parameter_gradient_spherical": 0.014771513640880585,
+      "normalized_focus_parameter_gradient_spherical": -0.03233933076262474
+    }
+  ],
+  "relative_to_zero": [
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -1.0,
+      "segmentation_loss_delta": 0.061414480209350586,
+      "focus_mse_delta": -5.061255946755409,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -0.5,
+      "segmentation_loss_delta": 0.03193102777004242,
+      "focus_mse_delta": -4.175796061754227,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": -0.25,
+      "segmentation_loss_delta": 0.011674389243125916,
+      "focus_mse_delta": -0.4052553176879883,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 0.25,
+      "segmentation_loss_delta": -0.0014887303113937378,
+      "focus_mse_delta": -4.255941033363342,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 0.5,
+      "segmentation_loss_delta": -0.004360556602478027,
+      "focus_mse_delta": -6.103261649608612,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "segmentation_only",
+      "spherical_coefficient_radians": 1.0,
+      "segmentation_loss_delta": -0.0010808110237121582,
+      "focus_mse_delta": -7.162726283073425,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -1.0,
+      "segmentation_loss_delta": 0.05049830675125122,
+      "focus_mse_delta": -0.4876275062561035,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -0.5,
+      "segmentation_loss_delta": 0.025866299867630005,
+      "focus_mse_delta": 0.7918366193771362,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": -0.25,
+      "segmentation_loss_delta": 0.013628154993057251,
+      "focus_mse_delta": 0.8296919763088226,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 0.25,
+      "segmentation_loss_delta": -0.008153989911079407,
+      "focus_mse_delta": -1.3398976027965546,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 0.5,
+      "segmentation_loss_delta": -0.00863085687160492,
+      "focus_mse_delta": -0.9637947380542755,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "joint_refine_0.03",
+      "spherical_coefficient_radians": 1.0,
+      "segmentation_loss_delta": -0.006915196776390076,
+      "focus_mse_delta": -0.9143284559249878,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -1.0,
+      "segmentation_loss_delta": 0.03232964873313904,
+      "focus_mse_delta": 1.388359546661377,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -0.5,
+      "segmentation_loss_delta": 0.013288825750350952,
+      "focus_mse_delta": 2.4904507398605347,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": -0.25,
+      "segmentation_loss_delta": 0.005842745304107666,
+      "focus_mse_delta": 1.7293142974376678,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 0.25,
+      "segmentation_loss_delta": -0.0066928863525390625,
+      "focus_mse_delta": -0.8749721944332123,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 0.5,
+      "segmentation_loss_delta": -0.009832367300987244,
+      "focus_mse_delta": 0.011651039123535156,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "exact_joint",
+      "spherical_coefficient_radians": 1.0,
+      "segmentation_loss_delta": -0.013412192463874817,
+      "focus_mse_delta": 0.5794184505939484,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -1.0,
+      "segmentation_loss_delta": 0.04614461958408356,
+      "focus_mse_delta": 0.24444979429244995,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -0.5,
+      "segmentation_loss_delta": 0.02483181655406952,
+      "focus_mse_delta": 0.9925613403320312,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": -0.25,
+      "segmentation_loss_delta": 0.013135954737663269,
+      "focus_mse_delta": 0.711648017168045,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 0.25,
+      "segmentation_loss_delta": -0.014346390962600708,
+      "focus_mse_delta": -2.063715487718582,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 0.5,
+      "segmentation_loss_delta": -0.018459469079971313,
+      "focus_mse_delta": -2.606862336397171,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "naive_superposition",
+      "spherical_coefficient_radians": 1.0,
+      "segmentation_loss_delta": -0.015015289187431335,
+      "focus_mse_delta": -0.7690898478031158,
+      "strictly_dominates_zero": true
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -1.0,
+      "segmentation_loss_delta": 0.00697857141494751,
+      "focus_mse_delta": 3.853643909096718,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -0.5,
+      "segmentation_loss_delta": -0.007847785949707031,
+      "focus_mse_delta": 2.689968779683113,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": -0.25,
+      "segmentation_loss_delta": -0.005292147397994995,
+      "focus_mse_delta": 0.8676804751157761,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 0.25,
+      "segmentation_loss_delta": 0.0014708340167999268,
+      "focus_mse_delta": -0.935887448489666,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 0.5,
+      "segmentation_loss_delta": -0.007971376180648804,
+      "focus_mse_delta": 0.20948414504528046,
+      "strictly_dominates_zero": false
+    },
+    {
+      "seed": "focus_only",
+      "spherical_coefficient_radians": 1.0,
+      "segmentation_loss_delta": -0.024943530559539795,
+      "focus_mse_delta": -0.9918944239616394,
+      "strictly_dominates_zero": true
+    }
+  ],
+  "strict_dominance_count": 11
+}
