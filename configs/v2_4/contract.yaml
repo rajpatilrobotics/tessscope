@@ -72,6 +72,14 @@ hard_protocol:
   primary_hard_density_wells: 27
   hard_endpoint: official_InstanSeg
   paired_bootstrap_replicates_grouped_by_well: 2000
+  stability:
+    comparisons:
+      - first_hard_pq_vs_clear
+      - corrected_hard_pq_vs_v2_2_piecewise
+      - corrected_hard_pq_vs_matched_stopped_stage
+    minimum_fraction_of_wells_with_positive_mean_difference: 0.60
+    require_positive_mean_after_leaving_out_each_single_well: true
+    note: one deterministic field is evaluated per well, so this also rules out single-field dependence
   gates:
     minimum_first_hard_pq_gain_over_clear: 0.01
     require_positive_clear_gain_bootstrap_lower_bound: true

@@ -30,6 +30,13 @@
 - Decision: the exact feedback gradient materially improves the soft correction outcome.
   Freeze these six pupils before applying the expanded hard protocol.
 
+- Pre-hard stability definition: for first-frame PQ versus clear, corrected PQ versus
+  v2.2 piecewise-028, and corrected PQ versus the matched stopped-stage pupil, at least
+  60% of hard-density wells must have a positive within-well mean difference. The overall
+  mean must also stay positive after leaving out each individual well. Because the frozen
+  protocol uses one deterministic field per well, this explicitly rejects single-field
+  dependence. This rule is recorded before any v2.4 hard metric is computed.
+
 ## 2026-09-02 — V2.4 frozen-checkpoint audit authorized
 
 - V1 through v2.3 remain immutable; v2.3 is frozen at commit `93da502` as a correct
