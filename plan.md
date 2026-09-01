@@ -92,7 +92,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ### V2.3 active closed-loop work
 
-- [ ] V2.3-0A: pre-register the closed-loop objective, bounded stage action, first/final
+- [x] V2.3-0A: pre-registered the closed-loop objective, bounded stage action, first/final
   segmentation terms, transparent penalties, comparison baselines, and promotion gates.
 - [ ] V2.3-1A: implement one differentiable loop using the same pupil for first and second
   exposures and propagate gradients through predicted stage action and residual depth.

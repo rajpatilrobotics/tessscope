@@ -1,5 +1,31 @@
 # TessScope decision log
 
+## 2026-09-02 — V2.3 closed-loop objective pre-registered
+
+- V2.2 remains frozen at commit `cda7d34` with the locked test sealed. V2.3 uses a new
+  namespace and does not alter the v2.2 piecewise frontier or any earlier result.
+- One B7 pupil forms both exposures. The first optics call generates autofocus support
+  and query frames; the frozen SciPy ridge model predicts a stage action clipped to
+  `[-6, +6] µm`; residual depth is true depth plus that action; a second B7 optics call
+  forms the corrected query frames for the same frozen InstanSeg observer.
+- The primary exact profile weights final corrected-frame segmentation `1.0`, first-frame
+  segmentation `0.35`, normalized squared residual depth `0.10`, normalized squared stage
+  magnitude `0.01`, and the fixed second-exposure cost `0.01`. First-heavy and
+  action-heavy profiles change only one predeclared weight. No profile is chosen after
+  hard validation.
+- Three frozen starts are allowed: B7 segmentation-only, the v2.1 joint pupil, and v2.2
+  piecewise-028. Each profile/start receives the same 30-step Adam budget and validation
+  schedule. Up to three soft-nondominated endpoints may advance to the 45-well hard gate.
+- Exact and stopped-stage gradients are forward-identical. The exact full-loop directional
+  derivative must retain relative error below `0.01` and cosine above `0.99`; the stage
+  path must contribute at least 1% of total gradient norm in one predeclared probe.
+- Promotion additionally requires inherited first-frame segmentation/focus gates,
+  beneficial correction, at least `+0.005` corrected hard PQ beyond the matched v2.2
+  piecewise correction with a positive paired-well lower bound, and at least `+0.005`
+  corrected PQ over a forward-identical stopped-stage optimization with a positive lower
+  bound. A matched derivative-free run is conditional on clearing those earlier gates.
+
+
 ## 2026-09-01 — V2.2 matched piecewise-frontier protocol pre-registered
 
 - V2.1 remains frozen at commit `4a88bdd` as a negative pre-test result. V2.2 does not

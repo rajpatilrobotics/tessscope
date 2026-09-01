@@ -19,6 +19,15 @@ Final v2.2 status: no. Piecewise-028 reaches hard PQ `0.502543` and focus MAE
 `1.21073 µm`. The joint adds zero normalized hypervolume, so v2.2 is preserved as a
 negative validation result and the approved v2.3 closed-loop experiment is active.
 
+## V2.3 closed-loop differentiable microscope
+
+V2.3 makes the feedback action part of the optimized computation: the same B7 pupil
+forms a first exposure, the SciPy autofocus Tesseract predicts a bounded stage move, the
+move changes residual depth, the same pupil forms a second exposure, and InstanSeg scores
+the corrected biological frame. Exact gradients must cross the predicted action into the
+second Chromatix call. A forward-identical stopped-stage-gradient run tests whether that
+feedback path matters rather than merely decorating the architecture.
+
 ## V2.1 continuation
 
 V2.1 is a separately named, validation-only continuation motivated by the frozen v2

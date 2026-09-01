@@ -1,0 +1,101 @@
+experiment: tessscope_v2_3_closed_loop_differentiable_microscope
+status: preregistered_validation_only_test_sealed
+parent:
+  version: v2_2
+  commit: cda7d34
+  result: negative_matched_piecewise_frontier
+  pretest_block_sha256: 558729cba168a9e1110f0264974bb02ea42326dd5b13dd55e9accb7099d6e0e3
+data:
+  dataset: BBBC006v1
+  allowed_splits: [training, validation]
+  forbidden_before_promotion: [test_images, test_labels, test_normalization, test_metrics]
+  training_wells: 36
+  soft_validation_wells: 12
+  expanded_validation_wells_valid: 45
+  frozen_hard_density_wells: 27
+  deterministic_patch_seed: 53
+closed_loop:
+  basis: B7_Noll_5_through_11
+  same_pupil_for_both_exposures: true
+  first_exposure:
+    support_objects: 2
+    supervised_query_objects: 1
+    depths_um: [-6, -4, -2, 0, 2, 4, 6]
+  stage_action:
+    source: frozen_scipy_autofocus_tesseract
+    equation: clip(-predicted_depth_um, -6, 6)
+    bound_um: 6.0
+  residual_depth:
+    equation: true_depth_um + stage_action_um
+    differentiable_through_stage_action: true
+  second_exposure:
+    object: same_supervised_query
+    pupil: same_as_first_exposure
+    depths: residual_depth
+  observer: frozen_InstanSeg_single_channel_nuclei_v0_1_2
+training_noise:
+  optimizer_path: existing_labeled_reparameterized_approximation
+  hard_evaluation: deterministic_then_true_Poisson_only_after_promotion
+objective_profiles:
+  balanced:
+    first_segmentation: 0.35
+    final_segmentation: 1.0
+    normalized_residual_depth_squared: 0.10
+    normalized_stage_action_squared: 0.01
+    fixed_second_exposure_cost: 0.01
+  first_heavy:
+    first_segmentation: 0.75
+    final_segmentation: 1.0
+    normalized_residual_depth_squared: 0.10
+    normalized_stage_action_squared: 0.01
+    fixed_second_exposure_cost: 0.01
+  action_heavy:
+    first_segmentation: 0.35
+    final_segmentation: 1.0
+    normalized_residual_depth_squared: 0.25
+    normalized_stage_action_squared: 0.01
+    fixed_second_exposure_cost: 0.01
+optimization:
+  starts: [b7_segmentation_only, b7_projected_joint, v2_2_piecewise_028]
+  optimizer: Adam_exact_served_gradient
+  steps_per_profile_start: 30
+  initial_learning_rate: 0.01
+  final_third_learning_rate_multiplier: 0.3
+  maximum_soft_nondominated_promotions: 3
+  stopped_stage_ablation_budget: matched_to_best_exact_profile_start
+derivative_gates:
+  maximum_relative_error: 0.01
+  minimum_cosine: 0.99
+  minimum_stage_path_gradient_fraction: 0.01
+  stopped_stage_forward_parity_absolute: 1.0e-6
+soft_promotion:
+  maximum_first_segmentation_loss: b7_segmentation_anchor_plus_0_008
+  require_lower_residual_mae_than_start: true
+  selection: nondominated_first_segmentation_final_segmentation_residual_mae
+hard_promotion:
+  minimum_first_hard_pq_gain_over_clear: 0.01
+  require_positive_clear_gain_bootstrap_lower_bound: true
+  maximum_first_hard_pq_drop_from_b7_segmentation_only: 0.01
+  minimum_signed_direction_accuracy: 0.90
+  maximum_focus_mae_um: 2.0
+  require_stage_reduces_absolute_defocus: true
+  require_second_frame_hard_pq_above_first: true
+  minimum_corrected_pq_gain_over_v2_2_matched_piecewise: 0.005
+  require_positive_piecewise_corrected_gain_lower_bound: true
+  minimum_corrected_pq_gain_over_stopped_stage_ablation: 0.005
+  require_positive_ablation_gain_lower_bound: true
+  require_exact_full_loop_derivative_gate: true
+  require_matched_derivative_free_control_after_earlier_gates: true
+comparisons:
+  scalar_joint_v2_1: b7-projected-0.50-step-30
+  piecewise_v2_2: v2_2-piecewise-028
+  stopped_stage_gradient: forward_identical
+  derivative_free: conditional_matched_B7_closed_loop
+test_policy:
+  access_runs: 1
+  prerequisites: [all_v2_3_validation_gates_pass, exact_candidate_freeze, verified_hashes, local_pretest_commit]
+  tuning_after_access: forbidden
+evidence_sha256:
+  v2_2_hard_frontier: 329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc
+  b7_separate_baselines: 9de75d0491fc67aca3d9cc54b9485e15c2bd81971f6aefeb0bcd1b556c73bf31
+  v2_1_joint_manifest: dc527f1e80d84f14c600064cd921a3b03edd3332f05bbb18869afa7d2a99c0b3
