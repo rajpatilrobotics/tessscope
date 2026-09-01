@@ -39,6 +39,28 @@
   and [SciPy's documented SLSQP interface](https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html)
   for callable objective and constraint Jacobians. B11 remains conditional.
 
+## 2026-09-01 — B7 screen promotes one start to expanded training
+
+- A seven-point primary-spherical sweep across five B6 seeds found 11 nonzero B7 probes
+  that strictly improved both validation task loss and focus MSE relative to their
+  zero-spherical controls. B7 is retained; B11 is not justified before B7 is exhausted.
+- Matched 90-step exact-gradient B7 baselines used 36 training wells and 12 validation
+  wells per design. The B7 segmentation-only validation loss/focus MSE is
+  `1.09027/4.59833`; focus-only is `1.14826/2.24958`; constrained naive superposition is
+  `1.12248/1.45912`.
+- Four deterministic starts and two epsilon margins were screened with exact served
+  SLSQP Jacobians. Each stage was bounded at six iterations and retains solver status,
+  all endpoints, traces, exact-evaluation counts, and wall time; no non-converged result
+  is represented as converged.
+- Only `v2_exact_plus_spherical_0.25-margin-0.004` satisfies both the training constraint
+  (slack `+0.0000822`) and the validation soft-segmentation allowance. Its validation
+  focus MSE is `5.21696`, so it is only eligible for expanded training, not for a positive
+  claim or test access.
+- The promotion filter requires training constraint slack of at least `-1e-4` and
+  validation segmentation loss no greater than the B7 segmentation anchor plus `0.008`.
+  The next step uses the full 36-well training budget, followed by one expanded 48-well
+  hard-validation run only if feasibility is retained. Test data remains sealed.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No

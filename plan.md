@@ -77,12 +77,13 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.1-2A: implemented and numerically validated B6/B7 basis conventions and RMS mapping.
 - [x] V2.1-2B: passed support-energy, smoothness, quantization, and served derivative gates
   for every promoted basis.
-- [ ] V2.1-3A: implement exact-gradient constrained continuation and deterministic seeds.
+- [x] V2.1-3A: implemented exact-gradient SLSQP epsilon-constraint continuation with
+  shared exact-evaluation caching, deterministic starts, and explicit feasibility checks.
 - [ ] V2.1-3B: measure runtime, screen cheaply, and compare multiple converged starts with
   weighted sums, PCGrad, naive superposition, and matched gradient-free search.
-- [ ] V2.1-4A: measure raw-head loss-component correlation with hard PQ/RQ/Dice/count.
-- [ ] V2.1-4B: freeze the smallest evidence-supported differentiable loss amendment and a
-  forward-identical broken-gradient ablation, if warranted.
+- [x] V2.1-4A: measured raw-head loss-component correlation with hard PQ/RQ/Dice/count.
+- [x] V2.1-4B: retained the frozen differentiable loss because its validation correlation
+  with hard PQ is already strong; no loss amendment or new ablation is warranted.
 - [ ] V2.1-5A: expand official hard validation across well-grouped deterministic fields and
   calculate paired well bootstrap intervals.
 - [ ] V2.1-5B: promote only a candidate that passes every unchanged gate without dependence
