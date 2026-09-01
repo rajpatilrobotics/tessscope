@@ -1,0 +1,46 @@
+experiment: tessscope_v2_1_validation_continuation
+status: approved_validation_only_test_sealed
+parent_checkpoint:
+  version: v2
+  commit: 503ee9a
+  result: negative_pretest_near_miss
+namespace:
+  configs: configs/v2_1
+  artifacts: artifacts/runs/v2_1
+  outputs: outputs/v2_1
+data:
+  dataset: BBBC006v1
+  channel: w1 Hoechst
+  allowed_splits: [training, validation]
+  forbidden_before_promotion: [test_images, test_labels, test_normalization, test_metrics]
+  split_unit: well
+optics:
+  phase_rms_bound_radians: 2.5
+  exclude_modes: [piston, tilt_x, tilt_y, defocus]
+  basis_ladder:
+    B6: [5, 6, 7, 8, 9, 10]
+    B7: [5, 6, 7, 8, 9, 10, 11]
+    B11_conditional: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+optimization:
+  primary: exact_gradient_constrained_continuation
+  starts: [segmentation_only, exact_joint, joint_refine_focus_0_03, segmentation_plus_astigmatic]
+  existing_nonrepeat_baselines: [scalar_weighted_sum, projected_gradient]
+validation:
+  independent_unit: well
+  paired_bootstrap: true
+  repeated_tuning_protection: sealed_validation_final_or_nested_selection
+gates:
+  minimum_signed_direction_accuracy: 0.90
+  maximum_focus_mae_um: 2.0
+  minimum_hard_off_focus_pq_gain_over_clear: 0.01
+  maximum_hard_off_focus_pq_drop_from_segmentation_only: 0.01
+  require_pareto_over_naive_superposition: true
+  require_pareto_over_matched_gradient_free: true
+  require_beneficial_stage_correction: true
+  full_chain_maximum_relative_error: 0.01
+  full_chain_minimum_cosine: 0.99
+  require_multi_field_and_multi_start_stability: true
+test_policy:
+  access_runs: 1
+  prerequisites: [all_validation_gates_pass, exact_candidate_freeze, verified_hashes, local_pretest_commit]
+  tuning_after_access: forbidden

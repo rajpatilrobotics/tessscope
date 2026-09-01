@@ -1,0 +1,357 @@
+{
+  "status": "passed_b7_basis_diagnostics",
+  "test_accessed": false,
+  "basis_noll_indices": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "normalization": "continuous unit-disk RMS-one Noll convention",
+  "sample_grid_size": 401,
+  "sampled_gram_matrix": [
+    [
+      0.999994695186615,
+      5.465660701808872e-10,
+      1.5182391455148547e-10,
+      1.2730435372532156e-08,
+      1.86743420726998e-09,
+      -1.180734585659593e-07,
+      7.439371896289515e-10
+    ],
+    [
+      5.465660701808872e-10,
+      0.9989041686058044,
+      5.878622033606007e-08,
+      -3.780415536169812e-09,
+      1.2607458188540477e-07,
+      1.3967800249758966e-09,
+      1.5303850631198657e-08
+    ],
+    [
+      1.5182391455148547e-10,
+      5.878622033606007e-08,
+      0.9991783499717712,
+      4.706541267829323e-10,
+      0.0007245918968692422,
+      -1.7611574421039222e-09,
+      -2.9150191149796e-09
+    ],
+    [
+      1.2730435372532156e-08,
+      -3.780415536169812e-09,
+      4.706541267829323e-10,
+      0.9991784691810608,
+      -1.1007234013149514e-09,
+      -0.0007245855522342026,
+      -3.6817298099123263e-09
+    ],
+    [
+      1.86743420726998e-09,
+      1.2607458188540477e-07,
+      0.0007245918968692422,
+      -1.1007234013149514e-09,
+      0.9991738796234131,
+      3.6437738937245e-10,
+      1.2145913164118838e-09
+    ],
+    [
+      -1.180734585659593e-07,
+      1.3967800249758966e-09,
+      -1.7611574421039222e-09,
+      -0.0007245855522342026,
+      3.6437738937245e-10,
+      0.9991741180419922,
+      -3.0364783604186485e-11
+    ],
+    [
+      7.439371896289515e-10,
+      1.5303850631198657e-08,
+      -2.9150191149796e-09,
+      -3.6817298099123263e-09,
+      1.2145913164118838e-09,
+      -3.0364783604186485e-11,
+      0.9989104270935059
+    ]
+  ],
+  "maximum_diagonal_error": 0.0010958313941955566,
+  "maximum_off_diagonal_absolute": 0.0007245918968692422,
+  "minimum_required_support_energy_fraction": 0.995,
+  "probes": [
+    {
+      "name": "clear",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_rms_radians": 0.0,
+      "phase_peak_to_valley_radians": 0.0,
+      "inner_phase_gradient_rms_radians_per_radius": 0.0,
+      "inner_phase_gradient_max_radians_per_radius": 0.0,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972982406616211,
+        "-4.0": 0.9973087310791016,
+        "-2.0": 0.9973150491714478,
+        "0.0": 0.9973171949386597,
+        "2.0": 0.9973150491714478,
+        "4.0": 0.9973087310791016,
+        "6.0": 0.9972982406616211
+      },
+      "minimum_support_energy_fraction": 0.9972982406616211,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.0,
+        "16_levels": 0.0
+      }
+    },
+    {
+      "name": "v2_near_miss_extended",
+      "coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        0.0
+      ],
+      "phase_rms_radians": 1.0193486160027818,
+      "phase_peak_to_valley_radians": 6.370672602759198,
+      "inner_phase_gradient_rms_radians_per_radius": 6.2751223337496675,
+      "inner_phase_gradient_max_radians_per_radius": 15.372597752658182,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972902536392212,
+        "-4.0": 0.9973009824752808,
+        "-2.0": 0.9973074197769165,
+        "0.0": 0.997309684753418,
+        "2.0": 0.9973074197769165,
+        "4.0": 0.9973009824752808,
+        "6.0": 0.9972902536392212
+      },
+      "minimum_support_energy_fraction": 0.9972902536392212,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.21985394699491403,
+        "16_levels": 0.11341512438217596
+      }
+    },
+    {
+      "name": "pure_spherical_0.5",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "phase_rms_radians": 0.4997274031324197,
+      "phase_peak_to_valley_radians": 1.6770510077476501,
+      "inner_phase_gradient_rms_radians_per_radius": 4.245345212142223,
+      "inner_phase_gradient_max_radians_per_radius": 10.2608689173402,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972541928291321,
+        "-4.0": 0.9972755312919617,
+        "-2.0": 0.9972922801971436,
+        "0.0": 0.9973047375679016,
+        "2.0": 0.9973127841949463,
+        "4.0": 0.9973167181015015,
+        "6.0": 0.9973164200782776
+      },
+      "minimum_support_energy_fraction": 0.9972541928291321,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.24739488007406024,
+        "16_levels": 0.11636095291739904
+      }
+    },
+    {
+      "name": "pure_spherical_1.0",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "phase_rms_radians": 0.9994548062648394,
+      "phase_peak_to_valley_radians": 3.3541020154953003,
+      "inner_phase_gradient_rms_radians_per_radius": 8.490690424284447,
+      "inner_phase_gradient_max_radians_per_radius": 20.5217378346804,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9971821308135986,
+        "-4.0": 0.9972153306007385,
+        "-2.0": 0.9972436428070068,
+        "0.0": 0.9972668886184692,
+        "2.0": 0.9972857236862183,
+        "4.0": 0.9973000288009644,
+        "6.0": 0.9973099231719971
+      },
+      "minimum_support_energy_fraction": 0.9971821308135986,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.23272190583479824,
+        "16_levels": 0.11450869199242626
+      }
+    },
+    {
+      "name": "pure_spherical_1.5",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.5
+      ],
+      "phase_rms_radians": 1.4991822093972589,
+      "phase_peak_to_valley_radians": 5.03115302324295,
+      "inner_phase_gradient_rms_radians_per_radius": 12.73603563642667,
+      "inner_phase_gradient_max_radians_per_radius": 30.782606752020598,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9970775842666626,
+        "-4.0": 0.9971250295639038,
+        "-2.0": 0.9971661567687988,
+        "0.0": 0.9972018003463745,
+        "2.0": 0.9972320199012756,
+        "4.0": 0.997257649898529,
+        "6.0": 0.9972781538963318
+      },
+      "minimum_support_energy_fraction": 0.9970775842666626,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.20700545457473526,
+        "16_levels": 0.1084311710115592
+      }
+    },
+    {
+      "name": "pure_spherical_2.0",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0
+      ],
+      "phase_rms_radians": 1.9989096125296788,
+      "phase_peak_to_valley_radians": 6.708204030990601,
+      "inner_phase_gradient_rms_radians_per_radius": 16.981380848568893,
+      "inner_phase_gradient_max_radians_per_radius": 41.0434756693608,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9969342947006226,
+        "-4.0": 0.99699866771698,
+        "-2.0": 0.9970555305480957,
+        "0.0": 0.9971054792404175,
+        "2.0": 0.9971492886543274,
+        "4.0": 0.9971872568130493,
+        "6.0": 0.9972198605537415
+      },
+      "minimum_support_energy_fraction": 0.9969342947006226,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2290173839848527,
+        "16_levels": 0.11798579036475934
+      }
+    },
+    {
+      "name": "pure_spherical_2.4",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.4
+      ],
+      "phase_rms_radians": 2.3986915350356144,
+      "phase_peak_to_valley_radians": 8.04984483718872,
+      "inner_phase_gradient_rms_radians_per_radius": 20.377657018282676,
+      "inner_phase_gradient_max_radians_per_radius": 49.252170803232936,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9967851638793945,
+        "-4.0": 0.9968662261962891,
+        "-2.0": 0.9969383478164673,
+        "0.0": 0.9970021843910217,
+        "2.0": 0.997058629989624,
+        "4.0": 0.9971083402633667,
+        "6.0": 0.9971516132354736
+      },
+      "minimum_support_energy_fraction": 0.9967851638793945,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.22933662987950343,
+        "16_levels": 0.11433807249203184
+      }
+    },
+    {
+      "name": "near_plus_spherical_-0.5",
+      "coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        -0.5
+      ],
+      "phase_rms_radians": 1.1352528697996136,
+      "phase_peak_to_valley_radians": 6.377258038554738,
+      "inner_phase_gradient_rms_radians_per_radius": 7.57628644348818,
+      "inner_phase_gradient_max_radians_per_radius": 25.5722455979546,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9973090291023254,
+        "-4.0": 0.9973093271255493,
+        "-2.0": 0.9973052740097046,
+        "0.0": 0.997296929359436,
+        "2.0": 0.9972842931747437,
+        "4.0": 0.9972671270370483,
+        "6.0": 0.9972455501556396
+      },
+      "minimum_support_energy_fraction": 0.9972455501556396,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.2320173826754878,
+        "16_levels": 0.11297182349307629
+      }
+    },
+    {
+      "name": "near_plus_spherical_+0.5",
+      "coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475,
+        0.5
+      ],
+      "phase_rms_radians": 1.1352528697996136,
+      "phase_peak_to_valley_radians": 6.489085314281561,
+      "inner_phase_gradient_rms_radians_per_radius": 7.57628644348818,
+      "inner_phase_gradient_max_radians_per_radius": 25.572962317013936,
+      "support_energy_fraction_by_depth": {
+        "-6.0": 0.9972455501556396,
+        "-4.0": 0.9972673654556274,
+        "-2.0": 0.9972844123840332,
+        "0.0": 0.9972970485687256,
+        "2.0": 0.9973052740097046,
+        "4.0": 0.9973093271255493,
+        "6.0": 0.9973089694976807
+      },
+      "minimum_support_energy_fraction": 0.9972455501556396,
+      "wrapped_phase_quantization_rms_error_radians": {
+        "8_levels": 0.23125133619291746,
+        "16_levels": 0.11367739810022076
+      }
+    }
+  ],
+  "minimum_observed_support_energy_fraction": 0.9967851638793945,
+  "passed": true
+}

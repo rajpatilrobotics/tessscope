@@ -1,49 +1,49 @@
-# TessScope v2 implementation plan
+# TessScope v2.1 continuation plan
 
 ## 1. Goal
 
-Build and evaluate a BBBC006-calibrated three-Tesseract optical co-design prototype in
-which one bounded phase-only pupil jointly preserves nucleus segmentation and predicts
-signed defocus/stage action from one photon-matched fluorescence exposure.
+Continue the frozen BBBC006 three-Tesseract prototype with a separately named v2.1
+experiment. Find the smallest manufacturable pupil and exact-gradient constrained
+optimization method that preserves segmentation within the frozen tolerance while
+beating naive superposition on signed focus.
 
 The full v2 handoff is approved. Work proceeds autonomously unless a consequential
 scientific choice cannot be resolved on training/validation data, or a destructive,
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: implementation reached hard train/validation evaluation, but no
-candidate satisfied every frozen compromise gate. Test access is intentionally blocked;
-see `outputs/v2/STATUS.md` and `configs/v2/pretest-block.json`.
+Current checkpoint: v1 and the v2 negative pre-test result are committed at `503ee9a`.
+V2.1 starts with a causal near-miss audit. Test images, labels, normalization values, and
+metrics remain sealed until one newly frozen candidate passes every validation gate.
 
 ## 2. Problem
 
-Segmentation-only optics and signed autofocus are scientifically conflicting objectives.
-TessScope must prove that a joint exact gradient across JAX/Chromatix, a transparent
-NumPy/SciPy analytic adjoint, and PyTorch/InstanSeg finds a better optical compromise
-than independent tuning, naive phase superposition, a broken-gradient ablation, or a
-matched derivative-free search.
+The v2 candidate with focus weight `0.03` came within the segmentation tolerance and
+passed focus direction/MAE, but did not beat naive superposition on focus MAE. Candidates
+with stronger focus did beat superposition but exceeded the segmentation drop. The
+failure may arise from the six-mode basis, scalar-weight optimization, a soft-loss versus
+hard-PQ mismatch, or a noisy small hard-validation screen.
 
-V2 must also strengthen v1 with real z-stack calibration, well-level statistics, a real
-stage-correction decision loop, and positive or honestly negative photon evidence.
+V2.1 must distinguish those causes using training/validation evidence before changing
+the model, then evaluate only targeted interventions without weakening any gate.
 
 ## 3. Proposed solution
 
-1. Freeze and hash the complete v1 implementation/evidence without modifying its
-   scientific result.
-2. Stream the required BBBC006 Hoechst planes, build well-grouped deterministic splits,
-   register stacks, load reference masks, and freeze provenance.
-3. Fit a training-only low-dimensional clear-microscope calibration and gate it on
-   held-out validation z-stacks.
-4. Implement a NumPy/SciPy spectral autofocus Tesseract with an analytic FFT/feature VJP
-   and implicit ridge-solve VJP, each independently checked by finite differences.
-5. Add separately named v2 optics and joint-objective interfaces; combine focus and
-   segmentation cotangents in one served gradient.
-6. Pass component and full three-Tesseract derivative gates before optimization.
-7. Measure runtime, run bounded train/validation-only objective-weight selection, and
-   promote matched baselines/designs.
-8. Freeze all v2 decisions and hashes, then run one paired, well-grouped locked test.
-9. Produce decision-loop figures, Pareto evidence, mismatch/quantization results,
-   reproducible commands, limitations, and later submission polish.
+1. Audit every existing v2 candidate by well, depth, density, hard metric component,
+   focus error, soft objective, and local exact-gradient geometry.
+2. Test a basis ladder: B6 control, B7 with Noll 11 primary spherical, then a compact
+   fourth-order extension only if B7 evidence warrants it. Preserve the 2.5-radian RMS
+   ball and exclude piston, tilt, and free defocus.
+3. Implement an exact-gradient epsilon-constraint or augmented-Lagrangian continuation
+   anchored at the matched segmentation-only pupil, with multiple deterministic starts.
+4. Quantify InstanSeg raw-head component alignment with hard PQ and introduce only the
+   smallest frozen v2.1 reweighting supported by validation evidence.
+5. Promote candidates to a substantially larger well-grouped validation screen with
+   paired well bootstrap intervals and deterministic site/crop selection.
+6. Freeze one candidate, code commit, hashes, and protocol only if every gate passes;
+   then run the locked test exactly once and never tune from it.
+7. Produce photon, quantization, mismatch, robustness, decision-loop, and judge-facing
+   evidence only after an eligible promotion.
 
 ## 4. Files to change
 
@@ -59,9 +59,40 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - `tests/v2/`: unit, adjoint, integration, statistical, and smoke tests.
 - `artifacts/runs/v2/`: generated calibration, derivative, optimization, and test evidence.
 - `outputs/v2/`: final user-facing results, figures, demo material, and reproduction guide.
+- `configs/v2_1/`, `artifacts/runs/v2_1/`, `outputs/v2_1/`, and `v2_1`-prefixed code:
+  separately named continuation contract, audit, optimization, and evidence.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
 
 ## 5. Step by step tasks
+
+### V2.1 active work
+
+- [x] V2.1-0A: preserve the verified v1/v2 state in local commit `503ee9a` after ignore,
+  secret, size, Ruff, and 78-test checks.
+- [x] V2.1-1A: created a machine-readable near-miss audit across all existing designs.
+- [x] V2.1-1B: decomposed failure by well, depth, field density, PQ components, focus error,
+  stage correction, and soft/hard correlation.
+- [x] V2.1-1C: inspected coefficient paths, branch gradients, local exact-gradient sweeps,
+  and classify the main blocker before selecting an intervention.
+- [x] V2.1-2A: implemented and numerically validated B6/B7 basis conventions and RMS mapping.
+- [x] V2.1-2B: passed support-energy, smoothness, quantization, and served derivative gates
+  for every promoted basis.
+- [ ] V2.1-3A: implement exact-gradient constrained continuation and deterministic seeds.
+- [ ] V2.1-3B: measure runtime, screen cheaply, and compare multiple converged starts with
+  weighted sums, PCGrad, naive superposition, and matched gradient-free search.
+- [ ] V2.1-4A: measure raw-head loss-component correlation with hard PQ/RQ/Dice/count.
+- [ ] V2.1-4B: freeze the smallest evidence-supported differentiable loss amendment and a
+  forward-identical broken-gradient ablation, if warranted.
+- [ ] V2.1-5A: expand official hard validation across well-grouped deterministic fields and
+  calculate paired well bootstrap intervals.
+- [ ] V2.1-5B: promote only a candidate that passes every unchanged gate without dependence
+  on one field or start.
+- [ ] V2.1-6A: if eligible, freeze and commit the v2.1 pre-test manifest before any test data.
+- [ ] V2.1-6B: if eligible, run the locked test exactly once and preserve its result.
+- [ ] V2.1-7A: produce robustness, figures, animation, reproduction, and submission evidence
+  only after promotion.
+
+### Frozen v2 history
 
 - [x] V2-0A: inspect the repository and user work before editing.
 - [x] V2-0B: hash 98 pre-v2 files into immutable `experiments/v1/freeze.json`.
@@ -144,7 +175,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-These are bounded train/validation decisions, not reasons to pause implementation:
+These are bounded training/validation decisions, not reasons to pause implementation:
 
 - Exact official BBBC006 archive granularity and whether required w1 planes can be
   streamed individually or must be filtered from per-plane archives.
@@ -153,5 +184,11 @@ These are bounded train/validation decisions, not reasons to pause implementatio
 - Whether the operational focus Tesseract refits ridge weights on simulated support
   images during every pupil evaluation or freezes training-derived weights after each
   promoted design. Implement and validate the stronger implicit-refit path first.
-- Validation-only joint objective weights, phase mode count, step budget, ridge lambda,
-  and quantization/mismatch priority within the measured M2 budget.
+- Whether the near-miss is dominated by basis expressivity, optimization geometry,
+  soft-to-hard loss mismatch, or the small promoted hard screen.
+- Whether B7 supplies sufficient spherical EDOF freedom or a compact B11 extension is
+  justified by validation evidence.
+- Which exact constrained method is most stable under measured M2 runtime: an
+  epsilon-constraint continuation, augmented Lagrangian, or SLSQP with exact gradients.
+- How much expanded hard validation is feasible while retaining a sealed validation-final
+  subset against repeated tuning.

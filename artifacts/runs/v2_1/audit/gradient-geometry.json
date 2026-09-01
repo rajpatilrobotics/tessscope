@@ -1,0 +1,1564 @@
+{
+  "status": "complete_validation_only_exact_gradient_audit",
+  "test_accessed": false,
+  "batch_patch_ids": [
+    "b08_s1:0:220",
+    "a23_s2:264:220",
+    "k12_s1:0:220"
+  ],
+  "path_order": [
+    "segmentation_only",
+    "joint_refine_0.03",
+    "exact_joint",
+    "naive_superposition",
+    "astigmatic",
+    "focus_only"
+  ],
+  "path_rows": [
+    {
+      "parameters": [
+        0.14484967291355133,
+        0.11553990840911865,
+        -0.2433720827102661,
+        -0.39742594957351685,
+        0.10233695805072784,
+        -0.05676891282200813
+      ],
+      "phase_coefficients": [
+        0.32194170355796814,
+        0.25679805874824524,
+        -0.5409168004989624,
+        -0.8833156824111938,
+        0.2274532914161682,
+        -0.12617412209510803
+      ],
+      "segmentation_loss": 1.17410147190094,
+      "focus_mse": 8.235806465148926,
+      "segmentation_gradient": [
+        0.0007083953823894262,
+        -0.006422781385481358,
+        -0.029666783288121223,
+        -0.06386786699295044,
+        -0.005991045385599136,
+        -0.011960961855947971
+      ],
+      "focus_gradient": [
+        -7.040750026702881,
+        1.2217051982879639,
+        26.710006713867188,
+        17.372549057006836,
+        23.858383178710938,
+        -14.788747787475586
+      ],
+      "segmentation_gradient_norm": 0.07197175920009613,
+      "focus_gradient_norm": 43.06070327758789,
+      "branch_gradient_dot": -1.880831003189087,
+      "branch_gradient_cosine": -0.6068852069068551,
+      "gradients_conflict": true,
+      "segment": "segmentation_only->joint_refine_0.03",
+      "start": "segmentation_only",
+      "end": "joint_refine_0.03",
+      "fraction": 0.0,
+      "path_distance_radians": 0.0,
+      "segmentation_directional_derivative": -0.007925100829358489,
+      "focus_directional_derivative": 3.67451259481118
+    },
+    {
+      "parameters": [
+        -0.0010606057476252317,
+        0.031235655769705772,
+        -0.10598062723875046,
+        -0.3903876543045044,
+        0.04520982876420021,
+        0.027750510722398758
+      ],
+      "phase_coefficients": [
+        -0.002454027533531189,
+        0.07227300107479095,
+        -0.24521775543689728,
+        -0.9032781720161438,
+        0.10460641235113144,
+        0.06420907378196716
+      ],
+      "segmentation_loss": 1.1788800954818726,
+      "focus_mse": 6.494391918182373,
+      "segmentation_gradient": [
+        -0.025889595970511436,
+        -0.06473160535097122,
+        0.021841246634721756,
+        -0.0279201939702034,
+        -0.054886795580387115,
+        -0.030935384333133698
+      ],
+      "focus_gradient": [
+        35.608585357666016,
+        21.987560272216797,
+        6.745730876922607,
+        -3.132387399673462,
+        2.633941650390625,
+        4.253362655639648
+      ],
+      "segmentation_gradient_norm": 0.10043200850486755,
+      "focus_gradient_norm": 42.79917526245117,
+      "branch_gradient_dot": -2.386538028717041,
+      "branch_gradient_cosine": -0.5552145214558064,
+      "gradients_conflict": true,
+      "segment": "segmentation_only->joint_refine_0.03",
+      "start": "segmentation_only",
+      "end": "joint_refine_0.03",
+      "fraction": 0.5,
+      "path_distance_radians": 0.5276890143513467,
+      "segmentation_directional_derivative": 0.02496353548593966,
+      "focus_directional_derivative": -11.640148413760599
+    },
+    {
+      "parameters": [
+        -0.14318867027759552,
+        -0.049176186323165894,
+        0.022115202620625496,
+        -0.4044598340988159,
+        -0.007990922778844833,
+        0.11153359711170197
+      ],
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225207895040512,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240489065647125,
+        0.25459229946136475
+      ],
+      "segmentation_loss": 1.1823450326919556,
+      "focus_mse": 3.362724781036377,
+      "segmentation_gradient": [
+        0.011518983170390129,
+        -0.05713784694671631,
+        -0.02114887535572052,
+        -0.027163280174136162,
+        0.0024290892761200666,
+        -0.031072841957211494
+      ],
+      "focus_gradient": [
+        -0.5075861215591431,
+        14.246618270874023,
+        21.051130294799805,
+        -1.4939508438110352,
+        -18.994831085205078,
+        8.040520668029785
+      ],
+      "segmentation_gradient_norm": 0.0745249092578888,
+      "focus_gradient_norm": 32.77284622192383,
+      "branch_gradient_dot": -1.520477056503296,
+      "branch_gradient_cosine": -0.6225357131003676,
+      "gradients_conflict": true,
+      "segment": "joint_refine_0.03->exact_joint",
+      "start": "joint_refine_0.03",
+      "end": "exact_joint",
+      "fraction": 0.0,
+      "path_distance_radians": 1.0553780287026935,
+      "segmentation_directional_derivative": 0.01103664272401544,
+      "focus_directional_derivative": -3.4447471259280924
+    },
+    {
+      "parameters": [
+        -0.13133643567562103,
+        -0.12772700190544128,
+        0.03042086400091648,
+        -0.3769681453704834,
+        0.007202991284430027,
+        0.055984918028116226
+      ],
+      "phase_coefficients": [
+        -0.302290678024292,
+        -0.29398301243782043,
+        0.0700182169675827,
+        -0.8676491975784302,
+        0.01657877303659916,
+        0.12885776162147522
+      ],
+      "segmentation_loss": 1.1911163330078125,
+      "focus_mse": 2.129005193710327,
+      "segmentation_gradient": [
+        0.022885803133249283,
+        -0.09348172694444656,
+        -0.00786898285150528,
+        0.013924713246524334,
+        0.0206870436668396,
+        -0.07148364186286926
+      ],
+      "focus_gradient": [
+        2.1278202533721924,
+        7.616915702819824,
+        10.982412338256836,
+        -2.710801839828491,
+        -9.512476921081543,
+        1.6323864459991455
+      ],
+      "segmentation_gradient_norm": 0.12270402163267136,
+      "focus_gradient_norm": 16.842172622680664,
+      "branch_gradient_dot": -1.1009870767593384,
+      "branch_gradient_cosine": -0.5327522929852683,
+      "gradients_conflict": true,
+      "segment": "joint_refine_0.03->exact_joint",
+      "start": "joint_refine_0.03",
+      "end": "exact_joint",
+      "fraction": 0.5,
+      "path_distance_radians": 1.288021439509191,
+      "segmentation_directional_derivative": 0.024353039745277236,
+      "focus_directional_derivative": -1.5769622794476774
+    },
+    {
+      "parameters": [
+        -0.1209077388048172,
+        -0.20709748566150665,
+        0.038986969739198685,
+        -0.3535214364528656,
+        0.022375641390681267,
+        0.0013596541248261929
+      ],
+      "phase_coefficients": [
+        -0.2777314782142639,
+        -0.47571390867233276,
+        0.08955513685941696,
+        -0.8120574951171875,
+        0.051398035138845444,
+        0.003123197704553604
+      ],
+      "segmentation_loss": 1.2023413181304932,
+      "focus_mse": 1.7291345596313477,
+      "segmentation_gradient": [
+        0.02809559553861618,
+        -0.07054070383310318,
+        0.010206413455307484,
+        -0.006906838621944189,
+        0.014386417344212532,
+        -0.0472727045416832
+      ],
+      "focus_gradient": [
+        1.5518558025360107,
+        2.9682199954986572,
+        6.163625717163086,
+        0.6591528654098511,
+        -4.29022216796875,
+        -1.0484800338745117
+      ],
+      "segmentation_gradient_norm": 0.09142705053091049,
+      "focus_gradient_norm": 8.315567970275879,
+      "branch_gradient_dot": -0.11958061158657074,
+      "branch_gradient_cosine": -0.15728747572162458,
+      "gradients_conflict": true,
+      "segment": "exact_joint->naive_superposition",
+      "start": "exact_joint",
+      "end": "naive_superposition",
+      "fraction": 0.0,
+      "path_distance_radians": 1.5206648503156885,
+      "segmentation_directional_derivative": -0.02429838928110134,
+      "focus_directional_derivative": -1.8830194923978887
+    },
+    {
+      "parameters": [
+        -0.23893719911575317,
+        -0.07993964850902557,
+        -0.1042446568608284,
+        -0.3735615015029907,
+        0.06369528919458389,
+        -0.026594500988721848
+      ],
+      "phase_coefficients": [
+        -0.5411059856414795,
+        -0.18103428184986115,
+        -0.23607631027698517,
+        -0.8459811806678772,
+        0.14424669742584229,
+        -0.060226891189813614
+      ],
+      "segmentation_loss": 1.191879153251648,
+      "focus_mse": 1.345003366470337,
+      "segmentation_gradient": [
+        -0.012227878905832767,
+        -0.04729759320616722,
+        -0.006999585311859846,
+        -0.03337440639734268,
+        -0.022200917825102806,
+        -0.033359792083501816
+      ],
+      "focus_gradient": [
+        2.5617806911468506,
+        4.132339000701904,
+        -0.5914950966835022,
+        -1.6110016107559204,
+        -2.6819772720336914,
+        0.9023703932762146
+      ],
+      "segmentation_gradient_norm": 0.0717996209859848,
+      "focus_gradient_norm": 5.881446361541748,
+      "branch_gradient_dot": -0.13942892849445343,
+      "branch_gradient_cosine": -0.3301768354882588,
+      "gradients_conflict": true,
+      "segment": "exact_joint->naive_superposition",
+      "start": "exact_joint",
+      "end": "naive_superposition",
+      "fraction": 0.5,
+      "path_distance_radians": 2.046043732642447,
+      "segmentation_directional_derivative": -0.004856504387557067,
+      "focus_directional_derivative": 0.39801876505123257
+    },
+    {
+      "parameters": [
+        -0.3822779357433319,
+        0.054002683609724045,
+        -0.2669157087802887,
+        -0.41811856627464294,
+        0.11266443133354187,
+        -0.058722060173749924
+      ],
+      "phase_coefficients": [
+        -0.8044804930686951,
+        0.11364533752202988,
+        -0.5617077350616455,
+        -0.8799049258232117,
+        0.2370954006910324,
+        -0.12357697635889053
+      ],
+      "segmentation_loss": 1.1980787515640259,
+      "focus_mse": 1.7677794694900513,
+      "segmentation_gradient": [
+        -0.05740902200341225,
+        -0.03815456107258797,
+        -0.07329854369163513,
+        -0.09117081016302109,
+        -0.05759545788168907,
+        0.007465146481990814
+      ],
+      "focus_gradient": [
+        3.367443561553955,
+        1.928710699081421,
+        -1.845033884048462,
+        -3.0923588275909424,
+        2.07292103767395,
+        1.0759316682815552
+      ],
+      "segmentation_gradient_norm": 0.14767980575561523,
+      "focus_gradient_norm": 5.786282539367676,
+      "branch_gradient_dot": 0.03890153765678406,
+      "branch_gradient_cosine": 0.04552458640645104,
+      "gradients_conflict": false,
+      "segment": "naive_superposition->astigmatic",
+      "start": "naive_superposition",
+      "end": "astigmatic",
+      "fraction": 0.0,
+      "path_distance_radians": 2.571422614969206,
+      "segmentation_directional_derivative": -0.11369993055634484,
+      "focus_directional_derivative": 1.7529220410431638
+    },
+    {
+      "parameters": [
+        0.1439591646194458,
+        0.023522399365901947,
+        -0.11626270413398743,
+        -0.18212339282035828,
+        0.049074187874794006,
+        -0.025578057393431664
+      ],
+      "phase_coefficients": [
+        0.34775975346565247,
+        0.05682266503572464,
+        -0.28085386753082275,
+        -0.43995243310928345,
+        0.11854769289493561,
+        -0.06178848445415497
+      ],
+      "segmentation_loss": 1.1921532154083252,
+      "focus_mse": 6.465959072113037,
+      "segmentation_gradient": [
+        0.010110457427799702,
+        -0.049949731677770615,
+        0.22425688803195953,
+        0.171626478433609,
+        -0.02095726691186428,
+        -0.02971487119793892
+      ],
+      "focus_gradient": [
+        -13.40921401977539,
+        -12.321868896484375,
+        -24.270544052124023,
+        -18.843751907348633,
+        6.206413269042969,
+        -1.6966098546981812
+      ],
+      "segmentation_gradient_norm": 0.28925105929374695,
+      "focus_gradient_norm": 36.292972564697266,
+      "branch_gradient_dot": -8.276678085327148,
+      "branch_gradient_cosine": -0.788421690557019,
+      "gradients_conflict": true,
+      "segment": "naive_superposition->astigmatic",
+      "start": "naive_superposition",
+      "end": "astigmatic",
+      "fraction": 0.5,
+      "path_distance_radians": 3.8446841012659805,
+      "segmentation_directional_derivative": 0.14637937922392721,
+      "focus_directional_derivative": -29.673524730942702
+    },
+    {
+      "parameters": [
+        0.75,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "phase_coefficients": [
+        1.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "segmentation_loss": 1.2360708713531494,
+      "focus_mse": 2.01027512550354,
+      "segmentation_gradient": [
+        0.06627494841814041,
+        -0.008547401055693626,
+        0.046912625432014465,
+        0.027557488530874252,
+        0.0025277817621827126,
+        0.014155207201838493
+      ],
+      "focus_gradient": [
+        2.0378239154815674,
+        -0.78557288646698,
+        2.9142990112304688,
+        4.589458465576172,
+        0.9470784664154053,
+        -0.9244704246520996
+      ],
+      "segmentation_gradient_norm": 0.0873635858297348,
+      "focus_gradient_norm": 6.006473064422607,
+      "branch_gradient_dot": 0.3942706286907196,
+      "branch_gradient_cosine": 0.7513537345376323,
+      "gradients_conflict": false,
+      "segment": "astigmatic->focus_only",
+      "start": "astigmatic",
+      "end": "focus_only",
+      "fraction": 0.0,
+      "path_distance_radians": 5.117945587562755,
+      "segmentation_directional_derivative": -0.08304507873696636,
+      "focus_directional_derivative": -2.5257018770201594
+    },
+    {
+      "parameters": [
+        0.07495670765638351,
+        -0.028722956776618958,
+        -0.004171581938862801,
+        0.0006843836745247245,
+        0.0019346344051882625,
+        0.0005211107200011611
+      ],
+      "phase_coefficients": [
+        0.1867889165878296,
+        -0.07157637923955917,
+        -0.010395403951406479,
+        0.001705454895272851,
+        0.004821026232093573,
+        0.0012985856737941504
+      ],
+      "segmentation_loss": 1.214561104774475,
+      "focus_mse": 2.3662006855010986,
+      "segmentation_gradient": [
+        0.00854603759944439,
+        0.0016824343474581838,
+        0.016072388738393784,
+        0.017810510471463203,
+        -0.005051913671195507,
+        0.01061518769711256
+      ],
+      "focus_gradient": [
+        -13.738041877746582,
+        2.1368303298950195,
+        -7.506699562072754,
+        7.415387153625488,
+        -2.7852251529693604,
+        3.2337231636047363
+      ],
+      "segmentation_gradient_norm": 0.028099916875362396,
+      "focus_gradient_norm": 17.96810531616211,
+      "branch_gradient_dot": -0.053992196917533875,
+      "branch_gradient_cosine": -0.10693594175982729,
+      "gradients_conflict": true,
+      "segment": "astigmatic->focus_only",
+      "start": "astigmatic",
+      "end": "focus_only",
+      "fraction": 0.5,
+      "path_distance_radians": 6.433157520780861,
+      "segmentation_directional_derivative": -0.010972266468498672,
+      "focus_directional_derivative": 17.187639824299705
+    },
+    {
+      "parameters": [
+        -0.5057715177536011,
+        -0.06427659839391708,
+        -0.009335219860076904,
+        0.0015315224882215261,
+        0.004329349845647812,
+        0.0011661482276394963
+      ],
+      "phase_coefficients": [
+        -1.1264221668243408,
+        -0.14315275847911835,
+        -0.020790807902812958,
+        0.0034109095577150583,
+        0.009642052464187145,
+        0.002597171114757657
+      ],
+      "segmentation_loss": 1.2158129215240479,
+      "focus_mse": 0.7103345990180969,
+      "segmentation_gradient": [
+        -0.0197231937199831,
+        -0.012898210436105728,
+        0.004945406224578619,
+        0.04821519926190376,
+        0.012928345240652561,
+        0.018542742356657982
+      ],
+      "focus_gradient": [
+        0.14761750400066376,
+        -0.3736497163772583,
+        2.325444221496582,
+        -1.1713682413101196,
+        0.8239057064056396,
+        0.7445958852767944
+      ],
+      "segmentation_gradient_norm": 0.05844233185052872,
+      "focus_gradient_norm": 2.859098434448242,
+      "branch_gradient_dot": -0.01861097477376461,
+      "branch_gradient_cosine": -0.11138134755087226,
+      "gradients_conflict": true,
+      "segment": "astigmatic->focus_only",
+      "start": "astigmatic",
+      "end": "focus_only",
+      "fraction": 1.0,
+      "path_distance_radians": 7.748369453998967,
+      "segmentation_directional_derivative": 0.025702149128040017,
+      "focus_directional_derivative": -0.18042414895512188
+    }
+  ],
+  "local_sweeps": {
+    "center": {
+      "parameters": [
+        -0.14318867027759552,
+        -0.04917619004845619,
+        0.022115202620625496,
+        -0.4044598639011383,
+        -0.007990923710167408,
+        0.11153359711170197
+      ],
+      "phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475
+      ],
+      "segmentation_loss": 1.1823450326919556,
+      "focus_mse": 3.3627254962921143,
+      "segmentation_gradient": [
+        0.011517392471432686,
+        -0.05713704973459244,
+        -0.021146027371287346,
+        -0.027162376791238785,
+        0.0024277407210320234,
+        -0.031071946024894714
+      ],
+      "focus_gradient": [
+        -0.5074813365936279,
+        14.246711730957031,
+        21.050979614257812,
+        -1.493941068649292,
+        -18.99480628967285,
+        8.040550231933594
+      ],
+      "segmentation_gradient_norm": 0.07452249526977539,
+      "focus_gradient_norm": 32.77277755737305,
+      "branch_gradient_dot": -1.5203754901885986,
+      "branch_gradient_cosine": -0.6225155794434226,
+      "gradients_conflict": true
+    },
+    "steps": [
+      0.001,
+      0.005,
+      0.02
+    ],
+    "rows": [
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 7.452249139040705e-05,
+        "actual_segmentation_delta": 7.43865966796875e-05,
+        "predicted_focus_delta": -0.020401566272472735,
+        "actual_focus_delta": -0.020301342010498047,
+        "phase_coefficients": [
+          -0.3264669179916382,
+          -0.11399171501398087,
+          0.049828995019197464,
+          -0.9239876866340637,
+          -0.01816445402801037,
+          0.25361719727516174
+        ]
+      },
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -7.452249139040705e-05,
+        "actual_segmentation_delta": -7.486343383789062e-05,
+        "predicted_focus_delta": 0.020401566272472735,
+        "actual_focus_delta": 0.020506858825683594,
+        "phase_coefficients": [
+          -0.3272324204444885,
+          -0.11051203310489655,
+          0.051133666187524796,
+          -0.9224929213523865,
+          -0.018316524103283882,
+          0.255567342042923
+        ]
+      },
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.0003726124569520352,
+        "actual_segmentation_delta": 0.00037658214569091797,
+        "predicted_focus_delta": -0.10200783136236367,
+        "actual_focus_delta": -0.09957504272460938,
+        "phase_coefficients": [
+          -0.32493361830711365,
+          -0.12094605714082718,
+          0.047220610082149506,
+          -0.9269664287567139,
+          -0.017860308289527893,
+          0.24971655011177063
+        ]
+      },
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.0003726124569520352,
+        "actual_segmentation_delta": -0.0003648996353149414,
+        "predicted_focus_delta": 0.10200783136236367,
+        "actual_focus_delta": 0.10446596145629883,
+        "phase_coefficients": [
+          -0.3287609815597534,
+          -0.1035478413105011,
+          0.05374392494559288,
+          -0.919492781162262,
+          -0.018620647490024567,
+          0.2594672739505768
+        ]
+      },
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0014904498278081409,
+        "actual_segmentation_delta": 0.0015976428985595703,
+        "predicted_focus_delta": -0.4080313254494547,
+        "actual_focus_delta": -0.3697395324707031,
+        "phase_coefficients": [
+          -0.3191564679145813,
+          -0.1469610333442688,
+          0.037452250719070435,
+          -0.9380064010620117,
+          -0.01671983115375042,
+          0.23508767783641815
+        ]
+      },
+      {
+        "direction": "negative_segmentation_gradient",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0014904498278081409,
+        "actual_segmentation_delta": -0.0013638734817504883,
+        "predicted_focus_delta": 0.4080313254494547,
+        "actual_focus_delta": 0.44745659828186035,
+        "phase_coefficients": [
+          -0.33446329832077026,
+          -0.07737858593463898,
+          0.06354149430990219,
+          -0.9081157445907593,
+          -0.019760705530643463,
+          0.2740843892097473
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": -4.639141352165008e-05,
+        "actual_segmentation_delta": -4.6253204345703125e-05,
+        "predicted_focus_delta": 0.03277277908726871,
+        "actual_focus_delta": 0.03297901153564453,
+        "phase_coefficients": [
+          -0.3268726170063019,
+          -0.11125552654266357,
+          0.0519455187022686,
+          -0.9233094453811646,
+          -0.019562745466828346,
+          0.25514253973960876
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": 4.639141352165008e-05,
+        "actual_segmentation_delta": 4.6372413635253906e-05,
+        "predicted_focus_delta": -0.03277277908726871,
+        "actual_focus_delta": -0.03256106376647949,
+        "phase_coefficients": [
+          -0.32682672142982483,
+          -0.11324863135814667,
+          0.04901691526174545,
+          -0.9231714010238647,
+          -0.0169181227684021,
+          0.2540418207645416
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": -0.00023195706760825038,
+        "actual_segmentation_delta": -0.00022685527801513672,
+        "predicted_focus_delta": 0.16386389543634353,
+        "actual_focus_delta": 0.1689763069152832,
+        "phase_coefficients": [
+          -0.3269611597061157,
+          -0.10726916790008545,
+          0.05780083313584328,
+          -0.9235764145851135,
+          -0.024850543588399887,
+          0.2573409974575043
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": 0.00023195706760825038,
+        "actual_segmentation_delta": 0.00023567676544189453,
+        "predicted_focus_delta": -0.16386389543634353,
+        "actual_focus_delta": -0.15866494178771973,
+        "phase_coefficients": [
+          -0.3267315924167633,
+          -0.11723456531763077,
+          0.04315793514251709,
+          -0.9228858351707458,
+          -0.011627555824816227,
+          0.25183725357055664
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": -0.0009278282704330015,
+        "actual_segmentation_delta": -0.0008660554885864258,
+        "predicted_focus_delta": 0.6554555817453741,
+        "actual_focus_delta": 0.7335350513458252,
+        "phase_coefficients": [
+          -0.32725414633750916,
+          -0.09232082962989807,
+          0.07973193377256393,
+          -0.9244672060012817,
+          -0.04465927928686142,
+          0.26554739475250244
+        ]
+      },
+      {
+        "direction": "negative_focus_gradient",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": 0.0009278282704330015,
+        "actual_segmentation_delta": 0.0009485483169555664,
+        "predicted_focus_delta": -0.6554555817453741,
+        "actual_focus_delta": -0.5714547634124756,
+        "phase_coefficients": [
+          -0.32633596658706665,
+          -0.1321762055158615,
+          0.021169455721974373,
+          -0.9217051267623901,
+          0.008224454708397388,
+          0.24353577196598053
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 3.237590159576495e-05,
+        "actual_segmentation_delta": 3.24249267578125e-05,
+        "predicted_focus_delta": 0.014237960258072363,
+        "actual_focus_delta": 0.014302253723144531,
+        "phase_coefficients": [
+          -0.3264356255531311,
+          -0.1131073534488678,
+          0.05141562223434448,
+          -0.9241799116134644,
+          -0.019674604758620262,
+          0.25410348176956177
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -3.237590159576495e-05,
+        "actual_segmentation_delta": -3.254413604736328e-05,
+        "predicted_focus_delta": -0.014237960258072363,
+        "actual_focus_delta": -0.014184236526489258,
+        "phase_coefficients": [
+          -0.32726380228996277,
+          -0.11139647662639618,
+          0.04954664409160614,
+          -0.9223007559776306,
+          -0.01680593751370907,
+          0.25508108735084534
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.00016187950797882478,
+        "actual_segmentation_delta": 0.00016677379608154297,
+        "predicted_focus_delta": 0.07118980129036181,
+        "actual_focus_delta": 0.07219505310058594,
+        "phase_coefficients": [
+          -0.32477766275405884,
+          -0.11652494221925735,
+          0.055149685591459274,
+          -0.9279259443283081,
+          -0.02540656179189682,
+          0.2521476149559021
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.00016187950797882478,
+        "actual_segmentation_delta": -0.00015985965728759766,
+        "predicted_focus_delta": -0.07118980129036181,
+        "actual_focus_delta": -0.07016658782958984,
+        "phase_coefficients": [
+          -0.3289183974266052,
+          -0.10797058045864105,
+          0.04580490663647652,
+          -0.9185299873352051,
+          -0.011063357815146446,
+          0.2570354640483856
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0006475180319152991,
+        "actual_segmentation_delta": 0.0006971359252929688,
+        "predicted_focus_delta": 0.28475920516144726,
+        "actual_focus_delta": 0.30020761489868164,
+        "phase_coefficients": [
+          -0.3185414969921112,
+          -0.12928928434848785,
+          0.06910431385040283,
+          -0.9418252110481262,
+          -0.0468343123793602,
+          0.24480611085891724
+        ]
+      },
+      {
+        "direction": "negative_equal_norm_sum",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0006475180319152991,
+        "actual_segmentation_delta": -0.0005972385406494141,
+        "predicted_focus_delta": -0.28475920516144726,
+        "actual_focus_delta": -0.2682161331176758,
+        "phase_coefficients": [
+          -0.3351014256477356,
+          -0.09507647901773453,
+          0.03173045814037323,
+          -0.9042448997497559,
+          0.010530292987823486,
+          0.2643541991710663
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": -1.6940658945086007e-21,
+        "actual_segmentation_delta": 3.5762786865234375e-07,
+        "predicted_focus_delta": 0.025648219094760172,
+        "actual_focus_delta": 0.025780677795410156,
+        "phase_coefficients": [
+          -0.32657456398010254,
+          -0.1123625859618187,
+          0.051833268254995346,
+          -0.9239230155944824,
+          -0.019869428128004074,
+          0.25451982021331787
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": 1.6940658945086007e-21,
+        "actual_segmentation_delta": 0.0,
+        "predicted_focus_delta": -0.025648219094760172,
+        "actual_focus_delta": -0.025510549545288086,
+        "phase_coefficients": [
+          -0.32712483406066895,
+          -0.11214147508144379,
+          0.049128949642181396,
+          -0.9225576519966125,
+          -0.016611145809292793,
+          0.2546645700931549
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": -2.710505431213761e-20,
+        "actual_segmentation_delta": 4.291534423828125e-06,
+        "predicted_focus_delta": 0.12824109547380086,
+        "actual_focus_delta": 0.13121747970581055,
+        "phase_coefficients": [
+          -0.3254716694355011,
+          -0.1128033995628357,
+          0.057237427681684494,
+          -0.9266427755355835,
+          -0.026380999013781548,
+          0.2542281448841095
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": 2.710505431213761e-20,
+        "actual_segmentation_delta": 2.86102294921875e-06,
+        "predicted_focus_delta": -0.12824109547380086,
+        "actual_focus_delta": -0.12520408630371094,
+        "phase_coefficients": [
+          -0.3282228708267212,
+          -0.11169780790805817,
+          0.04371592029929161,
+          -0.9198156595230103,
+          -0.010089726187288761,
+          0.25495168566703796
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": -1.0842021724855044e-19,
+        "actual_segmentation_delta": 3.063678741455078e-05,
+        "predicted_focus_delta": 0.5129643818952034,
+        "actual_focus_delta": 0.5574626922607422,
+        "phase_coefficients": [
+          -0.3213083744049072,
+          -0.11443930119276047,
+          0.07744646817445755,
+          -0.9367092251777649,
+          -0.0507362000644207,
+          0.2531074285507202
+        ]
+      },
+      {
+        "direction": "negative_projected_focus",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": 1.0842021724855044e-19,
+        "actual_segmentation_delta": 5.0067901611328125e-06,
+        "predicted_focus_delta": -0.5129643818952034,
+        "actual_focus_delta": -0.46250295639038086,
+        "phase_coefficients": [
+          -0.33231085538864136,
+          -0.11001738160848618,
+          0.023368364199995995,
+          -0.9094036817550659,
+          0.014419281855225563,
+          0.256000816822052
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": -1.1517392471432686e-05,
+        "actual_segmentation_delta": -1.1563301086425781e-05,
+        "predicted_focus_delta": 0.0005074813365936279,
+        "actual_focus_delta": 0.0005254745483398438,
+        "phase_coefficients": [
+          -0.3290930390357971,
+          -0.11223864555358887,
+          0.05047525092959404,
+          -0.9231302738189697,
+          -0.018238307908177376,
+          0.25456181168556213
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": 1.1517392471432686e-05,
+        "actual_segmentation_delta": 1.1205673217773438e-05,
+        "predicted_focus_delta": -0.0005074813365936279,
+        "actual_focus_delta": -0.0004961490631103516,
+        "phase_coefficients": [
+          -0.3246057331562042,
+          -0.1122654378414154,
+          0.050487298518419266,
+          -0.9233505725860596,
+          -0.01824266090989113,
+          0.25462257862091064
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": -5.758696235716343e-05,
+        "actual_segmentation_delta": -5.7697296142578125e-05,
+        "predicted_focus_delta": 0.00253740668296814,
+        "actual_focus_delta": 0.0029768943786621094,
+        "phase_coefficients": [
+          -0.33805781602859497,
+          -0.11218398809432983,
+          0.05045066773891449,
+          -0.922680675983429,
+          -0.018229424953460693,
+          0.2544378340244293
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": 5.758696235716343e-05,
+        "actual_segmentation_delta": 5.5670738220214844e-05,
+        "predicted_focus_delta": -0.00253740668296814,
+        "actual_focus_delta": -0.002012491226196289,
+        "phase_coefficients": [
+          -0.3156217038631439,
+          -0.11231797933578491,
+          0.05051092430949211,
+          -0.9237827062606812,
+          -0.018251199275255203,
+          0.25474172830581665
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": -0.0002303478494286537,
+        "actual_segmentation_delta": -0.00020873546600341797,
+        "predicted_focus_delta": 0.01014962673187256,
+        "actual_focus_delta": 0.015061616897583008,
+        "phase_coefficients": [
+          -0.37155503034591675,
+          -0.11196646839380264,
+          0.05035284906625748,
+          -0.9208917021751404,
+          -0.018194079399108887,
+          0.2539445161819458
+        ]
+      },
+      {
+        "direction": "parameter_basis_1",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": 0.0002303478494286537,
+        "actual_segmentation_delta": 0.0002262592315673828,
+        "predicted_focus_delta": -0.01014962673187256,
+        "actual_focus_delta": 0.0005745887756347656,
+        "phase_coefficients": [
+          -0.2818233072757721,
+          -0.11250220984220505,
+          0.050593774765729904,
+          -0.9252979755401611,
+          -0.018281135708093643,
+          0.2551595866680145
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 5.713704973459244e-05,
+        "actual_segmentation_delta": 5.6862831115722656e-05,
+        "predicted_focus_delta": -0.014246711730957031,
+        "actual_focus_delta": -0.014192581176757812,
+        "phase_coefficients": [
+          -0.3268362581729889,
+          -0.11453000456094742,
+          0.05047920346260071,
+          -0.9232025742530823,
+          -0.018239736557006836,
+          0.2545817494392395
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -5.713704973459244e-05,
+        "actual_segmentation_delta": -5.745887756347656e-05,
+        "predicted_focus_delta": 0.014246711730957031,
+        "actual_focus_delta": 0.014297008514404297,
+        "phase_coefficients": [
+          -0.32686305046081543,
+          -0.10997391492128372,
+          0.0504833422601223,
+          -0.923278272151947,
+          -0.01824123226106167,
+          0.2546026408672333
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.0002856852486729622,
+        "actual_segmentation_delta": 0.0002874135971069336,
+        "predicted_focus_delta": -0.07123355865478516,
+        "actual_focus_delta": -0.07011294364929199,
+        "phase_coefficients": [
+          -0.32677939534187317,
+          -0.12363870441913605,
+          0.05047042295336723,
+          -0.9230419397354126,
+          -0.018236562609672546,
+          0.2545374631881714
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.0002856852486729622,
+        "actual_segmentation_delta": -0.0002855062484741211,
+        "predicted_focus_delta": 0.07123355865478516,
+        "actual_focus_delta": 0.07234334945678711,
+        "phase_coefficients": [
+          -0.32691341638565063,
+          -0.10085846483707428,
+          0.05049112066626549,
+          -0.9234204888343811,
+          -0.018244042992591858,
+          0.2546418607234955
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0011427409946918488,
+        "actual_segmentation_delta": 0.0012054443359375,
+        "predicted_focus_delta": -0.28493423461914064,
+        "actual_focus_delta": -0.2671637535095215,
+        "phase_coefficients": [
+          -0.32652777433395386,
+          -0.15774954855442047,
+          0.05043155699968338,
+          -0.9223312139511108,
+          -0.018222520127892494,
+          0.2543414533138275
+        ]
+      },
+      {
+        "direction": "parameter_basis_2",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0011427409946918488,
+        "actual_segmentation_delta": -0.0010770559310913086,
+        "predicted_focus_delta": 0.28493423461914064,
+        "actual_focus_delta": 0.30225563049316406,
+        "phase_coefficients": [
+          -0.32706350088119507,
+          -0.06664261221885681,
+          0.05051429942250252,
+          -0.9238444566726685,
+          -0.0182524174451828,
+          0.2547587454319
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 2.1146027371287346e-05,
+        "actual_segmentation_delta": 2.1338462829589844e-05,
+        "predicted_focus_delta": -0.021050979614257812,
+        "actual_focus_delta": -0.020958900451660156,
+        "phase_coefficients": [
+          -0.32685568928718567,
+          -0.11225412040948868,
+          0.04819951206445694,
+          -0.9232574701309204,
+          -0.01824082061648369,
+          0.25459688901901245
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -2.1146027371287346e-05,
+        "actual_segmentation_delta": -2.110004425048828e-05,
+        "predicted_focus_delta": 0.021050979614257812,
+        "actual_focus_delta": 0.021147727966308594,
+        "phase_coefficients": [
+          -0.32684361934661865,
+          -0.11224997043609619,
+          0.0527629517018795,
+          -0.9232233762741089,
+          -0.018240146338939667,
+          0.2545875012874603
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.00010573013685643673,
+        "actual_segmentation_delta": 0.00011491775512695312,
+        "predicted_focus_delta": -0.10525489807128907,
+        "actual_focus_delta": -0.10293722152709961,
+        "phase_coefficients": [
+          -0.32687655091285706,
+          -0.11226128041744232,
+          0.03907123580574989,
+          -0.9233163595199585,
+          -0.018241984769701958,
+          0.25461313128471375
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.00010573013685643673,
+        "actual_segmentation_delta": -0.00010037422180175781,
+        "predicted_focus_delta": 0.10525489807128907,
+        "actual_focus_delta": 0.10733532905578613,
+        "phase_coefficients": [
+          -0.32681626081466675,
+          -0.11224057525396347,
+          0.0618881992995739,
+          -0.92314612865448,
+          -0.018238620832562447,
+          0.2545661926269531
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0004229205474257469,
+        "actual_segmentation_delta": 0.0004925727844238281,
+        "predicted_focus_delta": -0.4210195922851563,
+        "actual_focus_delta": -0.3779006004333496,
+        "phase_coefficients": [
+          -0.32691583037376404,
+          -0.11227476596832275,
+          0.0048292456194758415,
+          -0.9234273433685303,
+          -0.018244177103042603,
+          0.2546437382698059
+        ]
+      },
+      {
+        "direction": "parameter_basis_3",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0004229205474257469,
+        "actual_segmentation_delta": -0.00037419795989990234,
+        "predicted_focus_delta": 0.4210195922851563,
+        "actual_focus_delta": 0.44959187507629395,
+        "phase_coefficients": [
+          -0.3266749083995819,
+          -0.11219202727079391,
+          0.0960828885436058,
+          -0.9227468371391296,
+          -0.018230732530355453,
+          0.2544560730457306
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 2.7162376791238786e-05,
+        "actual_segmentation_delta": 2.7418136596679688e-05,
+        "predicted_focus_delta": 0.0014939410686492921,
+        "actual_focus_delta": 0.0014758110046386719,
+        "phase_coefficients": [
+          -0.32673949003219604,
+          -0.11221420764923096,
+          0.05046425759792328,
+          -0.9252110719680786,
+          -0.018234336748719215,
+          0.254506379365921
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -2.7162376791238786e-05,
+        "actual_segmentation_delta": -2.6941299438476562e-05,
+        "predicted_focus_delta": -0.0014939410686492921,
+        "actual_focus_delta": -0.001508951187133789,
+        "phase_coefficients": [
+          -0.3269599378108978,
+          -0.1122899129986763,
+          0.05049830302596092,
+          -0.9212685227394104,
+          -0.018246637657284737,
+          0.2546781003475189
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.00013581188395619392,
+        "actual_segmentation_delta": 0.00014519691467285156,
+        "predicted_focus_delta": 0.00746970534324646,
+        "actual_focus_delta": 0.0068781375885009766,
+        "phase_coefficients": [
+          -0.32629674673080444,
+          -0.11206214874982834,
+          0.05039587616920471,
+          -0.933072566986084,
+          -0.018209626898169518,
+          0.2541615068912506
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.00013581188395619392,
+        "actual_segmentation_delta": -0.0001220703125,
+        "predicted_focus_delta": -0.00746970534324646,
+        "actual_focus_delta": -0.00807642936706543,
+        "phase_coefficients": [
+          -0.3273988366127014,
+          -0.11244064569473267,
+          0.050566092133522034,
+          -0.9133592247962952,
+          -0.018271131440997124,
+          0.2550199627876282
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0005432475358247757,
+        "actual_segmentation_delta": 0.0007014274597167969,
+        "predicted_focus_delta": 0.02987882137298584,
+        "actual_focus_delta": 0.02047896385192871,
+        "phase_coefficients": [
+          -0.32461419701576233,
+          -0.11148431152105331,
+          0.050136011093854904,
+          -0.9622668623924255,
+          -0.018115730956196785,
+          0.2528509497642517
+        ]
+      },
+      {
+        "direction": "parameter_basis_4",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0005432475358247757,
+        "actual_segmentation_delta": -0.00032699108123779297,
+        "predicted_focus_delta": -0.02987882137298584,
+        "actual_focus_delta": -0.03947877883911133,
+        "phase_coefficients": [
+          -0.3290209472179413,
+          -0.11299774795770645,
+          0.050816625356674194,
+          -0.8834173083305359,
+          -0.018361657857894897,
+          0.2562834620475769
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": -2.4277407210320236e-06,
+        "actual_segmentation_delta": -2.0265579223632812e-06,
+        "predicted_focus_delta": 0.01899480628967285,
+        "actual_focus_delta": 0.01907181739807129,
+        "phase_coefficients": [
+          -0.32684746384620667,
+          -0.11225128918886185,
+          0.05048093572258949,
+          -0.923234224319458,
+          -0.02052299678325653,
+          0.2545904815196991
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": 2.4277407210320236e-06,
+        "actual_segmentation_delta": 2.5033950805664062e-06,
+        "predicted_focus_delta": -0.01899480628967285,
+        "actual_focus_delta": -0.018916606903076172,
+        "phase_coefficients": [
+          -0.32685184478759766,
+          -0.11225280165672302,
+          0.05048161372542381,
+          -0.9232466220855713,
+          -0.015957942232489586,
+          0.2545939087867737
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": -1.2138703605160117e-05,
+        "actual_segmentation_delta": -6.079673767089844e-06,
+        "predicted_focus_delta": 0.09497403144836426,
+        "actual_focus_delta": 0.0965433120727539,
+        "phase_coefficients": [
+          -0.3268355131149292,
+          -0.11224718391895294,
+          0.050479087978601456,
+          -0.9232004880905151,
+          -0.02965245209634304,
+          0.25458118319511414
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": 1.2138703605160117e-05,
+        "actual_segmentation_delta": 1.1563301086425781e-05,
+        "predicted_focus_delta": -0.09497403144836426,
+        "actual_focus_delta": -0.09334444999694824,
+        "phase_coefficients": [
+          -0.3268572986125946,
+          -0.11225466430187225,
+          0.05048245191574097,
+          -0.9232620000839233,
+          -0.006827392615377903,
+          0.25459814071655273
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": -4.855481442064047e-05,
+        "actual_segmentation_delta": 6.67572021484375e-06,
+        "predicted_focus_delta": 0.37989612579345705,
+        "actual_focus_delta": 0.40305566787719727,
+        "phase_coefficients": [
+          -0.32675179839134216,
+          -0.11221843957901001,
+          0.05046616122126579,
+          -0.9229640364646912,
+          -0.06387436389923096,
+          0.25451597571372986
+        ]
+      },
+      {
+        "direction": "parameter_basis_5",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": 4.855481442064047e-05,
+        "actual_segmentation_delta": 5.459785461425781e-05,
+        "predicted_focus_delta": -0.37989612579345705,
+        "actual_focus_delta": -0.35210180282592773,
+        "phase_coefficients": [
+          -0.3268388509750366,
+          -0.11224833875894547,
+          0.05047960579395294,
+          -0.9232099056243896,
+          0.02741161547601223,
+          0.25458377599716187
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": -0.001,
+        "predicted_segmentation_delta": 3.1071946024894714e-05,
+        "actual_segmentation_delta": 3.1113624572753906e-05,
+        "predicted_focus_delta": -0.008040550231933594,
+        "actual_focus_delta": -0.007970333099365234,
+        "phase_coefficients": [
+          -0.3268800675868988,
+          -0.11226248741149902,
+          0.050485968589782715,
+          -0.923326313495636,
+          -0.018242180347442627,
+          0.25233301520347595
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": 0.001,
+        "predicted_segmentation_delta": -3.1071946024894714e-05,
+        "actual_segmentation_delta": -3.0875205993652344e-05,
+        "predicted_focus_delta": 0.008040550231933594,
+        "actual_focus_delta": 0.008123397827148438,
+        "phase_coefficients": [
+          -0.3268192410469055,
+          -0.11224160343408585,
+          0.05047657713294029,
+          -0.9231545329093933,
+          -0.018238786607980728,
+          0.2568509578704834
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": -0.005,
+        "predicted_segmentation_delta": 0.00015535973012447356,
+        "actual_segmentation_delta": 0.00015616416931152344,
+        "predicted_focus_delta": -0.04020275115966797,
+        "actual_focus_delta": -0.03864598274230957,
+        "phase_coefficients": [
+          -0.3269984722137451,
+          -0.11230314522981644,
+          0.050504256039857864,
+          -0.9236607551574707,
+          -0.0182487890124321,
+          0.24328966438770294
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": 0.005,
+        "predicted_segmentation_delta": -0.00015535973012447356,
+        "actual_segmentation_delta": -0.00014781951904296875,
+        "predicted_focus_delta": 0.04020275115966797,
+        "actual_focus_delta": 0.041799306869506836,
+        "phase_coefficients": [
+          -0.3266945481300354,
+          -0.11219877004623413,
+          0.050457317382097244,
+          -0.9228022694587708,
+          -0.0182318277657032,
+          0.26587921380996704
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": -0.02,
+        "predicted_segmentation_delta": 0.0006214389204978943,
+        "actual_segmentation_delta": 0.0006859302520751953,
+        "predicted_focus_delta": -0.16081100463867187,
+        "actual_focus_delta": -0.13700103759765625,
+        "phase_coefficients": [
+          -0.32740452885627747,
+          -0.11244261264801025,
+          0.05056697502732277,
+          -0.9248077869415283,
+          -0.018271449953317642,
+          0.2092939019203186
+        ]
+      },
+      {
+        "direction": "parameter_basis_6",
+        "signed_step": 0.02,
+        "predicted_segmentation_delta": -0.0006214389204978943,
+        "actual_segmentation_delta": -0.0005186796188354492,
+        "predicted_focus_delta": 0.16081100463867187,
+        "actual_focus_delta": 0.18724751472473145,
+        "phase_coefficients": [
+          -0.32618948817253113,
+          -0.11202531307935715,
+          0.05037930980324745,
+          -0.9213756322860718,
+          -0.01820364221930504,
+          0.2996387779712677
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "path_sample_count": 11,
+    "conflict_fraction": 0.8181818181818182,
+    "minimum_branch_gradient_cosine": -0.788421690557019,
+    "maximum_branch_gradient_cosine": 0.7513537345376323
+  },
+  "figure": "outputs/v2_1/gradient-geometry.png"
+}

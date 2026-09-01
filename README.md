@@ -1,5 +1,14 @@
 # TessScope
 
+## V2.1 continuation
+
+V2.1 is active as a separately named validation-only continuation. Its causal audit
+found that the frozen differentiable InstanSeg loss tracks hard PQ strongly, while exact
+segmentation and focus gradients conflict across 9/11 sampled B6 path points. The chosen
+intervention is a seven-mode B7 pupil adding Noll 11 primary spherical plus exact
+constrained continuation. B7 has passed basis/support and full served derivative gates;
+the locked test remains sealed. See [the v2.1 audit](outputs/v2_1/AUDIT.md).
+
 ## V2 current status
 
 The approved BBBC006 three-Tesseract v2 is implemented through hard validation, but it

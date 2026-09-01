@@ -1,4 +1,12 @@
-# TessScope v2 project brief
+# TessScope v2.1 project brief
+
+## V2.1 continuation
+
+V2.1 is a separately named, validation-only continuation motivated by the frozen v2
+near-miss. It preserves v1 and v2 as scientific history, keeps the BBBC006 test images
+and labels sealed, and asks whether a slightly richer manufacturable pupil plus an
+exact-gradient constrained optimizer can enter the already frozen joint-performance
+region. The success thresholds below are unchanged.
 
 ## One-line idea
 
@@ -117,6 +125,6 @@ V2 uses separately named modules, configs, scripts, and artifact paths.
   measured runtime or memory gate.
 - Stream/extract only required BBBC006 Hoechst planes and keep disk usage bounded.
 - No hidden per-image normalization, test tuning, fabricated hardware claim, clinical
-  claim, destructive operation, global install, cloud/billing action, commit, push, or
-  publication without explicit approval.
+  claim, destructive operation, global install, cloud/billing action, push, or
+  publication without explicit approval. Verified local milestone commits are approved.
 - Final eligibility, submission wording, and polish follow scientific completion.

@@ -1,5 +1,44 @@
 # TessScope decision log
 
+## 2026-09-01 — V2.1 validation-only continuation authorized
+
+- The verified v1/v2 state was preserved in local root commit `503ee9a`; downloaded
+  datasets, third-party model weights, environments, caches, runtime output, and binary
+  feature caches remain ignored. Compact JSON/CSV/PNG evidence is tracked.
+- V2.1 is separately named and motivated by the frozen v2 near-miss. It may use existing
+  training/validation artifacts but may not overwrite or relabel v2 evidence.
+- The intervention order is causal audit, B7 primary-spherical basis extension, exact
+  constrained continuation, evidence-supported soft-loss alignment, and expanded
+  well-grouped validation. B11 is conditional on B7 evidence.
+- The scientific gates are unchanged. Test images, labels, normalization values, and
+  metrics remain sealed until one candidate passes every gate and a pre-test commit and
+  hash manifest exist.
+- Verified local milestone commits are authorized. Push, publication, deployment,
+  destructive Git operations, test leakage, and post-hoc threshold changes remain
+  prohibited.
+
+## 2026-09-01 — V2.1 near-miss audit selects constrained B7 intervention
+
+- Recomputed seed, instance-membership, and total differentiable InstanSeg losses for
+  all 18 promoted v2 designs on validation-only fields. Total task loss strongly tracks
+  hard dense off-focus PQ (Pearson `-0.9681`, Spearman `-0.9705`); instance loss alone
+  reaches `-0.9592`/`-0.9581`. Loss reweighting is therefore not the first intervention.
+- The exact branch-gradient audit found conflicts at 9/11 sampled points along the B6
+  design path. Around the `0.03` near-miss, branch-gradient cosine was about `-0.62`;
+  the observed range was `-0.7884` to `+0.7514`. Scalar weights are poorly matched to
+  this local non-convex geometry.
+- The `0.03` candidate beats naive superposition on hard dense PQ by `+0.02724` but has
+  `0.17571 µm` higher focus MAE. After one correction it reaches hard PQ `0.41667`
+  versus superposition `0.41407`; both correction loops improve PQ.
+- Leave-one-field-out hard PQ for the near-miss spans `0.32855` to `0.41485`, confirming
+  that the six-dense-field screen is too small for promotion even though focus metrics
+  are stable. Expanded well-grouped validation remains mandatory.
+- Decision: retain the well-aligned frozen loss, add B7 primary spherical under the same
+  RMS ball, and use exact-gradient constrained continuation. This follows
+  [Noll's unit-disk orthogonal convention](https://opg.optica.org/josa/abstract.cfm?uri=josa-66-3-207)
+  and [SciPy's documented SLSQP interface](https://docs.scipy.org/doc/scipy/reference/optimize.minimize-slsqp.html)
+  for callable objective and constraint Jacobians. B11 remains conditional.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No
