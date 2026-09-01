@@ -11,13 +11,21 @@ from tessscope.v2.optimization.served import (
     joint_value,
     joint_value_and_gradient,
 )
-from tessscope.v2_1.optics.model import phase_coefficients_b7
+from tessscope.v2_1.optics.model import (
+    phase_coefficients_b7,
+    phase_coefficients_b11,
+)
 from tessscope.v2_1.optimization.constrained import BranchEvaluation
 
 
 def b7_coefficient_list(parameters: np.ndarray) -> list[float]:
     """Return physical B7 coefficients for one unconstrained parameter vector."""
     return np.asarray(phase_coefficients_b7(jnp.asarray(parameters))).tolist()
+
+
+def b11_coefficient_list(parameters: np.ndarray) -> list[float]:
+    """Return physical B11 coefficients for one unconstrained parameter vector."""
+    return np.asarray(phase_coefficients_b11(jnp.asarray(parameters))).tolist()
 
 
 def averaged_branches(
