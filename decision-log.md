@@ -1,5 +1,33 @@
 # TessScope decision log
 
+## 2026-09-02 — V2.4 frozen-checkpoint audit authorized
+
+- V1 through v2.3 remain immutable; v2.3 is frozen at commit `93da502` as a correct
+  negative endpoint-only experiment. V2.4 uses a separate namespace and source artifact
+  `artifacts/runs/v2_3/optimization/closed-loop-matrix.json`.
+- The v2.4 pool is exactly the 30 saved post-update phase vectors from each of nine exact
+  v2.3 runs (270 checkpoint records). No retraining or altered vector may enter the first
+  audit. The three unique starts are controls only and cannot be selected as optimized
+  candidates.
+- Eligibility retains the exact first-frame loss maximum `1.098270310640335`, requires
+  residual MAE strictly below that run's frozen start, finite metrics, and a valid pupil.
+  Evaluation uses the unchanged calibration, normalization, exposure, autofocus,
+  observer, and 12 fixed validation wells.
+- Eligible checkpoints are filtered by three-objective nondominance. The existing v2.3
+  tie-break applies; no more than one checkpoint per source run can be selected, and at
+  most three source runs advance. Exact parameter-hash duplicates are evaluated once but
+  every source checkpoint remains recorded.
+- Aggregate v2.3 endpoint results are known. No intermediate-checkpoint validation value
+  has been used for selection before this preregistration. Hard labels cannot select
+  among the 270 checkpoints.
+- The integrity freeze found 269 unique parameter hashes among 270 source records. The
+  only duplicate is step 1 of the balanced and first-heavy piecewise-028 runs; it will be
+  served once and reported under both frozen checkpoint identifiers.
+- If no checkpoint qualifies, preserve v2.4 and activate separately named v2.5
+  constrained exact-gradient optimization. If checkpoints qualify, freeze them before
+  stopped-stage and hard validation; derivative-free and locked-test work remain
+  conditional on every unchanged v2.3 gate.
+
 ## 2026-09-02 — V2.3 closed-loop objective pre-registered
 
 - V2.2 remains frozen at commit `cda7d34` with the locked test sealed. V2.3 uses a new

@@ -1,22 +1,35 @@
-# TessScope v2.2/v2.3 validation completion plan
+# TessScope v2.4 frozen-checkpoint audit plan
 
 ## 1. Goal
 
-Complete the frozen BBBC006 three-Tesseract prototype through the approved v2.2
-matched-frontier experiment and, after its negative result, the separately named v2.3
-closed-loop differentiable microscope fallback.
+Audit every saved intermediate checkpoint from the frozen v2.3 closed-loop optimization
+under the unchanged soft segmentation ceiling. Select validation checkpoints by a
+pre-registered rule without retraining, hard-label cherry-picking, or locked-test access.
 
 The full v2 handoff is approved. Work proceeds autonomously unless a consequential
 scientific choice cannot be resolved on training/validation data, or a destructive,
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 and v2 are preserved at `503ee9a`; v2.1 is frozen at `4a88bdd`;
-v2.2 is frozen at `cda7d34`; and the full approved v2.3 optimization matrix is complete
-as a negative soft-gate result. The BBBC006 locked test remains sealed because no v2.2
-or v2.3 candidate passed all predeclared validation gates.
+Current checkpoint: v1 through v2.3 are preserved, and v2.3 is frozen at `93da502` as a
+correct negative endpoint-only experiment. V2.4 is explicitly approved. Before any
+intermediate validation value is computed, v2.4 freezes the source hash, all 270 saved
+checkpoints, the unchanged `1.098270310640335` ceiling, selection/diversity rules, hard
+gates, and conditional v2.5 continuation. The BBBC006 locked test remains sealed.
 
 ## 2. Problem
+
+V2.3 selected only the final step of each fixed 30-step Adam trajectory. All three starts
+met the frozen first-frame segmentation ceiling, all nine endpoints improved residual
+defocus, and all 270 intermediate parameter vectors were saved before intermediate
+validation selection existed. An earlier checkpoint may therefore improve closed-loop
+focus while still satisfying the unchanged first-frame constraint.
+
+V2.4 must test that hypothesis over the frozen candidate pool without rerunning training
+or using hard labels to select a step. If no saved checkpoint qualifies, the separately
+authorized v2.5 experiment will use transparent exact-gradient constrained optimization.
+
+### Historical v2.2 problem
 
 V2.1's frozen `b7-projected-0.50-step-30` candidate gains `+0.03995` hard PQ over clear,
 stays only `0.00642` below B7 segmentation-only, reaches `98.89%` direction and
@@ -29,6 +42,21 @@ physically matched family made only from the frozen B7 segmentation and focus pu
 The joint pupil cannot be tuned during this comparison.
 
 ## 3. Proposed solution
+
+1. Hash the frozen v2.3 matrix and create an integrity manifest containing exactly 9 runs
+   × 30 steps, deterministic checkpoint identifiers, parameter hashes, and no new metrics.
+2. Pre-register eligibility, three-objective nondominance, the existing tie-break, and a
+   diversity rule allowing at most one selected checkpoint per v2.3 run.
+3. Reconstruct all 270 frozen parameter vectors and evaluate the unchanged exact soft
+   pipeline on the same 12 validation wells, caching exact parameter-hash duplicates.
+4. Preserve every metric row and trajectory. Select at most three candidates only from
+   soft-eligible nondominated checkpoints.
+5. If any qualify, freeze selection before stopped-stage and expanded hard evaluation;
+   apply all unchanged v2.3 hard gates before any derivative-free or locked-test work.
+6. If none qualify, freeze v2.4 negative and continue automatically into v2.5 constrained
+   closed-loop optimization without relaxing the first-frame ceiling.
+
+### Historical v2.2 solution
 
 1. Freeze the exact B7 joint candidate and pre-register the mixture equations, grids,
    projection, soft-screen rule, matched-frontier effects, uncertainty, and hypervolume
@@ -67,9 +95,36 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   uncertainty, and decision evidence.
 - If required by a negative v2.2 decision, equivalent `v2_3` namespaces hold the
   separately approved closed-loop feedback experiment.
+- `configs/v2_4/`, `artifacts/runs/v2_4/`, `outputs/v2_4/`, `src/tessscope/v2_4/`, and
+  `v2_4`-prefixed scripts/tests hold the frozen-checkpoint audit without modifying v2.3.
+- If v2.4 has no eligible checkpoint, equivalent `v2_5` namespaces hold the separately
+  authorized constrained closed-loop optimization.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
 
 ## 5. Step by step tasks
+
+### V2.4 active frozen-checkpoint audit
+
+- [ ] V2.4-0A: freeze the v2.3 matrix hash, exact 270-checkpoint pool, unchanged ceiling,
+  eligibility, nondominance, diversity, hard gates, downstream order, and test policy.
+- [ ] V2.4-0B: add and pass an integrity test proving the pool contains exactly the
+  expected frozen run/step identifiers and parameter hashes without validation metrics.
+- [ ] V2.4-1A: evaluate all unique frozen checkpoints on the same four exact soft
+  validation batches; preserve every checkpoint row, timing, duplicate mapping, and
+  physical-validity result without retraining or test access.
+- [ ] V2.4-1B: generate trajectory/gate-crossing evidence and freeze up to three
+  nondominated candidates using the pre-registered tie-break and one-per-run rule.
+- [ ] V2.4-2A: if selected, run matched stopped-stage comparisons and the unchanged
+  expanded hard protocol; otherwise freeze a negative audit and activate v2.5.
+- [ ] V2.4-2B: only after every earlier hard gate, run matched derivative-free control,
+  freeze a verified local pre-test commit, and access the locked test exactly once.
+
+### Conditional V2.5 constrained continuation
+
+- [ ] V2.5-0A: activate only if v2.4 has no eligible checkpoint; pre-register a transparent
+  exact-gradient constrained optimizer with validation checkpointing from the outset.
+- [ ] V2.5-1A: verify objective and constraint gradients, run the bounded frozen-start
+  matrix, and apply the same stopped-stage, hard, derivative-free, and locked-test order.
 
 ### V2.2 completed matched-frontier work
 

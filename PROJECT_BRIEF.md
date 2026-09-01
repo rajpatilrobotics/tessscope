@@ -1,5 +1,18 @@
 # TessScope project brief
 
+## V2.4 frozen-checkpoint experiment
+
+V2.4 is a separately named, approved validation-only audit of the 270 intermediate phase
+vectors already saved by the frozen v2.3 exact-gradient runs. It does not retrain v2.3,
+change its endpoint conclusion, or relax the first-frame segmentation ceiling. Soft
+validation may select at most three nondominated checkpoints under a pre-registered
+one-per-run diversity rule; hard labels remain a later promotion gate.
+
+If no frozen checkpoint satisfies both the unchanged segmentation ceiling and improved
+residual defocus, v2.4 freezes a negative result and automatically activates separately
+named v2.5 constrained closed-loop optimization. The locked BBBC006 test remains sealed
+until every applicable validation and matched-comparison gate passes.
+
 ## V2.2 matched-frontier experiment
 
 V2.2 is an approved, separately named validation-only experiment. It freezes v2.1's

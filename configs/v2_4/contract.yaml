@@ -1,0 +1,108 @@
+experiment: tessscope_v2_4_frozen_checkpoint_audit
+status: preregistered_before_intermediate_validation
+parent:
+  version: v2_3
+  commit: 93da5023b37f351a413bab74d3433d95cd8ac850
+  result: negative_final_endpoints_only
+  source_artifact: artifacts/runs/v2_3/optimization/closed-loop-matrix.json
+  source_artifact_sha256: 27ca34997f2ff574093c00fee2f06b6987ee902ce98801b1d3ae2a08cecebcaf
+  parent_pretest_block_sha256: a66d0eb071831b4e3070ba134eee80a61b058034d19a3354500caf8725064ab9
+known_before_preregistration:
+  aggregate_final_endpoint_results: true
+  intermediate_checkpoint_validation_used_for_selection: false
+  note: all three unique starts pass the ceiling; all nine final endpoints fail it
+candidate_pool:
+  training_allowed: false
+  source_runs: 9
+  saved_post_update_steps_per_run: 30
+  exact_checkpoint_records: 270
+  unique_parameter_hashes: 269
+  pool_manifest: artifacts/runs/v2_4/preregistration/checkpoint-pool.json
+  pool_manifest_sha256: 82570b8061afb3ae2ecd16345e144bdd569f80b10bcc401311eb9c2e9add79fd
+  identifier: source_run_name_plus_zero_padded_step
+  parameter_hash: sha256_of_compact_json_float_list
+  exact_hash_duplicates: evaluate_once_preserve_every_source_record
+  controls:
+    unique_starts: 3
+    selectable_as_optimized_candidates: false
+data:
+  dataset: BBBC006v1
+  allowed_split: validation
+  forbidden_before_promotion: [test_images, test_labels, test_normalization, test_metrics]
+  validation_wells: 12
+  validation_batches: 4
+  deterministic_patch_seed: 53
+  normalization: frozen_global_affine
+  noise: deterministic_zero_validation_noise
+unchanged_pipeline:
+  basis: B7_Noll_5_through_11
+  phase_bound_radians_rms: 2.5
+  minimum_support_energy_fraction: 0.995
+  first_exposure: frozen_v2_3_JAX_Chromatix
+  stage_action: frozen_SciPy_autofocus_clip_minus_prediction_6um
+  second_exposure: frozen_v2_3_same_pupil_at_residual_depth
+  observer: frozen_InstanSeg_single_channel_nuclei_v0_1_2
+  calibration: frozen_V2SystemCalibration
+soft_eligibility:
+  maximum_first_segmentation_loss: 1.098270310640335
+  require_residual_mae_strictly_below_that_runs_frozen_start: true
+  require_all_metrics_finite: true
+  require_seven_finite_phase_parameters: true
+  require_physical_coefficient_norm_strictly_below_2_5_radians: true
+  require_minimum_support_energy_fraction: 0.995
+soft_selection:
+  nondominance_metrics:
+    - first_segmentation_loss
+    - final_segmentation_loss
+    - residual_mae_um
+  maximum_promotions: 3
+  diversity: at_most_one_selected_checkpoint_per_source_run
+  within_run_choice: existing_tie_break_over_nondominated_eligible_checkpoints
+  tie_break:
+    - lowest_final_segmentation_loss
+    - lowest_residual_mae_um
+    - lowest_first_segmentation_loss
+    - deterministic_checkpoint_name
+  hard_labels_may_select_checkpoints: false
+hard_protocol:
+  conditional_on_soft_selection: true
+  validation_wells_maximum: 45
+  primary_hard_density_wells: 27
+  hard_endpoint: official_InstanSeg
+  paired_bootstrap_replicates_grouped_by_well: 2000
+  gates:
+    minimum_first_hard_pq_gain_over_clear: 0.01
+    require_positive_clear_gain_bootstrap_lower_bound: true
+    maximum_first_hard_pq_drop_from_b7_segmentation_only: 0.01
+    minimum_signed_direction_accuracy: 0.90
+    maximum_focus_mae_um: 2.0
+    require_stage_reduces_absolute_defocus: true
+    require_corrected_hard_pq_above_first: true
+    minimum_corrected_pq_gain_over_v2_2_piecewise: 0.005
+    require_positive_piecewise_gain_bootstrap_lower_bound: true
+    minimum_corrected_pq_gain_over_stopped_stage: 0.005
+    require_positive_stopped_gain_bootstrap_lower_bound: true
+    require_full_loop_exact_derivative_gate: true
+matched_controls:
+  stopped_stage:
+    conditional_on_soft_selection: true
+    same_start_objective_batches_schedule_and_selected_step: true
+    only_stage_action_gradient_stopped: true
+    require_forward_parity: true
+  derivative_free:
+    conditional_on_all_earlier_hard_gates: true
+    basis: B7_closed_loop
+    budget: matched_evaluations_and_wall_time
+negative_fallback:
+  if_no_soft_eligible_checkpoint: activate_separately_named_v2_5_constrained_closed_loop
+test_policy:
+  access_runs: 1
+  prerequisites:
+    - all_applicable_validation_and_matched_control_gates_pass
+    - exact_candidate_freeze
+    - verified_hashes
+    - full_ruff_and_tests_pass
+    - local_pretest_commit
+  tuning_after_access: forbidden
+  push_publish_deploy_submit: forbidden_without_explicit_user_instruction
+test_accessed: false
