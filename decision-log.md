@@ -1,5 +1,22 @@
 # TessScope decision log
 
+## 2026-09-02 — V2.4 finds and freezes three early-stopped candidates
+
+- The audit reconstructed all 270 source records without retraining and served 269 unique
+  parameter hashes on the unchanged four-batch/12-well exact soft pipeline. All nine
+  frozen step-30 endpoints reproduced with maximum absolute difference `8.48e-8`.
+- Ninety checkpoints passed the unchanged `1.098270310640335` first-frame ceiling,
+  improved residual MAE relative to their source start, and passed finite B7/support
+  checks. Fifty-seven canonical eligible checkpoints were globally nondominated.
+- The pre-registered hash deduplication, one-per-source-run diversity, and tie-break select
+  balanced segmentation-only step 14, action-heavy segmentation-only step 12, and
+  first-heavy segmentation-only step 9. Their first losses are `1.097063`, `1.095286`,
+  and `1.093136`; residual MAEs are `1.174831`, `1.175803`, and `1.367156 µm`.
+- All 270 pupils exceed the `0.995` support threshold; the observed minimum is `0.997226`.
+  Soft audit time was `1,272.2 s`. Test and hard-label access are false.
+- Decision: freeze the three exact checkpoints before running matched stopped-stage
+  optimizations and expanded hard validation. Do not alter their steps or parameters.
+
 ## 2026-09-02 — V2.4 frozen-checkpoint audit authorized
 
 - V1 through v2.3 remain immutable; v2.3 is frozen at commit `93da502` as a correct

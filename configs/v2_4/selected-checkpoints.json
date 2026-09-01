@@ -1,0 +1,110 @@
+{
+  "status": "soft_selection_frozen_before_stopped_or_hard_validation",
+  "test_accessed": false,
+  "hard_labels_accessed": false,
+  "training_rerun_for_checkpoint_audit": false,
+  "first_segmentation_maximum": 1.098270310640335,
+  "pool_counts": {
+    "checkpoint_records": 270,
+    "unique_parameter_hashes": 269,
+    "soft_eligible": 90,
+    "soft_nondominated": 57,
+    "selected": 3
+  },
+  "selection_rule": {
+    "metrics": [
+      "first_segmentation_loss",
+      "final_segmentation_loss",
+      "residual_mae_um"
+    ],
+    "maximum_promotions": 3,
+    "one_per_source_run": true,
+    "one_per_exact_parameter_hash": true,
+    "tie_break": [
+      "lowest_final_segmentation_loss",
+      "lowest_residual_mae_um",
+      "lowest_first_segmentation_loss",
+      "deterministic_checkpoint_name"
+    ]
+  },
+  "selected": [
+    {
+      "name": "v2_3-exact-balanced-segmentation_only-step-14",
+      "source_run": "v2_3-exact-balanced-segmentation_only",
+      "profile": "balanced",
+      "start_name": "segmentation_only",
+      "step": 14,
+      "parameter_sha256": "fc08f00e9bcb283c0cb436f9eb97c5b6f72b2c1b03a5bbf6b222e134122f5a84",
+      "parameters": [
+        -0.0698867067694664,
+        0.045003246515989304,
+        -0.14110343158245087,
+        -0.4708356261253357,
+        -0.0693664476275444,
+        -0.021113824099302292,
+        0.20483292639255524
+      ],
+      "objective": 1.4628522501513361,
+      "first_segmentation_loss": 1.0970626771450043,
+      "final_segmentation_loss": 1.0602801889181137,
+      "residual_mae_um": 1.1748311519622803,
+      "start_residual_mae_um": 1.8465096056461334,
+      "physical_coefficient_norm_radians": 1.1943308115005493,
+      "minimum_support_energy_fraction": 0.9972429275512695
+    },
+    {
+      "name": "v2_3-exact-action_heavy-segmentation_only-step-12",
+      "source_run": "v2_3-exact-action_heavy-segmentation_only",
+      "profile": "action_heavy",
+      "start_name": "segmentation_only",
+      "step": 12,
+      "parameter_sha256": "53fcc041dd6769884e1917a297da7d419dfd2386e86a4c8fb0a97e2c93ff396a",
+      "parameters": [
+        -0.06537838280200958,
+        0.058892183005809784,
+        -0.16522163152694702,
+        -0.4866003096103668,
+        -0.06863800436258316,
+        -0.018406972289085388,
+        0.22684410214424133
+      ],
+      "objective": 1.4715544342249633,
+      "first_segmentation_loss": 1.0952861160039902,
+      "final_segmentation_loss": 1.0604192614555359,
+      "residual_mae_um": 1.1758027970790863,
+      "start_residual_mae_um": 1.8465096056461334,
+      "physical_coefficient_norm_radians": 1.2429158687591553,
+      "minimum_support_energy_fraction": 0.9972369074821472
+    },
+    {
+      "name": "v2_3-exact-first_heavy-segmentation_only-step-09",
+      "source_run": "v2_3-exact-first_heavy-segmentation_only",
+      "profile": "first_heavy",
+      "start_name": "segmentation_only",
+      "step": 9,
+      "parameter_sha256": "0f4cddff5fb0d50d5c440dc3e2512e63a06646e921aef66e65ef8eabfc462fcc",
+      "parameters": [
+        -0.027341201901435852,
+        0.09259874373674393,
+        -0.11438100039958954,
+        -0.5212671756744385,
+        -0.023432644084095955,
+        0.011532915756106377,
+        0.22471210360527039
+      ],
+      "objective": 1.9003069095686078,
+      "first_segmentation_loss": 1.0931359380483627,
+      "final_segmentation_loss": 1.0608308911323547,
+      "residual_mae_um": 1.3671562671661377,
+      "start_residual_mae_um": 1.8465096056461334,
+      "physical_coefficient_norm_radians": 1.2665717601776123,
+      "minimum_support_energy_fraction": 0.9972367286682129
+    }
+  ],
+  "evidence_sha256": {
+    "contract": "410c38147af0278c375e308bab78a1737681ae5bdbe37c2485e70f66b35c9d98",
+    "checkpoint_pool": "82570b8061afb3ae2ecd16345e144bdd569f80b10bcc401311eb9c2e9add79fd",
+    "checkpoint_audit": "e6c888fa9a3d38f43d824f41e16c9e5358e5bbb9f242ac597c1530f74549276d"
+  },
+  "next_gate": "matched_stopped_stage_then_expanded_hard_validation"
+}

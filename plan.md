@@ -105,15 +105,16 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ### V2.4 active frozen-checkpoint audit
 
-- [ ] V2.4-0A: freeze the v2.3 matrix hash, exact 270-checkpoint pool, unchanged ceiling,
+- [x] V2.4-0A: froze the v2.3 matrix hash, exact 270-checkpoint pool, unchanged ceiling,
   eligibility, nondominance, diversity, hard gates, downstream order, and test policy.
-- [ ] V2.4-0B: add and pass an integrity test proving the pool contains exactly the
+- [x] V2.4-0B: added and passed an integrity test proving the pool contains exactly the
   expected frozen run/step identifiers and parameter hashes without validation metrics.
-- [ ] V2.4-1A: evaluate all unique frozen checkpoints on the same four exact soft
-  validation batches; preserve every checkpoint row, timing, duplicate mapping, and
-  physical-validity result without retraining or test access.
-- [ ] V2.4-1B: generate trajectory/gate-crossing evidence and freeze up to three
-  nondominated candidates using the pre-registered tie-break and one-per-run rule.
+- [x] V2.4-1A: evaluated all 269 unique parameter hashes and preserved all 270 source
+  rows on the same four exact soft validation batches. Endpoint reproduction error was
+  below `8.5e-8`; no training, hard labels, or test data were accessed.
+- [x] V2.4-1B: generated nine trajectory and two tradeoff figures. Ninety checkpoints
+  were eligible and 57 were nondominated; the frozen one-per-run rule selected balanced
+  step 14, action-heavy step 12, and first-heavy step 9 from segmentation-only starts.
 - [ ] V2.4-2A: if selected, run matched stopped-stage comparisons and the unchanged
   expanded hard protocol; otherwise freeze a negative audit and activate v2.5.
 - [ ] V2.4-2B: only after every earlier hard gate, run matched derivative-free control,
