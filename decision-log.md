@@ -80,6 +80,23 @@
   comparison, which targets the measured branch conflict without changing the loss or
   success gates. Test data remains sealed.
 
+## 2026-09-01 — Projected B7 gradients produce two hard-screen candidates
+
+- Segmentation-primary projection removed only the normalized-focus gradient component
+  opposing the exact segmentation gradient, then norm-balanced the remaining focus
+  direction. Three balances used matched 30-step Adam schedules from the B7
+  segmentation-only pupil on 36 training wells.
+- All three balance-family winners pass the full-training and 12-well soft-validation
+  segmentation constraints. Balance `1.0` step 30 reaches validation task loss/focus
+  MSE `1.09695/2.19079`; balance `0.5` reaches `1.09611/2.52832`; balance `0.25`
+  reaches `1.09327/3.03089`. The unchanged validation task-loss maximum is `1.09827`.
+- The two lowest-focus eligible family winners, balances `1.0` and `0.5`, are frozen for
+  expanded 48-well hard validation. Selection occurred before that hard run; no hard
+  labels or metrics from the expanded fields influenced their coefficients.
+- This promotion is validation eligibility only. Direction, MAE, hard dense PQ,
+  stage-correction, naive-superposition, derivative-free, and uncertainty gates remain
+  unproven. Test data remains sealed.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No
