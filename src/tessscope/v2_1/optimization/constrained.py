@@ -129,3 +129,28 @@ def solve_slsqp(
         },
     )
     return result, trace
+
+
+def is_promotion_eligible(
+    training_constraint_slack: float,
+    validation_segmentation_loss: float,
+    validation_segmentation_limit: float,
+    *,
+    slack_tolerance: float = 1e-4,
+) -> bool:
+    """Require finite training feasibility and held-out segmentation eligibility."""
+    values = np.asarray(
+        [
+            training_constraint_slack,
+            validation_segmentation_loss,
+            validation_segmentation_limit,
+            slack_tolerance,
+        ],
+        dtype=np.float64,
+    )
+    if not np.isfinite(values).all() or slack_tolerance < 0:
+        return False
+    return bool(
+        training_constraint_slack >= -slack_tolerance
+        and validation_segmentation_loss <= validation_segmentation_limit
+    )

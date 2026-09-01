@@ -1,0 +1,244 @@
+{
+  "status": "complete_full_training_validation_only",
+  "test_accessed": false,
+  "source_candidate": "v2_exact_plus_spherical_0.25-margin-0.004",
+  "design": {
+    "name": "b7-exact-constrained-full-training",
+    "optimizer": "SciPy SLSQP with exact served three-Tesseract Jacobians",
+    "success": false,
+    "status": 9,
+    "message": "Iteration limit reached",
+    "iterations": 10,
+    "function_evaluations": 13,
+    "jacobian_evaluations": 11,
+    "exact_branch_evaluations": 14,
+    "elapsed_seconds": 861.1949096670141,
+    "start_parameters": [
+      0.05607346445322037,
+      0.011342067271471024,
+      -0.021525099873542786,
+      -0.39677274227142334,
+      -0.016430217772722244,
+      0.11912442743778229,
+      0.14561736583709717
+    ],
+    "final_parameters": [
+      -0.0658223032951355,
+      -0.20395821332931519,
+      0.1252928227186203,
+      -0.44516459107398987,
+      0.06916338950395584,
+      -0.054049570113420486,
+      0.244618222117424
+    ],
+    "final_phase_coefficients": [
+      -0.14283061027526855,
+      -0.44257763028144836,
+      0.2718782424926758,
+      -0.9659816026687622,
+      0.1500805765390396,
+      -0.11728446185588837,
+      0.5308074951171875
+    ],
+    "training": {
+      "segmentation_loss": 1.2148646513621013,
+      "focus_mse": 7.073745965957642,
+      "constraint_slack": -3.0237595240345527e-05
+    },
+    "validation": {
+      "segmentation_loss": 1.1027056276798248,
+      "focus_mse": 2.2433860301971436,
+      "photon_mean": 198.36391830444336
+    },
+    "eligible_for_hard_validation": false,
+    "trace": [
+      {
+        "iteration": 1,
+        "parameters": [
+          0.019069456899206555,
+          -0.15874412020065043,
+          0.06085032200324293,
+          -0.38851627465768934,
+          0.008925267555714468,
+          -0.10070289790778858,
+          0.14160761173214892
+        ],
+        "segmentation_loss": 1.2188955744107564,
+        "focus_mse": 6.19636865456899,
+        "constraint_slack": -0.0040611606438953896,
+        "segmentation_gradient_norm": 0.06607740372419357,
+        "normalized_focus_gradient_norm": 0.38120630383491516
+      },
+      {
+        "iteration": 2,
+        "parameters": [
+          -0.010184862100166354,
+          -0.33865793272852895,
+          0.12458308406526386,
+          -0.4252429045435502,
+          0.09142041514803534,
+          -0.23087557256221758,
+          0.37291055308689264
+        ],
+        "segmentation_loss": 1.2208572626113892,
+        "focus_mse": 6.688574393590291,
+        "constraint_slack": -0.006022848844528195,
+        "segmentation_gradient_norm": 0.04203760251402855,
+        "normalized_focus_gradient_norm": 0.38494178652763367
+      },
+      {
+        "iteration": 3,
+        "parameters": [
+          -0.007981355841447766,
+          -0.19618243202470076,
+          0.11525521797051222,
+          -0.4011198422826839,
+          0.057580826610394945,
+          -0.05804090401170488,
+          0.23283913449614033
+        ],
+        "segmentation_loss": 1.215741256872813,
+        "focus_mse": 6.702632824579875,
+        "constraint_slack": -0.0009068431059520154,
+        "segmentation_gradient_norm": 0.026774564757943153,
+        "normalized_focus_gradient_norm": 0.412235289812088
+      },
+      {
+        "iteration": 4,
+        "parameters": [
+          -0.04803213677567862,
+          -0.2312082506992486,
+          0.1658682184000344,
+          -0.4712593875304389,
+          0.11514754597759774,
+          -0.0018303865224188129,
+          0.2047009630110356
+        ],
+        "segmentation_loss": 1.2162958085536957,
+        "focus_mse": 6.801447788874309,
+        "constraint_slack": -0.0014613947868347132,
+        "segmentation_gradient_norm": 0.03753500059247017,
+        "normalized_focus_gradient_norm": 0.3668127655982971
+      },
+      {
+        "iteration": 5,
+        "parameters": [
+          -0.08377973514278438,
+          -0.20607753749070595,
+          0.1389968863995532,
+          -0.415326955915954,
+          0.061716843056234656,
+          -0.028657895386097094,
+          0.21561477144235086
+        ],
+        "segmentation_loss": 1.2150170803070068,
+        "focus_mse": 7.041431705156962,
+        "constraint_slack": -0.00018266654014587047,
+        "segmentation_gradient_norm": 0.024745846167206764,
+        "normalized_focus_gradient_norm": 0.42494162917137146
+      },
+      {
+        "iteration": 6,
+        "parameters": [
+          -0.0831113457754704,
+          -0.18510047836817026,
+          0.12376978324101177,
+          -0.42463405884956834,
+          0.06786425035099772,
+          -0.03461255632110016,
+          0.2179255347724317
+        ],
+        "segmentation_loss": 1.2148337562878926,
+        "focus_mse": 7.132214109102885,
+        "constraint_slack": 6.574789683799764e-07,
+        "segmentation_gradient_norm": 0.026204708963632584,
+        "normalized_focus_gradient_norm": 0.4174174964427948
+      },
+      {
+        "iteration": 7,
+        "parameters": [
+          -0.08804822611002473,
+          -0.18235741193945781,
+          0.10188434010732271,
+          -0.4397910395060451,
+          0.07048528757305403,
+          -0.055331713868940535,
+          0.23043930157389406
+        ],
+        "segmentation_loss": 1.214844971895218,
+        "focus_mse": 7.100970347722371,
+        "constraint_slack": -1.0558128356930041e-05,
+        "segmentation_gradient_norm": 0.033108074218034744,
+        "normalized_focus_gradient_norm": 0.402363121509552
+      },
+      {
+        "iteration": 8,
+        "parameters": [
+          -0.08190295946387686,
+          -0.18989122064117359,
+          0.10395842598608596,
+          -0.4428162872786019,
+          0.07046225291702476,
+          -0.05485468777518789,
+          0.23794834124397357
+        ],
+        "segmentation_loss": 1.214840789635976,
+        "focus_mse": 7.097862283388774,
+        "constraint_slack": -6.375869115116117e-06,
+        "segmentation_gradient_norm": 0.0330018624663353,
+        "normalized_focus_gradient_norm": 0.399894118309021
+      },
+      {
+        "iteration": 9,
+        "parameters": [
+          -0.05814586246651683,
+          -0.21438580520969458,
+          0.13897266386568408,
+          -0.44130050988182123,
+          0.07323905477182507,
+          -0.04800889911805419,
+          0.2538393260830166
+        ],
+        "segmentation_loss": 1.2148688832918804,
+        "focus_mse": 7.080531398455302,
+        "constraint_slack": -3.446952501939826e-05,
+        "segmentation_gradient_norm": 0.030429894104599953,
+        "normalized_focus_gradient_norm": 0.40350016951560974
+      },
+      {
+        "iteration": 10,
+        "parameters": [
+          -0.06582230586512973,
+          -0.2039582061950817,
+          0.125292822520665,
+          -0.445164591921752,
+          0.06916339302090467,
+          -0.05404956979673384,
+          0.2446182231971934
+        ],
+        "segmentation_loss": 1.2148646513621013,
+        "focus_mse": 7.073745965957642,
+        "constraint_slack": -3.0237595240345527e-05,
+        "segmentation_gradient_norm": 0.032967809587717056,
+        "normalized_focus_gradient_norm": 0.39829131960868835
+      }
+    ]
+  },
+  "budget": {
+    "training_wells": 36,
+    "training_batches": 12,
+    "validation_wells": 12,
+    "validation_batches": 4,
+    "maximum_iterations": 10,
+    "trust_radius": 0.35
+  },
+  "constraints": {
+    "margin": 0.004,
+    "training_segmentation_anchor": 1.210834413766861,
+    "training_segmentation_limit": 1.214834413766861,
+    "validation_segmentation_anchor": 1.090270310640335,
+    "validation_segmentation_limit": 1.094270310640335,
+    "minimum_training_constraint_slack": -0.0001
+  },
+  "selected_for_hard_validation": null
+}

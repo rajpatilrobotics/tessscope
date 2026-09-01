@@ -61,6 +61,25 @@
   The next step uses the full 36-well training budget, followed by one expanded 48-well
   hard-validation run only if feasibility is retained. Test data remains sealed.
 
+## 2026-09-01 — Exact B7 full-training continuation does not promote
+
+- The sole screened start was continued on all 36 fixed training wells under the
+  predeclared `0.004` and `0.008` epsilon margins. Each run used 12 noisy training
+  batches, 10 SLSQP iterations, exact served branch Jacobians, and preserved every
+  callback and solver status.
+- Both endpoints are training-feasible within the frozen `1e-4` numerical tolerance.
+  The strict endpoint has task loss/focus MSE `1.21486/7.07375`; the loose endpoint has
+  `1.21884/5.60451`.
+- Neither generalizes through the held-out soft-segmentation allowance. Strict validation
+  task loss is `1.10271` and loose is `1.11169`, versus the unchanged maximum `1.09827`.
+  Their validation focus MSE values are `2.24339` and `2.34570`, respectively.
+- Validation-based early stopping checked all nine training-feasible SLSQP callbacks.
+  None passed the same held-out allowance; the best validation task loss was `1.10242`.
+- Decision: do not promote an SLSQP endpoint or checkpoint to the 48-well hard screen.
+  Continue with the already planned segmentation-primary projected exact-gradient
+  comparison, which targets the measured branch conflict without changing the loss or
+  success gates. Test data remains sealed.
+
 ## 2026-09-01 — V2 stopped before test after a negative hard-validation gate
 
 - The v2 implementation reached the complete training/validation checkpoint. No

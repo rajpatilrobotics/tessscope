@@ -6,6 +6,7 @@ import pytest
 from tessscope.v2_1.optimization.constrained import (
     BranchEvaluation,
     CachedEpsilonConstraint,
+    is_promotion_eligible,
     solve_slsqp,
 )
 
@@ -53,3 +54,28 @@ def test_slsqp_reaches_focus_boundary_under_segmentation_constraint() -> None:
     assert result.x[0] == pytest.approx(0.5, abs=2e-4)
     assert problem.constraint(result.x) >= -1e-5
     assert trace
+
+
+@pytest.mark.parametrize(
+    ("training_slack", "validation_loss", "expected"),
+    [
+        (0.0, 1.098, True),
+        (-9e-5, 1.098, True),
+        (-2e-4, 1.098, False),
+        (0.0, 1.099, False),
+        (float("nan"), 1.098, False),
+    ],
+)
+def test_promotion_requires_training_and_validation_feasibility(
+    training_slack: float,
+    validation_loss: float,
+    expected: bool,
+) -> None:
+    assert (
+        is_promotion_eligible(
+            training_slack,
+            validation_loss,
+            validation_segmentation_limit=1.098,
+        )
+        is expected
+    )

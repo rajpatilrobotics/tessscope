@@ -3,7 +3,13 @@
 from tessscope.v2_1.optimization.constrained import (
     BranchEvaluation,
     CachedEpsilonConstraint,
+    is_promotion_eligible,
     solve_slsqp,
 )
 
-__all__ = ["BranchEvaluation", "CachedEpsilonConstraint", "solve_slsqp"]
+__all__ = [
+    "BranchEvaluation",
+    "CachedEpsilonConstraint",
+    "is_promotion_eligible",
+    "solve_slsqp",
+]

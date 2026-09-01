@@ -7,26 +7,27 @@ import json
 import time
 from pathlib import Path
 
-import jax.numpy as jnp
 import numpy as np
 from tesseract_core import Tesseract
 
-from tessscope.v2.optimization.objective import JointObjectiveWeights
 from tessscope.v2.optimization.served import (
     V2SystemCalibration,
     collect_patches,
-    joint_value,
-    joint_value_and_gradient,
     materialize_joint_batch,
 )
 from tessscope.v2_1.optics.model import (
-    phase_coefficients_b7,
     unconstrained_from_coefficients_b7,
 )
 from tessscope.v2_1.optimization.constrained import (
     BranchEvaluation,
     CachedEpsilonConstraint,
+    is_promotion_eligible,
     solve_slsqp,
+)
+from tessscope.v2_1.optimization.served import (
+    averaged_branches,
+    averaged_forward,
+    b7_coefficient_list,
 )
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -63,10 +64,6 @@ def parse_args() -> argparse.Namespace:
 
 def load_json(path: Path) -> dict:
     return json.loads(path.read_text())
-
-
-def coefficients(parameters: np.ndarray) -> list[float]:
-    return np.asarray(phase_coefficients_b7(jnp.asarray(parameters))).tolist()
 
 
 def project_inside_ball(value: np.ndarray) -> np.ndarray:
@@ -115,55 +112,6 @@ def start_registry(separate: dict) -> dict[str, np.ndarray]:
         "b7_segmentation_plus_0.35_astigmatic": unconstrained_from_coefficients_b7(
             project_inside_ball(segmentation_astigmatic)
         ),
-    }
-
-
-def averaged_branches(services, parameters, batches, calibration) -> BranchEvaluation:
-    segmentation_values = []
-    focus_values = []
-    segmentation_gradients = []
-    focus_gradients = []
-    for batch in batches:
-        _, segmentation_gradient, segmentation = joint_value_and_gradient(
-            *services,
-            np.asarray(parameters, dtype=np.float32),
-            batch,
-            calibration,
-            JointObjectiveWeights(segmentation=1.0, focus=0.0),
-        )
-        _, focus_gradient, focus = joint_value_and_gradient(
-            *services,
-            np.asarray(parameters, dtype=np.float32),
-            batch,
-            calibration,
-            JointObjectiveWeights(segmentation=0.0, focus=1.0),
-        )
-        segmentation_values.append(segmentation["segmentation_loss"])
-        focus_values.append(focus["focus_mse"])
-        segmentation_gradients.append(segmentation_gradient)
-        focus_gradients.append(focus_gradient)
-    return BranchEvaluation(
-        segmentation_loss=float(np.mean(segmentation_values)),
-        focus_mse=float(np.mean(focus_values)),
-        segmentation_gradient=np.mean(segmentation_gradients, axis=0),
-        normalized_focus_gradient=np.mean(focus_gradients, axis=0),
-    )
-
-
-def validation_average(services, parameters, batches, calibration) -> dict:
-    rows = []
-    for batch in batches:
-        _, branches = joint_value(
-            *services,
-            parameters,
-            batch,
-            calibration,
-            JointObjectiveWeights(),
-        )
-        rows.append(branches)
-    return {
-        key: float(np.mean([row[key] for row in rows]))
-        for key in rows[0]
     }
 
 
@@ -268,7 +216,7 @@ def main() -> None:
                     "exact_branch_evaluations": problem.cache_misses,
                     "elapsed_seconds": time.perf_counter() - started,
                     "final_parameters": parameters.tolist(),
-                    "final_phase_coefficients": coefficients(parameters),
+                    "final_phase_coefficients": b7_coefficient_list(parameters),
                     "training": {
                         "segmentation_loss": final_training.segmentation_loss,
                         "focus_mse": final_training.focus_mse,
@@ -276,7 +224,7 @@ def main() -> None:
                             segmentation_limit - final_training.segmentation_loss
                         ),
                     },
-                    "validation": validation_average(
+                    "validation": averaged_forward(
                         services,
                         parameters,
                         validation_batches,
@@ -292,11 +240,11 @@ def main() -> None:
     eligible = [
         row
         for row in candidates
-        if (
-            row["training"]["constraint_slack"]
-            >= -TRAINING_SLACK_TOLERANCE
-            and row["validation"]["segmentation_loss"]
-            <= validation_segmentation_limit
+        if is_promotion_eligible(
+            row["training"]["constraint_slack"],
+            row["validation"]["segmentation_loss"],
+            validation_segmentation_limit,
+            slack_tolerance=TRAINING_SLACK_TOLERANCE,
         )
     ]
     ranked = sorted(
