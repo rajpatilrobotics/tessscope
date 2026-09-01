@@ -57,6 +57,8 @@ soft_selection:
     - residual_mae_um
   maximum_promotions: 3
   diversity: at_most_one_selected_checkpoint_per_source_run
+  exact_duplicate_diversity: at_most_one_selected_checkpoint_per_parameter_hash
+  exact_duplicate_canonical_name: lexicographically_smallest_checkpoint_name
   within_run_choice: existing_tie_break_over_nondominated_eligible_checkpoints
   tie_break:
     - lowest_final_segmentation_loss

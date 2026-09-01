@@ -22,7 +22,9 @@
   among the 270 checkpoints.
 - The integrity freeze found 269 unique parameter hashes among 270 source records. The
   only duplicate is step 1 of the balanced and first-heavy piecewise-028 runs; it will be
-  served once and reported under both frozen checkpoint identifiers.
+  served once and reported under both frozen checkpoint identifiers. Exact duplicates
+  also cannot occupy two promotion slots; the lexicographically smallest checkpoint name
+  is the canonical selection identity.
 - If no checkpoint qualifies, preserve v2.4 and activate separately named v2.5
   constrained exact-gradient optimization. If checkpoints qualify, freeze them before
   stopped-stage and hard validation; derivative-free and locked-test work remain
