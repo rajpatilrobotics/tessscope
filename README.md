@@ -1,0 +1,125 @@
+# TessScope
+
+## V2 current status
+
+The approved BBBC006 three-Tesseract v2 is implemented through hard validation, but it
+is **not a completed positive result**. Calibration, signed autofocus, exact served
+derivatives, matched baselines, joint optimization, and one-step stage correction all
+work. However, no single pupil passed every frozen segmentation/focus compromise gate,
+so the 48 locked test wells' images and labels were never loaded and no test metric was
+run.
+
+The closest focus-capable joint pupil gained `+0.0186` hard dense off-focus PQ over
+clear, reached `100%` signed direction and `1.029 µm` MAE, and improved hard PQ after
+one stage correction from `0.3552` to `0.4267`. It fell `0.0237` below
+segmentation-only, exceeding the allowed `0.01` drop. A lower-focus refinement met the
+segmentation-drop, direction, and MAE gates but did not Pareto-dominate naive
+superposition. See [the v2 status](outputs/v2/STATUS.md).
+
+## V1 continuity result
+
+TessScope v1 is a completed, reproducible research prototype for task-aware microscope
+optics. It optimizes a smooth six-parameter phase-only pupil through an actual
+JAX/Chromatix image-formation model and a frozen PyTorch/InstanSeg nucleus observer.
+
+The locked test found a statistically reliable deterministic improvement, but the
+predeclared positive headline was **not** earned. Exact-task optics improved mean
+off-focus panoptic quality (PQ) by `+0.0225` over clear, with a grouped 95% bootstrap
+interval of `[+0.0151, +0.0302]`. The required clear-pupil gain was `+0.05`, count error
+did not improve, and the two Poisson endpoints were not positive.
+
+![Locked TessScope test result](outputs/pq-results.png)
+
+## What is implemented
+
+- Exact InstanSeg `single_channel_nuclei` v0.1.2 raw-head and hard-label parity.
+- BBBC039 evaluation decontaminated against disclosed BBBC038 observer training data.
+- Chromatix optics with six bounded Zernike coefficients and validated PSF support.
+- Frozen InstanSeg task loss and official hard-label endpoint.
+- Two HTTP Tesseracts whose exact reverse pass crosses PyTorch back into JAX.
+- Matched clear, cubic, image-fidelity, exact-task, and calibrated-surrogate designs.
+- One-time locked deterministic and keyed-Poisson evaluation on 41 held-out sources.
+- Grouped source-image bootstrap intervals, claim audit, demo figures, and tests.
+- V2 BBBC006 z13–z19 data pipeline, well splits, registration, and reference-mask audit.
+- V2 JAX optics, analytic NumPy/SciPy autofocus, and PyTorch InstanSeg Tesseracts.
+- V2 matched multi-objective baselines and preserved negative pre-test gate evidence.
+
+![TessScope architecture](outputs/architecture.png)
+
+## Key locked-test numbers
+
+| Design | Mean off-focus PQ | Worst-depth PQ | Focus PQ |
+|---|---:|---:|---:|
+| Clear | 0.5873 | 0.5350 | 0.6270 |
+| Cubic (selected 0 rad) | 0.5873 | 0.5350 | 0.6270 |
+| Image fidelity | 0.5875 | 0.5349 | 0.6276 |
+| Surrogate VJP | 0.5897 | 0.5393 | 0.6300 |
+| Exact task VJP | **0.6098** | **0.5755** | **0.6405** |
+
+The evaluation contains 41 decontaminated sources and 4,715 observer images. Full
+results, limitations, and all frozen threshold checks are in
+`outputs/TessScope-results.md`.
+
+## Quick start on macOS
+
+The project targets Python 3.12 and uses a project-local `uv` environment. It does
+not need global Python packages.
+
+```bash
+uv sync
+uv run python -m tessscope
+uv run pytest
+uv run ruff check .
+```
+
+The large datasets and model bundle are intentionally not committed. Their official
+URLs, checksums, expected directory layout, and licenses are recorded in
+`data/manifests/`. See `outputs/reproduction.md` before running the model-dependent
+commands.
+
+## Serve the differentiable chain
+
+Open two terminals from the project root.
+
+Terminal 1:
+
+```bash
+TESSERACT_API_PATH=services/optics/tesseract_api.py \
+  uv run tesseract-runtime \
+  --output-path artifacts/runtime-runs/optics serve --port 8401
+```
+
+Terminal 2:
+
+```bash
+TESSERACT_API_PATH=services/observer/tesseract_api.py \
+  uv run tesseract-runtime \
+  --output-path artifacts/runtime-runs/observer serve --port 8402
+```
+
+Then verify the real served reverse pass:
+
+```bash
+uv run python scripts/check_component_derivatives.py
+uv run python scripts/check_served_derivative.py
+```
+
+The served gate passed with median relative error `0.0052` and cosine agreement
+`0.99961` over its stable epsilon window.
+
+## Project map
+
+- `src/tessscope/`: data, optics, observer, optimization, and evaluation code.
+- `services/`: JAX optics and PyTorch observer Tesseract entry points.
+- `scripts/`: gated experiments, locked evaluation, and figure generation.
+- `configs/`: frozen preprocessing, designs, contract, and pre-test hashes.
+- `data/manifests/`: provenance, checksums, splits, and decontamination evidence.
+- `tests/`: fast parity, derivative, optics, observer, and metric tests.
+- `outputs/`: final readable results, figures, and reproduction guide.
+- `plan.md` and `decision-log.md`: implementation checkpoint and decision trail.
+
+## Scope
+
+This is an optical co-design research prototype using digitally reimaged biological
+texture. It is not a clinical or laboratory-performance claim. Third-party software,
+model, and dataset terms remain with their original owners; see `NOTICE.md`.

@@ -1,0 +1,48 @@
+experiment: tessscope_v2_bbbc006
+status: approved_before_bbbc006_label_or_test_metric_access
+scientific_question: >-
+  Can one bounded phase-only pupil make a photon-matched fluorescence exposure useful
+  for nucleus segmentation and signed stage correction at the same time?
+claim_boundary: BBBC006-calibrated hardware-ready in-silico optical co-design
+data:
+  dataset: BBBC006v1
+  channel: w1 Hoechst
+  focus_plane: 16
+  z_planes: [13, 14, 15, 16, 17, 18, 19]
+  depths_um: [-6, -4, -2, 0, 2, 4, 6]
+  sign_convention: depth_um = 2 * (z_plane - 16); stage_action_um = -predicted_depth_um
+  split_unit: well
+  well_counts:
+    training: 288
+    validation: 48
+    test: 48
+  sites_per_well: 2
+  reference_labels: automated CellProfiler z16 instance labels, not manual ground truth
+normalization:
+  policy: globally fixed training-only calibration constants
+  per_image_normalization: forbidden
+autofocus:
+  feature_family: stabilized log Fourier power with radial-angular aggregation
+  radial_bins: 10
+  angular_bins: 12
+  intercept: unregularized centered training intercept
+  differentiation: hand-derived analytic feature VJP and implicit ridge VJP
+optics:
+  wavelength_um: 0.461
+  numerical_aperture: 0.45
+  object_sampling_um: 0.645
+  phase_family: low-dimensional bounded Zernike pupil
+  phase_rms_bound_radians: 2.5
+evaluation:
+  primary_off_focus_depths_um: [-6, -4, -2, 2, 4, 6]
+  bootstrap_unit: well
+  photon_levels: [50, 200]
+  test_access: one locked run after hashes are frozen
+gates:
+  full_chain_maximum_relative_error: 0.01
+  full_chain_minimum_cosine: 0.99
+  calibration_minimum_depth_curve_correlation: 0.90
+  minimum_signed_direction_accuracy: 0.90
+  maximum_focus_mae_um: 2.0
+  minimum_joint_pq_gain_over_clear: 0.01
+  maximum_joint_pq_drop_from_segmentation_only: 0.01

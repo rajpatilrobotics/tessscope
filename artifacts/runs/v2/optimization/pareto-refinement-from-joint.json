@@ -1,0 +1,820 @@
+{
+  "status": "complete_training_validation_only_after_first_hard_gate",
+  "reason": "First exact joint passed clear/Pareto/stage gates but exceeded the 0.01 hard-PQ drop allowed from segmentation-only.",
+  "test_accessed": false,
+  "candidates": [
+    {
+      "name": "joint-refine-focus-0.03",
+      "focus_weight": 0.03,
+      "steps": 30,
+      "initialization": "promoted joint parameters",
+      "elapsed_seconds": 56.19384637498297,
+      "final_parameters": [
+        -0.14318867027759552,
+        -0.04917619004845619,
+        0.022115202620625496,
+        -0.4044598639011383,
+        -0.007990923710167408,
+        0.11153359711170197
+      ],
+      "final_phase_coefficients": [
+        -0.3268497884273529,
+        -0.11225208640098572,
+        0.050481293350458145,
+        -0.9232407808303833,
+        -0.018240490928292274,
+        0.25459229946136475
+      ],
+      "validation": {
+        "objective": 1.1107069849967957,
+        "segmentation_loss": 1.1065880358219147,
+        "focus_mse": 4.942722797393799,
+        "photon_mean": 198.73474502563477
+      },
+      "trace": [
+        {
+          "step": 1,
+          "objective": 1.1836024522781372,
+          "gradient_norm": 0.09236404299736023,
+          "segmentation_loss": 1.1780662536621094,
+          "focus_mse": 6.643386363983154,
+          "photon_mean": 234.05133056640625
+        },
+        {
+          "step": 2,
+          "objective": 1.0809671878814697,
+          "gradient_norm": 0.03940507024526596,
+          "segmentation_loss": 1.0763920545578003,
+          "focus_mse": 5.490208148956299,
+          "photon_mean": 184.63888549804688
+        },
+        {
+          "step": 3,
+          "objective": 1.3737578392028809,
+          "gradient_norm": 0.04446924850344658,
+          "segmentation_loss": 1.3690308332443237,
+          "focus_mse": 5.672391414642334,
+          "photon_mean": 243.83815002441406
+        },
+        {
+          "step": 4,
+          "objective": 1.3590402603149414,
+          "gradient_norm": 0.03262439742684364,
+          "segmentation_loss": 1.3551931381225586,
+          "focus_mse": 4.6165266036987305,
+          "photon_mean": 257.1422424316406
+        },
+        {
+          "step": 5,
+          "objective": 1.2224335670471191,
+          "gradient_norm": 0.1283552646636963,
+          "segmentation_loss": 1.2176756858825684,
+          "focus_mse": 5.709498405456543,
+          "photon_mean": 169.72198486328125
+        },
+        {
+          "step": 6,
+          "objective": 1.1470155715942383,
+          "gradient_norm": 0.03477393463253975,
+          "segmentation_loss": 1.1375325918197632,
+          "focus_mse": 11.379584312438965,
+          "photon_mean": 240.7548370361328
+        },
+        {
+          "step": 7,
+          "objective": 1.275905966758728,
+          "gradient_norm": 0.04447030648589134,
+          "segmentation_loss": 1.2715061902999878,
+          "focus_mse": 5.279743194580078,
+          "photon_mean": 201.2664337158203
+        },
+        {
+          "step": 8,
+          "objective": 1.2040910720825195,
+          "gradient_norm": 0.037978652864694595,
+          "segmentation_loss": 1.1988829374313354,
+          "focus_mse": 6.249812602996826,
+          "photon_mean": 158.60540771484375
+        },
+        {
+          "step": 9,
+          "objective": 1.334613561630249,
+          "gradient_norm": 0.07739220559597015,
+          "segmentation_loss": 1.3296993970870972,
+          "focus_mse": 5.897059917449951,
+          "photon_mean": 201.00611877441406
+        },
+        {
+          "step": 10,
+          "objective": 1.208027720451355,
+          "gradient_norm": 0.03020317666232586,
+          "segmentation_loss": 1.2028309106826782,
+          "focus_mse": 6.236237525939941,
+          "photon_mean": 202.4862518310547
+        },
+        {
+          "step": 11,
+          "objective": 1.2042189836502075,
+          "gradient_norm": 0.06267634779214859,
+          "segmentation_loss": 1.1982330083847046,
+          "focus_mse": 7.183166980743408,
+          "photon_mean": 191.25100708007812
+        },
+        {
+          "step": 12,
+          "objective": 1.1818833351135254,
+          "gradient_norm": 0.04444441199302673,
+          "segmentation_loss": 1.178087830543518,
+          "focus_mse": 4.554605007171631,
+          "photon_mean": 220.57908630371094
+        },
+        {
+          "step": 13,
+          "objective": 1.1807031631469727,
+          "gradient_norm": 0.08228893578052521,
+          "segmentation_loss": 1.1742274761199951,
+          "focus_mse": 7.770803451538086,
+          "photon_mean": 234.0262451171875
+        },
+        {
+          "step": 14,
+          "objective": 1.0803402662277222,
+          "gradient_norm": 0.03894577920436859,
+          "segmentation_loss": 1.0748224258422852,
+          "focus_mse": 6.621359348297119,
+          "photon_mean": 184.6303253173828
+        },
+        {
+          "step": 15,
+          "objective": 1.3737508058547974,
+          "gradient_norm": 0.0395536944270134,
+          "segmentation_loss": 1.3682959079742432,
+          "focus_mse": 6.545855522155762,
+          "photon_mean": 243.80953979492188
+        },
+        {
+          "step": 16,
+          "objective": 1.3564924001693726,
+          "gradient_norm": 0.03976284712553024,
+          "segmentation_loss": 1.3516652584075928,
+          "focus_mse": 5.792553424835205,
+          "photon_mean": 257.0955810546875
+        },
+        {
+          "step": 17,
+          "objective": 1.2138746976852417,
+          "gradient_norm": 0.07473838329315186,
+          "segmentation_loss": 1.2081985473632812,
+          "focus_mse": 6.811365604400635,
+          "photon_mean": 169.68783569335938
+        },
+        {
+          "step": 18,
+          "objective": 1.1463738679885864,
+          "gradient_norm": 0.03115682303905487,
+          "segmentation_loss": 1.135870337486267,
+          "focus_mse": 12.604299545288086,
+          "photon_mean": 240.71018981933594
+        },
+        {
+          "step": 19,
+          "objective": 1.2747962474822998,
+          "gradient_norm": 0.042384546250104904,
+          "segmentation_loss": 1.2693198919296265,
+          "focus_mse": 6.571678161621094,
+          "photon_mean": 201.2233123779297
+        },
+        {
+          "step": 20,
+          "objective": 1.205020785331726,
+          "gradient_norm": 0.06851489841938019,
+          "segmentation_loss": 1.19868803024292,
+          "focus_mse": 7.599312782287598,
+          "photon_mean": 158.57565307617188
+        },
+        {
+          "step": 21,
+          "objective": 1.3313255310058594,
+          "gradient_norm": 0.04946273937821388,
+          "segmentation_loss": 1.3255239725112915,
+          "focus_mse": 6.961853981018066,
+          "photon_mean": 200.97369384765625
+        },
+        {
+          "step": 22,
+          "objective": 1.2063050270080566,
+          "gradient_norm": 0.016893429681658745,
+          "segmentation_loss": 1.1996090412139893,
+          "focus_mse": 8.035162925720215,
+          "photon_mean": 202.47637939453125
+        },
+        {
+          "step": 23,
+          "objective": 1.2029668092727661,
+          "gradient_norm": 0.0665837898850441,
+          "segmentation_loss": 1.195825219154358,
+          "focus_mse": 8.56997299194336,
+          "photon_mean": 191.22207641601562
+        },
+        {
+          "step": 24,
+          "objective": 1.1808497905731201,
+          "gradient_norm": 0.029223499819636345,
+          "segmentation_loss": 1.1761008501052856,
+          "focus_mse": 5.698695659637451,
+          "photon_mean": 220.53175354003906
+        },
+        {
+          "step": 25,
+          "objective": 1.181542992591858,
+          "gradient_norm": 0.09858442097902298,
+          "segmentation_loss": 1.1740424633026123,
+          "focus_mse": 9.000669479370117,
+          "photon_mean": 233.97506713867188
+        },
+        {
+          "step": 26,
+          "objective": 1.07991361618042,
+          "gradient_norm": 0.06073271110653877,
+          "segmentation_loss": 1.073503017425537,
+          "focus_mse": 7.692710876464844,
+          "photon_mean": 184.60324096679688
+        },
+        {
+          "step": 27,
+          "objective": 1.374647855758667,
+          "gradient_norm": 0.034002747386693954,
+          "segmentation_loss": 1.3685011863708496,
+          "focus_mse": 7.375990867614746,
+          "photon_mean": 243.77017211914062
+        },
+        {
+          "step": 28,
+          "objective": 1.3549067974090576,
+          "gradient_norm": 0.027496622875332832,
+          "segmentation_loss": 1.3492369651794434,
+          "focus_mse": 6.803766250610352,
+          "photon_mean": 257.051513671875
+        },
+        {
+          "step": 29,
+          "objective": 1.211188793182373,
+          "gradient_norm": 0.06364721804857254,
+          "segmentation_loss": 1.204856514930725,
+          "focus_mse": 7.598718166351318,
+          "photon_mean": 169.6631317138672
+        },
+        {
+          "step": 30,
+          "objective": 1.1458399295806885,
+          "gradient_norm": 0.031024906784296036,
+          "segmentation_loss": 1.134977102279663,
+          "focus_mse": 13.035401344299316,
+          "photon_mean": 240.6772003173828
+        }
+      ]
+    },
+    {
+      "name": "joint-refine-focus-0.05",
+      "focus_weight": 0.05,
+      "steps": 30,
+      "initialization": "promoted joint parameters",
+      "elapsed_seconds": 51.3528839169885,
+      "final_parameters": [
+        -0.14873488247394562,
+        -0.08576027303934097,
+        0.004536899272352457,
+        -0.39306196570396423,
+        -0.006081095430999994,
+        0.08826273679733276
+      ],
+      "final_phase_coefficients": [
+        -0.3406018912792206,
+        -0.19639045000076294,
+        0.010389468632638454,
+        -0.9001092910766602,
+        -0.013925667852163315,
+        0.2021210789680481
+      ],
+      "validation": {
+        "objective": 1.1160530149936676,
+        "segmentation_loss": 1.1106995940208435,
+        "focus_mse": 3.854456603527069,
+        "photon_mean": 198.75271224975586
+      },
+      "trace": [
+        {
+          "step": 1,
+          "objective": 1.1872931718826294,
+          "gradient_norm": 0.09266536682844162,
+          "segmentation_loss": 1.1780662536621094,
+          "focus_mse": 6.643386363983154,
+          "photon_mean": 234.05133056640625
+        },
+        {
+          "step": 2,
+          "objective": 1.0840173959732056,
+          "gradient_norm": 0.03692390397191048,
+          "segmentation_loss": 1.0763920545578003,
+          "focus_mse": 5.490208148956299,
+          "photon_mean": 184.63888549804688
+        },
+        {
+          "step": 3,
+          "objective": 1.3768573999404907,
+          "gradient_norm": 0.0481058731675148,
+          "segmentation_loss": 1.3690069913864136,
+          "focus_mse": 5.652305603027344,
+          "photon_mean": 243.83905029296875
+        },
+        {
+          "step": 4,
+          "objective": 1.3616896867752075,
+          "gradient_norm": 0.025391660630702972,
+          "segmentation_loss": 1.3553612232208252,
+          "focus_mse": 4.556464672088623,
+          "photon_mean": 257.1437683105469
+        },
+        {
+          "step": 5,
+          "objective": 1.226028323173523,
+          "gradient_norm": 0.12281721830368042,
+          "segmentation_loss": 1.2181968688964844,
+          "focus_mse": 5.638645648956299,
+          "photon_mean": 169.72332763671875
+        },
+        {
+          "step": 6,
+          "objective": 1.1533362865447998,
+          "gradient_norm": 0.03832137584686279,
+          "segmentation_loss": 1.1376062631607056,
+          "focus_mse": 11.325645446777344,
+          "photon_mean": 240.7565460205078
+        },
+        {
+          "step": 7,
+          "objective": 1.2788655757904053,
+          "gradient_norm": 0.04483240842819214,
+          "segmentation_loss": 1.2717167139053345,
+          "focus_mse": 5.147186279296875,
+          "photon_mean": 201.2687530517578
+        },
+        {
+          "step": 8,
+          "objective": 1.2075910568237305,
+          "gradient_norm": 0.040228039026260376,
+          "segmentation_loss": 1.1991275548934937,
+          "focus_mse": 6.093725681304932,
+          "photon_mean": 158.60679626464844
+        },
+        {
+          "step": 9,
+          "objective": 1.338477373123169,
+          "gradient_norm": 0.07529902458190918,
+          "segmentation_loss": 1.3305169343948364,
+          "focus_mse": 5.731494426727295,
+          "photon_mean": 201.00863647460938
+        },
+        {
+          "step": 10,
+          "objective": 1.2117012739181519,
+          "gradient_norm": 0.02288375422358513,
+          "segmentation_loss": 1.2034631967544556,
+          "focus_mse": 5.931400775909424,
+          "photon_mean": 202.48573303222656
+        },
+        {
+          "step": 11,
+          "objective": 1.2087352275848389,
+          "gradient_norm": 0.05984768271446228,
+          "segmentation_loss": 1.199136734008789,
+          "focus_mse": 6.910939693450928,
+          "photon_mean": 191.2525634765625
+        },
+        {
+          "step": 12,
+          "objective": 1.1844840049743652,
+          "gradient_norm": 0.043085549026727676,
+          "segmentation_loss": 1.1785259246826172,
+          "focus_mse": 4.289854049682617,
+          "photon_mean": 220.58450317382812
+        },
+        {
+          "step": 13,
+          "objective": 1.1849377155303955,
+          "gradient_norm": 0.07951398193836212,
+          "segmentation_loss": 1.1746524572372437,
+          "focus_mse": 7.405421733856201,
+          "photon_mean": 234.03567504882812
+        },
+        {
+          "step": 14,
+          "objective": 1.083980917930603,
+          "gradient_norm": 0.035230766981840134,
+          "segmentation_loss": 1.075280785560608,
+          "focus_mse": 6.264085292816162,
+          "photon_mean": 184.63792419433594
+        },
+        {
+          "step": 15,
+          "objective": 1.3766542673110962,
+          "gradient_norm": 0.04636147618293762,
+          "segmentation_loss": 1.368006944656372,
+          "focus_mse": 6.226076602935791,
+          "photon_mean": 243.8218536376953
+        },
+        {
+          "step": 16,
+          "objective": 1.3603391647338867,
+          "gradient_norm": 0.030861737206578255,
+          "segmentation_loss": 1.3528989553451538,
+          "focus_mse": 5.356984615325928,
+          "photon_mean": 257.1087341308594
+        },
+        {
+          "step": 17,
+          "objective": 1.2185450792312622,
+          "gradient_norm": 0.07596579939126968,
+          "segmentation_loss": 1.2095794677734375,
+          "focus_mse": 6.455233573913574,
+          "photon_mean": 169.6956024169922
+        },
+        {
+          "step": 18,
+          "objective": 1.1535120010375977,
+          "gradient_norm": 0.031497009098529816,
+          "segmentation_loss": 1.1362593173980713,
+          "focus_mse": 12.421948432922363,
+          "photon_mean": 240.72201538085938
+        },
+        {
+          "step": 19,
+          "objective": 1.2774676084518433,
+          "gradient_norm": 0.034391216933727264,
+          "segmentation_loss": 1.2690738439559937,
+          "focus_mse": 6.04348611831665,
+          "photon_mean": 201.23622131347656
+        },
+        {
+          "step": 20,
+          "objective": 1.2085440158843994,
+          "gradient_norm": 0.05311489850282669,
+          "segmentation_loss": 1.1987463235855103,
+          "focus_mse": 7.054356098175049,
+          "photon_mean": 158.58517456054688
+        },
+        {
+          "step": 21,
+          "objective": 1.3357594013214111,
+          "gradient_norm": 0.05656455457210541,
+          "segmentation_loss": 1.3267916440963745,
+          "focus_mse": 6.45676326751709,
+          "photon_mean": 200.9845733642578
+        },
+        {
+          "step": 22,
+          "objective": 1.2106828689575195,
+          "gradient_norm": 0.014987369067966938,
+          "segmentation_loss": 1.2007124423980713,
+          "focus_mse": 7.178747177124023,
+          "photon_mean": 202.4789276123047
+        },
+        {
+          "step": 23,
+          "objective": 1.2086910009384155,
+          "gradient_norm": 0.06148800626397133,
+          "segmentation_loss": 1.1977347135543823,
+          "focus_mse": 7.888528347015381,
+          "photon_mean": 191.226318359375
+        },
+        {
+          "step": 24,
+          "objective": 1.183830738067627,
+          "gradient_norm": 0.03438405692577362,
+          "segmentation_loss": 1.1768133640289307,
+          "focus_mse": 5.0524983406066895,
+          "photon_mean": 220.5436248779297
+        },
+        {
+          "step": 25,
+          "objective": 1.1859244108200073,
+          "gradient_norm": 0.0903194397687912,
+          "segmentation_loss": 1.174452543258667,
+          "focus_mse": 8.259749412536621,
+          "photon_mean": 233.99366760253906
+        },
+        {
+          "step": 26,
+          "objective": 1.0841649770736694,
+          "gradient_norm": 0.031294308602809906,
+          "segmentation_loss": 1.0744121074676514,
+          "focus_mse": 7.022087574005127,
+          "photon_mean": 184.61764526367188
+        },
+        {
+          "step": 27,
+          "objective": 1.3776443004608154,
+          "gradient_norm": 0.042292531579732895,
+          "segmentation_loss": 1.3682128190994263,
+          "focus_mse": 6.79069709777832,
+          "photon_mean": 243.79196166992188
+        },
+        {
+          "step": 28,
+          "objective": 1.3593536615371704,
+          "gradient_norm": 0.02825881727039814,
+          "segmentation_loss": 1.350995421409607,
+          "focus_mse": 6.0179619789123535,
+          "photon_mean": 257.0755310058594
+        },
+        {
+          "step": 29,
+          "objective": 1.2163814306259155,
+          "gradient_norm": 0.059135112911462784,
+          "segmentation_loss": 1.2066479921340942,
+          "focus_mse": 7.008070468902588,
+          "photon_mean": 169.676513671875
+        },
+        {
+          "step": 30,
+          "objective": 1.1534068584442139,
+          "gradient_norm": 0.028610410168766975,
+          "segmentation_loss": 1.135509967803955,
+          "focus_mse": 12.885798454284668,
+          "photon_mean": 240.6962127685547
+        }
+      ]
+    },
+    {
+      "name": "joint-refine-focus-0.07",
+      "focus_weight": 0.07,
+      "steps": 30,
+      "initialization": "promoted joint parameters",
+      "elapsed_seconds": 54.42090849997476,
+      "final_parameters": [
+        -0.16034527122974396,
+        -0.12713363766670227,
+        -0.01158431451767683,
+        -0.38104620575904846,
+        -0.005134624894708395,
+        0.05858684703707695
+      ],
+      "final_phase_coefficients": [
+        -0.3673683702945709,
+        -0.2912769019603729,
+        -0.02654091827571392,
+        -0.8730180859565735,
+        -0.01176398154348135,
+        0.13422881066799164
+      ],
+      "validation": {
+        "objective": 1.1199889481067657,
+        "segmentation_loss": 1.1141135096549988,
+        "focus_mse": 3.0216467082500458,
+        "photon_mean": 198.76807022094727
+      },
+      "trace": [
+        {
+          "step": 1,
+          "objective": 1.1909838914871216,
+          "gradient_norm": 0.09376771748065948,
+          "segmentation_loss": 1.1780662536621094,
+          "focus_mse": 6.643386363983154,
+          "photon_mean": 234.05133056640625
+        },
+        {
+          "step": 2,
+          "objective": 1.0870674848556519,
+          "gradient_norm": 0.035887304693460464,
+          "segmentation_loss": 1.0763920545578003,
+          "focus_mse": 5.490208148956299,
+          "photon_mean": 184.63888549804688
+        },
+        {
+          "step": 3,
+          "objective": 1.3799262046813965,
+          "gradient_norm": 0.0523843988776207,
+          "segmentation_loss": 1.3689864873886108,
+          "focus_mse": 5.626132011413574,
+          "photon_mean": 243.83969116210938
+        },
+        {
+          "step": 4,
+          "objective": 1.3642762899398804,
+          "gradient_norm": 0.019187159836292267,
+          "segmentation_loss": 1.3555570840835571,
+          "focus_mse": 4.484176158905029,
+          "photon_mean": 257.1447448730469
+        },
+        {
+          "step": 5,
+          "objective": 1.2296841144561768,
+          "gradient_norm": 0.12091761082410812,
+          "segmentation_loss": 1.218895435333252,
+          "focus_mse": 5.548467636108398,
+          "photon_mean": 169.7244873046875
+        },
+        {
+          "step": 6,
+          "objective": 1.159493088722229,
+          "gradient_norm": 0.04290296509861946,
+          "segmentation_loss": 1.1376389265060425,
+          "focus_mse": 11.23930835723877,
+          "photon_mean": 240.7572784423828
+        },
+        {
+          "step": 7,
+          "objective": 1.2817933559417725,
+          "gradient_norm": 0.0468219630420208,
+          "segmentation_loss": 1.2720969915390015,
+          "focus_mse": 4.986701011657715,
+          "photon_mean": 201.27023315429688
+        },
+        {
+          "step": 8,
+          "objective": 1.2109596729278564,
+          "gradient_norm": 0.038017723709344864,
+          "segmentation_loss": 1.1994671821594238,
+          "focus_mse": 5.910447120666504,
+          "photon_mean": 158.6075897216797
+        },
+        {
+          "step": 9,
+          "objective": 1.342307686805725,
+          "gradient_norm": 0.07389679551124573,
+          "segmentation_loss": 1.3315190076828003,
+          "focus_mse": 5.548492908477783,
+          "photon_mean": 201.00965881347656
+        },
+        {
+          "step": 10,
+          "objective": 1.2150191068649292,
+          "gradient_norm": 0.02171672135591507,
+          "segmentation_loss": 1.204145908355713,
+          "focus_mse": 5.591948986053467,
+          "photon_mean": 202.4844512939453
+        },
+        {
+          "step": 11,
+          "objective": 1.2130593061447144,
+          "gradient_norm": 0.06138689070940018,
+          "segmentation_loss": 1.2001924514770508,
+          "focus_mse": 6.617247104644775,
+          "photon_mean": 191.2520751953125
+        },
+        {
+          "step": 12,
+          "objective": 1.1867563724517822,
+          "gradient_norm": 0.04253135994076729,
+          "segmentation_loss": 1.1789449453353882,
+          "focus_mse": 4.017331600189209,
+          "photon_mean": 220.5878448486328
+        },
+        {
+          "step": 13,
+          "objective": 1.1890361309051514,
+          "gradient_norm": 0.08129671961069107,
+          "segmentation_loss": 1.1753567457199097,
+          "focus_mse": 7.03510856628418,
+          "photon_mean": 234.0422821044922
+        },
+        {
+          "step": 14,
+          "objective": 1.087200403213501,
+          "gradient_norm": 0.03479044884443283,
+          "segmentation_loss": 1.0757120847702026,
+          "focus_mse": 5.908288955688477,
+          "photon_mean": 184.6427764892578
+        },
+        {
+          "step": 15,
+          "objective": 1.3791680335998535,
+          "gradient_norm": 0.05549586936831474,
+          "segmentation_loss": 1.367691993713379,
+          "focus_mse": 5.901937007904053,
+          "photon_mean": 243.830322265625
+        },
+        {
+          "step": 16,
+          "objective": 1.3636866807937622,
+          "gradient_norm": 0.022462647408246994,
+          "segmentation_loss": 1.3541183471679688,
+          "focus_mse": 4.920836925506592,
+          "photon_mean": 257.1181945800781
+        },
+        {
+          "step": 17,
+          "objective": 1.2233206033706665,
+          "gradient_norm": 0.08388490974903107,
+          "segmentation_loss": 1.2114884853363037,
+          "focus_mse": 6.085086822509766,
+          "photon_mean": 169.70175170898438
+        },
+        {
+          "step": 18,
+          "objective": 1.160248875617981,
+          "gradient_norm": 0.03419335186481476,
+          "segmentation_loss": 1.1366735696792603,
+          "focus_mse": 12.124467849731445,
+          "photon_mean": 240.72955322265625
+        },
+        {
+          "step": 19,
+          "objective": 1.2801669836044312,
+          "gradient_norm": 0.030097702518105507,
+          "segmentation_loss": 1.2694072723388672,
+          "focus_mse": 5.533594131469727,
+          "photon_mean": 201.2452392578125
+        },
+        {
+          "step": 20,
+          "objective": 1.2120503187179565,
+          "gradient_norm": 0.04939430207014084,
+          "segmentation_loss": 1.1994004249572754,
+          "focus_mse": 6.505670070648193,
+          "photon_mean": 158.59156799316406
+        },
+        {
+          "step": 21,
+          "objective": 1.3401793241500854,
+          "gradient_norm": 0.06571779400110245,
+          "segmentation_loss": 1.3285858631134033,
+          "focus_mse": 5.962348461151123,
+          "photon_mean": 200.99229431152344
+        },
+        {
+          "step": 22,
+          "objective": 1.2143772840499878,
+          "gradient_norm": 0.020565954968333244,
+          "segmentation_loss": 1.2021270990371704,
+          "focus_mse": 6.300107479095459,
+          "photon_mean": 202.47959899902344
+        },
+        {
+          "step": 23,
+          "objective": 1.2137879133224487,
+          "gradient_norm": 0.05855795741081238,
+          "segmentation_loss": 1.1998202800750732,
+          "focus_mse": 7.183350563049316,
+          "photon_mean": 191.230224609375
+        },
+        {
+          "step": 24,
+          "objective": 1.1861529350280762,
+          "gradient_norm": 0.03748134896159172,
+          "segmentation_loss": 1.1776069402694702,
+          "focus_mse": 4.395083427429199,
+          "photon_mean": 220.55540466308594
+        },
+        {
+          "step": 25,
+          "objective": 1.1900454759597778,
+          "gradient_norm": 0.09171849489212036,
+          "segmentation_loss": 1.175539493560791,
+          "focus_mse": 7.460244178771973,
+          "photon_mean": 234.01150512695312
+        },
+        {
+          "step": 26,
+          "objective": 1.0873832702636719,
+          "gradient_norm": 0.028569510206580162,
+          "segmentation_loss": 1.0752097368240356,
+          "focus_mse": 6.260690212249756,
+          "photon_mean": 184.63058471679688
+        },
+        {
+          "step": 27,
+          "objective": 1.3796535730361938,
+          "gradient_norm": 0.05881933122873306,
+          "segmentation_loss": 1.3676912784576416,
+          "focus_mse": 6.152013778686523,
+          "photon_mean": 243.81182861328125
+        },
+        {
+          "step": 28,
+          "objective": 1.3633564710617065,
+          "gradient_norm": 0.021383386105298996,
+          "segmentation_loss": 1.3532427549362183,
+          "focus_mse": 5.201313018798828,
+          "photon_mean": 257.0962829589844
+        },
+        {
+          "step": 29,
+          "objective": 1.2214078903198242,
+          "gradient_norm": 0.06611782312393188,
+          "segmentation_loss": 1.2090423107147217,
+          "focus_mse": 6.359442234039307,
+          "photon_mean": 169.6885986328125
+        },
+        {
+          "step": 30,
+          "objective": 1.160431146621704,
+          "gradient_norm": 0.028553476557135582,
+          "segmentation_loss": 1.1360670328140259,
+          "focus_mse": 12.530097961425781,
+          "photon_mean": 240.71209716796875
+        }
+      ]
+    }
+  ]
+}

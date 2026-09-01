@@ -1,0 +1,17 @@
+{
+  "status": "frozen_before_first_test_evaluation",
+  "date": "2026-09-01",
+  "decontaminated_test_source_count": 41,
+  "sha256": {
+    "configs/contract-v2.yaml": "a68fb230ae51abad4c7b0a360eba83b8b525f38e4106cf0c0e67f0819a20b6b1",
+    "configs/preprocessing.json": "54e73bb77e52bffdeaa342656fe68f3cad8eb36a2ee2f0ec372512ef4bec379d",
+    "configs/designs.json": "89087dc97223d517f60123a1b5bedfc5f183f3e169dcf8cb20fde596cc9140a0",
+    "data/manifests/bbbc039-exclusions.json": "0cd45df35a9554825b115fedbcbbe07376ee1fc29e4d60a8b69a93f39efb849d",
+    "data/manifests/instanseg-v0.1.2.json": "21a193c00c282d3ee5151898a66438fe5e3a4829f26a9051d8cb351c2f7d1237",
+    "data/manifests/bbbc-assets.json": "4111f630a7fa039a471d68771c95af4ed7a8956aa995949f1324cb76f41ce02e",
+    "scripts/evaluate_locked_test.py": "1dc83858a403d29b90fe8c2a8dff3d36413623a8b89bcce82ff4d42be2697fc4",
+    "uv.lock": "241bd04d1f0289d1a85e642f67e039e6b16d1ded04cb5fd0d5a1ffe89cf8e99e",
+    "pyproject.toml": "0996dd16bebb12dc9e8f6d922bb366615b1ee9bb0a40b3fa73c05796da43977c",
+    "artifacts/runs/gate8/matched-designs.json": "cc864ad3fa2f471ea263e9781b8b66a79b3eb60da2132bdec2a873ae8097e259"
+  }
+}

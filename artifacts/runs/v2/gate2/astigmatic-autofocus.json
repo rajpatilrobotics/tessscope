@@ -1,0 +1,250 @@
+{
+  "design_family": "classical_single_mode_astigmatism",
+  "fit_split": "24 deterministic training patches",
+  "selection_split": "12 deterministic validation patches",
+  "test_accessed": false,
+  "ridge_lambda": 100.0,
+  "calibration": {
+    "depth_scale": 0.95,
+    "axial_offset_um": -2.5,
+    "exposure_gain": 11.582016617246811
+  },
+  "candidates": [
+    {
+      "orientation": 0,
+      "rms_strength_radians": 0.5,
+      "phase_parameters": [
+        0.20412415266036987,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.3556897717556741,
+      "nonzero_mae_um": 0.3550459269234661,
+      "median_absolute_error_um": 0.23333817355902253,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.32868689145707847,
+      "correction_improvement_um": 3.0998845371143497
+    },
+    {
+      "orientation": 0,
+      "rms_strength_radians": 1.0,
+      "phase_parameters": [
+        0.4364357888698578,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.3477500895919131,
+      "nonzero_mae_um": 0.34283222565381904,
+      "median_absolute_error_um": 0.2690159399867751,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.3279339712752946,
+      "correction_improvement_um": 3.1006374572961337
+    },
+    {
+      "orientation": 0,
+      "rms_strength_radians": 1.5,
+      "phase_parameters": [
+        0.75,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.32360401817046114,
+      "nonzero_mae_um": 0.31521394243560746,
+      "median_absolute_error_um": 0.25347949379947465,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.3129562580171632,
+      "correction_improvement_um": 3.115615170554265
+    },
+    {
+      "orientation": 0,
+      "rms_strength_radians": 2.0,
+      "phase_parameters": [
+        1.3333333730697632,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.35242358138296637,
+      "nonzero_mae_um": 0.33659978026827175,
+      "median_absolute_error_um": 0.2801923746194541,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.33585336749137445,
+      "correction_improvement_um": 3.092718061080054
+    },
+    {
+      "orientation": 0,
+      "rms_strength_radians": 2.4,
+      "phase_parameters": [
+        3.4285714626312256,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.3345814408398837,
+      "nonzero_mae_um": 0.3268307436576003,
+      "median_absolute_error_um": 0.27355104139445663,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.31610445402626264,
+      "correction_improvement_um": 3.112466974545166
+    },
+    {
+      "orientation": 1,
+      "rms_strength_radians": 0.5,
+      "phase_parameters": [
+        0.0,
+        0.20412415266036987,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.5507309715861062,
+      "nonzero_mae_um": 0.5417502014401342,
+      "median_absolute_error_um": 0.48183388470677935,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.5030600121106272,
+      "correction_improvement_um": 2.925511416460801
+    },
+    {
+      "orientation": 1,
+      "rms_strength_radians": 1.0,
+      "phase_parameters": [
+        0.0,
+        0.4364357888698578,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.4779998842544641,
+      "nonzero_mae_um": 0.4663421464465212,
+      "median_absolute_error_um": 0.42412428107248745,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.4490537633220913,
+      "correction_improvement_um": 2.979517665249337
+    },
+    {
+      "orientation": 1,
+      "rms_strength_radians": 1.5,
+      "phase_parameters": [
+        0.0,
+        0.75,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.482186185752958,
+      "nonzero_mae_um": 0.4713040321077951,
+      "median_absolute_error_um": 0.42910765646605675,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.4597031225949698,
+      "correction_improvement_um": 2.9688683059764585
+    },
+    {
+      "orientation": 1,
+      "rms_strength_radians": 2.0,
+      "phase_parameters": [
+        0.0,
+        1.3333333730697632,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.5786447265449534,
+      "nonzero_mae_um": 0.5603588113275032,
+      "median_absolute_error_um": 0.5654376609485086,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.5375162642407136,
+      "correction_improvement_um": 2.891055164330715
+    },
+    {
+      "orientation": 1,
+      "rms_strength_radians": 2.4,
+      "phase_parameters": [
+        0.0,
+        3.4285714626312256,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sample_count": 84,
+      "nonzero_sample_count": 72,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 0.5986048588825387,
+      "nonzero_mae_um": 0.5788033907844845,
+      "median_absolute_error_um": 0.5723157564679155,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 0.5658466980123938,
+      "correction_improvement_um": 2.8627247305590346
+    }
+  ],
+  "selected": {
+    "orientation": 0,
+    "rms_strength_radians": 1.5,
+    "phase_parameters": [
+      0.75,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sample_count": 84,
+    "nonzero_sample_count": 72,
+    "signed_direction_accuracy": 1.0,
+    "mae_um": 0.32360401817046114,
+    "nonzero_mae_um": 0.31521394243560746,
+    "median_absolute_error_um": 0.25347949379947465,
+    "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+    "mean_absolute_depth_after_correction_um": 0.3129562580171632,
+    "correction_improvement_um": 3.115615170554265
+  },
+  "thresholds": {
+    "signed_direction_accuracy": 0.9,
+    "mae_um": 2.0
+  },
+  "passed": true
+}

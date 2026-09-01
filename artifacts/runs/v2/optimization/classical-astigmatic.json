@@ -1,0 +1,26 @@
+{
+  "name": "classical-astigmatic",
+  "selection_source": "artifacts/runs/v2/gate2/astigmatic-autofocus.json",
+  "final_parameters": [
+    0.75,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "final_phase_coefficients": [
+    1.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "validation": {
+    "objective": 1.140289843082428,
+    "segmentation_loss": 1.1329860389232635,
+    "focus_mse": 2.6293679885566235,
+    "photon_mean": 198.77312850952148
+  }
+}

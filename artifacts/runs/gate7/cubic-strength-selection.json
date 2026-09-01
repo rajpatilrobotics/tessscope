@@ -1,0 +1,98 @@
+{
+  "gate": "gate7_cubic_strength_selection",
+  "split": "validation",
+  "device": "mps",
+  "coarse_record_count": 10,
+  "coarse_strengths_rms_radians": [
+    0.0,
+    0.6,
+    1.2,
+    1.8,
+    2.4
+  ],
+  "coarse_scores": [
+    {
+      "rms_strength_radians": 0.0,
+      "mean_off_focus_pq": 0.5234706937534003,
+      "worst_depth_pq": 0.5001215512255709,
+      "focus_pq": 0.5699406306787613,
+      "patch_count": 20
+    },
+    {
+      "rms_strength_radians": 0.6,
+      "mean_off_focus_pq": 0.5076391451797962,
+      "worst_depth_pq": 0.48654512833709224,
+      "focus_pq": 0.5608088510842906,
+      "patch_count": 20
+    },
+    {
+      "rms_strength_radians": 1.2,
+      "mean_off_focus_pq": 0.5024781589189072,
+      "worst_depth_pq": 0.48209097206666884,
+      "focus_pq": 0.5468616569761602,
+      "patch_count": 20
+    },
+    {
+      "rms_strength_radians": 1.8,
+      "mean_off_focus_pq": 0.5017031035483611,
+      "worst_depth_pq": 0.4852300305317366,
+      "focus_pq": 0.5308680391403421,
+      "patch_count": 20
+    },
+    {
+      "rms_strength_radians": 2.4,
+      "mean_off_focus_pq": 0.48945429451989536,
+      "worst_depth_pq": 0.46000782729432776,
+      "focus_pq": 0.4979019037712993,
+      "patch_count": 20
+    }
+  ],
+  "refinement_strengths_rms_radians": [
+    0.0,
+    0.3,
+    0.6
+  ],
+  "refinement_scores": [
+    {
+      "rms_strength_radians": 0.0,
+      "mean_off_focus_pq": 0.56355035914339,
+      "worst_depth_pq": 0.5356359859999468,
+      "focus_pq": 0.5952868659290544,
+      "patch_count": 82
+    },
+    {
+      "rms_strength_radians": 0.3,
+      "mean_off_focus_pq": 0.5624524547894206,
+      "worst_depth_pq": 0.5408431378101373,
+      "focus_pq": 0.590636304053091,
+      "patch_count": 82
+    },
+    {
+      "rms_strength_radians": 0.6,
+      "mean_off_focus_pq": 0.5606882973189548,
+      "worst_depth_pq": 0.5408384518414061,
+      "focus_pq": 0.5875691339711826,
+      "patch_count": 82
+    }
+  ],
+  "selection_rule": "mean off-focus PQ, then worst-depth PQ, then lower RMS",
+  "selected": {
+    "rms_strength_radians": 0.0,
+    "mean_off_focus_pq": 0.56355035914339,
+    "worst_depth_pq": 0.5356359859999468,
+    "focus_pq": 0.5952868659290544,
+    "patch_count": 82
+  },
+  "support_energy_fraction_by_depth": {
+    "-6.0": 0.9972982406616211,
+    "-4.0": 0.9973087310791016,
+    "-2.0": 0.9973150491714478,
+    "0.0": 0.9973171949386597,
+    "2.0": 0.9973150491714478,
+    "4.0": 0.9973087310791016,
+    "6.0": 0.9972982406616211
+  },
+  "minimum_support_energy_fraction": 0.9972982406616211,
+  "minimum_required_support_energy_fraction": 0.995,
+  "passed": true
+}

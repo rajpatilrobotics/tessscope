@@ -1,0 +1,77 @@
+{
+  "dataset": "BBBC006v1",
+  "status": "official_metadata_verified_before_download",
+  "official_page": "https://bbbc.broadinstitute.org/BBBC006",
+  "license": "CC0 / copyright and related rights waived to the extent possible",
+  "citation": "Ljosa et al., Nature Methods 2012; BBBC006v1",
+  "acquisition": {
+    "cell_line": "U2OS",
+    "plate": "one 384-well microplate",
+    "sites_per_well": 2,
+    "channels": {
+      "w1": "Hoechst 33342 nuclei, 15 ms exposure",
+      "w2": "phalloidin, 1000 ms exposure"
+    },
+    "magnification": "20x",
+    "numerical_aperture": 0.45,
+    "camera_pixel_um": 6.45,
+    "binning": "2x",
+    "effective_object_sampling_um": 0.645,
+    "image_shape_yx": [520, 696],
+    "dtype": "uint16 TIFF",
+    "focus_plane": 16,
+    "axial_spacing_um": 2.0
+  },
+  "selected_planes": {
+    "13": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_13.zip",
+      "content_length": 845002067,
+      "etag": "325db553-4c0924e255ff7"
+    },
+    "14": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_14.zip",
+      "content_length": 843305254,
+      "etag": "3243d126-4c0925f966dbb"
+    },
+    "15": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_15.zip",
+      "content_length": 841216608,
+      "etag": "3223f260-4c0926f9c7548"
+    },
+    "16": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_16.zip",
+      "content_length": 838730060,
+      "etag": "31fe014c-4c0927fd75263"
+    },
+    "17": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_17.zip",
+      "content_length": 836036880,
+      "etag": "31d4e910-4c0928ead520e"
+    },
+    "18": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_18.zip",
+      "content_length": 833257303,
+      "etag": "31aa7f57-4c0929e198f67"
+    },
+    "19": {
+      "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_images_z_19.zip",
+      "content_length": 830604933,
+      "etag": "31820685-4c092ac48bb03"
+    }
+  },
+  "reference_labels": {
+    "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_labels.zip",
+    "content_length": 10099211,
+    "etag": "9a1a0b-50ca2bf4024b1",
+    "sha256": "2d3ec4e5a3ec0bb94820c9bcd6f102821862f526df2552ff9065a75b1c5e33ac",
+    "semantics": "automated CellProfiler z16 instance labels"
+  },
+  "reference_counts": {
+    "url": "https://data.broadinstitute.org/bbbc/BBBC006/BBBC006_v1_counts.csv",
+    "content_length": 67379,
+    "etag": "10733-50ee7c2601b6f",
+    "sha256": "7fdc4b496cb6558e266d9f1bbc99cda3568d3fc2856c102a98fae315baf89d88"
+  },
+  "integrity_policy": "archive content-length and ETag plus ZIP-member CRC32 and extracted SHA256; official archive SHA256 values are not published",
+  "official_page_inconsistency": "prose says 32 image sets while download links span z00 through z33; v2 uses only z13 through z19"
+}

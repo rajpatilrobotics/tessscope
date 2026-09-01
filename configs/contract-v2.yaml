@@ -1,0 +1,97 @@
+project: TessScope
+contract_version: "2+amendments"
+status: frozen
+
+model:
+  name: single_channel_nuclei
+  release: instanseg_models_v0.1.2
+  source_commit: 9dcbf65bcc725d4e3121081f66c52d0a01e12579
+  asset_url: https://github.com/instanseg/instanseg/releases/download/instanseg_models_v0.1.2/single_channel_nuclei.zip
+  asset_sha256: 6bc2e4cd8acd9bea64a04e926a74a53f922d76fd6c1dc633ca0bca335df4d4d7
+  torchscript_sha256: 118066231fb7753ffb048bcd2164186397bcc5c8fc4ad7f826efe928b515794c
+  package: instanseg-torch==0.1.1
+
+phase:
+  zernike_noll_indices: [5, 6, 7, 8, 9, 10]
+  bound_radians: 2.5
+  parameterization: "theta = 2.5 * v / sqrt(1 + ||v||^2)"
+
+optics:
+  wavelength_um: 0.461
+  numerical_aperture: 0.45
+  biological_sampling_um_per_px: 0.645
+  observer_sampling_um_per_px: 0.5
+  depths_um: [-6, -4, -2, 0, 2, 4, 6]
+  optimization_psf_oversampling: 4
+  psf_support_px: 96
+  psf_support_fallback_px: 128
+  minimum_reference_energy_fraction: 0.995
+  validated_clear_minimum_reference_energy_fraction: 0.9972982406616211
+
+optimization:
+  patch_size_px: 256
+  batch_size: 2
+  depths_per_step: 3
+  max_instances_per_patch: 32
+  membership_crop_px: 64
+  steps_per_start: 120
+  starts_initial: 1
+  starts_viability_bonus: 3
+  deterministic_expected_photons: 100
+  l2_phase_weight: 0.0001
+  smooth_max_temperature: 0.1
+  predicted_center_embedding_gradient: connected
+  predicted_center_embedding_amendment_approved: "2026-09-01"
+  observer_transform:
+    name: global_affine
+    mode: affine
+    offset: 0.0015564202334630351
+    scale: 0.8998092622262913
+    clip_range: [0.0, 1.0]
+    per_image_normalization: false
+  cubic_baseline:
+    family: "RMS-normalized alpha*(x^3+y^3) on unit pupil"
+    selected_rms_radians: 0.0
+    selection: "five coarse strengths on 10 validation sources, then three refinements on all validation sources"
+  surrogate_calibration_batches: 32
+  surrogate_proxy_logit_scale: 8.0
+  surrogate_frozen_scale: 108.97649746350436
+  adam:
+    learning_rate: 0.01
+    beta1: 0.9
+    beta2: 0.999
+    epsilon: 1.0e-8
+    validation_pilot_steps: 24
+    candidate_learning_rates: [0.01, 0.03, 0.1]
+
+evaluation:
+  primary_depths_um: [-6, -4, -2, 2, 4, 6]
+  focus_depth_um: 0
+  poisson_endpoint_depths_um: [-6, 6]
+  poisson_photon_levels: [50, 200]
+  poisson_seeds: 4
+  bootstrap_replicates: 1000
+  full_source_shape_px: [520, 696]
+  observer_shape_px: [671, 898]
+  maximum_observer_batch_size: 4
+  test_time_window_seconds: 3600
+  minimum_runtime_reserve_fraction: 0.25
+
+derivative_gate:
+  directions: 5
+  epsilons: [0.1, 0.01, 0.001, 0.0001]
+  minimum_stable_epsilons: 3
+  maximum_median_relative_error: 0.01
+  preferred_median_relative_error: 0.001
+  minimum_cosine_agreement: 0.99
+
+claim_thresholds:
+  off_focus_pq_over_clear: 0.05
+  off_focus_pq_over_cubic: 0.02
+  off_focus_pq_over_image_fidelity: 0.02
+  worst_depth_pq_over_clear: 0.04
+  maximum_focus_pq_drop: 0.03
+  minimum_count_error_reduction_fraction: 0.10
+  exact_vjp_pq_over_surrogate: 0.02
+  confidence_interval_lower_bound_must_be_positive: true
+  positive_at_both_photon_levels: true

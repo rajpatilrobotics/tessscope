@@ -1,0 +1,820 @@
+{
+  "status": "complete_training_validation_only",
+  "method": "exact branch VJPs; remove the focus-gradient component opposing the segmentation gradient, then norm-balance the remaining focus direction",
+  "test_accessed": false,
+  "candidates": [
+    {
+      "name": "projected-exact-joint-0.25",
+      "gradient_balance": 0.25,
+      "steps": 30,
+      "initialization": "promoted segmentation-only parameters",
+      "elapsed_seconds": 111.01583150000079,
+      "final_parameters": [
+        0.13689419627189636,
+        0.16787107288837433,
+        -0.09562872350215912,
+        -0.41557061672210693,
+        0.08133505284786224,
+        0.011987010948359966
+      ],
+      "final_phase_coefficients": [
+        0.3078928291797638,
+        0.37756380438804626,
+        -0.21508140861988068,
+        -0.9346722960472107,
+        0.18293309211730957,
+        0.0269603431224823
+      ],
+      "validation": {
+        "objective": 1.1275455951690674,
+        "segmentation_loss": 1.0953574925661087,
+        "focus_mse": 11.587713241577148,
+        "photon_mean": 198.6827278137207
+      },
+      "trace": [
+        {
+          "step": 1,
+          "raw_branch_gradient_dot": 0.01849300041794777,
+          "focus_projection_scale": 0.08980141580104828,
+          "combined_gradient_norm": 0.12774217128753662,
+          "segmentation_loss": 1.1707508563995361,
+          "focus_mse": 12.45418930053711
+        },
+        {
+          "step": 2,
+          "raw_branch_gradient_dot": -0.01719244383275509,
+          "focus_projection_scale": 0.07993134111166,
+          "combined_gradient_norm": 0.06105337664484978,
+          "segmentation_loss": 1.060070276260376,
+          "focus_mse": 10.200458526611328
+        },
+        {
+          "step": 3,
+          "raw_branch_gradient_dot": -0.0018671484431251884,
+          "focus_projection_scale": 0.013994881883263588,
+          "combined_gradient_norm": 0.03004172258079052,
+          "segmentation_loss": 1.368420124053955,
+          "focus_mse": 10.034173965454102
+        },
+        {
+          "step": 4,
+          "raw_branch_gradient_dot": -0.0027408336754888296,
+          "focus_projection_scale": 0.013868311420083046,
+          "combined_gradient_norm": 0.02951187454164028,
+          "segmentation_loss": 1.3466591835021973,
+          "focus_mse": 10.276618957519531
+        },
+        {
+          "step": 5,
+          "raw_branch_gradient_dot": -0.05183339864015579,
+          "focus_projection_scale": 0.12934373319149017,
+          "combined_gradient_norm": 0.12088826298713684,
+          "segmentation_loss": 1.1998523473739624,
+          "focus_mse": 10.032295227050781
+        },
+        {
+          "step": 6,
+          "raw_branch_gradient_dot": -0.007092287763953209,
+          "focus_projection_scale": 0.03453617915511131,
+          "combined_gradient_norm": 0.029511375352740288,
+          "segmentation_loss": 1.1380013227462769,
+          "focus_mse": 12.144035339355469
+        },
+        {
+          "step": 7,
+          "raw_branch_gradient_dot": 0.006241997238248587,
+          "focus_projection_scale": 0.012909069657325745,
+          "combined_gradient_norm": 0.031292811036109924,
+          "segmentation_loss": 1.2734862565994263,
+          "focus_mse": 10.10251522064209
+        },
+        {
+          "step": 8,
+          "raw_branch_gradient_dot": 0.006562848575413227,
+          "focus_projection_scale": 0.021580906584858894,
+          "combined_gradient_norm": 0.045145679265260696,
+          "segmentation_loss": 1.190208077430725,
+          "focus_mse": 9.921747207641602
+        },
+        {
+          "step": 9,
+          "raw_branch_gradient_dot": 0.0006307597504928708,
+          "focus_projection_scale": 0.015183200128376484,
+          "combined_gradient_norm": 0.025854529812932014,
+          "segmentation_loss": 1.3323553800582886,
+          "focus_mse": 9.228816986083984
+        },
+        {
+          "step": 10,
+          "raw_branch_gradient_dot": -0.0016374523984268308,
+          "focus_projection_scale": 0.016509180888533592,
+          "combined_gradient_norm": 0.02063264138996601,
+          "segmentation_loss": 1.203427791595459,
+          "focus_mse": 11.548942565917969
+        },
+        {
+          "step": 11,
+          "raw_branch_gradient_dot": -0.022272663190960884,
+          "focus_projection_scale": 0.0583442822098732,
+          "combined_gradient_norm": 0.07514891028404236,
+          "segmentation_loss": 1.1907795667648315,
+          "focus_mse": 10.911803245544434
+        },
+        {
+          "step": 12,
+          "raw_branch_gradient_dot": -0.022650785744190216,
+          "focus_projection_scale": 0.03434689715504646,
+          "combined_gradient_norm": 0.04815224930644035,
+          "segmentation_loss": 1.1810468435287476,
+          "focus_mse": 9.008970260620117
+        },
+        {
+          "step": 13,
+          "raw_branch_gradient_dot": 0.020543113350868225,
+          "focus_projection_scale": 0.07843302190303802,
+          "combined_gradient_norm": 0.12383844703435898,
+          "segmentation_loss": 1.1698213815689087,
+          "focus_mse": 12.174095153808594
+        },
+        {
+          "step": 14,
+          "raw_branch_gradient_dot": -0.019650639966130257,
+          "focus_projection_scale": 0.08701840788125992,
+          "combined_gradient_norm": 0.06504009664058685,
+          "segmentation_loss": 1.0597580671310425,
+          "focus_mse": 9.876580238342285
+        },
+        {
+          "step": 15,
+          "raw_branch_gradient_dot": -0.008628282696008682,
+          "focus_projection_scale": 0.014730606228113174,
+          "combined_gradient_norm": 0.02915135584771633,
+          "segmentation_loss": 1.3678921461105347,
+          "focus_mse": 9.754904747009277
+        },
+        {
+          "step": 16,
+          "raw_branch_gradient_dot": -0.0013828014489263296,
+          "focus_projection_scale": 0.006465306971222162,
+          "combined_gradient_norm": 0.013834608718752861,
+          "segmentation_loss": 1.3457680940628052,
+          "focus_mse": 10.105761528015137
+        },
+        {
+          "step": 17,
+          "raw_branch_gradient_dot": -0.059946294873952866,
+          "focus_projection_scale": 0.16380470991134644,
+          "combined_gradient_norm": 0.12337899953126907,
+          "segmentation_loss": 1.1987104415893555,
+          "focus_mse": 9.627330780029297
+        },
+        {
+          "step": 18,
+          "raw_branch_gradient_dot": -0.008156334049999714,
+          "focus_projection_scale": 0.026128778234124184,
+          "combined_gradient_norm": 0.02797960676252842,
+          "segmentation_loss": 1.1383193731307983,
+          "focus_mse": 11.83470344543457
+        },
+        {
+          "step": 19,
+          "raw_branch_gradient_dot": 0.0059493607841432095,
+          "focus_projection_scale": 0.019870296120643616,
+          "combined_gradient_norm": 0.051811348646879196,
+          "segmentation_loss": 1.273046612739563,
+          "focus_mse": 9.740655899047852
+        },
+        {
+          "step": 20,
+          "raw_branch_gradient_dot": 0.011471386067569256,
+          "focus_projection_scale": 0.022154415026307106,
+          "combined_gradient_norm": 0.05322753265500069,
+          "segmentation_loss": 1.1899478435516357,
+          "focus_mse": 9.671924591064453
+        },
+        {
+          "step": 21,
+          "raw_branch_gradient_dot": 0.00015945592895150185,
+          "focus_projection_scale": 0.01269583124667406,
+          "combined_gradient_norm": 0.0225981418043375,
+          "segmentation_loss": 1.330923318862915,
+          "focus_mse": 9.180302619934082
+        },
+        {
+          "step": 22,
+          "raw_branch_gradient_dot": -0.004462475422769785,
+          "focus_projection_scale": 0.02412615902721882,
+          "combined_gradient_norm": 0.025567561388015747,
+          "segmentation_loss": 1.202450156211853,
+          "focus_mse": 11.645819664001465
+        },
+        {
+          "step": 23,
+          "raw_branch_gradient_dot": -0.023485388606786728,
+          "focus_projection_scale": 0.052633531391620636,
+          "combined_gradient_norm": 0.08940088748931885,
+          "segmentation_loss": 1.1883548498153687,
+          "focus_mse": 10.85362720489502
+        },
+        {
+          "step": 24,
+          "raw_branch_gradient_dot": -0.022299986332654953,
+          "focus_projection_scale": 0.03259654343128204,
+          "combined_gradient_norm": 0.04256097227334976,
+          "segmentation_loss": 1.1800975799560547,
+          "focus_mse": 8.917793273925781
+        },
+        {
+          "step": 25,
+          "raw_branch_gradient_dot": 0.02413615584373474,
+          "focus_projection_scale": 0.09401876479387283,
+          "combined_gradient_norm": 0.1471720188856125,
+          "segmentation_loss": 1.1716632843017578,
+          "focus_mse": 12.403668403625488
+        },
+        {
+          "step": 26,
+          "raw_branch_gradient_dot": -0.021487673744559288,
+          "focus_projection_scale": 0.08739062398672104,
+          "combined_gradient_norm": 0.06395871192216873,
+          "segmentation_loss": 1.0591025352478027,
+          "focus_mse": 9.903834342956543
+        },
+        {
+          "step": 27,
+          "raw_branch_gradient_dot": -0.012286155484616756,
+          "focus_projection_scale": 0.015980441123247147,
+          "combined_gradient_norm": 0.03037014603614807,
+          "segmentation_loss": 1.36797034740448,
+          "focus_mse": 9.732365608215332
+        },
+        {
+          "step": 28,
+          "raw_branch_gradient_dot": -0.003948896192014217,
+          "focus_projection_scale": 0.007225646171718836,
+          "combined_gradient_norm": 0.014065013267099857,
+          "segmentation_loss": 1.3458112478256226,
+          "focus_mse": 10.249523162841797
+        },
+        {
+          "step": 29,
+          "raw_branch_gradient_dot": -0.058241575956344604,
+          "focus_projection_scale": 0.17208217084407806,
+          "combined_gradient_norm": 0.11230562627315521,
+          "segmentation_loss": 1.197242259979248,
+          "focus_mse": 9.523999214172363
+        },
+        {
+          "step": 30,
+          "raw_branch_gradient_dot": -0.008529002778232098,
+          "focus_projection_scale": 0.024455081671476364,
+          "combined_gradient_norm": 0.03394089639186859,
+          "segmentation_loss": 1.1376529932022095,
+          "focus_mse": 11.63990306854248
+        }
+      ]
+    },
+    {
+      "name": "projected-exact-joint-0.50",
+      "gradient_balance": 0.5,
+      "steps": 30,
+      "initialization": "promoted segmentation-only parameters",
+      "elapsed_seconds": 112.82902104198001,
+      "final_parameters": [
+        0.1100892424583435,
+        0.12360240519046783,
+        -0.05287555605173111,
+        -0.40324491262435913,
+        0.07168479263782501,
+        0.005879447795450687
+      ],
+      "final_phase_coefficients": [
+        0.2514556646347046,
+        0.28232118487358093,
+        -0.12077344954013824,
+        -0.9210547804832458,
+        0.1637357622385025,
+        0.013429290615022182
+      ],
+      "validation": {
+        "objective": 1.1272589564323425,
+        "segmentation_loss": 1.0970230400562286,
+        "focus_mse": 10.884931802749634,
+        "photon_mean": 198.7112922668457
+      },
+      "trace": [
+        {
+          "step": 1,
+          "raw_branch_gradient_dot": 0.01849300041794777,
+          "focus_projection_scale": 0.17960283160209656,
+          "combined_gradient_norm": 0.1480979025363922,
+          "segmentation_loss": 1.1707508563995361,
+          "focus_mse": 12.45418930053711
+        },
+        {
+          "step": 2,
+          "raw_branch_gradient_dot": -0.017334509640932083,
+          "focus_projection_scale": 0.16737991571426392,
+          "combined_gradient_norm": 0.06931553781032562,
+          "segmentation_loss": 1.059929370880127,
+          "focus_mse": 10.117627143859863
+        },
+        {
+          "step": 3,
+          "raw_branch_gradient_dot": -0.0037781563587486744,
+          "focus_projection_scale": 0.02948508784174919,
+          "combined_gradient_norm": 0.03336448594927788,
+          "segmentation_loss": 1.3681833744049072,
+          "focus_mse": 9.928211212158203
+        },
+        {
+          "step": 4,
+          "raw_branch_gradient_dot": -0.002467556158080697,
+          "focus_projection_scale": 0.022173156961798668,
+          "combined_gradient_norm": 0.025473807007074356,
+          "segmentation_loss": 1.3463096618652344,
+          "focus_mse": 10.088065147399902
+        },
+        {
+          "step": 5,
+          "raw_branch_gradient_dot": -0.05425753816962242,
+          "focus_projection_scale": 0.2761077880859375,
+          "combined_gradient_norm": 0.13328899443149567,
+          "segmentation_loss": 1.2003672122955322,
+          "focus_mse": 9.791557312011719
+        },
+        {
+          "step": 6,
+          "raw_branch_gradient_dot": -0.008327620103955269,
+          "focus_projection_scale": 0.07391170412302017,
+          "combined_gradient_norm": 0.03410818427801132,
+          "segmentation_loss": 1.1383094787597656,
+          "focus_mse": 12.113032341003418
+        },
+        {
+          "step": 7,
+          "raw_branch_gradient_dot": 0.01113276556134224,
+          "focus_projection_scale": 0.049121808260679245,
+          "combined_gradient_norm": 0.06924545019865036,
+          "segmentation_loss": 1.2727680206298828,
+          "focus_mse": 9.781761169433594
+        },
+        {
+          "step": 8,
+          "raw_branch_gradient_dot": 0.004013509955257177,
+          "focus_projection_scale": 0.04304957762360573,
+          "combined_gradient_norm": 0.049731578677892685,
+          "segmentation_loss": 1.190466284751892,
+          "focus_mse": 9.632230758666992
+        },
+        {
+          "step": 9,
+          "raw_branch_gradient_dot": 0.002202809788286686,
+          "focus_projection_scale": 0.03311783820390701,
+          "combined_gradient_norm": 0.03168731927871704,
+          "segmentation_loss": 1.3323310613632202,
+          "focus_mse": 8.965330123901367
+        },
+        {
+          "step": 10,
+          "raw_branch_gradient_dot": -0.0032093971967697144,
+          "focus_projection_scale": 0.039751965552568436,
+          "combined_gradient_norm": 0.028812501579523087,
+          "segmentation_loss": 1.2035871744155884,
+          "focus_mse": 11.280991554260254
+        },
+        {
+          "step": 11,
+          "raw_branch_gradient_dot": -0.02017800137400627,
+          "focus_projection_scale": 0.09866324812173843,
+          "combined_gradient_norm": 0.07433497905731201,
+          "segmentation_loss": 1.1916980743408203,
+          "focus_mse": 10.588129043579102
+        },
+        {
+          "step": 12,
+          "raw_branch_gradient_dot": -0.02273480035364628,
+          "focus_projection_scale": 0.07385032624006271,
+          "combined_gradient_norm": 0.054995082318782806,
+          "segmentation_loss": 1.1814061403274536,
+          "focus_mse": 8.508249282836914
+        },
+        {
+          "step": 13,
+          "raw_branch_gradient_dot": 0.017148852348327637,
+          "focus_projection_scale": 0.12504291534423828,
+          "combined_gradient_norm": 0.12590207159519196,
+          "segmentation_loss": 1.1689809560775757,
+          "focus_mse": 11.77465534210205
+        },
+        {
+          "step": 14,
+          "raw_branch_gradient_dot": -0.023361802101135254,
+          "focus_projection_scale": 0.23661242425441742,
+          "combined_gradient_norm": 0.08039585500955582,
+          "segmentation_loss": 1.0613666772842407,
+          "focus_mse": 9.545300483703613
+        },
+        {
+          "step": 15,
+          "raw_branch_gradient_dot": -0.007227874360978603,
+          "focus_projection_scale": 0.02843240275979042,
+          "combined_gradient_norm": 0.029364414513111115,
+          "segmentation_loss": 1.3677978515625,
+          "focus_mse": 9.306537628173828
+        },
+        {
+          "step": 16,
+          "raw_branch_gradient_dot": -0.004493388347327709,
+          "focus_projection_scale": 0.01551229227334261,
+          "combined_gradient_norm": 0.013844898901879787,
+          "segmentation_loss": 1.3459110260009766,
+          "focus_mse": 9.414321899414062
+        },
+        {
+          "step": 17,
+          "raw_branch_gradient_dot": -0.061419613659381866,
+          "focus_projection_scale": 0.36814236640930176,
+          "combined_gradient_norm": 0.1393250972032547,
+          "segmentation_loss": 1.201390027999878,
+          "focus_mse": 9.094954490661621
+        },
+        {
+          "step": 18,
+          "raw_branch_gradient_dot": -0.009890561923384666,
+          "focus_projection_scale": 0.05883204936981201,
+          "combined_gradient_norm": 0.035971418023109436,
+          "segmentation_loss": 1.1387356519699097,
+          "focus_mse": 11.83464241027832
+        },
+        {
+          "step": 19,
+          "raw_branch_gradient_dot": 0.0009230201249010861,
+          "focus_projection_scale": 0.037049684673547745,
+          "combined_gradient_norm": 0.04935449734330177,
+          "segmentation_loss": 1.2709736824035645,
+          "focus_mse": 9.051219940185547
+        },
+        {
+          "step": 20,
+          "raw_branch_gradient_dot": 0.0020998427644371986,
+          "focus_projection_scale": 0.04240313917398453,
+          "combined_gradient_norm": 0.05016913637518883,
+          "segmentation_loss": 1.1909453868865967,
+          "focus_mse": 9.113326072692871
+        },
+        {
+          "step": 21,
+          "raw_branch_gradient_dot": -0.0009487691568210721,
+          "focus_projection_scale": 0.0343058742582798,
+          "combined_gradient_norm": 0.03059488721191883,
+          "segmentation_loss": 1.3308409452438354,
+          "focus_mse": 8.71072769165039
+        },
+        {
+          "step": 22,
+          "raw_branch_gradient_dot": -0.008316101506352425,
+          "focus_projection_scale": 0.04940859600901604,
+          "combined_gradient_norm": 0.03457171469926834,
+          "segmentation_loss": 1.2027782201766968,
+          "focus_mse": 11.057676315307617
+        },
+        {
+          "step": 23,
+          "raw_branch_gradient_dot": -0.0209010262042284,
+          "focus_projection_scale": 0.08517803251743317,
+          "combined_gradient_norm": 0.08142907917499542,
+          "segmentation_loss": 1.1901917457580566,
+          "focus_mse": 10.25885009765625
+        },
+        {
+          "step": 24,
+          "raw_branch_gradient_dot": -0.02508385106921196,
+          "focus_projection_scale": 0.07987664639949799,
+          "combined_gradient_norm": 0.05544278770685196,
+          "segmentation_loss": 1.1805986166000366,
+          "focus_mse": 8.125860214233398
+        },
+        {
+          "step": 25,
+          "raw_branch_gradient_dot": 0.02070302702486515,
+          "focus_projection_scale": 0.14391423761844635,
+          "combined_gradient_norm": 0.15213491022586823,
+          "segmentation_loss": 1.1701925992965698,
+          "focus_mse": 11.77359676361084
+        },
+        {
+          "step": 26,
+          "raw_branch_gradient_dot": -0.025691239163279533,
+          "focus_projection_scale": 0.2663559913635254,
+          "combined_gradient_norm": 0.08147252351045609,
+          "segmentation_loss": 1.0619903802871704,
+          "focus_mse": 9.46611499786377
+        },
+        {
+          "step": 27,
+          "raw_branch_gradient_dot": -0.011417776346206665,
+          "focus_projection_scale": 0.03456522151827812,
+          "combined_gradient_norm": 0.03132157772779465,
+          "segmentation_loss": 1.3681321144104004,
+          "focus_mse": 9.125582695007324
+        },
+        {
+          "step": 28,
+          "raw_branch_gradient_dot": -0.006485220976173878,
+          "focus_projection_scale": 0.020112169906497,
+          "combined_gradient_norm": 0.018153827637434006,
+          "segmentation_loss": 1.3462821245193481,
+          "focus_mse": 9.298636436462402
+        },
+        {
+          "step": 29,
+          "raw_branch_gradient_dot": -0.06718370318412781,
+          "focus_projection_scale": 0.409390389919281,
+          "combined_gradient_norm": 0.14551271498203278,
+          "segmentation_loss": 1.200965404510498,
+          "focus_mse": 8.822568893432617
+        },
+        {
+          "step": 30,
+          "raw_branch_gradient_dot": -0.009647943079471588,
+          "focus_projection_scale": 0.0502622053027153,
+          "combined_gradient_norm": 0.03821083903312683,
+          "segmentation_loss": 1.1380535364151,
+          "focus_mse": 11.623348236083984
+        }
+      ]
+    },
+    {
+      "name": "projected-exact-joint-1.00",
+      "gradient_balance": 1.0,
+      "steps": 30,
+      "initialization": "promoted segmentation-only parameters",
+      "elapsed_seconds": 135.1711917089997,
+      "final_parameters": [
+        0.08027707040309906,
+        0.06158685311675072,
+        -0.030019309371709824,
+        -0.3732362389564514,
+        0.06430212408304214,
+        -0.0307459756731987
+      ],
+      "final_phase_coefficients": [
+        0.1866990476846695,
+        0.14323151111602783,
+        -0.06981540471315384,
+        -0.8680292367935181,
+        0.14954636991024017,
+        -0.07150540500879288
+      ],
+      "validation": {
+        "objective": 1.128159612417221,
+        "segmentation_loss": 1.1032996624708176,
+        "focus_mse": 8.94958508014679,
+        "photon_mean": 198.75275802612305
+      },
+      "trace": [
+        {
+          "step": 1,
+          "raw_branch_gradient_dot": 0.01849300041794777,
+          "focus_projection_scale": 0.3592056632041931,
+          "combined_gradient_norm": 0.1942933201789856,
+          "segmentation_loss": 1.1707508563995361,
+          "focus_mse": 12.45418930053711
+        },
+        {
+          "step": 2,
+          "raw_branch_gradient_dot": -0.017335521057248116,
+          "focus_projection_scale": 0.33479246497154236,
+          "combined_gradient_norm": 0.08768044412136078,
+          "segmentation_loss": 1.059929370880127,
+          "focus_mse": 10.11762809753418
+        },
+        {
+          "step": 3,
+          "raw_branch_gradient_dot": -0.0037183130625635386,
+          "focus_projection_scale": 0.05771129950881004,
+          "combined_gradient_norm": 0.041142646223306656,
+          "segmentation_loss": 1.368120789527893,
+          "focus_mse": 9.90131950378418
+        },
+        {
+          "step": 4,
+          "raw_branch_gradient_dot": -0.0028826133348047733,
+          "focus_projection_scale": 0.045016366988420486,
+          "combined_gradient_norm": 0.032540176063776016,
+          "segmentation_loss": 1.3463290929794312,
+          "focus_mse": 10.000219345092773
+        },
+        {
+          "step": 5,
+          "raw_branch_gradient_dot": -0.052665792405605316,
+          "focus_projection_scale": 0.5323251485824585,
+          "combined_gradient_norm": 0.16490189731121063,
+          "segmentation_loss": 1.200876235961914,
+          "focus_mse": 9.7150239944458
+        },
+        {
+          "step": 6,
+          "raw_branch_gradient_dot": -0.008677788078784943,
+          "focus_projection_scale": 0.16268795728683472,
+          "combined_gradient_norm": 0.04388377070426941,
+          "segmentation_loss": 1.1383918523788452,
+          "focus_mse": 12.153840065002441
+        },
+        {
+          "step": 7,
+          "raw_branch_gradient_dot": 0.010712510906159878,
+          "focus_projection_scale": 0.09702984988689423,
+          "combined_gradient_norm": 0.08796117454767227,
+          "segmentation_loss": 1.272314190864563,
+          "focus_mse": 9.64021110534668
+        },
+        {
+          "step": 8,
+          "raw_branch_gradient_dot": 0.00621634628623724,
+          "focus_projection_scale": 0.09325061738491058,
+          "combined_gradient_norm": 0.07094946503639221,
+          "segmentation_loss": 1.1907203197479248,
+          "focus_mse": 9.489710807800293
+        },
+        {
+          "step": 9,
+          "raw_branch_gradient_dot": 0.0009421901777386665,
+          "focus_projection_scale": 0.07863594591617584,
+          "combined_gradient_norm": 0.044438235461711884,
+          "segmentation_loss": 1.3324840068817139,
+          "focus_mse": 8.795685768127441
+        },
+        {
+          "step": 10,
+          "raw_branch_gradient_dot": -0.002816441236063838,
+          "focus_projection_scale": 0.072166308760643,
+          "combined_gradient_norm": 0.03605726733803749,
+          "segmentation_loss": 1.20384681224823,
+          "focus_mse": 11.07956600189209
+        },
+        {
+          "step": 11,
+          "raw_branch_gradient_dot": -0.01476495061069727,
+          "focus_projection_scale": 0.14574182033538818,
+          "combined_gradient_norm": 0.0745011568069458,
+          "segmentation_loss": 1.1926647424697876,
+          "focus_mse": 10.329425811767578
+        },
+        {
+          "step": 12,
+          "raw_branch_gradient_dot": -0.024704013019800186,
+          "focus_projection_scale": 0.172222301363945,
+          "combined_gradient_norm": 0.07904890924692154,
+          "segmentation_loss": 1.1821575164794922,
+          "focus_mse": 8.130656242370605
+        },
+        {
+          "step": 13,
+          "raw_branch_gradient_dot": 0.011296435259282589,
+          "focus_projection_scale": 0.17387360334396362,
+          "combined_gradient_norm": 0.11780700087547302,
+          "segmentation_loss": 1.1676158905029297,
+          "focus_mse": 11.418461799621582
+        },
+        {
+          "step": 14,
+          "raw_branch_gradient_dot": -0.026853401213884354,
+          "focus_projection_scale": 0.6148782968521118,
+          "combined_gradient_norm": 0.121268630027771,
+          "segmentation_loss": 1.0633935928344727,
+          "focus_mse": 9.239697456359863
+        },
+        {
+          "step": 15,
+          "raw_branch_gradient_dot": -0.00355579424649477,
+          "focus_projection_scale": 0.05622756481170654,
+          "combined_gradient_norm": 0.039327237755060196,
+          "segmentation_loss": 1.3676954507827759,
+          "focus_mse": 8.887113571166992
+        },
+        {
+          "step": 16,
+          "raw_branch_gradient_dot": -0.010046355426311493,
+          "focus_projection_scale": 0.08138027787208557,
+          "combined_gradient_norm": 0.031209906563162804,
+          "segmentation_loss": 1.3463404178619385,
+          "focus_mse": 8.823310852050781
+        },
+        {
+          "step": 17,
+          "raw_branch_gradient_dot": -0.04803787171840668,
+          "focus_projection_scale": 0.7650161981582642,
+          "combined_gradient_norm": 0.141118586063385,
+          "segmentation_loss": 1.2041555643081665,
+          "focus_mse": 8.671319961547852
+        },
+        {
+          "step": 18,
+          "raw_branch_gradient_dot": -0.01043635606765747,
+          "focus_projection_scale": 0.1179552972316742,
+          "combined_gradient_norm": 0.04547139257192612,
+          "segmentation_loss": 1.1392900943756104,
+          "focus_mse": 11.86286735534668
+        },
+        {
+          "step": 19,
+          "raw_branch_gradient_dot": -0.013291364535689354,
+          "focus_projection_scale": 0.09861379861831665,
+          "combined_gradient_norm": 0.06453413516283035,
+          "segmentation_loss": 1.2703067064285278,
+          "focus_mse": 8.470298767089844
+        },
+        {
+          "step": 20,
+          "raw_branch_gradient_dot": 0.006359602324664593,
+          "focus_projection_scale": 0.09813442826271057,
+          "combined_gradient_norm": 0.07595650106668472,
+          "segmentation_loss": 1.1914397478103638,
+          "focus_mse": 8.597357749938965
+        },
+        {
+          "step": 21,
+          "raw_branch_gradient_dot": -0.0001158521044999361,
+          "focus_projection_scale": 0.09195397794246674,
+          "combined_gradient_norm": 0.04746892675757408,
+          "segmentation_loss": 1.3311707973480225,
+          "focus_mse": 8.220991134643555
+        },
+        {
+          "step": 22,
+          "raw_branch_gradient_dot": -0.008420356549322605,
+          "focus_projection_scale": 0.09065347909927368,
+          "combined_gradient_norm": 0.04725658521056175,
+          "segmentation_loss": 1.2036380767822266,
+          "focus_mse": 10.404176712036133
+        },
+        {
+          "step": 23,
+          "raw_branch_gradient_dot": -0.010417569428682327,
+          "focus_projection_scale": 0.09535540640354156,
+          "combined_gradient_norm": 0.05935712158679962,
+          "segmentation_loss": 1.1924089193344116,
+          "focus_mse": 9.556050300598145
+        },
+        {
+          "step": 24,
+          "raw_branch_gradient_dot": -0.0211188867688179,
+          "focus_projection_scale": 0.1550057828426361,
+          "combined_gradient_norm": 0.08007021248340607,
+          "segmentation_loss": 1.181970477104187,
+          "focus_mse": 7.269186496734619
+        },
+        {
+          "step": 25,
+          "raw_branch_gradient_dot": 0.009348636493086815,
+          "focus_projection_scale": 0.17161035537719727,
+          "combined_gradient_norm": 0.1237238273024559,
+          "segmentation_loss": 1.1679589748382568,
+          "focus_mse": 10.901949882507324
+        },
+        {
+          "step": 26,
+          "raw_branch_gradient_dot": -0.04053478688001633,
+          "focus_projection_scale": 0.7939243912696838,
+          "combined_gradient_norm": 0.17086751759052277,
+          "segmentation_loss": 1.0665802955627441,
+          "focus_mse": 8.794955253601074
+        },
+        {
+          "step": 27,
+          "raw_branch_gradient_dot": -0.00496135838329792,
+          "focus_projection_scale": 0.07216928899288177,
+          "combined_gradient_norm": 0.04758434370160103,
+          "segmentation_loss": 1.368145227432251,
+          "focus_mse": 8.30117130279541
+        },
+        {
+          "step": 28,
+          "raw_branch_gradient_dot": -0.014064094983041286,
+          "focus_projection_scale": 0.21825449168682098,
+          "combined_gradient_norm": 0.0406012162566185,
+          "segmentation_loss": 1.3473275899887085,
+          "focus_mse": 8.047316551208496
+        },
+        {
+          "step": 29,
+          "raw_branch_gradient_dot": -0.05527077615261078,
+          "focus_projection_scale": 0.820288360118866,
+          "combined_gradient_norm": 0.1630098670721054,
+          "segmentation_loss": 1.2066245079040527,
+          "focus_mse": 7.890845775604248
+        },
+        {
+          "step": 30,
+          "raw_branch_gradient_dot": -0.008656417950987816,
+          "focus_projection_scale": 0.08409237861633301,
+          "combined_gradient_norm": 0.05053170397877693,
+          "segmentation_loss": 1.13875412940979,
+          "focus_mse": 11.451546669006348
+        }
+      ]
+    }
+  ]
+}

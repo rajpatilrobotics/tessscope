@@ -1,0 +1,53 @@
+{
+  "dataset": "BBBC006v1",
+  "status": "complete_training_only",
+  "source_member_manifest": "data/manifests/v2/bbbc006-w1-members.json",
+  "source_member_manifest_sha256": "885a3de54e6785819b1159090fae224150e6134af617d2532c8b8ec776bb7c59",
+  "sampling": {
+    "policy": "every 16th pixel in y/x from all 7 planes of all training fields",
+    "sample_count": 5854464,
+    "training_field_count": 576
+  },
+  "training_intensity_percentiles_uint16": {
+    "0.0": 106.0,
+    "0.1": 117.0,
+    "1.0": 123.0,
+    "50.0": 158.0,
+    "99.0": 1291.0,
+    "99.9": 2154.0,
+    "100.0": 4095.0
+  },
+  "normalization": {
+    "policy": "single training-only p0.1-to-p99.9 affine transform; no clipping",
+    "offset": 117.0,
+    "scale": 2037.0,
+    "per_image_normalization": false
+  },
+  "exposure": {
+    "policy": "one global training-only gain targets mean rate 1 before boundary loss",
+    "mean_nonnegative_normalized": 0.08634074989245805,
+    "positive_sample_fraction": 0.9987353240194149,
+    "gain": 11.582016617246811
+  },
+  "reference_labels": {
+    "source": "official BBBC006 automated CellProfiler z16 instance labels",
+    "manual_ground_truth": false,
+    "claim_limit": "automated reference labels may contain systematic segmentation errors",
+    "audit": {
+      "training": {
+        "field_count": 576,
+        "median_instance_count": 113.0,
+        "minimum_instance_count": 0,
+        "maximum_instance_count": 172,
+        "all_positive_ids_contiguous": false
+      },
+      "validation": {
+        "field_count": 96,
+        "median_instance_count": 100.0,
+        "minimum_instance_count": 0,
+        "maximum_instance_count": 153,
+        "all_positive_ids_contiguous": false
+      }
+    }
+  }
+}

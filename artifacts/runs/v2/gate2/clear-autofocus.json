@@ -1,0 +1,89 @@
+{
+  "dataset": "BBBC006v1",
+  "design": "clear_real_microscope",
+  "splits": {
+    "fit": "training wells",
+    "selection": "validation wells"
+  },
+  "test_accessed": false,
+  "crop_size": 256,
+  "feature_grid": {
+    "radial_bins": 10,
+    "angular_bins": 12
+  },
+  "ridge_candidates": [
+    {
+      "ridge_lambda": 0.01,
+      "sample_count": 623,
+      "nonzero_sample_count": 534,
+      "signed_direction_accuracy": 0.9063670411985019,
+      "mae_um": 1.6681654454765134,
+      "nonzero_mae_um": 1.738079529301168,
+      "median_absolute_error_um": 1.3289861491352895,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 1.542808343263337,
+      "correction_improvement_um": 1.8857630853080913
+    },
+    {
+      "ridge_lambda": 0.1,
+      "sample_count": 623,
+      "nonzero_sample_count": 534,
+      "signed_direction_accuracy": 0.9063670411985019,
+      "mae_um": 1.668060605870603,
+      "nonzero_mae_um": 1.7379984354536886,
+      "median_absolute_error_um": 1.3284976283215286,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 1.5427266349184523,
+      "correction_improvement_um": 1.885844793652976
+    },
+    {
+      "ridge_lambda": 1.0,
+      "sample_count": 623,
+      "nonzero_sample_count": 534,
+      "signed_direction_accuracy": 0.9063670411985019,
+      "mae_um": 1.6670197204286121,
+      "nonzero_mae_um": 1.7371930364183457,
+      "median_absolute_error_um": 1.326919569953266,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 1.541915260564459,
+      "correction_improvement_um": 1.8866561680069693
+    },
+    {
+      "ridge_lambda": 10.0,
+      "sample_count": 623,
+      "nonzero_sample_count": 534,
+      "signed_direction_accuracy": 0.9101123595505618,
+      "mae_um": 1.6576293616005757,
+      "nonzero_mae_um": 1.7300344997774324,
+      "median_absolute_error_um": 1.3109213435197837,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 1.5345866959853798,
+      "correction_improvement_um": 1.8939847325860486
+    },
+    {
+      "ridge_lambda": 100.0,
+      "sample_count": 623,
+      "nonzero_sample_count": 534,
+      "signed_direction_accuracy": 0.9288389513108615,
+      "mae_um": 1.6227415036193702,
+      "nonzero_mae_um": 1.7065385766882817,
+      "median_absolute_error_um": 1.2790303466031752,
+      "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+      "mean_absolute_depth_after_correction_um": 1.5091271424001536,
+      "correction_improvement_um": 1.9194442861712748
+    }
+  ],
+  "selected": {
+    "ridge_lambda": 100.0,
+    "sample_count": 623,
+    "nonzero_sample_count": 534,
+    "signed_direction_accuracy": 0.9288389513108615,
+    "mae_um": 1.6227415036193702,
+    "nonzero_mae_um": 1.7065385766882817,
+    "median_absolute_error_um": 1.2790303466031752,
+    "mean_absolute_depth_before_correction_um": 3.4285714285714284,
+    "mean_absolute_depth_after_correction_um": 1.5091271424001536,
+    "correction_improvement_um": 1.9194442861712748
+  },
+  "interpretation": "Clear circular-pupil defocus is expected to be approximately sign-symmetric; this is a baseline feasibility diagnostic, not the joint-pupil focus gate."
+}

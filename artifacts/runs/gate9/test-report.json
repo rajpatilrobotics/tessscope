@@ -1,0 +1,175 @@
+{
+  "gate": "gate9_locked_test_evaluation",
+  "source_count": 41,
+  "row_count": 4715,
+  "wall_seconds": 2104.1855020420044,
+  "summaries": {
+    "clear": {
+      "mean_off_focus_pq": 0.5872808264540411,
+      "worst_depth_pq": 0.5349890349997177,
+      "focus_pq": 0.6270122772477963,
+      "mean_off_focus_f1_iou_0_5": 0.7059478636075096,
+      "mean_off_focus_absolute_count_error": 15.130081300813009,
+      "mean_off_focus_percentage_count_error": 0.27374481510905213,
+      "mean_off_focus_foreground_dice": 0.7899706196658132,
+      "off_focus_pq_by_depth": {
+        "-6.0": 0.5349890349997177,
+        "-4.0": 0.6039513440603373,
+        "-2.0": 0.6229022319655573,
+        "2.0": 0.6229019686385788,
+        "4.0": 0.6039513440603373,
+        "6.0": 0.5349890349997177
+      },
+      "poisson_endpoint_mean_pq_by_photon_level": {
+        "50": 0.6057902885553916,
+        "200": 0.6298055109998151
+      }
+    },
+    "cubic": {
+      "mean_off_focus_pq": 0.5872808264540411,
+      "worst_depth_pq": 0.5349890349997177,
+      "focus_pq": 0.6270122772477963,
+      "mean_off_focus_f1_iou_0_5": 0.7059478636075096,
+      "mean_off_focus_absolute_count_error": 15.130081300813009,
+      "mean_off_focus_percentage_count_error": 0.27374481510905213,
+      "mean_off_focus_foreground_dice": 0.7899706196658132,
+      "off_focus_pq_by_depth": {
+        "-6.0": 0.5349890349997177,
+        "-4.0": 0.6039513440603373,
+        "-2.0": 0.6229022319655573,
+        "2.0": 0.6229019686385788,
+        "4.0": 0.6039513440603373,
+        "6.0": 0.5349890349997177
+      },
+      "poisson_endpoint_mean_pq_by_photon_level": {
+        "50": 0.6057902885553916,
+        "200": 0.6298055109998151
+      }
+    },
+    "image_fidelity": {
+      "mean_off_focus_pq": 0.5874593183191685,
+      "worst_depth_pq": 0.5349164320948536,
+      "focus_pq": 0.6275535051928867,
+      "mean_off_focus_f1_iou_0_5": 0.7063847666564578,
+      "mean_off_focus_absolute_count_error": 15.166666666666666,
+      "mean_off_focus_percentage_count_error": 0.2740538732277476,
+      "mean_off_focus_foreground_dice": 0.7906520596660115,
+      "off_focus_pq_by_depth": {
+        "-6.0": 0.5377055106788778,
+        "-4.0": 0.6031374572286862,
+        "-2.0": 0.6225717509033443,
+        "2.0": 0.6229392139036745,
+        "4.0": 0.6034855451055751,
+        "6.0": 0.5349164320948536
+      },
+      "poisson_endpoint_mean_pq_by_photon_level": {
+        "50": 0.6070698977301502,
+        "200": 0.6292030839094339
+      }
+    },
+    "exact_task": {
+      "mean_off_focus_pq": 0.609796289525399,
+      "worst_depth_pq": 0.5755178446788605,
+      "focus_pq": 0.6405357608337545,
+      "mean_off_focus_f1_iou_0_5": 0.738256883526571,
+      "mean_off_focus_absolute_count_error": 15.512195121951219,
+      "mean_off_focus_percentage_count_error": 0.2712906928446077,
+      "mean_off_focus_foreground_dice": 0.8328736370924252,
+      "off_focus_pq_by_depth": {
+        "-6.0": 0.5755178446788605,
+        "-4.0": 0.6167883955847406,
+        "-2.0": 0.637076693551911,
+        "2.0": 0.6364221529024889,
+        "4.0": 0.6156801038785251,
+        "6.0": 0.5772925465558678
+      },
+      "poisson_endpoint_mean_pq_by_photon_level": {
+        "50": 0.6046807212497028,
+        "200": 0.6263622996030593
+      }
+    },
+    "surrogate": {
+      "mean_off_focus_pq": 0.5897047289536932,
+      "worst_depth_pq": 0.539257559802715,
+      "focus_pq": 0.6300119998757001,
+      "mean_off_focus_f1_iou_0_5": 0.7105661169195968,
+      "mean_off_focus_absolute_count_error": 15.154471544715447,
+      "mean_off_focus_percentage_count_error": 0.2736080020906406,
+      "mean_off_focus_foreground_dice": 0.7962574218822007,
+      "off_focus_pq_by_depth": {
+        "-6.0": 0.5393946061412447,
+        "-4.0": 0.6044924687976145,
+        "-2.0": 0.624705793427028,
+        "2.0": 0.6248734417018673,
+        "4.0": 0.6055045038516891,
+        "6.0": 0.539257559802715
+      },
+      "poisson_endpoint_mean_pq_by_photon_level": {
+        "50": 0.6079029055863636,
+        "200": 0.629963233200052
+      }
+    }
+  },
+  "paired_pq_comparisons": {
+    "clear": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": 0.022515463071357968,
+      "ci_lower_95": 0.015133823592622045,
+      "ci_upper_95": 0.030209562002882186
+    },
+    "cubic": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": 0.022515463071357968,
+      "ci_lower_95": 0.015133823592622045,
+      "ci_upper_95": 0.030209562002882186
+    },
+    "image_fidelity": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": 0.022336971206230384,
+      "ci_lower_95": 0.014960067277975343,
+      "ci_upper_95": 0.030201763565478257
+    },
+    "surrogate": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": 0.020091560571705917,
+      "ci_lower_95": 0.013947956233916325,
+      "ci_upper_95": 0.026472791912876745
+    }
+  },
+  "poisson_exact_vs_clear": {
+    "50": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": -0.0011095673056888207,
+      "ci_lower_95": -0.004624173330276198,
+      "ci_upper_95": 0.002389804885852522
+    },
+    "200": {
+      "source_count": 41,
+      "replicates": 1000,
+      "mean_difference": -0.0034432113967558698,
+      "ci_lower_95": -0.007096901363491095,
+      "ci_upper_95": 0.0010379142656554612
+    }
+  },
+  "off_focus_count_error_reduction_fraction_vs_clear": -0.02525523911875328,
+  "claim_checks": {
+    "off_focus_pq_over_clear_at_least_0_05": false,
+    "off_focus_pq_over_cubic_at_least_0_02": true,
+    "off_focus_pq_over_image_at_least_0_02": true,
+    "primary_reference_ci_lower_bounds_positive": true,
+    "worst_depth_pq_over_clear_at_least_0_04": true,
+    "focus_pq_drop_no_worse_than_0_03": true,
+    "count_error_reduction_at_least_10_percent": false,
+    "exact_over_surrogate_at_least_0_02": true,
+    "exact_over_surrogate_ci_lower_positive": true,
+    "positive_at_both_photon_levels": false
+  },
+  "positive_headline_claim": false,
+  "conclusion": "one or more frozen positive-claim thresholds failed; report a negative result",
+  "evaluation_completed": true
+}

@@ -1,0 +1,70 @@
+{
+  "gate": "gate7_observer_transform_selection",
+  "split": "validation",
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "device": "mps",
+  "training_calibration_patch_count": 300,
+  "validation_patch_count": 82,
+  "depths_um": [
+    -6.0,
+    -4.0,
+    -2.0,
+    0.0,
+    2.0,
+    4.0,
+    6.0
+  ],
+  "evaluation_margin_observer_px": 62,
+  "calibration": {
+    "histogram_bins": 65536,
+    "lower_percentile": 0.1,
+    "lower_value": 0.0015564202334630351,
+    "upper_percentile": 99.9,
+    "upper_value": 0.9013656824597543
+  },
+  "scores": [
+    {
+      "name": "global_affine",
+      "mean_off_focus_pq": 0.56355035914339,
+      "worst_depth_pq": 0.5356359859999468,
+      "focus_pq": 0.5952868659290544
+    },
+    {
+      "name": "global_asinh",
+      "mean_off_focus_pq": 0.5657986213019691,
+      "worst_depth_pq": 0.5401280245062818,
+      "focus_pq": 0.5948514186562729
+    }
+  ],
+  "mean_pq_by_depth": {
+    "global_affine": {
+      "-6.0": 0.5356359859999468,
+      "-4.0": 0.5714714914041874,
+      "-2.0": 0.583543600026036,
+      "0.0": 0.5952868659290544,
+      "2.0": 0.583543600026036,
+      "4.0": 0.5714714914041874,
+      "6.0": 0.5356359859999468
+    },
+    "global_asinh": {
+      "-6.0": 0.5401280245062818,
+      "-4.0": 0.5720322149828572,
+      "-2.0": 0.5852356244167686,
+      "0.0": 0.5948514186562729,
+      "2.0": 0.5852356244167686,
+      "4.0": 0.5720322149828572,
+      "6.0": 0.5401280245062818
+    }
+  },
+  "standard_per_image_focus_pq": 0.5896305496460713,
+  "maximum_allowed_focus_pq_drop": 0.03,
+  "minimum_acceptable_global_focus_pq": 0.5596305496460713,
+  "selection_rule": "use global affine if it passes the focus-PQ gate; otherwise require global asinh to pass",
+  "selected": {
+    "name": "global_affine",
+    "mode": "affine",
+    "offset": 0.0015564202334630351,
+    "scale": 0.8998092622262913
+  },
+  "passed": true
+}

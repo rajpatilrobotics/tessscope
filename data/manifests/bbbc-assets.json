@@ -1,0 +1,39 @@
+{
+  "BBBC038": {
+    "citation": "BBBC038v1, Broad Bioimage Benchmark Collection; Caicedo et al., Nature Methods, 2019",
+    "license": "CC0",
+    "page": "https://bbbc.broadinstitute.org/BBBC038",
+    "stage1_train": {
+      "bytes": 82923446,
+      "expected_images": 670,
+      "sha256": "dcb6edc2690f137406638b2309581a71522c4dff19157d118453b448dcddcb68",
+      "url": "https://data.broadinstitute.org/bbbc/BBBC038/stage1_train.zip"
+    }
+  },
+  "BBBC039": {
+    "citation": "BBBC039v1, Caicedo et al. 2018, Broad Bioimage Benchmark Collection; Ljosa et al., Nature Methods, 2012",
+    "license": "CC0",
+    "page": "https://bbbc.broadinstitute.org/BBBC039",
+    "images": {
+      "bytes": 77915748,
+      "expected_images": 200,
+      "sha256": "6f30a5d4fe38c928ded972704f085975f8dc0d65d9aa366df00e5a9d449fddd7",
+      "url": "https://data.broadinstitute.org/bbbc/BBBC039/images.zip"
+    },
+    "masks": {
+      "bytes": 2753811,
+      "sha256": "f9e6043d8ca56344a4886f96a700d804d6ee982f31e2b2cd3194af2a053c2710",
+      "url": "https://data.broadinstitute.org/bbbc/BBBC039/masks.zip"
+    },
+    "metadata": {
+      "bytes": 17816,
+      "official_split_counts": {
+        "test": 50,
+        "training": 100,
+        "validation": 50
+      },
+      "sha256": "a2c1f900bed9ba92a99553efd4c2ae98598433691c7401d818653ab61110deb2",
+      "url": "https://data.broadinstitute.org/bbbc/BBBC039/metadata.zip"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "gate": "gate6_validation_evaluation_route",
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "device": "mps",
+  "model_load_seconds": 0.13989620795473456,
+  "maximum_observer_batch_size": 4,
+  "observer_transform": {
+    "mode": "affine",
+    "offset": 0.0015564202334630351,
+    "scale": 0.8998092622262913
+  },
+  "benchmark_sources": 3,
+  "condition_counts": {
+    "sources": 41,
+    "designs": 5,
+    "deterministic_per_source_design": 7,
+    "poisson_per_source_design": 16,
+    "source_design_pairs": 205,
+    "total_observer_images": 4715
+  },
+  "measurements": [
+    {
+      "source_image_id": "IXMtest_A02_s1_w1051DAA7C-7042-435F-99F0-1E847D9B42CB",
+      "source_shape": [
+        520,
+        696
+      ],
+      "observer_shape": [
+        671,
+        898
+      ],
+      "metric_shape": [
+        424,
+        600
+      ],
+      "deterministic_conditions": 7,
+      "poisson_conditions": 16,
+      "load_seconds": 0.047658000024966896,
+      "optics_seconds": 0.21707066701492295,
+      "photon_seconds": 0.25461645796895027,
+      "observer_seconds": 8.054935666033998,
+      "metrics_seconds": 3.800735624972731,
+      "total_route_seconds": 12.375058249977883,
+      "finite_metric_count": 23
+    },
+    {
+      "source_image_id": "IXMtest_B04_s4_w1F6AEFA0F-AF87-4B3B-A334-698647CFE043",
+      "source_shape": [
+        520,
+        696
+      ],
+      "observer_shape": [
+        671,
+        898
+      ],
+      "metric_shape": [
+        424,
+        600
+      ],
+      "deterministic_conditions": 7,
+      "poisson_conditions": 16,
+      "load_seconds": 0.009736791020259261,
+      "optics_seconds": 0.02741466701263562,
+      "photon_seconds": 0.29281495802570134,
+      "observer_seconds": 7.1601401250227354,
+      "metrics_seconds": 3.512848791957367,
+      "total_route_seconds": 11.002978790958878,
+      "finite_metric_count": 23
+    },
+    {
+      "source_image_id": "IXMtest_B12_s2_w19F7E0279-D087-4B5E-9899-61971C29CB78",
+      "source_shape": [
+        520,
+        696
+      ],
+      "observer_shape": [
+        671,
+        898
+      ],
+      "metric_shape": [
+        424,
+        600
+      ],
+      "deterministic_conditions": 7,
+      "poisson_conditions": 16,
+      "load_seconds": 0.005548165994696319,
+      "optics_seconds": 0.029651792021468282,
+      "photon_seconds": 0.299551792035345,
+      "observer_seconds": 7.139762291975785,
+      "metrics_seconds": 4.070774791995063,
+      "total_route_seconds": 11.545304250030313,
+      "finite_metric_count": 23
+    }
+  ],
+  "route_seconds": {
+    "median": 11.545304250030313,
+    "maximum_used_for_projection": 12.375058249977883
+  },
+  "projection": {
+    "seconds_per_source_design": 12.375058249977883,
+    "projected_seconds": 2536.886941245466,
+    "reserve_fraction": 0.25,
+    "contingency_seconds": 634.2217353113665,
+    "required_seconds": 3171.1086765568325,
+    "available_seconds": 3600.0,
+    "remaining_after_projection_seconds": 1063.113058754534,
+    "passed": true
+  },
+  "passed": true
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_model_evaluation",
+  "reason": "Identity overlap with BBBC038 stage-1 training data disclosed by the frozen InstanSeg model card",
+  "evidence_manifest": "data/manifests/bbbc-decontamination.json",
+  "identity_evidence": {
+    "file_sha256": "computed for every source image",
+    "decoded_canonical_grayscale_sha256": "computed for every source image",
+    "perceptual_hash": "normalized 64x64 pHash over all eight D4 rotations/reflections",
+    "normalized_cross_correlation_threshold": 0.995,
+    "flagged_pair_ncc_range": [0.9999222159385681, 1.0000005960464478],
+    "all_flagged_pair_minimum_phash_hamming": 0,
+    "manual_review": {
+      "status": "confirmed_identity",
+      "method": "Five identity-only side-by-side contact sheets; no masks, predictions, model scores, or quality judgments were shown",
+      "reviewed_pairs": 43
+    }
+  },
+  "official_splits_preserved": true,
+  "counts": {
+    "excluded": {
+      "training": 25,
+      "validation": 9,
+      "test": 9,
+      "total": 43
+    },
+    "remaining": {
+      "training": 75,
+      "validation": 41,
+      "test": 41,
+      "total": 157
+    }
+  },
+  "excluded_image_ids": {
+    "training": [
+      "IXMtest_A18_s1_w1BFDF1C94-9C1F-4F5F-BBC1-05196333B1BF",
+      "IXMtest_B21_s4_w1521471E0-9BD7-492A-8739-9C782C2585B0",
+      "IXMtest_B21_s7_w1276972A2-1794-4A98-8E76-876A597C346B",
+      "IXMtest_D06_s5_w13C67AAA9-6E81-42DB-AC5F-7126602F3607",
+      "IXMtest_E19_s4_w129545707-4CD3-4498-AC27-E4AE24D0253C",
+      "IXMtest_F22_s6_w1D6C33377-3947-4DAC-B62D-531C2565F150",
+      "IXMtest_G16_s3_w1B4690283-D75E-4DFB-92B0-29419E8292C6",
+      "IXMtest_G16_s6_w1C3F175E2-0AF5-401C-AC5C-8E128A237B22",
+      "IXMtest_H08_s8_w1418B93F8-515E-49A7-A9AE-CAF7A1589A38",
+      "IXMtest_H17_s1_w10A751E6C-5D06-4147-AB73-7FFAE0B57CC5",
+      "IXMtest_I15_s5_w11265571E-AA95-4E58-82CF-A75E3F240956",
+      "IXMtest_J02_s5_w1F53DDD35-C0B2-4E39-BA3B-9F66D289AB02",
+      "IXMtest_J15_s9_w1857B395F-AE7A-4319-BC26-3A041C0E31E9",
+      "IXMtest_K05_s7_w1816D5E2A-B9D8-48DA-9FE6-CBC35FE38C8D",
+      "IXMtest_K06_s9_w1787DFDA5-E2CE-40DB-9430-CC3766599BCC",
+      "IXMtest_K18_s8_w11FC8D3EA-E30D-46B8-A45E-0399327AA8AC",
+      "IXMtest_L01_s3_w1E7E0D198-5FB4-4E10-A27C-C46463DA9E06",
+      "IXMtest_L03_s6_w1BE79472D-5E2C-422F-A16E-7AC0691C0FD8",
+      "IXMtest_L21_s5_w122478CD2-80DC-4B4E-9BC8-A6F6239F4103",
+      "IXMtest_M04_s3_w1A599DF67-1E7F-4A09-84FD-0080767A735C",
+      "IXMtest_O16_s3_w129E61E12-E398-496E-9408-092D2D70E74B",
+      "IXMtest_O18_s7_w19C30A212-58D3-4030-AA4F-B0C4482F1F8A",
+      "IXMtest_P10_s7_w1F78192AF-7D11-4D41-80F3-8CD6DB05AB57",
+      "IXMtest_P13_s6_w1270AEE06-D31F-421C-8147-13644F4C5B94",
+      "IXMtest_P23_s7_w13B627CB9-6C57-4049-AAD7-6468A051DD24"
+    ],
+    "validation": [
+      "IXMtest_F08_s1_w144C3056F-C4DD-4D39-A40F-4F4576A6DBD8",
+      "IXMtest_G10_s3_w1C1257E17-1DBA-4619-B06E-D6DBB8A53088",
+      "IXMtest_I04_s9_w16A5CC270-8B92-42EE-AA4A-855776F7D46B",
+      "IXMtest_I11_s6_w1B2DC04C7-2D7D-45C6-9DC2-66D8605FBE63",
+      "IXMtest_J02_s8_w1D9C198F9-ECF0-4EF7-848D-AC7782CD3C28",
+      "IXMtest_J20_s1_w1EEE65E52-7AD8-47C7-A286-6E84C5D77953",
+      "IXMtest_K12_s7_w12A7857A5-3C92-4A08-8E81-2CA8A99F67AE",
+      "IXMtest_M20_s3_w15C73A7C7-F81B-4583-AB8F-0A64336AF070",
+      "IXMtest_O10_s8_w18F4DB020-BFB7-4F13-B99C-C39F8E54F85D"
+    ],
+    "test": [
+      "IXMtest_C23_s2_w10533E965-3DC3-4556-9C26-EA8DD4F8DE61",
+      "IXMtest_D10_s2_w1BB72A093-72AB-476C-9513-2FF43BFB2134",
+      "IXMtest_F08_s7_w117D78658-1BA7-495D-9EAA-E4FA155861AC",
+      "IXMtest_J16_s8_w1AD7BC3EB-6A29-4A53-AA59-E39653839B0D",
+      "IXMtest_J17_s1_w19E7BCD2F-6D7E-4B39-9154-F93E4D539183",
+      "IXMtest_N07_s5_w1D30ED7AB-503E-479D-B5BC-B66472568DE2",
+      "IXMtest_N08_s2_w159DEEDD5-2882-4F9E-9048-F5BD2B918651",
+      "IXMtest_N12_s9_w1C98EC3CC-2F8E-4761-A21A-EBF14469AD40",
+      "IXMtest_N21_s1_w14F264B20-62D6-47EC-9BCD-B9416AB302D9"
+    ]
+  }
+}

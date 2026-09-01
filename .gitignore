@@ -1,0 +1,31 @@
+# Project-local environment and Python caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors and macOS
+.DS_Store
+.idea/
+.vscode/
+
+# Large downloaded datasets and model bundles
+data/external/
+artifacts/external/
+artifacts/cache/
+artifacts/runtime-runs/
+
+# Track compact scientific evidence while keeping generated binary arrays local.
+artifacts/runs/**
+!artifacts/runs/**/
+!artifacts/runs/**/*.json
+!artifacts/runs/**/*.csv
+!artifacts/runs/**/*.png
+
+# Local secrets
+.env
+.env.local
+!.env.example

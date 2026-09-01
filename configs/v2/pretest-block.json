@@ -1,0 +1,39 @@
+{
+  "status": "blocked_by_pretest_hard_validation",
+  "test_accessed": false,
+  "test_access_note": "A guard unit test reads frozen test membership metadata with require_files=false; no test image, label, normalization value, or metric was accessed.",
+  "locked_test_run_authorized": false,
+  "reason": "No single candidate satisfied every frozen hard segmentation/focus compromise gate.",
+  "closest_candidates": {
+    "focus_capable_exact_joint": {
+      "hard_pq_gain_over_clear": 0.01860901618331129,
+      "hard_pq_drop_from_segmentation_only": 0.023730726182012496,
+      "signed_direction_accuracy": 1.0,
+      "mae_um": 1.0291444198895288,
+      "pareto_dominates_superposition": true,
+      "pareto_dominates_derivative_free": true
+    },
+    "segmentation_compliant_refinement": {
+      "name": "joint-refine-focus-0.03",
+      "initialization": "exact joint",
+      "hard_pq_gain_over_clear": 0.032551403959103054,
+      "hard_pq_drop_from_segmentation_only": 0.009788338406220731,
+      "signed_direction_accuracy": 0.9166666666666666,
+      "mae_um": 1.4398774188687018,
+      "pareto_dominates_superposition": false,
+      "pareto_dominates_derivative_free": true
+    }
+  },
+  "evidence_sha256": {
+    "bbbc006_splits": "80eacd305783ec6b2144c9845cf848e60eda31f40056a0ac12e23da7f1bae6ea",
+    "bbbc006_members": "885a3de54e6785819b1159090fae224150e6134af617d2532c8b8ec776bb7c59",
+    "training_calibration": "4b636195b104ab9872341983817b910c20762558e98b45a2902fe87a21511442",
+    "registrations": "28c1a12f7154445f89e41fdb90e614062e1c11a324e588a6f623fbe69340217e",
+    "clear_calibration": "e01b79be1cb3156d7f6a228c92d32b92f536aa29d610ee10ba2f15d30abf802d",
+    "three_tesseract_derivative": "ddce09bbe3e0f85678546c5fe17cdfadb703fbacc3f98942fea110b3e7217541",
+    "optimization_summary": "076a70694bb254dcaac50a4ab5c560704e65cb8cf27620df991ad8703fad8a50",
+    "first_hard_validation": "bca9276b88c940e0cd6c7660fa151b5ab98364e5e166fc329b2fdb5bce9796cb",
+    "joint_initialized_refinement": "8690c0596858224184cfc06ec25876b32d8ca44f738ca1385f3e87cf05f209cd",
+    "projected_gradient_validation": "27b29f5e2fe8fadf6f88f3ee99943dca0ede2a4cad22cc08b4da128357875605"
+  }
+}

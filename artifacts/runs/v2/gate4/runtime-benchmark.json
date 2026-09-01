@@ -1,0 +1,24 @@
+{
+  "hardware": "MacBook Air M2 local runtime",
+  "batch": {
+    "support_objects": 2,
+    "query_objects": 1,
+    "depths": 7
+  },
+  "exact_step_seconds": 3.8803620419930667,
+  "projected_120_step_minutes": 7.760724083986133,
+  "maximum_resident_set_size_raw": 498434048,
+  "objective_value": 1.4478651285171509,
+  "gradient_norm": 0.13724687695503235,
+  "branches": {
+    "segmentation_loss": 1.269444227218628,
+    "focus_mse": 6.423151969909668,
+    "photon_mean": 245.25491333007812
+  },
+  "proposed_budget": {
+    "pilot_steps_per_weight": 12,
+    "promoted_steps_per_design": 60,
+    "exact_joint_starts_initial": 2,
+    "validation_batches": 4
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "torch": "2.13.0",
+  "mps_available": true,
+  "devices": {
+    "cpu": {
+      "device": "cpu",
+      "repeats": 5,
+      "raw_head_forward": {
+        "median_ms": 193.4432500274852,
+        "min_ms": 190.85408298997208,
+        "max_ms": 194.29966696770862
+      },
+      "raw_head_forward_and_vjp": {
+        "median_ms": 347.80300001148134,
+        "min_ms": 342.83108299132437,
+        "max_ms": 367.7844580379315
+      },
+      "official_hard_end_to_end": {
+        "median_ms": 241.01612495724112,
+        "min_ms": 239.1687500057742,
+        "max_ms": 316.18629198055714
+      },
+      "estimated_hard_postprocess_overhead_ms": 47.572874929755926,
+      "source_hard_postprocess_from_cached_head": {
+        "median_ms": 38.865707989316434,
+        "min_ms": 38.66612497949973,
+        "max_ms": 39.275749993976206
+      }
+    },
+    "mps": {
+      "device": "mps",
+      "repeats": 5,
+      "raw_head_forward": {
+        "median_ms": 24.17475002584979,
+        "min_ms": 23.997084004804492,
+        "max_ms": 24.299125012475997
+      },
+      "raw_head_forward_and_vjp": {
+        "median_ms": 51.628417044412345,
+        "min_ms": 51.11475003650412,
+        "max_ms": 54.874584020581096
+      },
+      "official_hard_end_to_end": {
+        "median_ms": 44.61399995489046,
+        "min_ms": 44.147957989480346,
+        "max_ms": 121.20200000936165
+      },
+      "estimated_hard_postprocess_overhead_ms": 20.43924992904067,
+      "source_hard_postprocess_from_cached_head": {
+        "status": "cpu_only_for_parity",
+        "reason": "Upstream eager source helper mixes CPU and MPS tensors in torch.isin; the bundled official hard endpoint contains its own working MPS path."
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "status": "frozen_before_validation_and_test_evaluation",
+  "object_transform": {
+    "formula": "clip((raw - lower_value) / (upper_value - lower_value), 0, 1)",
+    "lower_percentile": 0.1,
+    "lower_value": 125.0,
+    "upper_percentile": 99.9,
+    "upper_value": 1642.0,
+    "source": "75 decontaminated BBBC039 training images only",
+    "quantile_method": "nearest rank over exact uint16 histogram"
+  },
+  "patches": {
+    "size_px": 256,
+    "training_origins_yx": [[0, 0], [0, 440], [264, 0], [264, 440]],
+    "validation_origins_yx": [[0, 220], [264, 220]],
+    "valid_margin_px_at_biological_sampling": 48,
+    "maximum_instances": 32,
+    "membership_crop_px": 64
+  },
+  "observer_resampling": {
+    "biological_um_per_px": 0.645,
+    "observer_um_per_px": 0.5,
+    "sensor_interpolation": "bilinear align_corners=false",
+    "label_interpolation": "nearest",
+    "patch_output_size_px": [330, 330]
+  },
+  "observer_transform": {
+    "status": "frozen_after_validation-only selection",
+    "candidates": ["global_affine", "global_asinh"],
+    "calibration_source": "300 decontaminated training patches across seven clear-pupil depths",
+    "selected": "global_affine",
+    "mode": "affine",
+    "offset": 0.0015564202334630351,
+    "scale": 0.8998092622262913,
+    "per_image_normalization": false,
+    "selection_evidence": "artifacts/runs/gate7/observer-transform-selection.json"
+  },
+  "training_patch_audit": {
+    "patch_count": 300,
+    "valid_instances_min": 0,
+    "valid_instances_max": 9,
+    "valid_instances_mean": 4.073333333333333,
+    "patches_at_32_instance_cap": 0
+  }
+}

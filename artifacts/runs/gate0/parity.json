@@ -1,0 +1,40 @@
+{
+  "official_pixel_exact": true,
+  "reconstructed_pixel_exact_after_deterministic_relabel": true,
+  "reconstructed_different_pixels_after_relabel": 0,
+  "expected_object_count": 25,
+  "official_object_count": 25,
+  "reconstructed_object_count": 25,
+  "reconstructed_foreground_iou": 1.0,
+  "raw_head_shape": [
+    1,
+    5,
+    256,
+    256
+  ],
+  "semantics": {
+    "dim_coords": 2,
+    "n_sigma": 2,
+    "dim_seeds": 1,
+    "pixel_size_um": 0.5,
+    "min_size": 20,
+    "mask_threshold": 0.53,
+    "peak_distance": 5,
+    "seed_threshold": 0.1,
+    "overlap_threshold": 0.5,
+    "mean_threshold": 0.0,
+    "fg_threshold": 0.5,
+    "window_size": 32,
+    "cleanup_fragments": true,
+    "channel_order": [
+      "coord_x_logit",
+      "coord_y_logit",
+      "sigma_0",
+      "sigma_1",
+      "seed_distance_logit"
+    ],
+    "spatial_embedding": "(sigmoid(coords)-0.5)*8 + linear coordinate map",
+    "seed_probability_proxy": "seed_distance_logit/15 + 0.5"
+  },
+  "passed": true
+}

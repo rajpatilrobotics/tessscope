@@ -1,0 +1,48 @@
+{
+  "asset": {
+    "downloaded_bytes": 14585795,
+    "name": "single_channel_nuclei.zip",
+    "release": "instanseg_models_v0.1.2",
+    "sha256": "6bc2e4cd8acd9bea64a04e926a74a53f922d76fd6c1dc633ca0bca335df4d4d7",
+    "url": "https://github.com/instanseg/instanseg/releases/download/instanseg_models_v0.1.2/single_channel_nuclei.zip"
+  },
+  "files": {
+    "cover.png": "2e42afdf21f135cbb96d6e7ba3bfd5ff4de37cc45287e558a320a85db2b7c5ac",
+    "instanseg.pt": "118066231fb7753ffb048bcd2164186397bcc5c8fc4ad7f826efe928b515794c",
+    "instanseg_postprocess.ijm": "0886f52737326dba0c6d53528909d746e75e0dce7a0cb41e855a648f8133ba88",
+    "instanseg_preprocess.ijm": "53376aec6738fb19eab1ace9308c383ee04e46af2a3acf7e70b5862919dca86c",
+    "rdf.yaml": "37e38e3ddd9d35a0b28270fe0e45590a701bdaa5c0732fdbd79b54abda9cad61",
+    "single_channel_nuclei_README.md": "f7e133872a066f75bc67b2a8ec86bcf040aa725d5a231566d815721ef3c27ad3",
+    "test-input.npy": "a68dc9bf2a3c4fb18804757bd13772777792959e8ab690882f2711f4d399cc24",
+    "test-output_instance_segmentation.npy": "f4e154d1bc3c3605945e6fe736ecd6e66e0708e74168bf0b6ab787108e59c1ab"
+  },
+  "license": "Apache-2.0",
+  "model_card_version": "0.1.0",
+  "package": {
+    "name": "instanseg-torch",
+    "release_commit": "8f5f373bf72e7ae3a5037e9f19f2dd7d0ac3bc23",
+    "version": "0.1.1"
+  },
+  "source": {
+    "commit": "9dcbf65bcc725d4e3121081f66c52d0a01e12579",
+    "repository": "https://github.com/instanseg/instanseg",
+    "tag": "instanseg_models_v0.1.2"
+  },
+  "training_data_disclosed_by_model_card": [
+    {
+      "license": "CC BY 4.0",
+      "name": "cpdmi_2023",
+      "url": "https://www.nature.com/articles/s41597-023-02108-z"
+    },
+    {
+      "license": "CC0",
+      "name": "dsb_2018 (BBBC038)",
+      "url": "https://bbbc.broadinstitute.org/BBBC038"
+    },
+    {
+      "license": "CC0",
+      "name": "bsst265",
+      "url": "https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BSST265"
+    }
+  ]
+}
