@@ -356,7 +356,7 @@
     "piecewise_hard_validation_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
     "source_manifest_sha256": "783c4b603b75049bbb06eea8b8955d68c03207c31d7795157af0b3edba2bfe4e",
     "v2_4_hard_validation_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
-    "visual_contract_sha256": "8d9cbad80650423d5768a9bf6aba6916b922d1373e15e00f4ae173bb23e498c0"
+    "visual_contract_sha256": "93db3642b55b4fbee4ecc27d04ef7458646b8aa9d17ec932a532e384b6b041bd"
   },
   "population": {
     "depths_um": [

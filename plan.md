@@ -201,9 +201,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   locked-test access.
 - [x] DEMO-0B: freeze the claim matrix, source hashes, allowed-data boundary, global
   display transform, representative-example selection rule, output formats, and tests.
-- [ ] DEMO-1A: build and verify the immutable traceability manifest and select the
+- [x] DEMO-1A: build and verify the immutable traceability manifest and select the
   representative validation example without presentation-quality cherry-picking.
-- [ ] DEMO-1B: materialize the minimal cached validation sample pack with real sensor
+- [x] DEMO-1B: materialize the minimal cached validation sample pack with real sensor
   frames, InstanSeg instances, reference labels, stage actions, and per-frame metrics.
 - [ ] DEMO-2A: generate the matched microscopy, pupil/PSF, depth-curve, causal-gradient,
   and architecture figures in publication and presentation formats.

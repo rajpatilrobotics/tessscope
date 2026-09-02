@@ -105,5 +105,5 @@ def test_selection_uses_only_registered_systems_and_validation() -> None:
     ]
     assert len(exact_rows) == len(stopped_rows) == len(piecewise_rows) == 162
     assert sha256_path(SELECTION) == (
-        "3950f84e2bc09c3427e6f9724ac7c4d5edd7a7c90f3ff2455377459943344ae3"
+        "52be9bbf261c033649d4b502384da110d93f5525ffbab3fef5e2e7efabd0d4d3"
     )

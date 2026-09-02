@@ -24,6 +24,8 @@ artifacts/runs/**
 !artifacts/runs/**/*.json
 !artifacts/runs/**/*.csv
 !artifacts/runs/**/*.png
+# The judge demo's deterministic validation replay is intentionally compact (about 13 MB).
+!artifacts/runs/demo/validation-replay.npz
 
 # Local secrets
 .env

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import hashlib
+import io
+import zipfile
 from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
 
@@ -35,6 +37,29 @@ DEPTH_FEATURES = (
 def sha256_path(path: Path) -> str:
     """Return the SHA-256 of a file without modifying it."""
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def sha256_array(array: np.ndarray) -> str:
+    """Hash one C-contiguous array with dtype and shape recorded separately."""
+    return hashlib.sha256(np.ascontiguousarray(array).tobytes()).hexdigest()
+
+
+def write_deterministic_npz(path: Path, arrays: Mapping[str, np.ndarray]) -> None:
+    """Write a compressed NumPy archive with fixed order and ZIP timestamps."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(
+        path,
+        mode="w",
+        compression=zipfile.ZIP_DEFLATED,
+        compresslevel=9,
+    ) as archive:
+        for name in sorted(arrays):
+            buffer = io.BytesIO()
+            np.lib.format.write_array(buffer, np.asarray(arrays[name]), allow_pickle=False)
+            info = zipfile.ZipInfo(f"{name}.npy", date_time=(1980, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o600 << 16
+            archive.writestr(info, buffer.getvalue(), compress_type=zipfile.ZIP_DEFLATED)
 
 
 def tie_digest(identifier: str, *, seed: str = SELECTION_SEED) -> str:

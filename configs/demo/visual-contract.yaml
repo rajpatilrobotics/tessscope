@@ -49,7 +49,9 @@ representative_selection:
 crop_and_geometry:
   source_patch_px: [256, 256]
   validation_origin_source: tessscope.v2.optimization.served.collect_patches_validation_seed_53
-  observer_output_px: [256, 256]
+  observer_metric_grid_px: [330, 330]
+  display_sensor_grid_px: [256, 256]
+  label_to_sensor_interpolation: nearest_neighbor_identical_for_all_systems
   valid_metric_margin_px: 62
   comparison_rule: identical_field_origin_depth_geometry_and_interpolation
   scale_bar: omitted
@@ -114,4 +116,3 @@ demo:
   minimum_width_px: 320
   reduced_motion_required: true
   one_command: "python scripts/serve_demo.py"
-

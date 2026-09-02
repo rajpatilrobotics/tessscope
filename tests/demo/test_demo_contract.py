@@ -74,6 +74,11 @@ def test_contract_preserves_required_limitations_and_render_rules() -> None:
     assert visual["representative_selection"]["selection"] == "minimum_distance"
     assert visual["representative_selection"]["prohibition"].startswith("rendered appearance")
     assert visual["display_transform"]["per_image_normalization"] is False
+    assert visual["crop_and_geometry"]["observer_metric_grid_px"] == [330, 330]
+    assert visual["crop_and_geometry"]["display_sensor_grid_px"] == [256, 256]
+    assert visual["crop_and_geometry"]["label_to_sensor_interpolation"].startswith(
+        "nearest_neighbor"
+    )
     assert visual["crop_and_geometry"]["scale_bar"] == "omitted"
     assert visual["demo"]["mode"] == "local_static_cached_replay"
     assert visual["demo"]["locked_test_access"] is False
