@@ -1,0 +1,15 @@
+{
+  "version": "v2.6",
+  "status": "complete_negative_training_only",
+  "test_accessed": false,
+  "controller_exposure_route": "rejected",
+  "sequential_mask_derivative_passed": true,
+  "matched_two_mask_pairs_screened": 76,
+  "eligible_matched_pairs": 0,
+  "exact_primary_steps": 72,
+  "feasibility_restorations": 4,
+  "feasible_restorations": 0,
+  "confirmation_candidates": 0,
+  "hard_candidates": 0,
+  "locked_test_decision": "keep_sealed"
+}

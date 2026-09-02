@@ -1,5 +1,18 @@
 # TessScope
 
+## V2.6 final status
+
+The approved v2.6 diagnosis-first continuation is complete as a **negative training-only
+experiment**. Controller and fixed-total-photon exposure audits did not show enough
+corrected-PQ headroom. A separately preregistered sequential sensing/capture-mask route
+then passed its full served derivative gate, but zero of 76 matched two-mask baselines and
+zero of four exact endpoints met the frozen residual/first-frame soft gates.
+
+Both exact starts completed four feasibility restorations and all 72 primary steps. No
+candidate reached confirmation, hard validation, stopped-stage, derivative-free, or the
+locked BBBC006 test. The test remains sealed. See
+[the v2.6 result](outputs/v2_6/RESULTS.md).
+
 ## V2.5 final status
 
 The approved v2.5 constrained B11 experiment is complete as a **negative
@@ -104,6 +117,8 @@ did not improve, and the two Poisson endpoints were not positive.
   stopped-stage controls, expanded hard evaluation, and a sealed-test negative decision.
 - V2.5 exact constrained B11 optimization, B7 continuity matrix, bounded SLSQP
   alternates, derivative evidence, and a sealed-test negative decision.
+- V2.6 controller/exposure diagnosis, sequential two-mask feasibility review, three-way
+  derivative gate, 76-pair matched screen, 72-step exact matrix, and sealed-test result.
 
 ![TessScope architecture](outputs/architecture.png)
 

@@ -81,6 +81,23 @@
   pupils, a matched two-pupil piecewise family, switching assumptions, exact gradients,
   and all gates before optimization. Do not claim physical validation.
 
+## 2026-09-02 — V2.6 completes as a negative diagnosis and two-mask experiment
+
+- The two-mask served graph passed all registered central-difference checks: joint
+  relative error `0.003168`, sensing-only `0.005255`, and capture-only `0.001991`, with
+  all cosine agreements above `0.99997`. Exact/stopped forwards were identical and the
+  sensing contribution was entirely carried through the stage-action path.
+- All 76 frozen sensing/capture baseline pairs were physically valid. Forty-two preserved
+  the matched development first-frame limit, but zero reached the `0.055` normalized
+  residual bound or `1.0 µm` residual MAE; the best MAE was `1.52584 µm`.
+- Four registered feasibility restorations and all 72 exact primary steps completed.
+  Zero restoration was feasible. The best development final segmentation loss was
+  `1.09807`, but that endpoint had `2.01435 µm` residual MAE and missed the matched
+  first-frame limit; the lowest endpoint MAE was `1.99761 µm` and also failed residual.
+- Decision: freeze v2.6 as a terminal negative training-only result. Zero candidates may
+  advance to confirmation, hard validation, stopped-stage, derivative-free, or locked
+  test evaluation. The BBBC006 test remains sealed.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

@@ -1,0 +1,34 @@
+{
+  "status": "terminal_negative_before_locked_test",
+  "test_accessed": false,
+  "locked_test_decision": "do_not_access",
+  "reason": "zero matched baseline pairs and zero exact endpoints passed the frozen two-mask soft feasibility gates",
+  "source_hashes": {
+    "diagnosis_contract": "91579dc89a5e971b9bc4602a9e82f9658977372d6651a09588b1465f9a55a317",
+    "diagnosis_sources": "5c4e5df4e2a0f253ae7ac3c13dc7a7cf21365505865a8fdc6a9e79bbc1e92a71",
+    "exposure_contract": "b96ccc5334cb0df9e9157cfc8c66ad742c276302384330123a8a858b66a87f16",
+    "training_partitions": "0e8db46443b6b8a011da604d2646b2c70eb9ddcf82aee8ac086f950894299428",
+    "two_mask_contract": "e96c9a65409c9b9f01cfc332c399a042dd6d129f3d92d40fc216cc388685aa30",
+    "two_mask_sources": "19c83fb7d2f14978bcd5682a38b00673f924a0094b5b5b6983d634854292bee5",
+    "oracle_controller_audit": "b61515a142ad707a534b3629b5ae9ca49826ce256ddff3ce221fda3545e2e4bb",
+    "exposure_audit": "b6c0ba38560cf1d887555894e29d29979a58527fabb9271034e2e89dc402b083",
+    "two_mask_derivative": "57928abe3e6b9db1cf45a262a42bb1e9981d1dc55b415cdefdf3586bb1d1903d",
+    "matched_baseline_screen": "a83aa3eea22b2d98e0e907e52d7db2c8c35886eb80b82f6d405623fb3d29a01a",
+    "exact_optimization": "f171db1ca55788a0ee7f0aaf98308aa9a66c29569c1d87676e3bf84f14d9b627"
+  },
+  "completed": {
+    "oracle_controller_audit": true,
+    "fixed_total_photon_exposure_audit": true,
+    "sequential_slm_feasibility_review": true,
+    "two_mask_derivative_gate": true,
+    "matched_76_pair_screen": true,
+    "two_start_72_step_exact_matrix": true
+  },
+  "not_activated": [
+    "confirmation_selection",
+    "new_hard_validation",
+    "matched_stopped_stage",
+    "matched_derivative_free",
+    "locked_test"
+  ]
+}

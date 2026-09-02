@@ -25,6 +25,14 @@ manufacturer specifications nevertheless support a physically qualified sequenti
 two-mask route, so v2.6 continues with separately frozen sensing and capture pupils under
 the same 400-photon budget and explicit SLM switching/efficiency limitations.
 
+Final v2.6 status: the two-mask full-loop derivative passed in joint, sensing-only, and
+capture-only directions. All 76 matched piecewise pairs were evaluated, but none met the
+frozen residual gate; the best residual MAE was `1.526 µm`. Both exact starts then
+completed four eight-step feasibility restorations and all 72 primary steps. Zero
+restorations were feasible, every development endpoint had residual MAE near `2.0 µm`,
+and zero endpoints qualified for confirmation. V2.6 is therefore a complete negative
+training-only experiment. No new validation/hard/test data was accessed.
+
 ## V2.5 constrained B11 experiment
 
 V2.5 is a newly and explicitly approved experiment motivated by the frozen v2.4 hard

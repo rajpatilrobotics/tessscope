@@ -180,12 +180,13 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   selection, hard gates, and switching/photon limitations before optimization.
 - [x] V2.6-4C: implemented the two-mask served graph and passed independent sensing, capture,
   residual-depth, exact/stopped parity, and full-loop derivative gates.
-- [ ] V2.6-4D: soft-screen the matched two-mask piecewise family, run feasibility
-  restoration and the bounded exact two-start matrix, then freeze confirmation selection.
-- [ ] V2.6-4E: conditionally run stopped-stage, expanded hard, stability, and matched
-  derivative-free controls only if a confirmation candidate clears every earlier gate.
-- [ ] V2.6-5A: freeze the terminal v2.6 result, evidence hashes, limitations, and locked
-  test decision; run Ruff/full tests and create clean local milestone commits.
+- [x] V2.6-4D: soft-screened all 76 matched two-mask piecewise pairs, ran four feasibility
+  restorations and the bounded 72-step exact two-start matrix, and froze zero promotions.
+- [x] V2.6-4E: not activated—zero baseline pair and zero exact endpoint passed the frozen
+  residual/first-frame soft gates, so stopped-stage, hard, stability, and derivative-free
+  work was not authorized.
+- [x] V2.6-5A: froze the terminal v2.6 result, evidence hashes, limitations, and locked
+  test decision; repository-wide Ruff and all 177 tests pass before the final milestone.
 
 ### V2.4 completed frozen-checkpoint audit
 
@@ -420,8 +421,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-The only unresolved v2.6 question is empirical and has a frozen decision rule: can a
-bounded controller/exposure change reach the minimum baseline-beating corrected-PQ target
-under first-frame preservation? If not, the route freezes negative and active acquisition
-is considered only after primary/official physical feasibility research. No arbitrary
-fallback project is authorized, and the locked test remains sealed.
+The v2.6 empirical question is resolved negatively. Neither bounded controller/exposure
+calibration nor the separately preregistered sequential two-mask route reached the frozen
+training-only feasibility region. No arbitrary fallback project is authorized, and the
+locked test remains sealed.
