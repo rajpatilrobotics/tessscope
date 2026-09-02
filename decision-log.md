@@ -1,5 +1,25 @@
 # TessScope decision log
 
+## 2026-09-02 — Judge package assembled for local release verification
+
+- The root README is now Track-05-first: the two-minute cached replay, protected causal
+  claim, exact piecewise limitation, load-bearing Tesseract explanation, protocol, and
+  scope appear before implementation detail. The full v1–v2.6 record moved to
+  `docs/RESEARCH_HISTORY.md` without removing negative results.
+- The editable four-page technical brief compiled to
+  `output/pdf/tessscope-technical-brief.pdf`. Every page was rasterized and visually
+  inspected; the final source-date-stabilized build is byte-repeatable.
+- The 210-second 1080p30 H.264/AAC demo video uses only traced TessScope figures and the
+  cached validation depth replay. Captions are baked in; the soundtrack is silent; the
+  storyboard, narration, shot list, SRT, ffprobe metadata, source hashes, and output hash
+  are preserved under `outputs/video/`.
+- `docs/FULL_REPRODUCTION.md` separates the standard-library judge replay from the full
+  Python 3.12 scientific path. New verified fetch helpers and isolated output options
+  prevent accidental mutation of frozen artifacts and keep the BBBC006 test out of the
+  public reproduction command.
+- Repository-wide Ruff and all 209 tests pass. Clean-export verification and the final
+  release audit remain before the local release-candidate commit.
+
 ## 2026-09-02 — Evidence-first visual and judge-demo phase completed
 
 - The representative example was frozen before rendering as validation field `n21_s1`,

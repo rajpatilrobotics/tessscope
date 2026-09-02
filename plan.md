@@ -227,6 +227,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ### Final-submission packaging phase
 
+Checkpoint: 9 of 12 release tasks are complete. The remaining local gates are clean
+export verification, the final audit/GO report, and the final release-candidate commit.
+
 - [x] RELEASE-0A: inventory the tracked tree and Git history for secrets, private paths,
   oversized files, datasets, model weights, broken links, caches, and public-release blockers.
 - [x] RELEASE-0B: verify the official 2026 Track 05 requirements and record the eligibility,
@@ -235,16 +238,16 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   third-party attribution inventory without relicensing external data, models, or libraries.
 - [x] RELEASE-1B: confirm that every redistributed sample, figure, font, and media asset has
   a documented source and redistribution basis; exclude unclear assets from the candidate.
-- [ ] RELEASE-2A: replace the research-first README with a concise judge-first Track 05 entry,
+- [x] RELEASE-2A: replace the research-first README with a concise judge-first Track 05 entry,
   a two-minute cached replay path, the load-bearing Tesseract explanation, verified results,
   honest limits, and repository-relative links.
-- [ ] RELEASE-2B: keep the complete experimental history and negative v2.5/v2.6 evidence
+- [x] RELEASE-2B: keep the complete experimental history and negative v2.5/v2.6 evidence
   accessible in separate research documentation without overwhelming the judge path.
-- [ ] RELEASE-3A: create and visually verify a traced 2–4 page technical brief in editable
+- [x] RELEASE-3A: create and visually verify a traced 2–4 page technical brief in editable
   source and PDF form, including uncertainty, methodology, Tesseract need, and limitations.
-- [ ] RELEASE-4A: create a 3–4 minute caption-led 1080p demo cut from real TessScope assets,
+- [x] RELEASE-4A: create a 3–4 minute caption-led 1080p demo cut from real TessScope assets,
   plus storyboard, timestamped narration, shot list, captions, and playback metadata.
-- [ ] RELEASE-5A: document one canonical macOS instant-demo command and one full-reproduction
+- [x] RELEASE-5A: document one canonical macOS instant-demo command and one full-reproduction
   path with versions, lock file, storage/runtime expectations, network needs, and troubleshooting.
 - [ ] RELEASE-5B: verify a clean exported judge path without the active virtualenv, hidden
   local data, absolute project paths, dataset download, retraining, Docker, or live inference.

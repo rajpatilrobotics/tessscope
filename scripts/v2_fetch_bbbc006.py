@@ -41,6 +41,16 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--planes", type=int, nargs="*", default=list(Z_PLANES))
     parser.add_argument("--workers", type=int, default=12)
     parser.add_argument(
+        "--splits",
+        nargs="+",
+        choices=("training", "validation", "test"),
+        default=None,
+        help=(
+            "well splits to materialize; pass training validation for the public "
+            "reproduction path without touching the sealed test split"
+        ),
+    )
+    parser.add_argument(
         "--max-members",
         type=int,
         default=None,
@@ -144,8 +154,10 @@ def fetch_plane(
     *,
     workers: int,
     maximum_members: int | None,
+    target_wells: set[str],
 ) -> list[dict[str, Any]]:
     url, members = member_index(plane, metadata)
+    members = [member for member in members if member[1] in target_wells]
     if maximum_members is not None:
         members = members[:maximum_members]
     rows: list[dict[str, Any]] = []
@@ -166,7 +178,7 @@ def fetch_plane(
     return sorted(rows, key=lambda row: (row["well"], row["site"]))
 
 
-def extract_labels() -> list[dict[str, Any]]:
+def extract_labels(target_wells: set[str]) -> list[dict[str, Any]]:
     archive = ARCHIVE_ROOT / "BBBC006_v1_labels.zip"
     rows = []
     seen: set[tuple[str, int]] = set()
@@ -175,6 +187,8 @@ def extract_labels() -> list[dict[str, Any]]:
             if info.is_dir():
                 continue
             well, site = parse_label_filename(info.filename)
+            if well not in target_wells:
+                continue
             key = (well, site)
             if key in seen:
                 raise ValueError(f"Duplicate BBBC006 reference labels: {key}")
@@ -196,10 +210,47 @@ def extract_labels() -> list[dict[str, Any]]:
                     "sha256": sha256(value),
                 }
             )
-    expected = {(well, site) for well in all_wells() for site in (1, 2)}
+    expected = {(well, site) for well in target_wells for site in (1, 2)}
     if seen != expected:
         raise ValueError(f"Reference-label archive has {len(seen)} fields, expected 768")
     return sorted(rows, key=lambda row: (row["well"], row["site"]))
+
+
+def assert_matches_frozen_manifest(payload: dict[str, Any]) -> None:
+    """Confirm a complete materialization against the committed member inventory."""
+    frozen = json.loads(MEMBER_MANIFEST.read_text())
+    image_keys = (
+        "z_plane",
+        "depth_um",
+        "well",
+        "site",
+        "source_member",
+        "relative_path",
+        "bytes",
+        "zip_crc32",
+        "sha256",
+    )
+    label_keys = (
+        "well",
+        "site",
+        "source_member",
+        "relative_path",
+        "bytes",
+        "zip_crc32",
+        "sha256",
+    )
+
+    def signatures(rows: list[dict[str, Any]], keys: tuple[str, ...]) -> list[tuple]:
+        return sorted(tuple(row[key] for key in keys) for row in rows)
+
+    if signatures(payload["images"], image_keys) != signatures(
+        frozen["images"], image_keys
+    ):
+        raise ValueError("Materialized BBBC006 images differ from the frozen manifest")
+    if signatures(payload["reference_labels"], label_keys) != signatures(
+        frozen["reference_labels"], label_keys
+    ):
+        raise ValueError("Materialized BBBC006 labels differ from the frozen manifest")
 
 
 def main() -> None:
@@ -210,8 +261,11 @@ def main() -> None:
         raise SystemExit("--workers must be positive")
     if not args.planes or any(plane not in Z_PLANES for plane in args.planes):
         raise SystemExit(f"--planes must be a non-empty subset of {Z_PLANES}")
-    if MEMBER_MANIFEST.exists():
-        raise SystemExit("Final BBBC006 member manifest exists; refusing to overwrite it")
+    split_payload = json.loads(SPLIT_MANIFEST.read_text())
+    requested_splits = args.splits or ["training", "validation", "test"]
+    target_wells = {
+        well for split in requested_splits for well in split_payload["wells"][split]
+    }
     metadata = json.loads(ASSET_MANIFEST.read_text())
     image_rows = []
     for plane in args.planes:
@@ -221,13 +275,19 @@ def main() -> None:
                 metadata,
                 workers=args.workers,
                 maximum_members=args.max_members,
+                target_wells=target_wells,
             )
         )
-    label_rows = extract_labels()
-    complete = args.max_members is None and set(args.planes) == set(Z_PLANES)
+    label_rows = extract_labels(target_wells)
+    complete = (
+        args.max_members is None
+        and set(args.planes) == set(Z_PLANES)
+        and set(requested_splits) == {"training", "validation", "test"}
+    )
     payload = {
         "dataset": "BBBC006v1",
-        "status": "complete" if complete else "smoke_partial",
+        "status": "complete" if complete else "permitted_split_materialization",
+        "splits": requested_splits,
         "images": image_rows,
         "reference_labels": label_rows,
         "image_count": len(image_rows),
@@ -236,9 +296,19 @@ def main() -> None:
     if complete:
         if len(image_rows) != 7 * 768 or len(label_rows) != 768:
             raise ValueError("Complete BBBC006 fetch has the wrong asset count")
-        MEMBER_MANIFEST.write_text(json.dumps(payload, indent=2) + "\n")
+        if MEMBER_MANIFEST.exists():
+            assert_matches_frozen_manifest(payload)
+            payload["status"] = "verified_against_frozen_manifest"
+        else:
+            MEMBER_MANIFEST.write_text(json.dumps(payload, indent=2) + "\n")
     else:
-        progress = PROJECT_ROOT / "artifacts" / "runs" / "v2" / "data" / "fetch-progress.json"
+        progress = (
+            PROJECT_ROOT
+            / "artifacts"
+            / "runtime-runs"
+            / "reproduction"
+            / "fetch-progress.json"
+        )
         progress.parent.mkdir(parents=True, exist_ok=True)
         progress.write_text(json.dumps(payload, indent=2) + "\n")
     summary = {

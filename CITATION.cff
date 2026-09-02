@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use TessScope, please cite this software and the upstream datasets and models listed in THIRD_PARTY_NOTICES.md."
+title: "TessScope: exact cross-runtime gradients for closed-loop microscope co-design"
+type: software
+authors:
+  - name: rajpatilrobotics
+version: 0.1.0
+date-released: 2026-09-02
+license: Apache-2.0
+keywords:
+  - differentiable optics
+  - computational microscopy
+  - autofocus
+  - instance segmentation
+  - tesseract
+abstract: >-
+  TessScope composes JAX/Chromatix optics, NumPy/SciPy autofocus, and
+  PyTorch/InstanSeg through Tesseract to optimize a closed-loop fluorescence
+  microscope with exact cross-runtime vector-Jacobian products.

@@ -42,13 +42,28 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--optics-url", default="http://127.0.0.1:8407")
     parser.add_argument("--autofocus-url", default="http://127.0.0.1:8403")
     parser.add_argument("--observer-url", default="http://127.0.0.1:8402")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT,
+        help="write to an isolated path; defaults to the frozen historical location",
+    )
     return parser.parse_args()
+
+
+def project_output(path: Path) -> Path:
+    output = path if path.is_absolute() else PROJECT_ROOT / path
+    output = output.resolve()
+    if not output.is_relative_to(PROJECT_ROOT):
+        raise ValueError("Reproduction output must stay inside the project directory")
+    return output
 
 
 def main() -> None:
     args = parse_args()
-    if OUTPUT.exists():
-        raise SystemExit(f"V2.3 derivative artifact already exists: {OUTPUT}")
+    output = project_output(args.output)
+    if output.exists():
+        raise SystemExit(f"V2.3 derivative artifact already exists: {output}")
     services = (
         Tesseract.from_url(args.optics_url, timeout=180),
         Tesseract.from_url(args.autofocus_url, timeout=180),
@@ -132,12 +147,12 @@ def main() -> None:
             "test_accessed": False,
         }
     )
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
-                "output": str(OUTPUT),
+                "output": str(output),
                 "relative_error": report["overall_median_relative_error"],
                 "cosine": report["overall_cosine_agreement"],
                 "stage_path_gradient_fraction": stage_fraction,

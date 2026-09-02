@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 
@@ -252,8 +253,17 @@ def evaluate_design(
     }
 
 
-def load_or_evaluate(design, patches, hard_fields, calibration, model, device, transform):
-    checkpoint = CHECKPOINT_ROOT / f"{design['name']}.json"
+def load_or_evaluate(
+    design,
+    patches,
+    hard_fields,
+    calibration,
+    model,
+    device,
+    transform,
+    checkpoint_root,
+):
+    checkpoint = checkpoint_root / f"{design['name']}.json"
     if checkpoint.exists():
         return json.loads(checkpoint.read_text())
     result = evaluate_design(
@@ -287,9 +297,37 @@ def design_registry(selection: dict, stopped: dict) -> tuple[list[dict], dict[st
     return designs, matched_stopped
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT,
+        help="write the report to an isolated path",
+    )
+    parser.add_argument(
+        "--checkpoint-root",
+        type=Path,
+        default=CHECKPOINT_ROOT,
+        help="write resumable per-design evaluations to an isolated directory",
+    )
+    return parser.parse_args()
+
+
+def project_output(path: Path) -> Path:
+    output = path if path.is_absolute() else PROJECT_ROOT / path
+    output = output.resolve()
+    if not output.is_relative_to(PROJECT_ROOT):
+        raise ValueError("Reproduction output must stay inside the project directory")
+    return output
+
+
 def main() -> None:
-    if OUTPUT.exists():
-        raise SystemExit(f"V2.4 hard artifact already exists: {OUTPUT}")
+    args = parse_args()
+    output = project_output(args.output)
+    checkpoint_root = project_output(args.checkpoint_root)
+    if output.exists():
+        raise SystemExit(f"V2.4 hard artifact already exists: {output}")
     selection = json.loads(SELECTION.read_text())
     stopped = json.loads(STOPPED.read_text())
     old = json.loads(V2_1_HARD.read_text())
@@ -316,7 +354,14 @@ def main() -> None:
     results = []
     for index, design in enumerate(designs, start=1):
         result = load_or_evaluate(
-            design, patches, hard_fields, calibration, model, device, transform
+            design,
+            patches,
+            hard_fields,
+            calibration,
+            model,
+            device,
+            transform,
+            checkpoint_root,
         )
         results.append(result)
         print(
@@ -501,12 +546,12 @@ def main() -> None:
         "rows": new_rows,
         "corrected_rows": new_corrected,
     }
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
-                "output": str(OUTPUT),
+                "output": str(output),
                 "hard_passed_names": passed_names,
                 "selected_for_matched_derivative_free": selected_for_derivative_free,
                 "test_accessed": False,

@@ -1,5 +1,19 @@
 # TessScope project brief
 
+## Hackathon release candidate
+
+TessScope is prepared for **Tesseract Hackathon 2026, Track 05 — Differentiable graphics
+& rendering**. The protected result is validation-scoped: exact gradients across
+JAX/Chromatix, NumPy/SciPy autofocus, and PyTorch/InstanSeg causally improve closed-loop
+correction over a forward-identical stopped-gradient system by `+0.006259` PQ, with a
+95% well-bootstrap interval of `[+0.000670, +0.011547]` on 27 hard-density validation
+wells.
+
+The stronger exact-versus-piecewise comparison is not supported, the BBBC006 test stays
+sealed, and no physical microscope claim is made. The judge path is the dependency-free
+cached replay launched by `python3 scripts/serve_demo.py`; the technical brief, video,
+full reproduction guide, and research history are linked from the root README.
+
 ## V2.6 diagnosis-first improvement
 
 V2.6 preserves v1–v2.5 and targets the principal remaining scientific blocker: a

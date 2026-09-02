@@ -1,0 +1,75 @@
+1
+00:00:00,000 --> 00:00:08,000
+TessScope · Track 05 — Differentiable graphics & rendering
+
+2
+00:00:08,000 --> 00:00:16,000
+One phase pupil must preserve nuclei and reveal signed defocus.
+
+3
+00:00:16,000 --> 00:00:22,000
+Supported scope: frozen validation evidence, not physical hardware.
+
+4
+00:00:22,000 --> 00:00:36,000
+Three Tesseracts keep optics, autofocus, and observer code in their native runtimes.
+
+5
+00:00:36,000 --> 00:00:46,000
+JAX/Chromatix → NumPy/SciPy → JAX/Chromatix → PyTorch/InstanSeg
+
+6
+00:00:46,000 --> 00:00:54,000
+Tesseract carries one exact reverse signal across every API boundary.
+
+7
+00:00:54,000 --> 00:01:06,000
+A bounded seven-parameter phase pupil forms both microscope exposures.
+
+8
+00:01:06,000 --> 00:01:18,000
+Full-loop derivative: 0.004802 relative error · 0.999967 cosine · forward parity 0.0
+
+9
+00:01:18,000 --> 00:01:32,000
+Cached replay: one preregistered validation field across −6 to +6 µm.
+
+10
+00:01:32,000 --> 00:01:46,000
+This is traced evidence—not live inference and not the population claim by itself.
+
+11
+00:01:46,000 --> 00:02:00,000
+First exposure → signed focus estimate → bounded stage action → corrected exposure
+
+12
+00:02:00,000 --> 00:02:14,000
+Primary exact design: PQ 0.4922 before → 0.5523 after · 74.7% of hard frames improve
+
+13
+00:02:14,000 --> 00:02:26,000
+Population protocol: 45 validation wells; 27 preregistered hard-density wells.
+
+14
+00:02:26,000 --> 00:02:38,000
+2,000 paired well-bootstrap replicates · 1.268 µm MAE · 98.89% signed direction
+
+15
+00:02:38,000 --> 00:02:54,000
+Exact vs stopped gradient: +0.006259 PQ · 95% CI [+0.000670, +0.011547]
+
+16
+00:02:54,000 --> 00:03:06,000
+Identical forward computation; only the feedback-action gradient is removed.
+
+17
+00:03:06,000 --> 00:03:16,000
+Exact vs piecewise-028: +0.001285 PQ · CI crosses zero · superiority not supported
+
+18
+00:03:16,000 --> 00:03:24,000
+Exact cross-runtime gradients causally improve the closed-loop correction.
+
+19
+00:03:24,000 --> 00:03:30,000
+Validation-only · PQ is not percent accuracy · sealed test · no physical microscope

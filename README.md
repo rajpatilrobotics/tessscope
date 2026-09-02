@@ -1,216 +1,200 @@
 # TessScope
 
-## Local judge demo
+**Tesseract Hackathon 2026 · Track 05 — Differentiable graphics & rendering**
 
-The evidence-first judge experience is complete as a **validation-only cached replay**.
-It opens without the 2.9 GB source dataset, model download, retraining, or live inference:
+TessScope differentiates through a closed-loop fluorescence microscope: JAX/Chromatix
+forms an image, NumPy/SciPy predicts a focus correction, PyTorch/InstanSeg scores the
+biological result, and Tesseract carries exact gradients across all three runtimes.
+
+![TessScope evidence summary](outputs/demo/figures/hero-evidence.png)
+
+> **Supported validation claim.** Exact closed-loop gradients improve corrected
+> panoptic quality (PQ) by `+0.006259` over a forward-identical stopped-gradient system;
+> 95% well-bootstrap CI `[+0.000670, +0.011547]` across 27 hard-density validation wells.
+
+PQ is panoptic quality on a 0–1 scale, not percent accuracy. All v2 evidence is
+validation-only, the locked BBBC006 test remains sealed, and no physical microscope has
+validated this system.
+
+## Judge it in under two minutes
+
+The judge experience is a dependency-free cached replay. It does not download the
+approximately 2.5 GB BBBC006 subset, load model weights, retrain, or run live inference.
 
 ```bash
-python scripts/serve_demo.py
+python3 scripts/serve_demo.py
 ```
 
-The first view reports the supported exact-versus-stopped causal result and the
-non-significant exact-versus-piecewise comparison together. It also keeps the negative
-v2.5/v2.6 follow-ups, sealed BBBC006 test, and lack of physical-microscope validation
-visible. Figures, captions, animation, and source hashes are under
-[`outputs/demo/`](outputs/demo/).
-
-## V2.6 final status
-
-The approved v2.6 diagnosis-first continuation is complete as a **negative training-only
-experiment**. Controller and fixed-total-photon exposure audits did not show enough
-corrected-PQ headroom. A separately preregistered sequential sensing/capture-mask route
-then passed its full served derivative gate, but zero of 76 matched two-mask baselines and
-zero of four exact endpoints met the frozen residual/first-frame soft gates.
-
-Both exact starts completed four feasibility restorations and all 72 primary steps. No
-candidate reached confirmation, hard validation, stopped-stage, derivative-free, or the
-locked BBBC006 test. The test remains sealed. See
-[the v2.6 result](outputs/v2_6/RESULTS.md).
-
-## V2.5 final status
-
-The approved v2.5 constrained B11 experiment is complete as a **negative
-training/validation experiment**. The full served B11 feedback derivative passed with
-`0.009022` relative error and `0.999887` cosine agreement. The registered 15-stage B11
-and six-stage B7 primary matrices completed 378 exact aggregate steps, followed by six
-capped SLSQP fallback runs because neither basis produced a primary-eligible endpoint.
-
-Zero B11 candidates passed the frozen training and 12-well soft-validation gates. The
-conditional piecewise, stopped-stage, hard, derivative-free, gain, and locked-test
-branches were therefore not activated. The locked BBBC006 test remains sealed. See
-[the v2.5 status](outputs/v2_5/STATUS.md).
-
-## V2.4 final status
-
-The approved v2.4 frozen-checkpoint audit is complete as a **negative expanded-hard
-validation experiment**. It reconstructed all 270 saved v2.3 checkpoints without
-retraining, found 90 that pass the unchanged soft ceiling, and froze three exact pupils
-before inspecting hard labels. Three matched stopped-stage controls had exact forward
-parity, and all six pupils received the same 45-well/27-dense-well hard protocol.
-
-Every exact candidate gained more than `+0.01` first-frame hard PQ over clear, reached at
-least `98.89%` direction accuracy and below `1.30 µm` focus MAE, and improved hard PQ
-after correction. The best corrected PQ was `0.552295`, but its `+0.001285` gain over
-piecewise-028 missed the required `+0.005`; its paired interval included zero. No
-candidate advanced to derivative-free or locked-test evaluation. See
-[the v2.4 status](outputs/v2_4/STATUS.md).
-
-## V2.3 final status
-
-The approved v2.3 closed-loop fallback is complete as a **negative validation-only
-experiment**. The same B7 pupil now forms a first frame, drives a bounded frozen
-autofocus action, and forms a corrected second frame; exact gradients pass through the
-stage action with `0.004802` median relative error and `0.999967` cosine agreement.
-
-All nine pre-registered profile/start runs completed (270 Adam steps). Every endpoint
-reduced residual-defocus MAE, but every endpoint exceeded the frozen first-frame
-segmentation-loss ceiling. The nearest endpoint missed by `0.002099`, so conditional
-hard validation and the locked BBBC006 test were not run. See
-[the v2.3 status](outputs/v2_3/STATUS.md).
-
-## V2.1 final status
-
-V2.1 completed the approved validation-only B7→B11 basis ladder with a **negative
-pre-test result**. Basis/support and full served derivative gates passed, and the best
-projected pupils improved hard off-focus PQ over clear with positive well-bootstrap
-confidence bounds. No candidate simultaneously stayed within `0.01` of matched
-segmentation-only and beat matched naive superposition on focus MAE. The locked BBBC006
-test remained sealed. See [the v2.1 status](outputs/v2_1/STATUS.md) and
-[causal audit](outputs/v2_1/AUDIT.md).
-
-## V2 current status
-
-The approved BBBC006 three-Tesseract v2 is implemented through hard validation, but it
-is **not a completed positive result**. Calibration, signed autofocus, exact served
-derivatives, matched baselines, joint optimization, and one-step stage correction all
-work. However, no single pupil passed every frozen segmentation/focus compromise gate,
-so the 48 locked test wells' images and labels were never loaded and no test metric was
-run.
-
-The closest focus-capable joint pupil gained `+0.0186` hard dense off-focus PQ over
-clear, reached `100%` signed direction and `1.029 µm` MAE, and improved hard PQ after
-one stage correction from `0.3552` to `0.4267`. It fell `0.0237` below
-segmentation-only, exceeding the allowed `0.01` drop. A lower-focus refinement met the
-segmentation-drop, direction, and MAE gates but did not Pareto-dominate naive
-superposition. See [the v2 status](outputs/v2/STATUS.md).
-
-## V1 continuity result
-
-TessScope v1 is a completed, reproducible research prototype for task-aware microscope
-optics. It optimizes a smooth six-parameter phase-only pupil through an actual
-JAX/Chromatix image-formation model and a frozen PyTorch/InstanSeg nucleus observer.
-
-The locked test found a statistically reliable deterministic improvement, but the
-predeclared positive headline was **not** earned. Exact-task optics improved mean
-off-focus panoptic quality (PQ) by `+0.0225` over clear, with a grouped 95% bootstrap
-interval of `[+0.0151, +0.0302]`. The required clear-pupil gain was `+0.05`, count error
-did not improve, and the two Poisson endpoints were not positive.
-
-![Locked TessScope test result](outputs/pq-results.png)
-
-## What is implemented
-
-- Exact InstanSeg `single_channel_nuclei` v0.1.2 raw-head and hard-label parity.
-- BBBC039 evaluation decontaminated against disclosed BBBC038 observer training data.
-- Chromatix optics with six bounded Zernike coefficients and validated PSF support.
-- Frozen InstanSeg task loss and official hard-label endpoint.
-- Two HTTP Tesseracts whose exact reverse pass crosses PyTorch back into JAX.
-- Matched clear, cubic, image-fidelity, exact-task, and calibrated-surrogate designs.
-- One-time locked deterministic and keyed-Poisson evaluation on 41 held-out sources.
-- Grouped source-image bootstrap intervals, claim audit, demo figures, and tests.
-- V2 BBBC006 z13–z19 data pipeline, well splits, registration, and reference-mask audit.
-- V2 JAX optics, analytic NumPy/SciPy autofocus, and PyTorch InstanSeg Tesseracts.
-- V2 matched multi-objective baselines and preserved negative pre-test gate evidence.
-- V2.1 B7/B11 exact-gradient optimization, expanded 45-well hard validation, and frozen
-  negative pre-test evidence without test leakage.
-- V2.2 complete piecewise B7 frontier evaluation across 38 frozen candidates and 45
-  validation wells, with a frozen negative matched-frontier decision.
-- V2.3 two-exposure differentiable feedback, exact/stopped derivative evidence, and the
-  complete nine-run soft optimization matrix with a sealed-test negative decision.
-- V2.4 complete 270-checkpoint audit, three frozen early-stopped pupils, matched
-  stopped-stage controls, expanded hard evaluation, and a sealed-test negative decision.
-- V2.5 exact constrained B11 optimization, B7 continuity matrix, bounded SLSQP
-  alternates, derivative evidence, and a sealed-test negative decision.
-- V2.6 controller/exposure diagnosis, sequential two-mask feasibility review, three-way
-  derivative gate, 76-pair matched screen, 72-step exact matrix, and sealed-test result.
-
-![TessScope architecture](outputs/architecture.png)
-
-## Key locked-test numbers
-
-| Design | Mean off-focus PQ | Worst-depth PQ | Focus PQ |
-|---|---:|---:|---:|
-| Clear | 0.5873 | 0.5350 | 0.6270 |
-| Cubic (selected 0 rad) | 0.5873 | 0.5350 | 0.6270 |
-| Image fidelity | 0.5875 | 0.5349 | 0.6276 |
-| Surrogate VJP | 0.5897 | 0.5393 | 0.6300 |
-| Exact task VJP | **0.6098** | **0.5755** | **0.6405** |
-
-The evaluation contains 41 decontaminated sources and 4,715 observer images. Full
-results, limitations, and all frozen threshold checks are in
-`outputs/TessScope-results.md`.
-
-## Quick start on macOS
-
-The project targets Python 3.12 and uses a project-local `uv` environment. It does
-not need global Python packages.
+The command validates the bundle, opens `http://127.0.0.1:8765/`, and binds only to the
+local machine. A non-interactive integrity check is also available:
 
 ```bash
-uv sync
-uv run python -m tessscope
-uv run pytest
+python3 scripts/serve_demo.py --check
+```
+
+The 12.4 MiB replay pack is traced to frozen validation sources and exposes the exact,
+stopped-gradient, and strong piecewise comparison together. See the
+[technical brief](output/pdf/tessscope-technical-brief.pdf) and the
+[3.5-minute caption-led demo](outputs/video/tessscope-demo.mp4) for the submission-ready
+summary.
+
+## Results that matter
+
+The primary v2.4 checkpoint is the frozen balanced exact design at step 14.
+
+| Question | Result | Interpretation |
+|---|---:|---|
+| First-frame hard off-focus PQ | `0.492192` | Image before the predicted stage move |
+| Corrected hard off-focus PQ | **`0.552295`** | One bounded predicted correction later |
+| Hard frames improved | `74.7%` | Corrected PQ exceeds first-frame PQ |
+| Focus error | `1.267923 µm` MAE | `98.89%` signed-direction accuracy |
+| Exact vs. matched stopped gradient | **`+0.006259` PQ** | CI `[+0.000670, +0.011547]`; causal path supported |
+| Exact vs. piecewise-028 | `+0.001285` PQ | CI `[−0.001719, +0.004800]`; not significant |
+
+The exact and stopped systems have identical forward computation (`0.0` measured
+difference). Only the backward path through the autofocus action is removed. This makes
+their paired difference a direct test of whether the feedback gradient is useful—not
+merely whether the architecture contains a focus module.
+
+The stronger claim was not earned: exact optimization did **not** significantly beat
+piecewise-028, and its first-frame PQ missed the frozen segmentation tolerance by
+`0.000295`. Follow-up v2.5 and v2.6 experiments produced no promotable candidate. Those
+negative results remain part of the record in the
+[research history](docs/RESEARCH_HISTORY.md).
+
+![Exact-gradient causal comparison](outputs/demo/figures/causal-comparison.png)
+
+## Why Tesseract is load-bearing
+
+![Three-runtime exact-gradient architecture](outputs/demo/figures/gradient-architecture.png)
+
+| Served component | Native stack | Role in the loop | Reverse path |
+|---|---|---|---|
+| Optics Tesseract | JAX + Chromatix | Phase pupil and depth-dependent fluorescence image formation; called for both exposures | JAX VJP through pupil and residual depth |
+| Autofocus Tesseract | NumPy + SciPy | Spectral features, regularized signed-z ridge fit, bounded stage action | Hand-derived FFT/feature VJP plus implicit ridge-solve VJP |
+| Observer Tesseract | PyTorch + InstanSeg | Frozen nucleus task loss on the first and corrected frames | PyTorch autograd input VJP |
+
+Tesseract provides the typed service boundaries and differentiable calls that let each
+scientific component stay in its native framework. `tesseract-jax` exposes those remote
+calls as one JAX-differentiable program, so one objective returns one pupil gradient
+through JAX → SciPy → JAX → PyTorch without reimplementing the models in a single stack.
+
+The core composition is readable in
+[`src/tessscope/v2_3/closed_loop.py`](src/tessscope/v2_3/closed_loop.py). The three served
+APIs are:
+
+- [`services/v2_3/optics/tesseract_api.py`](services/v2_3/optics/tesseract_api.py)
+- [`services/v2/autofocus/tesseract_api.py`](services/v2/autofocus/tesseract_api.py)
+- [`services/v2_1/observer/tesseract_api.py`](services/v2_1/observer/tesseract_api.py)
+
+The complete served derivative passed central differences with median relative error
+`0.004802`, cosine agreement `0.999967`, and exact/stopped forward parity `0.0`.
+
+## The closed loop
+
+1. A bounded seven-parameter phase pupil forms an initial seven-plane fluorescence
+   stack through calibrated JAX/Chromatix optics.
+2. The SciPy autofocus Tesseract extracts content-normalized spectral features and fits
+   signed depth from two support fields.
+3. It predicts and clips a microscope-stage action to `[-6, +6] µm`.
+4. The action changes residual depth; the same pupil forms a corrected exposure.
+5. A frozen InstanSeg observer scores first- and corrected-frame nucleus utility.
+6. Exact VJPs cross all service boundaries and optimize the pupil for the full loop.
+
+![Matched microscopy evidence](outputs/demo/figures/matched-microscopy.png)
+
+## Evidence protocol
+
+- **Dataset:** BBBC006v1 U2OS fluorescence z-stacks, Hoechst channel only, planes z13–z19
+  (`−6` to `+6 µm` around z16 in `2 µm` steps).
+- **Split unit:** well. All planes and both sites from one well remain in one deterministic
+  split: 288 training, 48 validation, and 48 sealed test wells.
+- **Hard evaluation:** the same 45 registration-valid validation wells for every frozen
+  design; the preregistered primary-density subset contains 27 wells.
+- **Uncertainty:** 2,000 deterministic paired bootstrap replicates resampling wells, not
+  individual frames.
+- **Reference labels:** official automated CellProfiler-derived z16 instance labels;
+  they are not manual ground truth.
+- **Selection discipline:** checkpoint selection occurred before hard-label evaluation;
+  the locked BBBC006 test was never opened because the preregistered promotion gates failed.
+
+Every displayed value maps to a source JSON pointer and SHA-256 in
+[`outputs/demo/traceability-manifest.json`](outputs/demo/traceability-manifest.json).
+The frozen public claim contract is
+[`configs/demo/claim-matrix.yaml`](configs/demo/claim-matrix.yaml).
+
+## Reproduce
+
+### Fast public path
+
+The cached judge replay above needs only Python's standard library. Its manifest records
+that it is a replay rather than live inference.
+
+### Code checks
+
+TessScope targets Python `3.12` and uses the committed `uv.lock`:
+
+```bash
+uv sync --frozen
 uv run ruff check .
+uv run pytest -q
+python3 scripts/serve_demo.py --check
 ```
 
-The large datasets and model bundle are intentionally not committed. Their official
-URLs, checksums, expected directory layout, and licenses are recorded in
-`data/manifests/`. See `outputs/reproduction.md` before running the model-dependent
-commands.
+### Scientific path
 
-## Serve the differentiable chain
+The full path requires network access for official external assets, roughly 2.5 GB for
+the extracted BBBC006 W1 subset, about 15 MB for the frozen InstanSeg bundle, three local
+Tesseract services, and substantially more compute than the cached replay. It never
+requires Docker. Exact commands, output-isolation options, expected checks, and
+troubleshooting are in [`docs/FULL_REPRODUCTION.md`](docs/FULL_REPRODUCTION.md).
 
-Open two terminals from the project root.
+The measured nine-run v2.3 optimization core took about 16 minutes in aggregate on the
+project MacBook Air M2 after service warm-up; raw-data preparation and the 45-well hard
+evaluation are the longer stages and should be allowed substantially more time.
 
-Terminal 1:
+## Repository map
 
-```bash
-TESSERACT_API_PATH=services/optics/tesseract_api.py \
-  uv run tesseract-runtime \
-  --output-path artifacts/runtime-runs/optics serve --port 8401
+```text
+src/tessscope/       scientific code and cross-runtime composition
+services/            Tesseract API entry points
+scripts/             gated experiments, audits, demo and media builders
+configs/             preregistered contracts and frozen selections
+data/manifests/      official asset provenance, checksums and splits
+artifacts/runs/      compact machine-readable evidence (large inputs excluded)
+outputs/demo/        static judge experience, figures and validation replay
+outputs/video/       caption-led submission video and production notes
+output/pdf/          editable technical-brief source and compiled PDF
+tests/               parity, derivative, scientific and judge-path checks
 ```
 
-Terminal 2:
+## Scope and limitations
 
-```bash
-TESSERACT_API_PATH=services/observer/tesseract_api.py \
-  uv run tesseract-runtime \
-  --output-path artifacts/runtime-runs/observer serve --port 8402
-```
+- This is an in-silico optical co-design prototype, not a clinical system.
+- No phase mask has been fabricated or tested on a physical microscope.
+- The judge demo replays cached evidence and does not claim live inference.
+- The supported causal result is validation-only; the locked BBBC006 test remains sealed.
+- Exact optimization did not significantly outperform the strongest piecewise baseline.
+- v2.5 constrained B11 and v2.6 two-mask follow-ups are complete negative experiments,
+  not hidden unfinished positive runs.
 
-Then verify the real served reverse pass:
+## Hackathon fit and references
 
-```bash
-uv run python scripts/check_component_derivatives.py
-uv run python scripts/check_served_derivative.py
-```
+TessScope enters **Track 05 — Differentiable graphics & rendering** because its central
+artifact is a differentiable fluorescence image-formation and feedback loop. Tesseract
+is essential to the result: it composes independently implemented JAX, SciPy, and
+PyTorch components while preserving exact end-to-end derivatives.
 
-The served gate passed with median relative error `0.0052` and cosine agreement
-`0.99961` over its stable epsilon window.
+- [Tesseract Hackathon 2026](https://pasteurlabs.ai/tesseract-hackathon-2026/)
+- [Tesseract differentiable pipelines](https://docs.pasteurlabs.ai/projects/tesseract-core/stable/content/how-to/pipelines/)
+- [BBBC006](https://bbbc.broadinstitute.org/BBBC006) — Ljosa et al., *Nature Methods*, 2012
+- [Chromatix](https://github.com/chromatix-team/chromatix) — Deb et al., bioRxiv 2025,
+  DOI `10.1101/2025.04.29.651152`
+- [InstanSeg](https://github.com/instanseg/instanseg) — Goldsborough et al., arXiv 2024,
+  DOI `10.48550/arXiv.2408.15954`
 
-## Project map
-
-- `src/tessscope/`: data, optics, observer, optimization, and evaluation code.
-- `services/`: JAX optics and PyTorch observer Tesseract entry points.
-- `scripts/`: gated experiments, locked evaluation, and figure generation.
-- `configs/`: frozen preprocessing, designs, contract, and pre-test hashes.
-- `data/manifests/`: provenance, checksums, splits, and decontamination evidence.
-- `tests/`: fast parity, derivative, optics, observer, and metric tests.
-- `outputs/`: final readable results, figures, and reproduction guide.
-- `plan.md` and `decision-log.md`: implementation checkpoint and decision trail.
-
-## Scope
-
-This is an optical co-design research prototype using digitally reimaged biological
-texture. It is not a clinical or laboratory-performance claim. Third-party software,
-model, and dataset terms remain with their original owners; see `NOTICE.md`.
+TessScope code and original documentation are licensed under Apache License 2.0. External
+datasets, models, libraries, fonts, and trademarks retain their own terms; see
+[`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Citation metadata is available in
+[`CITATION.cff`](CITATION.cff).

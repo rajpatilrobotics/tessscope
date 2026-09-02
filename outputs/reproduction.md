@@ -1,7 +1,11 @@
-# TessScope reproduction guide
+# TessScope v1 reproduction archive
 
-This guide reproduces the implemented TessScope pipeline on macOS. Commands assume the
-terminal is open at the project root.
+This file preserves the historical two-Tesseract BBBC039 v1 procedure. It is not the
+canonical reproduction path for the current three-Tesseract BBBC006 validation claim.
+
+Use [`docs/FULL_REPRODUCTION.md`](../docs/FULL_REPRODUCTION.md) for the current public
+workflow. The instructions below remain only to document the frozen v1 experiment; do
+not use its locked-test command as part of the v2 submission reproduction.
 
 ## 1. Local environment
 
@@ -109,25 +113,12 @@ uv run python scripts/run_matched_designs.py
 The exact-task, image-fidelity, and calibrated-surrogate designs each use 120 Adam steps
 from the same zero start, schedule, phase family, learning rate, and step budget.
 
-## 7. Locked test evaluation
+## 7. Historical locked evaluation
 
-`scripts/evaluate_locked_test.py` verifies every pre-test hash before reading the test
-split. On the verified MacBook Air M2 it takes about 35 minutes and writes 4,715 metric
-rows. Running it again is unnecessary unless you deliberately want a full independent
-reproduction.
-
-```bash
-uv run python scripts/evaluate_locked_test.py
-```
-
-The machine-readable local evidence is written under `artifacts/runs/gate9/`:
-
-- `raw-metrics.csv`
-- `raw-metrics.json`
-- `test-report.json`
-
-Generated experiment evidence is ignored by Git; the checked-in readable report in
-`outputs/TessScope-results.md` contains the audited result.
+The v1 locked evaluation was run once under its frozen contract and is preserved in
+[`TessScope-results.md`](TessScope-results.md). Its execution command is intentionally
+omitted from this archive so it cannot be mistaken for part of the current public v2
+reproduction. The BBBC006 v2 test remains sealed.
 
 ## 8. Regenerate figures
 

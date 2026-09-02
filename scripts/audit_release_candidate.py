@@ -17,6 +17,9 @@ GITHUB_WARNING_SIZE = 50 * 1024 * 1024
 MAX_SECRET_SCAN_SIZE = 20 * 1024 * 1024
 APACHE_2_SHA256 = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
 ALLOWED_LARGE_EVIDENCE = Path("artifacts/runs/demo/validation-replay.npz")
+TECHNICAL_BRIEF = Path("output/pdf/tessscope-technical-brief.pdf")
+VIDEO_PATH = Path("outputs/video/tessscope-demo.mp4")
+VIDEO_MANIFEST_PATH = Path("outputs/video/video-manifest.json")
 FORBIDDEN_DATA_SUFFIXES = {
     ".ckpt",
     ".h5",
@@ -197,6 +200,87 @@ def _markdown_link_findings(paths: list[Path]) -> list[Finding]:
     return findings
 
 
+def _pdf_findings() -> tuple[list[Finding], int | None]:
+    path = PROJECT_ROOT / TECHNICAL_BRIEF
+    if not path.is_file():
+        return [Finding("missing-technical-brief", str(TECHNICAL_BRIEF), "PDF absent")], None
+    try:
+        result = subprocess.run(
+            ["pdfinfo", str(path)],
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        return [Finding("pdf-validation", str(TECHNICAL_BRIEF), "pdfinfo failed")], None
+    match = re.search(r"^Pages:\s+(\d+)\s*$", result.stdout, flags=re.MULTILINE)
+    if match is None:
+        return [Finding("pdf-validation", str(TECHNICAL_BRIEF), "page count unavailable")], None
+    pages = int(match.group(1))
+    findings = []
+    if not 2 <= pages <= 4:
+        findings.append(
+            Finding("pdf-page-count", str(TECHNICAL_BRIEF), f"expected 2–4 pages; found {pages}")
+        )
+    return findings, pages
+
+
+def _video_findings() -> tuple[list[Finding], dict]:
+    video = PROJECT_ROOT / VIDEO_PATH
+    manifest_path = PROJECT_ROOT / VIDEO_MANIFEST_PATH
+    findings = []
+    if not video.is_file():
+        findings.append(Finding("missing-video", str(VIDEO_PATH), "MP4 absent"))
+    if not manifest_path.is_file():
+        findings.append(
+            Finding("missing-video-manifest", str(VIDEO_MANIFEST_PATH), "manifest absent")
+        )
+        return findings, {}
+    manifest = json.loads(manifest_path.read_text())
+    output = manifest.get("output", {})
+    streams = output.get("ffprobe", {}).get("streams", [])
+    video_streams = [stream for stream in streams if stream.get("codec_type") == "video"]
+    audio_streams = [stream for stream in streams if stream.get("codec_type") == "audio"]
+    if manifest.get("test_accessed") is not False:
+        findings.append(
+            Finding("video-test-boundary", str(VIDEO_MANIFEST_PATH), "expected test_accessed=false")
+        )
+    duration = float(manifest.get("duration_seconds", 0.0))
+    if not 180 <= duration <= 240:
+        findings.append(
+            Finding(
+                "video-duration",
+                str(VIDEO_MANIFEST_PATH),
+                f"expected 180–240 s; found {duration}",
+            )
+        )
+    if len(video_streams) != 1 or any(
+        video_streams[0].get(key) != value
+        for key, value in {
+            "codec_name": "h264",
+            "width": 1920,
+            "height": 1080,
+            "pix_fmt": "yuv420p",
+            "r_frame_rate": "30/1",
+        }.items()
+    ):
+        findings.append(
+            Finding("video-format", str(VIDEO_MANIFEST_PATH), "expected 1080p30 H.264 yuv420p")
+        )
+    if len(audio_streams) != 1 or audio_streams[0].get("codec_name") != "aac":
+        findings.append(
+            Finding("video-audio", str(VIDEO_MANIFEST_PATH), "expected one AAC compatibility track")
+        )
+    if video.is_file():
+        actual_sha256 = hashlib.sha256(video.read_bytes()).hexdigest()
+        if output.get("sha256") != actual_sha256:
+            findings.append(
+                Finding("video-hash", str(VIDEO_MANIFEST_PATH), "MP4 hash does not match manifest")
+            )
+    return findings, manifest
+
+
 def audit(*, include_history_secrets: bool) -> dict:
     """Return a redacted, machine-readable release audit."""
     paths = _tracked_paths()
@@ -204,6 +288,8 @@ def audit(*, include_history_secrets: bool) -> dict:
     current_findings, forbidden_files = _scan_current(paths)
     history_findings = _scan_history(blobs) if include_history_secrets else []
     link_findings = _markdown_link_findings(paths)
+    pdf_findings, pdf_pages = _pdf_findings()
+    video_findings, video_manifest = _video_findings()
     current_sizes = [
         ((PROJECT_ROOT / path).stat().st_size, str(path))
         for path in paths
@@ -232,6 +318,11 @@ def audit(*, include_history_secrets: bool) -> dict:
         license_path,
         PROJECT_ROOT / "NOTICE",
         PROJECT_ROOT / "THIRD_PARTY_NOTICES.md",
+        PROJECT_ROOT / "CITATION.cff",
+        PROJECT_ROOT / "docs" / "FULL_REPRODUCTION.md",
+        PROJECT_ROOT / "docs" / "RESEARCH_HISTORY.md",
+        PROJECT_ROOT / "output" / "pdf" / "tessscope-technical-brief.tex",
+        PROJECT_ROOT / "outputs" / "video" / "captions.srt",
         PROJECT_ROOT / "uv.lock",
     ]
     required_missing = [
@@ -248,6 +339,8 @@ def audit(*, include_history_secrets: bool) -> dict:
         + forbidden_files
         + history_findings
         + link_findings
+        + pdf_findings
+        + video_findings
         + current_oversized
         + history_oversized
     )
@@ -295,6 +388,15 @@ def audit(*, include_history_secrets: bool) -> dict:
         "replay": {
             "path": str(ALLOWED_LARGE_EVIDENCE),
             "size_bytes": replay.stat().st_size if replay.is_file() else None,
+        },
+        "technical_brief": {
+            "path": str(TECHNICAL_BRIEF),
+            "pages": pdf_pages,
+        },
+        "video": {
+            "path": str(VIDEO_PATH),
+            "duration_seconds": video_manifest.get("duration_seconds"),
+            "sha256": video_manifest.get("output", {}).get("sha256"),
         },
         "history_secret_scan": include_history_secrets,
         "remote_configured": bool(remotes),

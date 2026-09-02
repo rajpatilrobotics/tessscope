@@ -57,7 +57,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--optics-url", default="http://127.0.0.1:8407")
     parser.add_argument("--autofocus-url", default="http://127.0.0.1:8403")
     parser.add_argument("--observer-url", default="http://127.0.0.1:8402")
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT,
+        help="write the matrix to an isolated path",
+    )
+    parser.add_argument(
+        "--checkpoint-root",
+        type=Path,
+        default=CHECKPOINT_ROOT,
+        help="write resumable checkpoints to an isolated directory",
+    )
     return parser.parse_args()
+
+
+def project_output(path: Path) -> Path:
+    output = path if path.is_absolute() else PROJECT_ROOT / path
+    output = output.resolve()
+    if not output.is_relative_to(PROJECT_ROOT):
+        raise ValueError("Reproduction output must stay inside the project directory")
+    return output
 
 
 def average_validation(
@@ -98,8 +118,9 @@ def optimize(
     profile,
     start_name,
     gradient_mode,
+    checkpoint_root,
 ) -> dict:
-    checkpoint_path = CHECKPOINT_ROOT / f"{name}.json"
+    checkpoint_path = checkpoint_root / f"{name}.json"
     if checkpoint_path.exists():
         checkpoint = json.loads(checkpoint_path.read_text())
         if checkpoint.get("completed"):
@@ -213,8 +234,10 @@ def optimize(
 
 def main() -> None:
     args = parse_args()
-    if OUTPUT.exists():
-        raise SystemExit(f"V2.3 optimization artifact already exists: {OUTPUT}")
+    output = project_output(args.output)
+    checkpoint_root = project_output(args.checkpoint_root)
+    if output.exists():
+        raise SystemExit(f"V2.3 optimization artifact already exists: {output}")
     services = (
         Tesseract.from_url(args.optics_url, timeout=180),
         Tesseract.from_url(args.autofocus_url, timeout=180),
@@ -265,6 +288,7 @@ def main() -> None:
                     profile=profile,
                     start_name=start_name,
                     gradient_mode="exact",
+                    checkpoint_root=checkpoint_root,
                 )
             )
     eligible = [
@@ -309,12 +333,12 @@ def main() -> None:
             "stop_reason": "no_exact_endpoint_passed_frozen_soft_gate",
             "next_gate": "freeze_negative_v2_3_without_hard_or_test_access",
         }
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(report, indent=2) + "\n")
         print(
             json.dumps(
                 {
-                    "output": str(OUTPUT),
+                    "output": str(output),
                     "status": report["status"],
                     "selected_for_hard_validation": [],
                     "stopped_stage_ablation": None,
@@ -337,6 +361,7 @@ def main() -> None:
         profile=best["profile"],
         start_name=best["start_name"],
         gradient_mode="stop_stage",
+        checkpoint_root=checkpoint_root,
     )
     report = {
         "status": "complete_training_validation_only",
@@ -355,12 +380,12 @@ def main() -> None:
         "selected_for_hard_validation": selected,
         "stopped_stage_ablation": stopped,
     }
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, indent=2) + "\n")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2) + "\n")
     print(
         json.dumps(
             {
-                "output": str(OUTPUT),
+                "output": str(output),
                 "selected_for_hard_validation": selected,
                 "stopped_stage_ablation": stopped_name,
                 "test_accessed": False,

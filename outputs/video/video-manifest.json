@@ -1,0 +1,96 @@
+{
+  "cached_replay_not_live_inference": true,
+  "captions": {
+    "path": "outputs/video/captions.srt",
+    "sha256": "8fbce7c881b966161c200360b775e62ebb8c65fbd93ba438a3651efe3bc7a28c"
+  },
+  "duration_seconds": 210,
+  "no_music_or_voice": true,
+  "output": {
+    "bytes": 4687119,
+    "ffprobe": {
+      "format": {
+        "duration": "210.000000",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "size": "4687119"
+      },
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "height": 1080,
+          "index": 0,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "width": 1920
+        },
+        {
+          "channels": 2,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "index": 1,
+          "r_frame_rate": "0/0",
+          "sample_rate": "48000"
+        }
+      ]
+    },
+    "path": "outputs/video/tessscope-demo.mp4",
+    "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+  },
+  "schema_version": 1,
+  "scientific_media_policy": "existing_traced_tessscope_assets_only",
+  "sources": [
+    {
+      "duration_seconds": 22,
+      "kind": "still",
+      "path": "outputs/demo/figures/hero-evidence.png",
+      "sha256": "8e5493b855ec8875e021c8c6d65af08f061a69f4f1fc3e85edfd1b6cca819f33"
+    },
+    {
+      "duration_seconds": 32,
+      "kind": "still",
+      "path": "outputs/demo/figures/gradient-architecture.png",
+      "sha256": "c580482b60f3a19301ff78dc9ff20660e92bb199fdcb115347ebbed6fe0f72a8"
+    },
+    {
+      "duration_seconds": 24,
+      "kind": "still",
+      "path": "outputs/demo/figures/pupil-psf-depth.png",
+      "sha256": "39e9247fd2b250aa09c10268edb352fdbd7bc60f80812babeef8b03f3f523db5"
+    },
+    {
+      "duration_seconds": 28,
+      "kind": "video",
+      "path": "outputs/demo/replay/validation-depth-sweep.mp4",
+      "sha256": "f4d05d8ce47631a52ee815497861da713c6ab6aee1b255b961e5ed0c49b21708"
+    },
+    {
+      "duration_seconds": 28,
+      "kind": "still",
+      "path": "outputs/demo/figures/matched-microscopy.png",
+      "sha256": "d01419b8a28c8793c0e02703b072dac3a68d75758678fa2fdf6d10777a0435a2"
+    },
+    {
+      "duration_seconds": 24,
+      "kind": "still",
+      "path": "outputs/demo/figures/pq-focus-depth.png",
+      "sha256": "000b47ca1aec86e2f0e6f7a925c67d730f1e5cc254ae3a9d9a7ddbca6c03f0c9"
+    },
+    {
+      "duration_seconds": 38,
+      "kind": "still",
+      "path": "outputs/demo/figures/causal-comparison.png",
+      "sha256": "371c88b843043abed8e3324aaaa6e2fdad10f833a714198ff71acc4d7469e48e"
+    },
+    {
+      "duration_seconds": 14,
+      "kind": "still",
+      "path": "outputs/demo/figures/hero-evidence.png",
+      "sha256": "8e5493b855ec8875e021c8c6d65af08f061a69f4f1fc3e85edfd1b6cca819f33"
+    }
+  ],
+  "status": "complete_caption_led_real_asset_video",
+  "test_accessed": false
+}
