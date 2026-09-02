@@ -21,6 +21,23 @@
   a sequential two-mask route. Such a route requires primary/official evidence that rapid
   SLM switching is physically plausible and a fair matched two-mask piecewise baseline.
 
+## 2026-09-02 — V2.6 oracle rejects controller-only rescue
+
+- The balanced candidate's exact same-field zero-residual oracle reaches corrected hard
+  PQ `0.554982`, below the minimum `0.556010` implied by piecewise-028 `+0.005`. Its
+  oracle advantage over the actual piecewise correction is `+0.003972`, but the paired
+  interval `[-0.001712, +0.009673]` includes zero and only 75.9% of frames improve.
+- The complete 125-point monotone gain/bias/cubic grid was applied equally to balanced
+  and piecewise depth estimates using same-field frozen PQ-depth interpolation. The best
+  matched advantage is only `+0.001007`, interval `[-0.002973, +0.005238]`, with 51.9%
+  positive wells and one negative leave-one-well-out mean.
+- The controller shows low saturation (`0.74%`) but strong under-gain (`0.691` fitted
+  slope), especially at `±6 µm`. Calibration reduces estimated focus error, but the pupil
+  and observer ceiling prevents the required corrected-PQ effect.
+- Decision before the exposure audit: do not launch joint B7 pupil/controller optimization
+  from this diagnostic. Complete the fixed-total-photon audit, then apply the frozen route
+  decision. The locked test remains sealed.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

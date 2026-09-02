@@ -157,9 +157,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   `09b9eb2`, and defined a new v2.6 namespace with no push/deploy/submission authority.
 - [x] V2.6-0B: froze source hashes, training-only well partitions, oracle definitions,
   controller/exposure grids, decision rules, targets, matched baselines, and test seal.
-- [ ] V2.6-1A: implement pure oracle/PQ-curve/controller decomposition utilities and
+- [x] V2.6-1A: implemented pure oracle/PQ-curve/controller decomposition utilities and
   tests, including grouped uncertainty and leave-one-well-out stability.
-- [ ] V2.6-1B: run the frozen balanced-versus-piecewise diagnostic and quantify controller
+- [x] V2.6-1B: ran the frozen balanced-versus-piecewise diagnostic and quantified controller
   error, optical/observer ceiling, depth/density/well structure, saturation, bias, gain,
   and nonlinearity.
 - [ ] V2.6-1C: run the fixed-total-photon exposure audit on frozen training-only

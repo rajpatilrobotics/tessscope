@@ -1,0 +1,3885 @@
+{
+  "status": "complete_historical_validation_diagnostic_only",
+  "test_accessed": false,
+  "historical_validation_reuse_limitation": "The 27 hard-density validation wells were used in prior v2.2-v2.4 work. This audit estimates headroom only and cannot freeze a new controller.",
+  "source_manifest_sha256": "5c4e5df4e2a0f253ae7ac3c13dc7a7cf21365505865a8fdc6a9e79bbc1e92a71",
+  "frozen_sources": {
+    "v2_4_selected_checkpoints": {
+      "path": "configs/v2_4/selected-checkpoints.json",
+      "sha256": "d1519c04e553c69fd448a985975a96e04264c458d9f8ade2e94a85440a61db81"
+    },
+    "v2_4_expanded_hard_validation": {
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    },
+    "v2_2_piecewise_hard_frontier": {
+      "path": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+      "sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+    },
+    "v2_5_pretest_block": {
+      "path": "configs/v2_5/pretest-block.json",
+      "sha256": "1c5deaf42f43a46a68881d43821b6229bccc3919d0e22666811162e4a54d36fd"
+    },
+    "bbbc006_splits": {
+      "path": "data/manifests/v2/bbbc006-splits.json",
+      "sha256": "80eacd305783ec6b2144c9845cf848e60eda31f40056a0ac12e23da7f1bae6ea"
+    },
+    "v2_6_training_partitions": {
+      "path": "data/manifests/v2_6/training-development-confirmation.json",
+      "sha256": "0e8db46443b6b8a011da604d2646b2c70eb9ddcf82aee8ac086f950894299428"
+    },
+    "training_calibration": {
+      "path": "data/manifests/v2/bbbc006-training-calibration.json",
+      "sha256": "4b636195b104ab9872341983817b910c20762558e98b45a2902fe87a21511442"
+    },
+    "clear_optical_calibration": {
+      "path": "artifacts/runs/v2/gate3/clear-calibration-offset.json",
+      "sha256": "e01b79be1cb3156d7f6a228c92d32b92f536aa29d610ee10ba2f15d30abf802d"
+    },
+    "v2_3_closed_loop_derivative": {
+      "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+      "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+    }
+  },
+  "candidate": "v2_3-exact-balanced-segmentation_only-step-14",
+  "baseline": "v2_2-piecewise-028",
+  "minimum_corrected_pq_from_actual_baseline": 0.5560098239372349,
+  "current_candidate": {
+    "summary": {
+      "sample_count": 162,
+      "corrected_pq": 0.552294837627718,
+      "focus_mae_um": 1.2938421783507899,
+      "signed_direction_accuracy": 0.9876543209876543,
+      "fraction_frames_improved": 0.7469135802469136
+    },
+    "vs_actual_baseline": {
+      "source_count": 27,
+      "replicates": 2000,
+      "mean_difference": 0.0012850136904830492,
+      "ci_lower_95": -0.0017537468478453545,
+      "ci_upper_95": 0.004702726940732941,
+      "well_count": 27,
+      "positive_well_fraction": 0.5555555555555556,
+      "well_mean_differences": {
+        "a23": 0.014215912750042553,
+        "b22": -0.0010911474419381024,
+        "c15": 0.0029824875075592505,
+        "c21": 0.0019334235736503391,
+        "e01": -0.013035801353390683,
+        "e11": 0.003027287994152491,
+        "f01": 0.001035633848133849,
+        "f20": -0.002764926562574136,
+        "f23": -0.001518044473807989,
+        "g18": 0.00010748817939123152,
+        "h06": 0.0007488559395006089,
+        "h17": 0.0016680990599113876,
+        "i11": -0.0026828793424868345,
+        "i19": -0.0005154779658149885,
+        "i22": -0.0009345432351446914,
+        "j08": 0.0021200626935884426,
+        "j10": 0.019760086893630364,
+        "k04": 0.020088005999124997,
+        "k05": 0.019181320950535912,
+        "k12": 0.003595307010839451,
+        "l24": -0.0004399269115502406,
+        "m02": -0.007760753395081532,
+        "m19": -0.0006310429165855743,
+        "n13": -0.013781763865037322,
+        "n20": 0.0020866681876840674,
+        "n21": 0.00024282843901707318,
+        "p08": -0.012941791920307588
+      },
+      "leave_one_well_out_mean_differences": {
+        "a23": 0.0007876714189615302,
+        "b22": 0.0013764045032684782,
+        "c15": 0.0012197262359801187,
+        "c21": 0.0012600748488227692,
+        "e01": 0.0018358142690935778,
+        "e11": 0.0012180031403419174,
+        "f01": 0.0012946052228810958,
+        "f20": 0.0014407806232929411,
+        "f23": 0.0013928236198788588,
+        "g18": 0.0013303031332173503,
+        "h06": 0.0013056351424439127,
+        "h17": 0.0012702796378127289,
+        "i11": 0.0014376249609818913,
+        "i19": 0.0013542633695714358,
+        "i22": 0.0013703812645456553,
+        "j08": 0.0012528964211328424,
+        "j10": 0.000574433951900461,
+        "k04": 0.0005618216786122057,
+        "k05": 0.0005966941804810166,
+        "k12": 0.0011961562550847264,
+        "l24": 0.0013513575597920223,
+        "m02": 0.00163292780915861,
+        "m19": 0.001358708175370304,
+        "n13": 0.0018645051349261406,
+        "n20": 0.001254180825206087,
+        "n21": 0.0013250977386163561,
+        "p08": 0.0018321985216673046
+      },
+      "minimum_leave_one_well_out_mean_difference": 0.0005618216786122057
+    }
+  },
+  "zero_residual_oracles": {
+    "candidate": {
+      "sample_count": 162,
+      "corrected_pq": 0.554981646454282,
+      "focus_mae_um": 0.0,
+      "signed_direction_accuracy": 1.0,
+      "fraction_frames_improved": 0.7592592592592593
+    },
+    "baseline": {
+      "sample_count": 162,
+      "corrected_pq": 0.5549676388298728,
+      "focus_mae_um": 0.0,
+      "signed_direction_accuracy": 1.0,
+      "fraction_frames_improved": 0.7962962962962963
+    },
+    "candidate_vs_actual_baseline": {
+      "source_count": 27,
+      "replicates": 2000,
+      "mean_difference": 0.00397182251704717,
+      "ci_lower_95": -0.0017124376959189514,
+      "ci_upper_95": 0.00967318687301933,
+      "well_count": 27,
+      "positive_well_fraction": 0.6666666666666666,
+      "well_mean_differences": {
+        "a23": 0.031370514316617415,
+        "b22": 0.02955578335554158,
+        "c15": 0.0032667905630333984,
+        "c21": 0.0028770068566745244,
+        "e01": -0.018787605469734486,
+        "e11": 0.003333942584486771,
+        "f01": -0.002138299013299002,
+        "f20": 0.0030937595707562493,
+        "f23": -0.0019287921256342933,
+        "g18": 0.012262985740136225,
+        "h06": 0.03186803123719565,
+        "h17": -0.003644310155570707,
+        "i11": -0.015461782835916418,
+        "i19": -0.009186051417234331,
+        "i22": 0.027506334830545116,
+        "j08": 0.005069001136357239,
+        "j10": 0.0029120600031568946,
+        "k04": -0.008820100007007475,
+        "k05": 0.034034297077679077,
+        "k12": 0.004027803283389105,
+        "l24": 0.003408105952309448,
+        "m02": -0.005519951761954929,
+        "m19": 0.0006626522032033196,
+        "n13": -0.030977529991839503,
+        "n20": 0.0024445687941961705,
+        "n21": 0.0010772405026624836,
+        "p08": 0.00493275273052407
+      },
+      "leave_one_well_out_mean_differences": {
+        "a23": 0.002918026678602161,
+        "b22": 0.002987824023258923,
+        "c15": 0.003998939130663084,
+        "c21": 0.004013930811676886,
+        "e01": 0.004847185131923388,
+        "e11": 0.003996356360607185,
+        "f01": 0.0042068271912912535,
+        "f20": 0.00400559416882759,
+        "f23": 0.00419876923407338,
+        "g18": 0.003652931623851437,
+        "h06": 0.002898891412426075,
+        "h17": 0.004264750696763243,
+        "i11": 0.004719268876776538,
+        "i19": 0.004477894591442612,
+        "i22": 0.003066648966528018,
+        "j08": 0.003929623339381398,
+        "j10": 0.004012582613735257,
+        "k04": 0.004463819537203117,
+        "k05": 0.0028155734954844035,
+        "k12": 0.003969669410649404,
+        "l24": 0.003993503923383235,
+        "m02": 0.0043368907585472505,
+        "m19": 0.004099098298348856,
+        "n13": 0.005316028382773579,
+        "n20": 0.004030563044849131,
+        "n21": 0.004083152594523504,
+        "p08": 0.003934863662682674
+      },
+      "minimum_leave_one_well_out_mean_difference": 0.0028155734954844035
+    }
+  },
+  "interpolation_audit": {
+    "actual_minus_default_interpolated": {
+      "source_count": 27,
+      "replicates": 2000,
+      "mean_difference": 0.00463263847612856,
+      "ci_lower_95": 0.0013733421538157388,
+      "ci_upper_95": 0.0086483536036905,
+      "well_count": 27,
+      "positive_well_fraction": 0.8148148148148148,
+      "well_mean_differences": {
+        "a23": 0.04235505445681293,
+        "b22": 0.022814469320145248,
+        "c15": 0.00030273554355590243,
+        "c21": 0.0009770007440537316,
+        "e01": 0.0003397765508414141,
+        "e11": 0.0022773911390751946,
+        "f01": 0.001827049124423219,
+        "f20": 0.00023512473941818732,
+        "f23": -0.00030769298140737034,
+        "g18": 0.010584078460395377,
+        "h06": -0.0054455063451297235,
+        "h17": -0.0022583019658822443,
+        "i11": 0.005715858902528616,
+        "i19": 0.002047484948939249,
+        "i22": 0.0015748865593605184,
+        "j08": 0.0022822429813690315,
+        "j10": -0.0029746739023860658,
+        "k04": 0.02343003797604414,
+        "k05": 0.004137745133772038,
+        "k12": 0.0010358189013467967,
+        "l24": 0.00046640364216142077,
+        "m02": 0.0004896776366787869,
+        "m19": 7.224611292148501e-05,
+        "n13": -7.962540198941381e-05,
+        "n20": 0.00021669526145777032,
+        "n21": 0.00021521949881433042,
+        "p08": 0.012750041818150528
+      },
+      "leave_one_well_out_mean_differences": {
+        "a23": 0.003181776323025314,
+        "b22": 0.0039333372898202245,
+        "c15": 0.0047991732043044305,
+        "c21": 0.0047732399273622056,
+        "e01": 0.004797748550178065,
+        "e11": 0.004723224912169073,
+        "f01": 0.004740545758886457,
+        "f20": 0.004801773619848188,
+        "f23": 0.004822651224495326,
+        "g18": 0.004403736938272143,
+        "h06": 0.00502025943079234,
+        "h17": 0.004897674646975129,
+        "i11": 0.004590976152036249,
+        "i19": 0.0047320674579435324,
+        "i22": 0.004750244319081176,
+        "j08": 0.004723038302850079,
+        "j10": 0.004925227413763737,
+        "k04": 0.003909661572285652,
+        "k05": 0.0046516728354499635,
+        "k12": 0.004770977690543242,
+        "l24": 0.004792878277434988,
+        "m02": 0.0047919831237997045,
+        "m19": 0.004808038182405754,
+        "n13": 0.004813879394517712,
+        "n20": 0.00480248244592359,
+        "n21": 0.004802539206025261,
+        "p08": 0.004320430655281561
+      },
+      "minimum_leave_one_well_out_mean_difference": 0.003181776323025314
+    }
+  },
+  "controller_error_decomposition": {
+    "count": 270,
+    "mean_prediction_bias_um": 0.08524688639192797,
+    "mae_um": 1.3418707625246824,
+    "signed_direction_accuracy": 0.9888888888888889,
+    "action_saturation_fraction": 0.007407407407407408,
+    "linear_fit_prediction_from_true": {
+      "gain": 0.690557729283316,
+      "bias_um": 0.08524688639192811
+    },
+    "cubic_fit_prediction_from_true": [
+      -0.009856694078708247,
+      -0.0021100227208090427,
+      0.9665451634871457,
+      0.12463397718036459
+    ],
+    "by_true_depth_um": {
+      "-2.0": {
+        "count": 45,
+        "mean_error_um": 0.6474398301358663,
+        "mae_um": 0.8046407194715968
+      },
+      "-4.0": {
+        "count": 45,
+        "mean_error_um": 0.4384067920328178,
+        "mae_um": 0.7487922461913887
+      },
+      "-6.0": {
+        "count": 45,
+        "mean_error_um": 2.509908850024336,
+        "mae_um": 2.509908850024336
+      },
+      "2.0": {
+        "count": 45,
+        "mean_error_um": -0.14323102214998037,
+        "mae_um": 0.7368437613380588
+      },
+      "4.0": {
+        "count": 45,
+        "mean_error_um": -0.6915732213645865,
+        "mae_um": 0.9792186867485897
+      },
+      "6.0": {
+        "count": 45,
+        "mean_error_um": -2.2494699103268854,
+        "mae_um": 2.2718203113741247
+      }
+    },
+    "by_sign": {
+      "negative": {
+        "count": 135,
+        "mean_error_um": 1.1985851573976734,
+        "mae_um": 1.3544472718957739
+      },
+      "positive": {
+        "count": 135,
+        "mean_error_um": -1.0280913846138175,
+        "mae_um": 1.329294253153591
+      }
+    },
+    "by_magnitude": {
+      "far": {
+        "count": 90,
+        "mean_error_um": 0.13021946984872515,
+        "mae_um": 2.39086458069923
+      },
+      "mid": {
+        "count": 90,
+        "mean_error_um": -0.12658321466588443,
+        "mae_um": 0.8640054664699892
+      },
+      "near": {
+        "count": 90,
+        "mean_error_um": 0.252104403992943,
+        "mae_um": 0.7707422404048277
+      }
+    },
+    "by_density": {
+      "hard": {
+        "count": 162,
+        "mean_error_um": 0.32652977114654635,
+        "mae_um": 1.2938421783507899
+      },
+      "other": {
+        "count": 108,
+        "mean_error_um": -0.2766774407399996,
+        "mae_um": 1.4139136387855213
+      }
+    },
+    "by_well": {
+      "a15": {
+        "count": 6,
+        "mean_error_um": -0.523392965215689,
+        "mae_um": 1.336127002799633
+      },
+      "a18": {
+        "count": 6,
+        "mean_error_um": 0.5068532966635203,
+        "mae_um": 1.3348813781263715
+      },
+      "a23": {
+        "count": 6,
+        "mean_error_um": 0.4437583423435775,
+        "mae_um": 1.3453936081043025
+      },
+      "b01": {
+        "count": 6,
+        "mean_error_um": -1.0975469419432928,
+        "mae_um": 1.623908396221997
+      },
+      "b08": {
+        "count": 6,
+        "mean_error_um": -0.29276943669241656,
+        "mae_um": 1.1027529679758008
+      },
+      "b22": {
+        "count": 6,
+        "mean_error_um": 0.3387250831973856,
+        "mae_um": 1.2202747274156363
+      },
+      "c15": {
+        "count": 6,
+        "mean_error_um": -0.27201189630585887,
+        "mae_um": 1.0683242463557097
+      },
+      "c21": {
+        "count": 6,
+        "mean_error_um": 0.17635118795645388,
+        "mae_um": 1.085012693640808
+      },
+      "c23": {
+        "count": 6,
+        "mean_error_um": 1.5681579253283227,
+        "mae_um": 1.8356409559079578
+      },
+      "d01": {
+        "count": 6,
+        "mean_error_um": 1.3025027074261433,
+        "mae_um": 1.536753353681374
+      },
+      "d19": {
+        "count": 6,
+        "mean_error_um": -1.2850039242121456,
+        "mae_um": 1.6358173120565704
+      },
+      "d20": {
+        "count": 6,
+        "mean_error_um": -1.0191506752729365,
+        "mae_um": 1.484060917859831
+      },
+      "e01": {
+        "count": 6,
+        "mean_error_um": -0.320148524004854,
+        "mae_um": 0.9509575549133397
+      },
+      "e11": {
+        "count": 6,
+        "mean_error_um": 0.02800199910150895,
+        "mae_um": 0.9982914220767859
+      },
+      "e23": {
+        "count": 6,
+        "mean_error_um": -1.5539946800069615,
+        "mae_um": 1.906376141533708
+      },
+      "f01": {
+        "count": 6,
+        "mean_error_um": -0.07264824665461737,
+        "mae_um": 0.9453595917255168
+      },
+      "f20": {
+        "count": 6,
+        "mean_error_um": 3.3911989982119315,
+        "mae_um": 3.1197690164034633
+      },
+      "f23": {
+        "count": 6,
+        "mean_error_um": -0.38738727128530187,
+        "mae_um": 1.106062456393335
+      },
+      "g07": {
+        "count": 6,
+        "mean_error_um": -0.24544066390670757,
+        "mae_um": 1.03530393067632
+      },
+      "g11": {
+        "count": 6,
+        "mean_error_um": -1.0619670534143417,
+        "mae_um": 1.5832760706786673
+      },
+      "g18": {
+        "count": 6,
+        "mean_error_um": 0.5473501040322638,
+        "mae_um": 1.1928345425766673
+      },
+      "h06": {
+        "count": 6,
+        "mean_error_um": 1.23499751081209,
+        "mae_um": 1.6462870829580936
+      },
+      "h17": {
+        "count": 6,
+        "mean_error_um": 0.35905897369264855,
+        "mae_um": 1.2004077681918697
+      },
+      "h24": {
+        "count": 6,
+        "mean_error_um": 0.504398883643241,
+        "mae_um": 1.6351407330053858
+      },
+      "i11": {
+        "count": 6,
+        "mean_error_um": 0.6201551088410463,
+        "mae_um": 1.209240886124098
+      },
+      "i19": {
+        "count": 6,
+        "mean_error_um": 1.0575694711157173,
+        "mae_um": 1.5226041973829296
+      },
+      "i22": {
+        "count": 6,
+        "mean_error_um": 0.2550264146370164,
+        "mae_um": 1.1367387676722218
+      },
+      "j08": {
+        "count": 6,
+        "mean_error_um": 0.012391838408721009,
+        "mae_um": 1.0683823514460227
+      },
+      "j10": {
+        "count": 6,
+        "mean_error_um": -0.045324439989884745,
+        "mae_um": 1.0648431875882869
+      },
+      "j23": {
+        "count": 6,
+        "mean_error_um": -0.36034410484546303,
+        "mae_um": 1.1872513474340747
+      },
+      "k04": {
+        "count": 6,
+        "mean_error_um": -0.5563130179614085,
+        "mae_um": 1.1105592393738564
+      },
+      "k05": {
+        "count": 6,
+        "mean_error_um": -0.5263610199179046,
+        "mae_um": 1.07169996080032
+      },
+      "k12": {
+        "count": 6,
+        "mean_error_um": -0.6633277049770033,
+        "mae_um": 1.178709537362488
+      },
+      "l06": {
+        "count": 6,
+        "mean_error_um": -0.5051974101050488,
+        "mae_um": 1.1235373895474945
+      },
+      "l24": {
+        "count": 6,
+        "mean_error_um": 1.3328700216576506,
+        "mae_um": 1.6293048580666893
+      },
+      "m01": {
+        "count": 6,
+        "mean_error_um": -0.872447924406908,
+        "mae_um": 1.3522132547655517
+      },
+      "m02": {
+        "count": 6,
+        "mean_error_um": -0.38868222437071936,
+        "mae_um": 1.0619184135429953
+      },
+      "m19": {
+        "count": 6,
+        "mean_error_um": 0.9754461445990814,
+        "mae_um": 1.3285894465583277
+      },
+      "n13": {
+        "count": 6,
+        "mean_error_um": -0.5415683508089743,
+        "mae_um": 1.1737882633380998
+      },
+      "n20": {
+        "count": 6,
+        "mean_error_um": -0.6527252802414726,
+        "mae_um": 1.1803659912343785
+      },
+      "n21": {
+        "count": 6,
+        "mean_error_um": 0.6881011452958677,
+        "mae_um": 1.288484492123579
+      },
+      "o21": {
+        "count": 6,
+        "mean_error_um": -0.1107551246003986,
+        "mae_um": 1.0181512644088
+      },
+      "p08": {
+        "count": 6,
+        "mean_error_um": 1.7817994535717903,
+        "mae_um": 2.029534512101503
+      },
+      "p19": {
+        "count": 6,
+        "mean_error_um": 0.21856913486912802,
+        "mae_um": 1.2088146181972104
+      },
+      "p21": {
+        "count": 6,
+        "mean_error_um": -0.1526649766280387,
+        "mae_um": 1.5104384632626384
+      }
+    }
+  },
+  "controller_grid": {
+    "evaluated_per_system": 125,
+    "best_candidate": {
+      "gain": 1.15,
+      "bias_um": -0.5,
+      "cubic": 0.2,
+      "monotone": true,
+      "summary": {
+        "sample_count": 162,
+        "corrected_pq": 0.5522096052314562,
+        "focus_mae_um": 1.0984057551072994,
+        "signed_direction_accuracy": 0.9876543209876543,
+        "fraction_frames_improved": 0.7037037037037037
+      },
+      "rows": [
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.8096882094708135,
+          "before_pq": 0.0,
+          "after_pq": 0.25829841476816406
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.17642800066450537,
+          "before_pq": 0.0,
+          "after_pq": 0.3573067666825825
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.5828437008114702,
+          "before_pq": 0.24789857924242759,
+          "after_pq": 0.3253409299493421
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.20083154068757514,
+          "before_pq": 0.3585014509335365,
+          "after_pq": 0.3462164817113888
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.13961919963967517,
+          "before_pq": 0.3524539235258032,
+          "after_pq": 0.35728265198083403
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.9311073501041012,
+          "before_pq": 0.26417510695419383,
+          "after_pq": 0.3584563170074469
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.26480106605749093,
+          "after_pq": 0.7752083919058849
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.9094723161560365,
+          "before_pq": 0.6523597651390192,
+          "after_pq": 0.7750144807449861
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8440464803334446,
+          "before_pq": 0.7689688602460382,
+          "after_pq": 0.7751226771084149
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.1549766472511158,
+          "before_pq": 0.7750052874573332,
+          "after_pq": 0.7750911014583699
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.4289231866172134,
+          "before_pq": 0.7676620351726807,
+          "after_pq": 0.7750632815779646
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.847123073307693,
+          "before_pq": 0.5442191584340637,
+          "after_pq": 0.7718949682356089
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.7649031433838207,
+          "before_pq": 0.0,
+          "after_pq": 0.20300686493034567
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.370641378194203,
+          "before_pq": 0.0,
+          "after_pq": 0.19590952741503215
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.3612453891828076,
+          "before_pq": 0.21509009009009009,
+          "after_pq": 0.195625350616324
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.6939794157378794,
+          "before_pq": 0.19608671171171171,
+          "after_pq": 0.1957190257364127
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.5385414490370084,
+          "before_pq": 0.22055984555984556,
+          "after_pq": 0.19567526504758925
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.3755523426901277,
+          "before_pq": 0.0,
+          "after_pq": 0.195910910006388
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.62283198756906,
+          "before_pq": 0.26352201257861635,
+          "after_pq": 0.3127850039897424
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.7063142876711272,
+          "before_pq": 0.19257097968802603,
+          "after_pq": 0.3702013264532114
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -1.3445065641137748,
+          "before_pq": 0.3671524733280327,
+          "after_pq": 0.36869728687238124
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.1933721222420006,
+          "before_pq": 0.3710144927536232,
+          "after_pq": 0.3690534682161432
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -1.1889148732939638,
+          "before_pq": 0.36793646520393053,
+          "after_pq": 0.3690639726974522
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.4174630596555682,
+          "before_pq": 0.3490694974652374,
+          "after_pq": 0.37168819272541775
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.5196554006490519,
+          "before_pq": 0.408134252996018,
+          "after_pq": 0.5543652022339811
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.3489885265940824,
+          "before_pq": 0.5478146604355347,
+          "after_pq": 0.5547381153340895
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.44526147236064473,
+          "before_pq": 0.5530612941111458,
+          "after_pq": 0.5547949297728761
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.7221350166229474,
+          "before_pq": 0.5546971883182034,
+          "after_pq": 0.5547775236158308
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.9640699763659835,
+          "before_pq": 0.5499136975853166,
+          "after_pq": 0.5547623139362087
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.237268012455319,
+          "before_pq": 0.544771704367512,
+          "after_pq": 0.5541297036488081
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.2522483170164467,
+          "before_pq": 0.24509337057840977,
+          "after_pq": 0.4924684871223996
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.12945568331018853,
+          "before_pq": 0.48629223309219904,
+          "after_pq": 0.494854140946584
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.7808493223778883,
+          "before_pq": 0.49335988931628827,
+          "after_pq": 0.49433378652436766
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.7449110102938139,
+          "before_pq": 0.4964860791483119,
+          "after_pq": 0.4943624952167748
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.9756513368298245,
+          "before_pq": 0.4935317134691802,
+          "after_pq": 0.49417817234025957
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.14836924807295748,
+          "before_pq": 0.4875055931272815,
+          "after_pq": 0.49507094739333746
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.8162743182976646,
+          "before_pq": 0.15557418273260687,
+          "after_pq": 0.27954147057050394
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.2565510162652327,
+          "before_pq": 0.30282544035198644,
+          "after_pq": 0.34240446704191424
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.4338105967507182,
+          "before_pq": 0.27316197108034285,
+          "after_pq": 0.3275447030258546
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.2472696317931775,
+          "before_pq": 0.34102205463251156,
+          "after_pq": 0.3340219574837743
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.20559638600602792,
+          "before_pq": 0.3371191751962541,
+          "after_pq": 0.3354689759288233
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.198417042865601,
+          "before_pq": 0.2852370659701112,
+          "after_pq": 0.3416576443385748
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.2069200770808477,
+          "before_pq": 0.0,
+          "after_pq": 0.3669601427989325
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.8157353135130592,
+          "before_pq": 0.0,
+          "after_pq": 0.36360605607009466
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.689225733320586,
+          "before_pq": 0.3964638892220756,
+          "after_pq": 0.3635746485114427
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.8667228802903868,
+          "before_pq": 0.36361119344668696,
+          "after_pq": 0.3635795972062004
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.767855100491551,
+          "before_pq": 0.39866217349450617,
+          "after_pq": 0.3635768407311137
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.6434945437548372,
+          "before_pq": 0.0,
+          "after_pq": 0.36360125392533393
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.5959069171548634,
+          "before_pq": 0.28250024263358053,
+          "after_pq": 0.3250446376999055
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.4289548598767743,
+          "before_pq": 0.2323045766771969,
+          "after_pq": 0.3784354809492843
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.4071702413231255,
+          "before_pq": 0.3066124526765288,
+          "after_pq": 0.3792673286668812
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.02675583930633696,
+          "before_pq": 0.30736698229476533,
+          "after_pq": 0.39662953522707356
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.25974420160952416,
+          "before_pq": 0.3062084996076556,
+          "after_pq": 0.3860899697556678
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.7242733672078447,
+          "before_pq": 0.2889259386069384,
+          "after_pq": 0.31983987523154456
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.3790482658818961,
+          "before_pq": 0.5881007673680158,
+          "after_pq": 0.6073191245566621
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.7877540859705725,
+          "before_pq": 0.6528461878863617,
+          "after_pq": 0.6353312259565388
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8289137390745842,
+          "before_pq": 0.6296724172549542,
+          "after_pq": 0.6175037479949973
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.1005413426512365,
+          "before_pq": 0.6392774609757848,
+          "after_pq": 0.6225540518669456
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.3195143888304464,
+          "before_pq": 0.6307719655155599,
+          "after_pq": 0.6266253627661676
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.632532632041022,
+          "before_pq": 0.6530819839882028,
+          "after_pq": 0.6365874592606503
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -3.376207775905842,
+          "before_pq": 0.3324635443810261,
+          "after_pq": 0.4347986240879078
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -1.4012041298864304,
+          "before_pq": 0.3999659742106587,
+          "after_pq": 0.5137244755267701
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -2.006241920504266,
+          "before_pq": 0.5116462694494507,
+          "after_pq": 0.511297719687064
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.926895920943326,
+          "before_pq": 0.518199815238748,
+          "after_pq": 0.5118999875342859
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -1.9267695856034672,
+          "before_pq": 0.5148450096652583,
+          "after_pq": 0.5119004259990184
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.4997750120088418,
+          "after_pq": 0.5185875533862462
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.235551918353911,
+          "before_pq": 0.0,
+          "after_pq": 0.31577368325794336
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.26687697264592014,
+          "before_pq": 0.2597898815034009,
+          "after_pq": 0.2937289542947879
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.3845231289476645,
+          "before_pq": 0.32324746049015585,
+          "after_pq": 0.29755661812906675
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.23848192442679217,
+          "before_pq": 0.3085834504981244,
+          "after_pq": 0.29523413265694404
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.2753899204261909,
+          "before_pq": 0.3454158291543671,
+          "after_pq": 0.2958210785452294
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.024547092473438,
+          "before_pq": 0.3322332705685577,
+          "after_pq": 0.30022290062215384
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.760119613437074,
+          "before_pq": 0.20784023668639054,
+          "after_pq": 0.5783627056409346
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.6726996906708287,
+          "before_pq": 0.5215659866338092,
+          "after_pq": 0.6605853182077968
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.01096822212644133,
+          "before_pq": 0.5671449248973072,
+          "after_pq": 0.660160125914753
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.16972266616929854,
+          "before_pq": 0.6604122258903925,
+          "after_pq": 0.6606509110944706
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.27980750496596185,
+          "before_pq": 0.5440835094682088,
+          "after_pq": 0.6606365550066098
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.6878223430943757,
+          "before_pq": 0.5314550009702964,
+          "after_pq": 0.6604529367632039
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.5723390624474485,
+          "before_pq": 0.24211787099005144,
+          "after_pq": 0.7611115728169779
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.8768172456605612,
+          "before_pq": 0.7122968643204878,
+          "after_pq": 0.764502910028632
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.9054020001447514,
+          "before_pq": 0.7516400918231675,
+          "after_pq": 0.764712900974084
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.9191777837827932,
+          "before_pq": 0.7644762815984457,
+          "after_pq": 0.7647099230613491
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.9076336663426225,
+          "before_pq": 0.7542605213945752,
+          "after_pq": 0.7647124185545451
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.0530402438259108,
+          "before_pq": 0.7227783022448232,
+          "after_pq": 0.7642053583924056
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.5618213932123126,
+          "before_pq": 0.6586825777681713,
+          "after_pq": 0.713698908028521
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.7426732105028364,
+          "before_pq": 0.7025417634799533,
+          "after_pq": 0.7205848458498735
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -1.482826799327824,
+          "before_pq": 0.7180574226559554,
+          "after_pq": 0.719097021552257
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.2993986744177706,
+          "before_pq": 0.7236667072644302,
+          "after_pq": 0.7194657407278819
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -1.2800833162977572,
+          "before_pq": 0.722337982610581,
+          "after_pq": 0.7195045676140337
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.7155019807968444,
+          "after_pq": 0.7220777349805323
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.05886141675738088,
+          "before_pq": 0.0,
+          "after_pq": 0.3545138920586078
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.9609060056000756,
+          "before_pq": 0.0,
+          "after_pq": 0.35301934805380636
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8791253339580991,
+          "before_pq": 0.3849060474217883,
+          "after_pq": 0.35333543426605996
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.1084105008561478,
+          "before_pq": 0.35300792515364215,
+          "after_pq": 0.35326843928100377
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.2205876396549353,
+          "before_pq": 0.38132297919682756,
+          "after_pq": 0.353235662168384
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.3368941176491482,
+          "before_pq": 0.26176470588235295,
+          "after_pq": 0.3577775127276756
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.074698222423883,
+          "before_pq": 0.6004626745876439,
+          "after_pq": 0.629201765981161
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.03812265722055841,
+          "before_pq": 0.6238187352098643,
+          "after_pq": 0.6314381051764457
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.6295885516878552,
+          "before_pq": 0.6294106178269091,
+          "after_pq": 0.6307758971907832
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.4640626773858001,
+          "before_pq": 0.6332381099458616,
+          "after_pq": 0.630940803183542
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.2945543637682082,
+          "before_pq": 0.6316043057868991,
+          "after_pq": 0.6311096767016903
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.0941708921494993,
+          "before_pq": 0.6272216449601209,
+          "after_pq": 0.6324070199083486
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.7638788177929099,
+          "before_pq": 0.5545310622512952,
+          "after_pq": 0.6470590901591983
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.7008013500199413,
+          "before_pq": 0.6457163865801625,
+          "after_pq": 0.6507548031802923
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.9255718325700251,
+          "before_pq": 0.6455019972290044,
+          "after_pq": 0.64950887381856
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.0439255581716211,
+          "before_pq": 0.6512356677173228,
+          "after_pq": 0.6496990889464391
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.0608592302405144,
+          "before_pq": 0.6523798236362756,
+          "after_pq": 0.6497263043178326
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.0656912569816313,
+          "before_pq": 0.6518428692362631,
+          "after_pq": 0.6512732482375723
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.7289972266830178,
+          "before_pq": 0.645575756747833,
+          "after_pq": 0.8109058583540519
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.853258141686891,
+          "before_pq": 0.795819117733745,
+          "after_pq": 0.8161537055489998
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.2659866187213007,
+          "before_pq": 0.810200249978988,
+          "after_pq": 0.8156402104305835
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.3131748688341478,
+          "before_pq": 0.8171563871422667,
+          "after_pq": 0.8156814706230703
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.34255755579753666,
+          "before_pq": 0.81120707325013,
+          "after_pq": 0.8157071620889964
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.5693926603560957,
+          "before_pq": 0.8034854014387309,
+          "after_pq": 0.81677987515724
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -5.063244791334516,
+          "before_pq": 0.6610761450126503,
+          "after_pq": 0.6667289086239653
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -3.2198727401015916,
+          "before_pq": 0.6731449620504931,
+          "after_pq": 0.6745729580542925
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -3.9273283897828093,
+          "before_pq": 0.6768058929708801,
+          "after_pq": 0.6732779849229323
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -4.0,
+          "before_pq": 0.6172254041252946,
+          "after_pq": 0.6731449620504931
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -2.0,
+          "before_pq": 0.678132295252826,
+          "after_pq": 0.6768058929708801
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.6754996389538653,
+          "after_pq": 0.6795069930630075
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.006188567839733317,
+          "before_pq": 0.41186442860681466,
+          "after_pq": 0.6353561791076711
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.942957742271477,
+          "before_pq": 0.5465633740740766,
+          "after_pq": 0.5921076488373489
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8332484647821894,
+          "before_pq": 0.6338284930154795,
+          "after_pq": 0.6168115094603493
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.1152884094663031,
+          "before_pq": 0.5908377991450628,
+          "after_pq": 0.6105328600654745
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.1860041085407853,
+          "before_pq": 0.5185498241157925,
+          "after_pq": 0.6089586182264349
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.1412697811109673,
+          "before_pq": 0.5036797009868581,
+          "after_pq": 0.5857317459403928
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.3641047160705011,
+          "after_pq": 0.6114145627061723
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 2.0,
+          "before_pq": 0.5375011289716568,
+          "after_pq": 0.6118211908551551
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.0172529540540625,
+          "before_pq": 0.6091763465465672,
+          "after_pq": 0.6116213845490495
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.2168074465018823,
+          "before_pq": 0.6118211908551551,
+          "after_pq": 0.6116619567859921
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.3460269272476073,
+          "before_pq": 0.6043021367665468,
+          "after_pq": 0.6116882289251262
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.5121374576866145,
+          "before_pq": 0.5357004903962982,
+          "after_pq": 0.6098957962325811
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.9084825469231932,
+          "before_pq": 0.42588989820900536,
+          "after_pq": 0.49830181358369785
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.0862576381877078,
+          "before_pq": 0.3872893579987788,
+          "after_pq": 0.5560975049645924
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.20270621959191226,
+          "before_pq": 0.4952161317151916,
+          "after_pq": 0.5111760390639086
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.47319593573063967,
+          "before_pq": 0.6025539369098838,
+          "after_pq": 0.5249282602751228
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.6261284786562866,
+          "before_pq": 0.49852589297041056,
+          "after_pq": 0.5327036470466788
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.9312705155175411,
+          "before_pq": 0.4924147617665916,
+          "after_pq": 0.5990595967633227
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.5821464008966188,
+          "before_pq": 0.19635306553911205,
+          "after_pq": 0.6868598491380817
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.42339117983179086,
+          "before_pq": 0.5810161233694181,
+          "after_pq": 0.6511076610629039
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.3209914315455218,
+          "before_pq": 0.6962465481363451,
+          "after_pq": 0.658529156012871
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.07322117076267087,
+          "before_pq": 0.6503230045245724,
+          "after_pq": 0.6529632236775258
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.14306118740908813,
+          "before_pq": 0.69810288879155,
+          "after_pq": 0.651247177446823
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.6757156168919707,
+          "before_pq": 0.683836854605242,
+          "after_pq": 0.6504843964045552
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.958466670895243,
+          "before_pq": 0.5377487433680644,
+          "after_pq": 0.7551223846658723
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.1032744177217344,
+          "before_pq": 0.6751668289837431,
+          "after_pq": 0.7589084932774037
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.20694335551604714,
+          "before_pq": 0.7523967816267731,
+          "after_pq": 0.7578703046063748
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.4320055078035827,
+          "before_pq": 0.7599471389071246,
+          "after_pq": 0.7581309861632621
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.43617229497930543,
+          "before_pq": 0.753284442219358,
+          "after_pq": 0.7581358124059563
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.5926968182153018,
+          "before_pq": 0.7372763321491062,
+          "after_pq": 0.7594753739903066
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.1023363542151436,
+          "before_pq": 0.5981758815214229,
+          "after_pq": 0.6148890911557527
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.9924784248432816,
+          "before_pq": 0.5307097622541772,
+          "after_pq": 0.6219837281954869
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.23273363382841605,
+          "before_pq": 0.6096686690879275,
+          "after_pq": 0.6214601800450615
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.4375438243411338,
+          "before_pq": 0.6226780219417886,
+          "after_pq": 0.6216013169079915
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.49376895893225203,
+          "before_pq": 0.6141096634797644,
+          "after_pq": 0.6216400622413859
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.8854788063539472,
+          "before_pq": 0.5350892910832054,
+          "after_pq": 0.6225991041791044
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.7243658606539265,
+          "before_pq": 0.7647492988430662,
+          "after_pq": 0.6830459266206307
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.5153811721983415,
+          "before_pq": 0.716095225529453,
+          "after_pq": 0.6650557750217891
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -1.017979668469558,
+          "before_pq": 0.6642789595807157,
+          "after_pq": 0.6647927942045905
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.8479722886390171,
+          "before_pq": 0.6656106579716101,
+          "after_pq": 0.6648817492651594
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.7757595626342697,
+          "before_pq": 0.6669262590622068,
+          "after_pq": 0.6649195340214564
+        },
+        {
+          "design": "v2_3-exact-balanced-segmentation_only-step-14",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.6618858188434382,
+          "before_pq": 0.7241195949110092,
+          "after_pq": 0.6654198337264672
+        }
+      ]
+    },
+    "best_baseline": {
+      "gain": 1.15,
+      "bias_um": -0.5,
+      "cubic": -0.1,
+      "monotone": true,
+      "summary": {
+        "sample_count": 162,
+        "corrected_pq": 0.5512029979073859,
+        "focus_mae_um": 1.252900327516556,
+        "signed_direction_accuracy": 1.0,
+        "fraction_frames_improved": 0.7283950617283951
+      },
+      "rows": [
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -3.520250050746057,
+          "before_pq": 0.0,
+          "after_pq": 0.2744117759700211
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -1.0074248640286023,
+          "before_pq": 0.28215857700368957,
+          "after_pq": 0.3030773796510385
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.11098860228490559,
+          "before_pq": 0.24986341555253988,
+          "after_pq": 0.35113714391496625
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.0561083885817117,
+          "before_pq": 0.3550188474069453,
+          "after_pq": 0.30046735726193025
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.1792845835448702,
+          "before_pq": 0.3703261923918594,
+          "after_pq": 0.3474756579849538
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "a23",
+          "field_id": "a23_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.0649066966499916,
+          "before_pq": 0.25982399778818704,
+          "after_pq": 0.3559860239255539
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.6501138505551136,
+          "before_pq": 0.4634379039945945,
+          "after_pq": 0.7724601502341836
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.423895904653345,
+          "before_pq": 0.6588571463585412,
+          "after_pq": 0.771467528935405
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.284904712899266,
+          "before_pq": 0.7695666727368543,
+          "after_pq": 0.7689974917150394
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.138517343480642,
+          "before_pq": 0.7705021042474954,
+          "after_pq": 0.7719457610996643
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.8206091400202324,
+          "before_pq": 0.759939888430532,
+          "after_pq": 0.7708027241639458
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k12",
+          "field_id": "k12_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.9362376035231925,
+          "before_pq": 0.5388657149732229,
+          "after_pq": 0.7655577324353111
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.2927118578315966,
+          "before_pq": 0.0,
+          "after_pq": 0.21001454344196618
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.9979347453079264,
+          "before_pq": 0.0,
+          "after_pq": 0.19355380007940262
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.8631986535224847,
+          "before_pq": 0.2187902187902188,
+          "after_pq": 0.19318840146951471
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.3122848218482659,
+          "before_pq": 0.19313063063063063,
+          "after_pq": 0.19384334818897173
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.0799783401512704,
+          "before_pq": 0.21412483912483912,
+          "after_pq": 0.19351915329103972
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f01",
+          "field_id": "f01_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.043208397631596,
+          "before_pq": 0.0,
+          "after_pq": 0.19358419368491983
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -3.4094756835798967,
+          "before_pq": 0.2647798742138365,
+          "after_pq": 0.24435115909047303
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -1.1288778926629415,
+          "before_pq": 0.19249775381850856,
+          "after_pq": 0.3690224231716572
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -0.37638398457563493,
+          "before_pq": 0.3681159420289855,
+          "after_pq": 0.36980546097073413
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.3627013888297155,
+          "before_pq": 0.36896663249972633,
+          "after_pq": 0.3687791087290509
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.6549395883697793,
+          "before_pq": 0.3628765741975233,
+          "after_pq": 0.3695155987345468
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h06",
+          "field_id": "h06_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.7133146164771915,
+          "before_pq": 0.18745158791634392,
+          "after_pq": 0.3697582592248222
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.6754926360671583,
+          "before_pq": 0.579710109784483,
+          "after_pq": 0.5530752837294965
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.5773116767571702,
+          "before_pq": 0.550008945372255,
+          "after_pq": 0.5508239749903399
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.5240148710829144,
+          "before_pq": 0.5532077476537539,
+          "after_pq": 0.5490922600241199
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.3069798028954582,
+          "before_pq": 0.55023877245758,
+          "after_pq": 0.5511982434254268
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 2.0913367289300604,
+          "before_pq": 0.5458628949902449,
+          "after_pq": 0.5500389332905474
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c15",
+          "field_id": "c15_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 3.0497037083776855,
+          "before_pq": 0.5395204014591077,
+          "after_pq": 0.547942085055146
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.32163881071104,
+          "before_pq": 0.42665112989553633,
+          "after_pq": 0.4940830358736
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.005117974871679198,
+          "before_pq": 0.48868630963390247,
+          "after_pq": 0.49505124528987315
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8129108668267842,
+          "before_pq": 0.4951172570058252,
+          "after_pq": 0.4945621322020337
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.5959615244906251,
+          "before_pq": 0.4938481304413822,
+          "after_pq": 0.4950707966197655
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.0009504039447367774,
+          "before_pq": 0.490124656084785,
+          "after_pq": 0.49505110738271635
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m19",
+          "field_id": "m19_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.118525107888444,
+          "before_pq": 0.4815580379038101,
+          "after_pq": 0.4943783135652521
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.3554024326053575,
+          "before_pq": 0.14112626685971194,
+          "after_pq": 0.2721427107004307
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.19630223447468964,
+          "before_pq": 0.268715524005838,
+          "after_pq": 0.3354263801324934
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.5789644520348625,
+          "before_pq": 0.27288333595271086,
+          "after_pq": 0.34180743353273785
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.5418821666577758,
+          "before_pq": 0.34076255865770283,
+          "after_pq": 0.32344342967411754
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.15881514623709858,
+          "before_pq": 0.2710233411274525,
+          "after_pq": 0.34211636560274844
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "g18",
+          "field_id": "g18_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.4171120456964363,
+          "before_pq": 0.3008644190869886,
+          "after_pq": 0.3411911510171864
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.1285824694638231,
+          "before_pq": 0.0,
+          "after_pq": 0.3611910974070128
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.9837559765381592,
+          "before_pq": 0.22360641891891891,
+          "after_pq": 0.3820491885401731
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.852168725657465,
+          "before_pq": 0.35967787775136334,
+          "after_pq": 0.39873170759057935
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.3136549134668243,
+          "before_pq": 0.40157159916629176,
+          "after_pq": 0.3691763078026182
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.058693725484574,
+          "before_pq": 0.25660926509822946,
+          "after_pq": 0.3834887694602609
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e01",
+          "field_id": "e01_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.9351453009062958,
+          "before_pq": 0.0,
+          "after_pq": 0.4003257172348757
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.116218016968595,
+          "before_pq": 0.2672387535261878,
+          "after_pq": 0.3860097286730377
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.23596715927475653,
+          "before_pq": 0.2186269577218774,
+          "after_pq": 0.3880921243407388
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.1245058492215518,
+          "before_pq": 0.3963362387946328,
+          "after_pq": 0.3469235011198456
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.0445628301969343,
+          "before_pq": 0.30635926994646584,
+          "after_pq": 0.3989652667169727
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.6939511154549147,
+          "before_pq": 0.30251971170468517,
+          "after_pq": 0.36687237426511293
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "b22",
+          "field_id": "b22_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.8294886445460286,
+          "before_pq": 0.23097373272260371,
+          "after_pq": 0.31425956492179064
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.0390833561441255,
+          "before_pq": 0.6104022670818137,
+          "after_pq": 0.6332326369695642
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.29077614204434,
+          "before_pq": 0.6549573786049427,
+          "after_pq": 0.6330713324327234
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.260132637322026,
+          "before_pq": 0.6311939083241171,
+          "after_pq": 0.6300189659805127
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.9515404692162237,
+          "before_pq": 0.6317713894386401,
+          "after_pq": 0.6336931206471063
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.6443579578112164,
+          "before_pq": 0.618298082312183,
+          "after_pq": 0.6324232490397502
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n13",
+          "field_id": "n13_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.5645983333565776,
+          "before_pq": 0.6446029033498962,
+          "after_pq": 0.6279678860644405
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -3.227808705539262,
+          "before_pq": 0.3443312087081575,
+          "after_pq": 0.5053500204919426
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.819608997092943,
+          "before_pq": 0.5000088970532675,
+          "after_pq": 0.5154051022425161
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.05408320756266871,
+          "before_pq": 0.5138425765494992,
+          "after_pq": 0.5164754466989595
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -1.0201550403236523,
+          "before_pq": 0.5159500939650787,
+          "after_pq": 0.5151396322885693
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.2325815585142994,
+          "before_pq": 0.5079696075139765,
+          "after_pq": 0.5161821714111441
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "p08",
+          "field_id": "p08_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.9243685439352989,
+          "before_pq": 0.4926805933040474,
+          "after_pq": 0.5162404896943761
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.0236303489774303,
+          "before_pq": 0.15986677768526228,
+          "after_pq": 0.3055202872243859
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.45784723756552115,
+          "before_pq": 0.3349056967645025,
+          "after_pq": 0.2975848314555061
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.4017159615232133,
+          "before_pq": 0.3051689422814404,
+          "after_pq": 0.31426063299514495
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.081625803624648,
+          "before_pq": 0.3248308167894961,
+          "after_pq": 0.29093793892891623
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.676481084231876,
+          "before_pq": 0.3377643297126867,
+          "after_pq": 0.3014475451404861
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i11",
+          "field_id": "i11_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.6463423068812482,
+          "before_pq": 0.2516293220748503,
+          "after_pq": 0.3185825691744187
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.7608394124450193,
+          "before_pq": 0.5429864199646364,
+          "after_pq": 0.6451998278791367
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.6709017624229947,
+          "before_pq": 0.48762080224049026,
+          "after_pq": 0.642749165638015
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.595747711389739,
+          "before_pq": 0.6438387767079271,
+          "after_pq": 0.6255570387421139
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.38141099454489624,
+          "before_pq": 0.6180423205866085,
+          "after_pq": 0.6481305613419291
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.0452442767399184,
+          "before_pq": 0.540503388158557,
+          "after_pq": 0.6357904456307993
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i22",
+          "field_id": "i22_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.995430820839883,
+          "before_pq": 0.5648572158366574,
+          "after_pq": 0.6181272578759144
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.268115153426053,
+          "before_pq": 0.573272802948637,
+          "after_pq": 0.7962430237723557
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.9475770102319725,
+          "before_pq": 0.7941245467195938,
+          "after_pq": 0.7609800451577935
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.821394489376964,
+          "before_pq": 0.8157480652686456,
+          "after_pq": 0.7596270779756857
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.2577942043262691,
+          "before_pq": 0.7593505357913236,
+          "after_pq": 0.7620480639620015
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.9911721830898506,
+          "before_pq": 0.7457064400918476,
+          "after_pq": 0.7609125449765969
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "m02",
+          "field_id": "m02_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.845312396559244,
+          "before_pq": 0.6760866698864564,
+          "after_pq": 0.7595900449061321
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.030177284903394,
+          "before_pq": 0.7198431532007693,
+          "after_pq": 0.7135275158067644
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.07800594218927781,
+          "before_pq": 0.701136844675654,
+          "after_pq": 0.7206952540954507
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.882713627885154,
+          "before_pq": 0.7137173383781066,
+          "after_pq": 0.7208757571430982
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.36288824054149726,
+          "before_pq": 0.7211263743533555,
+          "after_pq": 0.7194148296987932
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.4436689664981719,
+          "before_pq": 0.7172519797931266,
+          "after_pq": 0.7207772755443234
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "l24",
+          "field_id": "l24_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.4357336381793857,
+          "before_pq": 0.7088251996480103,
+          "after_pq": 0.7209998044201933
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.020967136911918,
+          "before_pq": 0.0,
+          "after_pq": 0.3688231825902845
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.1791378559389312,
+          "before_pq": 0.22862712336396546,
+          "after_pq": 0.3723968447728112
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.0561444627571808,
+          "before_pq": 0.3854232342118725,
+          "after_pq": 0.38251379348700915
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.5869993596006609,
+          "before_pq": 0.38693584594320307,
+          "after_pq": 0.3619089664444184
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.3736420001759737,
+          "before_pq": 0.22941176470588237,
+          "after_pq": 0.37584187631820315
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k04",
+          "field_id": "k04_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.3442616564660606,
+          "before_pq": 0.0,
+          "after_pq": 0.3598210953731759
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.90119237755997,
+          "before_pq": 0.6110628005723294,
+          "after_pq": 0.6285847307782443
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.5130002026875631,
+          "before_pq": 0.6253521825396826,
+          "after_pq": 0.6311164941151282
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.34843579476194764,
+          "before_pq": 0.6312359208257048,
+          "after_pq": 0.6313917441719848
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.7882916996137697,
+          "before_pq": 0.6328917028429237,
+          "after_pq": 0.6311386038410253
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -0.01680887882285287,
+          "before_pq": 0.6285300595774856,
+          "after_pq": 0.6310766430689256
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n21",
+          "field_id": "n21_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.109707578096784,
+          "before_pq": 0.623512091268057,
+          "after_pq": 0.6320831349206658
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.5926258435886593,
+          "before_pq": 0.5558756209201119,
+          "after_pq": 0.6464447061394181
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.8106091836952825,
+          "before_pq": 0.6431464950566586,
+          "after_pq": 0.6505922516375485
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.825427822962131,
+          "before_pq": 0.6441372989410658,
+          "after_pq": 0.6513523462736639
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.5021897152908799,
+          "before_pq": 0.6509244556445649,
+          "after_pq": 0.6500512635091644
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 2.0351222104727253,
+          "before_pq": 0.6519612286177933,
+          "after_pq": 0.650942662523854
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f23",
+          "field_id": "f23_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.7982020027451684,
+          "before_pq": 0.5556784559034144,
+          "after_pq": 0.6513382327763764
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.7993371035547732,
+          "before_pq": 0.7730277055444252,
+          "after_pq": 0.8110580634468215
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.5385315976244476,
+          "before_pq": 0.7975546565363281,
+          "after_pq": 0.8137709491570483
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.4694062673585493,
+          "before_pq": 0.8107229388021986,
+          "after_pq": 0.8132659293429063
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.11232783454976136,
+          "before_pq": 0.8129780706687413,
+          "after_pq": 0.8140021739955929
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.7131836717452531,
+          "before_pq": 0.8075192147699173,
+          "after_pq": 0.8136761965970315
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "c21",
+          "field_id": "c21_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.736612828401947,
+          "before_pq": 0.7965679086358312,
+          "after_pq": 0.8131209639547793
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -4.292241447432404,
+          "before_pq": 0.6616050854747579,
+          "after_pq": 0.6698269347393732
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -2.036611723983594,
+          "before_pq": 0.671233904785607,
+          "after_pq": 0.6780365957284048
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": -1.2357689366093831,
+          "before_pq": 0.6781634469713228,
+          "after_pq": 0.6792175317448053
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -2.2504962102743606,
+          "before_pq": 0.6785270002272004,
+          "after_pq": 0.6772955349430937
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": -1.3424107090068143,
+          "before_pq": 0.67804163794793,
+          "after_pq": 0.6790704434178761
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "f20",
+          "field_id": "f20_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 0.0,
+          "before_pq": 0.672625725700572,
+          "after_pq": 0.6809219969020357
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.8910081430499721,
+          "before_pq": 0.48310840671562616,
+          "after_pq": 0.6346343397471523
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.3148828093495801,
+          "before_pq": 0.5530717128022133,
+          "after_pq": 0.6053587922672584
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.1866688616683714,
+          "before_pq": 0.6378960785480623,
+          "after_pq": 0.5840722505751046
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.8334813795506388,
+          "before_pq": 0.5914702880354844,
+          "after_pq": 0.6151176275237454
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.5303544793298522,
+          "before_pq": 0.5122065330175442,
+          "after_pq": 0.6009908107873201
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "k05",
+          "field_id": "k05_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.5260251894530406,
+          "before_pq": 0.49421172733130575,
+          "after_pq": 0.5706229221604487
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -0.6902353624266917,
+          "before_pq": 0.4980119192889211,
+          "after_pq": 0.6101049577527047
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 1.6070031172857746,
+          "before_pq": 0.5399253633550665,
+          "after_pq": 0.6096257293596037
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 2.5415850254447196,
+          "before_pq": 0.6067346770591422,
+          "after_pq": 0.5898738304230885
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 1.2024306590756846,
+          "before_pq": 0.6090741802044514,
+          "after_pq": 0.6101935241878541
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.8014230240842468,
+          "before_pq": 0.5381698941577807,
+          "after_pq": 0.609352871889084
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "n20",
+          "field_id": "n20_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.707964872175132,
+          "before_pq": 0.5329584239695768,
+          "after_pq": 0.5839753083006013
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.254370062862583,
+          "before_pq": 0.4289872978857003,
+          "after_pq": 0.48193269934711874
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.013196868456381239,
+          "before_pq": 0.3887473712914347,
+          "after_pq": 0.5000196318017585
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.8554162590309708,
+          "before_pq": 0.49551149818134654,
+          "after_pq": 0.4989530278257307
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.3630320781471843,
+          "before_pq": 0.4975035034112175,
+          "after_pq": 0.49921501239057925
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.34565720209156847,
+          "before_pq": 0.49439089005230397,
+          "after_pq": 0.499598597190474
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j10",
+          "field_id": "j10_s1",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.4849406468823059,
+          "before_pq": 0.489581592557328,
+          "after_pq": 0.49815578518016473
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.426647840766353,
+          "before_pq": 0.34885432521811877,
+          "after_pq": 0.7070753151743965
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.08527154680688254,
+          "before_pq": 0.7408477312903327,
+          "after_pq": 0.6509560942038137
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.7952803943560607,
+          "before_pq": 0.6979172075449226,
+          "after_pq": 0.6693125247421987
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.3486949202105647,
+          "before_pq": 0.7002876276790011,
+          "after_pq": 0.6574168823508105
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.4079198328231963,
+          "before_pq": 0.692371814754701,
+          "after_pq": 0.659352918198961
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "h17",
+          "field_id": "h17_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.503687856445791,
+          "before_pq": 0.6418107539516319,
+          "after_pq": 0.687526716622723
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.447574504506683,
+          "before_pq": 0.6038806387495712,
+          "after_pq": 0.7543421415514915
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.8428721707186382,
+          "before_pq": 0.7379041127908215,
+          "after_pq": 0.7539080897514842
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.7311528337990651,
+          "before_pq": 0.753878050109228,
+          "after_pq": 0.7521690340850284
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.35513515316058064,
+          "before_pq": 0.7516426912215343,
+          "after_pq": 0.754862970184413
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 1.0145309320302998,
+          "before_pq": 0.7426307424446689,
+          "after_pq": 0.753572020135243
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "e11",
+          "field_id": "e11_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 2.0073627555229483,
+          "before_pq": 0.6740843587112525,
+          "after_pq": 0.7516095148337195
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -1.7029296573480375,
+          "before_pq": 0.5040056359987162,
+          "after_pq": 0.6134543335282469
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": 0.5566111308303139,
+          "before_pq": 0.5328510502349277,
+          "after_pq": 0.6172640437477186
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 1.4046173117742615,
+          "before_pq": 0.6126486820933803,
+          "after_pq": 0.6160321041749313
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": 0.21710049437041445,
+          "before_pq": 0.6151671629621664,
+          "after_pq": 0.6177572672616929
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.8241421564158391,
+          "before_pq": 0.5381527985623247,
+          "after_pq": 0.6168753884940501
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "j08",
+          "field_id": "j08_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.9918882694906817,
+          "before_pq": 0.4424626252200317,
+          "after_pq": 0.615178947265209
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -6.0,
+          "residual_depth_um": -2.7424413096341205,
+          "before_pq": 0.6998498316568839,
+          "after_pq": 0.6855970255785514
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -4.0,
+          "residual_depth_um": -0.3188480569319756,
+          "before_pq": 0.7186417211688177,
+          "after_pq": 0.6654764323489043
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": -2.0,
+          "residual_depth_um": 0.6261632466089391,
+          "before_pq": 0.6660879980807093,
+          "after_pq": 0.6656533217519183
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 2.0,
+          "residual_depth_um": -0.5329464156955566,
+          "before_pq": 0.6662959149907383,
+          "after_pq": 0.6655543165758449
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 4.0,
+          "residual_depth_um": 0.15633244578846694,
+          "before_pq": 0.6657482720166733,
+          "after_pq": 0.6654335648592223
+        },
+        {
+          "design": "v2_2-piecewise-028",
+          "well": "i19",
+          "field_id": "i19_s2",
+          "original_depth_um": 6.0,
+          "residual_depth_um": 1.2460968318495498,
+          "before_pq": 0.7223549894845579,
+          "after_pq": 0.665943287156767
+        }
+      ]
+    },
+    "best_candidate_vs_best_baseline": {
+      "source_count": 27,
+      "replicates": 2000,
+      "mean_difference": 0.0010066073240702572,
+      "ci_lower_95": -0.0029727068570245246,
+      "ci_upper_95": 0.005238229414732509,
+      "well_count": 27,
+      "positive_well_fraction": 0.5185185185185185,
+      "well_mean_differences": {
+        "a23": 0.011724370565215775,
+        "b22": -0.002635955417856911,
+        "c15": 0.004232834671119623,
+        "c21": 0.0019956676181270283,
+        "e01": -0.018344041465400345,
+        "e11": 0.0045299307612993904,
+        "f01": 0.0006905839327128275,
+        "f20": -0.0033885562983363058,
+        "f23": -0.00045000903335510695,
+        "g18": 0.0007519579549551403,
+        "h06": 0.011709540172177332,
+        "h17": -0.013408164591690475,
+        "i11": -0.004999406235455454,
+        "i19": -0.0009237225685191364,
+        "i22": 0.010882375919976725,
+        "j08": 0.0046018997088223546,
+        "j10": 0.04073201799358289,
+        "k04": -0.016025911738394145,
+        "k05": 0.006450303096106984,
+        "k12": 0.004360585407946667,
+        "l24": -0.0003102696592539589,
+        "m02": -0.0025742861537619657,
+        "m19": -0.00048810023158628774,
+        "n13": -0.007414369788689257,
+        "n20": 0.009162816356856654,
+        "n21": 8.031954099944431e-05,
+        "p08": -0.013764012767702541
+      },
+      "leave_one_well_out_mean_differences": {
+        "a23": 0.0005943856609492759,
+        "b22": 0.001146705891067456,
+        "c15": 0.0008825216568760508,
+        "c21": 0.0009685665435296121,
+        "e01": 0.0017508630467422035,
+        "e11": 0.0008710948841768289,
+        "f01": 0.001018762069891697,
+        "f20": 0.001175652078778202,
+        "f23": 0.0010626310301250787,
+        "g18": 0.0010164015305746848,
+        "h06": 0.0005949560606815236,
+        "h17": 0.001561021628522593,
+        "i11": 0.0012376078455904767,
+        "i19": 0.0010808507814775413,
+        "i22": 0.0006267700703815467,
+        "j08": 0.0008683268477336381,
+        "j10": -0.0005212930862956134,
+        "k04": 0.0016617042110881187,
+        "k05": 0.0007972344097611522,
+        "k12": 0.0008776081669980877,
+        "l24": 0.0010572564388134963,
+        "m02": 0.0011443339962945735,
+        "m19": 0.0010640960762108936,
+        "n13": 0.0013304910591763924,
+        "n20": 0.0006929069766553957,
+        "n21": 0.0010422337772652884,
+        "p08": 0.0015747080968307493
+      },
+      "minimum_leave_one_well_out_mean_difference": -0.0005212930862956134
+    },
+    "top_candidate_summaries": [
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": 0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5522096052314562,
+          "focus_mae_um": 1.0984057551072994,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.7037037037037037
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": 0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5520914913992048,
+          "focus_mae_um": 1.12072893063362,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.7098765432098766
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": 0.0,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5519185153939121,
+          "focus_mae_um": 1.1470733740509331,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.7098765432098766
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": -0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5517431131796366,
+          "focus_mae_um": 1.1780128135988275,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.7160493827160493
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5516584753508963,
+          "focus_mae_um": 1.1577949196888817,
+          "signed_direction_accuracy": 0.9938271604938271,
+          "fraction_frames_improved": 0.7160493827160493
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": -0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5515061254779372,
+          "focus_mae_um": 1.2111245975229474,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.7160493827160493
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5514756469485314,
+          "focus_mae_um": 1.1905647482070527,
+          "signed_direction_accuracy": 0.9938271604938271,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.0,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5512795950907392,
+          "focus_mae_um": 1.2246663181149011,
+          "signed_direction_accuracy": 0.9938271604938271,
+          "fraction_frames_improved": 0.7407407407407407
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": -0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5510167742856199,
+          "focus_mae_um": 1.263144034409009,
+          "signed_direction_accuracy": 0.9938271604938271,
+          "fraction_frames_improved": 0.7407407407407407
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.25,
+        "cubic": 0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5509263235072015,
+          "focus_mae_um": 1.063747859392196,
+          "signed_direction_accuracy": 0.9876543209876543,
+          "fraction_frames_improved": 0.691358024691358
+        }
+      }
+    ],
+    "top_baseline_summaries": [
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": -0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5512029979073859,
+          "focus_mae_um": 1.252900327516556,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": -0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5511331584905806,
+          "focus_mae_um": 1.2880135475088823,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7345679012345679
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": 0.0,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.551111225127121,
+          "focus_mae_um": 1.2276767044761707,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.25,
+        "cubic": -0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5510783304956033,
+          "focus_mae_um": 1.194474958355402,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7345679012345679
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5510182970993793,
+          "focus_mae_um": 1.2555318279711696,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7345679012345679
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.25,
+        "cubic": -0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5510127180476352,
+          "focus_mae_um": 1.2224415163353182,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7345679012345679
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.25,
+        "cubic": 0.0,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.551003923811997,
+          "focus_mae_um": 1.1719984011399394,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      },
+      {
+        "gain": 1.15,
+        "bias_um": -0.5,
+        "cubic": 0.1,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5509945710868556,
+          "focus_mae_um": 1.2036022071070023,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.0,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5509840568100478,
+          "focus_mae_um": 1.28679098013033,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7345679012345679
+        }
+      },
+      {
+        "gain": 1.075,
+        "bias_um": -0.5,
+        "cubic": 0.2,
+        "monotone": true,
+        "summary": {
+          "sample_count": 162,
+          "corrected_pq": 0.5509337216961564,
+          "focus_mae_um": 1.2264867461131517,
+          "signed_direction_accuracy": 1.0,
+          "fraction_frames_improved": 0.7283950617283951
+        }
+      }
+    ]
+  },
+  "route_checks_before_exposure_audit": {
+    "oracle_corrected_pq_at_least_actual_baseline_plus_0_005": false,
+    "matched_grid_gain_at_least_0_005": false,
+    "matched_grid_bootstrap_lower_positive": false,
+    "matched_grid_positive_well_fraction_at_least_0_60": false,
+    "matched_grid_leave_one_out_always_positive": false,
+    "candidate_grid_focus_mae_at_most_1_0": false
+  },
+  "controller_route_supported_before_exposure_audit": false
+}
