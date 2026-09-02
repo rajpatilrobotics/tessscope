@@ -1,0 +1,43 @@
+{
+  "status": "frozen_before_v2_6_diagnostic_generation",
+  "source_commit": "09b9eb2",
+  "test_accessed": false,
+  "sources": {
+    "v2_4_selected_checkpoints": {
+      "path": "configs/v2_4/selected-checkpoints.json",
+      "sha256": "d1519c04e553c69fd448a985975a96e04264c458d9f8ade2e94a85440a61db81"
+    },
+    "v2_4_expanded_hard_validation": {
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    },
+    "v2_2_piecewise_hard_frontier": {
+      "path": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+      "sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+    },
+    "v2_5_pretest_block": {
+      "path": "configs/v2_5/pretest-block.json",
+      "sha256": "1c5deaf42f43a46a68881d43821b6229bccc3919d0e22666811162e4a54d36fd"
+    },
+    "bbbc006_splits": {
+      "path": "data/manifests/v2/bbbc006-splits.json",
+      "sha256": "80eacd305783ec6b2144c9845cf848e60eda31f40056a0ac12e23da7f1bae6ea"
+    },
+    "v2_6_training_partitions": {
+      "path": "data/manifests/v2_6/training-development-confirmation.json",
+      "sha256": "0e8db46443b6b8a011da604d2646b2c70eb9ddcf82aee8ac086f950894299428"
+    },
+    "training_calibration": {
+      "path": "data/manifests/v2/bbbc006-training-calibration.json",
+      "sha256": "4b636195b104ab9872341983817b910c20762558e98b45a2902fe87a21511442"
+    },
+    "clear_optical_calibration": {
+      "path": "artifacts/runs/v2/gate3/clear-calibration-offset.json",
+      "sha256": "e01b79be1cb3156d7f6a228c92d32b92f536aa29d610ee10ba2f15d30abf802d"
+    },
+    "v2_3_closed_loop_derivative": {
+      "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+      "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+    }
+  }
+}

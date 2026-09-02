@@ -1,5 +1,26 @@
 # TessScope decision log
 
+## 2026-09-02 — V2.6 diagnosis-first phase authorized and preregistered
+
+- V1–v2.5 remain immutable at local commit `09b9eb2`. V2.6 is a separately named
+  improvement phase; no push, publication, deployment, submission, deletion, or test
+  access is authorized outside its frozen gates.
+- The primary objective is a corrected-PQ effect of at least `+0.005` over the strongest
+  equally calibrated piecewise baseline, with a positive paired well-bootstrap lower
+  bound, at least 60% positive wells, and positive leave-one-well-out means. Focus and
+  frame-reliability targets are secondary and cannot buy a PQ regression.
+- Before a new pupil/controller is generated, freeze and run an oracle/PQ-depth/controller
+  decomposition plus fixed-total-photon exposure audit. The current balanced checkpoint,
+  piecewise-028, source hashes, training-only partitions, controller family, exposure
+  grid, decision rule, and test seal are preregistered in `configs/v2_6/`.
+- Use B7 for the primary route unless the diagnostic supplies concrete evidence for more
+  modes. Do not repeat v2.5's infeasible pupil-only pressure. Any exact optimization must
+  restore feasibility before corrected-task optimization and must pass independent and
+  full-loop derivative checks.
+- If controller/exposure headroom is insufficient, freeze that result before considering
+  a sequential two-mask route. Such a route requires primary/official evidence that rapid
+  SLM switching is physically plausible and a fair matched two-mask piecewise baseline.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

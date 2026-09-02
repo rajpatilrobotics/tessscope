@@ -1,5 +1,22 @@
 # TessScope project brief
 
+## V2.6 diagnosis-first improvement
+
+V2.6 preserves v1–v2.5 and targets the principal remaining scientific blocker: a
+statistically credible corrected-PQ advantage over the strongest fair piecewise system,
+not merely a lower focus error. It first measures the frozen balanced pupil's oracle
+correction ceiling, PQ-versus-residual-depth curve, controller error structure, and
+fixed-total-photon exposure headroom. Only the intervention supported by that frozen
+diagnostic may run.
+
+The primary route is an interpretable bounded gain/bias/monotone controller calibration,
+optionally with exposure allocation, jointly optimized with the B7 pupil only if the
+oracle demonstrates sufficient headroom. Piecewise-028 receives the same controller and
+exposure budget. If that route cannot reach the minimum `+0.005` corrected-PQ effect with
+grouped confidence and stability, v2.6 freezes it and considers sequential two-mask
+acquisition only after physical feasibility research. The locked test remains sealed
+until all applicable prerequisites pass.
+
 ## V2.5 constrained B11 experiment
 
 V2.5 is a newly and explicitly approved experiment motivated by the frozen v2.4 hard

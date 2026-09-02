@@ -1,6 +1,20 @@
-# TessScope v2.5 constrained B11 plan
+# TessScope v2.6 diagnosis-first improvement plan
 
 ## 1. Goal
+
+Determine, without repeating v2.5's infeasible pupil-only search, whether the frozen
+TessScope near miss can earn a statistically credible corrected-PQ advantage over the
+strongest fair piecewise baseline. V2.6 first measures the controller, pupil/observer,
+and exposure ceilings. It then activates only the intervention supported by the frozen
+diagnostic. V1–v2.5 remain immutable and the locked BBBC006 test stays sealed until every
+preregistered prerequisite passes.
+
+The ordered primary targets are: corrected PQ at least matched baseline `+0.005` with a
+positive grouped lower bound, at least 60% positive wells, and positive leave-one-well-out
+means; then focus MAE at most `1.0 µm`; then at least 85% corrected hard frames improved.
+The practical corrected-PQ target is `0.56`, with `0.60` a stretch target.
+
+### Historical v2.5 goal
 
 Test whether exact constrained optimization of the corrected frame in a manufacturable
 B11 pupil can convert the frozen v2.4 hard near miss into a result that passes every
@@ -21,6 +35,15 @@ The locked BBBC006 test remains sealed.
 
 ## 2. Problem
 
+The frozen v2.4 balanced checkpoint has a real causal corrected-PQ gain over its
+forward-identical stopped-stage control, but it does not beat piecewise-028 by the frozen
+effect, confidence, or stability requirements. V2.5 showed that more focus pressure and
+B11 capacity can lower residual MAE while violating first-frame segmentation. The next
+step must identify the actual ceiling before choosing controller calibration, exposure
+allocation, more pupil capacity, or a physically defensible active-acquisition route.
+
+### Historical v2.5 problem
+
 Fixed weighted Adam improved residual focus but did not directly enforce the first-frame
 and residual constraints. Early stopping came close on hard validation, so the next
 scientific question is whether a transparent constrained method and four additional
@@ -39,6 +62,27 @@ physically matched family made only from the frozen B7 segmentation and focus pu
 The joint pupil cannot be tuned during this comparison.
 
 ## 3. Proposed solution
+
+1. Freeze v2.4/v2.5 evidence hashes, a training-only 192/48/48 well-grouped
+   optimization/development/confirmation partition, the oracle definitions, controller
+   family, exposure grid, uncertainty, and the intervention decision rule.
+2. Reconstruct the current balanced and piecewise field-level PQ-versus-depth curves.
+   Measure exact focus/oracle ceilings, controller residual error by depth/density/well,
+   and bounded gain/bias/monotone calibration headroom without test access.
+3. Measure first/second exposure allocation on frozen training development/confirmation
+   patches under a fixed 400-photon two-exposure budget and fixed noise seeds.
+4. Activate joint B7 pupil/controller/exposure optimization only if the confirmation
+   diagnostic reaches the minimum corrected-PQ target with first-frame preservation.
+   Use feasibility restoration before corrected-task optimization and verify every new
+   gradient independently.
+5. If controller/exposure cannot reach the target, freeze that result and research the
+   physical plausibility of rapid sequential SLM masks. Activate a separately
+   preregistered two-mask design only if it is defensible and can be compared against a
+   matched two-mask piecewise baseline through end-to-end gradients.
+6. Freeze a terminal positive or negative v2.6 decision. Do not access the locked test
+   without one frozen candidate and every applicable fair-baseline/causal gate.
+
+### Historical v2.5 solution
 
 1. Freeze source artifacts, anchors, exact B7→B11 lifts, optimizer budgets, epsilon ladder,
    alternate schedule, comparisons, derivative gates, and the single locked-test policy.
@@ -100,9 +144,39 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - `configs/v2_5/`, `artifacts/runs/v2_5/`, `outputs/v2_5/`, `src/tessscope/v2_5/`,
   `services/v2_5/`, and `v2_5`-prefixed scripts/tests hold the separately authorized
   hard-near-miss constrained B11 experiment without modifying v1–v2.4.
+- `configs/v2_6/`, `data/manifests/v2_6/`, `artifacts/runs/v2_6/`, `outputs/v2_6/`,
+  `src/tessscope/v2_6/`, `services/v2_6/`, and `v2_6`-prefixed scripts/tests hold the
+  diagnosis-first controller/exposure or conditional active-acquisition experiment.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
 
 ## 5. Step by step tasks
+
+### V2.6 diagnosis-first improvement
+
+- [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit
+  `09b9eb2`, and defined a new v2.6 namespace with no push/deploy/submission authority.
+- [x] V2.6-0B: froze source hashes, training-only well partitions, oracle definitions,
+  controller/exposure grids, decision rules, targets, matched baselines, and test seal.
+- [ ] V2.6-1A: implement pure oracle/PQ-curve/controller decomposition utilities and
+  tests, including grouped uncertainty and leave-one-well-out stability.
+- [ ] V2.6-1B: run the frozen balanced-versus-piecewise diagnostic and quantify controller
+  error, optical/observer ceiling, depth/density/well structure, saturation, bias, gain,
+  and nonlinearity.
+- [ ] V2.6-1C: run the fixed-total-photon exposure audit on frozen training-only
+  development and confirmation patches with no validation/test tuning.
+- [ ] V2.6-2A: apply the frozen route decision. Activate either bounded B7
+  pupil/controller/exposure co-design or a negative controller/exposure freeze.
+- [ ] V2.6-2B: if activated, pass component and full-loop derivative gates plus
+  feasibility restoration before any expensive corrected-task matrix.
+- [ ] V2.6-3A: conditionally run the bounded exact matrix, fair calibrated piecewise
+  baseline, stopped-stage control, and selection protocol with every checkpoint saved.
+- [ ] V2.6-3B: conditionally run expanded hard validation and matched derivative-free
+  comparison only after all earlier gates.
+- [ ] V2.6-4A: if the controller/exposure route is rejected, research primary/official
+  evidence for rapid sequential SLM masks and preregister a two-mask route only if it is
+  physically and scientifically defensible.
+- [ ] V2.6-5A: freeze the terminal v2.6 result, evidence hashes, limitations, and locked
+  test decision; run Ruff/full tests and create clean local milestone commits.
 
 ### V2.4 completed frozen-checkpoint audit
 
@@ -268,6 +342,26 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 6. Acceptance criteria
 
+### V2.6 criteria
+
+- Oracle and interpolated controller audits are paired at field/depth level and report
+  grouped 95% well-bootstrap intervals, positive-well fraction, and leave-one-out means.
+- Minimum system promotion is corrected PQ `>= matched baseline + 0.005`, positive paired
+  lower bound, at least 60% positive wells, and every leave-one-well-out mean positive.
+- First-frame hard PQ remains within `0.01` of matched segmentation-only and improves
+  over clear by at least `0.01` with a positive paired lower bound.
+- Focus MAE is at most `1.0 µm` for the primary target; `0.75 µm` is stretch only. Signed
+  direction never falls below `90%`, with `99%` preferred.
+- At least 85% of corrected hard frames improve for a positive v2.6 claim.
+- Any exposure policy preserves a fixed total expected-photon budget and is given to the
+  matched piecewise baseline with the same selection and evaluation budget.
+- Any controller is bounded and interpretable: gain, bias, and at most one monotone cubic
+  term, with action clipping preserved.
+- New controller/pupil/exposure gradients pass central differences and full-loop relative
+  error `<0.01`, cosine `>0.99`, and forward parity for stopped-stage controls.
+- The locked test is accessed at most once only after a frozen candidate, controller,
+  exposure policy, hashes, full checks, and a local pretest commit.
+
 - V1 code/config/evidence hashes remain recorded, and all v2 artifacts are separately
   named.
 - BBBC006 planes/sites never cross well splits; no test labels, images, normalization,
@@ -292,6 +386,14 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 7. Testing plan
 
+- V2.6 pure tests cover oracle focus mapping, interpolation bounds, controller monotonicity
+  and clipping, grouped splits, uncertainty, decision ordering, and exposure conservation.
+- Diagnostic integration tests assert exact source hashes, row pairing, hard-density
+  counts, no test wells, frozen candidate identity, and deterministic output.
+- Any activated served route receives controller/exposure component finite differences,
+  full-loop directional derivatives, exact/stopped forward parity, and a small smoke run
+  before an expensive matrix.
+
 - Provenance, filename parsing, well grouping, checksum, and deterministic split tests.
 - Registration identity/known-shift tests and real-stack residual diagnostics.
 - FFT/log-power/bin normalization forward tests with fixed reference arrays.
@@ -309,9 +411,8 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-There is no unresolved question inside the approved v2.5 scientific scope. Both exact
-constrained bases and their registered alternates completed with zero promoted B11
-candidates. The conditional piecewise, stopped-stage, hard, derivative-free, gain, and
-locked-test branches were therefore not activated. A different scientific continuation
-or a separate hackathon product-polish phase would require a new plan; the locked test
-remains sealed.
+The only unresolved v2.6 question is empirical and has a frozen decision rule: can a
+bounded controller/exposure change reach the minimum baseline-beating corrected-PQ target
+under first-frame preservation? If not, the route freezes negative and active acquisition
+is considered only after primary/official physical feasibility research. No arbitrary
+fallback project is authorized, and the locked test remains sealed.

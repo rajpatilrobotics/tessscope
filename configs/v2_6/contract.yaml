@@ -1,0 +1,97 @@
+experiment: tessscope_v2_6_diagnosis_first_system_improvement
+status: preregistered_before_v2_6_diagnostic_generation
+authorization:
+  source_commit: 09b9eb2
+  preserve: [v1, v2, v2_1, v2_2, v2_3, v2_4, v2_5]
+  forbidden: [push, publish, deploy, submit, delete_prior_work]
+hypothesis: >-
+  The remaining corrected-PQ gap can be localized to controller error, exposure
+  allocation, or the pupil/observer ceiling before new optimization; only a route with
+  prospective baseline-beating headroom should receive compute.
+data:
+  dataset: BBBC006v1
+  source_split: frozen_training_wells_only_for_new_selection
+  new_partition_rule: within_each_plate_row_hash_order_12_optimization_3_development_3_confirmation
+  new_partition_seed: tessscope-v2.6-training-dev-confirmation-20260902
+  new_partition_counts: {optimization: 192, development: 48, confirmation: 48}
+  historical_validation_reuse: oracle_diagnostic_only_with_explicit_limitation
+  forbidden: [test_images, test_labels, test_normalization, test_metrics]
+frozen_systems:
+  candidate: v2_3-exact-balanced-segmentation_only-step-14
+  candidate_basis: B7_Noll_5_through_11
+  baseline: v2_2-piecewise-028
+  segmentation_reference: b7_segmentation_only
+  clear_reference: clear
+diagnostic:
+  primary_subset: frozen_27_hard_density_validation_wells
+  oracle_definition: >-
+    for each candidate field and each nonzero source depth, evaluate the frozen pupil at
+    residual depth zero using that field's already-frozen depth-zero hard PQ
+  pq_residual_curve: piecewise_linear_interpolation_of_same_field_frozen_depth_grid
+  interpolation_domain_um: [-6.0, 6.0]
+  interpolation_outside_domain: clip
+  controller_family:
+    action_rule: clip(-(gain*predicted_depth+bias+cubic*predicted_depth^3/36),-6,6)
+    gain_grid: [0.85, 0.925, 1.0, 1.075, 1.15]
+    bias_grid_um: [-0.5, -0.25, 0.0, 0.25, 0.5]
+    cubic_grid: [-0.2, -0.1, 0.0, 0.1, 0.2]
+    monotonicity_required_on_um: [-6.0, 6.0]
+    selection: development_then_single_confirmation
+  exposure_audit:
+    total_expected_photons_two_exposures: 400.0
+    first_exposure_fraction_grid: [0.35, 0.425, 0.5, 0.575, 0.65]
+    fixed_noise_seeds: [2601, 2602, 2603]
+    matched_systems: [candidate, baseline]
+  reports:
+    - corrected_pq_ceiling
+    - pq_by_residual_depth
+    - controller_error_by_true_depth_sign_magnitude_density_well
+    - saturation_bias_gain_nonlinearity
+    - grouped_well_bootstrap_and_leave_one_out
+targets:
+  minimum_corrected_pq_gain_over_matched_baseline: 0.005
+  require_positive_paired_well_bootstrap_lower_bound: true
+  minimum_positive_well_fraction: 0.60
+  require_positive_leave_one_well_out_mean: true
+  practical_corrected_pq: 0.56
+  stretch_corrected_pq: 0.60
+  primary_focus_mae_um: 1.0
+  stretch_focus_mae_um: 0.75
+  minimum_corrected_frames_improved_fraction: 0.85
+  preferred_signed_direction_accuracy: 0.99
+  inherited_minimum_signed_direction_accuracy: 0.90
+  inherited_maximum_first_pq_drop_from_segmentation_only: 0.01
+route_decision:
+  controller_exposure_route_requires:
+    - confirmation_interpolated_corrected_pq_at_least_matched_baseline_plus_0_005
+    - confirmation_first_frame_requirement_preserved
+    - confirmation_focus_mae_at_most_1_0_um
+    - controller_monotone_and_action_clipped
+    - fixed_total_photons
+  if_pass: preregister_b7_joint_pupil_controller_exposure_optimization
+  if_fail: freeze_negative_then_research_sequential_slm_feasibility
+  b11_activation: only_if_oracle_identifies_b7_optical_capacity_ceiling_with_target_headroom
+joint_route_if_activated:
+  controller_parameters: [bounded_gain, bounded_bias, optional_monotone_cubic]
+  feasibility_restoration_first: true
+  save_every_checkpoint: true
+  hard_aligned_loss_requires_training_only_cross_validation_before_use: true
+  matched_piecewise_gets_same_controller_and_exposure_budget: true
+  derivative_gates: {maximum_relative_error: 0.01, minimum_cosine: 0.99}
+  controls: [clear, segmentation_only, focus_only, piecewise, exact, stopped_stage]
+  derivative_free_activation: exact_candidate_passes_every_earlier_gate
+active_acquisition_if_controller_route_fails:
+  prerequisite: primary_or_official_physical_feasibility_evidence
+  claim_requires_end_to_end_gradients: true
+  matched_two_mask_piecewise_baseline_required: true
+  separately_preregister_before_optimization: true
+test_policy:
+  access_runs: 1
+  prerequisites:
+    - one_candidate_controller_exposure_and_hashes_frozen
+    - every_applicable_validation_baseline_causal_and_derivative_free_gate_passed
+    - full_ruff_and_tests_pass
+    - local_pretest_commit
+  tuning_after_access: forbidden
+  rerun_after_access: forbidden
+test_accessed: false
