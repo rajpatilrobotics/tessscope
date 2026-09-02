@@ -14,6 +14,10 @@ sealed, and no physical microscope claim is made. The judge path is the dependen
 cached replay launched by `python3 scripts/serve_demo.py`; the technical brief, video,
 full reproduction guide, and research history are linked from the root README.
 
+Local release status: **GO**. All approved package, clean-export, test, traceability,
+licensing, PDF, and video gates pass. No remote, publication, upload, deployment, or
+hackathon submission has been performed.
+
 ## V2.6 diagnosis-first improvement
 
 V2.6 preserves v1–v2.5 and targets the principal remaining scientific blocker: a

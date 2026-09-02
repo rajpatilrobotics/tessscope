@@ -227,8 +227,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ### Final-submission packaging phase
 
-Checkpoint: 9 of 12 release tasks are complete. The remaining local gates are clean
-export verification, the final audit/GO report, and the final release-candidate commit.
+Checkpoint: all 12 release tasks are complete. The clean exported judge path passed,
+the local audit decision is GO, and the final release-candidate commit records this
+status without performing any external/public action.
 
 - [x] RELEASE-0A: inventory the tracked tree and Git history for secrets, private paths,
   oversized files, datasets, model weights, broken links, caches, and public-release blockers.
@@ -249,11 +250,11 @@ export verification, the final audit/GO report, and the final release-candidate 
   plus storyboard, timestamped narration, shot list, captions, and playback metadata.
 - [x] RELEASE-5A: document one canonical macOS instant-demo command and one full-reproduction
   path with versions, lock file, storage/runtime expectations, network needs, and troubleshooting.
-- [ ] RELEASE-5B: verify a clean exported judge path without the active virtualenv, hidden
+- [x] RELEASE-5B: verify a clean exported judge path without the active virtualenv, hidden
   local data, absolute project paths, dataset download, retraining, Docker, or live inference.
-- [ ] RELEASE-6A: run the final code, test, demo, traceability, determinism, links, secrets,
+- [x] RELEASE-6A: run the final code, test, demo, traceability, determinism, links, secrets,
   licensing, repository-size, accessibility, PDF, and video audits and issue a GO/NO-GO report.
-- [ ] RELEASE-6B: create a final local release-candidate commit only if every local gate passes;
+- [x] RELEASE-6B: create a final local release-candidate commit only if every local gate passes;
   do not tag, push, publish, deploy, upload, post, or submit.
 
 ### V2.6 diagnosis-first improvement
@@ -587,6 +588,6 @@ calibration nor the separately preregistered sequential two-mask route reached t
 training-only feasibility region. No arbitrary fallback project is authorized, and the
 locked test remains sealed.
 
-The final-submission packaging phase is approved for local preparation only. The remaining
-open decision after a clean release-candidate audit is whether the user authorizes the separate
-external actions: public GitHub publication, video upload, social post, and hackathon submission.
+The final-submission packaging phase is complete as a local release candidate with a GO audit.
+The remaining open decision is whether the user separately authorizes external actions: public
+GitHub publication, video upload, social post, and hackathon submission.

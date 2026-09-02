@@ -1,5 +1,20 @@
 # TessScope decision log
 
+## 2026-09-02 — Local release candidate passes every approved gate
+
+- A Git archive of package milestone `b655405` passed the dependency-free demo check and
+  served the judge page, JavaScript, site manifest, and figure manifest over loopback.
+  It contained no Git metadata, active virtual environment, external data, or external
+  model cache and required no download, Docker, retraining, or live inference.
+- The final audit decision is GO: the dependency lock and Ruff pass, all 209 tests pass,
+  the current tree and 611 history blobs have no release blockers, and the largest file
+  is the 12.4 MiB traced validation replay.
+- The four-page brief and 210-second 1080p30 video passed technical and visual review.
+  A second complete video build matched byte-for-byte; the source-date-stabilized PDF is
+  also byte-repeatable. The evidence is recorded in `outputs/release/GO-NO-GO.md`.
+- This status is local only. No tag, remote, push, publication, deployment, upload, post,
+  submission, locked-test access, or physical-microscope claim is authorized or performed.
+
 ## 2026-09-02 — Judge package assembled for local release verification
 
 - The root README is now Track-05-first: the two-minute cached replay, protected causal
@@ -17,8 +32,8 @@
   Python 3.12 scientific path. New verified fetch helpers and isolated output options
   prevent accidental mutation of frozen artifacts and keep the BBBC006 test out of the
   public reproduction command.
-- Repository-wide Ruff and all 209 tests pass. Clean-export verification and the final
-  release audit remain before the local release-candidate commit.
+- Repository-wide Ruff and all 209 tests pass. The subsequent clean-export verification
+  and final release audit are recorded in the decision above.
 
 ## 2026-09-02 — Evidence-first visual and judge-demo phase completed
 

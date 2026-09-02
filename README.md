@@ -197,4 +197,5 @@ TessScope code and original documentation are licensed under Apache License 2.0.
 datasets, models, libraries, fonts, and trademarks retain their own terms; see
 [`LICENSE`](LICENSE), [`NOTICE`](NOTICE), and
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Citation metadata is available in
-[`CITATION.cff`](CITATION.cff).
+[`CITATION.cff`](CITATION.cff). The complete local release decision and verification
+evidence are in [`outputs/release/GO-NO-GO.md`](outputs/release/GO-NO-GO.md).
