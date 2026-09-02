@@ -61,6 +61,26 @@
   on whether sequential SLM masks justify a separately preregistered two-mask TessScope
   experiment. The locked test remains sealed.
 
+## 2026-09-02 — Sequential SLM masks are physically defensible with qualifications
+
+- A primary Optics Express experiment used a pupil-plane SLM to sequentially display
+  multiplexed coded apertures while capturing real-space fluorescence images. Independent
+  structured-illumination microscopy systems likewise advance SLM patterns between
+  camera exposures using hardware triggers, including live-cell fluorescence work.
+- Official Hamamatsu X15213 specifications give 60 Hz input, 10 ms rise, and 25 ms fall
+  time at 532 nm. Meadowlark's official high-speed 1024×1024 LCoS specification gives
+  roughly `<=1 ms` response at 532 nm, preloaded automated sequences, and hardware
+  trigger boundaries. Two sequential exposures are therefore realistic on suitable
+  hardware, but not instantaneous and not universal across SLMs.
+- Detection-path fluorescence PSF engineering with an SLM has been experimentally
+  demonstrated. The literature also warns that polarization, diffraction efficiency,
+  and SLM losses matter in photon-limited fluorescence, so v2.6 retains a matched fixed
+  total-photon comparison and labels hardware performance as unvalidated.
+- Decision: the conditional active-acquisition route is physically defensible as an
+  in-silico, hardware-ready experiment. Preregister two separate B7 sensing/capture
+  pupils, a matched two-pupil piecewise family, switching assumptions, exact gradients,
+  and all gates before optimization. Do not claim physical validation.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

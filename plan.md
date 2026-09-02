@@ -172,9 +172,18 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   a new exact matrix or controller was generated.
 - [x] V2.6-3B: not activated—no candidate cleared the diagnostic prerequisites for new
   hard validation or matched derivative-free comparison.
-- [ ] V2.6-4A: if the controller/exposure route is rejected, research primary/official
+- [x] V2.6-4A: after rejecting the controller/exposure route, researched primary/official
   evidence for rapid sequential SLM masks and preregister a two-mask route only if it is
   physically and scientifically defensible.
+- [x] V2.6-4B: froze the two-mask sources, B7 sensing/capture starts, training-only
+  batches, matched 76-pair piecewise family, feasibility restoration, optimizer budget,
+  selection, hard gates, and switching/photon limitations before optimization.
+- [ ] V2.6-4C: implement the two-mask served graph and pass independent sensing, capture,
+  residual-depth, exact/stopped parity, and full-loop derivative gates.
+- [ ] V2.6-4D: soft-screen the matched two-mask piecewise family, run feasibility
+  restoration and the bounded exact two-start matrix, then freeze confirmation selection.
+- [ ] V2.6-4E: conditionally run stopped-stage, expanded hard, stability, and matched
+  derivative-free controls only if a confirmation candidate clears every earlier gate.
 - [ ] V2.6-5A: freeze the terminal v2.6 result, evidence hashes, limitations, and locked
   test decision; run Ruff/full tests and create clean local milestone commits.
 

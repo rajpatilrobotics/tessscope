@@ -17,6 +17,14 @@ grouped confidence and stability, v2.6 freezes it and considers sequential two-m
 acquisition only after physical feasibility research. The locked test remains sealed
 until all applicable prerequisites pass.
 
+Diagnosis result: the single-pupil controller/exposure route is rejected. Its exact
+zero-residual oracle reaches only `0.554982` corrected hard PQ, and an equally budgeted
+monotone controller grid gains only `+0.001007` over piecewise. A fixed-total-photon
+training confirmation audit favors piecewise by `0.006473`. Primary literature and
+manufacturer specifications nevertheless support a physically qualified sequential
+two-mask route, so v2.6 continues with separately frozen sensing and capture pupils under
+the same 400-photon budget and explicit SLM switching/efficiency limitations.
+
 ## V2.5 constrained B11 experiment
 
 V2.5 is a newly and explicitly approved experiment motivated by the frozen v2.4 hard

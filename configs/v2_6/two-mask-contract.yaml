@@ -1,0 +1,123 @@
+experiment: tessscope_v2_6_sequential_sensing_capture_masks
+status: preregistered_before_two_mask_gradient_or_optimization
+authorization:
+  activation: controller_exposure_route_failed_and_slm_feasibility_passed
+  parent_commit: cbe7e72
+  forbidden: [push, publish, deploy, submit, delete_prior_work]
+claim_boundary: hardware_ready_in_silico_sequential_detection_path_slm_design
+physical_assumptions:
+  device_class: triggerable_phase_only_LCoS_SLM
+  masks: 2
+  placement: fluorescence_detection_pupil_plane
+  switching_overhead: device_dependent_approximately_1_to_25_ms_not_simulated
+  fixed_total_expected_photons: 400.0
+  expected_photons_per_exposure: [200.0, 200.0]
+  throughput: matched_across_exact_and_all_baselines
+  unmodeled: [polarization_loss, diffraction_loss, bleaching, motion, calibration_drift]
+data:
+  optimization_partition: frozen_v2_6_optimization_wells
+  development_partition: frozen_v2_6_development_wells
+  confirmation_partition: frozen_v2_6_confirmation_wells
+  optimization_queries: 12
+  development_queries: 12
+  confirmation_queries: 12
+  query_rule: deterministic_one_patch_per_well_hash_rank
+  optimization_batches: 4
+  development_batches: 4
+  confirmation_batches: 4
+  noise_seeds: [2610, 2613, 2616, 2619]
+  forbidden: [validation_tuning_after_confirmation, test_images, test_labels, test_metrics]
+optics:
+  sensing_basis: B7_Noll_5_through_11
+  capture_basis: B7_Noll_5_through_11
+  open_phase_rms_bound_radians_each: 2.5
+  projected_radius_radians_each: 2.4975
+  minimum_support_energy_fraction_each: 0.995
+  controller: frozen_identity_ridge_then_clip_action_to_plus_or_minus_6_um
+starts:
+  exact:
+    - name: piecewise_sensing_to_segmentation_capture
+      sensing: v2_2-piecewise-028
+      capture: b7-segmentation-only
+    - name: balanced_sensing_to_segmentation_capture
+      sensing: v2_3-exact-balanced-segmentation_only-step-14
+      capture: b7-segmentation-only
+  frozen_parameters_source: configs/v2_6/two-mask-sources.json
+matched_piecewise_family:
+  sensing_candidates: 38_frozen_v2_2_hard_frontier_points
+  capture_candidates: [b7-segmentation-only, v2_2-piecewise-028]
+  total_pairs: 76
+  same_controller_exposures_photons_observer_and_data: true
+  development_selection: >-
+    among physically valid pairs meeting the matched first-frame and residual gates,
+    select lowest final segmentation loss, then residual MAE, first loss, and name
+  maximum_confirmation_baselines: 3
+constraints:
+  first_segmentation: basis_matched_segmentation_sensing_anchor_plus_0_008
+  residual_epsilon_ladder: [0.075, 0.055]
+  feasibility_tolerance: 0.0001
+feasibility_restoration:
+  before_final_task_optimization: true
+  maximum_steps_per_start: 8
+  objective: sum_squared_positive_scaled_first_and_residual_violations
+  exact_mean_of_four_optimization_batches: true
+  learning_rate: 0.008
+  update_sensing_mask_only: true
+  stop_when_feasible: true
+primary_optimizer:
+  objective: minimize_final_segmentation_loss
+  exact_gradient_paths: [capture_mask, sensing_mask_through_stage_action]
+  stages_per_start: 2
+  steps_per_stage: 18
+  exact_mean_of_four_optimization_batches_each_step: true
+  adam_learning_rate: 0.006
+  final_six_steps_multiplier: 0.3
+  augmented_lagrangian_penalty: [4.0, 8.0, 16.0]
+  save_every_checkpoint: true
+  starts: 2
+  total_primary_steps_maximum: 72
+derivative_gate:
+  probe: piecewise_sensing_to_segmentation_capture
+  directions: [joint, sensing_only, capture_only]
+  epsilons: [0.01, 0.001, 0.0001]
+  maximum_median_relative_error: 0.01
+  minimum_cosine: 0.99
+  minimum_stage_path_gradient_fraction: 0.01
+  exact_stopped_forward_tolerance: 0.000001
+selection:
+  development_then_single_confirmation: true
+  requirements:
+    - first_segmentation_at_most_matched_anchor_plus_0_008
+    - normalized_residual_squared_at_most_stage_bound
+    - residual_mae_um_at_most_1_0
+    - final_segmentation_better_than_best_matched_piecewise_pair
+    - finite_and_physical
+  maximum_exact_candidates: 2
+  no_validation_or_hard_labels_for_selection: true
+hard_protocol_if_selected:
+  validation_wells: 45
+  hard_density_wells: 27
+  minimum_corrected_pq_gain_over_best_two_mask_piecewise: 0.005
+  require_positive_grouped_bootstrap_lower_bound: true
+  minimum_positive_well_fraction: 0.60
+  require_positive_leave_one_out_mean: true
+  minimum_corrected_pq: 0.56
+  maximum_focus_mae_um: 1.0
+  minimum_corrected_frames_improved_fraction: 0.85
+  minimum_signed_direction_accuracy: 0.90
+  maximum_first_pq_drop_from_segmentation_only: 0.01
+  stopped_stage_gain_minimum: 0.005
+  stopped_stage_bootstrap_lower_positive: true
+matched_derivative_free:
+  activation: exact_candidate_passes_every_earlier_hard_gate
+  budget: matched_function_evaluations_and_wall_time
+test_policy:
+  access_runs: 1
+  prerequisites:
+    - all_two_mask_validation_baseline_causal_and_derivative_free_gates_pass
+    - candidate_and_both_masks_and_hashes_frozen
+    - full_ruff_and_tests_pass
+    - local_pretest_commit
+  tuning_after_access: forbidden
+  rerun_after_access: forbidden
+test_accessed: false
