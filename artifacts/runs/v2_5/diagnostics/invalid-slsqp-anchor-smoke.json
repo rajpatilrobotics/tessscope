@@ -1,0 +1,16 @@
+{
+  "status": "stopped_invalid_alternate_anchor_smoke",
+  "test_accessed": false,
+  "scientific_candidate": false,
+  "basis": "B11",
+  "residual_bound": 0.075,
+  "completed_exact_vector_evaluations": 3,
+  "invalid_definition": "The two-batch SLSQP constraint values were compared with the four-batch primary segmentation anchor instead of the basis-matched anchor on the same two frozen batches.",
+  "evaluations": [
+    {"final_segmentation_loss": 1.092027, "first_segmentation_loss": 1.130336, "normalized_residual_depth_squared": 0.113116},
+    {"final_segmentation_loss": 1.095379, "first_segmentation_loss": 1.141181, "normalized_residual_depth_squared": 0.084113},
+    {"final_segmentation_loss": 1.094924, "first_segmentation_loss": 1.143562, "normalized_residual_depth_squared": 0.078183}
+  ],
+  "resolution": "Preserve this invalid smoke. Every valid alternate uses the segmentation-only mean on the identical two frozen constraint batches plus the unchanged 0.008 margin.",
+  "thresholds_and_budget_changed": false
+}

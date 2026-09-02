@@ -631,3 +631,15 @@ Resolution options, in recommended order:
 - Valid v2.5 primary steps differentiate one augmented objective formed from the exact
   mean of all four frozen training batches. No threshold, step count, epsilon, start, or
   promotion rule changed, and the locked test remains sealed.
+
+## 2026-09-02 — Invalid SLSQP anchor smoke stopped
+
+- After all 15 B11 primary stages completed without a feasible endpoint, the registered
+  two-batch SLSQP alternate activated. Its first three exact evaluations revealed that
+  the two-batch constraint values were being compared with the four-batch primary anchor,
+  which made first-frame feasibility artificially loose.
+- Those evaluations were interrupted and marked non-scientific in
+  `artifacts/runs/v2_5/diagnostics/invalid-slsqp-anchor-smoke.json`.
+- Valid alternate runs use the B11 segmentation-only mean on the identical two frozen
+  constraint batches plus the unchanged `0.008` margin. The two-batch budget, starts,
+  residual bounds, hard thresholds, and test seal are unchanged.

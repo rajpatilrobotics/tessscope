@@ -381,8 +381,17 @@ def run_alternate(
     training_batches,
     validation_batches,
     calibration,
-    first_limit: float,
-) -> list[dict]:
+    anchor_parameters: np.ndarray,
+) -> tuple[list[dict], dict, float]:
+    alternate_anchor = average_closed_loop_forward(
+        services,
+        np.asarray(anchor_parameters, dtype=np.float32),
+        training_batches[:2],
+        calibration,
+    )
+    alternate_first_limit = (
+        alternate_anchor["first_segmentation_loss"] + 0.008
+    )
     alternates = []
     for residual_bound in RESIDUAL_BOUNDS:
         source = min(
@@ -424,7 +433,7 @@ def run_alternate(
 
         problem = CachedClosedLoopConstraints(
             evaluator,
-            first_limit=first_limit,
+            first_limit=alternate_first_limit,
             residual_limit=residual_bound,
         )
         started = time.perf_counter()
@@ -438,13 +447,16 @@ def run_alternate(
         training = average_closed_loop_forward(
             services, parameters, training_batches, calibration
         )
+        constraint_training = average_closed_loop_forward(
+            services, parameters, training_batches[:2], calibration
+        )
         validation = average_closed_loop_forward(
             services, parameters, validation_batches, calibration
         )
         violations = scaled_violations(
-            training["first_segmentation_loss"],
-            training["normalized_residual_depth_squared"],
-            first_limit=first_limit,
+            constraint_training["first_segmentation_loss"],
+            constraint_training["normalized_residual_depth_squared"],
+            first_limit=alternate_first_limit,
             residual_limit=residual_bound,
         )
         alternates.append(
@@ -459,7 +471,7 @@ def run_alternate(
                 "start_name": source["start_name"],
                 "source_primary_name": source["name"],
                 "residual_bound": residual_bound,
-                "first_training_limit": first_limit,
+                "first_training_limit": alternate_first_limit,
                 "success": bool(result.success),
                 "status": int(result.status),
                 "message": str(result.message),
@@ -471,10 +483,11 @@ def run_alternate(
                 "parameter_sha256": parameter_sha256(parameters),
                 "original_start_validation": source["original_start_validation"],
                 "training": training,
+                "constraint_training": constraint_training,
                 "validation": validation,
                 "training_first_scaled_violation": float(violations[0]),
                 "training_residual_scaled_violation": float(violations[1]),
-                "training_final_segmentation_loss": training[
+                "training_final_segmentation_loss": constraint_training[
                     "final_segmentation_loss"
                 ],
                 "physical": physical_diagnostics(
@@ -484,7 +497,7 @@ def run_alternate(
                 "trace": trace,
             }
         )
-    return alternates
+    return alternates, alternate_anchor, alternate_first_limit
 
 
 def selection_row(row: dict, *, first_maximum: float) -> dict:
@@ -592,8 +605,10 @@ def main() -> None:
         if basis_soft_eligible(row, soft_maximum=settings["soft_maximum"])
     ]
     alternate = []
+    alternate_anchor = None
+    alternate_first_limit = None
     if not primary_eligible:
-        alternate = run_alternate(
+        alternate, alternate_anchor, alternate_first_limit = run_alternate(
             basis=args.basis,
             basis_size=settings["size"],
             primary=primary,
@@ -601,7 +616,9 @@ def main() -> None:
             training_batches=training_batches,
             validation_batches=validation_batches,
             calibration=calibration,
-            first_limit=first_limit,
+            anchor_parameters=np.asarray(
+                settings["anchor_parameters"], dtype=np.float32
+            ),
         )
     all_runs = [*primary, *alternate]
     selection_rows = []
@@ -634,6 +651,8 @@ def main() -> None:
         "primary_runs": primary,
         "primary_soft_eligible_names": [row["name"] for row in primary_eligible],
         "alternate_runs": alternate,
+        "alternate_training_first_segmentation_anchor": alternate_anchor,
+        "alternate_training_first_segmentation_limit": alternate_first_limit,
         "selection_rows": selection_rows,
         "selection": selection,
         "selected_for_derivative_piecewise_and_hard": (

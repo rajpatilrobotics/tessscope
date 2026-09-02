@@ -108,6 +108,7 @@ alternate_optimizer:
     for each basis and epsilon, use the primary endpoint with the smallest summed
     positive normalized training violation, then lowest training final loss and name
   training_batches: 2
+  anchor_rule: basis_matched_segmentation_only_mean_on_same_two_frozen_batches_plus_0_008
   maximum_iterations: 8
   trust_radius_from_start: 0.15
   ftol: 1.0e-5
