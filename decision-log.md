@@ -1,5 +1,40 @@
 # TessScope decision log
 
+## 2026-09-02 — Source-derived LinkedIn fast cut passes final QA
+
+- The selected candidate is `outputs/video/linkedin/tessscope-linkedin-fastcut.mp4`: exactly
+  29.000 seconds, `1920×1080`, 30 fps, 870 frames, H.264/yuv420p, fast-start, no audio,
+  3,656,025 bytes, and SHA-256
+  `f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8`.
+- Its only visual transform is uniform PTS remapping by `29/210`, producing exact playback
+  speed `210/29`. There are no spatial filters, overlays, selective omissions, scene
+  reordering, redrawn elements, or new animation.
+- Nine representative output frames were compared with frames at their mapped source times
+  using `t_source = t_output × 210/29`. Every comparison passed with correlation above
+  `0.99995` and normalized mean absolute error below `0.00085`.
+- Full decode, zero-black-interval, exact frame-count, codec, pixel-format, resolution,
+  duration, and fast-start checks passed. A second full render was byte-identical.
+- The source remains unchanged at SHA-256
+  `767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6`.
+  The rejected custom `1080×1350` teaser is retained and remains unselected. No push,
+  upload, publication, deployment, post, or submission was performed.
+
+## 2026-09-02 — Custom 4:5 teaser rejected; source-derived fast cut selected
+
+- The user rejected the newly designed `1080×1350` TessScope teaser as the LinkedIn
+  candidate. It remains in the repository for history but is explicitly unselected; no
+  file is deleted.
+- The selected replacement must derive only from `outputs/video/tessscope-demo.mp4` and
+  preserve every source frame's landscape composition, typography, figure layout, captions,
+  color, ordering, and scientific content. No redesign, crop, reflow, overlay, selective
+  omission, or reordered scene is allowed.
+- Compress the complete 210.0-second source uniformly to exactly 29.0 seconds using the
+  rational speed factor `210/29` (`7.241379310344827…×`). The only permitted content change
+  is temporal; the intentionally silent audio stream may be omitted.
+- Save the new candidate separately as
+  `outputs/video/linkedin/tessscope-linkedin-fastcut.mp4`. No push, upload, publication,
+  deployment, post, or submission is authorized.
+
 ## 2026-09-02 — LinkedIn teaser passes final production QA
 
 - The final feed edit is exactly 27.000 seconds at `1080×1350`, 30 fps, H.264/yuv420p,

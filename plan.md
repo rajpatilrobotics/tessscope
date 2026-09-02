@@ -281,6 +281,32 @@ posting, deployment, and submission remain outside scope.
 - [x] TEASER-6: run the smallest relevant tests and release/video checks, preserve the
   original judge video byte-for-byte, and create a focused local commit with a clean tree.
 
+### LinkedIn source-derived fast-cut replacement
+
+Goal: replace the selected LinkedIn candidate with a direct, uniform temporal compression
+of the complete original 3:30 judge video. Preserve its `1920×1080` composition, captions,
+figures, typography, colors, ordering, and scientific content exactly; change only playback
+time from 210.0 to 29.0 seconds and omit the intentionally silent audio stream.
+
+The earlier custom `1080×1350` teaser is retained but explicitly rejected and unselected.
+No file is deleted or overwritten, and the original judge video remains immutable.
+
+Checkpoint: 5 of 5 fast-cut tasks are complete. The selected source-derived candidate,
+durable QA evidence, deterministic regeneration proof, and focused local commit are complete;
+push, upload, deployment, publication, posting, and submission remain blocked.
+
+- [x] FASTCUT-1: freeze the exact rational speed factor `210/29`, output contract, complete
+  timeline mapping, source hash, and no-redesign/no-omission rules.
+- [x] FASTCUT-2: implement one minimal FFmpeg render script that reads only the original
+  judge MP4, performs uniform PTS remapping, and produces a deterministic 29-second encode.
+- [x] FASTCUT-3: generate the fast cut, source-mapped contact sheet, and provenance/QA JSON
+  without modifying the source or either earlier teaser file.
+- [x] FASTCUT-4: independently compare representative output frames with their mapped source
+  timestamps and verify duration, frame count, codec, resolution, pixel format, fast-start,
+  no audio, complete decode, and absence of black/corrupt frames.
+- [x] FASTCUT-5: prove byte-stable regeneration, run focused and release checks, make a local
+  commit, and leave the worktree clean with no external action.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit

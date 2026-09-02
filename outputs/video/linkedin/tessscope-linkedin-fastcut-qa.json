@@ -1,0 +1,170 @@
+{
+  "contact_sheet": {
+    "bytes": 856920,
+    "path": "outputs/video/linkedin/tessscope-linkedin-fastcut-contact-sheet.png",
+    "samples": 9,
+    "sha256": "de9a9ba7f568bbb80edc90bf68192bd0e30f7a31a4526969f6dd9c3cbbaa0464"
+  },
+  "external_actions_performed": [],
+  "frame_correspondence": [
+    {
+      "formula_source_seconds": 3.6206896551724137,
+      "matched_source_frame": 109,
+      "matched_source_seconds": 3.6333333333333333,
+      "mean_absolute_error": 0.0007431671838276088,
+      "output_frame": 15,
+      "output_seconds": 0.5,
+      "p99_absolute_error": 0.011764705181121826,
+      "pixel_correlation": 0.9999837251060102
+    },
+    {
+      "formula_source_seconds": 28.96551724137931,
+      "matched_source_frame": 869,
+      "matched_source_seconds": 28.966666666666665,
+      "mean_absolute_error": 0.0005238787271082401,
+      "output_frame": 120,
+      "output_seconds": 4.0,
+      "p99_absolute_error": 0.007843166589736938,
+      "pixel_correlation": 0.9999855160958068
+    },
+    {
+      "formula_source_seconds": 57.93103448275862,
+      "matched_source_frame": 1738,
+      "matched_source_seconds": 57.93333333333333,
+      "mean_absolute_error": 0.0008429185254499316,
+      "output_frame": 240,
+      "output_seconds": 8.0,
+      "p99_absolute_error": 0.007843166589736938,
+      "pixel_correlation": 0.9999803486408834
+    },
+    {
+      "formula_source_seconds": 86.89655172413794,
+      "matched_source_frame": 2607,
+      "matched_source_seconds": 86.9,
+      "mean_absolute_error": 0.0004610200703609735,
+      "output_frame": 360,
+      "output_seconds": 12.0,
+      "p99_absolute_error": 0.011764705181121826,
+      "pixel_correlation": 0.9999597246271362
+    },
+    {
+      "formula_source_seconds": 115.86206896551724,
+      "matched_source_frame": 3476,
+      "matched_source_seconds": 115.86666666666666,
+      "mean_absolute_error": 0.0006043097237125039,
+      "output_frame": 480,
+      "output_seconds": 16.0,
+      "p99_absolute_error": 0.00784314051270485,
+      "pixel_correlation": 0.9999858181498167
+    },
+    {
+      "formula_source_seconds": 144.82758620689654,
+      "matched_source_frame": 4345,
+      "matched_source_seconds": 144.83333333333334,
+      "mean_absolute_error": 0.0005073491483926773,
+      "output_frame": 600,
+      "output_seconds": 20.0,
+      "p99_absolute_error": 0.0078431386500597,
+      "pixel_correlation": 0.9999866952331294
+    },
+    {
+      "formula_source_seconds": 173.79310344827587,
+      "matched_source_frame": 5214,
+      "matched_source_seconds": 173.8,
+      "mean_absolute_error": 0.0004891420248895884,
+      "output_frame": 720,
+      "output_seconds": 24.0,
+      "p99_absolute_error": 0.011764705181121826,
+      "pixel_correlation": 0.999980432237731
+    },
+    {
+      "formula_source_seconds": 199.13793103448276,
+      "matched_source_frame": 5974,
+      "matched_source_seconds": 199.13333333333333,
+      "mean_absolute_error": 0.000732725893612951,
+      "output_frame": 825,
+      "output_seconds": 27.5,
+      "p99_absolute_error": 0.011764705181121826,
+      "pixel_correlation": 0.9999829289901303
+    },
+    {
+      "formula_source_seconds": 208.79310344827584,
+      "matched_source_frame": 6264,
+      "matched_source_seconds": 208.8,
+      "mean_absolute_error": 0.0006772333290427923,
+      "output_frame": 865,
+      "output_seconds": 28.833333333333332,
+      "p99_absolute_error": 0.011764705181121826,
+      "pixel_correlation": 0.9999853338808753
+    }
+  ],
+  "output": {
+    "audio_stream_count": 0,
+    "black_intervals": 0,
+    "byte_stability": {
+      "byte_identical": true,
+      "checked": true,
+      "comparison_path": ".release-check/tessscope-linkedin-fastcut-byte-stability.mp4",
+      "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8"
+    },
+    "bytes": 3656025,
+    "decode_errors": 0,
+    "duration_seconds": 29.0,
+    "fast_start": true,
+    "frame_count": 870,
+    "metadata": {
+      "format": {
+        "duration": "29.000000",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "size": "3656025"
+      },
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "height": 1080,
+          "index": 0,
+          "nb_read_frames": "870",
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "width": 1920
+        }
+      ]
+    },
+    "path": "outputs/video/linkedin/tessscope-linkedin-fastcut.mp4",
+    "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8",
+    "video_stream": {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "height": 1080,
+      "index": 0,
+      "nb_read_frames": "870",
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "width": 1920
+    }
+  },
+  "rejected_custom_4x5_teaser_selected": false,
+  "schema_version": 1,
+  "selected_candidate": true,
+  "source": {
+    "duration_seconds": 210,
+    "path": "outputs/video/tessscope-demo.mp4",
+    "preserved": true,
+    "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+  },
+  "status": "PASS_selected_source_derived_fastcut",
+  "temporal_transform": {
+    "mapping": "t_source = t_output \u00d7 210/29",
+    "new_overlays": false,
+    "only_change": "uniform_time_compression",
+    "scene_reordering": false,
+    "selective_omissions": false,
+    "setpts": "PTS*29/210",
+    "spatial_filters": [],
+    "speed_factor_decimal": 7.241379310344827,
+    "speed_factor_exact": "210/29"
+  }
+}
