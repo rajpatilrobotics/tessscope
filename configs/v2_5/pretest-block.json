@@ -1,0 +1,61 @@
+{
+  "status": "failed_soft_promotion_test_sealed",
+  "test_accessed": false,
+  "locked_test_run_authorized": false,
+  "reason": "Neither the complete B11 primary experiment nor the B7 continuity experiment produced an endpoint satisfying the frozen training and 12-well soft-validation gates.",
+  "derivative_gate": {
+    "basis": "B11",
+    "relative_error": 0.0090221424,
+    "cosine": 0.9998873736,
+    "stage_path_gradient_fraction": 0.43063271,
+    "exact_stopped_forward_difference": 0.0,
+    "passed": true
+  },
+  "b11_optimization": {
+    "primary_starts": 5,
+    "residual_bounds": 3,
+    "primary_endpoints": 15,
+    "primary_steps": 270,
+    "primary_soft_eligible": 0,
+    "alternate_runs": 3,
+    "alternate_iterations": 24,
+    "alternate_exact_evaluations": 52,
+    "selected": 0
+  },
+  "b7_continuity": {
+    "primary_starts": 2,
+    "residual_bounds": 3,
+    "primary_endpoints": 6,
+    "primary_steps": 108,
+    "primary_soft_eligible": 0,
+    "alternate_runs": 3,
+    "alternate_iterations": 24,
+    "alternate_exact_evaluations": 53,
+    "selected": 0
+  },
+  "best_observed_validation_components": {
+    "b11_first_segmentation_loss": 1.1060546785593033,
+    "b11_first_segmentation_maximum": 1.0981961773633957,
+    "b11_final_segmentation_loss": 1.0601660162210464,
+    "b11_residual_mae_um": 0.7683081328868866,
+    "b7_first_segmentation_loss": 1.103633850812912,
+    "b7_first_segmentation_maximum": 1.098270310640335,
+    "b7_final_segmentation_loss": 1.0632562339305878,
+    "b7_residual_mae_um": 0.9396670609712601
+  },
+  "conditional_work_not_run": {
+    "b11_piecewise_family": "Zero B11 candidates passed the prerequisite constrained soft screen.",
+    "matched_stopped_stage": "Zero B11 candidates were frozen for the registered causal comparison.",
+    "expanded_hard_validation": "Zero candidates passed the prerequisite training and soft-validation gates.",
+    "matched_derivative_free": "The earlier soft, piecewise, stopped-stage, and hard prerequisites were not satisfied.",
+    "controller_gain": "Optional gain work was conditional on promotion through earlier gates.",
+    "locked_test": "No v2.5 candidate passed all validation and matched-comparison prerequisites."
+  },
+  "evidence_sha256": {
+    "contract": "ef1b94217f2ff8ae588c776d3598262b03ef0da1fc9492cca5ab6161e126f3d5",
+    "source_manifest": "9ea2ae368bd7e86108bdfd012f3af65633cd536266f6195a05b49b5bb3b57a5a",
+    "b11_closed_loop_derivative": "53c103e4170fe9a6be145571bde6deb7f70a52453376d9ca63085a6abff8623f",
+    "b11_constrained": "76021c8bc8869970f7c6deb105cb779b33da9c1f85878864c5b4942e0f7250e6",
+    "b7_constrained": "4a84de343dd200b1e3da60cb9dbb07ff630fa3e35ebfb232701838b91214f3bb"
+  }
+}

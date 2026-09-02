@@ -15,6 +15,14 @@ most three B11 candidates from the same 12 validation wells. Every v2.4 hard thr
 unchanged. The locked BBBC006 test remains sealed unless all validation, causal-gradient,
 piecewise, stability, and derivative-free gates pass and a pretest commit is verified.
 
+Final v2.5 status: the B11 derivative gate passed, then all 15 B11 and six B7 primary
+constrained stages completed 378 exact aggregate steps. Neither basis produced a
+training-and-soft-eligible endpoint. Six preregistered SLSQP fallback runs also failed
+their matched constraints, so zero B11 candidates were frozen. The conditional
+piecewise, stopped-stage, hard-validation, derivative-free, gain, and locked-test work
+was correctly skipped. V2.5 is a complete negative training/validation experiment, not a
+positive learned-pupil result or a finished judge-facing application.
+
 ## V2.4 frozen-checkpoint experiment
 
 V2.4 is a separately named, approved validation-only audit of the 270 intermediate phase

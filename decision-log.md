@@ -657,3 +657,18 @@ Resolution options, in recommended order:
   promotions. Therefore B11 piecewise, matched stopped-stage, hard-label,
   derivative-free, controller-gain, and locked-test work are not authorized by the
   registered ordering. The required B7 continuity matrix remains to be completed.
+
+## 2026-09-02 — V2.5 completes as a negative constrained experiment
+
+- Both B7 frozen starts completed all three residual bounds with 18 exact aggregate
+  augmented-Lagrangian steps per stage: six primary endpoints and 108 steps. None passed
+  the matched training constraints and unchanged 12-well soft ceiling.
+- The registered B7 SLSQP fallback completed three eight-iteration runs using 53 exact
+  vector evaluations. Their final scaled `(first, residual)` violations were
+  `(1.000, 2.582)`, `(1.253, 2.284)`, and `(1.803, 1.739)`.
+- Across B11 and B7, v2.5 completed 21 primary endpoints, 378 exact aggregate steps, six
+  SLSQP runs, and 105 exact fallback evaluations. Zero B11 candidates were selected.
+- Decision: freeze v2.5 as a complete negative training/validation experiment. Do not
+  generate the conditional B11 piecewise family or run stopped-stage, new hard-label,
+  derivative-free, gain, or locked-test work. The test remains sealed and test access is
+  false in every frozen v2.5 artifact.

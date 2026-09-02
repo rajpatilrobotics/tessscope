@@ -1,5 +1,18 @@
 # TessScope
 
+## V2.5 final status
+
+The approved v2.5 constrained B11 experiment is complete as a **negative
+training/validation experiment**. The full served B11 feedback derivative passed with
+`0.009022` relative error and `0.999887` cosine agreement. The registered 15-stage B11
+and six-stage B7 primary matrices completed 378 exact aggregate steps, followed by six
+capped SLSQP fallback runs because neither basis produced a primary-eligible endpoint.
+
+Zero B11 candidates passed the frozen training and 12-well soft-validation gates. The
+conditional piecewise, stopped-stage, hard, derivative-free, gain, and locked-test
+branches were therefore not activated. The locked BBBC006 test remains sealed. See
+[the v2.5 status](outputs/v2_5/STATUS.md).
+
 ## V2.4 final status
 
 The approved v2.4 frozen-checkpoint audit is complete as a **negative expanded-hard
@@ -89,6 +102,8 @@ did not improve, and the two Poisson endpoints were not positive.
   complete nine-run soft optimization matrix with a sealed-test negative decision.
 - V2.4 complete 270-checkpoint audit, three frozen early-stopped pupils, matched
   stopped-stage controls, expanded hard evaluation, and a sealed-test negative decision.
+- V2.5 exact constrained B11 optimization, B7 continuity matrix, bounded SLSQP
+  alternates, derivative evidence, and a sealed-test negative decision.
 
 ![TessScope architecture](outputs/architecture.png)
 

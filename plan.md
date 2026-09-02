@@ -15,7 +15,9 @@ Current checkpoint: v1 through v2.4 are preserved at local commit `b82000d`. V2.
 complete negative expanded-hard result, but its best exact checkpoint missed the B7
 segmentation tolerance by only `0.0002953` and beat its matched stopped-stage control by
 `+0.006259` with a positive paired interval. The user explicitly approved a new v2.5
-experiment on this hard near miss. The locked BBBC006 test remains sealed.
+experiment on this hard near miss. V2.5 is now complete as a negative training/validation
+experiment: zero B11 and zero B7 candidates passed the frozen constrained soft gates.
+The locked BBBC006 test remains sealed.
 
 ## 2. Problem
 
@@ -132,17 +134,21 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   selection rules, B11 physical diagnostics, and the differentiable-depth B11 service.
 - [x] V2.5-1B: passed the B11 full-loop derivative gate at `0.009022` relative error,
   `0.999887` cosine, `43.1%` stage-path gradient fraction, and exact forward parity.
-- [ ] V2.5-2A: complete resumable B7 continuity and B11 primary constrained ladders.
-- [ ] V2.5-2B: run the alternate exact constrained schedule only where preregistered,
-  evaluate the 12-well soft set, and freeze at most three B11 candidates.
-- [ ] V2.5-3A: generate and soft-screen the strong matched B11 piecewise family.
-- [ ] V2.5-3B: run matched stopped-stage controls and freeze exact forward parity.
-- [ ] V2.5-4A: run the unchanged expanded 45/27-well hard protocol and all comparisons.
-- [ ] V2.5-4B: conditionally run matched derivative-free and optional gain work in the
-  registered order, with no threshold change.
-- [ ] V2.5-5A: either freeze a negative pre-test result or commit a verified pretest freeze
-  and open the locked test exactly once.
-- [ ] V2.5-5B: produce final audit/status/reproduction evidence without push or submission.
+- [x] V2.5-2A: completed the resumable B7 continuity and B11 primary constrained ladders:
+  378 exact aggregate steps across 21 frozen endpoints.
+- [x] V2.5-2B: activated the alternate schedule for both bases, completed six capped
+  SLSQP runs, evaluated the 12-well soft set, and froze zero B11 candidates.
+- [x] V2.5-3A: not activated—zero B11 candidate passed the prerequisite constrained soft
+  screen, so the conditional matched piecewise family was correctly skipped.
+- [x] V2.5-3B: not activated—zero B11 candidate was frozen for a stopped-stage control.
+- [x] V2.5-4A: not activated—zero candidate passed the prerequisite training and soft
+  gates, so no new hard labels were accessed.
+- [x] V2.5-4B: not activated—the registered derivative-free and optional gain work was
+  conditional on passing every earlier gate.
+- [x] V2.5-5A: froze a complete negative pre-test result with zero promotions and kept the
+  locked test sealed.
+- [x] V2.5-5B: produced final integrity, audit, status, and reproduction evidence without
+  push, deployment, publication, or submission.
 
 ### V2.2 completed matched-frontier work
 
@@ -303,9 +309,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-There is no unresolved question inside the approved v2.4 scope. Early checkpoint
-selection succeeded, but the candidates did not beat the strong corrected piecewise
-reference by the frozen hard effect, confidence, and stability requirements. V2.5 was
-conditional on finding zero soft-eligible checkpoints, so it was not activated. Any
-different constrained continuation would require a new scope; the locked test remains
-sealed.
+There is no unresolved question inside the approved v2.5 scientific scope. Both exact
+constrained bases and their registered alternates completed with zero promoted B11
+candidates. The conditional piecewise, stopped-stage, hard, derivative-free, gain, and
+locked-test branches were therefore not activated. A different scientific continuation
+or a separate hackathon product-polish phase would require a new plan; the locked test
+remains sealed.
