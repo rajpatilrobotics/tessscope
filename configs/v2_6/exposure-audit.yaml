@@ -1,0 +1,48 @@
+experiment: tessscope_v2_6_fixed_total_photon_exposure_audit
+status: preregistered_before_exposure_metrics
+parent_commit: cae8cd6
+test_accessed: false
+data:
+  source_split: frozen_training_only
+  partitions: [development, confirmation]
+  queries_per_partition: 4
+  query_selection: >-
+    one valid deterministic patch from each row block abcd, efgh, ijkl, mnop by frozen
+    hash order; two circularly adjacent selected queries are autofocus supports
+  query_seed: tessscope-v2.6-exposure-patches-2600
+  source_partition_sha256: 0e8db46443b6b8a011da604d2646b2c70eb9ddcf82aee8ac086f950894299428
+systems:
+  candidate:
+    name: v2_3-exact-balanced-segmentation_only-step-14
+    parameters: [-0.0698867067694664, 0.045003246515989304, -0.14110343158245087, -0.4708356261253357, -0.0693664476275444, -0.021113824099302292, 0.20483292639255524]
+  baseline:
+    name: v2_2-piecewise-028
+    parameters: [-0.2510019540786743, 0.2184882014989853, -0.08366701751947403, -0.5714472532272339, 0.030237233266234398, 0.08857253193855286, 0.23749251663684845]
+  piecewise_parameter_source_sha256: 8ba6988ba8961be1cadfd3034c1269cb29614c993f97ac518951e4ba7f0510d0
+photon_policy:
+  total_expected_photons: 400.0
+  first_exposure_fraction_grid: [0.35, 0.425, 0.5, 0.575, 0.65]
+  fixed_standard_normal_seeds: [2601, 2602, 2603]
+  same_noise_draws_across_systems_and_fractions: true
+  first_expected_photons: total_times_fraction
+  second_expected_photons: total_times_one_minus_fraction
+controller:
+  calibration: identity
+  action: clip_negative_predicted_depth_to_plus_or_minus_6_um
+selection:
+  development: >-
+    per system choose highest mean corrected hard PQ among fractions whose first-frame PQ
+    is no more than 0.005 below that system's 0.5 fraction; tie break by lower focus MAE,
+    higher improved-frame fraction, then fraction nearest 0.5
+  confirmation: evaluate_each_system_once_at_its_development_selected_fraction
+route_gate:
+  minimum_candidate_gain_over_equally_budgeted_baseline: 0.005
+  require_positive_grouped_well_bootstrap_lower_bound: true
+  minimum_positive_well_fraction: 0.60
+  require_positive_leave_one_well_out_mean: true
+  candidate_focus_mae_um_maximum: 1.0
+  candidate_first_pq_drop_from_own_half_split_maximum: 0.005
+  controller_route_also_requires_prior_oracle_gate: true
+conditional_next_step:
+  if_pass: bounded_b7_pupil_controller_exposure_route
+  if_fail: freeze_controller_exposure_negative_and_research_sequential_slm_feasibility
