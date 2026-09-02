@@ -1,5 +1,54 @@
 # TessScope decision log
 
+## 2026-09-02 — Polished end-to-end candidate passes production QA
+
+- The separate polished review candidate is
+  `outputs/video/linkedin/tessscope-end-to-end-demo-polished.mp4`: exactly 29.000 seconds,
+  `1920×1080`, 30 fps, 870 frames, H.264/yuv420p, fast-start, no audio, 2,679,721 bytes,
+  and SHA-256 `1fc4ff8c4b7431113c0e5b7232625937fda9d6c8d9697681fb4c0424d3e63742`.
+- The revised opening makes TessScope and the exact-gradient question immediate. The optical
+  centerpiece holds the exact learned B7 pupil beside a large seven-step Chromatix PSF sweep
+  from `−6` through `+6 µm`; no interpolated or generated scientific frames are introduced.
+- Three enlarged runtime cards preserve the two-call optics journey, autofocus/stage action,
+  observer/objective, exact reverse path, and seven-parameter pupil update. The matched
+  first/corrected exposures are both authentic and remain visible throughout correction.
+- The descriptive correction outcome and exact-versus-forward-identical-stopped causal
+  gradient evidence remain separate. All displayed values match the frozen validation JSON,
+  and only `FROZEN VALIDATION` appears as the short scientific qualifier in the edit.
+- Native-resolution, nine-tile `640×360`, and 14 encoded transition frames were visually
+  inspected. No clipped or colliding copy was found; runtime labels, PSF depths, microscopy,
+  chart values, and `Tesseract Hackathon 2026 · Track 05` remain legible.
+- Full decode, exact format/duration/frame count, fast-start, zero black intervals, zero
+  frozen intervals over three seconds, prior-video preservation, and deterministic
+  regeneration pass. The second full encode is byte-identical. Ruff and all 227 tests pass.
+- The current end-to-end candidate and every earlier video retain their pre-build hashes.
+  This remains a local review candidate; no push, upload, publication, posting, deployment,
+  deletion, replacement, submission, or other external action was performed.
+
+## 2026-09-02 — Separate end-to-end polish revision authorized
+
+- Create a new 29-second candidate at
+  `outputs/video/linkedin/tessscope-end-to-end-demo-polished.mp4`; never overwrite or delete
+  `tessscope-end-to-end-demo.mp4` or any earlier candidate.
+- Make TessScope visible in the opening and lead with: `Can one exact gradient teach a
+  microscope to refocus?` Use only `FROZEN VALIDATION` as the short scientific qualifier;
+  remove `not a live microscope feed`, `cached replay`, and `validation-only` from the
+  marketing-facing edit without broadening any claim.
+- Use the exact replay-derived learned phase pupil as a large hero and animate a cinematic
+  sweep through all seven Chromatix depth PSFs. Use only enlarged representative BBBC006
+  first/corrected exposures with authentic reference/InstanSeg overlays, never a website
+  screenshot, generated microscopy, altered image, or dense comparison matrix.
+- Enlarge runtime labels and preserve the full journey from input through both optics calls,
+  autofocus/stage action, observer/objective, exact reverse gradient, seven pupil parameters,
+  corrected result, and the two semantically separate validation results.
+- Keep the descriptive correction outcome `PQ 0.4922 → 0.5523` and `74.7% of hard frames
+  improve` separate from exact-versus-forward-identical-stopped causal-gradient evidence
+  `+0.0063 PQ`, 95% CI `[+0.0007, +0.0115]`. Never call PQ accuracy or imply hidden-test,
+  physical-microscope, live-inference, SOTA, all-baseline, or universal superiority.
+- End with `Tesseract Hackathon 2026 · Track 05`. Preserve the 29.000-second 1080p30
+  H.264/yuv420p fast-start muted-first contract. No push, upload, publication, posting,
+  deployment, deletion, or submission is authorized.
+
 ## 2026-09-02 — Purpose-built end-to-end demo passes production QA
 
 - The new review candidate is `outputs/video/linkedin/tessscope-end-to-end-demo.mp4`:

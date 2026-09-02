@@ -342,6 +342,42 @@ external use; push, upload, deployment, publication, posting, and submission rem
 - [x] E2EVIDEO-7: run focused tests and relevant release checks, record final QA, make one
   focused local commit, and leave the worktree clean without external action.
 
+### Polished purpose-built LinkedIn candidate
+
+Goal: create a new, separate 29-second landscape revision that strengthens the opening hook,
+makes the learned purple pupil and seven-depth Chromatix PSF sweep the visual centerpiece,
+enlarges the three-runtime journey for `640×360` viewing, keeps the authentic matched
+first/corrected exposures visible, and closes with `Tesseract Hackathon 2026 · Track 05`.
+
+The scientific story and evidence remain unchanged. Only original frozen replay arrays and
+source artifacts may supply microscopy, phase, PSF, overlays, and values. The correction
+outcome and exact-versus-stopped causal-gradient result remain separate. Marketing-facing
+qualifiers are removed from the edit; the concise on-screen boundary is `FROZEN VALIDATION`.
+The current end-to-end candidate and every earlier video remain immutable.
+
+Checkpoint: 8 of 8 polished-candidate tasks are complete. The separate MP4, poster,
+storyboard, exact copy, provenance, native and `640×360` contact sheets, visual inspection,
+byte-stability proof, media QA, and repository-wide checks are complete. The candidate is
+local and reviewable; push, upload, deployment, publication, posting, deletion, replacement,
+and submission remain blocked.
+
+- [x] POLISHVIDEO-1: freeze the separate filenames, exact copy, timeline, source inventory,
+  preservation hashes, claim boundaries, and enlarged mobile-readable layout.
+- [x] POLISHVIDEO-2: implement the stronger TessScope hook and large pupil/seven-depth PSF
+  sweep without introducing generated or altered scientific imagery.
+- [x] POLISHVIDEO-3: implement enlarged forward/reverse runtime journeys, including both
+  optics calls, stage action, observer, objective, and seven-parameter pupil update.
+- [x] POLISHVIDEO-4: implement the always-visible matched first/corrected exposure sequence,
+  descriptive correction result, and separate simplified causal confidence-interval chart.
+- [x] POLISHVIDEO-5: render the separate 1080p30 H.264/yuv420p MP4, poster, exact-copy record,
+  storyboard, provenance manifest, and both encoded-frame contact sheets.
+- [x] POLISHVIDEO-6: visually inspect native, `640×360`, and transition frames; iterate on
+  hierarchy, spacing, timing, collisions, and scientific legibility.
+- [x] POLISHVIDEO-7: verify exact duration/frame count/format, full decode, black/freeze
+  intervals, source hashes, claims, prior-video preservation, and byte-stable regeneration.
+- [x] POLISHVIDEO-8: run focused and repository-wide lint/tests, record final QA, make one
+  focused local commit, and leave the worktree clean without external action.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit

@@ -1,0 +1,119 @@
+{
+  "artifacts": {
+    "outputs/video/linkedin/tessscope-end-to-end-demo-polished-contact-sheet.png": {
+      "dimensions": [
+        5760,
+        3240
+      ],
+      "sha256": "76780c4bf53ad99d1764e1de0c14476d92bd35b9fc9877074308cb3fdd90db1c"
+    },
+    "outputs/video/linkedin/tessscope-end-to-end-demo-polished-poster.png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "8a77d35efcec38e592852c59702a90a37da7abcb91f97b014e0d6e888dbc40f6"
+    },
+    "outputs/video/linkedin/tessscope-end-to-end-demo-polished-readability-contact-sheet.png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "f35476b0f4163f64536b7f5601f84d2e97856ab727f9b4be880d5874fef62724"
+    }
+  },
+  "claims": {
+    "after_pq": 0.552294837627718,
+    "before_pq": 0.4921920085941332,
+    "bootstrap_replicates": 2000,
+    "causal_ci_lower_95": 0.0006703181908061804,
+    "causal_ci_upper_95": 0.011547458540670894,
+    "causal_gain": 0.006258840610359453,
+    "improved_fraction": 0.7469135802469136,
+    "source_count": 27
+  },
+  "deterministic_regeneration": {
+    "byte_identical": true,
+    "checked": true,
+    "comparison_path": ".release-check/tessscope-end-to-end-demo-polished-byte-stability.mp4",
+    "sha256": "1fc4ff8c4b7431113c0e5b7232625937fda9d6c8d9697681fb4c0424d3e63742"
+  },
+  "documents": {
+    "outputs/video/linkedin/end-to-end-demo-polished-on-screen-copy.md": "f00ef5c9ca170aaddeb3d6b6affbb7f1d76be985a2a1437d59b7a2e630ba3b9d",
+    "outputs/video/linkedin/end-to-end-demo-polished-storyboard.md": "a72847a249640173df71f2d6339a0f712a6b2e8b3ea4cea7c3fcc40c94c5dfe1",
+    "outputs/video/linkedin/tessscope-end-to-end-demo-polished-provenance.json": "335e9f4b1eff39084658ba47e5c5a72d0df4dd0502694a12c894d171a86907cc"
+  },
+  "external_actions_performed": [],
+  "filter_scan": {
+    "black_intervals": [],
+    "freeze_durations_seconds": [],
+    "long_freeze_threshold_seconds": 3.0
+  },
+  "preserved_videos": {
+    "outputs/video/linkedin/tessscope-end-to-end-demo.mp4": {
+      "bytes": 2652238,
+      "preserved": true,
+      "sha256": "fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-fastcut.mp4": {
+      "bytes": 3656025,
+      "preserved": true,
+      "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-teaser.mp4": {
+      "bytes": 3641054,
+      "preserved": true,
+      "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+    },
+    "outputs/video/tessscope-demo.mp4": {
+      "bytes": 4687119,
+      "preserved": true,
+      "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+    }
+  },
+  "schema_version": 1,
+  "selected_or_published": false,
+  "status": "PASS_polished_review_candidate",
+  "video": {
+    "audio_stream_count": 0,
+    "bytes": 2679721,
+    "duration_seconds": 29.0,
+    "fast_start": true,
+    "frame_count": 870,
+    "full_decode_errors": 0,
+    "path": "outputs/video/linkedin/tessscope-end-to-end-demo-polished.mp4",
+    "sha256": "1fc4ff8c4b7431113c0e5b7232625937fda9d6c8d9697681fb4c0424d3e63742",
+    "video_stream": {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "height": 1080,
+      "index": 0,
+      "nb_read_frames": "870",
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "width": 1920
+    }
+  },
+  "visual_review": {
+    "640x360_encoded_contact_sheet": true,
+    "finding": "No clipped or colliding copy; scientific panels and labels remain separate and legible at 640x360.",
+    "native_encoded_contact_sheet": true,
+    "status": "PASS_agent_encoded_frame_review",
+    "transition_samples_seconds": [
+      2.9,
+      3.0,
+      6.9,
+      7.0,
+      11.9,
+      12.0,
+      15.9,
+      16.0,
+      20.9,
+      21.0,
+      24.9,
+      25.0,
+      26.9,
+      27.0
+    ]
+  }
+}

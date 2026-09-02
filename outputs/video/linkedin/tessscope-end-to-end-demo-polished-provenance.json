@@ -1,0 +1,259 @@
+{
+  "claims": {
+    "causal_gradient_evidence": {
+      "display": [
+        "+0.0063 PQ",
+        "95% CI [+0.0007, +0.0115]",
+        "Exact vs forward-identical stopped gradient"
+      ],
+      "raw": {
+        "ci_lower_95": 0.0006703181908061804,
+        "ci_upper_95": 0.011547458540670894,
+        "mean_difference": 0.006258840610359453,
+        "replicates": 2000,
+        "source_count": 27
+      },
+      "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json"
+    },
+    "correction_outcome": {
+      "display": [
+        "PQ 0.4922 \u2192 0.5523",
+        "74.7% of hard frames improve"
+      ],
+      "raw": {
+        "after_pq": 0.552294837627718,
+        "before_pq": 0.4921920085941332,
+        "improved_fraction": 0.7469135802469136
+      },
+      "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json"
+    }
+  },
+  "external_actions_performed": [],
+  "format": {
+    "audio_streams": 0,
+    "codec": "H.264",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "duration_seconds": 29,
+    "fast_start": true,
+    "ffprobe": {
+      "format": {
+        "duration": "29.000000",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "size": "2679721"
+      },
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "height": 1080,
+          "index": 0,
+          "nb_read_frames": "870",
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "width": 1920
+        }
+      ]
+    },
+    "fps": 30,
+    "frame_count": 870,
+    "pixel_format": "yuv420p"
+  },
+  "global_on_screen_qualifier": "FROZEN VALIDATION",
+  "outputs": {
+    "full_resolution_contact_sheet": {
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-polished-contact-sheet.png",
+      "sha256": "76780c4bf53ad99d1764e1de0c14476d92bd35b9fc9877074308cb3fdd90db1c"
+    },
+    "on_screen_copy": {
+      "path": "outputs/video/linkedin/end-to-end-demo-polished-on-screen-copy.md",
+      "sha256": "f00ef5c9ca170aaddeb3d6b6affbb7f1d76be985a2a1437d59b7a2e630ba3b9d"
+    },
+    "poster": {
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-polished-poster.png",
+      "sha256": "8a77d35efcec38e592852c59702a90a37da7abcb91f97b014e0d6e888dbc40f6"
+    },
+    "readability_contact_sheet": {
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-polished-readability-contact-sheet.png",
+      "sha256": "f35476b0f4163f64536b7f5601f84d2e97856ab727f9b4be880d5874fef62724"
+    },
+    "storyboard": {
+      "path": "outputs/video/linkedin/end-to-end-demo-polished-storyboard.md",
+      "sha256": "a72847a249640173df71f2d6339a0f712a6b2e8b3ea4cea7c3fcc40c94c5dfe1"
+    },
+    "video": {
+      "bytes": 2679721,
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-polished.mp4",
+      "sha256": "1fc4ff8c4b7431113c0e5b7232625937fda9d6c8d9697681fb4c0424d3e63742"
+    }
+  },
+  "preserved_videos": {
+    "outputs/video/linkedin/tessscope-end-to-end-demo.mp4": {
+      "bytes": 2652238,
+      "preserved": true,
+      "sha256": "fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-fastcut.mp4": {
+      "bytes": 3656025,
+      "preserved": true,
+      "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-teaser.mp4": {
+      "bytes": 3641054,
+      "preserved": true,
+      "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+    },
+    "outputs/video/tessscope-demo.mp4": {
+      "bytes": 4687119,
+      "preserved": true,
+      "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+    }
+  },
+  "review_samples": [
+    {
+      "encoded_frame_sha256": "2a519d42aca43c61cb8b0cdec603a798b2e650941bce2ce0370f1fc754b7a7cf",
+      "frame_index": 30,
+      "timestamp_seconds": 1.0
+    },
+    {
+      "encoded_frame_sha256": "a6c6f2aec338322f0b9bd1297c867fb737ec55dfaa16e36734f5d3a580eff7dd",
+      "frame_index": 108,
+      "timestamp_seconds": 3.6
+    },
+    {
+      "encoded_frame_sha256": "8a77d35efcec38e592852c59702a90a37da7abcb91f97b014e0d6e888dbc40f6",
+      "frame_index": 177,
+      "timestamp_seconds": 5.9
+    },
+    {
+      "encoded_frame_sha256": "df9a29da70476df6e4e1e9799825e790e9eb5482e84a3a387efbd92d5342e6b7",
+      "frame_index": 324,
+      "timestamp_seconds": 10.8
+    },
+    {
+      "encoded_frame_sha256": "a237d43b64fc9d4b87a252cf82872f0346b280d520c4e137c6862dea156a015b",
+      "frame_index": 468,
+      "timestamp_seconds": 15.6
+    },
+    {
+      "encoded_frame_sha256": "82f068b65eab0c5a4a387656b979b61691025fa643a9e0763b4c35d9b6fb96f5",
+      "frame_index": 561,
+      "timestamp_seconds": 18.7
+    },
+    {
+      "encoded_frame_sha256": "f52e6b5237b29ce05f07752f9ee4c322f19f620daec437c1a8423303006386bb",
+      "frame_index": 690,
+      "timestamp_seconds": 23.0
+    },
+    {
+      "encoded_frame_sha256": "2c820ce09ed4e765615871d875145b097446f11f2b5190c470fc943f8f9160c6",
+      "frame_index": 795,
+      "timestamp_seconds": 26.5
+    },
+    {
+      "encoded_frame_sha256": "4832c095444505ed511b5e57f08fb58634b0e5821a56766db13fc13779820513",
+      "frame_index": 846,
+      "timestamp_seconds": 28.2
+    }
+  ],
+  "schema_version": 1,
+  "scientific_media_policy": {
+    "browser_or_website_screenshots": false,
+    "denoising": false,
+    "generated_or_ai_scientific_imagery": false,
+    "per_image_normalization": false,
+    "scientific_interpolation": false,
+    "sharpening": false,
+    "source": "frozen traced TessScope artifacts only"
+  },
+  "scientific_sources": [
+    {
+      "path": "artifacts/runs/demo/validation-replay.npz",
+      "sha256": "586b02362c2aa4c0dc31633ac2de661d1d6fb20ce24524088fff81fefc477a04"
+    },
+    {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739"
+    },
+    {
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    },
+    {
+      "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+      "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+    },
+    {
+      "path": "configs/demo/visual-contract.yaml",
+      "sha256": "93db3642b55b4fbee4ecc27d04ef7458646b8aa9d17ec932a532e384b6b041bd"
+    },
+    {
+      "path": "data/external/BBBC006/v1/images/z_16/n21_s1_w1.tif",
+      "sha256": "481e2a320d23987e8c5f79ae3639d989779783f1302578d269147b3590e2a2aa"
+    }
+  ],
+  "scientific_transforms": {
+    "boundaries": "unchanged overlay_boundaries geometry and scale",
+    "input": "clip-only display of frozen replay object_image",
+    "microscopy": {
+      "clip": [
+        0.0,
+        1.0
+      ],
+      "mode": "affine",
+      "offset": 0.0,
+      "per_image_normalization": false,
+      "scale": 11.582016617246811
+    },
+    "psfs": "seven exact arrays; fixed global maximum/log floor/magma colormap",
+    "pupil": "exact-design wrapped phase; fixed twilight colormap"
+  },
+  "selected_or_published": false,
+  "status": "complete_polished_review_candidate",
+  "timeline": [
+    {
+      "end_seconds": 3.0,
+      "id": "hook",
+      "start_seconds": 0.0
+    },
+    {
+      "end_seconds": 7.0,
+      "id": "optics_hero",
+      "start_seconds": 3.0
+    },
+    {
+      "end_seconds": 12.0,
+      "id": "forward",
+      "start_seconds": 7.0
+    },
+    {
+      "end_seconds": 16.0,
+      "id": "reverse",
+      "start_seconds": 12.0
+    },
+    {
+      "end_seconds": 21.0,
+      "id": "correction",
+      "start_seconds": 16.0
+    },
+    {
+      "end_seconds": 25.0,
+      "id": "correction_result",
+      "start_seconds": 21.0
+    },
+    {
+      "end_seconds": 27.0,
+      "id": "causal",
+      "start_seconds": 25.0
+    },
+    {
+      "end_seconds": 29.0,
+      "id": "lockup",
+      "start_seconds": 27.0
+    }
+  ]
+}
