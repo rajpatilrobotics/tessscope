@@ -1,0 +1,99 @@
+{
+  "assets": {
+    "outputs/demo/figures/causal-comparison.png": {
+      "role": "publication_figure",
+      "sha256": "371c88b843043abed8e3324aaaa6e2fdad10f833a714198ff71acc4d7469e48e"
+    },
+    "outputs/demo/figures/gradient-architecture.png": {
+      "role": "publication_figure",
+      "sha256": "23bf68554f08d55a8124d5cf3db045f1f417e7768421b839d2ce456fda9f2d8f"
+    },
+    "outputs/demo/figures/matched-microscopy.png": {
+      "role": "publication_figure",
+      "sha256": "d01419b8a28c8793c0e02703b072dac3a68d75758678fa2fdf6d10777a0435a2"
+    },
+    "outputs/demo/figures/pq-focus-depth.png": {
+      "role": "publication_figure",
+      "sha256": "000b47ca1aec86e2f0e6f7a925c67d730f1e5cc254ae3a9d9a7ddbca6c03f0c9"
+    },
+    "outputs/demo/figures/pupil-psf-depth.png": {
+      "role": "publication_figure",
+      "sha256": "39e9247fd2b250aa09c10268edb352fdbd7bc60f80812babeef8b03f3f523db5"
+    },
+    "outputs/demo/replay/frame-00.png": {
+      "role": "depth_replay_frame",
+      "sha256": "2b713dfd7d70fc1e3c68fd92a68dd3d5f4bd874b4c36c0ccfde063e26ae314f6"
+    },
+    "outputs/demo/replay/frame-01.png": {
+      "role": "depth_replay_frame",
+      "sha256": "e57736f4dfe344875a61129c8bd59dcf356584b7babba91df690aab650734d0f"
+    },
+    "outputs/demo/replay/frame-02.png": {
+      "role": "depth_replay_frame",
+      "sha256": "2f9d9fa9410320cc56c94a2cec514e0f8f325c90cdbc6d9132a2482aaa1fa5bb"
+    },
+    "outputs/demo/replay/frame-03.png": {
+      "role": "depth_replay_frame",
+      "sha256": "e71dd21203a64b2b2f9b6079fe46aa35fa95aec73360ffd45ed594eed5f52cc9"
+    },
+    "outputs/demo/replay/frame-04.png": {
+      "role": "depth_replay_frame",
+      "sha256": "a93cb3d798952a2fcacc0a757f9794d0cddb37c9d0e2a7cba775e1b464e47ef4"
+    },
+    "outputs/demo/replay/frame-05.png": {
+      "role": "depth_replay_frame",
+      "sha256": "7e32975bd0b1e11731e7fb005abd76b329f8999018acdf95c5773218983d8211"
+    },
+    "outputs/demo/replay/frame-06.png": {
+      "role": "depth_replay_frame",
+      "sha256": "c7ffbdca27c8a142bc0057c1810fe7aac61e21b0a9601daf5dca20bbb8ced846"
+    },
+    "outputs/demo/replay/validation-depth-sweep.gif": {
+      "role": "depth_animation",
+      "sha256": "56c55adb42d424523ddb72a4625fe0c292dbe5dd365b72ce9a252baafb910f28"
+    },
+    "outputs/demo/replay/validation-depth-sweep.mp4": {
+      "role": "depth_animation",
+      "sha256": "f4d05d8ce47631a52ee815497861da713c6ab6aee1b255b961e5ed0c49b21708"
+    }
+  },
+  "deployment": "not_performed",
+  "entrypoint": "python scripts/serve_demo.py",
+  "inputs": {
+    "figure_manifest": {
+      "path": "outputs/demo/figure-manifest.json",
+      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+    },
+    "replay_metadata": {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739"
+    }
+  },
+  "mode": "cached_replay_not_live_inference",
+  "network_binding": "127.0.0.1",
+  "schema_version": 1,
+  "site_files": {
+    "app.js": {
+      "path": "outputs/demo/app.js",
+      "sha256": "a74a0b5f2b4b8f2882bd0cb1122d2f45ce4ff98cbf1236622c50a2f3f787d2ca",
+      "size_bytes": 2068
+    },
+    "index.html": {
+      "path": "outputs/demo/index.html",
+      "sha256": "a285d0e6663b5cc9feb2e781c6768bcdaf74e7805c54c404b591ef7d906ad8f5",
+      "size_bytes": 12199
+    },
+    "site-data.json": {
+      "path": "outputs/demo/site-data.json",
+      "sha256": "85bfc56c1b16538ccbfee9490d54cb7fa9f514e80cd49e3766e04f22fcd95648",
+      "size_bytes": 15833
+    },
+    "site.css": {
+      "path": "outputs/demo/site.css",
+      "sha256": "c7b6ff2f39690b657374927c87238e84739dfd2c0cb900ae5c58ca72bf290fbc",
+      "size_bytes": 8953
+    }
+  },
+  "status": "complete_local_static_judge_demo",
+  "test_accessed": false
+}

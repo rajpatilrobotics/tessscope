@@ -209,7 +209,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   and architecture figures in publication and presentation formats.
 - [x] DEMO-2B: generate a deterministic validation depth-sweep animation if complete
   matched frames are available; otherwise freeze a documented skip.
-- [ ] DEMO-3A: build the one-command local judge replay with explicit cached/live status,
+- [x] DEMO-3A: build the one-command local judge replay with explicit cached/live status,
   concise claims, limitations, captions, alt text, and accessible interactions.
 - [ ] DEMO-3B: verify publication sizes, deterministic hashes, local startup, responsive
   layout, no-test access, Ruff, and the full suite; freeze milestone commits.

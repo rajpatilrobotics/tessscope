@@ -1,0 +1,363 @@
+{
+  "frames": [
+    {
+      "alt": "Cached validation replay at \u22126 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at \u22126 \u00b5m initial defocus.",
+      "depth_um": -6.0,
+      "index": 0,
+      "path": "replay/frame-00.png",
+      "path_sha256": "2b713dfd7d70fc1e3c68fd92a68dd3d5f4bd874b4c36c0ccfde063e26ae314f6",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": 0.6279521110972723,
+          "before_pointer": "/rows/175",
+          "before_pq": 0.6004626745876439,
+          "corrected_pointer": "/corrected_rows/96",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": -2.864925548912523,
+          "residual_depth_um": -3.135074451087477,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6196632974189586,
+          "before_pointer": "/rows/1120",
+          "before_pq": 0.6037591299070969,
+          "corrected_pointer": "/corrected_rows/582",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": -1.4093129039488397,
+          "residual_depth_um": -4.590687096051161,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6263537400190311,
+          "before_pointer": "/rows/4900",
+          "before_pq": 0.6110628005723294,
+          "corrected_pointer": "/corrected_rows/2526",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": -2.288794135367718,
+          "residual_depth_um": -3.711205864632282,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at \u22124 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at \u22124 \u00b5m initial defocus.",
+      "depth_um": -4.0,
+      "index": 1,
+      "path": "replay/frame-01.png",
+      "path_sha256": "e57736f4dfe344875a61129c8bd59dcf356584b7babba91df690aab650734d0f",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": 0.6297872407816787,
+          "before_pointer": "/rows/176",
+          "before_pq": 0.6238187352098643,
+          "corrected_pointer": "/corrected_rows/97",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": -2.9523150514506984,
+          "residual_depth_um": -1.0476849485493016,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6300965447154472,
+          "before_pointer": "/rows/1121",
+          "before_pq": 0.6224551835028492,
+          "corrected_pointer": "/corrected_rows/583",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": -1.4929978998716957,
+          "residual_depth_um": -2.5070021001283043,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6301575895244518,
+          "before_pointer": "/rows/4901",
+          "before_pq": 0.6253521825396826,
+          "corrected_pointer": "/corrected_rows/2527",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": -2.641932631972991,
+          "residual_depth_um": -1.358067368027009,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at \u22122 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at \u22122 \u00b5m initial defocus.",
+      "depth_um": -2.0,
+      "index": 2,
+      "path": "replay/frame-02.png",
+      "path_sha256": "2f9d9fa9410320cc56c94a2cec514e0f8f325c90cdbc6d9132a2482aaa1fa5bb",
+      "representative_still": true,
+      "systems": [
+        {
+          "after_pq": 0.6302726038728452,
+          "before_pointer": "/rows/177",
+          "before_pq": 0.6294106178269091,
+          "corrected_pointer": "/corrected_rows/98",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": -0.7548020782296536,
+          "residual_depth_um": -1.2451979217703464,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6310363585630545,
+          "before_pointer": "/rows/1122",
+          "before_pq": 0.6323927325943455,
+          "corrected_pointer": "/corrected_rows/584",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": -1.0270885578875928,
+          "residual_depth_um": -0.9729114421124072,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6310061427112228,
+          "before_pointer": "/rows/4902",
+          "before_pq": 0.6312359208257048,
+          "corrected_pointer": "/corrected_rows/2528",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": -1.6175585040675307,
+          "residual_depth_um": -0.38244149593246934,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at 0 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at 0 \u00b5m initial defocus.",
+      "depth_um": 0.0,
+      "index": 3,
+      "path": "replay/frame-03.png",
+      "path_sha256": "e71dd21203a64b2b2f9b6079fe46aa35fa95aec73360ffd45ed594eed5f52cc9",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": null,
+          "before_pointer": "/rows/178",
+          "before_pq": 0.6314031279822433,
+          "corrected_pointer": null,
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": 0.37576534698655184,
+          "residual_depth_um": -0.37576534698655184,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": null,
+          "before_pointer": "/rows/1123",
+          "before_pq": 0.6319292157059117,
+          "corrected_pointer": null,
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": -0.5256480569994129,
+          "residual_depth_um": 0.5256480569994129,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": null,
+          "before_pointer": "/rows/4903",
+          "before_pq": 0.6310752930827925,
+          "corrected_pointer": null,
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": 0.35138513575910135,
+          "residual_depth_um": -0.35138513575910135,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at +2 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at +2 \u00b5m initial defocus.",
+      "depth_um": 2.0,
+      "index": 4,
+      "path": "replay/frame-04.png",
+      "path_sha256": "a93cb3d798952a2fcacc0a757f9794d0cddb37c9d0e2a7cba775e1b464e47ef4",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": 0.6300644975130468,
+          "before_pointer": "/rows/179",
+          "before_pq": 0.6332381099458616,
+          "corrected_pointer": "/corrected_rows/99",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": 2.501799590851215,
+          "residual_depth_um": -0.5017995908512152,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6339902209877264,
+          "before_pointer": "/rows/1124",
+          "before_pq": 0.6328800591945792,
+          "corrected_pointer": "/corrected_rows/585",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": 0.3159952464557614,
+          "residual_depth_um": 1.6840047535442386,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6307980363514244,
+          "before_pointer": "/rows/4904",
+          "before_pq": 0.6328917028429237,
+          "corrected_pointer": "/corrected_rows/2529",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": 2.919490506519675,
+          "residual_depth_um": -0.9194905065196748,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at +4 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at +4 \u00b5m initial defocus.",
+      "depth_um": 4.0,
+      "index": 5,
+      "path": "replay/frame-05.png",
+      "path_sha256": "7e32975bd0b1e11731e7fb005abd76b329f8999018acdf95c5773218983d8211",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": 0.6319001347217543,
+          "before_pointer": "/rows/180",
+          "before_pq": 0.6316043057868991,
+          "corrected_pointer": "/corrected_rows/100",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": 3.8857436187953454,
+          "residual_depth_um": 0.11425638120465464,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6326831168605401,
+          "before_pointer": "/rows/1125",
+          "before_pq": 0.6314660050437596,
+          "corrected_pointer": "/corrected_rows/586",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": 3.4158546725361996,
+          "residual_depth_um": 0.5841453274638004,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6310450772309609,
+          "before_pointer": "/rows/4905",
+          "before_pq": 0.6285300595774856,
+          "corrected_pointer": "/corrected_rows/2530",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": 4.093323828438107,
+          "residual_depth_um": -0.09332382843810727,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    },
+    {
+      "alt": "Cached validation replay at +6 \u00b5m comparing exact, stopped-gradient, and piecewise first and corrected frames.",
+      "caption": "Frozen representative field n21_s1 at +6 \u00b5m initial defocus.",
+      "depth_um": 6.0,
+      "index": 6,
+      "path": "replay/frame-06.png",
+      "path_sha256": "c7ffbdca27c8a142bc0057c1810fe7aac61e21b0a9601daf5dca20bbb8ced846",
+      "representative_still": false,
+      "systems": [
+        {
+          "after_pq": 0.6334357075249899,
+          "before_pointer": "/rows/181",
+          "before_pq": 0.6272216449601209,
+          "corrected_pointer": "/corrected_rows/101",
+          "id": "exact",
+          "label": "Exact gradient",
+          "predicted_depth_um": 4.313106340721521,
+          "residual_depth_um": 1.6868936592784793,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6343569904069151,
+          "before_pointer": "/rows/1126",
+          "before_pq": 0.6261399089060418,
+          "corrected_pointer": "/corrected_rows/587",
+          "id": "stopped",
+          "label": "Stopped gradient",
+          "predicted_depth_um": 4.354324076066591,
+          "residual_depth_um": 1.6456759239334087,
+          "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        {
+          "after_pq": 0.6325947390403939,
+          "before_pointer": "/rows/4906",
+          "before_pq": 0.623512091268057,
+          "corrected_pointer": "/corrected_rows/2531",
+          "id": "piecewise",
+          "label": "Piecewise-028",
+          "predicted_depth_um": 4.986748977588025,
+          "residual_depth_um": 1.0132510224119748,
+          "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      ]
+    }
+  ],
+  "headline": {
+    "ci_lower_95": 0.0006703181908061804,
+    "ci_upper_95": 0.011547458540670894,
+    "exact_vs_piecewise_pq": 0.0012850136904830492,
+    "exact_vs_stopped_pq": 0.006258840610359453,
+    "piecewise_ci_lower_95": -0.001719244321047897,
+    "piecewise_ci_upper_95": 0.004800378815350437
+  },
+  "inputs": {
+    "figure_manifest": {
+      "path": "outputs/demo/figure-manifest.json",
+      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+    },
+    "replay_metadata": {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739"
+    }
+  },
+  "limitations": [
+    "PQ is panoptic quality, not percent accuracy.",
+    "All displayed evaluation evidence is validation-only.",
+    "The locked BBBC006 test remains sealed.",
+    "No physical microscope has validated this system.",
+    "The animation replays cached evidence and performs no live inference."
+  ],
+  "schema_version": 1,
+  "selected_display_depth_um": -2.0,
+  "selected_field": "n21_s1",
+  "status": "cached_validation_replay_not_live",
+  "test_accessed": false
+}

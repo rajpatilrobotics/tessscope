@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="TessScope validation-only evidence replay for exact closed-loop microscope gradients."
+    >
+    <title>TessScope · Evidence replay</title>
+    <link rel="stylesheet" href="site.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to evidence</a>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="TessScope evidence replay home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        TessScope
+      </a>
+      <nav aria-label="Evidence sections">
+        <a href="#evidence">Result</a>
+        <a href="#replay">Replay</a>
+        <a href="#optics">Optics</a>
+        <a href="#system">System</a>
+        <a href="#limits">Limits</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Validation-only · cached evidence replay</p>
+          <h1 id="hero-title">Exact gradients improve closed-loop microscope correction.</h1>
+          <p class="hero-summary">
+            TessScope differentiates across JAX/Chromatix optics, NumPy/SciPy autofocus,
+            and PyTorch/InstanSeg. Against a forward-identical stopped-gradient system,
+            the corrected validation result improves by <strong>+0.0063 PQ</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#replay">Explore the depth replay</a>
+            <a class="text-action" href="#limits">Read the limitations</a>
+          </div>
+        </div>
+        <aside class="scope-note" aria-label="Demo mode">
+          <p class="scope-title">Replay mode</p>
+          <p>Precomputed validation frames. No retraining, live inference, or test access.</p>
+          <dl>
+            <div><dt>Source pack</dt><dd>12.4 MiB</dd></div>
+            <div><dt>Depths</dt><dd>7</dd></div>
+            <div><dt>Systems</dt><dd>4</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="result-grid" id="evidence" aria-labelledby="result-title">
+        <div class="section-heading">
+          <p class="eyebrow">The result, with its boundary</p>
+          <h2 id="result-title">A causal gain—not a claim of universal superiority</h2>
+          <p>
+            PQ means panoptic quality, a 0–1 instance-segmentation metric. It is not
+            percent accuracy.
+          </p>
+        </div>
+        <div class="metric-row" aria-label="Headline validation metrics">
+          <article class="metric supported">
+            <p>Exact vs stopped</p>
+            <strong>+0.0063 PQ</strong>
+            <span>95% CI +0.0007 to +0.0115</span>
+          </article>
+          <article class="metric">
+            <p>Exact corrected PQ</p>
+            <strong>0.5523</strong>
+            <span>from 0.4922 before correction</span>
+          </article>
+          <article class="metric">
+            <p>Autofocus</p>
+            <strong>1.27 µm MAE</strong>
+            <span>98.89% signed direction</span>
+          </article>
+        </div>
+        <figure class="evidence-figure wide-figure">
+          <img
+            src="figures/causal-comparison.png"
+            alt="A paired chart shows exact-design PQ rising from 0.4922 to 0.5523. A forest plot shows a positive confidence interval versus stopped gradients and an interval crossing zero versus piecewise."
+          >
+          <figcaption>
+            27 hard-density validation wells; 2,000 paired well-bootstrap replicates.
+            <strong>Exact did not significantly beat piecewise-028:</strong> +0.0013 PQ,
+            95% CI −0.0017 to +0.0048.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="replay-section" id="replay" aria-labelledby="replay-title">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Same field. Same crop. Same transform.</p>
+            <h2 id="replay-title">Step through the closed loop across depth</h2>
+          </div>
+          <p class="mode-label">Cached replay · no computation occurs here</p>
+        </div>
+        <div class="depth-controls" role="group" aria-label="Initial defocus depth">
+          <button type="button" data-frame="0" aria-pressed="false">−6 µm</button>
+          <button type="button" data-frame="1" aria-pressed="false">−4 µm</button>
+          <button type="button" data-frame="2" aria-pressed="true">−2 µm</button>
+          <button type="button" data-frame="3" aria-pressed="false">0 µm</button>
+          <button type="button" data-frame="4" aria-pressed="false">+2 µm</button>
+          <button type="button" data-frame="5" aria-pressed="false">+4 µm</button>
+          <button type="button" data-frame="6" aria-pressed="false">+6 µm</button>
+        </div>
+        <div class="replay-layout">
+          <figure class="replay-view">
+            <img
+              id="replay-image"
+              src="replay/frame-02.png"
+              alt="Cached validation replay at minus two micrometres comparing exact, stopped-gradient, and piecewise first and corrected frames."
+            >
+            <figcaption id="replay-caption" aria-live="polite">
+              Frozen representative field n21_s1 at −2 µm initial defocus.
+            </figcaption>
+          </figure>
+          <aside class="frame-details" aria-labelledby="frame-details-title">
+            <p class="eyebrow">Selected depth</p>
+            <h3 id="frame-details-title">−2 µm</h3>
+            <dl id="depth-facts">
+              <div><dt>Exact</dt><dd>0.629 → 0.630 PQ · residual −1.25 µm</dd></div>
+              <div><dt>Stopped</dt><dd>0.632 → 0.631 PQ · residual −0.97 µm</dd></div>
+              <div><dt>Piecewise</dt><dd>0.631 → 0.631 PQ · residual −0.38 µm</dd></div>
+            </dl>
+            <p class="detail-note">
+              Blue outlines are automated BBBC006/CellProfiler reference instances;
+              orange outlines are official frozen InstanSeg predictions.
+            </p>
+          </aside>
+        </div>
+        <noscript>
+          <p class="noscript-note">JavaScript is disabled; the preregistered −2 µm frame remains visible.</p>
+        </noscript>
+      </section>
+
+      <section class="figure-section" aria-labelledby="matched-title">
+        <div class="section-heading">
+          <p class="eyebrow">Representative, not hand-picked</p>
+          <h2 id="matched-title">The frozen qualitative field</h2>
+          <p>
+            n21_s1 was selected before rendering by minimum robust distance from the
+            27-field population median over six performance features.
+          </p>
+        </div>
+        <figure class="evidence-figure">
+          <img
+            src="figures/matched-microscopy.png"
+            alt="Two-row matched microscopy grid for validation field n21_s1 comparing clear, exact, stopped, and piecewise first frames with corrected frames and instance boundaries."
+          >
+          <figcaption>
+            Identical 256×256 optical crop; labels use one fixed nearest-neighbor transform
+            from the 330×330 observer grid. No per-image normalization or scale bar.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="figure-section" aria-labelledby="depth-title">
+        <div class="section-heading">
+          <p class="eyebrow">Population behavior</p>
+          <h2 id="depth-title">Segmentation and autofocus across defocus</h2>
+        </div>
+        <figure class="evidence-figure">
+          <img
+            src="figures/pq-focus-depth.png"
+            alt="Two line charts show panoptic quality and residual defocus across six nonzero depths for exact, stopped-gradient, and piecewise systems with well-bootstrap uncertainty."
+          >
+          <figcaption>
+            Lines are means across 27 wells. Bands are deterministic 95% well-bootstrap
+            intervals, preserving the well as the experimental unit.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="figure-section" id="optics" aria-labelledby="optics-title">
+        <div class="section-heading">
+          <p class="eyebrow">What the mask changes</p>
+          <h2 id="optics-title">Physical pupils and PSFs across the full depth grid</h2>
+        </div>
+        <figure class="evidence-figure">
+          <img
+            src="figures/pupil-psf-depth.png"
+            alt="Four rows show clear, exact-gradient, stopped-gradient, and piecewise wrapped phase pupils followed by seven sensor-plane PSFs from minus six to plus six micrometres."
+          >
+          <figcaption>
+            Unit-energy Chromatix/JAX PSFs share one central crop and fixed global
+            log-intensity scale; phase uses a fixed wrapped −π to +π scale.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="figure-section" id="system" aria-labelledby="system-title">
+        <div class="section-heading">
+          <p class="eyebrow">The causal mechanism</p>
+          <h2 id="system-title">One gradient loop across three runtimes</h2>
+        </div>
+        <figure class="evidence-figure">
+          <img
+            src="figures/gradient-architecture.png"
+            alt="A pipeline connects B7 pupil, JAX Chromatix optics, depth stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg, and task loss. The exact reverse path spans the loop while the control stops at the stage path."
+          >
+          <figcaption>
+            The full-loop derivative gate passed with median relative error 0.0048 and
+            cosine agreement 0.99997. The control keeps the forward computation identical
+            while removing the stage-action learning path.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="limitations" id="limits" aria-labelledby="limits-title">
+        <div class="section-heading">
+          <p class="eyebrow">What we can—and cannot—say</p>
+          <h2 id="limits-title">Scientific limits stay visible</h2>
+        </div>
+        <div class="limits-grid">
+          <article>
+            <h3>Supported</h3>
+            <p>
+              Exact closed-loop gradients improve corrected validation PQ over the
+              matched stopped-gradient control.
+            </p>
+          </article>
+          <article>
+            <h3>Not supported</h3>
+            <p>
+              Superiority over piecewise-028: its paired interval includes zero and the
+              frozen stability gate failed.
+            </p>
+          </article>
+          <article>
+            <h3>Still sealed</h3>
+            <p>
+              The locked BBBC006 test. V2.5 and v2.6 produced no eligible candidate, so
+              the test was not opened.
+            </p>
+          </article>
+          <article>
+            <h3>Not yet validated</h3>
+            <p>
+              Physical microscope performance. These are deterministic in-silico sensor
+              frames and automated reference labels.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="reproducibility" aria-labelledby="reproduce-title">
+        <div>
+          <p class="eyebrow">Traceable by construction</p>
+          <h2 id="reproduce-title">Every visual resolves to a source hash</h2>
+          <p>
+            The evidence, selection, array, figure, and site manifests record source paths,
+            JSON pointers, crop origins, design identities, transforms, and SHA-256 hashes.
+          </p>
+        </div>
+        <div class="repro-links">
+          <a href="figure-manifest.json">Figure manifest</a>
+          <a href="CAPTIONS.md">Captions and alt text</a>
+          <a href="replay/validation-depth-sweep.mp4">Depth sweep MP4</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>TessScope research prototype · validation evidence only · local replay</p>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
