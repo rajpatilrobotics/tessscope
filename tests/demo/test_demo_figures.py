@@ -47,6 +47,7 @@ def test_publication_outputs_exist_in_all_required_formats() -> None:
     assert set(manifest["figures"]) == {
         "causal-comparison",
         "gradient-architecture",
+        "hero-evidence",
         "matched-microscopy",
         "pq-focus-depth",
         "pupil-psf-depth",
@@ -65,6 +66,33 @@ def test_publication_outputs_exist_in_all_required_formats() -> None:
             assert image.width >= 3000
             assert image.height >= 1200
             assert image.info["dpi"][0] == pytest.approx(300, abs=1)
+
+
+def test_hero_and_architecture_preserve_scope_and_runtime_boundaries() -> None:
+    figures = _manifest()["figures"]
+    hero = figures["hero-evidence"]
+    assert hero["field_id"] == "n21_s1"
+    assert hero["depth_um"] == -2.0
+    assert hero["before_pq"] == pytest.approx(0.6294106178269091)
+    assert hero["after_pq"] == pytest.approx(0.6302726038728452)
+    assert hero["display_transform"]["per_image_normalization"] is False
+    assert set(hero["replay_arrays"]) == {
+        "labels_before",
+        "labels_corrected",
+        "psf_sensor",
+        "pupil_mask",
+        "pupil_phase_radians",
+        "sensor_before",
+        "sensor_corrected",
+        "target_labels",
+    }
+
+    architecture = figures["gradient-architecture"]
+    assert architecture["component_boundaries"] == [
+        {"component": "optics", "runtime": "JAX/Chromatix", "served_calls": 2},
+        {"component": "autofocus", "runtime": "NumPy/SciPy", "served_calls": 1},
+        {"component": "observer", "runtime": "PyTorch/InstanSeg", "served_calls": 1},
+    ]
 
 
 def test_causal_figure_preserves_supported_and_unsupported_results() -> None:
@@ -128,5 +156,5 @@ def test_psf_rendering_and_animation_use_fixed_complete_grids() -> None:
 
 def test_figure_manifest_is_byte_stable_for_frozen_outputs() -> None:
     assert sha256_path(MANIFEST_PATH) == (
-        "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+        "4b9185e8115232aaf0250034c59160b9bcb8d4d6f21eb89f85f24fa40c121453"
     )

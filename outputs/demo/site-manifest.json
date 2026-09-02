@@ -6,7 +6,11 @@
     },
     "outputs/demo/figures/gradient-architecture.png": {
       "role": "publication_figure",
-      "sha256": "23bf68554f08d55a8124d5cf3db045f1f417e7768421b839d2ce456fda9f2d8f"
+      "sha256": "c580482b60f3a19301ff78dc9ff20660e92bb199fdcb115347ebbed6fe0f72a8"
+    },
+    "outputs/demo/figures/hero-evidence.png": {
+      "role": "publication_figure",
+      "sha256": "8e5493b855ec8875e021c8c6d65af08f061a69f4f1fc3e85edfd1b6cca819f33"
     },
     "outputs/demo/figures/matched-microscopy.png": {
       "role": "publication_figure",
@@ -62,7 +66,7 @@
   "inputs": {
     "figure_manifest": {
       "path": "outputs/demo/figure-manifest.json",
-      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+      "sha256": "4b9185e8115232aaf0250034c59160b9bcb8d4d6f21eb89f85f24fa40c121453"
     },
     "replay_metadata": {
       "path": "artifacts/runs/demo/validation-replay.json",
@@ -80,18 +84,18 @@
     },
     "index.html": {
       "path": "outputs/demo/index.html",
-      "sha256": "b0dfc6051c293a26e33519f118728ea1e119b6af0e3c033eb0d86da2d7e4698f",
-      "size_bytes": 12272
+      "sha256": "4806ca4e72a93b0ad446bc265db9fd2a73f47e45c1df8b8e93ab88d187cbdb77",
+      "size_bytes": 13298
     },
     "site-data.json": {
       "path": "outputs/demo/site-data.json",
-      "sha256": "85bfc56c1b16538ccbfee9490d54cb7fa9f514e80cd49e3766e04f22fcd95648",
+      "sha256": "266c23e3578537c7027ca8c7e19e83014425532a42b782e7c58102bacfaef087",
       "size_bytes": 15833
     },
     "site.css": {
       "path": "outputs/demo/site.css",
-      "sha256": "c7b6ff2f39690b657374927c87238e84739dfd2c0cb900ae5c58ca72bf290fbc",
-      "size_bytes": 8953
+      "sha256": "243c9078a9c8fd7cc47e6e529be25cd948c9917b8407203fe08bbe44c92d4835",
+      "size_bytes": 10104
     }
   },
   "status": "complete_local_static_judge_demo",

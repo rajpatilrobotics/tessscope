@@ -135,6 +135,161 @@ def _draw_overlay_panel(
     axis.grid(False)
 
 
+def generate_hero_evidence(
+    arrays: dict[str, np.ndarray], metadata: dict
+) -> tuple[dict, dict]:
+    """Render one compact, traceable overview from the frozen representative replay."""
+    depth = float(metadata["selected_display_depth_um"])
+    depth_index = metadata["depths_um"].index(depth)
+    exact_index = metadata["system_order"].index("exact")
+    corrected_index = metadata["corrected_system_order"].index("exact")
+    scale = float(metadata["observer"]["transform"]["scale"])
+    trace = _frame(metadata, "exact", depth)
+
+    fig, axes = plt.subplots(1, 4, figsize=(10.8, 4.1))
+    _draw_overlay_panel(
+        axes[0],
+        arrays["sensor_before"][exact_index, depth_index],
+        arrays["target_labels"],
+        arrays["labels_before"][exact_index, depth_index],
+        scale=scale,
+        title="Exact · first frame",
+        subtitle=f"PQ {trace['before_pq']:.3f}",
+    )
+    _draw_overlay_panel(
+        axes[1],
+        arrays["sensor_corrected"][corrected_index, depth_index],
+        arrays["target_labels"],
+        arrays["labels_corrected"][corrected_index, depth_index],
+        scale=scale,
+        title="Exact · after stage action",
+        subtitle=f"PQ {trace['after_pq']:.3f} · residual {trace['residual_depth_um']:+.2f} µm",
+    )
+
+    mask = arrays["pupil_mask"].astype(bool)
+    phase = np.angle(np.exp(1j * arrays["pupil_phase_radians"][exact_index])).astype(
+        np.float32
+    )
+    phase[~mask] = np.nan
+    phase_cmap = plt.get_cmap("twilight").copy()
+    phase_cmap.set_bad("white")
+    axes[2].imshow(
+        phase,
+        cmap=phase_cmap,
+        vmin=-np.pi,
+        vmax=np.pi,
+        interpolation="nearest",
+    )
+    axes[2].set_title("Exact B7 pupil phase", pad=5)
+    axes[2].text(
+        0.5,
+        -0.05,
+        "fixed wrapped −π to +π scale",
+        transform=axes[2].transAxes,
+        ha="center",
+        va="top",
+        fontsize=7.5,
+        color=COLORS["muted"],
+    )
+
+    psf = arrays["psf_sensor"][exact_index, depth_index]
+    crop_size = 41
+    crop_start = (psf.shape[-1] - crop_size) // 2
+    cropped = psf[crop_start : crop_start + crop_size, crop_start : crop_start + crop_size]
+    global_maximum = float(arrays["psf_sensor"].max())
+    log_psf = np.log10(np.maximum(cropped / global_maximum, 1e-5))
+    axes[3].imshow(
+        log_psf,
+        cmap="magma",
+        vmin=-5.0,
+        vmax=0.0,
+        interpolation="nearest",
+    )
+    axes[3].set_title(f"Exact PSF · {format_depth(depth)}", pad=5)
+    axes[3].text(
+        0.5,
+        -0.05,
+        "fixed global log₁₀ scale [−5, 0]",
+        transform=axes[3].transAxes,
+        ha="center",
+        va="top",
+        fontsize=7.5,
+        color=COLORS["muted"],
+    )
+    for axis in axes[2:]:
+        axis.set_xticks([])
+        axis.set_yticks([])
+        axis.grid(False)
+
+    fig.suptitle(
+        "One frozen TessScope validation field, from optics to correction",
+        fontsize=14,
+        fontweight="semibold",
+        y=0.98,
+    )
+    fig.text(
+        0.5,
+        0.91,
+        f"{metadata['selected_field']} · initial defocus {format_depth(depth)} · "
+        "exact-gradient design · deterministic cached evidence",
+        ha="center",
+        color=COLORS["muted"],
+        fontsize=8.5,
+    )
+    fig.text(
+        0.5,
+        0.025,
+        "Blue: automated reference · orange: InstanSeg · magenta: overlap · "
+        "representative frame only; population result reported separately",
+        ha="center",
+        color=COLORS["muted"],
+        fontsize=8,
+    )
+    fig.subplots_adjust(left=0.025, right=0.985, top=0.83, bottom=0.12, wspace=0.12)
+
+    caption = (
+        "Frozen representative validation field n21_s1 at −2 µm for the exact-gradient "
+        "design, showing the first sensor frame, corrected sensor frame, B7 pupil phase, "
+        "and Chromatix sensor-plane PSF. The microscopy panels use the documented global "
+        "display transform; this individual frame is not the paired population result."
+    )
+    alt = (
+        "Four panels from frozen validation evidence show the exact-gradient first frame "
+        "with automated-reference and InstanSeg boundaries, the corrected frame after one "
+        "stage action, the exact B7 pupil phase, and its minus-two-micrometre PSF."
+    )
+    details = {
+        "caption": caption,
+        "alt": alt,
+        "field_id": metadata["selected_field"],
+        "depth_um": depth,
+        "system": trace["design"],
+        "before_pq": trace["before_pq"],
+        "after_pq": trace["after_pq"],
+        "residual_depth_um": trace["residual_depth_um"],
+        "source": {
+            "path": trace["source"],
+            "sha256": trace["source_sha256"],
+            "pointers": [trace["before_pointer"], trace["corrected_pointer"]],
+        },
+        "replay_arrays": {
+            name: metadata["arrays"][name]
+            for name in (
+                "sensor_before",
+                "sensor_corrected",
+                "labels_before",
+                "labels_corrected",
+                "target_labels",
+                "pupil_phase_radians",
+                "pupil_mask",
+                "psf_sensor",
+            )
+        },
+        "display_transform": metadata["observer"]["transform"],
+    }
+    return _save_figure(fig, "hero-evidence", alt), details
+
+
 def generate_matched_microscopy(arrays: dict[str, np.ndarray], metadata: dict) -> tuple[dict, dict]:
     depth = float(metadata["selected_display_depth_um"])
     depth_index = metadata["depths_um"].index(depth)
@@ -699,6 +854,45 @@ def _box(axis: plt.Axes, x: float, y: float, width: float, text: str, color: str
     axis.text(x, y, text, ha="center", va="center", fontsize=8.5, fontweight="semibold")
 
 
+def _tesseract_boundary(
+    axis: plt.Axes,
+    x: float,
+    width: float,
+    title: str,
+    runtime: str,
+    operation: str,
+    color: str,
+) -> None:
+    patch = FancyBboxPatch(
+        (x - width / 2, 0.48),
+        width,
+        0.34,
+        boxstyle="round,pad=0.012,rounding_size=0.02",
+        facecolor=COLORS["soft"],
+        edgecolor=color,
+        linewidth=2.0,
+    )
+    axis.add_patch(patch)
+    axis.text(
+        x,
+        0.765,
+        title,
+        ha="center",
+        va="center",
+        fontsize=7.7,
+        fontweight="semibold",
+        color=color,
+    )
+    axis.plot(
+        [x - width / 2 + 0.012, x + width / 2 - 0.012],
+        [0.72, 0.72],
+        color=COLORS["grid"],
+        linewidth=0.8,
+    )
+    axis.text(x, 0.655, runtime, ha="center", va="center", fontsize=8.5, fontweight="semibold")
+    axis.text(x, 0.555, operation, ha="center", va="center", fontsize=8, color=COLORS["muted"])
+
+
 def _arrow(axis: plt.Axes, start: tuple[float, float], end: tuple[float, float], **kwargs) -> None:
     axis.add_patch(
         FancyArrowPatch(
@@ -715,49 +909,81 @@ def _arrow(axis: plt.Axes, start: tuple[float, float], end: tuple[float, float],
 
 
 def generate_architecture(derivative: dict) -> tuple[dict, dict]:
-    fig, axis = plt.subplots(figsize=(13.4, 5.5))
-    axis.set_xlim(0, 1)
+    fig, axis = plt.subplots(figsize=(13.4, 6.0))
+    axis.set_xlim(-0.015, 1.015)
     axis.set_ylim(0, 1)
     axis.axis("off")
     axis.grid(False)
-    xs = [0.08, 0.23, 0.38, 0.53, 0.68, 0.83, 0.94]
-    widths = [0.115, 0.14, 0.12, 0.145, 0.11, 0.13, 0.08]
-    labels = [
-        "B7 phase\nmask",
-        "JAX / Chromatix\noptics",
-        "Depth image\nstack",
-        "NumPy / SciPy\nautofocus",
-        "Clipped stage\naction",
-        "PyTorch / InstanSeg\ncorrected frame",
-        "Task\nloss",
-    ]
-    colors = [
+    _box(axis, 0.06, 0.65, 0.09, "B7 phase\nparameters", COLORS["exact"])
+    _tesseract_boundary(
+        axis,
+        0.20,
+        0.17,
+        "OPTICS TESSERACT API · CALL 1",
+        "JAX · Chromatix",
+        "first depth stack",
         COLORS["exact"],
+    )
+    _tesseract_boundary(
+        axis,
+        0.41,
+        0.17,
+        "AUTOFOCUS TESSERACT API",
+        "NumPy · SciPy",
+        "ridge estimate + clipped action",
+        COLORS["piecewise"],
+    )
+    _tesseract_boundary(
+        axis,
+        0.62,
+        0.17,
+        "OPTICS TESSERACT API · CALL 2",
+        "JAX · Chromatix (same service)",
+        "corrected sensor at residual depth",
         COLORS["exact"],
-        COLORS["muted"],
-        COLORS["piecewise"],
-        COLORS["piecewise"],
+    )
+    _tesseract_boundary(
+        axis,
+        0.83,
+        0.17,
+        "OBSERVER TESSERACT API",
+        "PyTorch · InstanSeg",
+        "first + final task losses",
         COLORS["stopped"],
-        COLORS["stopped"],
-    ]
-    for x, width, label, color in zip(xs, widths, labels, colors, strict=True):
-        _box(axis, x, 0.62, width, label, color)
-    for left, left_width, right, right_width in zip(
-        xs[:-1], widths[:-1], xs[1:], widths[1:], strict=True
-    ):
-        _arrow(
-            axis,
-            (left + left_width / 2, 0.62),
-            (right - right_width / 2, 0.62),
-            color=COLORS["ink"],
-        )
-    axis.text(0.02, 0.62, "Forward", rotation=90, va="center", ha="center", fontweight="semibold")
+    )
+    _box(axis, 0.96, 0.65, 0.065, "Joint\nobjective", COLORS["muted"])
 
-    _arrow(axis, (0.94, 0.42), (0.09, 0.42), color=COLORS["exact"])
+    forward_edges = [
+        (0.105, 0.115),
+        (0.285, 0.325),
+        (0.495, 0.535),
+        (0.705, 0.745),
+        (0.915, 0.9275),
+    ]
+    for start, end in forward_edges:
+        _arrow(axis, (start, 0.65), (end, 0.65), color=COLORS["ink"])
     axis.text(
         0.51,
-        0.36,
-        "Exact reverse path crosses observer, corrected image, stage action, autofocus, and optics",
+        0.88,
+        "Forward served calls: phase → first stack → stage action → corrected sensor → task loss",
+        ha="center",
+        color=COLORS["muted"],
+        fontsize=8.5,
+    )
+
+    boundary_marks = (
+        (0.20, COLORS["exact"]),
+        (0.41, COLORS["piecewise"]),
+        (0.62, COLORS["exact"]),
+        (0.83, COLORS["stopped"]),
+    )
+    for x, color in boundary_marks:
+        axis.plot([x, x], [0.38, 0.43], color=color, linewidth=2.2)
+    _arrow(axis, (0.96, 0.405), (0.06, 0.405), color=COLORS["exact"])
+    axis.text(
+        0.51,
+        0.345,
+        "Exact VJP: Tesseract carries one reverse signal across every API boundary",
         ha="center",
         va="top",
         color=COLORS["exact"],
@@ -765,7 +991,7 @@ def generate_architecture(derivative: dict) -> tuple[dict, dict]:
     )
     axis.text(
         0.51,
-        0.28,
+        0.285,
         "Full-loop derivative gate: median relative error "
         f"{derivative['overall_median_relative_error']:.4f}; cosine "
         f"{derivative['overall_cosine_agreement']:.5f}",
@@ -774,48 +1000,67 @@ def generate_architecture(derivative: dict) -> tuple[dict, dict]:
         fontsize=8.5,
     )
 
-    _arrow(axis, (0.94, 0.15), (0.58, 0.15), color=COLORS["stopped"], linestyle="--")
-    axis.plot([0.55, 0.55], [0.10, 0.20], color=COLORS["stopped"], linewidth=3)
+    _arrow(
+        axis,
+        (0.96, 0.15),
+        (0.535, 0.15),
+        color=COLORS["stopped"],
+        linestyle="--",
+    )
+    axis.plot([0.515, 0.515], [0.10, 0.20], color=COLORS["stopped"], linewidth=3)
     axis.text(
-        0.55,
+        0.515,
         0.075,
-        "stop-gradient at stage path",
+        "stopped at stage-action VJP edge",
         ha="center",
         va="top",
         color=COLORS["stopped"],
         fontsize=8,
     )
-    axis.text(0.02, 0.15, "Control", rotation=90, va="center", ha="center", fontweight="semibold")
+    axis.text(
+        0.02,
+        0.15,
+        "Control",
+        rotation=90,
+        va="center",
+        ha="center",
+        fontweight="semibold",
+    )
     axis.text(
         0.75,
-        0.09,
-        "Same forward computation; one causal learning path is removed",
+        0.095,
+        "Forward calls stay identical; only the stage-action learning path is removed",
         ha="center",
         color=COLORS["muted"],
         fontsize=8.5,
     )
     fig.suptitle(
-        "TessScope closes the gradient loop across three scientific runtimes",
+        "Tesseract bridges the exact gradient across isolated scientific runtimes",
         fontsize=14,
         fontweight="semibold",
         y=0.97,
     )
     caption = (
-        "TessScope forms a depth stack with JAX/Chromatix, predicts defocus with a frozen "
-        "NumPy/SciPy ridge autofocus model, applies a clipped stage action, and evaluates the "
-        "corrected frame with frozen PyTorch/InstanSeg. Exact reverse-mode gradients cross the "
-        "stage-action path; the stopped-gradient control keeps the forward computation identical "
-        "but removes that causal learning signal."
+        "Three explicit Tesseract component APIs connect JAX/Chromatix optics, NumPy/SciPy "
+        "autofocus, and PyTorch/InstanSeg. The optics API is called for the first depth stack "
+        "and again at autofocus-predicted residual depths; the observer scores first and final "
+        "frames. Tesseract carries the exact VJP across these runtime boundaries. The stopped "
+        "control keeps every forward call identical but removes the stage-action VJP edge."
     )
     alt = (
-        "A left-to-right pipeline connects a B7 phase mask, JAX Chromatix optics, depth image "
-        "stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg corrected frame, and task "
-        "loss. A blue reverse arrow spans the full exact path; a dashed orange control arrow "
-        "stops at the stage-action boundary."
+        "A left-to-right served-call pipeline shows two JAX Chromatix optics calls, one NumPy "
+        "SciPy autofocus call, and one PyTorch InstanSeg observer call, each inside a labeled "
+        "Tesseract API boundary. A blue exact VJP crosses every boundary; the dashed stopped "
+        "control ends at the stage-action learning edge while the forward path stays identical."
     )
     details = {
         "caption": caption,
         "alt": alt,
+        "component_boundaries": [
+            {"component": "optics", "runtime": "JAX/Chromatix", "served_calls": 2},
+            {"component": "autofocus", "runtime": "NumPy/SciPy", "served_calls": 1},
+            {"component": "observer", "runtime": "PyTorch/InstanSeg", "served_calls": 1},
+        ],
         "derivative_gate": {
             "overall_median_relative_error": derivative["overall_median_relative_error"],
             "overall_cosine_agreement": derivative["overall_cosine_agreement"],
@@ -989,6 +1234,7 @@ def _write_captions(figures: dict, replay: dict) -> None:
         "",
     ]
     for key in (
+        "hero-evidence",
         "causal-comparison",
         "matched-microscopy",
         "pq-focus-depth",
@@ -1039,6 +1285,8 @@ def main() -> None:
     derivative = _json(DERIVATIVE_PATH)
 
     figures = {}
+    files, details = generate_hero_evidence(arrays, replay_metadata)
+    figures["hero-evidence"] = {**details, "files": files}
     files, details = generate_matched_microscopy(arrays, replay_metadata)
     figures["matched-microscopy"] = {**details, "files": files}
     files, details = generate_pupil_psf(arrays, replay_metadata)

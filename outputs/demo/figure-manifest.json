@@ -1,7 +1,7 @@
 {
   "captions": {
     "path": "outputs/demo/CAPTIONS.md",
-    "sha256": "9fcb8e5b909f270f6b24cccaa2ed099487a159e670b345b6f9e3fd26673a4aa5"
+    "sha256": "2075379f701ec51ef1facf5e8fb134e7482b617dfa50e2b5aade54262bd0638b"
   },
   "display_integrity": {
     "geometry": "same selected field, crop, sensor grid, and nearest label interpolation",
@@ -77,8 +77,25 @@
       }
     },
     "gradient-architecture": {
-      "alt": "A left-to-right pipeline connects a B7 phase mask, JAX Chromatix optics, depth image stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg corrected frame, and task loss. A blue reverse arrow spans the full exact path; a dashed orange control arrow stops at the stage-action boundary.",
-      "caption": "TessScope forms a depth stack with JAX/Chromatix, predicts defocus with a frozen NumPy/SciPy ridge autofocus model, applies a clipped stage action, and evaluates the corrected frame with frozen PyTorch/InstanSeg. Exact reverse-mode gradients cross the stage-action path; the stopped-gradient control keeps the forward computation identical but removes that causal learning signal.",
+      "alt": "A left-to-right served-call pipeline shows two JAX Chromatix optics calls, one NumPy SciPy autofocus call, and one PyTorch InstanSeg observer call, each inside a labeled Tesseract API boundary. A blue exact VJP crosses every boundary; the dashed stopped control ends at the stage-action learning edge while the forward path stays identical.",
+      "caption": "Three explicit Tesseract component APIs connect JAX/Chromatix optics, NumPy/SciPy autofocus, and PyTorch/InstanSeg. The optics API is called for the first depth stack and again at autofocus-predicted residual depths; the observer scores first and final frames. Tesseract carries the exact VJP across these runtime boundaries. The stopped control keeps every forward call identical but removes the stage-action VJP edge.",
+      "component_boundaries": [
+        {
+          "component": "optics",
+          "runtime": "JAX/Chromatix",
+          "served_calls": 2
+        },
+        {
+          "component": "autofocus",
+          "runtime": "NumPy/SciPy",
+          "served_calls": 1
+        },
+        {
+          "component": "observer",
+          "runtime": "PyTorch/InstanSeg",
+          "served_calls": 1
+        }
+      ],
       "derivative_gate": {
         "forward_parity_absolute": 0.0,
         "overall_cosine_agreement": 0.9999673901184897,
@@ -98,20 +115,142 @@
       "files": {
         "pdf": {
           "path": "outputs/demo/figures/gradient-architecture.pdf",
-          "sha256": "74530b245057d69156477dcfb84f93170f3bc61b8c268b3831d963b6e1d4c247",
-          "size_bytes": 27980
+          "sha256": "567204deb0dac4682db2f2969bab2a18af7b100890b8f338bd6623efa5dea337",
+          "size_bytes": 33095
         },
         "png": {
           "path": "outputs/demo/figures/gradient-architecture.png",
-          "sha256": "23bf68554f08d55a8124d5cf3db045f1f417e7768421b839d2ce456fda9f2d8f",
-          "size_bytes": 169866
+          "sha256": "c580482b60f3a19301ff78dc9ff20660e92bb199fdcb115347ebbed6fe0f72a8",
+          "size_bytes": 223514
         },
         "svg": {
           "path": "outputs/demo/figures/gradient-architecture.svg",
-          "sha256": "4ef6117a84176d8d5c5b0560f472bc67d874ed1d8a431b09977e45a1773e53d7",
-          "size_bytes": 73103
+          "sha256": "fabb156a1569b0fd509af0a6c75e952d39cae37ea436d85349428452b016ba3a",
+          "size_bytes": 98535
         }
       }
+    },
+    "hero-evidence": {
+      "after_pq": 0.6302726038728452,
+      "alt": "Four panels from frozen validation evidence show the exact-gradient first frame with automated-reference and InstanSeg boundaries, the corrected frame after one stage action, the exact B7 pupil phase, and its minus-two-micrometre PSF.",
+      "before_pq": 0.6294106178269091,
+      "caption": "Frozen representative validation field n21_s1 at \u22122 \u00b5m for the exact-gradient design, showing the first sensor frame, corrected sensor frame, B7 pupil phase, and Chromatix sensor-plane PSF. The microscopy panels use the documented global display transform; this individual frame is not the paired population result.",
+      "depth_um": -2.0,
+      "display_transform": {
+        "clip": [
+          0.0,
+          1.0
+        ],
+        "mode": "affine",
+        "offset": 0.0,
+        "per_image_normalization": false,
+        "scale": 11.582016617246811
+      },
+      "field_id": "n21_s1",
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/hero-evidence.pdf",
+          "sha256": "8c4ce2a673a21428b89e11de5d99a37dd6de1518784a510f06dfa3d17794a683",
+          "size_bytes": 109215
+        },
+        "png": {
+          "path": "outputs/demo/figures/hero-evidence.png",
+          "sha256": "8e5493b855ec8875e021c8c6d65af08f061a69f4f1fc3e85edfd1b6cca819f33",
+          "size_bytes": 287471
+        },
+        "svg": {
+          "path": "outputs/demo/figures/hero-evidence.svg",
+          "sha256": "cc66a7b5455b4b8d1cd6fd7e53b962e0c45165e291752eede1a51c5a64fbcff8",
+          "size_bytes": 196669
+        }
+      },
+      "replay_arrays": {
+        "labels_before": {
+          "dtype": "int32",
+          "sha256": "8d9e00b56510c3ee70c587e3e80bd42bf13c78c2fbe51f1f59948f8880be1cf1",
+          "shape": [
+            4,
+            7,
+            330,
+            330
+          ]
+        },
+        "labels_corrected": {
+          "dtype": "int32",
+          "sha256": "7b438fadcc723a0e685830a62ffc784d1c790850e254dac65cea2bf1aeeffcb5",
+          "shape": [
+            3,
+            7,
+            330,
+            330
+          ]
+        },
+        "psf_sensor": {
+          "dtype": "float32",
+          "sha256": "9d260938299858f8cb4076072a6c24d3c974f4e273cf3f9100f25e53a8be2c1e",
+          "shape": [
+            4,
+            7,
+            96,
+            96
+          ]
+        },
+        "pupil_mask": {
+          "dtype": "uint8",
+          "sha256": "091c90e562d6893f3b383994c5584c4afd5233b74500a1deea92e5babdc9efbb",
+          "shape": [
+            256,
+            256
+          ]
+        },
+        "pupil_phase_radians": {
+          "dtype": "float32",
+          "sha256": "23e079328f5490c18ff9c820668663630160d60aeed956ac619d86fb9cf8eeaf",
+          "shape": [
+            4,
+            256,
+            256
+          ]
+        },
+        "sensor_before": {
+          "dtype": "float32",
+          "sha256": "2aa25bc8bc711713c2bb53c995b7d62453a5af6422b45c383d485c5a5dc5dfb3",
+          "shape": [
+            4,
+            7,
+            256,
+            256
+          ]
+        },
+        "sensor_corrected": {
+          "dtype": "float32",
+          "sha256": "0446302fc49f6ddf3408fce0fb7417798f502ff6aae57efb5dc82e6eb6556126",
+          "shape": [
+            3,
+            7,
+            256,
+            256
+          ]
+        },
+        "target_labels": {
+          "dtype": "int32",
+          "sha256": "90a3c5b14bebbf7c58704db81f56ea43c5ba497fee918621a16d115777ffa09e",
+          "shape": [
+            330,
+            330
+          ]
+        }
+      },
+      "residual_depth_um": -1.2451979217703464,
+      "source": {
+        "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+        "pointers": [
+          "/rows/177",
+          "/corrected_rows/98"
+        ],
+        "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+      },
+      "system": "v2_3-exact-balanced-segmentation_only-step-14"
     },
     "matched-microscopy": {
       "alt": "Two-row matched microscopy grid for validation field n21_s1. The top row compares clear, exact-gradient, stopped-gradient, and piecewise first frames at minus two micrometres. The bottom row shows the automated reference and corrected exact, stopped, and piecewise frames with reference and InstanSeg boundaries.",

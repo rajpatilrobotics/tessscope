@@ -100,6 +100,10 @@ def test_html_is_semantic_accessible_and_uses_only_local_assets() -> None:
     assert '<html lang="en">' in html
     assert '<main id="main-content">' in html
     assert "Cached replay · no computation occurs here" in html
+    assert "Tesseract carries the exact reverse signal across three component APIs" in html
+    assert "exact corrected PQ is 0.630 and stopped is 0.631" in html
+    assert "the causal claim is paired across 27 wells" in html
+    assert 'src="figures/hero-evidence.png"' in html
     assert "PQ means panoptic quality" in html
     assert "The locked BBBC006 test" in html
     assert "Physical microscope performance" in html
@@ -122,6 +126,8 @@ def test_css_supports_small_screens_focus_and_reduced_motion() -> None:
     assert "@media (prefers-reduced-motion: reduce)" in css
     assert ":focus-visible" in css
     assert "min-height: 2.75rem" in css
+    assert ".topbar nav a" in css
+    assert "justify-content: space-between" in css
 
 
 def test_one_command_check_and_real_local_http_response() -> None:

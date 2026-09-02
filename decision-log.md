@@ -804,3 +804,17 @@ Resolution options, in recommended order:
   generate the conditional B11 piecewise family or run stopped-stage, new hard-label,
   derivative-free, gain, or locked-test work. The test remains sealed and test access is
   false in every frozen v2.5 artifact.
+
+## 2026-09-02 — Judge demo foregrounds frozen evidence and Tesseract boundaries
+
+- The first viewport now uses a deterministic four-panel visual from the already frozen
+  `n21_s1`, −2 µm validation replay. It adds no sample selection, normalization, inference,
+  or scientific claim, and it explicitly says the frame is not the population estimate.
+- The architecture figure now labels the optics, autofocus, and observer Tesseract APIs,
+  including the two calls to the same optics service and the exact VJP across all runtime
+  boundaries. This matches `src/tessscope/v2_3/closed_loop.py`.
+- The default replay keeps the preregistered −2 µm field and immediately discloses that its
+  exact corrected PQ (`0.630`) is slightly below stopped (`0.631`); the supported causal
+  result remains the paired comparison across 27 validation wells.
+- Mobile navigation links use a 44 px minimum height. The cached/local mode, limitations,
+  locked-test seal, and no-physical-microscope boundary remain unchanged.

@@ -103,6 +103,9 @@ button:focus-visible {
 }
 
 .topbar nav a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 600;
@@ -121,11 +124,11 @@ footer {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(17rem, 0.65fr);
-  align-items: end;
-  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 1.12fr) minmax(23rem, 0.88fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
   min-height: 39rem;
-  padding-block: 7rem 5rem;
+  padding-block: 5.5rem 5rem;
 }
 
 .eyebrow {
@@ -181,6 +184,19 @@ h3 {
   color: var(--exact);
 }
 
+.hero-bridge {
+  max-width: 61ch;
+  margin: -0.65rem 0 1.8rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.hero-bridge::before {
+  content: "↳";
+  margin-right: 0.5rem;
+  color: var(--piecewise);
+}
+
 .hero-actions,
 .repro-links {
   display: flex;
@@ -217,6 +233,34 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 0.65rem;
   background: linear-gradient(145deg, rgba(19, 34, 31, 0.96), rgba(13, 25, 23, 0.96));
+}
+
+.hero-evidence-stack {
+  display: grid;
+  align-self: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.hero-visual {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: #ffffff;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-visual figcaption {
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid #d9dde3;
+  background: #f7f8fa;
+  color: #2d343b;
+  font-size: 0.78rem;
 }
 
 .scope-note p {
@@ -348,6 +392,15 @@ h3 {
   text-transform: uppercase;
 }
 
+.population-note {
+  max-width: 80ch;
+  margin: -1.2rem 0 1.5rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--stopped);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .depth-controls {
   display: flex;
   flex-wrap: wrap;
@@ -476,7 +529,12 @@ footer {
   }
 
   .topbar nav {
-    gap: 0.85rem;
+    width: 100%;
+    gap: 0.25rem;
+  }
+
+  .topbar nav a {
+    padding-inline: 0.4rem;
   }
 
   .hero,
@@ -509,6 +567,20 @@ footer {
 
   h1 {
     font-size: clamp(2.35rem, 14vw, 3.6rem);
+  }
+
+  .topbar {
+    padding-block: 0.45rem;
+  }
+
+  .topbar nav {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .topbar nav a {
+    padding-inline: 0.25rem;
+    font-size: 0.78rem;
   }
 
   .scope-note dl,

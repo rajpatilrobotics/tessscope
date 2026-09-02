@@ -968,11 +968,11 @@
   "manifest_chain": {
     "figure_manifest": {
       "path": "outputs/demo/figure-manifest.json",
-      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+      "sha256": "4b9185e8115232aaf0250034c59160b9bcb8d4d6f21eb89f85f24fa40c121453"
     },
     "site_manifest": {
       "path": "outputs/demo/site-manifest.json",
-      "sha256": "1b3b789b47b64c2f20d797f737ce34317da77409a073400382748c36a761a0c9"
+      "sha256": "033b7f13431c8e540911f6521b1cec5eaeb60fd91bf9a4934aa98626d3adb329"
     },
     "source_manifest": {
       "path": "configs/demo/source-manifest.json",
@@ -1012,8 +1012,8 @@
     },
     "outputs/demo/CAPTIONS.md": {
       "role": "captions_and_alt_text",
-      "sha256": "9fcb8e5b909f270f6b24cccaa2ed099487a159e670b345b6f9e3fd26673a4aa5",
-      "size_bytes": 4218
+      "sha256": "2075379f701ec51ef1facf5e8fb134e7482b617dfa50e2b5aade54262bd0638b",
+      "size_bytes": 4906
     },
     "outputs/demo/app.js": {
       "role": "judge_site:app.js",
@@ -1022,8 +1022,8 @@
     },
     "outputs/demo/figure-manifest.json": {
       "role": "figure_manifest",
-      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182",
-      "size_bytes": 38610
+      "sha256": "4b9185e8115232aaf0250034c59160b9bcb8d4d6f21eb89f85f24fa40c121453",
+      "size_bytes": 43090
     },
     "outputs/demo/figures/causal-comparison.pdf": {
       "role": "figure:causal-comparison:pdf",
@@ -1042,18 +1042,33 @@
     },
     "outputs/demo/figures/gradient-architecture.pdf": {
       "role": "figure:gradient-architecture:pdf",
-      "sha256": "74530b245057d69156477dcfb84f93170f3bc61b8c268b3831d963b6e1d4c247",
-      "size_bytes": 27980
+      "sha256": "567204deb0dac4682db2f2969bab2a18af7b100890b8f338bd6623efa5dea337",
+      "size_bytes": 33095
     },
     "outputs/demo/figures/gradient-architecture.png": {
       "role": "figure:gradient-architecture:png",
-      "sha256": "23bf68554f08d55a8124d5cf3db045f1f417e7768421b839d2ce456fda9f2d8f",
-      "size_bytes": 169866
+      "sha256": "c580482b60f3a19301ff78dc9ff20660e92bb199fdcb115347ebbed6fe0f72a8",
+      "size_bytes": 223514
     },
     "outputs/demo/figures/gradient-architecture.svg": {
       "role": "figure:gradient-architecture:svg",
-      "sha256": "4ef6117a84176d8d5c5b0560f472bc67d874ed1d8a431b09977e45a1773e53d7",
-      "size_bytes": 73103
+      "sha256": "fabb156a1569b0fd509af0a6c75e952d39cae37ea436d85349428452b016ba3a",
+      "size_bytes": 98535
+    },
+    "outputs/demo/figures/hero-evidence.pdf": {
+      "role": "figure:hero-evidence:pdf",
+      "sha256": "8c4ce2a673a21428b89e11de5d99a37dd6de1518784a510f06dfa3d17794a683",
+      "size_bytes": 109215
+    },
+    "outputs/demo/figures/hero-evidence.png": {
+      "role": "figure:hero-evidence:png",
+      "sha256": "8e5493b855ec8875e021c8c6d65af08f061a69f4f1fc3e85edfd1b6cca819f33",
+      "size_bytes": 287471
+    },
+    "outputs/demo/figures/hero-evidence.svg": {
+      "role": "figure:hero-evidence:svg",
+      "sha256": "cc66a7b5455b4b8d1cd6fd7e53b962e0c45165e291752eede1a51c5a64fbcff8",
+      "size_bytes": 196669
     },
     "outputs/demo/figures/matched-microscopy.pdf": {
       "role": "figure:matched-microscopy:pdf",
@@ -1102,8 +1117,8 @@
     },
     "outputs/demo/index.html": {
       "role": "judge_site:index.html",
-      "sha256": "b0dfc6051c293a26e33519f118728ea1e119b6af0e3c033eb0d86da2d7e4698f",
-      "size_bytes": 12272
+      "sha256": "4806ca4e72a93b0ad446bc265db9fd2a73f47e45c1df8b8e93ab88d187cbdb77",
+      "size_bytes": 13298
     },
     "outputs/demo/replay/frame-00.png": {
       "role": "depth_replay_frame:-6.0",
@@ -1152,18 +1167,18 @@
     },
     "outputs/demo/site-data.json": {
       "role": "judge_site:site-data.json",
-      "sha256": "85bfc56c1b16538ccbfee9490d54cb7fa9f514e80cd49e3766e04f22fcd95648",
+      "sha256": "266c23e3578537c7027ca8c7e19e83014425532a42b782e7c58102bacfaef087",
       "size_bytes": 15833
     },
     "outputs/demo/site-manifest.json": {
       "role": "site_manifest",
-      "sha256": "1b3b789b47b64c2f20d797f737ce34317da77409a073400382748c36a761a0c9",
-      "size_bytes": 3790
+      "sha256": "033b7f13431c8e540911f6521b1cec5eaeb60fd91bf9a4934aa98626d3adb329",
+      "size_bytes": 3965
     },
     "outputs/demo/site.css": {
       "role": "judge_site:site.css",
-      "sha256": "c7b6ff2f39690b657374927c87238e84739dfd2c0cb900ae5c58ca72bf290fbc",
-      "size_bytes": 8953
+      "sha256": "243c9078a9c8fd7cc47e6e529be25cd948c9917b8407203fe08bbe44c92d4835",
+      "size_bytes": 10104
     }
   },
   "replay_arrays": {

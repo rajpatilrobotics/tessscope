@@ -32,7 +32,7 @@ def test_traceability_inventory_hashes_every_output() -> None:
         "evaluation_split": "validation",
         "forbidden_split": "test",
     }
-    assert len(trace["output_inventory"]) == 37
+    assert len(trace["output_inventory"]) == 40
     for path_text, output in trace["output_inventory"].items():
         path = PROJECT_ROOT / path_text
         assert output["sha256"] == sha256_path(path)
@@ -151,5 +151,5 @@ def test_static_demo_facts_derive_from_replay_metadata() -> None:
 
 def test_traceability_manifest_is_byte_stable() -> None:
     assert sha256_path(TRACE_PATH) == (
-        "40ef4db4465ff1e2f1547099c43162145f59ccd91d30be6b608ddab0c47e3801"
+        "8bb86fed42466bc71f2ef7e5ec358c827a568ff8c2dc468c43dd98be4ea8fd9a"
     )

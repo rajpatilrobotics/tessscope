@@ -341,7 +341,7 @@
   "inputs": {
     "figure_manifest": {
       "path": "outputs/demo/figure-manifest.json",
-      "sha256": "0d358908117af90a19d9b0678f580c3d501c185d6e3bc03599ee729bdb4af182"
+      "sha256": "4b9185e8115232aaf0250034c59160b9bcb8d4d6f21eb89f85f24fa40c121453"
     },
     "replay_metadata": {
       "path": "artifacts/runs/demo/validation-replay.json",

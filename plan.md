@@ -214,6 +214,17 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] DEMO-3B: verify publication sizes, deterministic hashes, local startup, responsive
   layout, no-test access, Ruff, and the full suite; freeze milestone commits.
 
+### Judge-demo visual and UX polish
+
+- [x] DEMO-P1: add a compact above-the-fold visual derived deterministically from the
+  frozen `n21_s1` validation replay, with the existing global transform and honest scope.
+- [x] DEMO-P2: revise the architecture figure so the optics, autofocus, and observer
+  Tesseract API boundaries—and the forward and exact-VJP paths across them—are explicit.
+- [x] DEMO-P3: add concise near-top Tesseract context and an immediate replay note that
+  the representative −2 µm frame is not the paired 27-well causal result.
+- [x] DEMO-P4: enlarge mobile navigation hit areas while keeping the 320 px layout compact,
+  then regenerate manifests and verify deterministic outputs, local startup, Ruff, and tests.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit

@@ -36,20 +36,36 @@
             and PyTorch/InstanSeg. Against a forward-identical stopped-gradient system,
             the corrected validation result improves by <strong>+0.0063 PQ</strong>.
           </p>
+          <p class="hero-bridge">
+            Tesseract carries the exact reverse signal across three component APIs,
+            linking otherwise incompatible JAX, NumPy/SciPy, and PyTorch runtimes.
+          </p>
           <div class="hero-actions">
             <a class="primary-action" href="#replay">Explore the depth replay</a>
             <a class="text-action" href="#limits">Read the limitations</a>
           </div>
         </div>
-        <aside class="scope-note" aria-label="Demo mode">
-          <p class="scope-title">Replay mode</p>
-          <p>Precomputed validation frames. No retraining, live inference, or test access.</p>
-          <dl>
-            <div><dt>Source pack</dt><dd>12.4 MiB</dd></div>
-            <div><dt>Depths</dt><dd>7</dd></div>
-            <div><dt>Systems</dt><dd>4</dd></div>
-          </dl>
-        </aside>
+        <div class="hero-evidence-stack">
+          <figure class="hero-visual">
+            <img
+              src="figures/hero-evidence.png"
+              alt="Four panels from frozen validation evidence show the exact-gradient first frame, its corrected frame after one stage action, the exact B7 pupil phase, and the minus-two-micrometre PSF."
+            >
+            <figcaption>
+              Frozen validation simulation · n21_s1 at −2 µm · representative frame,
+              not the population estimate.
+            </figcaption>
+          </figure>
+          <aside class="scope-note" aria-label="Demo mode">
+            <p class="scope-title">Replay mode</p>
+            <p>Precomputed validation frames. No retraining, live inference, or test access.</p>
+            <dl>
+              <div><dt>Source pack</dt><dd>12.4 MiB</dd></div>
+              <div><dt>Depths</dt><dd>7</dd></div>
+              <div><dt>Systems</dt><dd>4</dd></div>
+            </dl>
+          </aside>
+        </div>
       </section>
 
       <section class="result-grid" id="evidence" aria-labelledby="result-title">
@@ -99,6 +115,10 @@
           </div>
           <p class="mode-label">Cached replay · no computation occurs here</p>
         </div>
+        <p class="population-note">
+          On the default −2 µm field, exact corrected PQ is 0.630 and stopped is 0.631.
+          Individual frames differ; the causal claim is paired across 27 wells.
+        </p>
         <div class="depth-controls" role="group" aria-label="Initial defocus depth">
           <button type="button" data-frame="0" aria-pressed="false">−6 µm</button>
           <button type="button" data-frame="1" aria-pressed="false">−4 µm</button>
@@ -201,7 +221,7 @@
         <figure class="evidence-figure">
           <img
             src="figures/gradient-architecture.png"
-            alt="A pipeline connects B7 pupil, JAX Chromatix optics, depth stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg, and task loss. The exact reverse path spans the loop while the control stops at the stage path."
+            alt="A served-call pipeline shows labeled optics, autofocus, and observer Tesseract API boundaries. The exact VJP crosses all three runtimes while the stopped control removes only the stage-action learning edge."
           >
           <figcaption>
             The full-loop derivative gate passed with median relative error 0.0048 and

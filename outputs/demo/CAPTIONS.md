@@ -2,6 +2,12 @@
 
 All evidence is validation-only. PQ is panoptic quality, not percent accuracy. The locked test remains sealed, and no physical microscope has validated the system.
 
+## Hero Evidence
+
+**Caption:** Frozen representative validation field n21_s1 at −2 µm for the exact-gradient design, showing the first sensor frame, corrected sensor frame, B7 pupil phase, and Chromatix sensor-plane PSF. The microscopy panels use the documented global display transform; this individual frame is not the paired population result.
+
+**Alt text:** Four panels from frozen validation evidence show the exact-gradient first frame with automated-reference and InstanSeg boundaries, the corrected frame after one stage action, the exact B7 pupil phase, and its minus-two-micrometre PSF.
+
 ## Causal Comparison
 
 **Caption:** The exact design increases its own hard off-focus PQ from 0.4922 to 0.5523 after one predicted stage action. The causal comparison against its forward-identical stopped-gradient control is +0.0063 PQ with a 95% well-bootstrap interval of +0.0007 to +0.0115. The comparison against piecewise-028 is only +0.0013 with an interval from −0.0017 to +0.0048, so superiority over piecewise is not supported.
@@ -28,9 +34,9 @@ All evidence is validation-only. PQ is panoptic quality, not percent accuracy. T
 
 ## Gradient Architecture
 
-**Caption:** TessScope forms a depth stack with JAX/Chromatix, predicts defocus with a frozen NumPy/SciPy ridge autofocus model, applies a clipped stage action, and evaluates the corrected frame with frozen PyTorch/InstanSeg. Exact reverse-mode gradients cross the stage-action path; the stopped-gradient control keeps the forward computation identical but removes that causal learning signal.
+**Caption:** Three explicit Tesseract component APIs connect JAX/Chromatix optics, NumPy/SciPy autofocus, and PyTorch/InstanSeg. The optics API is called for the first depth stack and again at autofocus-predicted residual depths; the observer scores first and final frames. Tesseract carries the exact VJP across these runtime boundaries. The stopped control keeps every forward call identical but removes the stage-action VJP edge.
 
-**Alt text:** A left-to-right pipeline connects a B7 phase mask, JAX Chromatix optics, depth image stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg corrected frame, and task loss. A blue reverse arrow spans the full exact path; a dashed orange control arrow stops at the stage-action boundary.
+**Alt text:** A left-to-right served-call pipeline shows two JAX Chromatix optics calls, one NumPy SciPy autofocus call, and one PyTorch InstanSeg observer call, each inside a labeled Tesseract API boundary. A blue exact VJP crosses every boundary; the dashed stopped control ends at the stage-action learning edge while the forward path stays identical.
 
 ## Validation depth sweep
 
