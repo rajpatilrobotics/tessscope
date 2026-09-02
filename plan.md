@@ -257,6 +257,30 @@ status without performing any external/public action.
 - [x] RELEASE-6B: create a final local release-candidate commit only if every local gate passes;
   do not tag, push, publish, deploy, upload, post, or submit.
 
+### LinkedIn teaser phase
+
+Goal: create a purpose-built, muted-first 27-second `1080×1350` TessScope teaser from
+traced scientific assets without changing the existing 3:30 judge video. The edit uses
+large mobile-readable copy, cinematic but clearly decorative motion, and two separate
+frozen-validation claims: stage-correction performance and exact-versus-stopped causal proof.
+
+Checkpoint: all 6 teaser tasks are complete. The final 27-second feed edit, poster,
+provenance manifest, encoded-frame contact sheet, and QA report pass; upload, publication,
+posting, deployment, and submission remain outside scope.
+
+- [x] TEASER-1: freeze the exact 27-second timeline, on-screen copy, safe margins, palette,
+  claim mapping, and traced source inventory before rendering.
+- [x] TEASER-2: implement a deterministic lightweight vertical renderer using Pillow and
+  FFmpeg, with no AI-generated or fabricated scientific imagery and no new heavy dependency.
+- [x] TEASER-3: render the `1080×1350` H.264/yuv420p fast-start MP4, a strong poster PNG,
+  provenance manifest, storyboard/copy file, and timestamped contact sheet.
+- [x] TEASER-4: inspect the complete edit at multiple timepoints and at `360×450`, then
+  iterate on pacing, hierarchy, motion continuity, text safety, and scientific legibility.
+- [x] TEASER-5: verify duration, codec, pixel format, frame rate, file size, hashes, audio
+  behavior, corrupt/black/frozen frames, claim accuracy, source hashes, and byte stability.
+- [x] TEASER-6: run the smallest relevant tests and release/video checks, preserve the
+  original judge video byte-for-byte, and create a focused local commit with a clean tree.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit

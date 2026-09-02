@@ -1,5 +1,41 @@
 # TessScope decision log
 
+## 2026-09-02 — LinkedIn teaser passes final production QA
+
+- The final feed edit is exactly 27.000 seconds at `1080×1350`, 30 fps, H.264/yuv420p,
+  fast-start, and 3.64 MB. It intentionally contains no audio stream because every
+  essential word is burned into the muted-first visual.
+- Three render iterations corrected unreadable scene pills, colliding optical captions,
+  crowded result provenance, ghosted text transitions, and long visual holds. The final
+  motion audit finds zero black intervals, zero decode errors, and zero frozen intervals
+  longer than one second.
+- Twenty-five encoded frames were inspected across scenes and transitions, including a
+  nine-frame `320×400` mobile-preview contact sheet. The poster, hook, before/corrected
+  wipe, three-runtime Tesseract boundary, pupil/PSF sweep, two separate result claims,
+  and looped end lock-up remain readable and scientifically accurate.
+- The teaser SHA-256 is
+  `fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a`.
+  A second full 810-frame render matched byte-for-byte. Source and claim hashes pass,
+  `test_accessed=false`, and the original 3:30 judge video remains unchanged at its
+  frozen SHA-256.
+- No upload, publication, post, deployment, or submission was performed.
+
+## 2026-09-02 — Feed-native LinkedIn teaser authorized
+
+- Produce a separate 27-second `1080×1350` muted-first MP4 for LinkedIn. Preserve the
+  existing 3:30 judge video and every frozen scientific artifact unchanged.
+- Build the edit deterministically with the existing Pillow/FFmpeg toolchain. Scientific
+  imagery must come only from traced TessScope microscopy, pupil, PSF, depth, architecture,
+  and comparison assets; decorative light and typography may frame but never alter evidence.
+- Keep the two positive frozen-validation claims separate: stage correction changes hard
+  off-focus PQ from `0.4922` to `0.5523` with `74.7%` of hard frames improving; exact
+  feedback gradients beat the forward-identical stopped-gradient control by `+0.0063` PQ
+  with its 95% confidence interval above zero.
+- The teaser may omit failed promotion gates and broader limitations but may not imply
+  hardware validation, deployment, live inference, hidden-test performance, state of the
+  art, or universal baseline superiority. No upload, publication, post, or submission is
+  authorized.
+
 ## 2026-09-02 — Local release candidate passes every approved gate
 
 - A Git archive of package milestone `b655405` passed the dependency-free demo check and

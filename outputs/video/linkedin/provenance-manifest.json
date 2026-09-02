@@ -1,0 +1,204 @@
+{
+  "audio_policy": "intentional_no_audio_stream_muted_first",
+  "claim_sources": {
+    "exact_vs_stopped": {
+      "display": {
+        "gain": "+0.0063 PQ",
+        "interval": "95% CI [+0.0007, +0.0115]"
+      },
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "pointers": [
+        "/paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped"
+      ],
+      "raw": {
+        "ci_lower_95": 0.0006703181908061804,
+        "ci_upper_95": 0.011547458540670894,
+        "gain": 0.006258840610359453
+      },
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    },
+    "stage_correction": {
+      "display": {
+        "after": "PQ 0.5523",
+        "before": "PQ 0.4922",
+        "improved": "74.7% of hard frames improve"
+      },
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "pointers": [
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_before",
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_after",
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/fraction_hard_frames_improved"
+      ],
+      "raw": {
+        "after_pq": 0.552294837627718,
+        "before_pq": 0.4921920085941332,
+        "improved_fraction": 0.7469135802469136
+      },
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    }
+  },
+  "contact_sheet": {
+    "bytes": 619990,
+    "encoded_frame_timestamps_seconds": [
+      0.5,
+      3.6,
+      6.6,
+      9.7,
+      14.5,
+      17.0,
+      20.5,
+      24.4,
+      26.45
+    ],
+    "path": "outputs/video/linkedin/tessscope-linkedin-contact-sheet.png",
+    "sha256": "dbf8b177fc9472c936c5c8ed3d820a108baa34fe82e0a8e7b803eb68ee2f3afe",
+    "thumbnail_dimensions": [
+      320,
+      400
+    ]
+  },
+  "copy": {
+    "path": "outputs/video/linkedin/on-screen-copy.md",
+    "sha256": "1929b3637663e1bccdcf374e093df659073006e87d2e1e779141f6de036df40a"
+  },
+  "decorative_layers": [
+    "deep-navy gradient",
+    "faint grid and deterministic particles",
+    "cyan/magenta glow",
+    "service-boundary and signal-pulse motion",
+    "deterministic typography"
+  ],
+  "dimensions": {
+    "aspect_ratio": "4:5",
+    "height": 1350,
+    "width": 1080
+  },
+  "duration_seconds": 27,
+  "font": {
+    "bold_file": "DejaVuSans-Bold.ttf",
+    "bold_sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+    "regular_file": "DejaVuSans.ttf",
+    "regular_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22"
+  },
+  "fps": 30,
+  "live_inference": false,
+  "output": {
+    "bytes": 3641054,
+    "ffprobe": {
+      "format": {
+        "duration": "27.000000",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "size": "3641054"
+      },
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "height": 1350,
+          "index": 0,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "width": 1080
+        }
+      ]
+    },
+    "path": "outputs/video/linkedin/tessscope-linkedin-teaser.mp4",
+    "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+  },
+  "physical_microscope_validation_claimed": false,
+  "poster": {
+    "bytes": 115353,
+    "path": "outputs/video/linkedin/tessscope-linkedin-poster.png",
+    "sha256": "b6d27d56e285942be766576d897310e44bcb877e56426130d5fe3294f302c621"
+  },
+  "preserved_judge_video": {
+    "path": "outputs/video/tessscope-demo.mp4",
+    "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+  },
+  "safe_margin_px": 72,
+  "scene_timeline": [
+    {
+      "end_seconds": 3.0,
+      "id": "hook",
+      "start_seconds": 0.0
+    },
+    {
+      "end_seconds": 8.0,
+      "id": "correction",
+      "start_seconds": 3.0
+    },
+    {
+      "end_seconds": 13.0,
+      "id": "tesseract",
+      "start_seconds": 8.0
+    },
+    {
+      "end_seconds": 18.0,
+      "id": "optics",
+      "start_seconds": 13.0
+    },
+    {
+      "end_seconds": 23.0,
+      "id": "stage_result",
+      "start_seconds": 18.0
+    },
+    {
+      "end_seconds": 26.0,
+      "id": "causal_result",
+      "start_seconds": 23.0
+    },
+    {
+      "end_seconds": 27.0,
+      "id": "lockup",
+      "start_seconds": 26.0
+    }
+  ],
+  "schema_version": 1,
+  "scientific_media_policy": "existing_traced_tessscope_assets_only",
+  "scientific_sources": [
+    {
+      "display_transform": {
+        "clip": [
+          0.0,
+          1.0
+        ],
+        "mode": "affine",
+        "offset": 0.0,
+        "per_image_normalization": false,
+        "scale": 11.582016617246811
+      },
+      "path": "artifacts/runs/demo/validation-replay.npz",
+      "sha256": "586b02362c2aa4c0dc31633ac2de661d1d6fb20ce24524088fff81fefc477a04",
+      "usage": [
+        "exact -6 \u00b5m first sensor and InstanSeg/reference boundaries",
+        "exact -6 \u00b5m corrected sensor and InstanSeg/reference boundaries",
+        "exact B7 wrapped phase pupil",
+        "exact fixed-global-scale PSFs across seven depths"
+      ]
+    },
+    {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739",
+      "usage": "array order, selected field, source pointers, and display transform"
+    },
+    {
+      "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+      "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034",
+      "usage": "validated three-runtime exact-gradient architecture"
+    },
+    {
+      "path": "configs/demo/visual-contract.yaml",
+      "sha256": "93db3642b55b4fbee4ecc27d04ef7458646b8aa9d17ec932a532e384b6b041bd",
+      "usage": "fixed geometry, transform, palette, and evidence boundary"
+    }
+  ],
+  "scope": "frozen_validation",
+  "status": "complete_muted_first_linkedin_teaser",
+  "storyboard": {
+    "path": "outputs/video/linkedin/storyboard.md",
+    "sha256": "67dfefd67acdfab92e9119335031c178b2c231893fcf22a34ffa0fefe4976b39"
+  },
+  "test_accessed": false
+}

@@ -1,0 +1,35 @@
+{
+  "byte_stability": {
+    "byte_identical": true,
+    "checked": true,
+    "path": ".release-check/tessscope-linkedin-byte-stability.mp4",
+    "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+  },
+  "claim_source_values": "PASS",
+  "contact_sheet_sha256": "dbf8b177fc9472c936c5c8ed3d820a108baa34fe82e0a8e7b803eb68ee2f3afe",
+  "judge_video_preserved": true,
+  "poster_sha256": "b6d27d56e285942be766576d897310e44bcb877e56426130d5fe3294f302c621",
+  "scientific_source_hashes": "PASS",
+  "status": "PASS",
+  "test_accessed": false,
+  "video": {
+    "audio_streams": 0,
+    "black_intervals": 0,
+    "bytes": 3641054,
+    "decode_errors": 0,
+    "duration_seconds": 27.0,
+    "fast_start": true,
+    "frozen_intervals_over_one_second": 0,
+    "path": "outputs/video/linkedin/tessscope-linkedin-teaser.mp4",
+    "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a",
+    "stream": {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "height": 1350,
+      "index": 0,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "width": 1080
+    }
+  }
+}
