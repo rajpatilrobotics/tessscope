@@ -178,7 +178,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.6-4B: froze the two-mask sources, B7 sensing/capture starts, training-only
   batches, matched 76-pair piecewise family, feasibility restoration, optimizer budget,
   selection, hard gates, and switching/photon limitations before optimization.
-- [ ] V2.6-4C: implement the two-mask served graph and pass independent sensing, capture,
+- [x] V2.6-4C: implemented the two-mask served graph and passed independent sensing, capture,
   residual-depth, exact/stopped parity, and full-loop derivative gates.
 - [ ] V2.6-4D: soft-screen the matched two-mask piecewise family, run feasibility
   restoration and the bounded exact two-start matrix, then freeze confirmation selection.
