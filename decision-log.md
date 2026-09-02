@@ -643,3 +643,17 @@ Resolution options, in recommended order:
 - Valid alternate runs use the B11 segmentation-only mean on the identical two frozen
   constraint batches plus the unchanged `0.008` margin. The two-batch budget, starts,
   residual bounds, hard thresholds, and test seal are unchanged.
+
+## 2026-09-02 — V2.5 B11 constrained matrix completed with zero promotions
+
+- All five frozen B11 starts completed the three registered residual bounds with 18 exact
+  aggregate augmented-Lagrangian steps per stage: 15 primary endpoints and 270 steps.
+- No primary endpoint passed the frozen training/soft feasibility rules, so the registered
+  exact-Jacobian SLSQP alternate activated for all three residual bounds.
+- Every SLSQP run reached the eight-iteration limit without satisfying both matched
+  training constraints. Their final scaled `(first, residual)` violations were
+  `(0.979, 1.612)`, `(1.699, 1.234)`, and `(2.168, 1.176)`.
+- The 12-well validation selector found zero eligible B11 endpoints and froze zero
+  promotions. Therefore B11 piecewise, matched stopped-stage, hard-label,
+  derivative-free, controller-gain, and locked-test work are not authorized by the
+  registered ordering. The required B7 continuity matrix remains to be completed.
