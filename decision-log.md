@@ -608,3 +608,14 @@ Resolution options, in recommended order:
 - Source hashes, exact B7→B11 zero-padding, five B11 starts, two B7 starts, epsilon ladder,
   budgets, strong B11 piecewise family, derivative requirements, and one-run test seal are
   frozen in `configs/v2_5/` before any new pupil is generated.
+
+## 2026-09-02 — V2.5 B11 full-loop derivative passed
+
+- The new differentiable-depth B11 optics service was checked at the frozen B11
+  segmentation-only start before constrained optimization.
+- The full served B11 optics → SciPy autofocus → InstanSeg → stage action → residual-depth
+  second exposure derivative has median relative error `0.0090221` and cosine agreement
+  `0.9998874`, passing the unchanged `<0.01` and `>0.99` gates.
+- The exact-minus-stopped stage-path gradient is `43.06%` of the full gradient norm and
+  exact/stopped forward values are identical, so the controller path is load-bearing.
+- The BBBC006 locked test was not accessed.

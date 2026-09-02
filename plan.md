@@ -128,9 +128,10 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.5-0B: froze v2.4/B11 source hashes, B7 continuity and B11 start vectors, exact
   zero-padding, anchors, budgets, epsilon ladder, alternate method, comparisons, gates,
   and the locked-test seal before generating a new pupil.
-- [ ] V2.5-1A: implement and test exact augmented-Lagrangian/SLSQP constrained utilities,
+- [x] V2.5-1A: implement and test exact augmented-Lagrangian/SLSQP constrained utilities,
   selection rules, B11 physical diagnostics, and the differentiable-depth B11 service.
-- [ ] V2.5-1B: pass the B11 full-loop derivative and stage-path gate.
+- [x] V2.5-1B: passed the B11 full-loop derivative gate at `0.009022` relative error,
+  `0.999887` cosine, `43.1%` stage-path gradient fraction, and exact forward parity.
 - [ ] V2.5-2A: complete resumable B7 continuity and B11 primary constrained ladders.
 - [ ] V2.5-2B: run the alternate exact constrained schedule only where preregistered,
   evaluate the 12-well soft set, and freeze at most three B11 candidates.
