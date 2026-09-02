@@ -1,0 +1,110 @@
+phase: tessscope_evidence_first_demo_v1
+status: preregistered_before_example_selection_or_rendering
+source_commit: ccec9b2
+scope:
+  dataset: BBBC006v1
+  evidence_split: validation
+  permitted: [training, validation]
+  forbidden: [test_images, test_labels, test_metrics, test_normalization]
+  test_accessed: false
+
+protected_claim:
+  id: exact_closed_loop_causal_gain
+  text: >-
+    TessScope uses exact gradients across JAX/Chromatix, NumPy/SciPy autofocus,
+    and PyTorch/InstanSeg to causally improve closed-loop microscope correction
+    over a forward-identical stopped-gradient system.
+  status: supported_on_frozen_validation
+  source: artifacts/runs/v2_4/validation/expanded-hard-validation.json
+  pointers:
+    estimate: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped/mean_difference
+    ci_lower_95: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped/ci_lower_95
+    ci_upper_95: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped/ci_upper_95
+    source_count: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped/source_count
+    bootstrap_replicates: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped/replicates
+    forward_parity: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/matched_stopped_name
+  display:
+    estimate: "+0.0063 PQ"
+    interval: "95% well-bootstrap CI +0.0007 to +0.0115"
+    sample: "27 hard-density validation wells; 2,000 grouped bootstrap replicates"
+
+claims:
+  - id: exact_closed_loop_improves_own_first_frame
+    text: One predicted stage correction raises exact-design hard off-focus PQ.
+    status: supported_descriptive
+    source: artifacts/runs/v2_4/validation/expanded-hard-validation.json
+    pointers:
+      before: /stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_before
+      after: /stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_after
+      improved_fraction: /stage_correction/v2_3-exact-balanced-segmentation_only-step-14/fraction_hard_frames_improved
+    display:
+      before: "0.4922 PQ"
+      after: "0.5523 PQ"
+      improved_fraction: "74.7% of hard frames improved"
+
+  - id: exact_focus_accuracy
+    text: The exact design predicts defocus direction and reduces residual defocus.
+    status: supported_on_frozen_validation
+    source: artifacts/runs/v2_4/validation/expanded-hard-validation.json
+    pointers:
+      focus_mae_um: /summaries/v2_3-exact-balanced-segmentation_only-step-14/mae_um
+      signed_direction_accuracy: /summaries/v2_3-exact-balanced-segmentation_only-step-14/signed_direction_accuracy
+    display:
+      focus_mae_um: "1.27 µm MAE"
+      signed_direction_accuracy: "98.89% signed direction"
+
+  - id: exact_piecewise_comparison
+    text: Exact optimization did not significantly outperform the strong piecewise-028 baseline.
+    status: not_supported
+    source: artifacts/runs/v2_4/validation/expanded-hard-validation.json
+    pointers:
+      estimate: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_piecewise/mean_difference
+      ci_lower_95: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_piecewise/ci_lower_95
+      ci_upper_95: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_piecewise/ci_upper_95
+      stability: /paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/well_stability/corrected_vs_piecewise/passed
+    display:
+      estimate: "+0.0013 PQ"
+      interval: "95% well-bootstrap CI −0.0017 to +0.0048"
+      interpretation: "interval includes zero; stability gate failed"
+
+  - id: exact_first_frame_segmentation_gate
+    text: The balanced exact checkpoint narrowly missed the frozen first-frame segmentation tolerance.
+    status: not_supported
+    source: artifacts/runs/v2_4/validation/expanded-hard-validation.json
+    pointers:
+      exact_first_pq: /summaries/v2_3-exact-balanced-segmentation_only-step-14/hard_dense_off_focus_pq
+      segmentation_reference_pq: /frozen_references/segmentation_only/hard_dense_off_focus_pq
+      gate: /gates/v2_3-exact-balanced-segmentation_only-step-14/first_hard_pq_drop_from_segmentation_at_most_0_01
+    display:
+      shortfall: "0.0003 PQ beyond the allowed 0.0100 drop"
+
+  - id: v2_5_followup
+    text: The constrained B11/B7 follow-up produced no endpoint eligible for hard validation.
+    status: supported_negative_training_validation
+    source: configs/v2_5/pretest-block.json
+    pointers:
+      status: /status
+      selected_b11: /b11_optimization/selected
+      locked_test_authorized: /locked_test_run_authorized
+
+  - id: v2_6_followup
+    text: The diagnosis-first and two-mask follow-up produced no hard-validation candidate.
+    status: supported_negative_training_only
+    source: outputs/v2_6/STATUS.json
+    pointers:
+      status: /status
+      hard_candidates: /hard_candidates
+      locked_test_decision: /locked_test_decision
+
+limitations:
+  - id: pq_not_accuracy
+    required_text: "PQ is panoptic quality, not percent accuracy."
+  - id: validation_scope
+    required_text: "All displayed evaluation evidence is validation-only."
+  - id: test_seal
+    required_text: "The locked BBBC006 test remains sealed."
+  - id: hardware_scope
+    required_text: "No physical microscope has validated this system."
+  - id: replay_scope
+    required_text: "The judge demo replays cached evidence; it does not retrain or run live inference."
+

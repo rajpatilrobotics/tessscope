@@ -1,5 +1,21 @@
 # TessScope decision log
 
+## 2026-09-02 — Evidence-first visual and judge-demo phase authorized
+
+- The user approved a new presentation phase after the terminal v2.6 result. It preserves
+  all frozen scientific work and does not authorize new broad pupil optimization.
+- The central claim is causal and validation-scoped: exact gradients across JAX optics,
+  SciPy autofocus, and PyTorch InstanSeg improve corrected PQ over a forward-identical
+  stopped-gradient system. V2.4 balanced step 14 is the primary evidence.
+- The demo must show the significant exact-versus-stopped gain and the non-significant
+  exact-versus-piecewise result together. PQ is a segmentation metric, not ordinary
+  percent accuracy. V2.5/v2.6 negative follow-ups, sealed BBBC006 test, and lack of
+  physical microscope validation remain explicit.
+- Only training/validation evidence is allowed. Representative examples require a frozen
+  quantitative selection rule; visual rendering may not influence selection.
+- The deliverable is local-only: no push, publication, deployment, deletion, generated
+  microscopy, or locked-test access is authorized.
+
 ## 2026-09-02 — V2.6 diagnosis-first phase authorized and preregistered
 
 - V1–v2.5 remain immutable at local commit `09b9eb2`. V2.6 is a separately named

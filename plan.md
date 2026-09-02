@@ -1,6 +1,17 @@
-# TessScope v2.6 diagnosis-first improvement plan
+# TessScope evidence-first visual and judge-demo plan
 
 ## 1. Goal
+
+Turn the frozen v1–v2.6 evidence into the strongest scientifically honest visual story
+and lightweight judge-facing replay experience. The protected claim is: “TessScope uses
+exact gradients across JAX/Chromatix, NumPy/SciPy autofocus, and PyTorch/InstanSeg to
+causally improve closed-loop microscope correction over a forward-identical
+stopped-gradient system.” V2.4 is the primary positive validation evidence; its failure
+to significantly beat piecewise-028, the negative v2.5/v2.6 follow-ups, the sealed
+BBBC006 test, and the absence of physical microscope validation remain prominent.
+
+The demo must run from a small cached validation evidence pack without downloading the
+full dataset, loading locked-test data, starting differentiable services, or retraining.
 
 Determine, without repeating v2.5's infeasible pupil-only search, whether the frozen
 TessScope near miss can earn a statistically credible corrected-PQ advantage over the
@@ -35,6 +46,13 @@ The locked BBBC006 test remains sealed.
 
 ## 2. Problem
 
+The repository contains strong machine-readable evidence, but its existing top-level
+figures emphasize the earlier v1 locked test and one qualitative test example. A judge
+cannot yet see the v2.4 closed-loop causal result, inspect a traceable validation crop,
+or distinguish cached replay from live computation in one concise experience. New
+visuals must be generated from permitted validation data with fixed display rules and a
+frozen representative-example selection—not chosen for presentation appeal.
+
 The frozen v2.4 balanced checkpoint has a real causal corrected-PQ gain over its
 forward-identical stopped-stage control, but it does not beat piecewise-028 by the frozen
 effect, confidence, or stability requirements. V2.5 showed that more focus pressure and
@@ -62,6 +80,21 @@ physically matched family made only from the frozen B7 segmentation and focus pu
 The joint pupil cannot be tuned during this comparison.
 
 ## 3. Proposed solution
+
+1. Freeze an evidence claim matrix and immutable traceability manifest before selecting
+   examples or rendering figures.
+2. Select validation examples with a deterministic evidence-only rule, then build a
+   compact cached sample pack containing the same crop, geometry, labels, predictions,
+   depth, designs, display window, and source hashes used by every qualitative visual.
+3. Generate high-resolution PNG plus SVG/PDF scientific figures for microscopy,
+   pupil/PSF, depth curves, causal exact-versus-stopped evidence, and architecture.
+4. Generate a broadly playable depth-sweep animation only if the permitted validation
+   data provide all required frames under the same fixed visual transform.
+5. Build a local static judge demo whose first view shows the causal closed-loop result,
+   whose interactions replay cached evidence, and whose copy explicitly separates
+   validated findings, failed comparisons, negative follow-ups, and unvalidated claims.
+6. Verify hashes, no-test access, deterministic regeneration, accessibility, responsive
+   layout, publication dimensions, one-command startup, lint, and the full test suite.
 
 1. Freeze v2.4/v2.5 evidence hashes, a training-only 192/48/48 well-grouped
    optimization/development/confirmation partition, the oracle definitions, controller
@@ -148,8 +181,38 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   `src/tessscope/v2_6/`, `services/v2_6/`, and `v2_6`-prefixed scripts/tests hold the
   diagnosis-first controller/exposure or conditional active-acquisition experiment.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
+- `configs/demo/`: frozen claim matrix, example-selection rule, visual contract, and
+  evidence manifest.
+- `artifacts/runs/demo/`: deterministic traceability, selection, cached validation sample,
+  and figure-generation audit artifacts.
+- `outputs/demo/`: publication figures, captions/alt text, animation, and the local static
+  judge experience.
+- `scripts/build_demo_evidence.py`, `scripts/generate_demo_figures.py`, and
+  `scripts/serve_demo.py`: one-way evidence preparation, deterministic rendering, and
+  one-command local replay.
+- `tests/demo/`: claim, traceability, no-test-access, selection, output, and demo checks.
 
 ## 5. Step by step tasks
+
+### Evidence-first visual and judge-demo phase
+
+- [x] DEMO-0A: received explicit authorization, confirmed a clean repository at
+  `ccec9b2`, and preserved v1–v2.6 without push, publication, deployment, deletion, or
+  locked-test access.
+- [x] DEMO-0B: freeze the claim matrix, source hashes, allowed-data boundary, global
+  display transform, representative-example selection rule, output formats, and tests.
+- [ ] DEMO-1A: build and verify the immutable traceability manifest and select the
+  representative validation example without presentation-quality cherry-picking.
+- [ ] DEMO-1B: materialize the minimal cached validation sample pack with real sensor
+  frames, InstanSeg instances, reference labels, stage actions, and per-frame metrics.
+- [ ] DEMO-2A: generate the matched microscopy, pupil/PSF, depth-curve, causal-gradient,
+  and architecture figures in publication and presentation formats.
+- [ ] DEMO-2B: generate a deterministic validation depth-sweep animation if complete
+  matched frames are available; otherwise freeze a documented skip.
+- [ ] DEMO-3A: build the one-command local judge replay with explicit cached/live status,
+  concise claims, limitations, captions, alt text, and accessible interactions.
+- [ ] DEMO-3B: verify publication sizes, deterministic hashes, local startup, responsive
+  layout, no-test access, Ruff, and the full suite; freeze milestone commits.
 
 ### V2.6 diagnosis-first improvement
 
@@ -352,6 +415,26 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 6. Acceptance criteria
 
+### Evidence-first visual/demo criteria
+
+- Every displayed number, crop, depth, design, prediction, pupil, PSF, and output maps to
+  a source artifact/data record plus SHA-256 hash in one machine-readable manifest.
+- Representative validation examples are chosen by a frozen deterministic rule using
+  quantitative evidence fields only, before rendering or subjective inspection.
+- Qualitative comparisons use identical crop geometry and a single documented global
+  intensity window; no per-image normalization, sharpening, denoising, retouching, or
+  invented cells are allowed.
+- The core story displays v2.4 first PQ `0.492192`, corrected PQ `0.552295`, focus MAE
+  `1.267923 µm`, signed direction `98.89%`, exact-minus-stopped `+0.00625884` with 95% CI
+  `[0.0006703, 0.0115475]`, and the non-significant piecewise gap `+0.001285` with CI
+  `[-0.001719, 0.004800]`. PQ is never presented as ordinary percent accuracy.
+- The locked test remains sealed, no physical microscope validation is implied, and
+  v2.5/v2.6 negative follow-ups remain visible without dominating the causal result.
+- The judge experience starts with one command, uses only cached permitted evidence,
+  works without the large dataset or retraining, and labels replay versus computation.
+- Static outputs include high-resolution PNG and vector SVG/PDF where appropriate, with
+  concise captions and alt text; animation is broadly playable when produced.
+
 ### V2.6 criteria
 
 - Oracle and interpolated controller audits are paired at field/depth level and report
@@ -396,6 +479,17 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 7. Testing plan
 
+- Claim tests compare every headline number with its frozen v2.4 source value and reject
+  percent-accuracy wording for PQ.
+- Traceability tests verify every source/output hash, allowed split, field/crop/depth,
+  design identity, display transform, and explicit `test_accessed: false` boundary.
+- Selection tests rebuild the representative-example choice from evidence-only inputs and
+  prove the selected well belongs to validation, never the locked test.
+- Figure tests regenerate into a temporary directory, check deterministic hashes where
+  supported, inspect PNG dimensions/modes, parse SVG, open PDF, and decode animation.
+- Demo tests start the local server, request the page/assets, verify cached-replay labels,
+  accessible image descriptions, core claims/limitations, and absence of remote data.
+
 - V2.6 pure tests cover oracle focus mapping, interpolation bounds, controller monotonicity
   and clipping, grouped splits, uncertainty, decision ordering, and exposure conservation.
 - Diagnostic integration tests assert exact source hashes, row pairing, hard-density
@@ -420,6 +514,11 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   visual inspection of every promoted figure.
 
 ## 8. Open questions
+
+The only open implementation question is whether the stored validation artifacts contain
+enough per-frame data to select and render the representative example without recomputing
+sensor images and InstanSeg predictions. If not, the permitted validation record will be
+recomputed once with the frozen models/designs and cached; no test record may be read.
 
 The v2.6 empirical question is resolved negatively. Neither bounded controller/exposure
 calibration nor the separately preregistered sequential two-mask route reached the frozen
