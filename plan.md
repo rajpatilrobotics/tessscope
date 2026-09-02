@@ -211,7 +211,7 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   matched frames are available; otherwise freeze a documented skip.
 - [x] DEMO-3A: build the one-command local judge replay with explicit cached/live status,
   concise claims, limitations, captions, alt text, and accessible interactions.
-- [ ] DEMO-3B: verify publication sizes, deterministic hashes, local startup, responsive
+- [x] DEMO-3B: verify publication sizes, deterministic hashes, local startup, responsive
   layout, no-test access, Ruff, and the full suite; freeze milestone commits.
 
 ### V2.6 diagnosis-first improvement
@@ -515,10 +515,10 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 
 ## 8. Open questions
 
-The only open implementation question is whether the stored validation artifacts contain
-enough per-frame data to select and render the representative example without recomputing
-sensor images and InstanSeg predictions. If not, the permitted validation record will be
-recomputed once with the frozen models/designs and cached; no test record may be read.
+The visual/demo implementation question is resolved. Frozen metric rows were sufficient
+for representative selection; the selected validation field was then recomputed once
+with the frozen models/designs and cached as a deterministic 12.4 MiB replay. No locked
+test record was read.
 
 The v2.6 empirical question is resolved negatively. Neither bounded controller/exposure
 calibration nor the separately preregistered sequential two-mask route reached the frozen

@@ -1,5 +1,23 @@
 # TessScope decision log
 
+## 2026-09-02 — Evidence-first visual and judge-demo phase completed
+
+- The representative example was frozen before rendering as validation field `n21_s1`,
+  crop origin `(0, 220)`, with `−2 µm` as its primary still. Selection minimizes robust
+  distance from the 27-field population median across six preregistered evidence features.
+- A deterministic 12.4 MiB replay cache contains the real JAX/Chromatix sensor outputs,
+  frozen autofocus actions, official InstanSeg labels, physical pupil phases, and PSFs.
+  Every recomputed PQ and residual depth matches its frozen source row.
+- Five publication figures were generated in 300-DPI PNG, SVG, and PDF, plus seven depth
+  frames, GIF, and H.264 MP4. Fixed display/crop rules, captions, alt text, and output
+  hashes are recorded in the traceability chain.
+- The local judge experience starts with `python scripts/serve_demo.py` and explicitly
+  identifies itself as cached validation replay. It keeps the supported exact-versus-
+  stopped result beside the non-significant piecewise comparison and all claim limits.
+- Full regeneration is byte-stable. Repository-wide Ruff and all 208 tests pass. The
+  BBBC006 test remains sealed; no push, publication, deployment, or physical-microscope
+  claim was made.
+
 ## 2026-09-02 — Evidence-first visual and judge-demo phase authorized
 
 - The user approved a new presentation phase after the terminal v2.6 result. It preserves

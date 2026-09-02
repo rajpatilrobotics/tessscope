@@ -80,8 +80,8 @@
     },
     "index.html": {
       "path": "outputs/demo/index.html",
-      "sha256": "a285d0e6663b5cc9feb2e781c6768bcdaf74e7805c54c404b591ef7d906ad8f5",
-      "size_bytes": 12199
+      "sha256": "b0dfc6051c293a26e33519f118728ea1e119b6af0e3c033eb0d86da2d7e4698f",
+      "size_bytes": 12272
     },
     "site-data.json": {
       "path": "outputs/demo/site-data.json",

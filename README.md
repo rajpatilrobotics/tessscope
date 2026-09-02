@@ -1,5 +1,20 @@
 # TessScope
 
+## Local judge demo
+
+The evidence-first judge experience is complete as a **validation-only cached replay**.
+It opens without the 2.9 GB source dataset, model download, retraining, or live inference:
+
+```bash
+python scripts/serve_demo.py
+```
+
+The first view reports the supported exact-versus-stopped causal result and the
+non-significant exact-versus-piecewise comparison together. It also keeps the negative
+v2.5/v2.6 follow-ups, sealed BBBC006 test, and lack of physical-microscope validation
+visible. Figures, captions, animation, and source hashes are under
+[`outputs/demo/`](outputs/demo/).
+
 ## V2.6 final status
 
 The approved v2.6 diagnosis-first continuation is complete as a **negative training-only
