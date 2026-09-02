@@ -88,6 +88,7 @@ primary_optimizer:
   penalty_multiplier_per_six_steps: 2.0
   maximum_penalty: 32.0
   dual_update_interval_steps: 3
+  dual_reset_each_epsilon_stage: true
   maximum_dual_value: 64.0
   normalized_constraint_scales:
     first_segmentation_loss: 0.008
