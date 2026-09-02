@@ -205,9 +205,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   representative validation example without presentation-quality cherry-picking.
 - [x] DEMO-1B: materialize the minimal cached validation sample pack with real sensor
   frames, InstanSeg instances, reference labels, stage actions, and per-frame metrics.
-- [ ] DEMO-2A: generate the matched microscopy, pupil/PSF, depth-curve, causal-gradient,
+- [x] DEMO-2A: generate the matched microscopy, pupil/PSF, depth-curve, causal-gradient,
   and architecture figures in publication and presentation formats.
-- [ ] DEMO-2B: generate a deterministic validation depth-sweep animation if complete
+- [x] DEMO-2B: generate a deterministic validation depth-sweep animation if complete
   matched frames are available; otherwise freeze a documented skip.
 - [ ] DEMO-3A: build the one-command local judge replay with explicit cached/live status,
   concise claims, limitations, captions, alt text, and accessible interactions.

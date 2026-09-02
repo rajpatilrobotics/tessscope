@@ -1,0 +1,960 @@
+{
+  "captions": {
+    "path": "outputs/demo/CAPTIONS.md",
+    "sha256": "9fcb8e5b909f270f6b24cccaa2ed099487a159e670b345b6f9e3fd26673a4aa5"
+  },
+  "display_integrity": {
+    "geometry": "same selected field, crop, sensor grid, and nearest label interpolation",
+    "per_image_normalization": false,
+    "scale_bar": "omitted because authoritative display-plane calibration is absent",
+    "sensor_transform": {
+      "clip": [
+        0.0,
+        1.0
+      ],
+      "mode": "affine",
+      "offset": 0.0,
+      "per_image_normalization": false,
+      "scale": 11.582016617246811
+    }
+  },
+  "figures": {
+    "causal-comparison": {
+      "after_pq": 0.552294837627718,
+      "alt": "A paired chart shows exact-design PQ rising from 0.4922 before correction to 0.5523 after correction. A forest plot shows a positive confidence interval for exact versus stopped gradients and a confidence interval crossing zero for exact versus piecewise.",
+      "before_pq": 0.4921920085941332,
+      "caption": "The exact design increases its own hard off-focus PQ from 0.4922 to 0.5523 after one predicted stage action. The causal comparison against its forward-identical stopped-gradient control is +0.0063 PQ with a 95% well-bootstrap interval of +0.0007 to +0.0115. The comparison against piecewise-028 is only +0.0013 with an interval from \u22120.0017 to +0.0048, so superiority over piecewise is not supported.",
+      "comparisons": [
+        {
+          "candidate": "v2_3-exact-balanced-segmentation_only-step-14",
+          "ci_lower_95": 0.0006703181908061804,
+          "ci_upper_95": 0.011547458540670894,
+          "label": "Exact \u2212 stopped gradient",
+          "mean_difference": 0.006258840610359453,
+          "reference": "v2_4-stopped-balanced-segmentation_only-step-14",
+          "replicates": 2000,
+          "source_count": 27,
+          "status": "supported"
+        },
+        {
+          "candidate": "v2_3-exact-balanced-segmentation_only-step-14",
+          "ci_lower_95": -0.001719244321047897,
+          "ci_upper_95": 0.004800378815350437,
+          "label": "Exact \u2212 piecewise-028",
+          "mean_difference": 0.0012850136904830492,
+          "reference": "v2_2-piecewise-028",
+          "replicates": 2000,
+          "source_count": 27,
+          "status": "not significant"
+        }
+      ],
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/causal-comparison.pdf",
+          "sha256": "1ebc8dea3926f2c75309f7073e1329cc23eb051662b237c783a1a11451fc7570",
+          "size_bytes": 29822
+        },
+        "png": {
+          "path": "outputs/demo/figures/causal-comparison.png",
+          "sha256": "371c88b843043abed8e3324aaaa6e2fdad10f833a714198ff71acc4d7469e48e",
+          "size_bytes": 204163
+        },
+        "svg": {
+          "path": "outputs/demo/figures/causal-comparison.svg",
+          "sha256": "fcfe033594ad3ab07e89d170c36b43f3e9559c2ade1d95772dad51455d215af0",
+          "size_bytes": 96024
+        }
+      },
+      "improved_fraction": 0.7469135802469136,
+      "source": {
+        "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+        "pointers": [
+          "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14",
+          "/paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped",
+          "/paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_piecewise"
+        ],
+        "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+      }
+    },
+    "gradient-architecture": {
+      "alt": "A left-to-right pipeline connects a B7 phase mask, JAX Chromatix optics, depth image stack, NumPy SciPy autofocus, stage action, PyTorch InstanSeg corrected frame, and task loss. A blue reverse arrow spans the full exact path; a dashed orange control arrow stops at the stage-action boundary.",
+      "caption": "TessScope forms a depth stack with JAX/Chromatix, predicts defocus with a frozen NumPy/SciPy ridge autofocus model, applies a clipped stage action, and evaluates the corrected frame with frozen PyTorch/InstanSeg. Exact reverse-mode gradients cross the stage-action path; the stopped-gradient control keeps the forward computation identical but removes that causal learning signal.",
+      "derivative_gate": {
+        "forward_parity_absolute": 0.0,
+        "overall_cosine_agreement": 0.9999673901184897,
+        "overall_median_relative_error": 0.004802090464113455,
+        "passed": true,
+        "source": {
+          "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+          "pointers": [
+            "/overall_median_relative_error",
+            "/overall_cosine_agreement",
+            "/forward_parity_absolute",
+            "/passed"
+          ],
+          "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+        }
+      },
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/gradient-architecture.pdf",
+          "sha256": "74530b245057d69156477dcfb84f93170f3bc61b8c268b3831d963b6e1d4c247",
+          "size_bytes": 27980
+        },
+        "png": {
+          "path": "outputs/demo/figures/gradient-architecture.png",
+          "sha256": "23bf68554f08d55a8124d5cf3db045f1f417e7768421b839d2ce456fda9f2d8f",
+          "size_bytes": 169866
+        },
+        "svg": {
+          "path": "outputs/demo/figures/gradient-architecture.svg",
+          "sha256": "4ef6117a84176d8d5c5b0560f472bc67d874ed1d8a431b09977e45a1773e53d7",
+          "size_bytes": 73103
+        }
+      }
+    },
+    "matched-microscopy": {
+      "alt": "Two-row matched microscopy grid for validation field n21_s1. The top row compares clear, exact-gradient, stopped-gradient, and piecewise first frames at minus two micrometres. The bottom row shows the automated reference and corrected exact, stopped, and piecewise frames with reference and InstanSeg boundaries.",
+      "caption": "Representative hard-density validation field n21_s1 at \u22122 \u00b5m, selected before rendering by the frozen median-distance rule. Every system uses the identical crop, geometry, nearest-neighbor label interpolation, and global observer transform. Blue boundaries are automated BBBC006/CellProfiler references; orange boundaries are official InstanSeg outputs. The representative frame is not the population effect.",
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/matched-microscopy.pdf",
+          "sha256": "db5afeab0d5be8dbc486423610d2102c65eb454e60a936039e838252fac01eb8",
+          "size_bytes": 154822
+        },
+        "png": {
+          "path": "outputs/demo/figures/matched-microscopy.png",
+          "sha256": "d01419b8a28c8793c0e02703b072dac3a68d75758678fa2fdf6d10777a0435a2",
+          "size_bytes": 466077
+        },
+        "svg": {
+          "path": "outputs/demo/figures/matched-microscopy.svg",
+          "sha256": "c30462ca36b8253807a102b61722c6c6d0c5d5dbdbc9eac3dada6d27570ee39c",
+          "size_bytes": 294191
+        }
+      }
+    },
+    "pq-focus-depth": {
+      "alt": "Two line charts across six nonzero defocus depths. The left chart shows first-frame and corrected panoptic quality. The right chart shows absolute residual defocus for exact, stopped, and piecewise systems, with 95 percent well-bootstrap bands.",
+      "caption": "Depth-resolved validation behavior over 27 hard-density wells. Corrected PQ remains near 0.55 across exact, stopped, and piecewise systems while exact autofocus retains lower residual defocus than its stopped-gradient control. Bands are grouped well bootstrap intervals and do not treat frames as independent replicates.",
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/pq-focus-depth.pdf",
+          "sha256": "096b6315274a963a5577dee47f16720b05bc89cba60b5cd32eb8be15e44e5a6d",
+          "size_bytes": 33853
+        },
+        "png": {
+          "path": "outputs/demo/figures/pq-focus-depth.png",
+          "sha256": "000b47ca1aec86e2f0e6f7a925c67d730f1e5cc254ae3a9d9a7ddbca6c03f0c9",
+          "size_bytes": 418481
+        },
+        "svg": {
+          "path": "outputs/demo/figures/pq-focus-depth.svg",
+          "sha256": "69bb9ec112d68c9dc54e3cec9adcf03dab9dfce8b13b47fb7f5dffefb5e3cc61",
+          "size_bytes": 106606
+        }
+      },
+      "focus_curves": {
+        "exact": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 2.3760564503698824,
+            "ci_upper_95": 3.032855375562865,
+            "depth_um": -6.0,
+            "mean": 2.6926445970387247,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5331340776275287,
+            "ci_upper_95": 1.1463829035653321,
+            "depth_um": -4.0,
+            "mean": 0.7967785322855631,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5714398652963857,
+            "ci_upper_95": 1.267198977548467,
+            "depth_um": -2.0,
+            "mean": 0.8833410411169272,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.46937856760245805,
+            "ci_upper_95": 0.9499380594962596,
+            "depth_um": 2.0,
+            "mean": 0.6764006491959191,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.6121704558752565,
+            "ci_upper_95": 0.9591926342650096,
+            "depth_um": 4.0,
+            "mean": 0.7793734105246231,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 1.6638883590356623,
+            "ci_upper_95": 2.1719577099155223,
+            "depth_um": 6.0,
+            "mean": 1.9345148399429817,
+            "well_count": 27
+          }
+        ],
+        "piecewise": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 2.4361572511918617,
+            "ci_upper_95": 3.130860687452172,
+            "depth_um": -6.0,
+            "mean": 2.779665076847984,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5540835804143173,
+            "ci_upper_95": 1.0381883160312468,
+            "depth_um": -4.0,
+            "mean": 0.7892892074707211,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.6068729263686767,
+            "ci_upper_95": 1.0397607677440674,
+            "depth_um": -2.0,
+            "mean": 0.8177044288237609,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4385400894057865,
+            "ci_upper_95": 0.8242309961927414,
+            "depth_um": 2.0,
+            "mean": 0.6263591990121413,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.602905165282916,
+            "ci_upper_95": 1.042913908753295,
+            "depth_um": 4.0,
+            "mean": 0.8222839033191037,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 1.4144758107069564,
+            "ci_upper_95": 1.949067326437544,
+            "depth_um": 6.0,
+            "mean": 1.690390205463079,
+            "well_count": 27
+          }
+        ],
+        "stopped": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 4.269718944899779,
+            "ci_upper_95": 4.842554336807977,
+            "depth_um": -6.0,
+            "mean": 4.550534814249588,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 2.1993444150845773,
+            "ci_upper_95": 2.7403790338192815,
+            "depth_um": -4.0,
+            "mean": 2.4439552829102102,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.6242264449593922,
+            "ci_upper_95": 1.1559762220482117,
+            "depth_um": -2.0,
+            "mean": 0.8797239336280475,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 1.5001709019588276,
+            "ci_upper_95": 2.0116176721499004,
+            "depth_um": 2.0,
+            "mean": 1.7545195354757508,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5395147808564043,
+            "ci_upper_95": 0.9027982465588317,
+            "depth_um": 4.0,
+            "mean": 0.7179335850510732,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 1.1135578381085611,
+            "ci_upper_95": 1.6274827723717817,
+            "depth_um": 6.0,
+            "mean": 1.3770661845638423,
+            "well_count": 27
+          }
+        ]
+      },
+      "pq_curves": {
+        "exact_after": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.46702773236865314,
+            "ci_upper_95": 0.601862047377534,
+            "depth_um": -6.0,
+            "mean": 0.535224750587063,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5001072134231996,
+            "ci_upper_95": 0.6187485081580079,
+            "depth_um": -4.0,
+            "mean": 0.5581621547373773,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4878669697074062,
+            "ci_upper_95": 0.6117171418349878,
+            "depth_um": -2.0,
+            "mean": 0.5539040066248102,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4899980502836612,
+            "ci_upper_95": 0.6147423442148175,
+            "depth_um": 2.0,
+            "mean": 0.5546786713412419,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4958128900070374,
+            "ci_upper_95": 0.618178021299327,
+            "depth_um": 4.0,
+            "mean": 0.5591473133728185,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.48789048690173525,
+            "ci_upper_95": 0.6124116253177532,
+            "depth_um": 6.0,
+            "mean": 0.552652129102997,
+            "well_count": 27
+          }
+        ],
+        "exact_before": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.2582574400995471,
+            "ci_upper_95": 0.4358969518434138,
+            "depth_um": -6.0,
+            "mean": 0.3484948813158439,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.3645448087855119,
+            "ci_upper_95": 0.5453455927275136,
+            "depth_um": -4.0,
+            "mean": 0.4583709376360816,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4803717526947192,
+            "ci_upper_95": 0.6081486482384514,
+            "depth_um": -2.0,
+            "mean": 0.5455857341118715,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.49020973885790703,
+            "ci_upper_95": 0.6134782328983647,
+            "depth_um": 2.0,
+            "mean": 0.5538534306111924,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4903602364455264,
+            "ci_upper_95": 0.6113176474690687,
+            "depth_um": 4.0,
+            "mean": 0.5486744418945301,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.41777484090956063,
+            "ci_upper_95": 0.5719353166093128,
+            "depth_um": 6.0,
+            "mean": 0.4981726259952796,
+            "well_count": 27
+          }
+        ],
+        "piecewise_after": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4713614728559981,
+            "ci_upper_95": 0.6135571125433008,
+            "depth_um": -6.0,
+            "mean": 0.5414655765892095,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.48280077996313564,
+            "ci_upper_95": 0.614890088083435,
+            "depth_um": -4.0,
+            "mean": 0.5503864932736593,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.49326579216386274,
+            "ci_upper_95": 0.6145077707309505,
+            "depth_um": -2.0,
+            "mean": 0.5553604594230737,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.48972581169368123,
+            "ci_upper_95": 0.6158257791223508,
+            "depth_um": 2.0,
+            "mean": 0.5544486756139221,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4936143429107061,
+            "ci_upper_95": 0.6135974763841684,
+            "depth_um": 4.0,
+            "mean": 0.5553245728218521,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4888041349085909,
+            "ci_upper_95": 0.6101948391308837,
+            "depth_um": 6.0,
+            "mean": 0.5490731659016931,
+            "well_count": 27
+          }
+        ],
+        "stopped_after": [
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4163202441964234,
+            "ci_upper_95": 0.572762330022403,
+            "depth_um": -6.0,
+            "mean": 0.49504081057221794,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4811077237267345,
+            "ci_upper_95": 0.6086269137012496,
+            "depth_um": -4.0,
+            "mean": 0.5479986345860394,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4941586857983263,
+            "ci_upper_95": 0.6171602054678605,
+            "depth_um": -2.0,
+            "mean": 0.5572527161140374,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.49568598569525624,
+            "ci_upper_95": 0.6153818541975362,
+            "depth_um": 2.0,
+            "mean": 0.5576372095177585,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.5012532340870104,
+            "ci_upper_95": 0.6227820578504673,
+            "depth_um": 4.0,
+            "mean": 0.5625083749502118,
+            "well_count": 27
+          },
+          {
+            "bootstrap_replicates": 2000,
+            "ci_lower_95": 0.4976592113815598,
+            "ci_upper_95": 0.6187270830291954,
+            "depth_um": 6.0,
+            "mean": 0.5557782363638863,
+            "well_count": 27
+          }
+        ]
+      },
+      "source_rows": {
+        "exact_and_stopped": {
+          "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+          "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+        },
+        "piecewise": {
+          "path": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+          "sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc"
+        }
+      }
+    },
+    "pupil-psf-depth": {
+      "alt": "Four-row optical comparison. Each row begins with a circular wrapped phase mask and continues with seven PSF images from minus six through plus six micrometres. Clear, exact, stopped, and piecewise masks create visibly different depth-dependent PSFs.",
+      "caption": "Wrapped phase masks and unit-energy Chromatix/JAX sensor-plane PSFs for clear, exact-gradient, forward-identical stopped-gradient, and piecewise-028 systems. PSFs span the complete frozen \u22126 to +6 \u00b5m depth grid with one global log-intensity scale and identical central crop.",
+      "files": {
+        "pdf": {
+          "path": "outputs/demo/figures/pupil-psf-depth.pdf",
+          "sha256": "81a141c487555de8b09bfffb3827be9fcd6c94624bd2f012b2f916ad27fcce67",
+          "size_bytes": 211756
+        },
+        "png": {
+          "path": "outputs/demo/figures/pupil-psf-depth.png",
+          "sha256": "39e9247fd2b250aa09c10268edb352fdbd7bc60f80812babeef8b03f3f523db5",
+          "size_bytes": 577594
+        },
+        "svg": {
+          "path": "outputs/demo/figures/pupil-psf-depth.svg",
+          "sha256": "eb9cf029b073738d098ffdd5f8c07445ba34a3f3e822f30197def0c2ae988804",
+          "size_bytes": 379416
+        }
+      },
+      "psf_display": {
+        "crop_shape_px": [
+          41,
+          41
+        ],
+        "crop_start_yx": [
+          27,
+          27
+        ],
+        "formula": "log10(max(psf/global_maximum, 1e-5))",
+        "global_maximum": 0.3600534200668335,
+        "limits": [
+          -5.0,
+          0.0
+        ],
+        "source_shape_px": [
+          96,
+          96
+        ]
+      }
+    }
+  },
+  "inputs": {
+    "claim_matrix": {
+      "path": "configs/demo/claim-matrix.yaml",
+      "sha256": "70b71214d3d66ac25ea114a640c4b57fa099027218e9bb065cfbb65ea8046984"
+    },
+    "replay_arrays": {
+      "path": "artifacts/runs/demo/validation-replay.npz",
+      "sha256": "586b02362c2aa4c0dc31633ac2de661d1d6fb20ce24524088fff81fefc477a04"
+    },
+    "replay_metadata": {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739"
+    },
+    "visual_contract": {
+      "path": "configs/demo/visual-contract.yaml",
+      "sha256": "93db3642b55b4fbee4ecc27d04ef7458646b8aa9d17ec932a532e384b6b041bd"
+    }
+  },
+  "limitations": [
+    "PQ is panoptic quality, not percent accuracy.",
+    "All displayed evaluation evidence is validation-only.",
+    "The locked BBBC006 test remains sealed.",
+    "No physical microscope has validated this system.",
+    "The animation replays cached evidence and performs no live inference."
+  ],
+  "replay": {
+    "frames": [
+      {
+        "depth_um": -6.0,
+        "index": 0,
+        "path": "outputs/demo/replay/frame-00.png",
+        "sha256": "2b713dfd7d70fc1e3c68fd92a68dd3d5f4bd874b4c36c0ccfde063e26ae314f6",
+        "size_bytes": 222153,
+        "traced_frames": [
+          {
+            "after_pq": 0.6279521110972723,
+            "before_pointer": "/rows/175",
+            "before_pq": 0.6004626745876439,
+            "corrected_pointer": "/corrected_rows/96",
+            "depth_index": 0,
+            "depth_um": -6.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -2.864925548912523,
+            "residual_depth_um": -3.135074451087477,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6196632974189586,
+            "before_pointer": "/rows/1120",
+            "before_pq": 0.6037591299070969,
+            "corrected_pointer": "/corrected_rows/582",
+            "depth_index": 0,
+            "depth_um": -6.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -1.4093129039488397,
+            "residual_depth_um": -4.590687096051161,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6263537400190311,
+            "before_pointer": "/rows/4900",
+            "before_pq": 0.6110628005723294,
+            "corrected_pointer": "/corrected_rows/2526",
+            "depth_index": 0,
+            "depth_um": -6.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": -2.288794135367718,
+            "residual_depth_um": -3.711205864632282,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": -4.0,
+        "index": 1,
+        "path": "outputs/demo/replay/frame-01.png",
+        "sha256": "e57736f4dfe344875a61129c8bd59dcf356584b7babba91df690aab650734d0f",
+        "size_bytes": 232135,
+        "traced_frames": [
+          {
+            "after_pq": 0.6297872407816787,
+            "before_pointer": "/rows/176",
+            "before_pq": 0.6238187352098643,
+            "corrected_pointer": "/corrected_rows/97",
+            "depth_index": 1,
+            "depth_um": -4.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -2.9523150514506984,
+            "residual_depth_um": -1.0476849485493016,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6300965447154472,
+            "before_pointer": "/rows/1121",
+            "before_pq": 0.6224551835028492,
+            "corrected_pointer": "/corrected_rows/583",
+            "depth_index": 1,
+            "depth_um": -4.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -1.4929978998716957,
+            "residual_depth_um": -2.5070021001283043,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6301575895244518,
+            "before_pointer": "/rows/4901",
+            "before_pq": 0.6253521825396826,
+            "corrected_pointer": "/corrected_rows/2527",
+            "depth_index": 1,
+            "depth_um": -4.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": -2.641932631972991,
+            "residual_depth_um": -1.358067368027009,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": -2.0,
+        "index": 2,
+        "path": "outputs/demo/replay/frame-02.png",
+        "sha256": "2f9d9fa9410320cc56c94a2cec514e0f8f325c90cdbc6d9132a2482aaa1fa5bb",
+        "size_bytes": 234738,
+        "traced_frames": [
+          {
+            "after_pq": 0.6302726038728452,
+            "before_pointer": "/rows/177",
+            "before_pq": 0.6294106178269091,
+            "corrected_pointer": "/corrected_rows/98",
+            "depth_index": 2,
+            "depth_um": -2.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -0.7548020782296536,
+            "residual_depth_um": -1.2451979217703464,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6310363585630545,
+            "before_pointer": "/rows/1122",
+            "before_pq": 0.6323927325943455,
+            "corrected_pointer": "/corrected_rows/584",
+            "depth_index": 2,
+            "depth_um": -2.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -1.0270885578875928,
+            "residual_depth_um": -0.9729114421124072,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6310061427112228,
+            "before_pointer": "/rows/4902",
+            "before_pq": 0.6312359208257048,
+            "corrected_pointer": "/corrected_rows/2528",
+            "depth_index": 2,
+            "depth_um": -2.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": -1.6175585040675307,
+            "residual_depth_um": -0.38244149593246934,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": 0.0,
+        "index": 3,
+        "path": "outputs/demo/replay/frame-03.png",
+        "sha256": "e71dd21203a64b2b2f9b6079fe46aa35fa95aec73360ffd45ed594eed5f52cc9",
+        "size_bytes": 231855,
+        "traced_frames": [
+          {
+            "before_pointer": "/rows/178",
+            "before_pq": 0.6314031279822433,
+            "depth_index": 3,
+            "depth_um": 0.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 0.37576534698655184,
+            "residual_depth_um": -0.37576534698655184,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "before_pointer": "/rows/1123",
+            "before_pq": 0.6319292157059117,
+            "depth_index": 3,
+            "depth_um": 0.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": -0.5256480569994129,
+            "residual_depth_um": 0.5256480569994129,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "before_pointer": "/rows/4903",
+            "before_pq": 0.6310752930827925,
+            "depth_index": 3,
+            "depth_um": 0.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": 0.35138513575910135,
+            "residual_depth_um": -0.35138513575910135,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": 2.0,
+        "index": 4,
+        "path": "outputs/demo/replay/frame-04.png",
+        "sha256": "a93cb3d798952a2fcacc0a757f9794d0cddb37c9d0e2a7cba775e1b464e47ef4",
+        "size_bytes": 230735,
+        "traced_frames": [
+          {
+            "after_pq": 0.6300644975130468,
+            "before_pointer": "/rows/179",
+            "before_pq": 0.6332381099458616,
+            "corrected_pointer": "/corrected_rows/99",
+            "depth_index": 4,
+            "depth_um": 2.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 2.501799590851215,
+            "residual_depth_um": -0.5017995908512152,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6339902209877264,
+            "before_pointer": "/rows/1124",
+            "before_pq": 0.6328800591945792,
+            "corrected_pointer": "/corrected_rows/585",
+            "depth_index": 4,
+            "depth_um": 2.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 0.3159952464557614,
+            "residual_depth_um": 1.6840047535442386,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6307980363514244,
+            "before_pointer": "/rows/4904",
+            "before_pq": 0.6328917028429237,
+            "corrected_pointer": "/corrected_rows/2529",
+            "depth_index": 4,
+            "depth_um": 2.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": 2.919490506519675,
+            "residual_depth_um": -0.9194905065196748,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": 4.0,
+        "index": 5,
+        "path": "outputs/demo/replay/frame-05.png",
+        "sha256": "7e32975bd0b1e11731e7fb005abd76b329f8999018acdf95c5773218983d8211",
+        "size_bytes": 232137,
+        "traced_frames": [
+          {
+            "after_pq": 0.6319001347217543,
+            "before_pointer": "/rows/180",
+            "before_pq": 0.6316043057868991,
+            "corrected_pointer": "/corrected_rows/100",
+            "depth_index": 5,
+            "depth_um": 4.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 3.8857436187953454,
+            "residual_depth_um": 0.11425638120465464,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6326831168605401,
+            "before_pointer": "/rows/1125",
+            "before_pq": 0.6314660050437596,
+            "corrected_pointer": "/corrected_rows/586",
+            "depth_index": 5,
+            "depth_um": 4.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 3.4158546725361996,
+            "residual_depth_um": 0.5841453274638004,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6310450772309609,
+            "before_pointer": "/rows/4905",
+            "before_pq": 0.6285300595774856,
+            "corrected_pointer": "/corrected_rows/2530",
+            "depth_index": 5,
+            "depth_um": 4.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": 4.093323828438107,
+            "residual_depth_um": -0.09332382843810727,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      },
+      {
+        "depth_um": 6.0,
+        "index": 6,
+        "path": "outputs/demo/replay/frame-06.png",
+        "sha256": "c7ffbdca27c8a142bc0057c1810fe7aac61e21b0a9601daf5dca20bbb8ced846",
+        "size_bytes": 226546,
+        "traced_frames": [
+          {
+            "after_pq": 0.6334357075249899,
+            "before_pointer": "/rows/181",
+            "before_pq": 0.6272216449601209,
+            "corrected_pointer": "/corrected_rows/101",
+            "depth_index": 6,
+            "depth_um": 6.0,
+            "design": "v2_3-exact-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 4.313106340721521,
+            "residual_depth_um": 1.6868936592784793,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "exact"
+          },
+          {
+            "after_pq": 0.6343569904069151,
+            "before_pointer": "/rows/1126",
+            "before_pq": 0.6261399089060418,
+            "corrected_pointer": "/corrected_rows/587",
+            "depth_index": 6,
+            "depth_um": 6.0,
+            "design": "v2_4-stopped-balanced-segmentation_only-step-14",
+            "predicted_depth_um": 4.354324076066591,
+            "residual_depth_um": 1.6456759239334087,
+            "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+            "source_sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+            "system": "stopped"
+          },
+          {
+            "after_pq": 0.6325947390403939,
+            "before_pointer": "/rows/4906",
+            "before_pq": 0.623512091268057,
+            "corrected_pointer": "/corrected_rows/2531",
+            "depth_index": 6,
+            "depth_um": 6.0,
+            "design": "v2_2-piecewise-028",
+            "predicted_depth_um": 4.986748977588025,
+            "residual_depth_um": 1.0132510224119748,
+            "source": "artifacts/runs/v2_2/validation/piecewise-hard-frontier.json",
+            "source_sha256": "329c85ced2bd7c1df486e9966d5aad236dcae46c0b87dd87c9fdc6ab83f058bc",
+            "system": "piecewise"
+          }
+        ]
+      }
+    ],
+    "gif": {
+      "duration_ms_per_frame": 800,
+      "path": "outputs/demo/replay/validation-depth-sweep.gif",
+      "sha256": "56c55adb42d424523ddb72a4625fe0c292dbe5dd365b72ce9a252baafb910f28",
+      "size_bytes": 1775959
+    },
+    "mp4": {
+      "codec": "H.264",
+      "frames_per_second": 1.25,
+      "path": "outputs/demo/replay/validation-depth-sweep.mp4",
+      "sha256": "f4d05d8ce47631a52ee815497861da713c6ab6aee1b255b961e5ed0c49b21708",
+      "size_bytes": 339558
+    }
+  },
+  "schema_version": 1,
+  "status": "complete_validation_only_publication_outputs",
+  "test_accessed": false
+}
