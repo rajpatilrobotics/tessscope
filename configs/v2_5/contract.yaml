@@ -1,0 +1,200 @@
+experiment: tessscope_v2_5_hard_near_miss_constrained_b11
+status: preregistered_before_new_pupil_generation
+authorization:
+  basis: explicit_user_approval_after_v2_4_hard_near_miss
+  scope: autonomous_pretest_and_conditional_locked_test
+  forbidden: [push, publish, deploy, submit]
+parent:
+  version: v2_4
+  commit: b82000d418f7146c71a0c988df4cddb6a2629025
+  result: negative_expanded_hard_near_miss
+  best_exact: v2_3-exact-balanced-segmentation_only-step-14
+  best_stopped: v2_4-stopped-balanced-segmentation_only-step-14
+  first_hard_pq_drop_from_b7_segmentation_only: 0.010295308420323397
+  corrected_gain_over_piecewise_028: 0.0012850136904830492
+  corrected_gain_over_matched_stopped: 0.006258840610359453
+  source_manifest: configs/v2_5/source-manifest.json
+hypothesis: >-
+  Exact constrained optimization of the corrected frame in the richer manufacturable
+  B11 pupil can improve the frozen v2.4 hard near miss while preserving the first-frame
+  segmentation ceiling and residual-focus constraint, and can outperform a strong B11
+  piecewise family and a forward-identical stopped-stage control.
+data:
+  dataset: BBBC006v1
+  optimization_split: training_only
+  optimization_wells: 12
+  optimization_batches: 4
+  soft_validation_wells: 12
+  soft_validation_batches: 4
+  expanded_validation_wells_maximum: 45
+  hard_density_wells: 27
+  deterministic_patch_seed: 53
+  optimization_noise_seeds: [5200, 5203, 5206, 5209]
+  validation_noise: deterministic_zero
+  forbidden_before_promotion: [test_images, test_labels, test_normalization, test_metrics]
+optics:
+  continuity_basis: B7_Noll_5_through_11
+  primary_basis: B11_Noll_5_through_15
+  b11_modes: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  excluded_modes: [piston, tilt_x, tilt_y, defocus]
+  open_phase_rms_bound_radians: 2.5
+  projected_radius_radians: 2.4975
+  minimum_support_energy_fraction: 0.995
+  reuse_byte_identical:
+    - basis_convention
+    - support_energy_definition
+    - phase_quantization_definition
+    - calibrated_image_formation
+    - autofocus_controller
+    - observer_and_normalization
+  b11_derivative_must_be_rerun: true
+anchors:
+  b7_soft_first_segmentation_anchor: 1.090270310640335
+  b7_soft_first_segmentation_maximum: 1.098270310640335
+  b11_soft_first_segmentation_anchor: 1.0901961773633957
+  b11_soft_first_segmentation_maximum: 1.0981961773633957
+  margin: 0.008
+  optimization_anchor_rule: basis_matched_segmentation_only_mean_on_frozen_training_batches
+  optimization_limit_rule: optimization_anchor_plus_0_008
+starts:
+  registry: configs/v2_5/source-manifest.json
+  b7_continuity:
+    - b7_v2_4_balanced_step14
+    - b7_v2_2_piecewise_028
+  b11_primary:
+    - b11_lift_v2_4_balanced_step14
+    - b11_lift_v2_2_piecewise_028
+    - b11_segmentation_only
+    - b11_projected_2_step15
+    - b11_projected_3_step15
+  lift_rule: append_four_exact_zeros_to_the_frozen_B7_unconstrained_vector
+primary_optimizer:
+  method: exact_gradient_augmented_lagrangian_with_projected_dual_updates
+  objective: minimize_final_segmentation_loss
+  inequalities:
+    - first_segmentation_loss_le_basis_matched_training_anchor_plus_0_008
+    - normalized_residual_depth_squared_le_registered_epsilon
+  residual_epsilon_ladder: [0.075, 0.065, 0.055]
+  continuation: descending_epsilon_within_each_start
+  exact_gradient_mode: propagate_through_predicted_stage_action_and_residual_depth
+  steps_per_epsilon_stage: 18
+  inner_optimizer: Adam
+  initial_learning_rate: 0.008
+  final_six_steps_learning_rate_multiplier: 0.3
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1.0e-8
+  initial_penalty: 4.0
+  penalty_multiplier_per_six_steps: 2.0
+  maximum_penalty: 32.0
+  dual_update_interval_steps: 3
+  maximum_dual_value: 64.0
+  normalized_constraint_scales:
+    first_segmentation_loss: 0.008
+    normalized_residual_depth_squared: 0.02
+  parameter_step_clip_l2: 0.08
+  physical_projection: radial_projection_only_if_coefficient_norm_exceeds_2_4975
+  checkpoint_every_step: true
+  resumable: true
+  total_primary_stages:
+    b7: 6
+    b11: 15
+alternate_optimizer:
+  activation: zero_soft_eligible_primary_endpoint_within_a_basis
+  method: SciPy_SLSQP_exact_constraint_Jacobians
+  start_selection: >-
+    for each basis and epsilon, use the primary endpoint with the smallest summed
+    positive normalized training violation, then lowest training final loss and name
+  training_batches: 2
+  maximum_iterations: 8
+  trust_radius_from_start: 0.15
+  ftol: 1.0e-5
+  constraints_and_thresholds: unchanged
+  maximum_alternate_stages_per_basis: 3
+soft_selection:
+  primary_basis_only: B11
+  feasibility_tolerance: 1.0e-4
+  require_first_segmentation_at_most_b11_soft_maximum: true
+  require_registered_residual_constraint: true
+  require_residual_mae_strictly_below_same_runs_start: true
+  require_finite_metrics_and_parameters: true
+  require_physical_gates: true
+  nondominance_metrics:
+    - first_segmentation_loss
+    - final_segmentation_loss
+    - residual_mae_um
+  maximum_promotions: 3
+  diversity:
+    - at_most_one_per_start_family
+    - at_most_one_per_exact_parameter_hash
+  tie_break:
+    - lowest_final_segmentation_loss
+    - lowest_residual_mae_um
+    - lowest_first_segmentation_loss
+    - deterministic_name
+matched_b11_piecewise:
+  sources: [b11_segmentation_only, b11_focus_only]
+  projection: radial_only_if_norm_exceeds_2_4975
+  include_original_naive_sum_exactly: true
+  convex_interpolation: {start: 0.0, stop: 1.0, step: 0.05}
+  focus_injection: {start: 0.0, stop: 1.5, step: 0.05}
+  nonnegative_two_weight_values: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5]
+  soft_endpoint: unchanged_12_well_exact_closed_loop
+  hard_selection:
+    - every_soft_nondominated_unique_point
+    - family_endpoints_and_original_naive_sum
+    - brackets_around_each_frozen_exact_candidate_on_all_three_soft_metrics
+    - points_within_first_0_004_final_0_004_and_residual_mae_0_10_of_soft_envelope
+  hard_labels_may_select_piecewise_points: false
+derivative_gates:
+  b11_closed_loop:
+    maximum_median_relative_error: 0.01
+    minimum_cosine: 0.99
+    minimum_stable_epsilons: 2
+    minimum_stage_path_gradient_fraction: 0.01
+  stopped_stage:
+    exact_forward_parity_tolerance: 1.0e-6
+    match_start_epsilon_steps_batches_schedule_and_budget: true
+hard_protocol:
+  conditional_on_soft_selection_and_derivative_gates: true
+  validation_wells: 45
+  hard_density_wells: 27
+  paired_bootstrap_replicates_grouped_by_well: 2000
+  unchanged_gates:
+    minimum_first_hard_pq_gain_over_clear: 0.01
+    require_positive_clear_gain_bootstrap_lower_bound: true
+    maximum_first_hard_pq_drop_from_basis_matched_segmentation_only: 0.01
+    minimum_signed_direction_accuracy: 0.90
+    maximum_focus_mae_um: 2.0
+    require_stage_reduces_absolute_defocus: true
+    require_corrected_hard_pq_above_first: true
+    minimum_corrected_pq_gain_over_basis_matched_piecewise: 0.005
+    require_positive_piecewise_gain_bootstrap_lower_bound: true
+    minimum_corrected_pq_gain_over_matched_stopped_stage: 0.005
+    require_positive_stopped_gain_bootstrap_lower_bound: true
+    minimum_fraction_wells_positive_for_each_primary_comparison: 0.60
+    require_positive_mean_after_leaving_out_each_single_well: true
+    require_full_loop_exact_derivative_gate: true
+matched_derivative_free:
+  activation: exact_candidate_passes_every_earlier_hard_gate
+  basis: matched_B11
+  budget: matched_exact_function_evaluations_and_wall_time
+  pass_requirement: exact_candidate_Pareto_dominates
+controller_gain:
+  primary_gain: 1.0
+  optional_activation: only_after_primary_hard_results_and_only_if_residual_overshoot_is_diagnostic
+  optional_grid: [0.85, 1.0, 1.15]
+  selection_split: validation_only
+  locked_test_primary_gain_remains: 1.0_unless_optional_gain_is_frozen_before_pretest_commit
+test_policy:
+  access_runs: 1
+  prerequisites:
+    - all_applicable_validation_hard_piecewise_stopped_and_derivative_free_gates_pass
+    - exact_candidate_and_any_controller_gain_frozen
+    - evidence_hashes_verified
+    - full_ruff_and_tests_pass
+    - local_pretest_commit
+  tuning_after_access: forbidden
+  rerun_after_access: forbidden
+  push_publish_deploy_submit: forbidden_without_explicit_user_instruction
+test_accessed: false

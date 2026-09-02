@@ -1,0 +1,77 @@
+{
+  "status": "frozen_before_new_pupil_generation",
+  "test_accessed": false,
+  "parent_commit": "b82000d418f7146c71a0c988df4cddb6a2629025",
+  "hash_encoding": "sha256(compact JSON float list, allow_nan=false)",
+  "source_files": {
+    "configs/v2_4/pretest-block.json": "6a72e5e34049ea71d14630babc2e76b0e4e7299746aec1ed97d715605f06782d",
+    "configs/v2_4/selected-checkpoints.json": "d1519c04e553c69fd448a985975a96e04264c458d9f8ade2e94a85440a61db81",
+    "artifacts/runs/v2_4/validation/stopped-stage-matched.json": "ec2d765f7dd02853601f13737969ee212985d7d19468efaa4ff03532fc3e4117",
+    "artifacts/runs/v2_4/validation/expanded-hard-validation.json": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936",
+    "artifacts/runs/v2_1/optimization/b11-separate-baselines.json": "24791bee3e98ae73c6ba5f6a018ae16d5ad749cab0f83718e285352ea89fdb3d",
+    "artifacts/runs/v2_1/optimization/b11-projected-gradient-candidates.json": "c76550ccdbd6dc763a13ee8beb6bd2bfd03b8c079c2b410312721fc3f40f5682",
+    "artifacts/runs/v2_2/screening/piecewise-soft-frontier.json": "8ba6988ba8961be1cadfd3034c1269cb29614c993f97ac518951e4ba7f0510d0"
+  },
+  "anchors": {
+    "b7_soft_first_segmentation_anchor": 1.090270310640335,
+    "b7_soft_first_segmentation_maximum": 1.098270310640335,
+    "b11_soft_first_segmentation_anchor": 1.0901961773633957,
+    "b11_soft_first_segmentation_maximum": 1.0981961773633957
+  },
+  "starts": [
+    {
+      "name": "b7_v2_4_balanced_step14",
+      "basis": "B7",
+      "source": "configs/v2_4/selected-checkpoints.json",
+      "source_name": "v2_3-exact-balanced-segmentation_only-step-14",
+      "parameter_sha256": "fc08f00e9bcb283c0cb436f9eb97c5b6f72b2c1b03a5bbf6b222e134122f5a84",
+      "parameters": [-0.0698867067694664, 0.045003246515989304, -0.14110343158245087, -0.4708356261253357, -0.0693664476275444, -0.021113824099302292, 0.20483292639255524]
+    },
+    {
+      "name": "b7_v2_2_piecewise_028",
+      "basis": "B7",
+      "source": "artifacts/runs/v2_2/screening/piecewise-soft-frontier.json",
+      "source_name": "v2_2-piecewise-028",
+      "parameter_sha256": "a01a6d59e8f80d3c0039c343324061b29c0f4383d4765abf8b41779caf06c56a",
+      "parameters": [-0.2510019540786743, 0.2184882014989853, -0.08366701751947403, -0.5714472532272339, 0.030237233266234398, 0.08857253193855286, 0.23749251663684845]
+    },
+    {
+      "name": "b11_lift_v2_4_balanced_step14",
+      "basis": "B11",
+      "source": "zero_pad:b7_v2_4_balanced_step14",
+      "parameter_sha256": "92e2e5402a992a5098a8b682a99ba6a50c2fb0c21e6fbf6540a16a2d67efc33c",
+      "parameters": [-0.0698867067694664, 0.045003246515989304, -0.14110343158245087, -0.4708356261253357, -0.0693664476275444, -0.021113824099302292, 0.20483292639255524, 0.0, 0.0, 0.0, 0.0]
+    },
+    {
+      "name": "b11_lift_v2_2_piecewise_028",
+      "basis": "B11",
+      "source": "zero_pad:b7_v2_2_piecewise_028",
+      "parameter_sha256": "3523c0fad960c4077dd328f32bbd3617b6440b0e3a811a790d31573b98391b9c",
+      "parameters": [-0.2510019540786743, 0.2184882014989853, -0.08366701751947403, -0.5714472532272339, 0.030237233266234398, 0.08857253193855286, 0.23749251663684845, 0.0, 0.0, 0.0, 0.0]
+    },
+    {
+      "name": "b11_segmentation_only",
+      "basis": "B11",
+      "source": "artifacts/runs/v2_1/optimization/b11-separate-baselines.json",
+      "source_name": "b11-segmentation-only",
+      "parameter_sha256": "6c7b4087b58db53720cb3cb8939e7794dc64eaa93ee4548466de7c3424727a02",
+      "parameters": [0.0317351259291172, 0.1782708317041397, -0.03370925784111023, -0.5345921516418457, -0.03615213558077812, 0.09765719622373581, 0.220682293176651, 0.056773263961076736, -0.06483636796474457, -0.0003436844563111663, 0.021170755848288536]
+    },
+    {
+      "name": "b11_projected_2_step15",
+      "basis": "B11",
+      "source": "artifacts/runs/v2_1/optimization/b11-projected-gradient-candidates.json",
+      "source_name": "b11-projected-2.00-step-15",
+      "parameter_sha256": "4780ec97b6e1644fcbece930f6c8eba6aa0606410ec2a52ce06c4ae9dd40e4cf",
+      "parameters": [-0.08750446140766144, 0.09624043852090836, -0.15092810988426208, -0.5233507752418518, -0.1347770392894745, 0.033470891416072845, 0.2836562991142273, 0.1420411616563797, -0.06605447828769684, 0.003518868237733841, 0.025325700640678406]
+    },
+    {
+      "name": "b11_projected_3_step15",
+      "basis": "B11",
+      "source": "artifacts/runs/v2_1/optimization/b11-projected-gradient-candidates.json",
+      "source_name": "b11-projected-3.00-step-15",
+      "parameter_sha256": "7045d766ebbb986ba979649bf687cb5f022ce93c6e73593bc9823a1eb86c164d",
+      "parameters": [-0.09025654196739197, 0.09528038650751114, -0.16048768162727356, -0.5164423584938049, -0.142933651804924, 0.029613656923174858, 0.2894100546836853, 0.1467626392841339, -0.06410083919763565, -0.0005074614309705794, 0.02279871329665184]
+    }
+  ]
+}

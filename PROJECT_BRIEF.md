@@ -1,5 +1,20 @@
 # TessScope project brief
 
+## V2.5 constrained B11 experiment
+
+V2.5 is a newly and explicitly approved experiment motivated by the frozen v2.4 hard
+near miss. It preserves v1–v2.4 and asks whether a transparent exact constrained optimizer
+on the manufacturable B11 Noll 5–15 pupil can improve the corrected frame while directly
+enforcing the unchanged first-frame segmentation ceiling and a registered residual-focus
+bound. B7 remains a continuity control; B11 is the primary basis.
+
+The experiment uses a fixed three-level residual epsilon ladder, five frozen B11 starts,
+two B7 continuity starts, a preregistered exact SLSQP alternate, a strong B11 piecewise
+family, and matched stopped-stage/derivative-free controls. Soft selection may freeze at
+most three B11 candidates from the same 12 validation wells. Every v2.4 hard threshold is
+unchanged. The locked BBBC006 test remains sealed unless all validation, causal-gradient,
+piecewise, stability, and derivative-free gates pass and a pretest commit is verified.
+
 ## V2.4 frozen-checkpoint experiment
 
 V2.4 is a separately named, approved validation-only audit of the 270 intermediate phase

@@ -592,3 +592,19 @@ Resolution options, in recommended order:
   no test rerun, threshold change, or post-hoc design change was made.
 - Machine-readable evidence remains under `artifacts/runs/gate9/`; the readable audit,
   figures, limitations, and reproduction guide are under `outputs/`.
+
+## 2026-09-02 — V2.5 hard-near-miss experiment authorized and preregistered
+
+- The user explicitly authorized a new v2.5 experiment after v2.4's best exact checkpoint
+  missed the B7 hard segmentation tolerance by only `0.0002953` PQ and showed a causal
+  `+0.006259` corrected-PQ gain over its matched stopped-stage control.
+- The new hypothesis is separate from the older v2.4 zero-soft-eligible fallback, whose
+  inactive status remains historically correct.
+- B7 is frozen as a continuity control. B11 Noll modes 5–15 are primary under the same
+  open `2.5 rad` RMS ball, support, calibration, controller, observer, and hard gates.
+- The primary method is an exact-gradient augmented Lagrangian with explicit first-frame
+  and residual constraints, not a fixed weighted objective. A bounded exact-Jacobian
+  SLSQP alternate is registered before results.
+- Source hashes, exact B7→B11 zero-padding, five B11 starts, two B7 starts, epsilon ladder,
+  budgets, strong B11 piecewise family, derivative requirements, and one-run test seal are
+  frozen in `configs/v2_5/` before any new pupil is generated.

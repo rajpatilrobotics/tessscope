@@ -1,33 +1,28 @@
-# TessScope v2.4 frozen-checkpoint audit plan
+# TessScope v2.5 constrained B11 plan
 
 ## 1. Goal
 
-Audit every saved intermediate checkpoint from the frozen v2.3 closed-loop optimization
-under the unchanged soft segmentation ceiling. Select validation checkpoints by a
-pre-registered rule without retraining, hard-label cherry-picking, or locked-test access.
+Test whether exact constrained optimization of the corrected frame in a manufacturable
+B11 pupil can convert the frozen v2.4 hard near miss into a result that passes every
+unchanged segmentation, autofocus, causal-gradient, piecewise, and stability gate.
 
 The full v2 handoff is approved. Work proceeds autonomously unless a consequential
 scientific choice cannot be resolved on training/validation data, or a destructive,
 legal, credential, billing, publication, conflicting-user-work, or external blocker
 requires the user.
 
-Current checkpoint: v1 through v2.3 are preserved, and the approved v2.4 checkpoint audit
-is complete as a negative expanded-hard result. Ninety frozen checkpoints passed the
-unchanged soft ceiling, three were frozen, and all six exact/stopped pupils received the
-45-well hard protocol. None passed every matched gate, so the BBBC006 locked test remains
-sealed. The conditional v2.5 trigger did not occur.
+Current checkpoint: v1 through v2.4 are preserved at local commit `b82000d`. V2.4 is a
+complete negative expanded-hard result, but its best exact checkpoint missed the B7
+segmentation tolerance by only `0.0002953` and beat its matched stopped-stage control by
+`+0.006259` with a positive paired interval. The user explicitly approved a new v2.5
+experiment on this hard near miss. The locked BBBC006 test remains sealed.
 
 ## 2. Problem
 
-V2.3 selected only the final step of each fixed 30-step Adam trajectory. All three starts
-met the frozen first-frame segmentation ceiling, all nine endpoints improved residual
-defocus, and all 270 intermediate parameter vectors were saved before intermediate
-validation selection existed. An earlier checkpoint may therefore improve closed-loop
-focus while still satisfying the unchanged first-frame constraint.
-
-V2.4 must test that hypothesis over the frozen candidate pool without rerunning training
-or using hard labels to select a step. If no saved checkpoint qualifies, the separately
-authorized v2.5 experiment will use transparent exact-gradient constrained optimization.
+Fixed weighted Adam improved residual focus but did not directly enforce the first-frame
+and residual constraints. Early stopping came close on hard validation, so the next
+scientific question is whether a transparent constrained method and four additional
+manufacturable B11 modes can reach the small missing region without relaxing a gate.
 
 ### Historical v2.2 problem
 
@@ -43,18 +38,21 @@ The joint pupil cannot be tuned during this comparison.
 
 ## 3. Proposed solution
 
-1. Hash the frozen v2.3 matrix and create an integrity manifest containing exactly 9 runs
-   × 30 steps, deterministic checkpoint identifiers, parameter hashes, and no new metrics.
-2. Pre-register eligibility, three-objective nondominance, the existing tie-break, and a
-   diversity rule allowing at most one selected checkpoint per v2.3 run.
-3. Reconstruct all 270 frozen parameter vectors and evaluate the unchanged exact soft
-   pipeline on the same 12 validation wells, caching exact parameter-hash duplicates.
-4. Preserve every metric row and trajectory. Select at most three candidates only from
-   soft-eligible nondominated checkpoints.
-5. If any qualify, freeze selection before stopped-stage and expanded hard evaluation;
-   apply all unchanged v2.3 hard gates before any derivative-free or locked-test work.
-6. If none qualify, freeze v2.4 negative and continue automatically into v2.5 constrained
-   closed-loop optimization without relaxing the first-frame ceiling.
+1. Freeze source artifacts, anchors, exact B7→B11 lifts, optimizer budgets, epsilon ladder,
+   alternate schedule, comparisons, derivative gates, and the single locked-test policy.
+2. Add a differentiable B11 closed-loop optics service and validate the full exact
+   derivative, including a nontrivial stage-path contribution.
+3. Run the fixed-budget exact augmented-Lagrangian ladder for B7 continuity and B11
+   primary starts. If a basis has no eligible endpoint, run the preregistered SLSQP
+   alternate without changing constraints.
+4. Evaluate every endpoint on the same 12 validation wells; freeze at most three feasible,
+   residual-improving, nondominated B11 candidates with start/hash diversity.
+5. Build and soft-screen the full B11 segmentation/focus piecewise family, then freeze its
+   hard comparison set without using hard labels.
+6. Run matched stopped-stage controls and the unchanged 45/27-well hard protocol. Run a
+   matched derivative-free control only if every earlier hard gate passes.
+7. Open the locked test exactly once only after all gates, hashes, checks, and a local
+   pretest commit pass. Otherwise freeze a complete negative v2.5 result.
 
 ### Historical v2.2 solution
 
@@ -97,8 +95,9 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   separately approved closed-loop feedback experiment.
 - `configs/v2_4/`, `artifacts/runs/v2_4/`, `outputs/v2_4/`, `src/tessscope/v2_4/`, and
   `v2_4`-prefixed scripts/tests hold the frozen-checkpoint audit without modifying v2.3.
-- If v2.4 has no eligible checkpoint, equivalent `v2_5` namespaces hold the separately
-  authorized constrained closed-loop optimization.
+- `configs/v2_5/`, `artifacts/runs/v2_5/`, `outputs/v2_5/`, `src/tessscope/v2_5/`,
+  `services/v2_5/`, and `v2_5`-prefixed scripts/tests hold the separately authorized
+  hard-near-miss constrained B11 experiment without modifying v1–v2.4.
 - Root brief, plan, decision log, README, and notices: current v2 status and navigation.
 
 ## 5. Step by step tasks
@@ -122,12 +121,27 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
   locked test were correctly skipped because no checkpoint cleared the earlier hard gate;
   the negative pre-test evidence and hashes are frozen.
 
-### Conditional V2.5 constrained continuation
+### V2.5 hard-near-miss constrained continuation
 
-- [x] V2.5-0A: evaluated the activation condition. V2.4 found 90 soft-eligible
-  checkpoints, so the authorized zero-eligible trigger was false and v2.5 was not started.
-- [x] V2.5-1A: not applicable under the approved conditional scope because v2.5 was not
-  activated; no constrained run or additional test access was inferred.
+- [x] V2.5-0A: received explicit new authorization after the frozen v2.4 hard near miss;
+  this does not rewrite the earlier, correctly inactive zero-soft-eligible trigger.
+- [x] V2.5-0B: froze v2.4/B11 source hashes, B7 continuity and B11 start vectors, exact
+  zero-padding, anchors, budgets, epsilon ladder, alternate method, comparisons, gates,
+  and the locked-test seal before generating a new pupil.
+- [ ] V2.5-1A: implement and test exact augmented-Lagrangian/SLSQP constrained utilities,
+  selection rules, B11 physical diagnostics, and the differentiable-depth B11 service.
+- [ ] V2.5-1B: pass the B11 full-loop derivative and stage-path gate.
+- [ ] V2.5-2A: complete resumable B7 continuity and B11 primary constrained ladders.
+- [ ] V2.5-2B: run the alternate exact constrained schedule only where preregistered,
+  evaluate the 12-well soft set, and freeze at most three B11 candidates.
+- [ ] V2.5-3A: generate and soft-screen the strong matched B11 piecewise family.
+- [ ] V2.5-3B: run matched stopped-stage controls and freeze exact forward parity.
+- [ ] V2.5-4A: run the unchanged expanded 45/27-well hard protocol and all comparisons.
+- [ ] V2.5-4B: conditionally run matched derivative-free and optional gain work in the
+  registered order, with no threshold change.
+- [ ] V2.5-5A: either freeze a negative pre-test result or commit a verified pretest freeze
+  and open the locked test exactly once.
+- [ ] V2.5-5B: produce final audit/status/reproduction evidence without push or submission.
 
 ### V2.2 completed matched-frontier work
 
