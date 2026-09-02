@@ -89,7 +89,7 @@ def closed_loop_augmented_value_and_gradient(
     autofocus: Tesseract,
     observer: Tesseract,
     parameters: np.ndarray,
-    batch: ClosedLoopBatch,
+    batch: ClosedLoopBatch | tuple[ClosedLoopBatch, ...] | list[ClosedLoopBatch],
     calibration: V2SystemCalibration,
     *,
     first_limit: float,
@@ -99,20 +99,31 @@ def closed_loop_augmented_value_and_gradient(
 ) -> tuple[float, np.ndarray, dict[str, float]]:
     """Differentiate one exact full-loop augmented-Lagrangian training batch."""
 
+    batches = (batch,) if isinstance(batch, ClosedLoopBatch) else tuple(batch)
+    if not batches:
+        raise ValueError("At least one closed-loop batch is required")
+
     def objective(value: jax.Array):
-        _, auxiliary = _graph(
-            optics,
-            autofocus,
-            observer,
-            value,
-            batch,
-            calibration,
-            ZERO_WEIGHTS,
-            "exact",
+        auxiliary_rows = []
+        for current_batch in batches:
+            _, auxiliary = _graph(
+                optics,
+                autofocus,
+                observer,
+                value,
+                current_batch,
+                calibration,
+                ZERO_WEIGHTS,
+                "exact",
+            )
+            auxiliary_rows.append(auxiliary)
+        averaged = tuple(
+            jnp.mean(jnp.stack([row[index] for row in auxiliary_rows]))
+            for index in range(len(auxiliary_rows[0]))
         )
-        first_loss = auxiliary[0]
-        final_loss = auxiliary[1]
-        residual_squared = auxiliary[4]
+        first_loss = averaged[0]
+        final_loss = averaged[1]
+        residual_squared = averaged[4]
         augmented, violations = augmented_lagrangian_terms(
             final_loss,
             first_loss,
@@ -122,7 +133,7 @@ def closed_loop_augmented_value_and_gradient(
             duals=jnp.asarray(duals, dtype=jnp.float32),
             penalty=penalty,
         )
-        return augmented, (auxiliary, violations)
+        return augmented, (averaged, violations)
 
     (value, (auxiliary, violations)), gradient = jax.value_and_grad(
         objective, has_aux=True

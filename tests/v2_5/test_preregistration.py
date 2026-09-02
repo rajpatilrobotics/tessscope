@@ -59,6 +59,9 @@ def test_v2_5_contract_freezes_budgets_gates_and_test_seal() -> None:
         0.055,
     ]
     assert contract["primary_optimizer"]["steps_per_epsilon_stage"] == 18
+    assert contract["primary_optimizer"]["constraint_aggregation"] == (
+        "exact_mean_of_all_four_frozen_training_batches_each_step"
+    )
     assert contract["soft_selection"]["maximum_promotions"] == 3
     assert contract["hard_protocol"]["validation_wells"] == 45
     assert contract["hard_protocol"]["hard_density_wells"] == 27

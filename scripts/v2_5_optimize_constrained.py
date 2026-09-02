@@ -56,7 +56,9 @@ B11_SEPARATE = (
     / "optimization"
     / "b11-separate-baselines.json"
 )
-CHECKPOINT_ROOT = PROJECT_ROOT / "artifacts" / "runtime-runs" / "v2_5-constrained"
+CHECKPOINT_ROOT = (
+    PROJECT_ROOT / "artifacts" / "runtime-runs" / "v2_5-constrained-aggregate"
+)
 RESIDUAL_BOUNDS = (0.075, 0.065, 0.055)
 STEPS_PER_STAGE = 18
 LEARNING_RATE = 0.008
@@ -200,12 +202,11 @@ def optimize_stage(
         projection_count = 0
     started = time.perf_counter()
     for step in range(first_step, STEPS_PER_STAGE + 1):
-        batch = training_batches[(step - 1) % len(training_batches)]
         penalty = penalty_for_step(step)
         value, gradient, diagnostics = closed_loop_augmented_value_and_gradient(
             *services,
             parameters,
-            batch,
+            training_batches,
             calibration,
             first_limit=first_limit,
             residual_limit=residual_bound,

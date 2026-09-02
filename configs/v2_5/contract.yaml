@@ -77,6 +77,7 @@ primary_optimizer:
   residual_epsilon_ladder: [0.075, 0.065, 0.055]
   continuation: descending_epsilon_within_each_start
   exact_gradient_mode: propagate_through_predicted_stage_action_and_residual_depth
+  constraint_aggregation: exact_mean_of_all_four_frozen_training_batches_each_step
   steps_per_epsilon_stage: 18
   inner_optimizer: Adam
   initial_learning_rate: 0.008

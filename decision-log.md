@@ -619,3 +619,15 @@ Resolution options, in recommended order:
 - The exact-minus-stopped stage-path gradient is `43.06%` of the full gradient norm and
   exact/stopped forward values are identical, so the controller path is load-bearing.
 - The BBBC006 locked test was not accessed.
+
+## 2026-09-02 — Invalid minibatch-constraint smoke stopped
+
+- The first eight B11 optimizer smoke steps applied the registered mean first-frame
+  constraint to one noisy batch at a time. Per-batch task losses vary far more than the
+  `0.008` margin, so scaled first-constraint violations alternated between about `-23`
+  and `+15`; those dual updates did not represent the registered mean constraint.
+- The run was interrupted, marked non-scientific, and preserved in
+  `artifacts/runs/v2_5/diagnostics/invalid-minibatch-smoke.json`.
+- Valid v2.5 primary steps differentiate one augmented objective formed from the exact
+  mean of all four frozen training batches. No threshold, step count, epsilon, start, or
+  promotion rule changed, and the locked test remains sealed.

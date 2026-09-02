@@ -1,0 +1,15 @@
+{
+  "status": "stopped_invalid_constraint_aggregation_smoke",
+  "test_accessed": false,
+  "scientific_candidate": false,
+  "basis": "B11",
+  "start": "b11_lift_v2_4_balanced_step14",
+  "residual_bound": 0.075,
+  "completed_steps": 8,
+  "invalid_definition": "The basis-matched +0.008 mean constraint was mistakenly applied to one noisy batch per step instead of the exact four-batch mean.",
+  "diagnostic": "Individual batch task losses differ by much more than 0.008, producing incompatible scaled violations and invalid dual updates.",
+  "first_scaled_violations": [-7.337078094482422, -22.91086196899414, 15.089794158935547, 13.870685577392578, -7.065504550933838, -22.759138107299805, 15.300079345703125, 14.294325828552246],
+  "residual_scaled_violations": [8.028721809387207, 6.71305513381958, 7.091943264007568, 4.602689266204834, 5.868475437164307, 4.3640899658203125, 4.926760673522949, 2.9288547039031982],
+  "resolution": "Preserve this invalid smoke summary and its ignored runtime checkpoint. All valid primary runs use one exact gradient of the mean terms across all four frozen training batches. Budgets and thresholds are unchanged.",
+  "raw_runtime_checkpoint": "artifacts/runtime-runs/v2_5-constrained/b11/v2_5-b11-auglag-b11_lift_v2_4_balanced_step14-residual-0p075.json"
+}
