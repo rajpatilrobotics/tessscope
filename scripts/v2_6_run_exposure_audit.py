@@ -204,7 +204,9 @@ def main() -> None:
         "source_partition_sha256"
     ]:
         raise ValueError("Frozen v2.6 partition hash mismatch")
-    designs = list(contract["systems"].values())
+    if set(contract["systems"]) != {"candidate", "baseline"}:
+        raise ValueError("Exposure audit requires exactly candidate and baseline systems")
+    designs = [contract["systems"]["candidate"], contract["systems"]["baseline"]]
     fractions = contract["photon_policy"]["first_exposure_fraction_grid"]
     seeds = contract["photon_policy"]["fixed_standard_normal_seeds"]
     calibration = V2SystemCalibration.load()

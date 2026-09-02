@@ -18,6 +18,7 @@ systems:
   baseline:
     name: v2_2-piecewise-028
     parameters: [-0.2510019540786743, 0.2184882014989853, -0.08366701751947403, -0.5714472532272339, 0.030237233266234398, 0.08857253193855286, 0.23749251663684845]
+source_evidence:
   piecewise_parameter_source_sha256: 8ba6988ba8961be1cadfd3034c1269cb29614c993f97ac518951e4ba7f0510d0
 photon_policy:
   total_expected_photons: 400.0

@@ -38,6 +38,11 @@
   from this diagnostic. Complete the fixed-total-photon audit, then apply the frozen route
   decision. The locked test remains sealed.
 
+- Exposure smoke correction: the first seven development conditions were interrupted
+  before artifact generation because a source hash was nested under `systems` and counted
+  as a third design. The schema now requires exactly `candidate` and `baseline`; budgets,
+  data, fractions, seeds, metrics, and gates are unchanged. No smoke metric is used.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

@@ -1,13 +1,18 @@
 """Pure tests for the v2.6 fixed-total-photon exposure audit."""
 
+from pathlib import Path
+
 import numpy as np
 import pytest
+import yaml
 
 from tessscope.v2_6.exposure import (
     exposure_photons,
     select_development_fraction,
     summarize_exposure_rows,
 )
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def exposure_rows(fraction: float, before: float, after: float) -> list[dict]:
@@ -34,6 +39,14 @@ def test_exposure_photons_conserve_total() -> None:
         assert np.isclose(first + second, 400.0)
     with pytest.raises(ValueError):
         exposure_photons(400.0, 1.0)
+
+
+def test_exposure_contract_has_exactly_two_systems() -> None:
+    contract = yaml.safe_load(
+        (PROJECT_ROOT / "configs" / "v2_6" / "exposure-audit.yaml").read_text()
+    )
+    assert set(contract["systems"]) == {"candidate", "baseline"}
+    assert "piecewise_parameter_source_sha256" in contract["source_evidence"]
 
 
 def test_exposure_summary_and_selection_preserve_first_frame() -> None:
