@@ -1,0 +1,110 @@
+{
+  "artifacts": {
+    "outputs/video/linkedin/tessscope-end-to-end-demo-contact-sheet.png": {
+      "dimensions": [
+        5760,
+        3240
+      ],
+      "sha256": "a0f468e80d213e88c8c86944e0968f3dfef607cff677e5149da67a11396786f0"
+    },
+    "outputs/video/linkedin/tessscope-end-to-end-demo-poster.png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "ae6e3566813d527b56d77889aefc28b2c5ab3cc3391b4208416ef742669aed89"
+    },
+    "outputs/video/linkedin/tessscope-end-to-end-demo-readability-contact-sheet.png": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "sha256": "2771dc862b87ef04c3111dfdaad908fe5cecd42afc033ce5933c8421f48bfa32"
+    }
+  },
+  "claims": {
+    "after_pq": 0.552294837627718,
+    "before_pq": 0.4921920085941332,
+    "bootstrap_replicates": 2000,
+    "causal_ci_lower_95": 0.0006703181908061804,
+    "causal_ci_upper_95": 0.011547458540670894,
+    "causal_gain": 0.006258840610359453,
+    "improved_fraction": 0.7469135802469136,
+    "source_count": 27
+  },
+  "deterministic_regeneration": {
+    "byte_identical": true,
+    "checked": true,
+    "comparison_path": ".release-check/tessscope-end-to-end-demo-byte-stability.mp4",
+    "sha256": "fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658"
+  },
+  "documents": {
+    "outputs/video/linkedin/end-to-end-demo-on-screen-copy.md": "54635d57eec426ef8290c887ffbd26edc55409f2bbaa14a39badf4d54477340f",
+    "outputs/video/linkedin/end-to-end-demo-storyboard.md": "b663b98f99ded615ee0983b0553dbddd8634c20a57f607a89669f8a7671e97f6",
+    "outputs/video/linkedin/tessscope-end-to-end-demo-provenance.json": "7ee55a1b7ddfebe81287ca3b9f9000fa98954c6ac4a66e86d8fc359097f255f3"
+  },
+  "external_actions_performed": [],
+  "filter_scan": {
+    "black_intervals": [],
+    "freeze_durations_seconds": [],
+    "long_freeze_threshold_seconds": 3.0
+  },
+  "layout": {
+    "delivery_dimensions": [
+      1920,
+      1080
+    ],
+    "minimum_supporting_copy_px": 26,
+    "primary_supporting_copy_px": 30,
+    "readability_review_tile_dimensions": [
+      640,
+      360
+    ],
+    "representative_frames_rendered_without_bounds_errors": true
+  },
+  "manual_visual_review": {
+    "full_resolution_contact_sheet": "outputs/video/linkedin/tessscope-end-to-end-demo-contact-sheet.png",
+    "readability_contact_sheet": "outputs/video/linkedin/tessscope-end-to-end-demo-readability-contact-sheet.png",
+    "status": "pending_user_or_independent_reviewer"
+  },
+  "schema_version": 1,
+  "selected_or_published": false,
+  "source_preservation": {
+    "outputs/video/linkedin/tessscope-linkedin-fastcut.mp4": {
+      "bytes": 3656025,
+      "exists": true,
+      "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-teaser.mp4": {
+      "bytes": 3641054,
+      "exists": true,
+      "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+    },
+    "outputs/video/tessscope-demo.mp4": {
+      "bytes": 4687119,
+      "exists": true,
+      "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+    }
+  },
+  "status": "PASS_review_candidate",
+  "video": {
+    "audio_stream_count": 0,
+    "bytes": 2652238,
+    "duration_seconds": 29.0,
+    "fast_start": true,
+    "frame_count": 870,
+    "full_decode_errors": 0,
+    "path": "outputs/video/linkedin/tessscope-end-to-end-demo.mp4",
+    "sha256": "fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658",
+    "video_stream": {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "height": 1080,
+      "index": 0,
+      "nb_read_frames": "870",
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "30/1",
+      "width": 1920
+    }
+  }
+}

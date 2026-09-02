@@ -1,5 +1,56 @@
 # TessScope decision log
 
+## 2026-09-02 — Purpose-built end-to-end demo passes production QA
+
+- The new review candidate is `outputs/video/linkedin/tessscope-end-to-end-demo.mp4`:
+  exactly 29.000 seconds, `1920×1080`, 30 fps, 870 frames, H.264/yuv420p, fast-start,
+  intentional no-audio stream, 2,652,238 bytes, and SHA-256
+  `fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658`.
+- Eight purpose-built scenes show the traced BBBC006 input, learned B7 pupil and seven-depth
+  PSF, first exposure, three-runtime forward journey, exact reverse gradient into seven
+  phase parameters, matched simulated stage correction, descriptive validation result, and
+  exact-versus-stopped causal-gradient evidence. A two-second lockup closes the edit.
+- Encoded frames were inspected at native resolution, at `640×360`, and across all seven
+  scene boundaries. The final layout uses dedicated text/science bands, symmetrical grids,
+  no text over microscopy, and no observed text collisions. The poster, full-resolution
+  `5760×3240` contact sheet, and nine-tile small-player contact sheet are retained.
+- Claim checks match the frozen validation JSON exactly: `0.492192... → 0.552294...`,
+  `0.746913...` of hard frames improve, and exact versus the forward-identical stopped
+  control adds `0.00625884...` PQ with 95% CI `[0.0006703..., 0.0115475...]` across 27
+  hard-density wells and 2,000 grouped bootstrap replicates.
+- Full decode, zero black intervals, zero frozen intervals over three seconds, exact
+  frame-count/duration/codec/pixel-format checks, and deterministic regeneration passed.
+  The second full render is byte-identical. Repository-wide Ruff and all 221 tests pass.
+- The original judge video, rejected portrait teaser, and landscape fast-cut retain their
+  pre-build hashes. The new edit remains a local review candidate: no push, upload,
+  publication, deployment, post, submission, or external action was performed.
+
+## 2026-09-02 — Purpose-built 29-second end-to-end demo authorized
+
+- Produce a third, separate landscape video at
+  `outputs/video/linkedin/tessscope-end-to-end-demo.mp4`. It must be exactly 29.0 seconds,
+  `1920×1080`, 30 fps, H.264/yuv420p, fast-start, muted-first, and understandable without
+  narration. Preserve every earlier video; do not delete or overwrite any candidate.
+- Use the restrained publication-grade system of the original judge video: symmetrical
+  grids, generous whitespace, dedicated text regions, large type, and the established
+  white/deep-navy/scientific cyan-magenta-orange palette. Do not reuse the rejected portrait
+  teaser's crowded cards, decorative particles, oversized copy, or text-over-microscopy.
+- The narrative is the actual scientific flow from BBBC006 fluorescence input through B7
+  pupil/PSF, first simulated exposure, the three Tesseract runtimes, the exact reverse
+  gradient, simulated stage correction, corrected InstanSeg nuclei, and two separate frozen
+  validation results. It is a deliberate edit, not a fast-forwarded source video.
+- The descriptive result remains `PQ 0.4922 → 0.5523` with `74.7% of hard frames improve`.
+  The separate controlled-gradient result remains `+0.0063 PQ` with 95% CI
+  `[+0.0007, +0.0115]` against the forward-identical stopped-gradient control. Neither may
+  be rewritten as percent accuracy, hidden-test evidence, live inference, physical
+  deployment, state of the art, or universal superiority.
+- Use only traced scientific assets from the frozen demo/replay evidence. Deterministic
+  decorative layout and motion may frame those assets but may not distort, sharpen,
+  renormalize, beautify, fabricate, or AI-generate scientific content.
+- The rejected `1080×1350` teaser and uniform 29-second fast-cut remain retained but are not
+  selected for this purpose-built story. No upload, publication, post, deployment, or
+  submission is authorized.
+
 ## 2026-09-02 — Source-derived LinkedIn fast cut passes final QA
 
 - The selected candidate is `outputs/video/linkedin/tessscope-linkedin-fastcut.mp4`: exactly

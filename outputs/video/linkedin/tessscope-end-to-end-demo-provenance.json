@@ -1,0 +1,284 @@
+{
+  "claim_boundary": {
+    "causal_wording": "causal gradient evidence; not causal proof",
+    "live_inference": false,
+    "physical_microscope_validation_claimed": false,
+    "scope": "frozen validation",
+    "state_of_the_art_claimed": false,
+    "test_accessed": false
+  },
+  "claims": {
+    "causal_gradient_evidence": {
+      "display": {
+        "control": "Forward-identical stopped control",
+        "gain": "+0.0063 PQ",
+        "interval": "95% CI [+0.0007, +0.0115]"
+      },
+      "pointer": "/paired_evidence/v2_3-exact-balanced-segmentation_only-step-14/corrected_vs_stopped",
+      "raw": {
+        "ci_lower_95": 0.0006703181908061804,
+        "ci_upper_95": 0.011547458540670894,
+        "mean_difference": 0.006258840610359453,
+        "replicates": 2000,
+        "source_count": 27
+      },
+      "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json"
+    },
+    "descriptive_stage_result": {
+      "display": {
+        "improvement": "74.7% of hard frames improve",
+        "pq": "PQ 0.4922 \u2192 0.5523"
+      },
+      "pointers": [
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_before",
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/hard_off_focus_pq_after",
+        "/stage_correction/v2_3-exact-balanced-segmentation_only-step-14/fraction_hard_frames_improved"
+      ],
+      "raw": {
+        "after_pq": 0.552294837627718,
+        "before_pq": 0.4921920085941332,
+        "improved_fraction": 0.7469135802469136
+      },
+      "source": "artifacts/runs/v2_4/validation/expanded-hard-validation.json"
+    }
+  },
+  "encoded_frame_review_samples": [
+    {
+      "encoded_frame_sha256": "c4e07762346f226dbc80c9250bdcbae46beff2ce27cbed58e29f97702af613b9",
+      "frame_index": 30,
+      "timestamp_seconds": 1.0
+    },
+    {
+      "encoded_frame_sha256": "96f95e760e83248c044879bce29640d16a86245afff05d3a621a1f2f3214393f",
+      "frame_index": 144,
+      "timestamp_seconds": 4.8
+    },
+    {
+      "encoded_frame_sha256": "5f039377d302917c5b805781c75c5c3d1899ab22a886ccd052c5c44287cc8d4f",
+      "frame_index": 252,
+      "timestamp_seconds": 8.4
+    },
+    {
+      "encoded_frame_sha256": "a6295238e6a64726aac69ca776130730036c6c254a2c356e46207147b8941a83",
+      "frame_index": 444,
+      "timestamp_seconds": 14.8
+    },
+    {
+      "encoded_frame_sha256": "bb9ba86d5aba54e708231888cfbb8883d7f77c505ba3c3bd05c1f19367067938",
+      "frame_index": 510,
+      "timestamp_seconds": 17.0
+    },
+    {
+      "encoded_frame_sha256": "44e843ea2aa2bd030068a4c3ce0dbab6f143626de20fc9fef3712886bb2fede2",
+      "frame_index": 585,
+      "timestamp_seconds": 19.5
+    },
+    {
+      "encoded_frame_sha256": "ae6e3566813d527b56d77889aefc28b2c5ab3cc3391b4208416ef742669aed89",
+      "frame_index": 675,
+      "timestamp_seconds": 22.5
+    },
+    {
+      "encoded_frame_sha256": "02ebbfea9b0520e75bbb04da82940729a55e68557d178a73fcee316805b0f105",
+      "frame_index": 765,
+      "timestamp_seconds": 25.5
+    },
+    {
+      "encoded_frame_sha256": "030b2e0fa6a3611d0f168f5f08d795b502ced83231136748b9672db283f8eb0e",
+      "frame_index": 846,
+      "timestamp_seconds": 28.2
+    }
+  ],
+  "external_actions_performed": [],
+  "format": {
+    "codec": "H.264",
+    "duration_seconds": 29,
+    "fast_start": true,
+    "ffprobe": {
+      "format": {
+        "duration": "29.000000",
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "size": "2652238"
+      },
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "height": 1080,
+          "index": 0,
+          "nb_read_frames": "870",
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "30/1",
+          "width": 1920
+        }
+      ]
+    },
+    "fps": 30,
+    "frame_count": 870,
+    "height": 1080,
+    "pixel_format": "yuv420p",
+    "width": 1920
+  },
+  "media_policy": {
+    "audio": "intentional no-audio stream; muted-first edit",
+    "denoising": false,
+    "geometry_changes_between_compared_panels": false,
+    "per_image_normalization": false,
+    "scientific_media": "frozen traced TessScope assets only",
+    "sharpening": false,
+    "synthetic_or_ai_scientific_media": false
+  },
+  "outputs": {
+    "full_resolution_contact_sheet": {
+      "dimensions": [
+        5760,
+        3240
+      ],
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-contact-sheet.png",
+      "sha256": "a0f468e80d213e88c8c86944e0968f3dfef607cff677e5149da67a11396786f0",
+      "tile_dimensions": [
+        1920,
+        1080
+      ]
+    },
+    "on_screen_copy": {
+      "path": "outputs/video/linkedin/end-to-end-demo-on-screen-copy.md",
+      "sha256": "54635d57eec426ef8290c887ffbd26edc55409f2bbaa14a39badf4d54477340f"
+    },
+    "poster": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-poster.png",
+      "sha256": "ae6e3566813d527b56d77889aefc28b2c5ab3cc3391b4208416ef742669aed89"
+    },
+    "readability_contact_sheet": {
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo-readability-contact-sheet.png",
+      "sha256": "2771dc862b87ef04c3111dfdaad908fe5cecd42afc033ce5933c8421f48bfa32",
+      "tile_dimensions": [
+        640,
+        360
+      ]
+    },
+    "storyboard": {
+      "path": "outputs/video/linkedin/end-to-end-demo-storyboard.md",
+      "sha256": "b663b98f99ded615ee0983b0553dbddd8634c20a57f607a89669f8a7671e97f6"
+    },
+    "video": {
+      "bytes": 2652238,
+      "path": "outputs/video/linkedin/tessscope-end-to-end-demo.mp4",
+      "sha256": "fc37230c163bd2d216d33962d3f0b8f2b13518d0bc7ddbf22c761b7f5f013658"
+    }
+  },
+  "preserved_videos": {
+    "outputs/video/linkedin/tessscope-linkedin-fastcut.mp4": {
+      "bytes": 3656025,
+      "exists": true,
+      "sha256": "f511ec5e4609d3bd47b349aa2b2cf08b814df422511047ee6d4994e5d8635ee8"
+    },
+    "outputs/video/linkedin/tessscope-linkedin-teaser.mp4": {
+      "bytes": 3641054,
+      "exists": true,
+      "sha256": "fb0d1bfa9459d12b80b26f49f52cf960e23029758c77df6fda650a4f149e296a"
+    },
+    "outputs/video/tessscope-demo.mp4": {
+      "bytes": 4687119,
+      "exists": true,
+      "sha256": "767f5d03ae859d68b4d06b94a1398beda1a38026e1549bdb7b04606254a275a6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_sources": [
+    {
+      "path": "artifacts/runs/demo/validation-replay.npz",
+      "sha256": "586b02362c2aa4c0dc31633ac2de661d1d6fb20ce24524088fff81fefc477a04"
+    },
+    {
+      "path": "artifacts/runs/demo/validation-replay.json",
+      "sha256": "8900d535d0df1c6f9995aeafe8ff7f319350006d6d7b7e36e02111312dc77739"
+    },
+    {
+      "path": "artifacts/runs/v2_4/validation/expanded-hard-validation.json",
+      "sha256": "b76a36688a3d35fd18a9b3852af079a798904accb8e7354e4561f9cf49bce936"
+    },
+    {
+      "path": "artifacts/runs/v2_3/gates/closed-loop-derivative.json",
+      "sha256": "1da2db6c2759a68dce1b29c3ba370928ab44ff3d58ced8ab79dff5896aa29034"
+    },
+    {
+      "path": "configs/demo/visual-contract.yaml",
+      "sha256": "93db3642b55b4fbee4ecc27d04ef7458646b8aa9d17ec932a532e384b6b041bd"
+    },
+    {
+      "path": "data/external/BBBC006/v1/images/z_16/n21_s1_w1.tif",
+      "sha256": "481e2a320d23987e8c5f79ae3639d989779783f1302578d269147b3590e2a2aa"
+    }
+  ],
+  "scientific_transforms": {
+    "input_object": "clip-only display of the already globally normalized replay object_image array",
+    "psf": "global replay maximum, fixed log10 floor 1e-5, fixed magma colormap",
+    "pupil": "wrapped exact-design phase rendered with fixed twilight colormap",
+    "segmentation_boundaries": "tessscope.demo.figures.overlay_boundaries; identical scale and geometry",
+    "sensor_panels": {
+      "clip": [
+        0.0,
+        1.0
+      ],
+      "mode": "affine",
+      "offset": 0.0,
+      "per_image_normalization": false,
+      "scale": 11.582016617246811
+    }
+  },
+  "selected_candidate": false,
+  "status": "complete_review_candidate",
+  "timeline": [
+    {
+      "end_seconds": 3.0,
+      "id": "input",
+      "start_seconds": 0.0
+    },
+    {
+      "end_seconds": 7.0,
+      "id": "optics",
+      "start_seconds": 3.0
+    },
+    {
+      "end_seconds": 11.5,
+      "id": "forward",
+      "start_seconds": 7.0
+    },
+    {
+      "end_seconds": 15.5,
+      "id": "reverse",
+      "start_seconds": 11.5
+    },
+    {
+      "end_seconds": 20.5,
+      "id": "correction",
+      "start_seconds": 15.5
+    },
+    {
+      "end_seconds": 24.5,
+      "id": "stage_result",
+      "start_seconds": 20.5
+    },
+    {
+      "end_seconds": 27.0,
+      "id": "causal",
+      "start_seconds": 24.5
+    },
+    {
+      "end_seconds": 29.0,
+      "id": "lockup",
+      "start_seconds": 27.0
+    }
+  ]
+}

@@ -307,6 +307,41 @@ push, upload, deployment, publication, posting, and submission remain blocked.
 - [x] FASTCUT-5: prove byte-stable regeneration, run focused and release checks, make a local
   commit, and leave the worktree clean with no external action.
 
+### Purpose-built LinkedIn end-to-end demo
+
+Goal: create a separate, exactly 29-second `1920×1080` muted-first film that deliberately
+explains the complete TessScope scientific journey: traced fluorescence input, bounded B7
+pupil and PSF, first simulated exposure, three-runtime Tesseract forward loop, exact reverse
+gradient, simulated stage correction, corrected InstanSeg nuclei, and the two distinct
+supported validation results.
+
+The visual system follows the successful original judge video: symmetrical landscape grids,
+generous whitespace, restrained white/deep-navy/cyan/magenta/orange color, large typography,
+and dedicated title/caption bands. The rejected custom `1080×1350` teaser and the uniform
+29-second source fast-cut remain preserved but are not selected for this purpose-built edit.
+No existing video is deleted or overwritten. Local production and a focused local commit are
+approved; upload, publication, posting, deployment, and submission remain blocked.
+
+Checkpoint: 7 of 7 end-to-end demo tasks are complete. The purpose-built review candidate,
+encoded-frame contact sheets, source/claim manifest, byte-stability proof, media QA, and
+repository-wide verification are complete. The user still controls selection and any
+external use; push, upload, deployment, publication, posting, and submission remain blocked.
+
+- [x] E2EVIDEO-1: freeze the exact 29-second timeline, on-screen copy, source inventory,
+  claim boundaries, grid, type scale, palette, and safe regions before rendering.
+- [x] E2EVIDEO-2: implement a deterministic lightweight renderer that uses only traced
+  TessScope evidence and preserves all scientific pixels, values, scales, and boundaries.
+- [x] E2EVIDEO-3: render the H.264/yuv420p 1080p30 fast-start MP4, poster, provenance
+  manifest, storyboard, and exact-copy record without modifying earlier videos.
+- [x] E2EVIDEO-4: inspect encoded frames across every shot and transition, then iterate on
+  symmetry, spacing, collisions, small-player legibility, pacing, and evidence clarity.
+- [x] E2EVIDEO-5: generate full-resolution and `640×360` timestamped contact sheets and
+  validate text boxes against their intended regions and safe margins.
+- [x] E2EVIDEO-6: verify exact duration/specification, full decode, black/corrupt/frozen
+  intervals, source hashes, numerical claims, fast-start, and deterministic regeneration.
+- [x] E2EVIDEO-7: run focused tests and relevant release checks, record final QA, make one
+  focused local commit, and leave the worktree clean without external action.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit
