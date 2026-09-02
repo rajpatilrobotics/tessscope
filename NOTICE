@@ -1,0 +1,11 @@
+TessScope
+Copyright 2026 rajpatilrobotics
+
+TessScope project code and original documentation are licensed under the
+Apache License, Version 2.0. See LICENSE.
+
+Third-party software, datasets, pretrained models, annotations, fonts, and
+trademarks are not relicensed by the TessScope license. The repository does
+not include downloaded source datasets or pretrained model weights. Compact
+derived validation evidence is redistributed under the source datasets'
+terms and is documented in THIRD_PARTY_NOTICES.md.

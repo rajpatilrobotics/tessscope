@@ -818,3 +818,22 @@ Resolution options, in recommended order:
   result remains the paired comparison across 27 validation wells.
 - Mobile navigation links use a 44 px minimum height. The cached/local mode, limitations,
   locked-test seal, and no-physical-microscope boundary remain unchanged.
+
+## 2026-09-02 — Local Track 05 release-candidate packaging authorized
+
+- The official 2026 challenge page confirms the required composition, end-to-end-gradient,
+  Apache-2.0, public-repository, reproducible README, named-track write-up, and optional
+  five-minute-video criteria. TessScope will enter “Track 05 — Differentiable graphics &
+  rendering” because its learned phase pupil differentiates through wave-optical rendering,
+  autofocus, and a frozen segmentation observer.
+- The public claim remains the frozen v2.4 exact-versus-stopped causal result. The
+  non-significant piecewise comparison, negative v2.5/v2.6 follow-ups, validation-only
+  scope, sealed BBBC006 test, and absent physical-microscope validation remain visible.
+- Project-authored code and documentation use the unmodified Apache License 2.0. BBBC
+  data, InstanSeg models, dependency code, embedded font glyphs, and trademarks keep their
+  own terms; no downloaded dataset archive or pretrained weight is part of the candidate.
+- The initial GitHub inventory found no current or historical blob above 13,035,355 bytes,
+  no raw dataset archive or model weight, no absolute private path, and no redacted secret
+  pattern. The Git database is about 29 MiB and no remote is configured.
+- Local packaging is authorized. Creating a remote, pushing, tagging, uploading video,
+  publishing, posting, deploying, or submitting still requires a new explicit approval.

@@ -225,6 +225,34 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] DEMO-P4: enlarge mobile navigation hit areas while keeping the 320 px layout compact,
   then regenerate manifests and verify deterministic outputs, local startup, Ruff, and tests.
 
+### Final-submission packaging phase
+
+- [x] RELEASE-0A: inventory the tracked tree and Git history for secrets, private paths,
+  oversized files, datasets, model weights, broken links, caches, and public-release blockers.
+- [x] RELEASE-0B: verify the official 2026 Track 05 requirements and record the eligibility,
+  licensing, attribution, and strict no-public-action boundary.
+- [x] RELEASE-1A: add the unmodified Apache License 2.0 text, an accurate NOTICE, and a
+  third-party attribution inventory without relicensing external data, models, or libraries.
+- [x] RELEASE-1B: confirm that every redistributed sample, figure, font, and media asset has
+  a documented source and redistribution basis; exclude unclear assets from the candidate.
+- [ ] RELEASE-2A: replace the research-first README with a concise judge-first Track 05 entry,
+  a two-minute cached replay path, the load-bearing Tesseract explanation, verified results,
+  honest limits, and repository-relative links.
+- [ ] RELEASE-2B: keep the complete experimental history and negative v2.5/v2.6 evidence
+  accessible in separate research documentation without overwhelming the judge path.
+- [ ] RELEASE-3A: create and visually verify a traced 2–4 page technical brief in editable
+  source and PDF form, including uncertainty, methodology, Tesseract need, and limitations.
+- [ ] RELEASE-4A: create a 3–4 minute caption-led 1080p demo cut from real TessScope assets,
+  plus storyboard, timestamped narration, shot list, captions, and playback metadata.
+- [ ] RELEASE-5A: document one canonical macOS instant-demo command and one full-reproduction
+  path with versions, lock file, storage/runtime expectations, network needs, and troubleshooting.
+- [ ] RELEASE-5B: verify a clean exported judge path without the active virtualenv, hidden
+  local data, absolute project paths, dataset download, retraining, Docker, or live inference.
+- [ ] RELEASE-6A: run the final code, test, demo, traceability, determinism, links, secrets,
+  licensing, repository-size, accessibility, PDF, and video audits and issue a GO/NO-GO report.
+- [ ] RELEASE-6B: create a final local release-candidate commit only if every local gate passes;
+  do not tag, push, publish, deploy, upload, post, or submit.
+
 ### V2.6 diagnosis-first improvement
 
 - [x] V2.6-0A: received explicit authorization, preserved v1–v2.5 at local commit
@@ -446,6 +474,21 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - Static outputs include high-resolution PNG and vector SVG/PDF where appropriate, with
   concise captions and alt text; animation is broadly playable when produced.
 
+### Final-submission release criteria
+
+- The repository names “Track 05 — Differentiable graphics & rendering” immediately and
+  demonstrates at least two composed Tesseracts with an exact end-to-end gradient.
+- Hackathon-authored code is covered by the official Apache License 2.0; third-party code,
+  data, models, annotations, fonts, and media retain their own terms and attribution.
+- The instant judge path uses only the 12.4 MiB cached validation replay and repository-
+  relative assets; the approximately 2.5 GB BBBC006 subset and model weights are not committed.
+- The README is reproducible, beginner-readable, scientifically accurate, and explicit about
+  replay versus live computation, validation-only evidence, the sealed test, and no hardware test.
+- The technical brief is 2–4 readable pages and the local demo video is at most five minutes,
+  1080p, caption-readable, free of unapproved synthetic voice/music, and based only on real assets.
+- All local release gates pass from a clean export. Every external/public action remains blocked
+  pending a new explicit user approval after the GO/NO-GO report.
+
 ### V2.6 criteria
 
 - Oracle and interpolated controller audits are paired at field/depth level and report
@@ -524,6 +567,11 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - Final `uv run ruff check .`, `uv run pytest`, freeze verification, row-count audit, and
   visual inspection of every promoted figure.
 
+- Release audit checks tracked and historical blobs, secret patterns, private/absolute paths,
+  GitHub file limits, relative links, licenses, attributions, exported-checkout startup, PDF
+  page rendering, video duration/resolution/playback, 320/390 px layout, keyboard access,
+  reduced motion, deterministic hashes, and a final clean worktree.
+
 ## 8. Open questions
 
 The visual/demo implementation question is resolved. Frozen metric rows were sufficient
@@ -535,3 +583,7 @@ The v2.6 empirical question is resolved negatively. Neither bounded controller/e
 calibration nor the separately preregistered sequential two-mask route reached the frozen
 training-only feasibility region. No arbitrary fallback project is authorized, and the
 locked test remains sealed.
+
+The final-submission packaging phase is approved for local preparation only. The remaining
+open decision after a clean release-candidate audit is whether the user authorizes the separate
+external actions: public GitHub publication, video upload, social post, and hackathon submission.

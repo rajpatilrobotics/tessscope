@@ -8,8 +8,9 @@ version = "0.1.0"
 description = "Task-aware phase-only pupil optimization through JAX/Chromatix and PyTorch/InstanSeg Tesseracts"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-license = { text = "Research prototype; third-party assets retain their own licenses" }
-authors = [{ name = "TessScope contributors" }]
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "rajpatilrobotics" }]
 dependencies = [
   "chromatix @ git+https://github.com/chromatix-team/chromatix.git@ce1482906fc663298613bb252bbf425e3be59839",
   "instanseg-torch==0.1.1",
