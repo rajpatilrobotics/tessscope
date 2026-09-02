@@ -43,6 +43,24 @@
   as a third design. The schema now requires exactly `candidate` and `baseline`; budgets,
   data, fractions, seeds, metrics, and gates are unchanged. No smoke metric is used.
 
+## 2026-09-02 — V2.6 exposure audit rejects the primary route
+
+- The fixed 400-photon audit evaluated balanced and piecewise-028 equally across five
+  first/second allocations, three matched noise seeds, four development wells, and four
+  untouched confirmation wells from the frozen training-only partitions: 1,440 paired
+  nonzero-depth rows. No validation or test well entered selection.
+- Both systems selected a `0.65/0.35` first/second allocation on development. On
+  confirmation, balanced corrected PQ was `0.482311` versus piecewise `0.488784`, a
+  difference of `-0.006473` with interval `[-0.041989, +0.017630]`. Only 50% of wells
+  favored balanced and the minimum leave-one-out mean was `-0.016580`.
+- Balanced confirmation focus MAE was `2.9833 µm`, signed direction was `55.56%`, and
+  `59.72%` of frames improved. The first-frame preservation check passed, but all target
+  performance, uncertainty, stability, focus, and prior-oracle checks failed.
+- Decision: do not spend compute on the bounded pupil/controller/exposure route. Freeze
+  it as a diagnosis-backed negative result and proceed only to primary/official research
+  on whether sequential SLM masks justify a separately preregistered two-mask TessScope
+  experiment. The locked test remains sealed.
+
 ## 2026-09-02 — V2.4 completes expanded hard validation without promotion
 
 - All three frozen exact checkpoints and their three matched stopped-stage pupils were

@@ -162,16 +162,16 @@ Existing v1 implementation files remain untouched wherever possible. V2 uses:
 - [x] V2.6-1B: ran the frozen balanced-versus-piecewise diagnostic and quantified controller
   error, optical/observer ceiling, depth/density/well structure, saturation, bias, gain,
   and nonlinearity.
-- [ ] V2.6-1C: run the fixed-total-photon exposure audit on frozen training-only
+- [x] V2.6-1C: ran the fixed-total-photon exposure audit on frozen training-only
   development and confirmation patches with no validation/test tuning.
-- [ ] V2.6-2A: apply the frozen route decision. Activate either bounded B7
-  pupil/controller/exposure co-design or a negative controller/exposure freeze.
-- [ ] V2.6-2B: if activated, pass component and full-loop derivative gates plus
-  feasibility restoration before any expensive corrected-task matrix.
-- [ ] V2.6-3A: conditionally run the bounded exact matrix, fair calibrated piecewise
-  baseline, stopped-stage control, and selection protocol with every checkpoint saved.
-- [ ] V2.6-3B: conditionally run expanded hard validation and matched derivative-free
-  comparison only after all earlier gates.
+- [x] V2.6-2A: applied the frozen route decision, rejected bounded B7
+  pupil/controller/exposure co-design, and froze the route as a negative result.
+- [x] V2.6-2B: not activated—the oracle and exposure prerequisites failed before new
+  controller/pupil generation; no derivative or expensive matrix was warranted.
+- [x] V2.6-3A: not activated—the diagnosis rejected controller/exposure co-design before
+  a new exact matrix or controller was generated.
+- [x] V2.6-3B: not activated—no candidate cleared the diagnostic prerequisites for new
+  hard validation or matched derivative-free comparison.
 - [ ] V2.6-4A: if the controller/exposure route is rejected, research primary/official
   evidence for rapid sequential SLM masks and preregister a two-mask route only if it is
   physically and scientifically defensible.
