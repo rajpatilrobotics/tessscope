@@ -32,3 +32,10 @@ artifacts/runs/**
 .env
 .env.local
 !.env.example
+
+# Local Figma boards and video-design drafts
+outputs/figma-image-library/
+outputs/tessscope-image-journey/
+outputs/video/linkedin/design-audit-*/
+outputs/video/linkedin/opening-frame-concepts/
+outputs/video/linkedin/redesign-previews/
