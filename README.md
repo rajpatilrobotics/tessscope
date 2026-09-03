@@ -1,6 +1,13 @@
 # TessScope
 
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3120/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-D22128.svg)](LICENSE)
+[![Tesseract Hackathon 2026](https://img.shields.io/badge/Tesseract_Hackathon_2026-Track_05-6f42c1.svg)](https://pasteurlabs.ai/tesseract-hackathon-2026/)
+[![Release audit: GO](https://img.shields.io/badge/Release_audit-GO-1f883d.svg)](outputs/release/GO-NO-GO.md)
+
 **Tesseract Hackathon 2026 · Track 05 — Differentiable graphics & rendering**
+
+> **TessScope asks:** Can one exact gradient teach a fluorescence microscope to refocus?
 
 TessScope differentiates through a closed-loop fluorescence microscope: JAX/Chromatix
 forms an image, NumPy/SciPy predicts a focus correction, PyTorch/InstanSeg scores the
@@ -15,6 +22,22 @@ biological result, and Tesseract carries exact gradients across all three runtim
 PQ is panoptic quality on a 0–1 scale, not percent accuracy. All v2 evidence is
 validation-only, the locked BBBC006 test remains sealed, and no physical microscope has
 validated this system.
+
+## At a glance
+
+| What the judges ask | TessScope's answer |
+|---|---|
+| **Real composition** | Three served Tesseracts cross JAX/Chromatix → NumPy/SciPy → JAX/Chromatix → PyTorch/InstanSeg boundaries in one closed loop. |
+| **Gradients doing work** | Exact gradients improve corrected PQ by **`+0.006259`** over a forward-identical stopped-gradient control, with a positive 95% well-bootstrap interval. |
+| **Why Tesseract** | Each scientific component keeps its native framework and derivative strategy while `tesseract-jax` presents the composition as one differentiable JAX program. |
+| **Real application** | Task-aware phase-pupil design inside a closed-loop fluorescence autofocus simulation on real BBBC006 nuclei fields, evaluated with a frozen task observer. |
+| **Technical depth** | All 227 tests pass; the complete served derivative reaches median relative error `0.004802`, cosine `0.999967`, and forward parity `0.0`. |
+| **Reproducibility** | A one-command standard-library replay verifies the public evidence; frozen manifests, source pointers, hashes, and a four-page technical brief ship with the repository. |
+
+**Quick links:** [two-minute judge path](#judge-it-in-under-two-minutes) ·
+[results](#results-that-matter) · [technical brief](output/pdf/tessscope-technical-brief.pdf) ·
+[3.5-minute demo](outputs/video/tessscope-demo.mp4) ·
+[full reproduction guide](docs/FULL_REPRODUCTION.md)
 
 ## Judge it in under two minutes
 
@@ -50,6 +73,8 @@ The primary v2.4 checkpoint is the frozen balanced exact design at step 14.
 | Focus error | `1.267923 µm` MAE | `98.89%` signed-direction accuracy |
 | Exact vs. matched stopped gradient | **`+0.006259` PQ** | CI `[+0.000670, +0.011547]`; causal path supported |
 | Exact vs. piecewise-028 | `+0.001285` PQ | CI `[−0.001719, +0.004800]`; not significant |
+
+![Segmentation quality and autofocus residual across depth](outputs/demo/figures/pq-focus-depth.png)
 
 The exact and stopped systems have identical forward computation (`0.0` measured
 difference). Only the backward path through the autofocus action is removed. This makes
@@ -101,6 +126,11 @@ The complete served derivative passed central differences with median relative e
 5. A frozen InstanSeg observer scores first- and corrected-frame nucleus utility.
 6. Exact VJPs cross all service boundaries and optimize the pupil for the full loop.
 
+The learned phase mask and its recorded depth-dependent point-spread functions are frozen
+scientific outputs—not conceptual artwork.
+
+![Frozen pupil phases and sensor-plane PSFs across depth](outputs/demo/figures/pupil-psf-depth.png)
+
 ![Matched microscopy evidence](outputs/demo/figures/matched-microscopy.png)
 
 ## Evidence protocol
@@ -125,10 +155,28 @@ The frozen public claim contract is
 
 ## Reproduce
 
+| Path | Requirements | What it verifies |
+|---|---|---|
+| **Fast judge replay** | Python 3 standard library; bundled 12.4 MiB replay | Public claims, source hashes, selected field, and exact/stopped/piecewise evidence |
+| **Code verification** | Python 3.12 and `uv` | Lint, 227 tests, and cached-demo integrity |
+| **Full scientific path** | External assets, about 2.5 GB of BBBC006 data, model bundle, and three local services | Data preparation, served derivatives, optimization, and hard-well evaluation |
+
 ### Fast public path
 
 The cached judge replay above needs only Python's standard library. Its manifest records
 that it is a replay rather than live inference.
+
+```bash
+python3 scripts/serve_demo.py --check
+```
+
+Expected integrity summary:
+
+```text
+status=complete_local_static_judge_demo
+mode=cached_replay_not_live_inference
+test_accessed=false
+```
 
 ### Code checks
 
