@@ -144,7 +144,7 @@ The stage action and the remaining focus error are:
 ```math
 \mathbf{a}
 =
-\operatorname{clip}(-\hat{\mathbf{z}},-6,+6)\ \mathrm{\mu m},
+\mathrm{clip}(-\hat{\mathbf{z}},-6,+6)\ \mathrm{\mu m},
 \qquad
 \mathbf{r}=\mathbf{z}+\mathbf{a}.
 ```
@@ -175,7 +175,7 @@ The matched control changes only the reverse path through the stage action:
 \mathbf{r}_{\mathrm{exact}}=\mathbf{z}+\mathbf{a}(\theta),
 \qquad
 \mathbf{r}_{\mathrm{stopped}}=\mathbf{z}
-+\operatorname{stopgrad}\!\left(\mathbf{a}(\theta)\right).
++\mathrm{stopgrad}\!\left(\mathbf{a}(\theta)\right).
 ```
 
 The two systems have a measured forward difference of 0.0. Their paired performance difference

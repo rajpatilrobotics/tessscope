@@ -86,3 +86,4 @@ def test_readme_uses_github_safe_math_fences() -> None:
     assert readme.count("```math") == 6
     assert "$$" not in readme
     assert r"\(" not in readme
+    assert r"\operatorname" not in readme
