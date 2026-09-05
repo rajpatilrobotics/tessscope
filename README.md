@@ -71,6 +71,8 @@ to preserve exact labels, axes, and values. None of these animations synthesize 
 | **Is the application real?** | The system tackles focus correction for fluorescence nucleus imaging using real BBBC006 cell fields and a frozen task observer. |
 | **Is there technical depth?** | The project includes calibrated image formation, a served implicit ridge VJP, a PyTorch observer VJP, finite-difference derivative gates, causal controls, and pre-registered evaluation. |
 | **Can judges reproduce it?** | A dependency-free cached replay checks public evidence in seconds; code verification and the complete scientific path are documented separately. |
+| **Can scientific communities build on it?** | The optics, autofocus, controller, and observer have explicit service boundaries, so researchers can replace one component while preserving the rest of the experimental loop. |
+| **What would be lost without Tesseract?** | TessScope would either need to rewrite specialized SciPy and PyTorch components into one differentiation framework or accept a broken gradient at those boundaries. |
 
 ## One closed-loop system
 
@@ -203,6 +205,41 @@ The composition is implemented in
 
 The complete served derivative passed its numerical gate with median relative error **0.004802**,
 cosine agreement **0.999967**, and exact/stopped forward parity **0.0**.
+
+## Scientific impact and community extension paths
+
+TessScope is designed as a reusable research foundation for task-aware microscopy, not as a closed
+one-off demonstration. Its current evidence is in-silico and validation-only, but the software
+boundaries expose concrete starting points for several scientific communities:
+
+| Community | Reusable capability | Practical extension path |
+|---|---|---|
+| **Computational microscopy and optical design** | Calibrated image formation and a bounded learned phase pupil | Replace the pupil basis, PSF model, aberration model, or sensor calibration while retaining the controller and task objective. |
+| **Bioimage analysis and high-content screening** | A downstream biological observer that influences acquisition upstream | Replace InstanSeg with another frozen segmentation, detection, phenotype, or quality objective appropriate to the experiment. |
+| **Autofocus and scientific control** | Signed-defocus estimation, a bounded action, and differentiation through the decision | Test alternative estimators, actuator constraints, control policies, or multi-step acquisition strategies. |
+| **Microscopy laboratories and instrument automation** | A service-level contract for optics, sensing, control, and observation | After physical calibration and safety validation, connect a hardware stage adapter and evaluate the loop on a real microscope. This integration is future work, not a current claim. |
+
+The extension points are implemented as independently served components rather than hidden inside a
+single training script. A researcher can keep the existing optics and replace the observer, keep the
+observer and test a new autofocus method, or swap the imaging model without redesigning the complete
+pipeline. The [full reproduction guide](docs/FULL_REPRODUCTION.md) documents the current reference
+system, while the service entry points above define where new scientific components can connect.
+
+### Why Tesseract, rather than ordinary glue code?
+
+Ordinary service composition can move arrays from one program to another, but that alone does not
+preserve the reverse derivative across JAX, NumPy/SciPy, and PyTorch. Without Tesseract, TessScope
+would need to rewrite specialized components into one automatic-differentiation stack or treat them
+as black boxes and stop the gradient at the most important decision boundary.
+
+Tesseract makes the architecture useful in three load-bearing ways:
+
+1. **Native scientific software:** each component keeps the framework and libraries suited to its
+   scientific role.
+2. **End-to-end optimization:** custom and native VJPs compose across the service boundaries so the
+   final biological objective can update the learned optics through the autofocus action.
+3. **Research reuse:** components remain independently replaceable, testable, and deployable while
+   participating in the same differentiable pipeline.
 
 ## Experimental design
 

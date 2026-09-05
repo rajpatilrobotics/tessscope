@@ -117,6 +117,24 @@ def test_readme_keeps_protected_claims_and_limitations_together() -> None:
         assert required in normalized_readme
 
 
+def test_readme_states_scientific_community_and_tesseract_case() -> None:
+    readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
+    normalized_readme = " ".join(readme.split())
+
+    for required in (
+        "Scientific impact and community extension paths",
+        "Computational microscopy and optical design",
+        "Bioimage analysis and high-content screening",
+        "Microscopy laboratories and instrument automation",
+        "This integration is future work, not a current claim.",
+        "Why Tesseract, rather than ordinary glue code?",
+        "rewrite specialized components into one automatic-differentiation stack",
+        "End-to-end optimization",
+        "Research reuse",
+    ):
+        assert required in normalized_readme
+
+
 def test_readme_uses_github_safe_math_fences() -> None:
     readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
 
