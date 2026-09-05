@@ -99,7 +99,7 @@ does not introduce a separate theoretical model.
 The exact design uses seven RMS-normalized Zernike modes, Noll 5 through 11. Seven unconstrained
 parameters are mapped into an open 2.5-radian RMS coefficient ball:
 
-$$
+```math
 \mathbf{c}(\mathbf{v})
 =
 b\,\frac{\mathbf{v}}{\sqrt{1+\lVert\mathbf{v}\rVert_2^2}},
@@ -107,19 +107,19 @@ b\,\frac{\mathbf{v}}{\sqrt{1+\lVert\mathbf{v}\rVert_2^2}},
 b=2.5\ \mathrm{rad},
 \qquad
 \mathbf{v}\in\mathbb{R}^{7}.
-$$
+```
 
 The resulting phase pupil modulates a Chromatix objective point source before Fourier propagation.
 The sensor-plane PSF is normalized to unit energy and integrated over square sensor pixels.
 
 ### 2. Fluorescence image formation
 
-For object field \(O\), depth \(z\), and pupil parameters \(\theta\), the noiseless sensor rate is
+For object field $O$, depth $z$, and pupil parameters $\theta$, the noiseless sensor rate is
 the object convolved with the depth-dependent PSF:
 
-$$
+```math
 I_z(\theta) = O * h_z(\theta).
-$$
+```
 
 The served optics model then applies the frozen exposure calibration and noise model. Both
 exposures use the same object and the same learned pupil; only the residual depth changes.
@@ -130,31 +130,31 @@ Each sensor image is content-normalized, multiplied by a Hann window, transforme
 converted to log power, and pooled into 10 radial by 12 angular spectral features. A
 regularized ridge model with an unpenalized intercept predicts signed depth:
 
-$$
+```math
 \mathbf{w}
 =
 \left(\mathbf{X}^{\mathsf T}\mathbf{X}+\lambda\mathbf{P}\right)^{-1}
 \mathbf{X}^{\mathsf T}\mathbf{z},
 \qquad
 \hat{\mathbf{z}}=\mathbf{X}_{q}\mathbf{w}.
-$$
+```
 
 The stage action and the remaining focus error are:
 
-$$
+```math
 \mathbf{a}
 =
 \operatorname{clip}(-\hat{\mathbf{z}},-6,+6)\ \mathrm{\mu m},
 \qquad
 \mathbf{r}=\mathbf{z}+\mathbf{a}.
-$$
+```
 
 ### 4. Closed-loop objective
 
 The frozen balanced objective combines biological task quality with physically interpretable
 residual and motion penalties:
 
-$$
+```math
 \mathcal{J}(\theta)
 =
 0.35\,\mathcal{L}_{\mathrm{first}}
@@ -162,7 +162,7 @@ $$
 + 0.10\,\mathbb{E}\!\left[\left(\frac{\mathbf{r}}{6}\right)^2\right]
 + 0.01\,\mathbb{E}\!\left[\left(\frac{\mathbf{a}}{6}\right)^2\right]
 + 0.01.
-$$
+```
 
 The final term is the fixed cost of the second exposure. The selected exact checkpoint is the
 pre-registered balanced design at optimization step 14.
@@ -171,12 +171,12 @@ pre-registered balanced design at optimization step 14.
 
 The matched control changes only the reverse path through the stage action:
 
-$$
+```math
 \mathbf{r}_{\mathrm{exact}}=\mathbf{z}+\mathbf{a}(\theta),
 \qquad
 \mathbf{r}_{\mathrm{stopped}}=\mathbf{z}
 +\operatorname{stopgrad}\!\left(\mathbf{a}(\theta)\right).
-$$
+```
 
 The two systems have a measured forward difference of 0.0. Their paired performance difference
 therefore tests whether learning through the autofocus action is useful rather than merely whether

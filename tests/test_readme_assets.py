@@ -78,3 +78,11 @@ def test_readme_keeps_protected_claims_and_limitations_together() -> None:
         "Superiority is not supported",
     ):
         assert required in normalized_readme
+
+
+def test_readme_uses_github_safe_math_fences() -> None:
+    readme = (PROJECT_ROOT / "README.md").read_text(encoding="utf-8")
+
+    assert readme.count("```math") == 6
+    assert "$$" not in readme
+    assert r"\(" not in readme
