@@ -24,6 +24,35 @@ FRAME_TIMESTAMPS_SECONDS = {
     "solution": 15.0,
     "system_proof": 89.7,
 }
+ANIMATED_CLIPS = {
+    "video_preview_gif": {
+        "filename": "video-preview.gif",
+        "start_seconds": 0.4,
+        "duration_seconds": 3.2,
+    },
+    "problem_gif": {
+        "filename": "problem.gif",
+        "start_seconds": 4.4,
+        "duration_seconds": 5.2,
+    },
+    "solution_gif": {
+        "filename": "solution.gif",
+        "start_seconds": 10.4,
+        "duration_seconds": 6.2,
+    },
+    "graph_gif": {
+        "filename": "graph.gif",
+        "start_seconds": 69.4,
+        "duration_seconds": 5.2,
+    },
+    "system_proof_gif": {
+        "filename": "system-proof.gif",
+        "start_seconds": 84.4,
+        "duration_seconds": 5.2,
+    },
+}
+GIF_SIZE = (960, 540)
+GIF_FPS = 8
 
 FONT_ROOT = Path(get_data_path()) / "fonts" / "ttf"
 FONT_REGULAR = FONT_ROOT / "DejaVuSans.ttf"
@@ -92,6 +121,57 @@ def _scaled_copy(source: Image.Image, destination: Path, size: tuple[int, int]) 
     if image.size != size:
         image = image.resize(size, Image.Resampling.LANCZOS)
     image.save(destination, format="PNG", compress_level=9)
+
+
+def _export_gif(destination: Path, *, start_seconds: float, duration_seconds: float) -> dict:
+    """Export a looping, palette-optimized GIF from the approved final video."""
+    filter_graph = (
+        f"fps={GIF_FPS},scale={GIF_SIZE[0]}:{GIF_SIZE[1]}:flags=lanczos,"
+        "split[s0][s1];"
+        "[s0]palettegen=max_colors=128:stats_mode=diff[p];"
+        "[s1][p]paletteuse=dither=sierra2_4a:diff_mode=rectangle"
+    )
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-v",
+            "error",
+            "-i",
+            str(FINAL_VIDEO),
+            "-ss",
+            f"{start_seconds:.3f}",
+            "-t",
+            f"{duration_seconds:.3f}",
+            "-an",
+            "-vf",
+            filter_graph,
+            "-loop",
+            "0",
+            "-gifflags",
+            "+transdiff",
+            "-map_metadata",
+            "-1",
+            str(destination),
+        ],
+        check=True,
+        capture_output=True,
+    )
+    with Image.open(destination) as image:
+        frame_count = int(getattr(image, "n_frames", 1))
+        frame_duration_ms = int(image.info.get("duration", 0))
+        loop = int(image.info.get("loop", 0))
+        size = list(image.size)
+    return {
+        "size": size,
+        "frame_count": frame_count,
+        "fps": GIF_FPS,
+        "frame_duration_ms": frame_duration_ms,
+        "duration_seconds": round(frame_count * frame_duration_ms / 1000, 3),
+        "loop": loop,
+        "source_start_seconds": start_seconds,
+        "source_duration_seconds": duration_seconds,
+        "bytes": destination.stat().st_size,
+    }
 
 
 def _paste_crop(
@@ -287,6 +367,10 @@ def build_assets() -> dict:
         "system_proof": OUTPUT_ROOT / "system-proof.png",
         "gradient_path": OUTPUT_ROOT / "gradient-path.png",
     }
+    animated_paths = {
+        name: OUTPUT_ROOT / spec["filename"]
+        for name, spec in ANIMATED_CLIPS.items()
+    }
     source_frames = {
         name: _frame_at(timestamp)
         for name, timestamp in FRAME_TIMESTAMPS_SECONDS.items()
@@ -298,10 +382,19 @@ def build_assets() -> dict:
         hook=source_frames["video_poster"],
         solution=source_frames["solution"],
     )
+    animated_details = {
+        name: _export_gif(
+            path,
+            start_seconds=spec["start_seconds"],
+            duration_seconds=spec["duration_seconds"],
+        )
+        for name, spec in ANIMATED_CLIPS.items()
+        for path in (animated_paths[name],)
+    }
 
     manifest = {
-        "schema_version": 1,
-        "purpose": "README-only images derived from approved video frames and frozen evidence",
+        "schema_version": 2,
+        "purpose": "README-only images and animations derived from the approved final video",
         "sources": {str(FINAL_VIDEO.relative_to(PROJECT_ROOT)): _sha256(FINAL_VIDEO)},
         "frame_timestamps_seconds": FRAME_TIMESTAMPS_SECONDS,
         "outputs": {
@@ -312,10 +405,19 @@ def build_assets() -> dict:
             }
             for name, path in output_paths.items()
         },
+        "animations": {
+            name: {
+                "path": str(animated_paths[name].relative_to(PROJECT_ROOT)),
+                "sha256": _sha256(animated_paths[name]),
+                **animated_details[name],
+            }
+            for name in ANIMATED_CLIPS
+        },
         "gradient_path": gradient_details,
         "scientific_integrity": {
             "generated_scientific_imagery": False,
             "source_pixels": "approved video frames built from frozen TessScope evidence",
+            "animated_source": "approved V23 MP4 only; no new scientific frames synthesized",
             "vector_only_addition": "autofocus-stage schematic and explanatory connectors",
         },
     }

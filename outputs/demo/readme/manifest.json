@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "purpose": "README-only images derived from approved video frames and frozen evidence",
+  "schema_version": 2,
+  "purpose": "README-only images and animations derived from the approved final video",
   "sources": {
     "outputs/video/linkedin/tessscope-end-to-end-demo-polished-v23.mp4": "a48c4c7efebe214576fefd5016014ee860155bb9bc41830deb508b6e0f2c1de7"
   },
@@ -52,6 +52,88 @@
       ]
     }
   },
+  "animations": {
+    "video_preview_gif": {
+      "path": "outputs/demo/readme/video-preview.gif",
+      "sha256": "e3c09ce168d27c8a7d71ba72c9303c76d0f080cda1ce3504bddcb272e1372019",
+      "size": [
+        960,
+        540
+      ],
+      "frame_count": 26,
+      "fps": 8,
+      "frame_duration_ms": 130,
+      "duration_seconds": 3.38,
+      "loop": 0,
+      "source_start_seconds": 0.4,
+      "source_duration_seconds": 3.2,
+      "bytes": 291917
+    },
+    "problem_gif": {
+      "path": "outputs/demo/readme/problem.gif",
+      "sha256": "17a0ae64d3294ddb90bd01e8a9196116925a9f402b7db708420eb617a6fde64a",
+      "size": [
+        960,
+        540
+      ],
+      "frame_count": 42,
+      "fps": 8,
+      "frame_duration_ms": 130,
+      "duration_seconds": 5.46,
+      "loop": 0,
+      "source_start_seconds": 4.4,
+      "source_duration_seconds": 5.2,
+      "bytes": 789272
+    },
+    "solution_gif": {
+      "path": "outputs/demo/readme/solution.gif",
+      "sha256": "2bcd587a9ee175fec772d170ab8757d3748ca72f20fbde399d84b6f753db503c",
+      "size": [
+        960,
+        540
+      ],
+      "frame_count": 50,
+      "fps": 8,
+      "frame_duration_ms": 130,
+      "duration_seconds": 6.5,
+      "loop": 0,
+      "source_start_seconds": 10.4,
+      "source_duration_seconds": 6.2,
+      "bytes": 300380
+    },
+    "graph_gif": {
+      "path": "outputs/demo/readme/graph.gif",
+      "sha256": "06fc74e947571bfb4ea381571a0ee39daba67d709db8d21dedb8670ed4723230",
+      "size": [
+        960,
+        540
+      ],
+      "frame_count": 42,
+      "fps": 8,
+      "frame_duration_ms": 130,
+      "duration_seconds": 5.46,
+      "loop": 0,
+      "source_start_seconds": 69.4,
+      "source_duration_seconds": 5.2,
+      "bytes": 539584
+    },
+    "system_proof_gif": {
+      "path": "outputs/demo/readme/system-proof.gif",
+      "sha256": "ad5b68a6f514c4123f006afbdee16c4661a3a1e4c440241c96c6638ff6bb8fa8",
+      "size": [
+        960,
+        540
+      ],
+      "frame_count": 42,
+      "fps": 8,
+      "frame_duration_ms": 130,
+      "duration_seconds": 5.46,
+      "loop": 0,
+      "source_start_seconds": 84.4,
+      "source_duration_seconds": 5.2,
+      "bytes": 1195938
+    }
+  },
   "gradient_path": {
     "size": [
       1800,
@@ -99,6 +181,7 @@
   "scientific_integrity": {
     "generated_scientific_imagery": false,
     "source_pixels": "approved video frames built from frozen TessScope evidence",
+    "animated_source": "approved V23 MP4 only; no new scientific frames synthesized",
     "vector_only_addition": "autofocus-stage schematic and explanatory connectors"
   }
 }

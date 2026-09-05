@@ -30,7 +30,7 @@ height, and thermal or mechanical drift move the specimen away from the focal pl
 blur is not merely cosmetic: it weakens automated nucleus analysis and can force researchers to
 repeat imaging or correct focus manually.
 
-![TessScope problem statement: a microscope focal-plane displacement beside a real out-of-focus human-cell field](outputs/demo/readme/problem.png)
+![Animated TessScope problem statement: a microscope focal-plane displacement beside a real out-of-focus human-cell field](outputs/demo/readme/problem.gif)
 
 For TessScope, the optical-design challenge is stricter than making an image look sharp. The pupil
 must preserve useful cell structure while encoding enough signed depth information for the
@@ -47,17 +47,19 @@ TessScope turns a blurred frame into a bounded stage correction:
 5. A frozen nucleus observer scores the biological utility of both exposures.
 6. One exact reverse signal updates the pupil through the complete loop.
 
-![TessScope solution: first exposure, signed-defocus estimate and stage action, then corrected exposure](outputs/demo/readme/solution.png)
+![Animated TessScope solution: first exposure, signed-defocus estimate and stage action, then corrected exposure](outputs/demo/readme/solution.gif)
 
 ## Watch the 93-second system demo
 
-[![Watch the TessScope end-to-end demonstration on YouTube](outputs/demo/readme/video-poster.png)](https://youtu.be/u5QRV6fVLQg)
+[![Animated preview of the TessScope end-to-end demonstration on YouTube](outputs/demo/readme/video-preview.gif)](https://youtu.be/u5QRV6fVLQg)
 
 **[▶ Watch on YouTube](https://youtu.be/u5QRV6fVLQg)** ·
 [Direct MP4 backup](outputs/video/linkedin/tessscope-end-to-end-demo-polished-v23.mp4)
 
-The video uses frozen TessScope evidence and real BBBC006 microscopy fields. Its animations reveal
-the recorded curves and values; they do not synthesize scientific results.
+The video uses frozen TessScope evidence and real BBBC006 microscopy fields. The narrative visuals
+above are looping GIFs sampled directly from the approved final MP4, so the recorded system story
+can be inspected without leaving GitHub. The high-resolution scientific plots below remain static
+to preserve exact labels, axes, and values. None of these animations synthesize scientific results.
 
 ## Why TessScope belongs in this hackathon
 
@@ -72,7 +74,7 @@ the recorded curves and values; they do not synthesize scientific results.
 
 ## One closed-loop system
 
-![TessScope system proof: learned B7 pupil, depth-dependent sensor response, and corrected exposure](outputs/demo/readme/system-proof.png)
+![Animated TessScope system proof: learned B7 pupil, depth-dependent sensor response, and corrected exposure](outputs/demo/readme/system-proof.gif)
 
 ### Forward computation
 
@@ -236,7 +238,9 @@ Every public value maps to a JSON pointer and SHA-256 hash in the
 | Focus error | **1.267923 µm MAE** | Remaining absolute focus error |
 | Signed-direction accuracy | **98.89%** | Predicted focus direction is correct |
 
-![Segmentation quality and autofocus residual across depth](outputs/demo/figures/pq-focus-depth.png)
+![Animated recorded graph reveal: segmentation quality and autofocus residual across depth](outputs/demo/readme/graph.gif)
+
+![Static segmentation quality and autofocus residual across depth](outputs/demo/figures/pq-focus-depth.png)
 
 ### Does the exact feedback gradient help?
 
