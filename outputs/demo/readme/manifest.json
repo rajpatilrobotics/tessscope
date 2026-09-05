@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "purpose": "README-only images derived from approved video frames and frozen evidence",
+  "sources": {
+    "outputs/video/linkedin/tessscope-end-to-end-demo-polished-v23.mp4": "a48c4c7efebe214576fefd5016014ee860155bb9bc41830deb508b6e0f2c1de7"
+  },
+  "frame_timestamps_seconds": {
+    "video_poster": 2.0,
+    "problem": 8.0,
+    "solution": 15.0,
+    "system_proof": 89.7
+  },
+  "outputs": {
+    "video_poster": {
+      "path": "outputs/demo/readme/video-poster.png",
+      "sha256": "7add4244f6e598cd1e3f740819f84cc40b0a958863766603f4d433dd11d1bd86",
+      "size": [
+        1600,
+        900
+      ]
+    },
+    "problem": {
+      "path": "outputs/demo/readme/problem.png",
+      "sha256": "09b8ffb530fb9ac4a610b1099dc14f083b1ea0087f3178016eeb74212a2412e5",
+      "size": [
+        1600,
+        900
+      ]
+    },
+    "solution": {
+      "path": "outputs/demo/readme/solution.png",
+      "sha256": "a82c1775776ace53406af5cc09020dab6987148ad0f70d00c99c686a107c44cc",
+      "size": [
+        1600,
+        900
+      ]
+    },
+    "system_proof": {
+      "path": "outputs/demo/readme/system-proof.png",
+      "sha256": "4a4c099f24f972155258c5a392455d899f3e62ee27d219e371728756bc3cbed8",
+      "size": [
+        1600,
+        900
+      ]
+    },
+    "gradient_path": {
+      "path": "outputs/demo/readme/gradient-path.png",
+      "sha256": "189a890cb63355189b7640c412d8057988426ebd6067ec071c90e6aadeb94856",
+      "size": [
+        1800,
+        900
+      ]
+    }
+  },
+  "gradient_path": {
+    "size": [
+      1800,
+      900
+    ],
+    "source_crops": {
+      "learned_pupil": [
+        "video_poster@2.000s",
+        [
+          790,
+          391,
+          1130,
+          731
+        ]
+      ],
+      "first_exposure": [
+        "solution@15.000s",
+        [
+          110,
+          395,
+          590,
+          875
+        ]
+      ],
+      "corrected_exposure": [
+        "solution@15.000s",
+        [
+          1330,
+          395,
+          1810,
+          875
+        ]
+      ],
+      "task_observation": [
+        "video_poster@2.000s",
+        [
+          1358,
+          342,
+          1838,
+          822
+        ]
+      ]
+    }
+  },
+  "scientific_integrity": {
+    "generated_scientific_imagery": false,
+    "source_pixels": "approved video frames built from frozen TessScope evidence",
+    "vector_only_addition": "autofocus-stage schematic and explanatory connectors"
+  }
+}
