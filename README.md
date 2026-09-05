@@ -5,7 +5,7 @@
 [![Tesseract Hackathon 2026](https://img.shields.io/badge/Tesseract_Hackathon_2026-Track_05-6f42c1.svg)](https://pasteurlabs.ai/tesseract-hackathon-2026/)
 [![Release audit: GO](https://img.shields.io/badge/Release_audit-GO-1f883d.svg)](outputs/release/GO-NO-GO.md)
 
-**Tesseract Hackathon 2026 · Track 05 — Differentiable graphics and rendering**
+**Tesseract Hackathon 2026 · Track 05: Differentiable graphics and rendering**
 
 > **TessScope is an in-silico closed-loop fluorescence microscopy prototype that learns a
 > phase-only pupil, estimates signed defocus, commands a bounded stage correction, and optimizes
@@ -309,7 +309,7 @@ images.
 
 There are three intentionally different reproduction levels.
 
-### 1. Fast judge replay — seconds, standard library only
+### 1. Fast judge replay: seconds, standard library only
 
     python3 scripts/serve_demo.py
 
@@ -379,10 +379,10 @@ MacBook Air M2 after service warm-up. Data preparation and the 45-well hard eval
 - [Four-page TessScope technical brief](output/pdf/tessscope-technical-brief.pdf)
 - [Tesseract Hackathon 2026](https://pasteurlabs.ai/tesseract-hackathon-2026/)
 - [Tesseract differentiable pipelines](https://docs.pasteurlabs.ai/projects/tesseract-core/stable/content/how-to/pipelines/)
-- [BBBC006](https://bbbc.broadinstitute.org/BBBC006) — Ljosa et al., Nature Methods, 2012
-- [Chromatix](https://github.com/chromatix-team/chromatix) — Deb et al., bioRxiv 2025,
+- [BBBC006](https://bbbc.broadinstitute.org/BBBC006): Ljosa et al., Nature Methods, 2012
+- [Chromatix](https://github.com/chromatix-team/chromatix): Deb et al., bioRxiv 2025,
   DOI 10.1101/2025.04.29.651152
-- [InstanSeg](https://github.com/instanseg/instanseg) — Goldsborough et al., arXiv 2024,
+- [InstanSeg](https://github.com/instanseg/instanseg): Goldsborough et al., arXiv 2024,
   DOI 10.48550/arXiv.2408.15954
 
 Citation metadata is available in [CITATION.cff](CITATION.cff). TessScope code and original
