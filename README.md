@@ -23,6 +23,10 @@ All reported evaluation evidence is validation-only. PQ is panoptic quality on a
 percent accuracy. The locked BBBC006 test split remains sealed, and no physical microscope has
 validated the system.
 
+## Reproduce the evidence
+
+Start with the cached evidence replay in the README’s reproduction section. The [full reproduction guide](docs/FULL_REPRODUCTION.md) describes the heavier path that rebuilds the optical, autofocus, and segmentation experiments. The validation compares paired microscopy wells under matched forward computation, so the reported change can be tied to the gradient path.
+
 ## The problem
 
 Microscopy focus can change while an experiment is running. Stage-positioning error, uneven sample
